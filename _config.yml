@@ -2,7 +2,7 @@
 title: Aaron Nielsen
 email: aaron.nielsen@colostate.edu
 description: > # this means to ignore newlines until "baseurl:"
-  I'm a statistician and teaching professor in the Department of Statistics at Colorado State University.
+  I am a statistician and teaching professor in the Department of Statistics at Colorado State University.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://aaron-nielsen.github.io" # the base hostname & protocol for your site
 
