@@ -13,7 +13,9 @@ permalink: blog/:year/:month/:title
 job.title: "Assistant Professor"
 excerpt_separator: "<!--more-->"
 
-school: Colorado State University
+dept: Department of Statistics
+room: 220 Statistics Building
+location: Fort Collins, CO 80523-1877
 
 # SEO stuff
 # google_author: ""
