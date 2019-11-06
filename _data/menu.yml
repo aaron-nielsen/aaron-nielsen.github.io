@@ -1,9 +1,8 @@
 - title: "About"
   href: "/about/"
   
-  - title: "Education"
-    href: "/education/"
-
+- title: "Education"
+  href: "/education/"
 
 - title: "CV"
   href: "/cv/"
