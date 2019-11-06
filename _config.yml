@@ -10,7 +10,7 @@ markdown: kramdown
 
 # Other options
 permalink: blog/:year/:month/:title
-job.title: "Assistant Professor"
+job.title: "Assistant Professor111"
 excerpt_separator: "<!--more-->"
 
 # SEO stuff
