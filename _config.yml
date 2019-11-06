@@ -1,7 +1,7 @@
 # Site settings
 title: Aaron Nielsen
-email: aaron-nielsen@colostate.edu
-description: blah blah
+email: aaron.nielsen@colostate.edu
+description: >
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://aaron-nielsen.github.io" # the base hostname & protocol for your site
 
