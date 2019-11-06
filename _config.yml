@@ -1,7 +1,10 @@
 # Site settings
 title: Aaron Nielsen
 email: aaron.nielsen@colostate.edu
-description: >
+description: > # this means to ignore newlines until "baseurl:"
+  I'm a political scientist at Clemson University with research interests in
+  international conflict and political behavior. Topics on my site include
+  my teaching interests, R, LaTeX, and professional development.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://aaron-nielsen.github.io" # the base hostname & protocol for your site
 
