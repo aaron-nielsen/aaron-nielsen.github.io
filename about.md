@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-{% include image.html url="/images/curacao.jpg" width=300 align="right" %}
+{% include image.html url="/images/curacao.jpg" caption="Curacao (2015)" width=300 align="right" %}
 
 I was born in Lincoln, Nebraska and have lived in Colorado for the past 20 years. I have four brothers scattered around the globe. My wife, Rachel, is a kindergarten teacher in Boulder, Colorado and we have two slightly obese cats, Stalin and Lenin.
 
