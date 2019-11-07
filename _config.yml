@@ -1,5 +1,6 @@
 # Site settings
 title: Aaron Nielsen
+name: aaron nielsen
 email: aaron.nielsen@colostate.edu
 description: > # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog/
