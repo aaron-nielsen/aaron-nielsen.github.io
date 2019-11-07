@@ -5,4 +5,4 @@ permalink: /teaching/stat315/
 ---
 
 
-{% include image.html url="/images/1.jpg" width=300 align="right" %}
+{% include image.html url="/images/1.jpg" width=300 align="right" %} 
