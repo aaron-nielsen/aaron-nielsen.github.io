@@ -10,7 +10,7 @@
 - title: "Teaching"
   href: "/teaching/"
   subcategories:
-    - subtitle: "STAT 315"
+    - subtitle: "STAT 315 - Intro. to the Theory and Practice of Statistics"
       subhref: "/teaching/stat315/"
-    - subtitle: "STAT 472"
+    - subtitle: "STAT 472 - Statistical Research"
       subhref: "/teaching/stat472/"
