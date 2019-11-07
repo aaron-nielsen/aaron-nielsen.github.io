@@ -160,7 +160,7 @@ z-index:999;
     .page-link {
         color: #ffffff;
     background: #000000;   
-        line-height: 3; 
+        line-height: $base-line-height;
 
         // Gaps between nav items, but not on the first one
         &:not(:first-child) {
@@ -186,7 +186,7 @@ z-index:999;
             height: 26px;
             line-height: 0;
             padding-top: 10px;
-            text-align: center;
+            text-align: bottom;
 
             > svg {
                 width: 18px;
