@@ -1,11 +1,11 @@
 /**
- * Site border
+ * Site header
  */
 .site-header {
     border-top: 0px solid $grey-color-dark;
-	border-bottom: 4px solid $grey-color-dark;
+	border-bottom: 4px solid $clemson-purple;
     min-height: 56px;
-    background-image: url("images/1.jpg"); 
+    background: $clemson-orange;
     // Positioning context for the mobile navigation icon
     position: relative;
 
@@ -20,7 +20,7 @@
     float: left;
     font-weight: 500;
 		font-family: 'Titillium Web', sans-serif;
-    color: #ffffff; 
+    color: #ffffff;
     &,
     &:visited {
         color: #ffffff;
