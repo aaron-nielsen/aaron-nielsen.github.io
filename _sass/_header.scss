@@ -22,10 +22,12 @@
     float: left;
     font-weight: 500;
 		font-family: 'Titillium Web', sans-serif;
-    color: #ffffff;
+
+        color: #000000;
     &,
     &:visited {
-        color: #ffffff;
+
+        color: #000000;
     }
     &,
     &:hover {
@@ -158,8 +160,8 @@ z-index:999;
     }
 
     .page-link {
-        color: #ffffff;
-    background: #000000;   
+        color: #000000;
+    background: #ffffff;   
         line-height: $base-line-height;
 		margin-top: 25px;
 
