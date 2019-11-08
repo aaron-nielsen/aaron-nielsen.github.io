@@ -13,6 +13,6 @@ I worked in the tech industry as an electrical engineer for three years before r
 In my free time, I enjoy reading (history, science, philosophy, science fiction, etc), seeing live music, and spending time with family and friends. I also really enjoy traveling both inside the United States (states I've visited), as well as abroad (countries I've visited). At present count, I have visited 24 countries. Lastly, I am a huge Chicago Cubs fan and enjoy learning about Sabermetrics, the statistical analysis of baseball records.
 
 
-{% include image.html url="/images/prague.jpg" caption="Prague, Czech Republic (2005)" width=250 align="left" %}
+{% include image.html url="/images/prague.JPG" caption="Prague, Czech Republic (2005)" width=250 align="left" %}
 {% include image.html url="/images/greatwall.jpg" caption="The Great Wall of China (2008)" width=250 align="left" %}
 {% include image.html url="/images/curacao.jpg" caption="Willemstad, Curacao (2015)" width=250 align="right" %}
