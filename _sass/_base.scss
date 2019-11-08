@@ -83,6 +83,7 @@ li {
 h1, h2, h3, h4, h5, h6 {
     font-weight: 200;
 	font-family: 'Jenna Sue', arial, sans-serif;
+	color: #ffffff;
 }
 
 
@@ -201,7 +202,7 @@ pre {
         height: 16px;
         vertical-align: middle;
 
-        path {
+        path {#
             fill: $grey-color;
         }
     }
