@@ -4,9 +4,6 @@
 - title: "Education"
   href: "/education/" 
 
-- title: "CV"
-  href: "/cv/"
-
 - title: "Teaching"
   href: "/teaching/"
   subcategories:
@@ -14,3 +11,6 @@
       subhref: "/teaching/stat315/"
     - subtitle: "STAT 472 - Statistical Research"
       subhref: "/teaching/stat472/"
+
+- title: "CV"
+  href: "/cv/"
