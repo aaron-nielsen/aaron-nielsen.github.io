@@ -14,6 +14,6 @@ In my free time, I enjoy reading (history, science, philosophy, science fiction,
 
 <h1>Some pictures from my travels...</h1>
 
-{% include image.html url="/images/prague.JPG" caption="Prague, Czech Republic (2005)" width=250 %}
-{% include image.html url="/images/greatwall.jpg" caption="The Great Wall of China (2008)" width=250  %}
-{% include image.html url="/images/curacao.jpg" caption="Willemstad, Curacao (2015)" width=250  %}
+{% include image.html url="/images/prague.JPG" caption="Prague, Czech Republic (2005)" width=250 align="left" %}
+{% include image.html url="/images/greatwall.jpg" caption="The Great Wall of China (2008)" width=250 align="left" %}
+{% include image.html url="/images/curacao.jpg" caption="Willemstad, Curacao (2015)" width=250 align="left" %}
