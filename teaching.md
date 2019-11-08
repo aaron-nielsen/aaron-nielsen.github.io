@@ -2,7 +2,7 @@
 layout: page
 title: Teaching
 permalink: /teaching/
-image: "class.jpg"
+image: "images/class.jpg"
 ---
 
 <!-- {% include image.html url="/images/edward-james-olmos-stand-deliver.jpg" caption="That's right. Tough guys don't do math; tough guys deep fry chicken for a living." width="400" align="right" %} -->
@@ -11,10 +11,7 @@ This page includes my teaching philosophy and an empirical assessment of my teac
 
 <hr style="clear:both;visibility: hidden;" />  
 
-## Teaching Documents
 
-- [Teaching Philosophy](/docs/svm-teaching-philosophy.pdf)
-- [An Empirical Assessment of My Teaching Effectiveness](/docs/svm-teaching-evals.pdf?dl=0)
 
 ## Course Directory
 
