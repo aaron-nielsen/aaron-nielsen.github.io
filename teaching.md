@@ -14,9 +14,9 @@ This page includes my teaching philosophy and an empirical assessment of my teac
 
 {% include image.html url="/images/prague.JPG" caption="Prague, Czech Republic (2005)" width=250 align="left" %}
 
-## Course Directory
+# Course Directory
 
-### Clemson University
+# Colorado State University
 
 #### Undergraduate Classes
 
@@ -29,28 +29,3 @@ This page includes my teaching philosophy and an empirical assessment of my teac
 
 - [POST 8000](https://github.com/svmiller/post8000) (Foundations of Social Science Research for Public Policy)
 
-#### Proposed Classes
-
-- [Data Science for the Social Sciences](/teaching/data-science-social-sciences/)
-- [Comparative Political Behavior](/teaching/posc-4430-political-behavior/)
-- [Quantitative Public Policy Analysis](/teaching/quantitative-public-policy-analysis/)
-
-### University of Illinois at Urbana-Champaign
-
-- PS 283 (Intro to International Security)
-- PS 300 (Democracies and Peace)
-- PS 395 (International Organization)
-- PS 396 (International Conflict)
-
-### University of Alabama
-
-I taught eight separate courses while a graduate student at the University of Alabama. I taught a few classes on several occasions, for which the substance and course materials would change from one term to the next.
-
-- PSC 101 (Intro to American Politics)
-- PSC 102 (America and the World — Foreign Policy Decision-Making)
-- PSC 201 (Scope of Political Science)
-- PSC 202 (Political Science Methods)
-- PSC 203 (Intro to Comparative Politics)
-- PSC 204 (Intro to International Relations)
-- PSC 442 (Interstate Conflict)
-- PSC 446w (Political Economy of Security)
