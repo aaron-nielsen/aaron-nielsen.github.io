@@ -48,3 +48,8 @@ I am a teaching assistant professor in the Department of Statistics at Colorado 
 - [MATH 4810](/teaching/math4810) (Probability)
 - [MATH 4820/5320](/teaching/math4820) (Mathematical Statistics)
 
+
+{% include image.html url="/images/bateman.png" caption="Receiving the Bateman Teaching Award from Dr. Stephen Billups (2016)" width=250 align="left" %}
+{% include image.html url="/images/lenin-hw.jpg" caption="Thankfully, I always have help grading." width=250 align="left" %}
+{% include image.html url="/images/abstract.jpeg" caption="Abstract art or statistics? You decide." width=250 align="left" %}
+
