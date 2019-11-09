@@ -17,11 +17,7 @@ I received my Ph.D. in Applied Mathematics from the University of Colorado Denve
 - M.S. Electrical Engineering (2008)
 - B.S. Mathematics (2007)
 - B.S. Electrical Engineering (2007)
-
-	<img src="/images/abstract.png"> <br>
-
-
-
+ 
 # Other Interests
 
 I have been taking a random sample of courses at CSU since joining the faculty in August 2018 as a part of the university's employee study privilege. Some topics that I hope to learn more about include Philosophy of Statistics and Philosophy of Mathematics.
