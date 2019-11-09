@@ -18,7 +18,7 @@ I received my Ph.D. in Applied Mathematics from the University of Colorado Denve
 - B.S. Mathematics (2007)
 - B.S. Electrical Engineering (2007)
 
-{% include image.html url="/images/aaron-bsee.png" caption="Undergraduate commencement with Dr. Tony Maciejewski (2007)" height=400 align="left" %} 
+{% include image.html url="/images/aaron-bsee.png" caption="Undergraduate commencement with Dr. Tony Maciejewski (2007)" width=250 align="left" %} 
 
 {% include image.html url="/images/aaron-burt.jpg" caption="With my Ph.D. advisor, Dr. Burt Simon (2018)" height=400  align="left" %}
 
