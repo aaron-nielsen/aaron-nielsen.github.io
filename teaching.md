@@ -5,9 +5,7 @@ permalink: /teaching/
 image: "images/class.jpg"
 ---
 
-
-
-This page includes my teaching philosophy and an empirical assessment of my teaching effectiveness. It also serves as a directory for the courses I have taught, which are freely available to current students, alumni of my classes, and any other interested observers. Transitions my website has made over the years---from university servers, to Wordpress, to (now) Github---have led to the loss of several old course websites in the shuffle. People interested in syllabi from previous courses I taught at Alabama and Illinois can e-mail me to obtain a past syllabus.
+I am a teaching faculty member in the Department of Statistics at Colorado State University and typically teach 3-4 courses per semester. Below is a list of courses that I have taught going back to my days as a graduate student.
 
 <hr style="clear:both;visibility: hidden;" />  
 
