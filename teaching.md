@@ -6,8 +6,6 @@ image: " "
 ---
 
 
-
-
 <hr style="clear:both;visibility: hidden;" />  
 
 
@@ -19,14 +17,20 @@ I am a teaching assistant professor in the Department of Statistics at Colorado 
 
 ## Colorado State University
 
-#### Undergraduate Classes
+#### Current Classes (Fall 2019)
+- [STAT 315](/teaching/stat315) (Introduction to the Theory and Practice of Statistics) 
+- [STAT 472](/teaching/stat472) (Statistical Research)
+- [STAT 581A4](/teaching/stat581a4) (Applied Multivariate Analysis for Researchers)
 
-- [POSC 1020](http://posc1020.svmiller.com) (Introduction to International Relations)
-- [POSC 3410](/teaching/posc-3410-quantitative-methods-in-political-science/) (Quantitative Methods in Political Science)
-- [POSC 3610](http://posc3610.svmiller.com) (International Conflict)
-- [POSC 3630](/teaching/posc-3630-united-states-foreign-policy/) (United States Foreign Policy)
+#### Future Classes (Spring 2020)
+- [STAT 315](/teaching/stat315) (Introduction to the Theory and Practice of Statistics) 
+- [STAT 460](/teaching/stat460) (Applied Multivariate Analysis)
+- [STAT 472](/teaching/stat472) (Statistical Research)
+- [STAA 574](/teaching/staa574) (Methods in Multivariate Analysis)
 
-#### Graduate Classes
+#### Previous Classes
 
-- [POST 8000](https://github.com/svmiller/post8000) (Foundations of Social Science Research for Public Policy)
+- [STAT 201](/teaching/stat201) (General Statistics)
+- [STAT 204](/teaching/stat204) (General Statistics)
+- [STAT 301]() (Introduction to Statistical Methods)
 
