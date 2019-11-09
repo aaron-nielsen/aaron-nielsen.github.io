@@ -9,7 +9,7 @@
  */
 .site-header {
     border-top: 0px solid #1d1d1d;
-	border-bottom: 1px solid #9dc4a1;
+	border-bottom: 1px solid #80A6B1;
     min-height: 20px;
     background: #1d1d1d;
     // Positioning context for the mobile navigation icon
@@ -58,7 +58,7 @@
 	margin: 0;
 	padding: 0;
 	list-style-type: none;
-	font-family: 'Alegreya Sans SC', arial, sans-serif;
+	font-family: 'Alegreya Sans SC', sans-serif;
 
 }
 
@@ -176,7 +176,7 @@
         position: absolute;
         top: 9px;
         right: 30px;
-        background-color: $background-color;
+        background-color: #1d1d1d;
         border: 1px solid $grey-color-light;
         border-radius: 5px;
         text-align: right;
