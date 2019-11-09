@@ -5,18 +5,18 @@ permalink: /education/
 image: "class.jpg"
 ---
 
-	<img src="/images/1a.jpg"> <br><br><br>
-
-<!-- {% include image.html url="/images/edward-james-olmos-stand-deliver.jpg" caption="That's right. Tough guys don't do math; tough guys deep fry chicken for a living." width="400" align="right" %} -->
-
-This page includes my teaching philosophy and an empirical assessment of my teaching effectiveness. It also serves as a directory for the courses I have taught, which are freely available to current students, alumni of my classes, and any other interested observers. Transitions my website has made over the years---from university servers, to Wordpress, to (now) Github---have led to the loss of several old course websites in the shuffle. People interested in syllabi from previous courses I taught at Alabama and Illinois can e-mail me to obtain a past syllabus.
-
 <hr style="clear:both;visibility: hidden;" />  
+
+
+{% include image.html url="/images/aaron-bsee.jpg" caption="Undergraduate commencement with Dr. Tony Maciejewski (2007)" align="left" %}
+
+{% include image.html url="/images/aaron-burt.jpg" caption="With my Ph.D. advisor, Dr. Burt Simon (2018)" align="left" %}
+
+{% include image.html url="/images/defense.jpg" caption="Dissertation defense (2018)" align="left" %}
+
 
 ## Teaching Documents
 
-- [Teaching Philosophy](/docs/svm-teaching-philosophy.pdf)
-- [An Empirical Assessment of My Teaching Effectiveness](/docs/svm-teaching-evals.pdf?dl=0)
 
 ## Course Directory
 
