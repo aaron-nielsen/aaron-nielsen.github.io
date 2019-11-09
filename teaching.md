@@ -15,7 +15,7 @@ I am a teaching assistant professor in the Department of Statistics at Colorado 
 
 # Course Directory
 
-# Colorado State University
+## Colorado State University
 
 #### Undergraduate Classes
 
