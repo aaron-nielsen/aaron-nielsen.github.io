@@ -12,6 +12,7 @@ This page includes my teaching philosophy and an empirical assessment of my teac
 <hr style="clear:both;visibility: hidden;" />  
 
 
+{% include image.html url="/images/prague.JPG" caption="Prague, Czech Republic (2005)" width=250 align="left" %}
 
 ## Course Directory
 
