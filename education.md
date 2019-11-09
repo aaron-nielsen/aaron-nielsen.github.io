@@ -23,6 +23,7 @@ I received my Ph.D. in Applied Mathematics from the University of Colorado Denve
 
 I have been taking a random sample of courses at CSU since joining the faculty in August 2018 as a part of the university's employee study privilege. Some topics that I hope to learn more about include Philosophy of Statistics and Philosophy of Mathematics.
 
+- PHIL 325: Philosophy of Natural Science, Spring 2020
 - PHIL 120: History and Philosophy of Scientific Thought, Fall 2019
 - POLS 232: International Relations, Summer 2019
 - PH 361: Physical Thermodynmaics, Spring 2019
