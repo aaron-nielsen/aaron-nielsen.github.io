@@ -64,12 +64,28 @@ I am a teaching assistant professor in the Department of Statistics at Colorado 
 - Spring 2019: STAT 201, STAT 315 (2 sec.), STAT 460, STAT 472
 - Fall 2018: STAT 201 (2 sec.), STAT 315
 
-## University of Colorado Denver (2015 - 2018)
+## University of Colorado Denver (2015 -- 2018)
 
-- Summer 2018: Math 3800
-- Spring 2018: Math 3191
-- Fall 2017: Math 1110
-- Summer 2017: Math 3382, Math 3800
-- Spring 2017: Math 2411
+- Summer 2018: MATH 3800
+- Spring 2018: MATH 3191
+- Fall 2017: MATH 1110
+- Summer 2017: MATH 3382, MATH 3800
+- Spring 2017: MATH 2411
+- Fall 2016: MATH 1401
+- Summer 2016: MATH 3800, MATH 4820/5320
+- Spring 2016: MATH 3800
+- Fall 2015: MATH 3800
+- Summer 2015: MATH 4810
+
+## Colorado State University (2012 -- 2015)
+
+- Summer 2015: STAT 201
+- Spring 2015: STAT 301 (3 sec.)
+- Fall 2014: STAT 301
+- Summer 2014: STAT 204
+- Spring 2014: STAT 204
+- Fall 2013: STAT 204
+- Spring 2013: STAT 204 (2 recitations)
+- Fall 2012: STAT 204 (2 recitations)
 
 
