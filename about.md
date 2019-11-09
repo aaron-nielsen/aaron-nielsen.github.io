@@ -4,7 +4,7 @@ title: About Me
 permalink: /about/
 ---
 
-I was born in Lincoln, Nebraska and have lived in Colorado since 1998. I have four brothers who live in Hong Kong, Washington, Alabama, and Colorado. My wife, Rachel, is a kindergarten teacher in Boulder, Colorado and we have a communist cat named Lenin.
+I was born in Lincoln, Nebraska and have lived in Colorado since 1998. I have four brothers who live in Hong Kong, Washington, Alabama, and Colorado. My wife, Rachel, is a kindergarten teacher in Boulder, Colorado and we have a communist cat named <a href="/images/lenin.jpg">Lenin</a>.
 
 I worked in the tech industry as an electrical engineer for three years before returning to school to pursue my passion for teaching. After completing a Ph.D. in Applied Mathematics at the University of Colorado Denver, I joined the faculty of the Department of Statistics at Colorado State University in August 2018. I have taught a wide range of courses in mathematics and statistics at the undergraduate and graduate levels.
 
@@ -15,8 +15,8 @@ I enjoy reading (history, science, philosophy, science fiction, etc) and have re
 {% include image.html url="/images/prague.JPG" caption="Prague, Czech Republic (2005)" width=250 align="left" %}
 {% include image.html url="/images/acropolis.JPG" caption="Acropolis, Athens, Greece (2005)" width=250 align="left" %}
 {% include image.html url="/images/greatwall.jpg" caption="The Great Wall of China (2008)" width=250 align="left" %}
-{% include image.html url="/images/quebec.JPG" caption="Winter Carnival in Québec City (2010)" width=250 align="left" %}
-{% include image.html url="/images/oktoberfest.jpg" caption="Oktoberfest in Munich, Germany (2010)" width=250 align="left" %}
+{% include image.html url="/images/quebec.JPG" caption="Winter Carnival, Québec City (2010)" width=250 align="left" %}
+{% include image.html url="/images/oktoberfest.jpg" caption="Oktoberfest, Munich, Germany (2010)" width=250 align="left" %}
 {% include image.html url="/images/curacao.jpg" caption="Willemstad, Curacao (2015)" width=250 align="left" %}
 {% include image.html url="/images/mexico.png" caption="Chichen Itza, Mexico (2018)" width=250 align="left" %}
 {% include image.html url="/images/costarica.png" caption="Arenal Volcano, Costa Rica (2018)" width=250 align="left" %}
