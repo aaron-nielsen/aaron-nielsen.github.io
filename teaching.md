@@ -33,5 +33,18 @@ I am a teaching assistant professor in the Department of Statistics at Colorado 
 
 - [STAT 201](/teaching/stat201) (General Statistics)
 - [STAT 204](/teaching/stat204) (General Statistics)
-- [STAT 301]() (Introduction to Statistical Methods)
+- [STAT 301](/teaching/stat301) (Introduction to Statistical Methods)
+
+## University of Colorado Denver
+
+#### Previous courses
+
+- [MATH 1110](/teaching/math1110) (College Algebra)
+- [MATH 1401](/teaching/math1401) (Calculus I)
+- [MATH 2411](/teaching/math2411) (Calculus II)
+- [MATH 3191](/teaching/math3191) (Applied Linear Algebra)
+- [MATH 3382](/teaching/math3382) (Statistical Theory)
+- [MATH 3800](/teaching/math3800) (Probability and Statistics for Engineers)
+- [MATH 4810](/teaching/math4810) (Probability)
+- [MATH 4820/5320](/teaching/math4820) (Mathematical Statistics)
 
