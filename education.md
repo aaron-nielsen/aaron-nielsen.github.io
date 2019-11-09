@@ -2,7 +2,7 @@
 layout: page
 title: Education
 permalink: /education/
-image: "class.jpg"
+image: ""
 ---
 
 I received my Ph.D. in Applied Mathematics from the University of Colorado Denver in 2018 and my specialty lies in statistics education. My dissertation entitled ``Statistical Analysis of Some Problems in Evolutionary Population Dynamics'' explored stochastic and deterministic models for evolutionary population models, particulary with respect to the evolution of cooperation.
