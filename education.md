@@ -5,7 +5,7 @@ permalink: /education/
 image: " "
 ---
 
-I received my Ph.D. in Applied Mathematics from the University of Colorado Denver in 2018 and my specialty lies in statistics education. My dissertation entitled ``Statistical Analysis of Some Problems in Evolutionary Population Dynamics'' explored stochastic and deterministic models for evolutionary population models, particulary with respect to the evolution of cooperation.
+I received my Ph.D. in Applied Mathematics from the University of Colorado Denver in 2018 and my specialty lies in statistics education. My dissertation entitled "Statistical Analysis of Some Problems in Evolutionary Population Dynamics" explored stochastic and deterministic models for evolutionary population models, particulary with respect to the evolution of cooperation.
 
 <hr style="clear:both;visibility: hidden;" />  
 
