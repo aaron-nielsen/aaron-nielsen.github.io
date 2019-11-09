@@ -53,7 +53,7 @@ I am a teaching assistant professor in the Department of Statistics at Colorado 
 {% include image.html url="/images/lenin-hw.jpeg" caption="Thankfully, I always have help grading . . ." width=250 align="left" %}
 {% include image.html url="/images/abstract.jpeg" caption="Abstract art or statistics?" width=250 align="left" %}
 
-<hr>
+<p> </p>
 
 # Course History
 
