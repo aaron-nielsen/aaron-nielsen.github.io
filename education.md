@@ -33,4 +33,3 @@ I have been taking a random sample of courses at CSU since joining the faculty i
 
 {% include image.html url="/images/defense.jpeg" caption="Dissertation defense (2018)" width=250 align="left" %}
 
-{% include image.html url="/images/csu-bros.jpeg" caption="My brothers, Brian (left), Justin (center), and I are CSU alumni." width=500 align="left" %}
