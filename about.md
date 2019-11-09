@@ -6,7 +6,7 @@ permalink: /about/
 
 
 
-I was born in Lincoln, Nebraska and have lived in Colorado for the past 20 years. I have four brothers scattered around the globe. My wife, Rachel, is a kindergarten teacher in Boulder, Colorado and we have two slightly obese cats, Stalin and Lenin.
+I was born in Lincoln, Nebraska and have lived in Colorado since 1998. I have four brothers scattered around the globe. My wife, Rachel, is a kindergarten teacher in Boulder, Colorado and we have a communist cat named Lenin.
 
 I worked in the tech industry as an electrical engineer for three years before returning to school to pursue my passion for teaching. After completing a Ph.D. in Applied Mathematics at the University of Colorado Denver, I joined the faculty of the Department of Statistics at Colorado State University in 2018. I have taught a wide range of courses in mathematics and statistics at the undergraduate and graduate levels.
 
