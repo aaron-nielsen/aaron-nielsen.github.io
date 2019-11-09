@@ -1,3 +1,9 @@
+@font-face { 
+  font-family: Jenna Sue; 
+    src: url('../fonts/JennaSue-webfont.eot'); 
+    src: local("Jenna Sue"), url('../fonts/JennaSue-webfont.ttf'); 
+} 
+
 /**
  * Site header
  */
@@ -19,7 +25,7 @@
     margin-bottom: 0;
     float: left;
     font-weight: 500;
-		font-family: 'Titillium Web', sans-serif;
+		font-family: 'Jenna Sue', arial, sans-serif;
     color: #ffffff;
     &,
     &:visited {
