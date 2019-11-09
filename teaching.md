@@ -32,7 +32,7 @@ I am a teaching assistant professor in the Department of Statistics at Colorado 
 #### Previous Classes
 
 - [STAT 201](/teaching/stat201) (General Statistics)
-- [STAT 204](/teaching/stat204) (General Statistics)
+- [STAT 204](/teaching/stat204) (Statistics with Business Applications)
 - [STAT 301](/teaching/stat301) (Introduction to Statistical Methods)
 
 ## University of Colorado Denver
@@ -59,10 +59,27 @@ I am a teaching assistant professor in the Department of Statistics at Colorado 
 
 ## Colorado State University (2018 --)
 
-- Fall 2019: STAT 315 (2 sec.), STAT 472, STAT 581A4
-- Summer 2019: STAT 315
-- Spring 2019: STAT 201, STAT 315 (2 sec.), STAT 460, STAT 472
-- Fall 2018: STAT 201 (2 sec.), STAT 315
+#### Fall 2019
+
+- [STAT 315](/teaching/stat315) (Introduction to the Theory and Practice of Statistics) (2 sections)
+- [STAT 472](/teaching/stat472) (Statistical Research)
+- [STAT 581A4](/teaching/stat581a4) (Applied Multivariate Analysis for Researchers)
+
+#### Summer 2019
+
+- [STAT 315](/teaching/stat315) (Introduction to the Theory and Practice of Statistics)
+
+#### Spring 2019
+
+- [STAT 201](/teaching/stat201) (General Statistics)
+- [STAT 315](/teaching/stat315) (Introduction to the Theory and Practice of Statistics) (2 sections)
+- [STAT 460](/teaching/stat460) (Applied Multivariate Analysis)
+- [STAT 472](/teaching/stat472) (Statistical Research)
+
+#### Fall 2018
+
+- [STAT 201](/teaching/stat201) (General Statistics) (2 sections)
+- [STAT 315](/teaching/stat315) (Introduction to the Theory and Practice of Statistics)
 
 ## University of Colorado Denver (2015 -- 2018)
 
