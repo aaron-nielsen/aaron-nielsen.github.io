@@ -1,34 +1,25 @@
 /**
  * Site header
  */
-@font-face { 
-  font-family: Jenna Sue; 
-    src: url('../fonts/JennaSue-webfont.eot'); 
-    src: local("Jenna Sue"), url('../fonts/JennaSue-webfont.ttf'); 
-} 
-
 .site-header {
     border-top: 0px solid $grey-color-dark;
-	border-bottom: 0px solid $grey-color-dark;
-    min-height: 10px; 
-    background-color: #1D1D1D;
-    // background: url('../images/a1.jpg'); 
-	
+	border-bottom: 4px solid $clemson-purple;
+    min-height: 56px;
+    background: $clemson-orange;
     // Positioning context for the mobile navigation icon
     position: relative;
-	border: 2px dotted $clemson-purple;
 
 }
 
 .site-title {
-    font-size: 52px;
+    font-size: 26px;
 /* 		margin-top: 15px;
     line-height: 40px; */
     letter-spacing: -1px;
     margin-bottom: 0;
     float: left;
     font-weight: 500;
-		font-family: 'Jenna Sue', arial, sans-serif;
+		font-family: 'Titillium Web', sans-serif;
     color: #ffffff;
     &,
     &:visited {
@@ -99,9 +90,9 @@ color: #522d80;
 	color: $clemson-orange;
 }
 .site-nav  .sub-menu {
-	background: #1D1D1D;
-	border-color: #1D1D1D;
-	min-width: 125px;
+	background: #ffffff;
+	border-color: $clemson-purple;
+	min-width: 265px;
 
 	z-index:2147483647;
 }
@@ -127,7 +118,7 @@ color: #522d80;
 	text-align: left;
 	text-transform: none;
 	top: 28px;
-	min-width: 125px;
+	min-width: 265px;
 
 z-index:999;
 	font-family: Helvetica, Arial, Verdana, sans-serif;
@@ -166,9 +157,8 @@ z-index:999;
 
     .page-link {
         color: #ffffff;
-    background: #1D1D1D;
+    background: $clemson-orange;
         line-height: $base-line-height;
-    margin-top: 25px;
 
         // Gaps between nav items, but not on the first one
         &:not(:first-child) {
