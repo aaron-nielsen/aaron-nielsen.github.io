@@ -31,5 +31,5 @@ I have been taking a random sample of courses at CSU since joining the faculty i
 
 {% include image.html url="/images/aaron-burt.jpg" caption="With my Ph.D. advisor, Dr. Burt Simon (2018)" width=250  align="left" %}
 
-{% include image.html url="/images/defense.jpeg" caption="Dissertation defense (2018)" width=250 align="left" %}
+{% include image.html url="/images/defense.jpeg" caption="Dissertation defense at the University of Colorado Denver (2018)" width=250 align="left" %}
 
