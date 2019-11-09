@@ -9,9 +9,8 @@ I am a teaching faculty member in the Department of Statistics at Colorado State
 
 <hr style="clear:both;visibility: hidden;" />  
 
-	<img src="images/class.jpg"> <br>
-		<img src="/images/1a.jpg"> <br>
-		{% include image.html url="/images/prague.JPG" caption="Teaching during my first year as a faculty member at CSU (2018)" align="left" %}
+
+		{% include image.html url="/images/class.jpg" caption="Teaching during my first year as a faculty member at CSU (2018)" align="left" %}
 		
 
 # Course Directory
