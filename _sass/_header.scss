@@ -22,7 +22,7 @@
 /* 		margin-top: 15px;
     line-height: 40px; */
     letter-spacing: -1px;
-    margin-bottom: 0;
+    margin-bottom: 10px;
     float: left;
     font-weight: 500;
 		font-family: 'Jenna Sue', arial, sans-serif;
@@ -88,12 +88,12 @@
 	letter-spacing: 0;
 	line-height: 1.2em;
 	padding: 4px 10px;
-color: #ffffff;
+color: #1d1d1d;
 
 }
 
 .site-nav .sub-menu a:hover {
-	color: $clemson-orange;
+	color: #92c0e0;
 }
 .site-nav  .sub-menu {
 	background: #1d1d1d;
@@ -163,7 +163,7 @@ z-index:999;
 
     .page-link {
         color: #ffffff;
-    background: $clemson-orange;
+    background: #1d1d1d;
         line-height: $base-line-height;
 
         // Gaps between nav items, but not on the first one
