@@ -5,7 +5,7 @@ permalink: /teaching/
 image: " "
 ---
 
-I am a teaching assistant professor in the Department of Statistics at Colorado State University. I typically teach 3-4 courses each semester. Below are a list of courses that I have taught going back to my days as a graduate student. 
+111I am a teaching assistant professor in the Department of Statistics at Colorado State University. I typically teach 3-4 courses each semester. Below is a list of courses that I have taught going back to my days as a graduate student. 
 
 <hr style="clear:both;visibility: hidden;" />  
 
