@@ -50,6 +50,6 @@ I am a teaching assistant professor in the Department of Statistics at Colorado 
 
 
 {% include image.html url="/images/bateman.png" caption="Receiving the Bateman Teaching Award from Dr. Stephen Billups (2016)" width=250 align="left" %}
-{% include image.html url="/images/lenin-hw.jpeg" caption="Thankfully, I always have help grading." width=250 align="left" %}
+{% include image.html url="/images/lenin-hw.jpeg" caption="Thankfully, I always have help grading.                                        " width=250 align="left" %}
 {% include image.html url="/images/abstract.jpeg" caption="Abstract art or statistics? You decide." width=250 align="left" %}
 
