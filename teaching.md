@@ -12,7 +12,6 @@ This page includes my teaching philosophy and an empirical assessment of my teac
 <hr style="clear:both;visibility: hidden;" />  
 
 	<img src="images/class.jpg"> <br>
-{% include image.html url="/images/class.jpg" align="center" %}
 
 # Course Directory
 
