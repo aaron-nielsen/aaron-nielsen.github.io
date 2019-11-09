@@ -18,7 +18,7 @@
 }
 
 .site-title {
-    font-size: 26px;
+    font-size: 52px;
 /* 		margin-top: 15px;
     line-height: 40px; */
     letter-spacing: -1px;
@@ -88,7 +88,7 @@
 	letter-spacing: 0;
 	line-height: 1.2em;
 	padding: 4px 10px;
-color: #522d80;
+color: #ffffff;
 
 }
 
@@ -96,15 +96,15 @@ color: #522d80;
 	color: $clemson-orange;
 }
 .site-nav  .sub-menu {
-	background: #ffffff;
-	border-color: $clemson-purple;
+	background: #1d1d1d;
+	border-color: #1d1d1d;
 	min-width: 265px;
 
 	z-index:2147483647;
 }
 .site-nav .sub-menu li.current-menu-item > a {
-	border-left-color: $clemson-orange;
-	border-right-color: $clemson-orange;
+	border-left-color: #1d1d1d;
+	border-right-color: #1d1d1d;
 	border-right: 0px;
 
 }
