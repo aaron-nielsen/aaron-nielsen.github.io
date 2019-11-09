@@ -1,25 +1,31 @@
+@font-face { 
+  font-family: Jenna Sue; 
+    src: url('../fonts/JennaSue-webfont.eot'); 
+    src: local("Jenna Sue"), url('../fonts/JennaSue-webfont.ttf'); 
+} 
+
 /**
  * Site header
  */
 .site-header {
-    border-top: 0px solid $grey-color-dark;
-	border-bottom: 4px solid $clemson-purple;
+    border-top: 0px solid #80A6B1;
+	border-bottom: 4px solid #80A6B1;
     min-height: 56px;
-    background: #f66733;
+    background: #1d1d1d;
     // Positioning context for the mobile navigation icon
     position: relative;
 
 }
 
 .site-title {
-    font-size: 26px;
+    font-size: 50px;
 /* 		margin-top: 15px;
     line-height: 40px; */
     letter-spacing: -1px;
     margin-bottom: 0;
     float: left;
     font-weight: 500;
-		font-family: 'Titillium Web', sans-serif;
+		font-family: 'Jenna Sue', sans-serif;
     color: #ffffff;
     &,
     &:visited {
@@ -90,8 +96,8 @@ color: $clemson-purple;
 	color: $clemson-orange;
 }
 .site-nav  .sub-menu {
-	background: #ffffff;
-	border-color: $clemson-purple;
+	background: #1d1d1d;
+	border-color: #1d1d1d;
 	min-width: 265px;
 
 	z-index:2147483647;
@@ -157,7 +163,7 @@ z-index:999;
 
     .page-link {
         color: #ffffff;
-    background: $clemson-orange;
+    background: #1d1d1d;
         line-height: $base-line-height;
 
         // Gaps between nav items, but not on the first one
