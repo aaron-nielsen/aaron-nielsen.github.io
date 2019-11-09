@@ -53,3 +53,21 @@ I am a teaching assistant professor in the Department of Statistics at Colorado 
 {% include image.html url="/images/lenin-hw.jpeg" caption="Thankfully, I always have help grading . . ." width=250 align="left" %}
 {% include image.html url="/images/abstract.jpeg" caption="Abstract art or statistics?\\alkdfj" width=250 align="left" %}
 
+# Course History
+
+## Colorado State University (2018 --)
+
+- Fall 2019: STAT 315 (2 sec.), STAT 472, STAT 581A4
+- Summer 2019: STAT 315
+- Spring 2019: STAT 201, STAT 315 (2 sec.), STAT 460, STAT 472
+- Fall 2018: STAT 201 (2 sec.), STAT 315
+
+## University of Colorado Denver (2015 - 2018)
+
+- Summer 2018: Math 3800
+- Spring 2018: Math 3191
+- Fall 2017: Math 1110
+- Summer 2017: Math 3382, Math 3800
+- Spring 2017: Math 2411
+
+
