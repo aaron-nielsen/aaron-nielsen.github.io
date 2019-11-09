@@ -18,6 +18,9 @@ I received my Ph.D. in Applied Mathematics from the University of Colorado Denve
 - B.S. Mathematics (2007)
 - B.S. Electrical Engineering (2007)
 
+	<img src="/images/abstract.png"> <br>
+
+
 
 # Other Interests
 
