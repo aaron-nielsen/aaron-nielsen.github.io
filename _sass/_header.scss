@@ -8,9 +8,9 @@
  * Site header
  */
 .site-header {
-    border-top: 0px solid #80A6B1;
+    border-top: 0px solid #1d1d1d;
 	border-bottom: 1px solid #80A6B1;
-    min-height: 56px;
+    min-height: 40px;
     background: #1d1d1d;
     // Positioning context for the mobile navigation icon
     position: relative;
@@ -19,13 +19,13 @@
 
 .site-title {
     font-size: 50px;
-/* 		margin-top: 15px;
-    line-height: 40px; */
+	margin-top: 10px;
+    line-height: 10px;
     letter-spacing: -1px;
-    margin-top: 10;
+    margin-bottom: 0px;
     float: left;
     font-weight: 500;
-		font-family: 'Jenna Sue', sans-serif;
+		font-family: 'Jenna Sue', arial, sans-serif;
     color: #ffffff;
     &,
     &:visited {
@@ -50,16 +50,15 @@
 
 	text-align: right;
 	float: right;
-	padding-top: 9px;
+	margin-top: 0px; 
 	font-size: 85%;
 	letter-spacing: 1px;
 	line-height: 1em;
-	font-weight: 600;
+	font-weight: 1000;
 	margin: 0;
 	padding: 0;
 	list-style-type: none;
-	text-transform: uppercase;
-		font-family: 'Titillium Web', sans-serif;
+	font-family: 'Alegreya Sans SC', sans-serif;
 
 }
 
@@ -88,12 +87,12 @@
 	letter-spacing: 0;
 	line-height: 1.2em;
 	padding: 4px 10px;
-	color: #ffffff;
+	color: #1d1d1d;
 
 }
 
 .site-nav .sub-menu a:hover {
-	color: #1d1d1d;
+	color: #9dc4a1;
 }
 .site-nav  .sub-menu {
 	background: #1d1d1d;
@@ -125,9 +124,8 @@
 	text-transform: none;
 	top: 28px;
 	min-width: 265px;
-
-z-index:999;
-	font-family: Helvetica, Arial, Verdana, sans-serif;
+	z-index:999;
+	font-family: 'Alegreya Sans SC', sans-serif;
 
 }
 
@@ -150,7 +148,7 @@ z-index:999;
 	position: absolute;
 	left: -999em;
 }
-
+ 
 
 .site-nav {
     float: right;
