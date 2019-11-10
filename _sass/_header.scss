@@ -88,12 +88,12 @@
 	letter-spacing: 0;
 	line-height: 1.2em;
 	padding: 4px 10px;
-color: $clemson-purple;
+	color: #ffffff;
 
 }
 
 .site-nav .sub-menu a:hover {
-	color: $clemson-orange;
+	color: #1d1d1d;
 }
 .site-nav  .sub-menu {
 	background: #1d1d1d;
@@ -103,8 +103,8 @@ color: $clemson-purple;
 	z-index:2147483647;
 }
 .site-nav .sub-menu li.current-menu-item > a {
-	border-left-color: $clemson-orange;
-	border-right-color: $clemson-orange;
+	border-left-color: #1d1d1d;
+	border-right-color: #1d1d1d;
 	border-right: 0px;
 
 }
@@ -178,7 +178,7 @@ z-index:999;
         position: absolute;
         top: 9px;
         right: 30px;
-        background-color: $background-color;
+        background-color: #1d1d1d;
         border: 1px solid $grey-color-light;
         border-radius: 5px;
         text-align: right;
