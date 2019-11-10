@@ -13,10 +13,10 @@ I received my Ph.D. in Applied Mathematics from the University of Colorado Denve
 
 - Ph.D. Applied Mathematics, University of Colorado Denver (2018)
 - M.S. Statistics, Colorado State University (2014)
-- M.S. Applied Mathmeatics (2012)
-- M.S. Electrical Engineering (2008)
-- B.S. Mathematics (2007)
-- B.S. Electrical Engineering (2007)
+- M.S. Applied Mathmeatics, University of Colorado Denver (2012)
+- M.S. Electrical Engineering, University of Colorado Boulder (2008)
+- B.S. Mathematics, Colorado State University (2007)
+- B.S. Electrical Engineering, Colorado State University (2007)
  
 # Other Interests
 
