@@ -1,0 +1,28 @@
+#aarontable {
+	width: 100%;
+	margin-bottom: 15px;
+	border-collapse: collapse; 
+
+}
+
+#aarontable caption {
+	font-weight: bold;
+	padding-bottom: 5px;
+} 
+
+#aarontable th {
+	font-weight: bold;
+	color: #fff;
+	border-bottom: 1px #ddd solid;
+	background: $clemson-purple;
+	padding: 7px 3px 7px 10px
+}
+
+
+#aarontable td {
+	padding: 3px 3px 3px 10px;	
+	border-bottom: 1px #ddd solid;
+}
+
+#aarontable tr:nth-child(even) {background: #f9f9f9}
+#aarontable tr:nth-child(odd) {background: #fdfdfd}
