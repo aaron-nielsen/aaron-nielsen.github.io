@@ -1,7 +1,7 @@
 @media only screen and (max-width: 600px) {
 
 .site-nav h1 {
-		border-bottom: zpx solid transparent;
+		border-bottom: 3px solid transparent;
 		cursor: pointer;
 		display: none; /* Standard. IE8+, Saf, FF3+ */
 		height: 23px;
@@ -22,7 +22,7 @@
 		display: block;
 		left: -3px;
 		min-width: 215px;
-		margin-top: 36px;
+/*		margin-top: 36px; */
 		padding: 4px 0;
 		position: relative;
 		right: -3px;
