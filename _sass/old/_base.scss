@@ -1,3 +1,9 @@
+@font-face { 
+  font-family: Jenna Sue; 
+    src: url('../fonts/JennaSue-webfont.eot'); 
+    src: local("Jenna Sue"), url('../fonts/JennaSue-webfont.ttf'); 
+} 
+
 /**
  * Reset some basic elements
  */
@@ -8,7 +14,7 @@ dl, dd, ol, ul, figure {
     padding: 0;
 }
 
-
+ 
 
 /**
  * Basic styling
@@ -80,17 +86,24 @@ li {
 /**
  * Headings
  */
-h1, h2, h3, h4, h5, h6 {
+h1 {
     font-weight: 200;
+	font-family: 'Jenna Sue', arial, sans-serif;
+	color: #ffffff; 
 }
 
+h2, h3, h4, h5, h6 {
+    font-weight: 200;
+	font-family: 'Alegreya Sans SC', sans-serif;
+	color: #ffffff; 
+}
 
 
 /**
  * Links
  */
 a {
-    color: $brand-color;
+    color: #80A6B1;
     text-decoration: none;
 
    &:visited {
@@ -200,7 +213,7 @@ pre {
         height: 16px;
         vertical-align: middle;
 
-        path {
+        path {#
             fill: $grey-color;
         }
     }
