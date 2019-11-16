@@ -97,7 +97,7 @@
 .site-nav  .sub-menu {
 	background: #1d1d1d;
 	border-color: #1d1d1d;
-	min-width: 265px;
+	min-width: 100px;
 
 	z-index:2147483647;
 }
@@ -174,10 +174,10 @@
 
     @include media-query($on-palm) {
         position: absolute;
-        top: 9px;
-        right: 30px;
+        top: 10px;
+        right: 15px;
         background-color: #1d1d1d;
-        border: 2px solid $grey-color-light;
+        border: 1px solid $grey-color-light;
         border-radius: 5px;
         text-align: right;
 
