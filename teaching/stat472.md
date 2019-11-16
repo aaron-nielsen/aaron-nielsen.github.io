@@ -9,6 +9,9 @@ permalink: /teaching/stat472/
 
 STAT 472, <i>Statistical Research: Data, Design, and Methods</i>, is a team project-based course required for statistics majors.
 
+<u>Prerequisite:</u><br>
+STAT 342 (Statistical Data Analysis II)
+
 <u>Topics:</u> <br>
 Reproducible research, data visualization, speaking and writing skills
 
