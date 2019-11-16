@@ -5,7 +5,7 @@ permalink: /teaching/stat460/
 ---
 
 
-{% include image.html url="/images/460.png" width=300 align="right" %} 
+{% include image.html url="/images/581a4.png" width=300 align="right" %} 
 
 STAT 460, <i>Applied Multivariate Analysis </i>, is an upper level course for statistics majors and minors and emphasizes implementing multivariate methods in R.
 
