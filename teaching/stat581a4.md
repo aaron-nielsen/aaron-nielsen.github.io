@@ -7,7 +7,7 @@ permalink: /teaching/stat581a4/
 
 {% include image.html url="/images/581a4.png" width=300 align="right" %} 
 
-STAT 581A4, <i>Applied Multivariate Analysis for Researchers</i>, is a graduate course for non-Statistics majors and emphasizes implementing multivariate methods in R.
+STAT 581A4, <i>Applied Multivariate Analysis for Researchers</i>, is a graduate course for non-majors and emphasizes implementing multivariate methods in R.
 
 <u>Prerequisite:</u><br>
 STAT 315 (Introduction to the Theory and Practice of Statistics) and some programming experience
