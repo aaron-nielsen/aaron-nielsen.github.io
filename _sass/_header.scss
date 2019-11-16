@@ -63,7 +63,7 @@
 }
 
 .site-nav .menu > li {
-	border-bottom: 3px solid transparent;
+	border-bottom: 0px solid transparent;
 	display: inline-block;
 	height: 23px;
 	line-height: normal;
@@ -174,10 +174,10 @@
 
     @include media-query($on-palm) {
         position: absolute;
-        top: 10px;
+        top: 1px;
         right: 15px;
         background-color: #1d1d1d;
-        border: 5px solid $grey-color-light;
+        border: 1px solid $grey-color-light;
         border-radius: 5px;
         text-align: right;
 
