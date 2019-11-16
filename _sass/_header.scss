@@ -129,7 +129,7 @@
 }
 
 .sub-menu li {
-	border-bottom: 0;
+	border-bottom: 1px;
 	display: block;
 	height: auto;
 	margin: 3px 0;
@@ -173,7 +173,7 @@
 
     @include media-query($on-palm) {
         position: absolute;
-        top: 9px;
+        top: 60px;
         right: 30px;
         background-color: #1d1d1d;
         border: 1px solid $grey-color-light;
@@ -186,7 +186,7 @@
             width: 36px;
             height: 26px;
             line-height: 0;
-            padding-top: 10px;
+            padding-top: 5px;
             text-align: center;
 
             > svg {
