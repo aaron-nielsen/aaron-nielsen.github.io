@@ -13,7 +13,7 @@ STAT 460, <i>Applied Multivariate Analysis </i>, is an upper level course for st
 MATH 369 (Linear Algebra) and STAT 315 (Introduction to the Theory and Practice of Statistics)
 
 <u>Topics:</u> <br>
-Multivariate statistics and distributions, MANOVA, principal component analysis (PCA), factor analysis, discriminant analysis, clustering
+Multivariate statistics and distributions, MANOVA, principal component analysis, factor analysis, discriminant analysis, clustering
 
 <u>Semesters taught:</u><br>
 Spring 2020, Spring 2019
