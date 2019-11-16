@@ -20,13 +20,13 @@ I am a teaching assistant professor in the Department of Statistics at Colorado 
 
 #### Current Classes (Fall 2019)
 - [STAT 315](/teaching/stat315) (Introduction to the Theory and Practice of Statistics) 
-- [STAT 472](/teaching/stat472) (Statistical Research)
+- [STAT 472](/teaching/stat472) (Statistical Research: Data, Design, and Methods)
 - [STAT 581A4](/teaching/stat581a4) (Applied Multivariate Analysis for Researchers)
 
 #### Future Classes (Spring 2020)
 - [STAT 315](/teaching/stat315) (Introduction to the Theory and Practice of Statistics) 
 - [STAT 460](/teaching/stat460) (Applied Multivariate Analysis)
-- [STAT 472](/teaching/stat472) (Statistical Research)
+- [STAT 472](/teaching/stat472) (Statistical Research: Data, Design, and Methods)
 - [STAA 574](/teaching/staa574) (Methods in Multivariate Analysis)
 
 #### Previous Classes
