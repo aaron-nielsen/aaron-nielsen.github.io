@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Stat 581A4
+title: STAT 581A4
 permalink: /teaching/stat581a4/
 ---
 

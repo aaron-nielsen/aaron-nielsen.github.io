@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Stat 472
+title: STAT 472
 permalink: /teaching/stat472/
 ---
 

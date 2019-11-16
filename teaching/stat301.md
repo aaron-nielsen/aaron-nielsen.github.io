@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Stat 301
+title: STAT 301
 permalink: /teaching/stat301/
 ---
 
