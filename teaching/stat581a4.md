@@ -13,7 +13,7 @@ STAT 581A4, <i>Applied Multivariate Analysis for Researchers</i>, is a graduate 
 STAT 315 (Introduction to the Theory and Practice of Statistics) and some programming experience
 
 <u>Topics:</u> <br>
-Multivariate statistics and distributions, MANOVA, principal component analysis (PCA), factor analysis, discriminant analysis, clustering
+Multivariate statistics and distributions, MANOVA, principal component analysis, factor analysis, discriminant analysis, clustering
 
 <u>Semesters taught:</u><br>
 Fall 2019
