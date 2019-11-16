@@ -10,9 +10,9 @@ permalink: /teaching/stat472/
 STAT 472, <i>Statistical Research: Data, Design, and Methods</i>, is a team project-based course required for statistics majors.
 
 <u>Topics:</u> 
-Reproducible research, replicability, 
+Reproducible research, data visualization, speaking and writing skills
 
 <u>Semesters taught:</u>
-Spring 2020, Fall 2019 (2 sec.), Summer 2019, Spring 2019 (2 sec.), Fall 2018
+Spring 2020, Fall 2019, Spring 2019
 
 [Download Recent Syllabus](/teaching/315-syllabus.pdf)
