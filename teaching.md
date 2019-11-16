@@ -39,14 +39,14 @@ I am a teaching assistant professor in the Department of Statistics at Colorado 
 
 #### Previous courses
 
-- [MATH 1110](/teaching/math1110) (College Algebra)
-- [MATH 1401](/teaching/math1401) (Calculus I)
-- [MATH 2411](/teaching/math2411) (Calculus II)
-- [MATH 3191](/teaching/math3191) (Applied Linear Algebra)
-- [MATH 3382](/teaching/math3382) (Statistical Theory)
-- [MATH 3800](/teaching/math3800) (Probability and Statistics for Engineers)
-- [MATH 4810](/teaching/math4810) (Probability)
-- [MATH 4820/5320](/teaching/math4820) (Mathematical Statistics)
+- MATH 1110 (College Algebra)
+- MATH 1401 (Calculus I)
+- MATH 2411 (Calculus II)
+- MATH 3191 (Applied Linear Algebra)
+- MATH 3382 (Statistical Theory)
+- MATH 3800 (Probability and Statistics for Engineers)
+- MATH 4810 (Probability)
+- MATH 4820/5320 (Mathematical Statistics)
 
 
 {% include image.html url="/images/bateman.png" caption="Receiving Bateman Teaching Award (2016)" width=250 align="left" %}

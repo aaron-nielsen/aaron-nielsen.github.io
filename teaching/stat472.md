@@ -15,4 +15,4 @@ Reproducible research, data visualization, speaking and writing skills
 <u>Semesters taught:</u>
 Spring 2020, Fall 2019, Spring 2019
 
-[Download Recent Syllabus](/teaching/315-syllabus.pdf)
+[Download Recent Syllabus](/teaching/472-syllabus.pdf)
