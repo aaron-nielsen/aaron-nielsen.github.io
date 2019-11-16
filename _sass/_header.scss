@@ -156,7 +156,7 @@
 
 
     .menu-icon {
-        display: block;
+        display: none;
     }
 
     .page-link {
@@ -166,7 +166,7 @@
 
         // Gaps between nav items, but not on the first one
         &:not(:first-child) {
-            margin-left: 10px;
+            margin-left: 20px;
         }
     }
 
