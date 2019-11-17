@@ -4,7 +4,9 @@ title: Travels
 permalink: /travels/
 ---
 
-I enjoy traveling whether it be roadtripping in the USA or backpacking abroad. At present count, I have visited <a href="images/countries.png">24 countries</a> and <a href="images/states.png">43 states</a>.
+I enjoy traveling whether it be roadtripping in the USA or backpacking abroad. 
+
+At present count, I have visited <a href="/images/countries.png">24 countries</a> and <a href="/images/states.png">43 states</a>.
 
 {% include image.html url="/images/hawaii.jpg" caption="Maui, Hawaii (2019)" width=250 align="left" %}
 {% include image.html url="/images/costarica.png" caption="Arenal Volcano, Costa Rica (2018)" width=250 align="left" %}
