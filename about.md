@@ -13,7 +13,7 @@ I enjoy reading (history, science, philosophy, science fiction, etc) and have re
 <h1>Some pictures from my travels...</h1>
 
 {% include image.html url="/images/prague.JPG" caption="Prague, Czech Republic (2005)" width=250 align="left" %}
-{% include image.html url="/images/acropolis.JPG" caption="Acropolis, Athens, Greece (2005)" width=250 align="left" %}
+{% include image.html url="/images/csu-bros.jpeg" caption="Brothers at Mendenhall Glacier, Alaska (2007)" width=250 align="left" %}
 {% include image.html url="/images/greatwall.jpg" caption="The Great Wall of China (2008)" width=250 align="left" %}
 {% include image.html url="/images/quebec.JPG" caption="Winter Carnival, Québec City (2010)" width=250 align="left" %}
 {% include image.html url="/images/oktoberfest.jpg" caption="Oktoberfest, Munich, Germany (2010)" width=250 align="left" %}
