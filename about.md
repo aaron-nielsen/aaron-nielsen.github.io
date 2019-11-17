@@ -4,7 +4,7 @@ title: About Me
 permalink: /about/
 ---
 
-{% include image.html url="/images/kadinsky.jpg" caption="Just another day at the office..." width=250 align="right" %}
+{% include image.html url="/images/kadinsky.jpg" caption="Just another day at the office..." width=200 align="right" %}
 
 I was born in Lincoln, Nebraska and have lived in Colorado since 1998. I have four brothers who live in Hong Kong, Washington, Alabama, and Colorado. My wife, Rachel, is a kindergarten teacher in Boulder, Colorado and we have a communist cat named <a href="/images/lenin.jpg">Lenin</a>.
 
