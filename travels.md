@@ -4,7 +4,7 @@ title: Travels
 permalink: /travels/
 ---
 
-I enjoy traveling whether it be roadtripping in the USA or backpacking abroad. Some of my favorite places include Munich (Germany), Prague (Czech Republic), and Chicago (Illinois).
+I enjoy traveling whether it be roadtripping in the USA or backpacking abroad.
 
 At present count, I have visited <a href="/images/countries.png">24 countries</a> and <a href="/images/states.png">43 states</a>.
 
