@@ -1,10 +1,10 @@
 ---
 layout: page
-title: About Me 
-permalink: /about/
+title: Travels
+permalink: /travels/
 ---
 
-I enjoy traveling whether it be roadtripping in the USA or backpacking abroad. At present count, I have visited 24 countries and 
+I enjoy traveling whether it be roadtripping in the USA or backpacking abroad. At present count, I have visited <a href="images/countries.png">24 countries</a> and 
 
 <h1>Some pictures from my travels...</h1>
 
