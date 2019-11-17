@@ -24,7 +24,7 @@ I enjoy reading (history, science, philosophy, science fiction, etc) and have re
 {% include image.html url="/images/csu-bros.jpeg" caption="Mendenhall Glacier, Alaska (2007)" width=250 align="left" %}
 {% include image.html url="/images/prague.JPG" caption="Prague, Czech Republic (2005)" width=250 align="left" %}
 {% include image.html url="/images/germany.JPG" caption="Neuschwanstein Castle, Germany (2004)" width=250 align="left" %}
-{% include image.html url="/images/rome.JPG" caption="Colosseum, Rome, Czech Republic (2004)" width=250 align="left" %}
+{% include image.html url="/images/rome.JPG" caption="Colosseum, Rome, Italy (2004)" width=250 align="left" %}
 
 
 
