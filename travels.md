@@ -12,7 +12,7 @@ At present count I have visited <a href="/images/countries.png">24 countries</a>
 {% include image.html url="/images/costarica.png" caption="Arenal Volcano, Costa Rica (2018)" width=250 align="left" %}
 {% include image.html url="/images/mexico.png" caption="Chichen Itza, Mexico (2018)" width=250 align="left" %}
 {% include image.html url="/images/curacao.jpg" caption="Willemstad, Curaçao (2015)" width=250 align="left" %}
-{% include image.html url="/images/amsterdam.JPG" caption="Amsterdam, Netherlands (2012)" width=250 align="left" %}
+{% include image.html url="/images/ferry.jpg" caption="Ferry to Fanø Island, Denmark (2012)" width=250 align="left" %}
 {% include image.html url="/images/iceland.jpg" caption="Waterfall near Reykjavík, Iceland (2012)" width=250 align="left" %}
 {% include image.html url="/images/oktoberfest.jpg" caption="Oktoberfest, Munich, Germany (2010)" width=250 align="left" %}
 {% include image.html url="/images/quebec.JPG" caption="Winter Carnival, Québec City (2010)" width=250 align="left" %}
