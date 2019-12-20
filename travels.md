@@ -17,7 +17,6 @@ At present count I have visited <a href="/images/countries.png">24 countries</a>
 {% include image.html url="/images/oktoberfest.jpg" caption="Oktoberfest, Munich, Germany (2010)" width=250 align="left" %}
 {% include image.html url="/images/quebec.JPG" caption="Winter Carnival, Québec City (2010)" width=250 align="left" %}
 {% include image.html url="/images/greatwall.jpg" caption="The Great Wall of China (2008)" width=250 align="left" %}
-{% include image.html url="/images/csu-bros.jpeg" caption="Mendenhall Glacier, Alaska (2007)" width=250 align="left" %}
 {% include image.html url="/images/prague.JPG" caption="Prague, Czech Republic (2005)" width=250 align="left" %}
 {% include image.html url="/images/germany.JPG" caption="Neuschwanstein Castle, Germany (2004)" width=250 align="left" %}
 {% include image.html url="/images/rome.JPG" caption="Colosseum, Rome, Italy (2004)" width=250 align="left" %}
