@@ -23,7 +23,7 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 - [STAT 472](/teaching/stat472) (Statistical Research: Data, Design, and Methods)
 - [STAT 581A4](/teaching/stat581a4) (Applied Multivariate Analysis for Researchers)
 
-#### Future Classes (Spring 2020)
+#### Current Classes (Spring 2020)
 - [STAT 315](/teaching/stat315) (Introduction to the Theory and Practice of Statistics) 
 - [STAT 460](/teaching/stat460) (Applied Multivariate Analysis)
 - [STAT 472](/teaching/stat472) (Statistical Research: Data, Design, and Methods)
@@ -32,8 +32,10 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 #### Previous Classes
 
 - [STAT 201](/teaching/stat201) (General Statistics)
+- - Fall 2018, Spring 2019, Summer 2015
 - [STAT 204](/teaching/stat204) (Statistics with Business Applications)
 - [STAT 301](/teaching/stat301) (Introduction to Statistical Methods)
+- [STAT 581A4](/teaching/stat581a4) (Applied Multivariate Analysis for Researchers)
 
 ## University of Colorado Denver
 
