@@ -19,10 +19,10 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 ## Colorado State University
 
 #### Current Classes (Spring 2020)
-- [STAT 315](/teaching/stat315) (Introduction to the Theory and Practice of Statistics) (MWF 10:00 -- 10:50am)
-- [STAT 460](/teaching/stat460) (Applied Multivariate Analysis) (TR 12:30 -- 1:45pm)
-- [STAT 472](/teaching/stat472) (Statistical Research: Data, Design, and Methods) (T 2:00 -- 4:30pm)
-- [STAA 574](/teaching/staa574) (Methods in Multivariate Analysis) (MW 8:30 -- 9:45am, F 9:00 -- 9:50am)
+- [STAT 315](/teaching/stat315) (Introduction to the Theory and Practice of Statistics, MWF 10:00 -- 10:50am)
+- [STAT 460](/teaching/stat460) (Applied Multivariate Analysis, TR 12:30 -- 1:45pm)
+- [STAT 472](/teaching/stat472) (Statistical Research: Data, Design, and Methods, T 2:00 -- 4:30pm)
+- [STAA 574](/teaching/staa574) (Methods in Multivariate Analysis, MW 8:30 -- 9:45am, F 9:00 -- 9:50am)
 
 #### All Classes
 
