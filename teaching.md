@@ -26,22 +26,14 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 
 #### All Classes
 
-- [STAT 201](/teaching/stat201) (General Statistics) - -- Spring 2019, Fall 2018, Summer 2015
-- - Spring 2019, Fall 2018, Summer 2015
-- [STAT 204](/teaching/stat204) (Statistics with Business Applications)
-- - Summer 2014, Spring 2014, Fall 2013
-- [STAT 301](/teaching/stat301) (Introduction to Statistical Methods)
-- - Spring 2016 (3 sections), Fall 2015
-- [STAT 315](/teaching/stat315) (Introduction to the Theory and Practice of Statistics) 
-- - Spring 2020, Fall 2019 (2 sections), Summer 2019, Spring 2019 (2 sections), Fall 2018
-- [STAT 460](/teaching/stat460) (Applied Multivariate Analysis)
-- - Spring 2020, Spring 2019
-- [STAT 472](/teaching/stat472) (Statistical Research: Data, Design, and Methods)
-- - Spring 2020, Fall 2019, Spring 2019
-- [STAT 581A4](/teaching/stat581a4) (Applied Multivariate Analysis for Researchers)
-- - Fall 2019
-- [STAA 574](/teaching/staa574) (Methods in Multivariate Analysis)
-- - Spring 2020
+- [STAT 201](/teaching/stat201) (General Statistics) -- Spring 2019, Fall 2018, Summer 2015
+- [STAT 204](/teaching/stat204) (Statistics with Business Applications) -- Summer 2014, Spring 2014, Fall 2013
+- [STAT 301](/teaching/stat301) (Introduction to Statistical Methods) -- Spring 2016 (3 sections), Fall 2015
+- [STAT 315](/teaching/stat315) (Introduction to the Theory and Practice of Statistics) -- Spring 2020, Fall 2019 (2 sections), Summer 2019, Spring 2019 (2 sections), Fall 2018
+- [STAT 460](/teaching/stat460) (Applied Multivariate Analysis) -- Spring 2020, Spring 2019
+- [STAT 472](/teaching/stat472) (Statistical Research: Data, Design, and Methods) -- Spring 2020, Fall 2019, Spring 2019
+- [STAT 581A4](/teaching/stat581a4) (Applied Multivariate Analysis for Researchers) -- Fall 2019
+- [STAA 574](/teaching/staa574) (Methods in Multivariate Analysis) -- Spring 2020
 
 ## University of Colorado Denver
 
