@@ -26,7 +26,7 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 
 #### All Classes
 
-- [STAT 201](/teaching/stat201) (General Statistics)
+- [STAT 201](/teaching/stat201) (General Statistics) - -- Spring 2019, Fall 2018, Summer 2015
 - - Spring 2019, Fall 2018, Summer 2015
 - [STAT 204](/teaching/stat204) (Statistics with Business Applications)
 - - Summer 2014, Spring 2014, Fall 2013
