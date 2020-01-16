@@ -39,16 +39,14 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 
 #### Previous classes
 
-- MATH 1110 (College Algebra)
-- - Fall 2017
-- - - Spring 2018
-- MATH 1401 (Calculus I)
-- MATH 2411 (Calculus II)
-- MATH 3191 (Applied Linear Algebra)
-- MATH 3382 (Statistical Theory)
-- MATH 3800 (Probability and Statistics for Engineers)
-- MATH 4810 (Probability)
-- MATH 4820/5320 (Mathematical Statistics)
+- MATH 1110 (College Algebra) -- Fall 2017
+- MATH 1401 (Calculus I) -- Fall 2016
+- MATH 2411 (Calculus II) -- Spring 2017
+- MATH 3191 (Applied Linear Algebra) -- Spring 2018
+- MATH 3382 (Statistical Theory) -- Summer 2016
+- MATH 3800 (Probability and Statistics for Engineers) -- Summer 2018, Summer 2017, Summer 2016, Spring 2016, Fall 2015
+- MATH 4810 (Probability) -- Summer 2015
+- MATH 4820/5320 (Mathematical Statistics) -- Summer 2016
 
 
 {% include image.html url="/images/bateman.png" caption="Receiving Bateman Teaching Award (2016)" width=250 align="left" %}
