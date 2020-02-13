@@ -11,7 +11,7 @@ I received my Ph.D. in Applied Mathematics from the University of Colorado Denve
 
 # Degrees
 
-- Ph.D. Applied Mathematics, University of Colorado Denver (2018)
+- Ph.D. Applied Mathematics, University of Colorado Denver (2018) 
 - M.S. Statistics, Colorado State University (2014)
 - M.S. Applied Mathematics, University of Colorado Denver (2012)
 - M.S. Electrical Engineering, University of Colorado Boulder (2008) 
