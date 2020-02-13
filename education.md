@@ -5,7 +5,7 @@ permalink: /education/
 image: " "
 ---
 
-I received a Ph.D. in Applied Mathematics from the University of Colorado Denver in 2018 advised by Dr. Burt Simon, and my specialty lies in statistics education. My dissertation was called "Statistical Analysis of Some Problems in Evolutionary Population Dynamics" and it explored stochastic and deterministic models for evolutionary population models, particularly with respect to the evolution of cooperation.
+I received a Ph.D. in Applied Mathematics from the University of Colorado Denver in 2018 advised by <a href="http://math.ucdenver.edu/~bsimon/">Dr. Burt Simon</a>, and my specialty lies in statistics education. My dissertation was called "Statistical Analysis of Some Problems in Evolutionary Population Dynamics" and it explored stochastic and deterministic models for evolutionary population models, particularly with respect to the evolution of cooperation.
 
 <hr style="clear:both;visibility: hidden;" />   
 
