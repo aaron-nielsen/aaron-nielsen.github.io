@@ -19,7 +19,9 @@ I received my Ph.D. in Applied Mathematics from the University of Colorado Denve
  
 # Other Interests
 
-I have been taking a random sample of courses at CSU since joining the faculty in August 2018 as a part of the university's employee study privilege. At the moment, I'm most interested in learning more about the intersection of Philosophy, Mathematics, and Statistics. I am also interested in exploring more in the areas of American foreign policy, modern physics, philosophy of biology, and number theory.
+At the moment, I'm most interested in learning more about the intersection of philosophy, mathematics, and statistics. I am also interested in exploring more in the areas of American foreign policy, modern physics, philosophy of biology, and number theory.
+
+I have been taking a semi-random sample of courses at CSU since joining the faculty in August 2018 as a part of the university's employee study privilege.
 
 - BZ 220: Introduction to Evolution, Summer 2020 (tentative)
 - PHIL 325: Philosophy of Natural Science, Spring 2020
