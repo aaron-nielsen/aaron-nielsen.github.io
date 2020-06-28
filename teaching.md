@@ -18,7 +18,9 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 
 ## Colorado State University
 
-#### Current Classes (Summer 2020)
+#### Classes I've taught
+
+##### Summer 2020
 - [STAT 315](/teaching/stat315) (Introduction to the Theory and Practice of Statistics, online)
 
 #### All Classes
