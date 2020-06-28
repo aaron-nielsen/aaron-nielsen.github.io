@@ -22,7 +22,7 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 #### Spring 2020 - STAT 315, STAT 460, STAT 472, STAA 574
 
 #### Summer 2020
-- [STAT 315](/teaching/stat315) (Introduction to the Theory and Practice of Statistics)
+- [STAT 315](/teaching/stat315), [STAT 460](/teaching/stat460) (Introduction to the Theory and Practice of Statistics)
 
 #### Spring 2020
 - [STAT 315](/teaching/stat315) (Introduction to the Theory and Practice of Statistics)
