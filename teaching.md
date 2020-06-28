@@ -56,7 +56,7 @@ Spring 2016: Math 3800 (UCD)<br>
 Fall 2015: Math 3800 (UCD)<br> 
 Summer 2015: Math 4810 (UCD)<br> 
 
-Summer 2015: [STAT 201](/teaching/stat201)<br> 
+Summer 2015: [STAT 201](/teaching/stat201)<br>
 Spring 2015: [STAT 301](/teaching/stat301) (3 sec.)<br> 
 Fall 2014: [STAT 301](/teaching/stat301)<br> 
 Summer 2014: [STAT 204](/teaching/stat204)<br> 
