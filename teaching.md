@@ -44,6 +44,7 @@ Fall 2019: [STAT 315](/teaching/stat315) (2 sec.), [STAT 472](/teaching/stat472)
 Summer 2019: [STAT 315](/teaching/stat315)<br> 
 Spring 2019: [STAT 201](/teaching/stat201), [STAT 315](/teaching/stat315), [STAT 460](/teaching/stat460), [STAT 472](/teaching/stat472)<br>  
 Fall 2018: [STAT 201](/teaching/stat201) (2 sec.), [STAT 315](/teaching/stat315)<br> 
+
 Summer 2018: Math 4810 (UCD)<br> 
 Spring 2018: Math 3191 (UCD)<br> 
 Fall 2017: Math 1110 (UCD)<br> 
@@ -54,6 +55,7 @@ Summer 2016: Math 3800, 4820/5320 (UCD)<br>
 Spring 2016: Math 3800 (UCD)<br> 
 Fall 2015: Math 3800 (UCD)<br> 
 Summer 2015: Math 4810 (UCD)<br> 
+
 Summer 2015: [STAT 201](/teaching/stat201)<br> 
 Spring 2015: [STAT 301](/teaching/stat301) (3 sec.)<br> 
 Fall 2014: [STAT 301](/teaching/stat301)<br> 
