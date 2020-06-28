@@ -1,6 +1,6 @@
 ---
 layout: page
-title: STAT 574
+title: STAA 574
 permalink: /teaching/staa574/
 ---
 
