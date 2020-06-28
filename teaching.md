@@ -18,7 +18,7 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 
 ## Colorado State University
 
-#### Summer 2020 - STAT 315
+#### Summer 2020: [STAT 315](/teaching/stat315), [STAT 460](/teaching/stat460)
 #### Spring 2020 - STAT 315, STAT 460, STAT 472, STAA 574
 
 #### Summer 2020
