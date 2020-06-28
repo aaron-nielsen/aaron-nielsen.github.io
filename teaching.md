@@ -17,6 +17,7 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 # Classes I've Taught
 
 ## Colorado State University
+- [STAT 100](/teaching/stat100) (Statistical Literacy)
 - [STAT 201](/teaching/stat201) (General Statistics)
 - [STAT 204](/teaching/stat204) (Statistics with Business Applications)
 - [STAT 301](/teaching/stat301) (Introduction to Statistical Methods)
@@ -38,6 +39,7 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 
 ## By semester
 
+Fall 2020: [STAT 100](/teaching/stat100), [STAT 315](/teaching/stat315) (2 sec.), [STAT 472](/teaching/stat472)
 Summer 2020: [STAT 315](/teaching/stat315) <br>
 Spring 2020: [STAT 315](/teaching/stat315), [STAT 460](/teaching/stat460), [STAT 472](/teaching/stat472), [STAA 574](/teaching/staa574)<br> 
 Fall 2019: [STAT 315](/teaching/stat315) (2 sec.), [STAT 472](/teaching/stat472), [STAT 581A4](/teaching/stat581a4) <br>
