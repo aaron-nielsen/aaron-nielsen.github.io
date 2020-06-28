@@ -105,23 +105,29 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 
 ## Colorado State University
 
-###
+#### Summer 2015
+- [STAT 201](/teaching/stat201) (General Statistics)
 
+#### Spring 2015
+- [STAT 301](/teaching/stat301) (Introduction to Statistical Methods) -- 3 sections
 
+#### Fall 2014
+- [STAT 301](/teaching/stat301) (Introduction to Statistical Methods)
 
+#### Summer 2014
+- [STAT 204](/teaching/stat204) (Statistics with Business Applications)
 
-## University of Colorado Denver
+#### Spring 2014
+- [STAT 204](/teaching/stat204) (Statistics with Business Applications)
 
-#### Previous classes
+#### Fall 2013
+- [STAT 204](/teaching/stat204) (Statistics with Business Applications)
 
-- MATH 1110 (College Algebra)
-- MATH 1401 (Calculus I)
-- MATH 2411 (Calculus II)
-- MATH 3191 (Applied Linear Algebra)
-- MATH 3382 (Statistical Theory)
-- MATH 3800 (Probability and Statistics for Engineers)
-- MATH 4810 (Probability)
-- MATH 4820/5320 (Mathematical Statistics)
+#### Spring 2013
+- [STAT 204](/teaching/stat204) (Statistics with Business Applications) -- 2 recitations
+
+#### Fall 2012
+- [STAT 204](/teaching/stat204) (Statistics with Business Applications) -- 2 recitations
 
 
 {% include image.html url="/images/bateman.png" caption="Receiving Bateman Teaching Award (2016)" width=250 align="left" %}
