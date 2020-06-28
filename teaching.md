@@ -41,9 +41,9 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 Summer 2020: [STAT 315](/teaching/stat315) <br>
 Spring 2020: [STAT 315](/teaching/stat315), [STAT 460](/teaching/stat460), [STAT 472](/teaching/stat472), [STAA 574](/teaching/staa574)<br> 
 Fall 2019: [STAT 315](/teaching/stat315) (2 sec.), [STAT 472](/teaching/stat472), [STAT 581A4](/teaching/stat581a4) <br>
-Summer 2019: [STAT 315](/teaching/stat315)<br> 
-Spring 2019: [STAT 201](/teaching/stat201), [STAT 315](/teaching/stat315), [STAT 460](/teaching/stat460), [STAT 472](/teaching/stat472)<br>  
-Fall 2018: [STAT 201](/teaching/stat201) (2 sec.), [STAT 315](/teaching/stat315)<br> 
+Summer 2019: [STAT 315](/teaching/stat315)<br>
+Spring 2019: [STAT 201](/teaching/stat201), [STAT 315](/teaching/stat315), [STAT 460](/teaching/stat460), [STAT 472](/teaching/stat472)<br>
+Fall 2018: [STAT 201](/teaching/stat201) (2 sec.), [STAT 315](/teaching/stat315)<br>
 
 Summer 2018: Math 4810 (UCD)<br>  
 Spring 2018: Math 3191 (UCD)<br> 
