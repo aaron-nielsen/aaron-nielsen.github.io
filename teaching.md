@@ -39,7 +39,7 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 
 ## By semester
 
-Fall 2020: [STAT 100](/teaching/stat100), [STAT 315](/teaching/stat315) (2 sec.), [STAT 472](/teaching/stat472)
+Fall 2020: [STAT 100](/teaching/stat100), [STAT 315](/teaching/stat315), [STAT 472](/teaching/stat472)<br>
 Summer 2020: [STAT 315](/teaching/stat315) <br>
 Spring 2020: [STAT 315](/teaching/stat315), [STAT 460](/teaching/stat460), [STAT 472](/teaching/stat472), [STAA 574](/teaching/staa574)<br> 
 Fall 2019: [STAT 315](/teaching/stat315) (2 sec.), [STAT 472](/teaching/stat472), [STAT 581A4](/teaching/stat581a4) <br>
