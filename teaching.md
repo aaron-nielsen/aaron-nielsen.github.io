@@ -43,7 +43,7 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 
 #### Fall 2019
 - [STAT 201](/teaching/stat201) (General Statistics) (2 sections)
-- [STAT 315](/teaching/stat315) (Introduction to the Theory and Practice of Statistics)
+- [STAT 315](/teaching/stat315) (Introduction to the Theory and Practice of Statistics) 
 
 
 
