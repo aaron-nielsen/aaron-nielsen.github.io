@@ -41,33 +41,27 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 Summer 2020: [STAT 315](/teaching/stat315) <br>
 Spring 2020: [STAT 315](/teaching/stat315), [STAT 460](/teaching/stat460), [STAT 472](/teaching/stat472), [STAA 574](/teaching/staa574)<br> 
 Fall 2019: [STAT 315](/teaching/stat315) (2 sec.), [STAT 472](/teaching/stat472), [STAT 581A4](/teaching/stat581a4) <br>
-#### Summer 2019: [STAT 315](/teaching/stat315)
-#### Spring 2019: [STAT 201](/teaching/stat201), [STAT 315](/teaching/stat315), [STAT 460](/teaching/stat460), [STAT 472](/teaching/stat472)
-#### Fall 2018: [STAT 201](/teaching/stat201) (2 sec.), [STAT 315](/teaching/stat315)
-#### Summer 2018: Math 4810 (UCD)
-#### Spring 2018: Math 3191 (UCD)
-#### Fall 2017: Math 1110 (UCD)
-#### Summer 2017: Math 3382, Math 3800 (UCD)
-#### Spring 2017: Math 2411 (UCD)
-#### Fall 2016: Math 1401 (UCD)
-#### Summer 2016: Math 3800, 4820/5320 (UCD)
-#### Spring 2016: Math 3800 (UCD)
-#### Fall 2015: Math 3800 (UCD)
-#### Summer 2015: Math 4810 (UCD)
-#### Summer 2015: [STAT 201](/teaching/stat201)
-#### Spring 2015: [STAT 301](/teaching/stat301) (3 sec.)
-#### Fall 2014: [STAT 301](/teaching/stat301)
-#### Summer 2014: [STAT 204](/teaching/stat204)
-#### Spring 2014: [STAT 204](/teaching/stat204)
-#### Fall 2013: [STAT 204](/teaching/stat204)
-#### Spring 2013: [STAT 204](/teaching/stat204) (2 rec.)
-#### Fall 2012: [STAT 204](/teaching/stat204) (2 rec.)
-
-
-#### Previous classes
-
-
-
+Summer 2019: [STAT 315](/teaching/stat315)<br> 
+Spring 2019: [STAT 201](/teaching/stat201), [STAT 315](/teaching/stat315), [STAT 460](/teaching/stat460), [STAT 472](/teaching/stat472)<br> 
+Fall 2018: [STAT 201](/teaching/stat201) (2 sec.), [STAT 315](/teaching/stat315)<br> 
+Summer 2018: Math 4810 (UCD)<br> 
+Spring 2018: Math 3191 (UCD)<br> 
+Fall 2017: Math 1110 (UCD)<br> 
+Summer 2017: Math 3382, Math 3800 (UCD)<br> 
+Spring 2017: Math 2411 (UCD)<br> 
+Fall 2016: Math 1401 (UCD)<br> 
+Summer 2016: Math 3800, 4820/5320 (UCD)<br> 
+Spring 2016: Math 3800 (UCD)<br> 
+Fall 2015: Math 3800 (UCD)<br> 
+Summer 2015: Math 4810 (UCD)<br> 
+Summer 2015: [STAT 201](/teaching/stat201)<br> 
+Spring 2015: [STAT 301](/teaching/stat301) (3 sec.)<br> 
+Fall 2014: [STAT 301](/teaching/stat301)<br> 
+Summer 2014: [STAT 204](/teaching/stat204)<br> 
+Spring 2014: [STAT 204](/teaching/stat204)<br> 
+Fall 2013: [STAT 204](/teaching/stat204)<br> 
+Spring 2013: [STAT 204](/teaching/stat204) (2 rec.)<br> 
+Fall 2012: [STAT 204](/teaching/stat204) (2 rec.)<br> 
 
 {% include image.html url="/images/bateman.png" caption="Receiving Bateman Teaching Award (2016)" width=250 align="left" %}
 {% include image.html url="/images/lenin-hw.jpeg" caption="Thankfully, I always have help grading . . ." width=250 align="left" %}
