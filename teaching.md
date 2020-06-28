@@ -23,7 +23,15 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 #### Fall 2019: [STAT 315](/teaching/stat315) (2 sec.), [STAT 472](/teaching/stat472), [STAT 581A4](/teaching/stat581a4)
 #### Summer 2019: [STAT 315](/teaching/stat315)
 #### Spring 2019: [STAT 201](/teaching/stat201), [STAT 315](/teaching/stat315), [STAT 460](/teaching/stat460), [STAT 472](/teaching/stat472)
-#### Fall 2018: [STAT 201](/teaching/stat201) (2 sections), [STAT 315](/teaching/stat315)
+#### Fall 2018: [STAT 201](/teaching/stat201) (2 sec.), [STAT 315](/teaching/stat315)
+#### Summer 2015: [STAT 201](/teaching/stat201)
+#### Spring 2015: [STAT 301](/teaching/stat301) (3 sec.)
+#### Fall 2014: [STAT 301](/teaching/stat301)
+#### Summer 2014: [STAT 204](/teaching/stat204)
+#### Spring 2014: [STAT 204](/teaching/stat204)
+#### Fall 2013: [STAT 204](/teaching/stat204)
+#### Spring 2013: [STAT 204](/teaching/stat204) (2 rec.)
+#### Fall 2012: [STAT 204](/teaching/stat204) (2 rec.)
 
 #### All Classes
 
@@ -37,6 +45,17 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 - [STAA 574](/teaching/staa574) (Methods in Multivariate Analysis)
 
 ## University of Colorado Denver
+
+#### Summer 2015: Math 4810
+#### Spring 2015: Math 3191
+#### Fall 2014: Math 1110
+#### Summer 2014: Math 3382, Math 3800
+#### Spring 2014: Math 2411
+#### Fall 2013: Math 1401
+#### Summer 2013: Math 3800, 4820/5320
+#### Spring 2013: Math 3800
+#### Fall 2012: Math 3800
+#### Summer 2012: Math 4810
 
 #### Previous classes
 
