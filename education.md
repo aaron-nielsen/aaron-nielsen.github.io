@@ -23,7 +23,7 @@ At the moment, I'm most interested in learning more about the intersection of ph
 
 I have been taking a semi-random sample of courses at CSU since joining the faculty in August 2018 as a part of the university's employee study privilege. These classes include:
 
-- PHIL 411: Gödel's Incompleteness Theorems, Fall 2020 (tentative)
+- PHIL 410: Gödel's Incompleteness Theorems, Fall 2020
 - PHIL 325: Philosophy of Natural Science, Spring 2020
 - PHIL 120: History and Philosophy of Scientific Thought, Fall 2019
 - POLS 232: International Relations, Summer 2019
