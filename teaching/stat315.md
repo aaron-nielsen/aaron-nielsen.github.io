@@ -16,6 +16,6 @@ MATH 160 (Calculus 1)
 Descriptive Statistics, Probability, Discrete Random Variables, Continuous Random Variables, Multivariate Random Variables, Sampling Distributions and Point Estimation, Confidence Intervals, Hypothesis Testing, Inference for Two Populations, ANOVA, Simple Linear Regression, Multiple Regression
 
 <u>Semesters taught:</u><br>
-Fall 2020, Summer 2020, Spring 2020, Fall 2019 (2 sec.), Summer 2019, Spring 2019 (2 sec.), Fall 2018
+Spring 2021, Fall 2020, Summer 2020, Spring 2020, Fall 2019 (2 sec.), Summer 2019, Spring 2019, Fall 2018
 
 [Download Recent Syllabus](/teaching/315-syllabus.pdf)

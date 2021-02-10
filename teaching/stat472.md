@@ -16,6 +16,6 @@ STAT 342 (Statistical Data Analysis II)
 Reproducible research, data visualization, speaking and writing skills
 
 <u>Semesters taught:</u><br>
-Spring 2020, Fall 2019, Spring 2019
+Spring 2021, Fall 2020, Spring 2020, Fall 2019, Spring 2019
 
 [Download Recent Syllabus](/teaching/472-syllabus.pdf)

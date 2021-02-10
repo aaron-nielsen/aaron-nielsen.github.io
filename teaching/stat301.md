@@ -7,7 +7,7 @@ permalink: /teaching/stat301/
 
 {% include image.html url="/images/201.png" width=300 align="right" %} 
 
-STAT 301, <i>Introduction to Statistical Methods</i>, is an introductory statistics course for students in the scinces. 
+STAT 301, <i>Introduction to Statistical Methods</i>, is an introductory statistics course for students in the sciences. 
 
 <u>Prerequisite:</u><br>
 At least one credit from MATH 100 - 200
