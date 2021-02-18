@@ -24,7 +24,7 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 - [STAT 315](/teaching/stat315) (Introduction to the Theory and Practice of Statistics) 
 - [STAT 460](/teaching/stat460) (Applied Multivariate Analysis) 
 - [STAT 472](/teaching/stat472) (Statistical Research: Data, Design, and Methods) 
-- [STAT 581A4](/teaching/stat581a4) (Applied Multivariate Analysis for Researchers)
+- [STAR 502(/teaching/star502) (Applied Multivariate Analysis for Researchers)
 - [STAA 574](/teaching/staa574) (Methods in Multivariate Analysis)
 
 ## University of Colorado Denver
