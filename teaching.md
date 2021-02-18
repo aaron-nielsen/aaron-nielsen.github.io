@@ -24,7 +24,7 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 - [STAT 315](/teaching/stat315) (Introduction to the Theory and Practice of Statistics) 
 - [STAT 460](/teaching/stat460) (Applied Multivariate Analysis) 
 - [STAT 472](/teaching/stat472) (Statistical Research: Data, Design, and Methods) 
-- [STAR 502(/teaching/star502) (Applied Multivariate Analysis for Researchers)
+- [STAR 502](/teaching/star502) (Applied Multivariate Analysis for Researchers)
 - [STAA 574](/teaching/staa574) (Methods in Multivariate Analysis)
 
 ## University of Colorado Denver
@@ -43,7 +43,7 @@ Spring 2021: [STAT 315](/teaching/stat315) (2 sec.), [STAT 472](/teaching/stat47
 Fall 2020: [STAT 100](/teaching/stat100), [STAT 315](/teaching/stat315) (3 sec.), [STAT 472](/teaching/stat472)<br>
 Summer 2020: [STAT 315](/teaching/stat315) <br>
 Spring 2020: [STAT 315](/teaching/stat315), [STAT 460](/teaching/stat460), [STAT 472](/teaching/stat472), [STAA 574](/teaching/staa574)<br> 
-Fall 2019: [STAT 315](/teaching/stat315) (2 sec.), [STAT 472](/teaching/stat472), [STAT 581A4](/teaching/stat581a4) <br>
+Fall 2019: [STAT 315](/teaching/stat315) (2 sec.), [STAT 472](/teaching/stat472), [STAR 502](/teaching/stat581a4) <br>
 Summer 2019: [STAT 315](/teaching/stat315)<br>
 Spring 2019: [STAT 201](/teaching/stat201), [STAT 315](/teaching/stat315) (2 sec.), [STAT 460](/teaching/stat460), [STAT 472](/teaching/stat472)<br>
 Fall 2018: [STAT 201](/teaching/stat201) (2 sec.), [STAT 315](/teaching/stat315)<br>
