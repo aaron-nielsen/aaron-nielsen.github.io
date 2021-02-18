@@ -7,7 +7,7 @@ permalink: /teaching/staa574/
 
 {% include image.html url="/images/581a4.png" width=300 align="right" %} 
 
-STAA 574, <i>Methods in Multivariate Analysis</i>, is a graduate course for students in the master's of applied statistics program and emphasizes implementing multivariate methods in R.
+STAA 574, <i>Methods in Multivariate Analysis</i>, is a graduate course for students in the master's of applied statistics program and emphasizes implementing multivariate methods in R. 
 
 <u>Prerequisite:</u><br>
 STAT 315 (Introduction to the Theory and Practice of Statistics) and some programming experience
