@@ -1,14 +1,14 @@
 - title: "About Me"
   href: "/about/"
   
-- title: "Travels"
-  href: "/travels/"
-  
 - title: "Education"
   href: "/education/" 
 
 - title: "Teaching"
   href: "/teaching/"
+  
+- title: "Travels"
+  href: "/travels/"
 
 - title: "CV"
   href: "/cv/"
