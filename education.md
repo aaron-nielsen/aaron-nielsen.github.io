@@ -19,9 +19,9 @@ I received a Ph.D. in Applied Mathematics from the University of Colorado Denver
  
 # Other Interests
 
-I am an active member in the <a href="https://sites.google.com/view/csustatisticsbookclub/">CSU Statistics Book Club</a>. 
-
 At the moment, I'm most interested in learning more about the intersection of philosophy, mathematics, and statistics. I am also interested in exploring more in the areas of international relations, modern physics, philosophy of biology, and number theory.
+
+I am an active member in the <a href="https://sites.google.com/view/csustatisticsbookclub/">CSU Statistics Book Club</a>. 
 
 I have been taking a semi-random sample of courses at CSU since joining the faculty in August 2018 as a part of the university's employee study privilege. These classes include:
 
