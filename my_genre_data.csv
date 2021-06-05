@@ -1,0 +1,2065 @@
+"Genre","Parent","MyCount","PopCount"
+"Rock","Top",1062,680297
+"Jazz","Top",82,85608
+"Ambient","Top",32,54523
+"Blues","Top",18,19499
+"Classical Music","Top",83,89247
+"Comedy","Other",2,12686
+"Country","Top",75,45278
+"Dance","Top",39,214422
+"Electronic","Top",96,321367
+"Experimental","Top",28,92878
+"Field Recordings","Other",1,5383
+"Folk","Top",81,115819
+"Hip Hop","Top",24,131911
+"Industrial Music","Other",20,53318
+"New Age","Top",3,8263
+"Pop","Top",243,334591
+"Psychedelia","Other",109,51272
+"Punk","Top",154,169732
+"R&B","Top",33,79444
+"Regional Music","Top",47,112176
+"Singer/Songwriter","Other",130,40840
+"Ska","Top",4,5397
+"Sounds and Effects","Other",1,535
+"Spoken Word","Other",2,13694
+"Acoustic Rock","Rock",19,6747
+"Afro-Rock","Rock",1,99
+"Alternative Rock","Rock",321,119305
+"Andean Rock","Rock",1,156
+"AOR","Rock",3,10047
+"Art Punk","Rock",8,3184
+"Art Rock","Rock",40,9782
+"Blues Rock","Rock",25,15624
+"British Rhythm & Blues","Rock",1,940
+"Christian Rock","Rock",2,2517
+"Comedy Rock","Rock",1,2448
+"Country Rock","Rock",54,5688
+"Dark Cabaret","Rock",1,1046
+"Deutschrock","Rock",1,1259
+"Emo","Rock",15,17946
+"Experimental Rock","Rock",32,20348
+"Folk Rock","Rock",119,16413
+"Funk Rock","Rock",3,3495
+"Garage Rock","Rock",9,19740
+"Glam Rock","Rock",5,3623
+"Hardcore [Punk]","Rock",48,82879
+"Hard Rock","Rock",114,49325
+"Heartland Rock","Rock",34,1399
+"Industrial Rock","Rock",13,4419
+"Jam Band","Rock",72,4291
+"Jazz-Rock","Rock",4,6531
+"Latin Rock","Rock",1,906
+"Math Rock","Rock",4,4498
+"Metal","Rock",90,217985
+"Mod","Rock",2,1744
+"New Wave","Rock",28,17094
+"Noise Rock","Rock",23,13820
+"Pop Rock","Rock",165,97605
+"Post-Punk","Rock",51,36281
+"Post-Rock","Rock",26,16649
+"Progressive Rock","Rock",58,36864
+"Proto-Punk","Rock",7,1004
+"Psychedelic Rock","Rock",91,28129
+"Pub Rock","Rock",1,1017
+"Punk Rock","Rock",56,98802
+"Rap Rock","Rock",1,2910
+"Rock & Roll","Rock",5,13094
+"Rock Opera","Rock",3,889
+"Rock urbano español","Rock",1,733
+"Roots Rock","Rock",22,2959
+"Southern Rock","Rock",1,3351
+"Sufi Rock","Rock",1,34
+"Surf Music","Rock",11,3914
+"Symphonic Rock","Rock",1,1466
+"Visual kei","Rock",1,2571
+"Zamrock","Rock",1,97
+"Zolo","Rock",3,1278
+"Afro-Jazz","Jazz",1,604
+"Arabic Jazz","Jazz",1,205
+"Avant-Garde Jazz","Jazz",18,15410
+"Bebop","Jazz",14,3789
+"Big Band","Jazz",3,5478
+"British Dance Band","Jazz",1,1897
+"Bulawayo Jazz","Jazz",1,12
+"Cape Jazz","Jazz",1,102
+"Cartoon Music","Jazz",1,147
+"Chamber Jazz","Jazz",2,1251
+"Cool Jazz","Jazz",4,2031
+"Dark Jazz","Jazz",1,521
+"Dixieland","Jazz",2,1762
+"ECM Style Jazz","Jazz",1,1067
+"Ethio-Jazz","Jazz",1,282
+"Flamenco Jazz","Jazz",1,123
+"Jazz-Funk","Jazz",2,3967
+"Jazz Fusion","Jazz",10,11662
+"Jazz manouche","Jazz",1,865
+"Jazz Poetry","Jazz",1,187
+"Latin Jazz","Jazz",1,2257
+"Marabi","Jazz",2,321
+"Modal Jazz","Jazz",7,646
+"New Orleans Brass Band","Jazz",1,160
+"Post-Bop","Jazz",10,2765
+"Samba-Jazz","Jazz",1,736
+"Smooth Jazz","Jazz",2,2959
+"Soul Jazz","Jazz",2,2889
+"Stride","Jazz",2,251
+"Swing","Jazz",5,4012
+"Third Stream","Jazz",6,778
+"Vocal Jazz","Jazz",5,9536
+"Ambient Dub","Ambient",1,1417
+"Dark Ambient","Ambient",2,15596
+"Space Ambient","Ambient",2,2291
+"Tribal Ambient","Ambient",1,1874
+"Acoustic Blues","Blues",4,4569
+"Boogie Woogie","Blues",2,469
+"Electric Blues","Blues",5,5564
+"Hill Country Blues","Blues",1,218
+"Jump Blues","Blues",2,674
+"New Orleans Blues","Blues",1,264
+"Piano Blues","Blues",3,1106
+"Soul Blues","Blues",2,225
+"Vaudeville Blues","Blues",1,543
+"Arabic Classical Music","Classical Music",1,454
+"East Asian Classical Music","Classical Music",2,1081
+"Guoyue","Classical Music",1,68
+"Persian Classical Music","Classical Music",2,594
+"Pibroch","Classical Music",1,53
+"Shashmaqam","Classical Music",1,31
+"South Asian Classical Music","Classical Music",3,2459
+"Southeast Asian Classical Music","Classical Music",2,1037
+"Turkish Classical Music","Classical Music",1,291
+"Western Classical Music","Classical Music",72,82670
+"Dutch Cabaret","Comedy",0,537
+"Kabarett","Comedy",0,123
+"Musical Comedy","Comedy",2,6311
+"Prank Calls","Comedy",0,312
+"Sketch Comedy","Comedy",0,398
+"Stand-Up Comedy","Comedy",0,2628
+"Alt-Country","Country",25,6181
+"Americana","Country",36,5948
+"Contemporary Country","Country",2,4543
+"Country & Irish","Country",1,152
+"Country Pop","Country",3,6646
+"Honky Tonk","Country",2,1587
+"Progressive Country","Country",9,2627
+"Traditional Country","Country",7,8238
+"Western Swing","Country",1,759
+"Alternative Dance","Dance",7,4222
+"Dance-Pop","Dance",6,25817
+"Dance-Punk","Dance",4,2552
+"Disco","Dance",4,25540
+"Electronic Dance Music","Dance",20,182281
+"Acid Croft","Electronic",0,101
+"Algorave","Electronic",0,31
+"Ambient Dub","Electronic",1,1417
+"Bit Music","Electronic",2,6083
+"Bitpop","Electronic",0,901
+"Downtempo","Electronic",3,14012
+"Dungeon Synth","Electronic",0,5159
+"Electroacoustic","Electronic",5,10300
+"Electro-Industrial","Electronic",3,5101
+"Electronic Dance Music","Electronic",20,182281
+"Electropop","Electronic",4,20155
+"Flashcore","Electronic",0,236
+"Folktronica","Electronic",0,2104
+"Glitch","Electronic",3,4509
+"Glitch Hop","Electronic",1,2256
+"Glitch Pop","Electronic",1,1892
+"Grime","Electronic",0,7521
+"HexD","Electronic",0,515
+"Horror Synth","Electronic",0,962
+"Hyperpop","Electronic",0,728
+"IDM","Electronic",9,10955
+"Illbient","Electronic",0,527
+"Indietronica","Electronic",4,10749
+"Latin Electronic","Electronic",0,1327
+"Microsound","Electronic",2,272
+"Minatory","Electronic",0,91
+"Minimal Wave","Electronic",1,7918
+"Nightcore","Electronic",0,1222
+"Nu Jazz","Electronic",1,2728
+"Progressive Electronic","Electronic",6,10348
+"Psybient","Electronic",0,859
+"Synthpop","Electronic",26,29724
+"Synth Punk","Electronic",2,2345
+"Synthwave","Electronic",1,6595
+"Vapor","Electronic",1,9122
+"Wave","Electronic",0,632
+"Witch House","Electronic",0,1204
+"Conducted Improvisation","Experimental",0,64
+"Drone","Experimental",8,19002
+"Electroacoustic","Experimental",5,10300
+"Free Improvisation","Experimental",1,13105
+"Futurism","Experimental",1,92
+"Glitch","Experimental",3,4509
+"Indeterminacy","Experimental",1,733
+"Industrial","Experimental",3,13269
+"Noise","Experimental",3,27918
+"Plunderphonics","Experimental",1,4109
+"Reductionism","Experimental",0,1414
+"Sound Art","Experimental",0,589
+"Sound Collage","Experimental",2,5387
+"Sound Poetry","Experimental",0,395
+"Tape Music","Experimental",5,1873
+"Turntable Music","Experimental",0,451
+"Nature Recordings","Field Recordings",0,1172
+"Radio Broadcast Recordings","Field Recordings",0,209
+"Contemporary Folk","Folk",58,54144
+"Traditional Folk Music","Folk",25,65012
+"Abstract Hip Hop","Hip Hop",1,5545
+"Afroswing","Hip Hop",0,109
+"Afro Trap","Hip Hop",0,123
+"Arabesque Rap","Hip Hop",0,27
+"Bongo Flava","Hip Hop",0,60
+"Bounce","Hip Hop",0,397
+"Chopped and Screwed","Hip Hop",0,1601
+"Christian Hip Hop","Hip Hop",0,768
+"Cloud Rap","Hip Hop",2,11457
+"Comedy Rap","Hip Hop",1,2307
+"Conscious Hip Hop","Hip Hop",6,5437
+"Country Rap","Hip Hop",0,197
+"Crunk","Hip Hop",0,1007
+"Dirty South","Hip Hop",0,945
+"Disco Rap","Hip Hop",0,660
+"East Coast Hip Hop","Hip Hop",3,14464
+"Emo Rap","Hip Hop",1,3780
+"Experimental Hip Hop","Hip Hop",4,9971
+"French Hip Hop","Hip Hop",1,4919
+"Genge","Hip Hop",0,7
+"G-Funk","Hip Hop",2,1090
+"Hardcore Hip Hop","Hip Hop",6,25250
+"Hiplife","Hip Hop",0,43
+"Hyphy","Hip Hop",0,889
+"Instrumental Hip Hop","Hip Hop",1,12422
+"Japanese Hip Hop","Hip Hop",0,1364
+"Jazz Rap","Hip Hop",3,2830
+"Jook","Hip Hop",0,132
+"Latin Rap","Hip Hop",0,917
+"Miami Bass","Hip Hop",0,919
+"Mobb Music","Hip Hop",0,316
+"Nerdcore","Hip Hop",1,426
+"Political Hip Hop","Hip Hop",0,1393
+"Pop Rap","Hip Hop",4,17995
+"Snap","Hip Hop",0,232
+"Southern Hip Hop","Hip Hop",3,14551
+"Trap","Hip Hop",3,32334
+"Turntablism","Hip Hop",0,763
+"UK Hip Hop","Hip Hop",1,4931
+"West Coast Hip Hop","Hip Hop",6,11251
+"Industrial","Industrial Music",3,13269
+"Post-Industrial","Industrial Music",19,44309
+"Andean New Age","New Age",0,85
+"Celtic New Age","New Age",2,305
+"Neoclassical New Age","New Age",1,816
+"Adult Contemporary","Pop",1,5987
+"Ambient Pop","Pop",3,5167
+"Arabic Pop","Pop",0,791
+"Art Pop","Pop",9,17618
+"Balkan Pop-Folk","Pop",0,1662
+"Baroque Pop","Pop",8,4211
+"Bitpop","Pop",0,901
+"Blue-Eyed Soul","Pop",2,2898
+"Boy Band","Pop",0,1487
+"Brill Building","Pop",0,619
+"Bubblegum","Pop",0,2162
+"Cambodian Pop","Pop",0,110
+"CCM","Pop",0,3154
+"City Pop","Pop",0,1792
+"Classical Crossover","Pop",0,1997
+"Country Pop","Pop",3,6646
+"C-Pop","Pop",0,5015
+"Dance-Pop","Pop",6,25817
+"Dangdut","Pop",0,137
+"Dansbandsmusik","Pop",0,605
+"Dansktop","Pop",0,115
+"Easy Listening","Pop",0,9643
+"Electropop","Pop",4,20155
+"Europop","Pop",0,2076
+"Flamenco Pop","Pop",0,813
+"Folk Pop","Pop",3,9672
+"French Pop","Pop",1,4874
+"Girl Group","Pop",0,1732
+"Glitch Pop","Pop",1,1892
+"Hyperpop","Pop",0,728
+"Indian Pop","Pop",0,374
+"Indie Pop","Pop",12,41239
+"Irish Showband","Pop",0,30
+"Italo Pop","Pop",0,1276
+"Jazz Pop","Pop",0,3432
+"J-Pop","Pop",2,16703
+"K-Pop","Pop",2,5831
+"Latin Pop","Pop",0,2660
+"Lokal musik","Pop",0,16
+"Nederpop","Pop",0,979
+"New Music","Pop",0,210
+"New Romantic","Pop",3,1009
+"Palingsound","Pop",0,213
+"Persian Pop","Pop",0,367
+"Pop Ghazal","Pop",0,24
+"Pop Raï","Pop",0,170
+"Pop Rock","Pop",165,97605
+"Pop Soul","Pop",2,8188
+"Pop Sunda","Pop",0,43
+"Progressive Pop","Pop",4,4208
+"Psychedelic Pop","Pop",14,9566
+"Rabiz","Pop",0,58
+"Rigsar","Pop",0,2
+"Rumba catalana","Pop",0,402
+"Russian Chanson","Pop",0,488
+"Schlager","Pop",0,12344
+"Sertanejo romântico","Pop",0,278
+"Sertanejo universitário","Pop",0,301
+"Shibuya-kei","Pop",0,1239
+"Sophisti-Pop","Pop",0,3226
+"Soviet Estrada","Pop",0,1288
+"Sunshine Pop","Pop",9,2474
+"Synthpop","Pop",26,29724
+"Teen Pop","Pop",0,3207
+"Traditional Pop","Pop",3,10284
+"Turkish Pop","Pop",0,1908
+"V-Pop","Pop",0,377
+"Yé-yé","Pop",0,820
+"Neo-Psychedelia","Psychedelia",3,12010
+"Psychedelic Folk","Psychedelia",5,7860
+"Psychedelic Pop","Psychedelia",14,9566
+"Psychedelic Rock","Psychedelia",91,28129
+"Psychedelic Soul","Psychedelia",3,1208
+"Art Punk","Punk",8,3184
+"Digital Hardcore","Punk",1,672
+"Emo","Punk",15,17946
+"Hardcore [Punk]","Punk",48,82879
+"Post-Punk","Punk",51,36281
+"Proto-Punk","Punk",7,1004
+"Punk Rock","Punk",56,98802
+"Synth Punk","Punk",2,2345
+"Boogie","R&B",0,2767
+"Contemporary R&B","R&B",7,24794
+"Doo-Wop","R&B",0,2724
+"Funk","R&B",14,20114
+"New Orleans R&B","R&B",2,898
+"Rhythm & Blues","R&B",3,8282
+"Soul","R&B",12,32430
+"African Music","Regional Music",13,14340
+"Ancient Music","Regional Music",0,220
+"Arabic Music","Regional Music",2,3976
+"Balkan Music","Regional Music",0,4979
+"Brazilian Music","Regional Music",2,14512
+"Caribbean Music","Regional Music",8,28249
+"Caucasian Music","Regional Music",0,266
+"Chanson","Regional Music",1,13169
+"Christian Liturgical Music","Regional Music",3,2335
+"East Asian Music","Regional Music",3,4634
+"Ghazal","Regional Music",0,121
+"Greek Music","Regional Music",1,1948
+"Hispanic Music","Regional Music",7,37032
+"Islamic Modal Music","Regional Music",5,1801
+"Islamic Religious Music & Recitation","Regional Music",0,190
+"Jewish Music","Regional Music",0,1726
+"Melanesian Music","Regional Music",0,100
+"Polynesian Music","Regional Music",0,1092
+"Polyphonic Chant","Regional Music",1,1063
+"Portuguese Music","Regional Music",0,1896
+"Prehistoric Music","Regional Music",0,25
+"Romanian Music","Regional Music",0,501
+"Russian Music","Regional Music",0,1723
+"Seychelles & Mascarene Islands Music","Regional Music",0,195
+"South Asian Music","Regional Music",3,6009
+"Southeast Asian Music","Regional Music",2,3442
+"Tibetan Traditional Music","Regional Music",0,231
+"Turkic-Mongolic Traditional Music","Regional Music",0,602
+"West Asian Music","Regional Music",3,6599
+"Zohioliin duu","Regional Music",0,2
+"Bard Music","Singer/Songwriter",0,571
+"Canzone d'autore","Singer/Songwriter",0,532
+"Chanson à texte","Singer/Songwriter",0,724
+"Liedermacher","Singer/Songwriter",0,864
+"Música de intervenção","Singer/Songwriter",0,142
+"Nueva canción","Singer/Songwriter",1,1608
+"Poezja śpiewana","Singer/Songwriter",0,526
+"2 Tone","Ska",1,580
+"Jamaican Ska","Ska",0,728
+"Spouge","Ska",0,22
+"Third Wave Ska","Ska",3,2214
+"Fairy Tales","Spoken Word",0,314
+"Interview","Spoken Word",0,1155
+"Lectures","Spoken Word",0,185
+"Poetry","Spoken Word",2,2967
+"Radio Drama","Spoken Word",0,1333
+"Speeches","Spoken Word",0,414
+"Alternative Dance","Alternative Rock",7,4222
+"Baggy / Madchester","Alternative Rock",1,817
+"Britpop","Alternative Rock",3,2953
+"Dream Pop","Alternative Rock",13,11900
+"Emo-Pop","Alternative Rock",3,2834
+"Grunge","Alternative Rock",35,3491
+"Indie Rock","Alternative Rock",97,54088
+"Jangle Pop","Alternative Rock",15,7477
+"Noise Pop","Alternative Rock",6,4742
+"Paisley Underground","Alternative Rock",0,291
+"Post-Grunge","Alternative Rock",18,2847
+"Shoegaze","Alternative Rock",22,8460
+"Boogie Rock","Blues Rock",0,993
+"Cowpunk","Country Rock",2,509
+"Emocore","Emo",0,1103
+"Emo-Pop","Emo",3,2834
+"Midwest Emo","Emo",7,3815
+"Screamo","Emo",1,7617
+"Avant-Prog","Experimental Rock",0,3868
+"Brutal Prog","Experimental Rock",0,474
+"Krautrock","Experimental Rock",12,3280
+"No Wave","Experimental Rock",5,1477
+"Alpenrock","Folk Rock",0,92
+"Anatolian Rock","Folk Rock",0,656
+"Andalusian Rock","Folk Rock",0,237
+"British Folk Rock","Folk Rock",0,1222
+"Celtic Rock","Folk Rock",0,931
+"Medieval Rock","Folk Rock",0,199
+"Nordic Folk Rock","Folk Rock",0,114
+"Phleng phuea chiwit","Folk Rock",0,35
+"Pinoy Folk Rock","Folk Rock",0,16
+"Funk Metal","Funk Rock",1,776
+"Freakbeat","Garage Rock",1,618
+"Garage Punk","Garage Rock",2,5590
+"Garage Rock Revival","Garage Rock",3,3070
+"Hardcore Punk","Hardcore [Punk]",18,51415
+"Metalcore","Hardcore [Punk]",2,19901
+"Nintendocore","Hardcore [Punk]",0,321
+"Post-Hardcore","Hardcore [Punk]",30,22249
+"Glam Metal","Hard Rock",0,4873
+"Heavy Psych","Hard Rock",1,3451
+"Stoner Rock","Hard Rock",2,6100
+"Alternative Metal","Metal",16,13688
+"Avant-Garde Metal","Metal",3,3086
+"Black Metal","Metal",9,52870
+"Death Metal","Metal",3,42965
+"Doom Metal","Metal",0,14739
+"Drone Metal","Metal",5,1904
+"Folk Metal","Metal",2,3773
+"Gothic Metal","Metal",0,5199
+"Grindcore","Metal",1,13222
+"Groove Metal","Metal",1,4377
+"Heavy Metal","Metal",36,31316
+"Industrial Metal","Metal",3,4856
+"Metalcore","Metal",2,19901
+"Neoclassical Metal","Metal",1,1016
+"Post-Metal","Metal",10,5666
+"Power Metal","Metal",1,10864
+"Progressive Metal","Metal",3,17903
+"Sludge Metal","Metal",2,11303
+"Southern Metal","Metal",0,303
+"Speed Metal","Metal",4,3487
+"Stoner Metal","Metal",1,4914
+"Symphonic Metal","Metal",0,4583
+"Thrash Metal","Metal",9,22303
+"Trance Metal","Metal",0,424
+"Viking Metal","Metal",1,1044
+"Mod Revival","Mod",1,910
+"Neue Deutsche Welle","New Wave",1,1456
+"New Romantic","New Wave",3,1009
+"Beat Music","Pop Rock",7,4845
+"Britpop","Pop Rock",3,2953
+"Jangle Pop","Pop Rock",15,7477
+"Manila Sound","Pop Rock",0,65
+"Piano Rock","Pop Rock",0,3286
+"Power Pop","Pop Rock",12,18389
+"Soft Rock","Pop Rock",5,5780
+"Stereo","Pop Rock",0,124
+"Twee Pop","Pop Rock",1,3767
+"Vocal Surf","Pop Rock",9,321
+"Yacht Rock","Pop Rock",2,2610
+"Coldwave","Post-Punk",1,2098
+"Dance-Punk","Post-Punk",4,2552
+"Gothic Rock","Post-Punk",7,9222
+"No Wave","Post-Punk",5,1477
+"Post-Punk Revival","Post-Punk",5,2635
+"Andalusian Rock","Progressive Rock",0,237
+"Avant-Prog","Progressive Rock",0,3868
+"Brutal Prog","Progressive Rock",0,474
+"Canterbury Scene","Progressive Rock",1,636
+"Krautrock","Progressive Rock",12,3280
+"Neo-Prog","Progressive Rock",0,2048
+"Symphonic Prog","Progressive Rock",1,3165
+"Acid Rock","Psychedelic Rock",12,1081
+"Heavy Psych","Psychedelic Rock",1,3451
+"Raga Rock","Psychedelic Rock",0,359
+"Space Rock","Psychedelic Rock",0,4447
+"Anarcho-Punk","Punk Rock",1,1431
+"Cowpunk","Punk Rock",2,509
+"Deathrock","Punk Rock",1,1358
+"Deutschpunk","Punk Rock",1,432
+"Folk Punk","Punk Rock",1,2305
+"Garage Punk","Punk Rock",2,5590
+"Glam Punk","Punk Rock",1,724
+"Hardcore Punk","Punk Rock",18,51415
+"Horror Punk","Punk Rock",1,809
+"Könsrock","Punk Rock",1,72
+"Oi!","Punk Rock",2,3686
+"Pop Punk","Punk Rock",12,11552
+"Psychobilly","Punk Rock",1,1320
+"Punk Blues","Punk Rock",1,1064
+"Queercore","Punk Rock",2,554
+"Riot Grrrl","Punk Rock",4,689
+"Ska Punk","Punk Rock",2,1754
+"Skate Punk","Punk Rock",4,1531
+"Surf Punk","Punk Rock",1,514
+"Indorock","Rock & Roll",0,43
+"Rockabilly","Rock & Roll",3,4906
+"Swamp Rock","Roots Rock",5,445
+"Tex-Mex","Roots Rock",0,335
+"Red Dirt","Southern Rock",0,216
+"Surf Punk","Surf Music",1,514
+"Surf Rock","Surf Music",7,3352
+"Vocal Surf","Surf Music",9,321
+"Experimental Big Band","Avant-Garde Jazz",1,771
+"Free Jazz","Avant-Garde Jazz",4,6449
+"Spiritual Jazz","Avant-Garde Jazz",6,823
+"Yass","Avant-Garde Jazz",0,106
+"Hard Bop","Bebop",9,2458
+"Experimental Big Band","Big Band",1,771
+"Progressive Big Band","Big Band",0,365
+"Afro-Cuban Jazz","Latin Jazz",1,905
+"Kwela","Marabi",0,46
+"Mbaqanga","Marabi",1,208
+"Swing Revival","Swing",1,435
+"Black Ambient","Dark Ambient",0,1140
+"Ritual Ambient","Dark Ambient",0,1367
+"Acoustic Chicago Blues","Acoustic Blues",0,330
+"Country Blues","Acoustic Blues",2,3110
+"Jug Band","Acoustic Blues",0,208
+"British Blues","Electric Blues",1,558
+"Chicago Blues","Electric Blues",1,1217
+"Electric Texas Blues","Electric Blues",1,444
+"Swamp Blues","Electric Blues",0,160
+"Andalusian Classical Music","Arabic Classical Music",0,137
+"Iraqi Maqam","Arabic Classical Music",0,30
+"Chinese Classical Music","East Asian Classical Music",0,484
+"Japanese Classical Music","East Asian Classical Music",2,490
+"Korean Classical Music","East Asian Classical Music",0,70
+"Vietnamese Classical Music","East Asian Classical Music",0,38
+"Carnatic Classical Music","South Asian Classical Music",0,380
+"Hindustani Classical Music","South Asian Classical Music",3,2082
+"Odissi Classical Music","South Asian Classical Music",0,4
+"Sufiana kalam","South Asian Classical Music",0,7
+"Burmese Classical Music","Southeast Asian Classical Music",0,114
+"Gamelan","Southeast Asian Classical Music",2,669
+"Kecapi Suling","Southeast Asian Classical Music",0,30
+"Kulintang","Southeast Asian Classical Music",0,13
+"Mahori","Southeast Asian Classical Music",0,21
+"Malay Classical Music","Southeast Asian Classical Music",0,4
+"Pinpeat","Southeast Asian Classical Music",0,18
+"Saluang Klasik","Southeast Asian Classical Music",0,3
+"Talempong","Southeast Asian Classical Music",0,4
+"Tembang cianjuran","Southeast Asian Classical Music",0,37
+"Thai Classical Music","Southeast Asian Classical Music",0,110
+"Baroque Music","Western Classical Music",4,9228
+"Brazilian Classical Music","Western Classical Music",1,499
+"Byzantine Music","Western Classical Music",1,158
+"Chamber Music","Western Classical Music",8,9831
+"Choral","Western Classical Music",1,4176
+"Cinematic Classical","Western Classical Music",2,3077
+"Classical March","Western Classical Music",1,896
+"Classical Period","Western Classical Music",2,5949
+"Classical Waltz","Western Classical Music",1,710
+"Latin American Classical Music","Western Classical Music",1,222
+"Lieder","Western Classical Music",1,1347
+"Madrigal","Western Classical Music",1,244
+"Medieval Classical Music","Western Classical Music",1,1574
+"Modern Classical","Western Classical Music",52,30630
+"Neoclassicism","Western Classical Music",1,877
+"Opera","Western Classical Music",3,5735
+"Oratorio","Western Classical Music",1,803
+"Orchestral","Western Classical Music",10,19236
+"Renaissance Music","Western Classical Music",2,2343
+"Romanticism","Western Classical Music",6,17665
+"Spanish Classical Music","Western Classical Music",1,952
+"Comedy Rap","Musical Comedy",1,2307
+"Comedy Rock","Musical Comedy",1,2448
+"Scrumpy and Western","Musical Comedy",0,72
+"Gothic Country","Alt-Country",0,1470
+"Neo-Traditionalist Country","Contemporary Country",1,288
+"Bro-Country","Country Pop",0,365
+"Nashville Sound","Country Pop",2,1187
+"Urban Cowboy","Country Pop",0,362
+"Bakersfield Sound","Honky Tonk",1,387
+"Truck Driving Country","Honky Tonk",1,215
+"Outlaw Country","Progressive Country",5,1159
+"Progressive Bluegrass","Progressive Country",1,1112
+"Bluegrass","Traditional Country",2,3647
+"Close Harmony","Traditional Country",1,682
+"Country Boogie","Traditional Country",1,185
+"Country Gospel","Traditional Country",2,1068
+"Country Yodeling","Traditional Country",1,257
+"Cowboy","Traditional Country",2,653
+"Old-Time","Traditional Country",1,1398
+"Grebo","Alternative Dance",0,157
+"Afrobeats","Dance-Pop",0,1635
+"Disco polo","Dance-Pop",0,237
+"Eurodance","Dance-Pop",0,3458
+"Freestyle","Dance-Pop",0,978
+"Funk Melody","Dance-Pop",0,346
+"Romanian Popcorn","Dance-Pop",0,592
+"Tecnorumba","Dance-Pop",0,70
+"Township Bubblegum","Dance-Pop",0,80
+"Boogie","Disco",0,2767
+"Electro-Disco","Disco",0,7198
+"Euro-Disco","Disco",0,1851
+"Latin Disco","Disco",0,201
+"Nu-Disco","Disco",0,5493
+"Balani Show","Electronic Dance Music",0,10
+"Bérite Club","Electronic Dance Music",0,65
+"Breakbeat","Electronic Dance Music",1,8478
+"Broken Beat","Electronic Dance Music",0,346
+"Bubblegum Bass","Electronic Dance Music",0,1458
+"Bubbling","Electronic Dance Music",0,15
+"Budots","Electronic Dance Music",0,1
+"Coupé-Décalé","Electronic Dance Music",0,98
+"Deconstructed Club","Electronic Dance Music",0,3257
+"Digital Cumbia","Electronic Dance Music",0,253
+"Drum and Bass","Electronic Dance Music",2,18466
+"Dubstep","Electronic Dance Music",1,11567
+"EBM","Electronic Dance Music",0,6499
+"Electro","Electronic Dance Music",0,7251
+"Electroclash","Electronic Dance Music",0,1688
+"Electro-Disco","Electronic Dance Music",0,7198
+"Electro latino","Electronic Dance Music",0,116
+"Electro Swing","Electronic Dance Music",0,343
+"Eurobeat","Electronic Dance Music",0,925
+"Eurodance","Electronic Dance Music",0,3458
+"Flex Dance Music","Electronic Dance Music",0,48
+"Footwork","Electronic Dance Music",0,1252
+"Freestyle","Electronic Dance Music",0,978
+"Funkot","Electronic Dance Music",0,295
+"Funktronica","Electronic Dance Music",0,494
+"Future Bass","Electronic Dance Music",1,3787
+"Glitch Hop [EDM]","Electronic Dance Music",0,673
+"Hardcore [EDM]","Electronic Dance Music",2,16447
+"Hard Drum","Electronic Dance Music",0,173
+"Hardstyle","Electronic Dance Music",0,1332
+"Hardvapour","Electronic Dance Music",0,163
+"House","Electronic Dance Music",6,58285
+"Kuduro","Electronic Dance Music",0,287
+"Lento violento","Electronic Dance Music",0,23
+"Mahraganat","Electronic Dance Music",0,31
+"Makina","Electronic Dance Music",0,520
+"Manyao","Electronic Dance Music",0,8
+"Midtempo Bass","Electronic Dance Music",0,351
+"Moombahton","Electronic Dance Music",0,686
+"Nerdcore Techno","Electronic Dance Music",0,1019
+"Romanian Popcorn","Electronic Dance Music",0,592
+"Shangaan Electro","Electronic Dance Music",0,42
+"Singeli","Electronic Dance Music",0,50
+"Spacesynth","Electronic Dance Music",0,729
+"Techno","Electronic Dance Music",5,31628
+"Techno Bass","Electronic Dance Music",0,143
+"Tecnobrega","Electronic Dance Music",0,290
+"Tecnorumba","Electronic Dance Music",0,70
+"Trance","Electronic Dance Music",1,13174
+"Trap [EDM]","Electronic Dance Music",0,4569
+"Tribal Guarachero","Electronic Dance Music",0,29
+"UK Bass","Electronic Dance Music",0,4340
+"UK Garage","Electronic Dance Music",1,5892
+"Wonky","Electronic Dance Music",2,2444
+"Chiptune","Bit Music",0,3911
+"FM Synthesis","Bit Music",0,336
+"Sequencer & Tracker","Bit Music",2,2189
+"Trip Hop","Downtempo",1,5413
+"EAI","Electroacoustic",0,2438
+"Musique concrète","Electroacoustic",4,3215
+"Dark Electro","Electro-Industrial",0,1763
+"Weightless","Grime",0,209
+"Drill and Bass","IDM",1,606
+"Chillwave","Indietronica",1,2330
+"Digital Cumbia","Latin Electronic",0,253
+"Electro latino","Latin Electronic",0,116
+"Electrotango","Latin Electronic",0,87
+"Latin House","Latin Electronic",0,217
+"Nortec","Latin Electronic",0,31
+"Tribal Guarachero","Latin Electronic",0,29
+"Minimal Synth","Minimal Wave",1,5546
+"Berlin School","Progressive Electronic",2,3145
+"Futurepop","Synthpop",0,1146
+"Pon-chak disco","Synthpop",0,7
+"Techno kayō","Synthpop",0,239
+"Darksynth","Synthwave",0,750
+"Dreampunk","Vapor",0,257
+"Future Funk","Vapor",0,1342
+"Hardvapour","Vapor",0,163
+"Vaportrap","Vapor",0,429
+"Vaporwave","Vapor",0,7661
+"EAI","Free Improvisation",0,2438
+"Power Electronics","Industrial",2,3921
+"Gorenoise","Noise",0,753
+"Harsh Noise","Noise",0,9533
+"Power Electronics","Noise",2,3921
+"Power Noise","Noise",0,1563
+"Lowercase","Reductionism",0,678
+"Onkyo","Reductionism",0,366
+"Microsound","Sound Collage",2,272
+"Animal Sounds","Nature Recordings",0,430
+"American Primitivism","Contemporary Folk",1,957
+"Anti-Folk","Contemporary Folk",0,614
+"Avant-Folk","Contemporary Folk",0,4036
+"Bard Music","Contemporary Folk",0,571
+"Campus Folk","Contemporary Folk",0,19
+"Canzone d'autore","Contemporary Folk",0,532
+"Chamber Folk","Contemporary Folk",2,3036
+"Euskal kantagintza berria","Contemporary Folk",0,118
+"Folk Baroque","Contemporary Folk",0,333
+"Folk Pop","Contemporary Folk",3,9672
+"Indie Folk","Contemporary Folk",13,8975
+"Música de intervenção","Contemporary Folk",0,142
+"Neofolk","Contemporary Folk",1,4538
+"Nova cançó","Contemporary Folk",0,380
+"Nòva cançon","Contemporary Folk",0,72
+"Nueva canción","Contemporary Folk",1,1608
+"Progressive Folk","Contemporary Folk",1,2800
+"Psychedelic Folk","Contemporary Folk",5,7860
+"Skiffle","Contemporary Folk",0,228
+"Tamborera","Contemporary Folk",0,10
+"African Folk Music","Traditional Folk Music",0,1555
+"American Folk Music","Traditional Folk Music",15,20033
+"Arabic Folk Music","Traditional Folk Music",0,803
+"Australian Folk Music","Traditional Folk Music",0,118
+"Austronesian Traditional Music","Traditional Folk Music",0,136
+"Canadian Folk Music","Traditional Folk Music",0,770
+"Caribbean Folk Music","Traditional Folk Music",1,263
+"Caucasian Folk Music","Traditional Folk Music",0,205
+"Chuvash Folk Music","Traditional Folk Music",0,7
+"East Asian Folk Music","Traditional Folk Music",2,1574
+"European Folk Music","Traditional Folk Music",6,31015
+"Hill Tribe Music","Traditional Folk Music",0,59
+"Indigenous Australian Music","Traditional Folk Music",0,147
+"Latin American Folk Music","Traditional Folk Music",0,3148
+"Malagasy Folk Music","Traditional Folk Music",0,89
+"Micronesian Traditional Music","Traditional Folk Music",0,5
+"Native American Music","Traditional Folk Music",0,2083
+"Papuan Folk Music","Traditional Folk Music",0,51
+"Romani Folk Music","Traditional Folk Music",0,446
+"Samoyedic Traditional Music","Traditional Folk Music",0,13
+"Sephardic Music","Traditional Folk Music",0,169
+"South Asian Folk Music","Traditional Folk Music",0,581
+"Southeast Asian Folk Music","Traditional Folk Music",0,665
+"Tatar Folk Music","Traditional Folk Music",0,43
+"Throat Singing","Traditional Folk Music",0,390
+"Tonada","Traditional Folk Music",0,92
+"West Asian Folk Music","Traditional Folk Music",0,1696
+"Work Songs","Traditional Folk Music",1,485
+"Yodeling","Traditional Folk Music",1,375
+"Crunkcore","Crunk",0,333
+"Industrial Hip Hop","Experimental Hip Hop",1,1886
+"Boom Bap","Hardcore Hip Hop",3,6586
+"Britcore","Hardcore Hip Hop",0,78
+"Gangsta Rap","Hardcore Hip Hop",2,8852
+"Horrorcore","Hardcore Hip Hop",0,1710
+"Memphis Rap","Hardcore Hip Hop",0,1819
+"Trap Metal","Hardcore Hip Hop",0,1493
+"Jerk Rap","Hyphy",0,192
+"Lo-Fi Hip Hop","Instrumental Hip Hop",0,1948
+"Phonk","Instrumental Hip Hop",0,284
+"Chicano Rap","Latin Rap",0,129
+"Atlanta Bass","Miami Bass",0,90
+"Techno Bass","Miami Bass",0,143
+"Bop","Pop Rap",0,381
+"Drill","Trap",0,2767
+"Phonk","Trap",0,284
+"Trap Metal","Trap",0,1493
+"Tread","Trap",0,551
+"Dark Ambient","Post-Industrial",2,15596
+"Deconstructed Club","Post-Industrial",0,3257
+"EBM","Post-Industrial",0,6499
+"Electro-Industrial","Post-Industrial",3,5101
+"Industrial Hardcore","Post-Industrial",0,862
+"Industrial Hip Hop","Post-Industrial",1,1886
+"Industrial Metal","Post-Industrial",3,4856
+"Industrial Rock","Post-Industrial",13,4419
+"Industrial Techno","Post-Industrial",0,4261
+"Martial Industrial","Post-Industrial",0,1038
+"Power Noise","Post-Industrial",0,1563
+"Al Jeel","Arabic Pop",0,31
+"Chalga","Balkan Pop-Folk",0,1016
+"Manele","Balkan Pop-Folk",0,161
+"Modern Laika","Balkan Pop-Folk",0,102
+"Musika popullore","Balkan Pop-Folk",0,58
+"Muzică de mahala","Balkan Pop-Folk",0,56
+"Skiladika","Balkan Pop-Folk",0,20
+"Tallava","Balkan Pop-Folk",0,6
+"Turbo-Folk","Balkan Pop-Folk",0,123
+"Praise & Worship","CCM",0,762
+"Cantopop","C-Pop",0,774
+"Mandopop","C-Pop",0,4110
+"Dangdut koplo","Dangdut",0,40
+"Cocktail Nation","Easy Listening",0,193
+"Exotica","Easy Listening",0,1012
+"Light Music","Easy Listening",0,537
+"Lounge","Easy Listening",0,2058
+"Pops Orchestra","Easy Listening",0,347
+"Space Age Pop","Easy Listening",0,820
+"Bedroom Pop","Indie Pop",0,1872
+"C86","Indie Pop",0,577
+"Chamber Pop","Indie Pop",3,5697
+"Sonido Donosti","Indie Pop",0,55
+"Twee Pop","Indie Pop",1,3767
+"Canzone neomelodica","Italo Pop",0,19
+"Denpa","J-Pop",0,728
+"Cumbia cheta","Latin Pop",0,15
+"Tropipop","Latin Pop",0,152
+"Motown Sound","Pop Soul",0,443
+"Humppa","Schlager",0,129
+"Levenslied","Schlager",0,1172
+"Volkstümliche Musik","Schlager",0,1206
+"Funknejo","Sertanejo universitário",0,41
+"Picopop","Shibuya-kei",0,296
+"British Dance Band","Traditional Pop",1,1897
+"Romanţe","Traditional Pop",0,33
+"Standards","Traditional Pop",1,2398
+"Hypnagogic Pop","Neo-Psychedelia",0,2615
+"Paisley Underground","Neo-Psychedelia",0,291
+"Freak Folk","Psychedelic Folk",1,1102
+"Free Folk","Psychedelic Folk",0,1741
+"Alternative R&B","Contemporary R&B",1,9000
+"New Jack Swing","Contemporary R&B",0,855
+"Acid Jazz","Funk",0,1331
+"Afrobeat","Funk",2,1068
+"Afro-Funk","Funk",0,791
+"Deep Funk","Funk",1,126
+"Go-Go","Funk",0,151
+"Jazz-Funk","Funk",2,3967
+"Latin Funk","Funk",0,359
+"P-Funk","Funk",0,416
+"Porn Groove","Funk",0,102
+"Synth Funk","Funk",3,3753
+"British Rhythm & Blues","Rhythm & Blues",1,940
+"Chicago Soul","Soul",2,411
+"Country Soul","Soul",0,459
+"Deep Soul","Soul",1,546
+"Latin Soul","Soul",0,212
+"Neo-Soul","Soul",1,3664
+"Northern Soul","Soul",0,1237
+"Philly Soul","Soul",0,991
+"Pop Soul","Soul",2,8188
+"Psychedelic Soul","Soul",3,1208
+"Samba Soul","Soul",0,231
+"Smooth Soul","Soul",1,2618
+"Southern Soul","Soul",1,1929
+"African Folk Music","African Music",0,1555
+"Afro-Jazz","African Music",1,604
+"Cape Verdean Music","African Music",0,319
+"Central African Music","African Music",1,2387
+"East African Music","African Music",0,720
+"Malagasy Music","African Music",0,145
+"North African Music","African Music",1,1755
+"Northeastern African Music","African Music",2,741
+"Southern African Music","African Music",3,1645
+"West African Music","African Music",5,5843
+"Ancient Chinese Music","Ancient Music",0,31
+"Ancient Egyptian Music","Ancient Music",0,44
+"Ancient Greek Music","Ancient Music",0,56
+"Ancient Levitical Music","Ancient Music",0,5
+"Ancient Roman Music","Ancient Music",0,19
+"Hyang-ak","Ancient Music",0,2
+"Mesopotamian Music","Ancient Music",0,5
+"Algerian Chaabi","Arabic Music",0,92
+"Arabic Classical Music","Arabic Music",1,454
+"Arabic Folk Music","Arabic Music",0,803
+"Arabic Jazz","Arabic Music",1,205
+"Arabic Pop","Arabic Music",0,791
+"Dabke","Arabic Music",0,91
+"Raï","Arabic Music",0,433
+"Shaʻabi","Arabic Music",0,117
+"Traditional Arabic Pop","Arabic Music",0,417
+"Balkan Folk Music","Balkan Music",0,2971
+"Balkan Pop-Folk","Balkan Music",0,1662
+"Entechna","Balkan Music",0,297
+"Laika","Balkan Music",0,354
+"Romanţe","Balkan Music",0,33
+"Afoxé","Brazilian Music",0,109
+"Axé","Brazilian Music",0,492
+"Baião","Brazilian Music",0,262
+"Bossa nova","Brazilian Music",1,2638
+"Brazilian Classical Music","Brazilian Music",1,499
+"Brega","Brazilian Music",0,574
+"Candomblé Music","Brazilian Music",0,90
+"Capoeira Music","Brazilian Music",0,49
+"Carimbó","Brazilian Music",0,63
+"Choro","Brazilian Music",0,546
+"Coco","Brazilian Music",0,109
+"Forró","Brazilian Music",0,514
+"Frevo","Brazilian Music",0,88
+"Funk carioca","Brazilian Music",0,1934
+"Jongo","Brazilian Music",0,31
+"Lambada","Brazilian Music",0,83
+"Mangue Beat","Brazilian Music",0,97
+"Maracatu","Brazilian Music",0,62
+"Maxixe","Brazilian Music",0,31
+"MPB","Brazilian Music",1,4040
+"Música gaúcha","Brazilian Music",0,260
+"Repente","Brazilian Music",0,34
+"Samba","Brazilian Music",0,3038
+"Sertanejo","Brazilian Music",0,1094
+"Vanguarda paulista","Brazilian Music",0,213
+"Xote","Brazilian Music",0,79
+"Calypso","Caribbean Music",1,872
+"Caribbean Folk Music","Caribbean Music",1,263
+"French Caribbean Music","Caribbean Music",1,1590
+"Goombay","Caribbean Music",0,60
+"Jamaican Music","Caribbean Music",5,24378
+"Kaseko","Caribbean Music",0,41
+"Parang","Caribbean Music",0,58
+"Punta","Caribbean Music",0,21
+"Soca","Caribbean Music",0,1183
+"Caucasian Folk Music","Caucasian Music",0,205
+"Rabiz","Caucasian Music",0,58
+"Chanson alternative","Chanson",0,337
+"Chanson à texte","Chanson",0,724
+"Chanson réaliste","Chanson",0,152
+"Nouvelle chanson française","Chanson",0,1093
+"Armenian Church Music","Christian Liturgical Music",0,66
+"Byzantine Chant","Christian Liturgical Music",1,86
+"Coptic Music","Christian Liturgical Music",0,17
+"Ethiopian Church Music","Christian Liturgical Music",0,55
+"Gaelic Psalm","Christian Liturgical Music",0,12
+"Plainsong","Christian Liturgical Music",0,386
+"Russian Orthodox Liturgical Music","Christian Liturgical Music",0,129
+"Syriac Chant","Christian Liturgical Music",0,19
+"Ancient Chinese Music","East Asian Music",0,31
+"Cải lương","East Asian Music",0,20
+"Campus Folk","East Asian Music",0,19
+"East Asian Classical Music","East Asian Music",2,1081
+"East Asian Folk Music","East Asian Music",2,1574
+"Guoyue","East Asian Music",1,68
+"Japanese Music","East Asian Music",2,2814
+"Nhạc vàng","East Asian Music",0,110
+"Shidaiqu","East Asian Music",0,264
+"Trot","East Asian Music",0,101
+"Vietnamese Bolero","East Asian Music",0,30
+"Ancient Greek Music","Greek Music",0,56
+"Byzantine Music","Greek Music",1,158
+"Entechna","Greek Music",0,297
+"Greek Folk Music","Greek Music",0,843
+"Laika","Greek Music",0,354
+"Canción melódica","Hispanic Music",0,2856
+"Latin American Music","Hispanic Music",5,26855
+"Murga","Hispanic Music",0,59
+"Spanish Music","Hispanic Music",2,7993
+"Tonada","Hispanic Music",0,92
+"Arabic Classical Music","Islamic Modal Music",1,454
+"Iranian Folk Music","Islamic Modal Music",0,183
+"Persian Classical Music","Islamic Modal Music",2,594
+"Sufiana kalam","Islamic Modal Music",0,7
+"Tajik Traditional Music","Islamic Modal Music",1,70
+"Turkish Classical Music","Islamic Modal Music",1,291
+"Turkish Mevlevi Music","Islamic Modal Music",0,72
+"Turkmen Traditional Music","Islamic Modal Music",0,28
+"Uzbek Traditional Music","Islamic Modal Music",1,122
+"Maddahi","Islamic Religious Music & Recitation",0,8
+"Nasheed","Islamic Religious Music & Recitation",0,29
+"Rapai dabõih","Islamic Religious Music & Recitation",0,3
+"Turkish Mevlevi Music","Islamic Religious Music & Recitation",0,72
+"Ashkenazi Music","Jewish Music",0,904
+"Jewish Liturgical Music","Jewish Music",0,107
+"Muzika mizrahit","Jewish Music",0,246
+"Oriental Jewish Music","Jewish Music",0,27
+"Sephardic Music","Jewish Music",0,169
+"Fijian Music","Melanesian Music",0,17
+"Lokal musik","Melanesian Music",0,16
+"Papuan Folk Music","Melanesian Music",0,51
+"Fijian Music","Polynesian Music",0,17
+"Hawaiian Music","Polynesian Music",0,838
+"Himene tarava","Polynesian Music",0,14
+"Māori Traditional Music","Polynesian Music",0,77
+"Samoan Music","Polynesian Music",0,5
+"Ars nova","Polyphonic Chant",0,133
+"Ars subtilior","Polyphonic Chant",0,58
+"Cante alentejano","Polyphonic Chant",0,10
+"Cantu a tenore","Polyphonic Chant",0,31
+"Himene tarava","Polyphonic Chant",0,14
+"Lab Polyphony","Polyphonic Chant",0,86
+"Madrigal","Polyphonic Chant",1,244
+"Sutartinės","Polyphonic Chant",0,18
+"Tosk Polyphony","Polyphonic Chant",0,13
+"Trallalero","Polyphonic Chant",0,7
+"Música de intervenção","Portuguese Music",0,142
+"Pimba","Portuguese Music",0,304
+"Portuguese Folk Music","Portuguese Music",0,1447
+"Muzică de mahala","Romanian Music",0,56
+"Romanian Etno Music","Romanian Music",0,9
+"Romanian Folk Music","Romanian Music",0,414
+"Romanţe","Romanian Music",0,33
+"Bard Music","Russian Music",0,571
+"Russian Chanson","Russian Music",0,488
+"Russian Folk Music","Russian Music",0,518
+"Russian Orthodox Liturgical Music","Russian Music",0,129
+"Russian Romance","Russian Music",0,205
+"Maloya","Seychelles & Mascarene Islands Music",0,70
+"Moutya","Seychelles & Mascarene Islands Music",0,4
+"Santé engagé","Seychelles & Mascarene Islands Music",0,10
+"Séga","Seychelles & Mascarene Islands Music",0,127
+"Baila","South Asian Music",0,19
+"Balochi Traditional Music","South Asian Music",0,23
+"Bhangra","South Asian Music",0,282
+"Filmi","South Asian Music",0,2220
+"Garba","South Asian Music",0,4
+"Indian Pop","South Asian Music",0,374
+"Pop Ghazal","South Asian Music",0,24
+"Rigsar","South Asian Music",0,2
+"South Asian Classical Music","South Asian Music",3,2459
+"South Asian Folk Music","South Asian Music",0,581
+"Batak Pop","Southeast Asian Music",0,16
+"Cambodian Pop","Southeast Asian Music",0,110
+"Dangdut","Southeast Asian Music",0,137
+"Hmong Pop","Southeast Asian Music",0,8
+"Jaipongan","Southeast Asian Music",0,371
+"Kecak","Southeast Asian Music",1,13
+"Luk Krung","Southeast Asian Music",0,157
+"Luk Thung","Southeast Asian Music",0,649
+"Mono","Southeast Asian Music",0,80
+"Philippine Music","Southeast Asian Music",0,127
+"Phleng phuea chiwit","Southeast Asian Music",0,35
+"Pop Sunda","Southeast Asian Music",0,43
+"Qasidah Modern","Southeast Asian Music",0,9
+"Shadow Music","Southeast Asian Music",0,42
+"Southeast Asian Classical Music","Southeast Asian Music",2,1037
+"Southeast Asian Folk Music","Southeast Asian Music",0,665
+"Stereo","Southeast Asian Music",0,124
+"Zhabdro Gorgom","Tibetan Traditional Music",0,3
+"Altai Traditional Music","Turkic-Mongolic Traditional Music",0,28
+"Bashkir Folk Music","Turkic-Mongolic Traditional Music",0,17
+"Buryat Folk Music","Turkic-Mongolic Traditional Music",0,11
+"Kalmyk Traditional Music","Turkic-Mongolic Traditional Music",0,13
+"Karakalpak Traditional Music","Turkic-Mongolic Traditional Music",0,11
+"Kazakh Traditional Music","Turkic-Mongolic Traditional Music",0,51
+"Khakas Traditional Music","Turkic-Mongolic Traditional Music",0,16
+"Kyrgyz Traditional Music","Turkic-Mongolic Traditional Music",0,26
+"Mongolian Traditional Music","Turkic-Mongolic Traditional Music",0,200
+"Sakha Traditional Music","Turkic-Mongolic Traditional Music",0,40
+"Tuvan Throat Singing","Turkic-Mongolic Traditional Music",0,159
+"Uyghur Music","Turkic-Mongolic Traditional Music",0,34
+"Armenian Music","West Asian Music",0,723
+"Azerbaijani Music","West Asian Music",0,238
+"Balochi Traditional Music","West Asian Music",0,23
+"Dabke","West Asian Music",0,91
+"Iranian Music","West Asian Music",2,1119
+"Iraqi Maqam","West Asian Music",0,30
+"Maftirim","West Asian Music",0,11
+"Mesopotamian Music","West Asian Music",0,5
+"Muzika mizrahit","West Asian Music",0,246
+"Turkish Music","West Asian Music",1,3851
+"West Asian Folk Music","West Asian Music",0,1696
+"Nueva canción española","Nueva canción",0,329
+"Nueva canción latinoamericana","Nueva canción",1,1201
+"Ska Punk","Third Wave Ska",2,1754
+"Beat Poetry","Poetry",0,156
+"Dub Poetry","Poetry",0,91
+"Jazz Poetry","Poetry",1,187
+"Nursery Rhymes","Poetry",0,175
+"Slam Poetry","Poetry",0,34
+"Sound Poetry","Poetry",0,395
+"Dunedin Sound","Indie Rock",0,314
+"Hamburger Schule","Indie Rock",0,252
+"Lo-Fi / Slacker Rock","Indie Rock",5,9992
+"Midwest Emo","Indie Rock",7,3815
+"Post-Punk Revival","Indie Rock",5,2635
+"Slowcore","Indie Rock",1,3152
+"C86","Jangle Pop",0,577
+"Emoviolence","Screamo",1,846
+"Rock in Opposition","Avant-Prog",0,624
+"Zeuhl","Avant-Prog",0,421
+"Beatdown Hardcore","Hardcore Punk",0,1571
+"Crossover Thrash","Hardcore Punk",0,2671
+"Crust Punk","Hardcore Punk",1,5307
+"D-Beat","Hardcore Punk",0,1284
+"Grindcore","Hardcore Punk",1,13222
+"Japanese Hardcore","Hardcore Punk",1,1104
+"Melodic Hardcore","Hardcore Punk",2,3002
+"New York Hardcore","Hardcore Punk",1,1325
+"Noisecore","Hardcore Punk",0,2790
+"Powerviolence","Hardcore Punk",2,3329
+"Thrashcore","Hardcore Punk",0,1343
+"UK82","Hardcore Punk",1,494
+"Deathcore","Metalcore",0,4667
+"Mathcore","Metalcore",1,2363
+"Melodic Metalcore","Metalcore",0,3926
+"Emocore","Post-Hardcore",0,1103
+"Screamo","Post-Hardcore",1,7617
+"Funk Metal","Alternative Metal",1,776
+"Nu Metal","Alternative Metal",1,4393
+"Rap Metal","Alternative Metal",1,1208
+"Atmospheric Black Metal","Black Metal",7,8958
+"Black 'n' Roll","Black Metal",0,287
+"Depressive Black Metal","Black Metal",0,3558
+"Melodic Black Metal","Black Metal",0,4306
+"Pagan Black Metal","Black Metal",1,1801
+"Symphonic Black Metal","Black Metal",0,2463
+"War Metal","Black Metal",0,1220
+"Brutal Death Metal","Death Metal",0,6399
+"Death 'n' Roll","Death Metal",0,511
+"Deathgrind","Death Metal",0,2720
+"Melodic Death Metal","Death Metal",0,9268
+"Technical Death Metal","Death Metal",3,3640
+"Death Doom Metal","Doom Metal",0,4172
+"Funeral Doom Metal","Doom Metal",0,1659
+"Traditional Doom Metal","Doom Metal",0,1698
+"Celtic Metal","Folk Metal",0,411
+"Medieval Folk Metal","Folk Metal",0,247
+"Cybergrind","Grindcore",0,1108
+"Deathgrind","Grindcore",0,2720
+"Goregrind","Grindcore",0,3673
+"NWOBHM","Heavy Metal",4,2028
+"US Power Metal","Heavy Metal",0,1374
+"Cyber Metal","Industrial Metal",0,458
+"Neue Deutsche Härte","Industrial Metal",0,512
+"Atmospheric Sludge Metal","Post-Metal",1,3601
+"Djent","Progressive Metal",0,2230
+"Atmospheric Sludge Metal","Sludge Metal",1,3601
+"Crossover Thrash","Thrash Metal",0,2671
+"Technical Thrash Metal","Thrash Metal",0,913
+"Freakbeat","Beat Music",1,618
+"Group Sounds","Beat Music",0,530
+"Jovem Guarda","Beat Music",0,283
+"Merseybeat","Beat Music",5,709
+"Nederbeat","Beat Music",0,393
+"Deathrock","Gothic Rock",1,1358
+"Celtic Punk","Folk Punk",0,473
+"Gypsy Punk","Folk Punk",0,241
+"Viking Rock","Oi!",0,75
+"Easycore","Pop Punk",0,434
+"Psychobilly","Rockabilly",1,1320
+"Eleki","Surf Rock",0,102
+"Rautalanka","Surf Rock",0,206
+"Shadow Music","Surf Rock",0,42
+"European Free Jazz","Free Jazz",0,1088
+"Acoustic Texas Blues","Country Blues",1,326
+"Delta Blues","Country Blues",0,864
+"Piedmont Blues","Country Blues",1,522
+"Baisha Xiyue","Chinese Classical Music",0,11
+"Chinese Opera","Chinese Classical Music",0,179
+"Dongjing","Chinese Classical Music",0,5
+"Yayue","Chinese Classical Music",0,48
+"Gagaku","Japanese Classical Music",0,102
+"Heikyoku","Japanese Classical Music",0,13
+"Honkyoku","Japanese Classical Music",0,48
+"Jiuta","Japanese Classical Music",0,27
+"Jōruri","Japanese Classical Music",0,5
+"Nagauta","Japanese Classical Music",0,130
+"Noh","Japanese Classical Music",0,11
+"Shōmyō","Japanese Classical Music",0,25
+"Sōkyoku","Japanese Classical Music",1,108
+"Aak","Korean Classical Music",0,4
+"Dang-ak","Korean Classical Music",0,0
+"Hyang-ak","Korean Classical Music",0,2
+"Jeong-ak","Korean Classical Music",0,9
+"Vietnamese Opera","Vietnamese Classical Music",0,1
+"Dhrupad","Hindustani Classical Music",0,141
+"Khyal","Hindustani Classical Music",0,237
+"Qawwali","Hindustani Classical Music",1,257
+"Thumri","Hindustani Classical Music",0,67
+"Gamelan angklung","Gamelan",0,25
+"Gamelan beleganjur","Gamelan",0,11
+"Gamelan degung","Gamelan",0,66
+"Gamelan gender wayang","Gamelan",0,16
+"Gamelan gong gede","Gamelan",0,11
+"Gamelan gong kebyar","Gamelan",1,70
+"Gamelan Jawa","Gamelan",1,229
+"Gamelan jegog","Gamelan",0,15
+"Gamelan selonding","Gamelan",0,4
+"Gamelan semar pegulingan","Gamelan",0,22
+"Khrueang sai","Thai Classical Music",0,3
+"Piphat","Thai Classical Music",0,47
+"Tragédie en musique","Baroque Music",0,62
+"Byzantine Chant","Byzantine Music",1,86
+"Spaghetti Western","Cinematic Classical",1,423
+"Circus March","Classical March",0,63
+"Ars antiqua","Medieval Classical Music",0,63
+"Ars nova","Medieval Classical Music",0,133
+"Ars subtilior","Medieval Classical Music",0,58
+"Medieval Lyric Poetry","Medieval Classical Music",0,106
+"Plainsong","Medieval Classical Music",0,386
+"Expressionism","Modern Classical",1,161
+"Futurism","Modern Classical",1,92
+"Impressionism","Modern Classical",3,1298
+"Indeterminacy","Modern Classical",1,733
+"Microtonal Classical","Modern Classical",2,326
+"Minimalism","Modern Classical",17,2798
+"Musique concrète instrumentale","Modern Classical",1,37
+"New Complexity","Modern Classical",1,57
+"Post-Minimalism","Modern Classical",8,1306
+"Serialism","Modern Classical",2,656
+"Sonorism","Modern Classical",1,64
+"Spectralism","Modern Classical",1,177
+"Stochastic Music","Modern Classical",1,102
+"Opera buffa","Opera",0,232
+"Opera semiseria","Opera",0,15
+"Opera seria","Opera",0,202
+"Operetta","Opera",0,650
+"Tragédie en musique","Opera",0,62
+"Zarzuela","Opera",0,102
+"Concerto","Orchestral",2,5617
+"Symphony","Orchestral",2,6092
+"Tone Poem","Orchestral",0,569
+"Zarzuela","Spanish Classical Music",0,102
+"Red Dirt","Outlaw Country",0,216
+"Bluegrass Gospel","Bluegrass",0,240
+"Bluegrass Gospel","Country Gospel",0,240
+"Bubblegum Dance","Eurodance",0,565
+"Italo Dance","Eurodance",0,243
+"Latin Freestyle","Freestyle",0,72
+"Hi-NRG","Electro-Disco",0,1394
+"Italo-Disco","Electro-Disco",0,4347
+"Space Disco","Electro-Disco",0,550
+"Future Funk","Nu-Disco",0,1342
+"Baltimore Club","Breakbeat",0,303
+"Big Beat","Breakbeat",1,1043
+"Breakbeat Hardcore","Breakbeat",0,3302
+"Jersey Club","Breakbeat",0,486
+"Nu Skool Breaks","Breakbeat",0,167
+"Progressive Breaks","Breakbeat",0,228
+"Atmospheric Drum and Bass","Drum and Bass",2,1759
+"Dancefloor Drum and Bass","Drum and Bass",0,826
+"Darkstep","Drum and Bass",0,696
+"Drumfunk","Drum and Bass",0,192
+"Drumstep","Drum and Bass",0,799
+"Halftime","Drum and Bass",0,543
+"Hardstep","Drum and Bass",0,123
+"Jazzstep","Drum and Bass",0,300
+"Jump-Up","Drum and Bass",0,865
+"Jungle","Drum and Bass",0,4129
+"Liquid Funk","Drum and Bass",0,1387
+"Minimal Drum and Bass","Drum and Bass",0,507
+"Neurofunk","Drum and Bass",0,974
+"Techstep","Drum and Bass",0,592
+"Trancestep","Drum and Bass",0,114
+"Brostep","Dubstep",0,5358
+"Chillstep","Dubstep",0,613
+"Melodic Dubstep","Dubstep",0,758
+"Purple Sound","Dubstep",0,391
+"Aggrotech","EBM",0,1318
+"Futurepop","EBM",0,1146
+"New Beat","EBM",0,788
+"Skweee","Electro",0,133
+"Kawaii Future Bass","Future Bass",0,652
+"Neurohop","Glitch Hop [EDM]",0,224
+"Acidcore","Hardcore [EDM]",0,410
+"Breakbeat Hardcore","Hardcore [EDM]",0,3302
+"Breakcore","Hardcore [EDM]",1,3601
+"Crossbreed","Hardcore [EDM]",0,93
+"Digital Hardcore","Hardcore [EDM]",1,672
+"Doomcore","Hardcore [EDM]",0,82
+"Freeform Hardcore","Hardcore [EDM]",0,303
+"Frenchcore","Hardcore [EDM]",0,222
+"Gabber","Hardcore [EDM]",0,2041
+"Happy Hardcore","Hardcore [EDM]",0,2912
+"Industrial Hardcore","Hardcore [EDM]",0,862
+"J-core","Hardcore [EDM]",0,848
+"Speedcore","Hardcore [EDM]",0,1540
+"Terrorcore","Hardcore [EDM]",0,252
+"Dubstyle","Hardstyle",0,32
+"Euphoric Hardstyle","Hardstyle",0,152
+"Jumpstyle","Hardstyle",0,116
+"Acid House","House",0,2046
+"Afro-House","House",0,350
+"Amapiano","House",0,114
+"Ambient House","House",0,1288
+"Balearic Beat","House",0,705
+"Ballroom","House",0,479
+"Baltimore Club","House",0,303
+"Bass House","House",0,1018
+"Big Room","House",0,1115
+"Bubbling House","House",0,18
+"Chicago Hard House","House",0,43
+"Chicago House","House",0,892
+"Deep House","House",0,13035
+"Dutch House","House",0,350
+"Electro House","House",1,7904
+"Euro House","House",0,1083
+"French House","House",3,1205
+"Funky House","House",0,1094
+"Future House","House",0,1479
+"Garage House","House",0,1636
+"Ghetto House","House",0,1686
+"Gqom","House",0,189
+"Hip House","House",0,1966
+"Italo House","House",0,432
+"Jersey Club","House",0,486
+"Kwaito","House",0,223
+"Latin House","House",0,217
+"Microhouse","House",0,1462
+"Nu-Disco","House",0,5493
+"Philly Club","House",0,49
+"Progressive House","House",0,4684
+"Tech House","House",0,8139
+"Tribal House","House",0,725
+"Tropical House","House",0,963
+"UK Hard House","House",0,852
+"Batida","Kuduro",0,117
+"Moombahcore","Moombahton",0,237
+"Acid Techno","Techno",1,3356
+"Ambient Techno","Techno",3,4516
+"Bleep Techno","Techno",0,146
+"Detroit Techno","Techno",0,1304
+"Freetekno","Techno",0,460
+"Hardgroove","Techno",0,31
+"Industrial Techno","Techno",0,4261
+"Minimal Techno","Techno",2,8317
+"Schranz","Techno",0,169
+"Wonky Techno","Techno",0,338
+"Brega-funk","Tecnobrega",0,175
+"Acid Trance","Trance",0,481
+"Ambient Trance","Trance",0,476
+"Dream Trance","Trance",0,189
+"Euro-Trance","Trance",0,727
+"Goa Trance","Trance",1,750
+"Hard Trance","Trance",0,1300
+"Ibiza Trance","Trance",0,146
+"NRG","Trance",0,77
+"Progressive Trance","Trance",0,1528
+"Psytrance","Trance",1,2458
+"Tech Trance","Trance",0,555
+"Uplifting Trance","Trance",0,1581
+"Vocal Trance","Trance",0,1058
+"Twerk","Trap [EDM]",0,115
+"2-Step","UK Garage",0,590
+"Bassline","UK Garage",0,694
+"Breakstep","UK Garage",0,170
+"Future Garage","UK Garage",1,1863
+"Speed Garage","UK Garage",0,349
+"UK Funky","UK Garage",0,1137
+"16-bit","Sequencer & Tracker",0,383
+"Aggrotech","Dark Electro",0,1318
+"Broken Transmission","Vaporwave",0,422
+"Mallsoft","Vaporwave",0,166
+"Death Industrial","Power Electronics",2,1268
+"Harsh Noise Wall","Harsh Noise",0,4962
+"Birdsong","Animal Sounds",0,232
+"Whale Song","Animal Sounds",0,43
+"Dark Folk","Neofolk",0,1743
+"Ambasse bey","African Folk Music",0,17
+"Apala","African Folk Music",0,116
+"Batuque","African Folk Music",0,28
+"Dagomba Music","African Folk Music",0,15
+"Gnawa","African Folk Music",0,188
+"Kabye Folk Music","African Folk Music",0,4
+"Kilapanga","African Folk Music",0,6
+"Mbenga-Mbuti Music","African Folk Music",0,53
+"Moutya","African Folk Music",0,4
+"Ngoma","African Folk Music",0,16
+"Semba","African Folk Music",0,125
+"Southern African Folk Music","African Folk Music",0,224
+"Tchinkoumé","African Folk Music",0,11
+"Traditional Maloya","African Folk Music",0,14
+"Traditional Séga","African Folk Music",0,21
+"Zinli","African Folk Music",0,11
+"Appalachian Folk Music","American Folk Music",0,729
+"Barbershop","American Folk Music",0,106
+"Boogie Woogie","American Folk Music",2,469
+"Cajun Music","American Folk Music",0,727
+"Country Blues","American Folk Music",2,3110
+"Gospel","American Folk Music",2,5651
+"Jug Band","American Folk Music",0,208
+"Ragtime","American Folk Music",4,1594
+"Sacred Harp Music","American Folk Music",0,58
+"Spirituals","American Folk Music",0,418
+"Talking Blues","American Folk Music",0,68
+"Traditional Country","American Folk Music",7,8238
+"Aita","Arabic Folk Music",0,41
+"Arabic Bellydance Music","Arabic Folk Music",0,268
+"Gondang","Austronesian Traditional Music",0,18
+"Indigenous Taiwanese Music","Austronesian Traditional Music",0,23
+"Pakacaping Music","Austronesian Traditional Music",0,9
+"Canadian Maritime Folk","Canadian Folk Music",0,198
+"French-Canadian Folk Music","Canadian Folk Music",0,335
+"Newfoundland Folk Music","Canadian Folk Music",0,123
+"Fungi","Caribbean Folk Music",0,9
+"Garifuna Folk Music","Caribbean Folk Music",0,34
+"Junkanoo","Caribbean Folk Music",0,22
+"Méringue","Caribbean Folk Music",0,20
+"Ripsaw","Caribbean Folk Music",0,7
+"Trinidadian Cariso","Caribbean Folk Music",0,4
+"Tumba","Caribbean Folk Music",0,15
+"Virgin Islander Cariso","Caribbean Folk Music",0,4
+"Abkhazian Folk Music","Caucasian Folk Music",0,16
+"Avar Folk Music","Caucasian Folk Music",0,5
+"Chechen Folk Music","Caucasian Folk Music",0,18
+"Circassian Folk Music","Caucasian Folk Music",0,27
+"Georgian Folk Music","Caucasian Folk Music",0,114
+"Ossetian Folk Music","Caucasian Folk Music",0,10
+"Ainu Folk Music","East Asian Folk Music",0,38
+"Chinese Folk Music","East Asian Folk Music",1,486
+"Indigenous Taiwanese Music","East Asian Folk Music",0,23
+"Japanese Folk Music","East Asian Folk Music",1,706
+"Korean Folk Music","East Asian Folk Music",0,173
+"Vietnamese Folk Music","East Asian Folk Music",0,134
+"Alpine Folk Music","European Folk Music",0,534
+"Balkan Folk Music","European Folk Music",0,2971
+"Basque Folk Music","European Folk Music",0,142
+"Catalan Folk Music","European Folk Music",0,224
+"Celtic Folk Music","European Folk Music",2,7748
+"Dutch Folk Music","European Folk Music",0,152
+"English Folk Music","European Folk Music",0,1853
+"Estonian Folk Music","European Folk Music",0,132
+"Fanfare","European Folk Music",2,719
+"Flemish Folk Music","European Folk Music",0,182
+"French Folk Music","European Folk Music",0,2467
+"German Folk Music","European Folk Music",0,255
+"Għana","European Folk Music",0,6
+"Hungarian Folk Music","European Folk Music",0,405
+"Italian Folk Music","European Folk Music",0,921
+"Latvian Folk Music","European Folk Music",0,141
+"Lithuanian Folk Music","European Folk Music",0,168
+"Mari Folk Music","European Folk Music",0,7
+"Neo-Medieval Folk","European Folk Music",0,868
+"Nordic Folk Music","European Folk Music",1,3126
+"Polka","European Folk Music",0,650
+"Portuguese Folk Music","European Folk Music",0,1447
+"Romanian Folk Music","European Folk Music",0,414
+"Slavic Folk Music","European Folk Music",0,2435
+"Spanish Folk Music","European Folk Music",1,5499
+"Walloon Folk Music","European Folk Music",0,19
+"Warsaw City Folk","European Folk Music",0,67
+"Yiddish Folksong","European Folk Music",0,63
+"Hmong Folk Music","Hill Tribe Music",0,15
+"Djanba","Indigenous Australian Music",0,1
+"Bambuco","Latin American Folk Music",0,18
+"Canto a lo poeta","Latin American Folk Music",0,22
+"Chamarrita rioplatense","Latin American Folk Music",0,8
+"Cueca","Latin American Folk Music",0,158
+"Gaita zuliana","Latin American Folk Music",0,16
+"Huayno","Latin American Folk Music",0,253
+"Joropo","Latin American Folk Music",0,56
+"Malagueña venezolana","Latin American Folk Music",0,21
+"Mexican Folk Music","Latin American Folk Music",0,655
+"Milonga","Latin American Folk Music",0,445
+"Música criolla peruana","Latin American Folk Music",0,156
+"Tamborito","Latin American Folk Music",0,9
+"Taquirari","Latin American Folk Music",0,31
+"Vallenato","Latin American Folk Music",0,201
+"Yaraví","Latin American Folk Music",0,10
+"Zamba","Latin American Folk Music",0,423
+"Indigenous Andean Music","Native American Music",0,1350
+"Inuit Music","Native American Music",0,73
+"Mapuche Folk Music","Native American Music",0,14
+"Powwow Music","Native American Music",0,54
+"Maftirim","Sephardic Music",0,11
+"Assamese Folk Music","South Asian Folk Music",0,5
+"Bengali Folk Music","South Asian Folk Music",0,56
+"Bhojpuri Folk Music","South Asian Folk Music",0,18
+"Gujarati Folk Music","South Asian Folk Music",0,11
+"Kirtan","South Asian Folk Music",0,88
+"Malayali Folk Music","South Asian Folk Music",0,13
+"Newa Folk Music","South Asian Folk Music",0,38
+"Odia Folk Music","South Asian Folk Music",0,3
+"Pashto Folk Music","South Asian Folk Music",0,60
+"Punjabi Folk Music","South Asian Folk Music",0,25
+"Rajasthani Folk Music","South Asian Folk Music",0,38
+"Sinhalese Folk Music","South Asian Folk Music",0,66
+"Tamil Folk Music","South Asian Folk Music",0,10
+"Telugu Folk Music","South Asian Folk Music",0,6
+"Balitaw","Southeast Asian Folk Music",0,2
+"Bamar Folk Music","Southeast Asian Folk Music",0,12
+"Gondang","Southeast Asian Folk Music",0,18
+"Hmong Folk Music","Southeast Asian Folk Music",0,15
+"Keroncong","Southeast Asian Folk Music",0,69
+"Khmer Folk Music","Southeast Asian Folk Music",0,18
+"Kuda Lumping","Southeast Asian Folk Music",0,9
+"Kundiman","Southeast Asian Folk Music",0,19
+"Lao Folk Music","Southeast Asian Folk Music",0,27
+"Malay Folk Music","Southeast Asian Folk Music",0,10
+"Molam","Southeast Asian Folk Music",0,291
+"Rapai dabõih","Southeast Asian Folk Music",0,3
+"Thai Folk Music","Southeast Asian Folk Music",0,26
+"Mongolian Throat Singing","Throat Singing",0,96
+"Tuvan Throat Singing","Throat Singing",0,159
+"Alevi Folk Music","West Asian Folk Music",0,34
+"Armenian Folk Music","West Asian Folk Music",0,463
+"Assyrian Folk Music","West Asian Folk Music",0,43
+"Iranian Folk Music","West Asian Folk Music",0,183
+"Israeli Folk Music","West Asian Folk Music",0,152
+"Kurdish Folk Music","West Asian Folk Music",0,122
+"Pashto Folk Music","West Asian Folk Music",0,60
+"Turkish Folk Music","West Asian Folk Music",0,723
+"Field Hollers","Work Songs",0,16
+"Sea Shanties","Work Songs",0,353
+"Waulking Song","Work Songs",0,10
+"Country Yodeling","Yodeling",1,257
+"Naturjodel","Yodeling",0,8
+"Chicano Rap","Gangsta Rap",0,129
+"Bop","Drill",0,381
+"UK Drill","Drill",0,1061
+"Batuque","Cape Verdean Music",0,28
+"Coladeira","Cape Verdean Music",0,78
+"Funaná","Cape Verdean Music",0,74
+"Morna","Cape Verdean Music",0,177
+"Ambasse bey","Central African Music",0,17
+"Assiko","Central African Music",0,19
+"Bend-Skin","Central African Music",0,6
+"Bikutsi","Central African Music",0,65
+"Kalindula","Central African Music",0,18
+"Kilapanga","Central African Music",0,6
+"Kizomba","Central African Music",0,352
+"Kuduro","Central African Music",0,287
+"Makossa","Central African Music",0,260
+"Mbenga-Mbuti Music","Central African Music",0,53
+"Semba","Central African Music",0,125
+"Soukous","Central African Music",0,1006
+"Tradi-Modern","Central African Music",0,29
+"Zamrock","Central African Music",1,97
+"Benga","East African Music",0,93
+"Bongo Flava","East African Music",0,60
+"Comorian Music","East African Music",0,49
+"Genge","East African Music",0,7
+"Kapuka","East African Music",0,21
+"Kidumbak","East African Music",0,3
+"Marrabenta","East African Music",0,29
+"Muziki wa dansi","East African Music",0,111
+"Ngoma","East African Music",0,16
+"Singeli","East African Music",0,50
+"Taarab","East African Music",0,89
+"Timbila","East African Music",0,6
+"Malagasy Folk Music","Malagasy Music",0,89
+"Salegy","Malagasy Music",0,28
+"Tsapiky","Malagasy Music",0,9
+"Aita","North African Music",0,41
+"Algerian Chaabi","North African Music",0,92
+"Amazigh Music","North African Music",1,574
+"Ancient Egyptian Music","North African Music",0,44
+"Andalusian Classical Music","North African Music",0,137
+"Coptic Music","North African Music",0,17
+"Gnawa","North African Music",0,188
+"Moorish Music","North African Music",0,59
+"Moroccan Chaabi","North African Music",0,32
+"Raï","North African Music",0,433
+"Shaʻabi","North African Music",0,117
+"Azmari","Northeastern African Music",0,22
+"Ethio-Jazz","Northeastern African Music",1,282
+"Ethiopian Church Music","Northeastern African Music",0,55
+"Nubian Music","Northeastern African Music",1,109
+"Qaraami","Northeastern African Music",0,35
+"Tigrinya Music","Northeastern African Music",0,41
+"Tizita","Northeastern African Music",0,208
+"Amapiano","Southern African Music",0,114
+"Bulawayo Jazz","Southern African Music",1,12
+"Cape Jazz","Southern African Music",1,102
+"Chimurenga","Southern African Music",0,120
+"Famo","Southern African Music",0,11
+"Gqom","Southern African Music",0,189
+"Jit","Southern African Music",0,49
+"Kwaito","Southern African Music",0,223
+"Marabi","Southern African Music",2,321
+"Mbube","Southern African Music",0,92
+"Shangaan Electro","Southern African Music",0,42
+"Southern African Folk Music","Southern African Music",0,224
+"Sungura","Southern African Music",0,59
+"Township Bubblegum","Southern African Music",0,80
+"Township Jive","Southern African Music",0,60
+"Tsonga Disco","Southern African Music",0,18
+"Afro-Funk","West African Music",0,791
+"Afro-Rock","West African Music",1,99
+"Akan Music","West African Music",0,44
+"Balani Show","West African Music",0,10
+"Dagomba Music","West African Music",0,15
+"Ewe Music","West African Music",0,34
+"Fon Music","West African Music",0,214
+"Fula Music","West African Music",0,56
+"Gumbe","West African Music",0,63
+"Hausa Music","West African Music",0,17
+"Highlife","West African Music",1,1102
+"Igbo Music","West African Music",0,18
+"Kabye Folk Music","West African Music",0,4
+"Mande Music","West African Music",0,1077
+"Palm Wine Music","West African Music",0,36
+"Songhai Music","West African Music",1,95
+"Wassoulou","West African Music",0,95
+"Wolof Music","West African Music",0,518
+"Yoruba Music","West African Music",2,1867
+"Ziglibithy","West African Music",0,16
+"Zouglou","West African Music",0,125
+"Pop Raï","Raï",0,170
+"Traditional Raï","Raï",0,43
+"Mahraganat","Shaʻabi",0,31
+"Albanian Folk Music","Balkan Folk Music",0,306
+"Balkan Brass Band","Balkan Folk Music",0,218
+"Bulgarian Folk Music","Balkan Folk Music",0,294
+"Csango Folk Music","Balkan Folk Music",0,14
+"Gagauz Folk Music","Balkan Folk Music",0,2
+"Greek Folk Music","Balkan Folk Music",0,843
+"Macedonian Folk Music","Balkan Folk Music",0,419
+"Muzică lăutărească","Balkan Folk Music",0,147
+"Sevdalinka","Balkan Folk Music",0,94
+"Starogradska muzika","Balkan Folk Music",0,70
+"Entechna Laika","Entechna",0,99
+"Neo Kyma","Entechna",0,63
+"Entechna Laika","Laika",0,99
+"Modern Laika","Laika",0,102
+"Skiladika","Laika",0,20
+"Pagodão","Axé",0,111
+"Samba-Reggae","Axé",0,117
+"Samba-Jazz","Bossa nova",1,736
+"Arrocha","Brega",0,28
+"Tecnobrega","Brega",0,290
+"Samba-choro","Choro",0,133
+"Ciranda","Coco",0,19
+"Forró eletrônico","Forró",0,142
+"Forró universitário","Forró",0,46
+"Brega-funk","Funk carioca",0,175
+"Funk mandelão","Funk carioca",0,57
+"Funk Melody","Funk carioca",0,346
+"Funk ostentação","Funk carioca",0,307
+"Funk proibidão","Funk carioca",0,81
+"Rasteirinha","Funk carioca",0,77
+"Tropicália","MPB",0,229
+"Vanera","Música gaúcha",0,3
+"Batucada","Samba",0,95
+"Marchinha","Samba",0,125
+"Pagode","Samba",0,403
+"Partido alto","Samba",0,56
+"Samba-canção","Samba",0,428
+"Samba-choro","Samba",0,133
+"Samba de breque","Samba",0,19
+"Samba de roda","Samba",0,64
+"Samba de terreiro","Samba",0,45
+"Samba-enredo","Samba",0,67
+"Samba-exaltação","Samba",0,50
+"Samba-Rock","Samba",0,210
+"Samba Soul","Samba",0,231
+"Rasqueado","Sertanejo",0,5
+"Sertanejo de raiz","Sertanejo",0,427
+"Sertanejo romântico","Sertanejo",0,278
+"Sertanejo universitário","Sertanejo",0,301
+"Spouge","Calypso",0,22
+"Biguine","French Caribbean Music",0,88
+"Bouyon","French Caribbean Music",0,54
+"Cadence Lypso","French Caribbean Music",0,37
+"Cadence Rampa","French Caribbean Music",0,39
+"Compas","French Caribbean Music",0,255
+"Dennery Segment","French Caribbean Music",0,15
+"Gwo Ka","French Caribbean Music",0,85
+"Méringue","French Caribbean Music",0,20
+"Rara","French Caribbean Music",0,12
+"Rasin","French Caribbean Music",0,25
+"Tumbélé","French Caribbean Music",0,34
+"Zouk","French Caribbean Music",0,832
+"Dancehall","Jamaican Music",0,7048
+"Jamaican Ska","Jamaican Music",0,728
+"Mento","Jamaican Music",0,166
+"Nyahbinghi","Jamaican Music",0,66
+"Reggae","Jamaican Music",5,17674
+"Rocksteady","Jamaican Music",0,1126
+"Chutney","Soca",0,114
+"Dennery Segment","Soca",0,15
+"Power Soca","Soca",0,62
+"Rapso","Soca",0,22
+"Gregorian Chant","Plainsong",0,321
+"Znamenny Chant","Russian Orthodox Liturgical Music",0,92
+"Enka","Japanese Music",0,488
+"Japanese Classical Music","Japanese Music",2,490
+"Japanese Folk Music","Japanese Music",1,706
+"Kayōkyoku","Japanese Music",0,1061
+"Ryūkōka","Japanese Music",0,242
+"Shinkyoku","Japanese Music",0,8
+"Pon-chak disco","Trot",0,7
+"Aegean Islands Folk Music","Greek Folk Music",0,115
+"Cretan Folk Music","Greek Folk Music",0,112
+"Dimotika","Greek Folk Music",0,62
+"Ionian Islands Folk Music","Greek Folk Music",0,1
+"Rembetika","Greek Folk Music",0,338
+"Bolero-Beat","Canción melódica",0,41
+"Andean Rock","Latin American Music",1,156
+"Bachata","Latin American Music",0,207
+"Bolero","Latin American Music",0,1230
+"Bomba","Latin American Music",0,27
+"Boogaloo","Latin American Music",0,362
+"Candombe","Latin American Music",0,140
+"Chacarera","Latin American Music",0,222
+"Chamamé","Latin American Music",0,148
+"Champeta","Latin American Music",0,51
+"Cuarteto","Latin American Music",0,183
+"Cuban Music","Latin American Music",1,3495
+"Cumbia","Latin American Music",0,1805
+"Currulao","Latin American Music",0,34
+"Dembow","Latin American Music",0,103
+"Guarania","Latin American Music",0,89
+"Jibaro","Latin American Music",0,46
+"Latin Alternative","Latin American Music",0,1746
+"Latin American Classical Music","Latin American Music",1,222
+"Latin American Folk Music","Latin American Music",0,3148
+"Latin Disco","Latin American Music",0,201
+"Latin Electronic","Latin American Music",0,1327
+"Latin Freestyle","Latin American Music",0,72
+"Latin Funk","Latin American Music",0,359
+"Latin Jazz","Latin American Music",1,2257
+"Latin Pop","Latin American Music",0,2660
+"Latin Rock","Latin American Music",1,906
+"Latin Soul","Latin American Music",0,212
+"Merengue","Latin American Music",0,388
+"Mexican Music","Latin American Music",0,1747
+"Muliza","Latin American Music",0,4
+"Nueva canción latinoamericana","Latin American Music",1,1201
+"Onda nueva","Latin American Music",0,16
+"Pasillo","Latin American Music",0,35
+"Plena","Latin American Music",0,64
+"Reggaeton","Latin American Music",0,2057
+"Rhumba","Latin American Music",0,341
+"Salsa","Latin American Music",0,1927
+"Saya afroboliviana","Latin American Music",0,4
+"Tamborera","Latin American Music",0,10
+"Tango","Latin American Music",1,3909
+"Andalusian Rock","Spanish Music",0,237
+"Bolero español","Spanish Music",0,49
+"Flamenco Pop","Spanish Music",0,813
+"Nueva canción española","Spanish Music",0,329
+"Rumba catalana","Spanish Music",0,402
+"Spanish Classical Music","Spanish Music",1,952
+"Spanish Folk Music","Spanish Music",1,5499
+"Tecnorumba","Spanish Music",0,70
+"Shashmaqam","Tajik Traditional Music",1,31
+"Shashmaqam","Uzbek Traditional Music",1,31
+"Klezmer","Ashkenazi Music",0,792
+"Nigun","Ashkenazi Music",0,21
+"Yiddish Folksong","Ashkenazi Music",0,63
+"Ancient Levitical Music","Jewish Liturgical Music",0,5
+"Cantillation","Jewish Liturgical Music",0,88
+"Chazzanut","Jewish Liturgical Music",0,6
+"Slack-Key Guitar","Hawaiian Music",0,193
+"Cante alentejano","Portuguese Folk Music",0,10
+"Chamarrita açoriana","Portuguese Folk Music",0,1
+"Fado","Portuguese Folk Music",0,1239
+"Trás-os-Montes Folk Music","Portuguese Folk Music",0,15
+"Bocet","Romanian Folk Music",0,5
+"Colinde","Romanian Folk Music",0,13
+"Doina","Romanian Folk Music",0,39
+"Muzică lăutărească","Romanian Folk Music",0,147
+"Maloya élektrik","Maloya",0,5
+"Traditional Maloya","Maloya",0,14
+"Seggae","Séga",0,19
+"Traditional Séga","Séga",0,21
+"Folkhop","Bhangra",0,8
+"Kliningan","Jaipongan",0,74
+"Lilat","Luk Krung",0,4
+"Balitaw","Philippine Music",0,2
+"Kundiman","Philippine Music",0,19
+"Manila Sound","Philippine Music",0,65
+"Pinoy Folk Rock","Philippine Music",0,16
+"Bogino duu","Mongolian Traditional Music",0,16
+"Mongolian Long Song","Mongolian Traditional Music",0,31
+"Mongolian Throat Singing","Mongolian Traditional Music",0,96
+"Armenian Church Music","Armenian Music",0,66
+"Armenian Folk Music","Armenian Music",0,463
+"Rabiz","Armenian Music",0,58
+"Bandari","Iranian Music",0,8
+"Iranian Folk Music","Iranian Music",0,183
+"Persian Classical Music","Iranian Music",2,594
+"Persian Pop","Iranian Music",0,367
+"Anatolian Rock","Turkish Music",0,656
+"Arabesque","Turkish Music",0,261
+"Fantezi","Turkish Music",0,56
+"Kanto","Turkish Music",0,8
+"Ottoman Military Music","Turkish Music",0,5
+"Özgün Müzik","Turkish Music",0,66
+"Turkish Classical Music","Turkish Music",1,291
+"Turkish Folk Music","Turkish Music",0,723
+"Turkish Mevlevi Music","Turkish Music",0,72
+"Turkish Pop","Turkish Music",0,1908
+"Nueva trova","Nueva canción latinoamericana",1,210
+"Emoviolence","Powerviolence",1,846
+"Trancecore","Melodic Metalcore",0,639
+"Blackgaze","Atmospheric Black Metal",5,1638
+"Slam Death Metal","Brutal Death Metal",0,1632
+"Gorenoise","Goregrind",0,753
+"Cantonese Opera","Chinese Opera",0,24
+"Peking Opera","Chinese Opera",0,71
+"Shaoxing Opera","Chinese Opera",0,17
+"Danmono","Sōkyoku",0,23
+"Kumiuta","Sōkyoku",0,3
+"Gagok","Jeong-ak",0,4
+"Kafi","Qawwali",0,19
+"Gamelan sekaten","Gamelan Jawa",0,5
+"Totalism","Post-Minimalism",2,122
+"Integral Serialism","Serialism",2,43
+"Darkside Hardcore","Breakbeat Hardcore",0,183
+"Hardcore Breaks","Breakbeat Hardcore",0,687
+"Crossbreed","Darkstep",0,93
+"Ragga Jungle","Jungle",0,553
+"Sambass","Liquid Funk",0,44
+"Deathstep","Brostep",0,525
+"Drumstep","Brostep",0,799
+"Riddim","Brostep",0,1199
+"Lolicore","Breakcore",0,550
+"Mashcore","Breakcore",0,269
+"Raggacore","Breakcore",0,139
+"Nu Style Gabber","Gabber",0,563
+"Bouncy Techno","Happy Hardcore",0,172
+"UK Hardcore","Happy Hardcore",0,760
+"Extratone","Speedcore",0,117
+"Splittercore","Speedcore",0,118
+"Outsider House","Deep House",0,2624
+"Complextro","Electro House",0,859
+"Fidget House","Electro House",0,484
+"Jungle Terror","Electro House",0,165
+"Melbourne Bounce","Electro House",0,152
+"Future Bounce","Future House",0,284
+"Ghettotech","Ghetto House",0,777
+"Juke","Ghetto House",0,751
+"Progressive Breaks","Progressive House",0,228
+"NRG","UK Hard House",0,77
+"Scouse House","UK Hard House",0,338
+"Dub Techno","Minimal Techno",1,3060
+"Hands Up","Euro-Trance",0,153
+"Nitzhonot","Goa Trance",0,34
+"Dark Psytrance","Psytrance",0,367
+"Full-On Psytrance","Psytrance",0,192
+"Progressive Psytrance","Psytrance",0,298
+"Suomisaundi","Psytrance",0,143
+"Unyago","Ngoma",0,5
+"Khoisan Folk Music","Southern African Folk Music",0,13
+"Nguni Folk Music","Southern African Folk Music",0,54
+"Shona Mbira Music","Southern African Folk Music",0,97
+"Sotho-Tswana Folk Music","Southern African Folk Music",0,24
+"Traditional Cajun","Cajun Music",0,79
+"Zydeco","Cajun Music",0,362
+"Country Gospel","Gospel",2,1068
+"Southern Gospel","Gospel",0,596
+"Traditional Black Gospel","Gospel",0,508
+"Cakewalk","Ragtime",0,56
+"Coon Song","Ragtime",0,148
+"Novelty Piano","Ragtime",0,78
+"Stride","Ragtime",2,251
+"Cape Breton Folk Music","Canadian Maritime Folk",0,127
+"Upopo","Ainu Folk Music",0,17
+"Yukar","Ainu Folk Music",0,2
+"Han Folk Music","Chinese Folk Music",0,7
+"Jiangnan Sizhu","Chinese Folk Music",0,12
+"Amami Shimauta","Japanese Folk Music",0,47
+"Heikyoku","Japanese Folk Music",0,13
+"Kagura","Japanese Folk Music",0,6
+"Kouta","Japanese Folk Music",0,3
+"Min'yō","Japanese Folk Music",0,122
+"Ondō","Japanese Folk Music",0,11
+"Rōkyoku","Japanese Folk Music",0,49
+"Taiko","Japanese Folk Music",0,48
+"Tsugaru Shamisen","Japanese Folk Music",0,70
+"Pansori","Korean Folk Music",0,22
+"Sanjo","Korean Folk Music",0,49
+"Sinawi","Korean Folk Music",0,6
+"Quan họ","Vietnamese Folk Music",0,10
+"Naturjodel","Alpine Folk Music",0,8
+"Sardana","Catalan Folk Music",0,86
+"Asturian Folk Music","Celtic Folk Music",0,113
+"Breton Celtic Folk Music","Celtic Folk Music",0,339
+"Cape Breton Folk Music","Celtic Folk Music",0,127
+"Cornish Folk Music","Celtic Folk Music",0,30
+"Galician Folk Music","Celtic Folk Music",0,337
+"Irish Folk Music","Celtic Folk Music",1,2916
+"Manx Folk Music","Celtic Folk Music",0,26
+"Newfoundland Folk Music","Celtic Folk Music",0,123
+"Scottish Folk Music","Celtic Folk Music",1,2307
+"Trás-os-Montes Folk Music","Celtic Folk Music",0,15
+"Welsh Folk Music","Celtic Folk Music",0,214
+"Cornish Folk Music","English Folk Music",0,30
+"Northumbrian Folk Music","English Folk Music",0,116
+"Scrumpy and Western","English Folk Music",0,72
+"Brass Band","Fanfare",2,451
+"Alsatian Folk Music","French Folk Music",0,47
+"Breton Folk Music","French Folk Music",0,547
+"Corsican Folk Music","French Folk Music",0,73
+"Musette","French Folk Music",0,898
+"Occitan Folk Music","French Folk Music",0,461
+"Cantu a tenore","Italian Folk Music",0,31
+"Canzone napoletana","Italian Folk Music",0,266
+"Liscio","Italian Folk Music",0,9
+"Stornello","Italian Folk Music",0,8
+"Tarantella","Italian Folk Music",0,39
+"Trallalero","Italian Folk Music",0,7
+"Sutartinės","Lithuanian Folk Music",0,18
+"Danish Folk Music","Nordic Folk Music",1,74
+"Faroese Folk Music","Nordic Folk Music",0,42
+"Finnish Folk Music","Nordic Folk Music",0,642
+"Icelandic Folk Music","Nordic Folk Music",0,45
+"Joik","Nordic Folk Music",0,130
+"Nordic Old Time Dance Music","Nordic Folk Music",0,293
+"Norwegian Folk Music","Nordic Folk Music",0,740
+"Runolaulu","Nordic Folk Music",0,55
+"Swedish Folk Music","Nordic Folk Music",0,910
+"Belarusian Folk Music","Slavic Folk Music",0,50
+"Bulgarian Folk Music","Slavic Folk Music",0,294
+"Croatian Folk Music","Slavic Folk Music",0,134
+"Czech Folk Music","Slavic Folk Music",0,34
+"Goral Music","Slavic Folk Music",0,69
+"Macedonian Folk Music","Slavic Folk Music",0,419
+"Moravian Folk Music","Slavic Folk Music",0,21
+"Polish Folk Music","Slavic Folk Music",0,446
+"Russian Folk Music","Slavic Folk Music",0,518
+"Sevdalinka","Slavic Folk Music",0,94
+"Slovak Folk Music","Slavic Folk Music",0,42
+"Slovenian Folk Music","Slavic Folk Music",0,72
+"Starogradska muzika","Slavic Folk Music",0,70
+"Ukrainian Folk Music","Slavic Folk Music",0,189
+"Andalusian Folk Music","Spanish Folk Music",0,266
+"Aragonese Folk Music","Spanish Folk Music",0,78
+"Asturian Folk Music","Spanish Folk Music",0,113
+"Canarian Folk Music","Spanish Folk Music",0,68
+"Chotis madrileño","Spanish Folk Music",0,61
+"Copla","Spanish Folk Music",0,1049
+"Cuplé","Spanish Folk Music",0,123
+"Flamenco","Spanish Folk Music",1,3089
+"Galician Folk Music","Spanish Folk Music",0,337
+"Pasodoble","Spanish Folk Music",0,327
+"Carnavalito","Huayno",0,10
+"Canto cardenche","Mexican Folk Music",0,4
+"Ranchera","Mexican Folk Music",0,358
+"Son Calentano","Mexican Folk Music",0,14
+"Son Huasteco","Mexican Folk Music",0,63
+"Son Istmeño","Mexican Folk Music",0,12
+"Son Jarocho","Mexican Folk Music",0,92
+"Trova yucateca","Mexican Folk Music",0,12
+"Marinera","Música criolla peruana",0,19
+"Tondero","Música criolla peruana",0,3
+"Vals criollo","Música criolla peruana",0,57
+"Chacarera","Indigenous Andean Music",0,222
+"Harawi","Indigenous Andean Music",0,11
+"Huayno","Indigenous Andean Music",0,253
+"Muliza","Indigenous Andean Music",0,4
+"Saya afroboliviana","Indigenous Andean Music",0,4
+"Yaraví","Indigenous Andean Music",0,10
+"Inuit Vocal Games","Inuit Music",0,42
+"Sarala Gee","Sinhalese Folk Music",0,47
+"Urumi melam","Tamil Folk Music",0,7
+"Cilokaq","Keroncong",0,1
+"Kef Music","Armenian Folk Music",0,95
+"Turkish Black Sea Region Folk Music","Turkish Folk Music",0,39
+"Uzun Hava","Turkish Folk Music",0,13
+"Zeybek","Turkish Folk Music",0,14
+"Tarraxinha","Kizomba",0,29
+"Kwassa kwassa","Soukous",0,21
+"Izlan","Amazigh Music",0,30
+"Sahrawi Music","Amazigh Music",0,30
+"Tuareg Music","Amazigh Music",1,288
+"Zoblazo","Akan Music",0,5
+"Tchinkoumé","Fon Music",0,11
+"Tchink System","Fon Music",0,12
+"Zinli","Fon Music",0,11
+"Burger-Highlife","Highlife",0,13
+"Mbalax","Wolof Music",0,401
+"Tassu","Wolof Music",0,9
+"Afrobeat","Yoruba Music",2,1068
+"Apala","Yoruba Music",0,116
+"Fuji","Yoruba Music",0,141
+"Jùjú","Yoruba Music",0,382
+"Santería Music","Yoruba Music",0,104
+"Waka","Yoruba Music",0,50
+"Coupé-Décalé","Zouglou",0,98
+"Lab Polyphony","Albanian Folk Music",0,86
+"Musika popullore","Albanian Folk Music",0,58
+"Tosk Polyphony","Albanian Folk Music",0,13
+"Čalgija","Macedonian Folk Music",0,20
+"Čalgija","Starogradska muzika",0,20
+"Pagodão","Pagode",0,111
+"Pagode romântico","Pagode",0,165
+"Moda de viola","Sertanejo de raiz",0,83
+"Cabo-Zouk","Zouk",0,106
+"Zouk Love","Zouk",0,62
+"Bubbling","Dancehall",0,15
+"Digital Dancehall","Dancehall",0,634
+"Flex Dance Music","Dancehall",0,48
+"Ragga","Dancehall",0,1361
+"Deejay","Reggae",0,853
+"Digital Dancehall","Reggae",0,634
+"Dub","Reggae",1,4276
+"Lovers Rock","Reggae",0,547
+"Pop Reggae","Reggae",1,2245
+"Roots Reggae","Reggae",4,3645
+"Seggae","Reggae",0,19
+"Skinhead Reggae","Reggae",0,268
+"Mood Kayō","Kayōkyoku",0,43
+"Rizitika","Cretan Folk Music",0,7
+"Bolero son","Bolero",0,87
+"Filin","Bolero",0,35
+"Chachachá","Cuban Music",0,581
+"Changüí","Cuban Music",0,20
+"Conga","Cuban Music",0,67
+"Cuban Charanga","Cuban Music",0,202
+"Cuban Rumba","Cuban Music",0,382
+"Danzón","Cuban Music",0,113
+"Descarga","Cuban Music",0,246
+"Filin","Cuban Music",0,35
+"Guajira","Cuban Music",0,128
+"Guaracha","Cuban Music",0,258
+"Habanera","Cuban Music",0,51
+"Mambo","Cuban Music",0,783
+"Mozambique","Cuban Music",0,14
+"Pachanga","Cuban Music",0,222
+"Pilón","Cuban Music",0,6
+"Santería Music","Cuban Music",0,104
+"Son Cubano","Cuban Music",0,764
+"Songo","Cuban Music",0,74
+"Timba","Cuban Music",0,133
+"Trova","Cuban Music",1,263
+"Tumba francesa","Cuban Music",0,2
+"Bullerengue","Cumbia",0,28
+"Cumbia Argentina","Cumbia",0,483
+"Cumbia Mexicana","Cumbia",0,178
+"Cumbia Peruana","Cumbia",0,244
+"Digital Cumbia","Cumbia",0,253
+"Merecumbé","Cumbia",0,20
+"Porro","Cumbia",0,70
+"Merecumbé","Merengue",0,20
+"Bandas de viento de México","Mexican Music",0,183
+"Chilena","Mexican Music",0,11
+"Corrido","Mexican Music",0,157
+"Mariachi","Mexican Music",0,347
+"Mexican Folk Music","Mexican Music",0,655
+"Norteño","Mexican Music",0,370
+"Tejano","Mexican Music",0,267
+"Neoperreo","Reggaeton",0,478
+"Salsa Dura","Salsa",0,352
+"Salsa Romántica","Salsa",0,88
+"Timba","Salsa",0,133
+"Finnish Tango","Tango",0,257
+"Tango Nuevo","Tango",1,1061
+"Fado de Coimbra","Fado",0,108
+"Hardbass","Scouse House",0,130
+"Hi-Tech Psytrance","Dark Psytrance",0,123
+"Cape Breton Fiddling","Cape Breton Folk Music",0,91
+"Bagad","Breton Celtic Folk Music",0,52
+"Country & Irish","Irish Folk Music",1,152
+"Sean-nós","Irish Folk Music",0,83
+"Gaelic Psalm","Scottish Folk Music",0,12
+"Pibroch","Scottish Folk Music",1,53
+"Pipe Band","Scottish Folk Music",0,156
+"Shetland & Orkney Folk Music","Scottish Folk Music",0,103
+"Waulking Song","Scottish Folk Music",0,10
+"Breton Celtic Folk Music","Breton Folk Music",0,339
+"Auvergnat Folk Music","Occitan Folk Music",0,163
+"Gascon Folk Music","Occitan Folk Music",0,42
+"Pizzica","Tarantella",0,23
+"Tammurriata","Tarantella",0,6
+"Humppa","Nordic Old Time Dance Music",0,129
+"Visor","Swedish Folk Music",0,456
+"Klapa","Croatian Folk Music",0,54
+"Polish Carpathian Folk Music","Goral Music",0,52
+"Polish Carpathian Folk Music","Polish Folk Music",0,52
+"Narodno zabavna glasba","Slovenian Folk Music",0,32
+"Duma","Ukrainian Folk Music",0,4
+"Saeta","Andalusian Folk Music",0,27
+"Sevillanas","Andalusian Folk Music",0,209
+"Flamenco nuevo","Flamenco",1,843
+"Rumba Flamenca","Flamenco",0,674
+"Takamba","Tuareg Music",0,19
+"Tishoumaren","Tuareg Music",1,213
+"Novo Dub","Dub",0,268
+"Dub Poetry","Roots Reggae",0,91
+"Guaguancó","Cuban Rumba",0,190
+"Bolero son","Son Cubano",0,87
+"Nueva trova","Trova",1,210
+"Cumbia cheta","Cumbia Argentina",0,15
+"Cumbia santafesina","Cumbia Argentina",0,86
+"Cumbia Villera","Cumbia Argentina",0,74
+"Cumbia sonidera","Cumbia Mexicana",0,45
+"Banda sinaloense","Bandas de viento de México",0,175
+"Cumbia norteña mexicana","Norteño",0,9
+"Duranguense","Norteño",0,45
+"Movimiento Alterado","Norteño",0,45
+"Sierreño","Norteño",0,33
+"Electrotango","Tango Nuevo",0,87
+"Flamenco Jazz","Flamenco nuevo",1,123
+"Movimiento Alterado","Banda sinaloense",0,45
+"Tecnobanda","Banda sinaloense",0,13
