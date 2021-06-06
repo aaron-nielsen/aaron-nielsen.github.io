@@ -1,11 +1,11 @@
 "Genre","Parent","MyCount","PopCount"
-"Rock","Top",1062,680297
+"Rock","Top",1063,680297
 "Jazz","Top",82,85608
 "Ambient","Top",32,54523
 "Blues","Top",18,19499
 "Classical Music","Top",83,89247
 "Comedy","Other",2,12686
-"Country","Top",75,45278
+"Country","Top",77,45278
 "Dance","Top",39,214422
 "Electronic","Top",96,321367
 "Experimental","Top",28,92878
@@ -19,7 +19,7 @@
 "Punk","Top",154,169732
 "R&B","Top",33,79444
 "Regional Music","Top",47,112176
-"Singer/Songwriter","Other",130,40840
+"Singer/Songwriter","Other",131,40840
 "Ska","Top",4,5397
 "Sounds and Effects","Other",1,535
 "Spoken Word","Other",2,13694
@@ -34,12 +34,12 @@
 "British Rhythm & Blues","Rock",1,940
 "Christian Rock","Rock",2,2517
 "Comedy Rock","Rock",1,2448
-"Country Rock","Rock",54,5688
+"Country Rock","Rock",55,5688
 "Dark Cabaret","Rock",1,1046
 "Deutschrock","Rock",1,1259
 "Emo","Rock",15,17946
 "Experimental Rock","Rock",32,20348
-"Folk Rock","Rock",119,16413
+"Folk Rock","Rock",121,16413
 "Funk Rock","Rock",3,3495
 "Garage Rock","Rock",9,19740
 "Glam Rock","Rock",5,3623
@@ -136,8 +136,8 @@
 "Prank Calls","Comedy",0,312
 "Sketch Comedy","Comedy",0,398
 "Stand-Up Comedy","Comedy",0,2628
-"Alt-Country","Country",25,6181
-"Americana","Country",36,5948
+"Alt-Country","Country",27,6181
+"Americana","Country",38,5948
 "Contemporary Country","Country",2,4543
 "Country & Irish","Country",1,152
 "Country Pop","Country",3,6646
