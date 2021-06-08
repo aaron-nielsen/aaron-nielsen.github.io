@@ -1,24 +1,24 @@
 "Genre","Parent","MyCount","PopCount"
 "Rock","Top",1066,680297
-"Jazz","Top",83,85608
+"Jazz","Top",84,85608
 "Ambient","Top",32,54523
-"Blues","Top",18,19499
+"Blues","Top",19,19499
 "Classical Music","Top",84,89247
 "Comedy","Other",2,12686
 "Country","Top",79,45278
-"Dance","Top",40,214422
-"Electronic","Top",97,321367
-"Experimental","Top",28,92878
+"Dance","Top",41,214422
+"Electronic","Top",99,321367
+"Experimental","Top",29,92878
 "Field Recordings","Other",1,5383
 "Folk","Top",81,115819
 "Hip Hop","Top",24,131911
 "Industrial Music","Other",20,53318
 "New Age","Top",3,8263
-"Pop","Top",243,334591
+"Pop","Top",244,334591
 "Psychedelia","Other",109,51272
 "Punk","Top",155,169732
 "R&B","Top",34,79444
-"Regional Music","Top",48,112176
+"Regional Music","Top",49,112176
 "Singer/Songwriter","Other",133,40840
 "Ska","Top",4,5397
 "Sounds and Effects","Other",1,535
@@ -77,7 +77,7 @@
 "Zolo","Rock",3,1278
 "Afro-Jazz","Jazz",1,604
 "Arabic Jazz","Jazz",1,205
-"Avant-Garde Jazz","Jazz",18,15410
+"Avant-Garde Jazz","Jazz",19,15410
 "Bebop","Jazz",14,3789
 "Big Band","Jazz",3,5478
 "British Dance Band","Jazz",1,1897
@@ -149,7 +149,7 @@
 "Dance-Pop","Dance",6,25817
 "Dance-Punk","Dance",4,2552
 "Disco","Dance",4,25540
-"Electronic Dance Music","Dance",21,182281
+"Electronic Dance Music","Dance",22,182281
 "Acid Croft","Electronic",0,101
 "Algorave","Electronic",0,31
 "Ambient Dub","Electronic",1,1417
@@ -159,19 +159,19 @@
 "Dungeon Synth","Electronic",0,5159
 "Electroacoustic","Electronic",5,10300
 "Electro-Industrial","Electronic",3,5101
-"Electronic Dance Music","Electronic",21,182281
+"Electronic Dance Music","Electronic",22,182281
 "Electropop","Electronic",4,20155
 "Flashcore","Electronic",0,236
 "Folktronica","Electronic",0,2104
 "Glitch","Electronic",3,4509
 "Glitch Hop","Electronic",1,2256
 "Glitch Pop","Electronic",1,1892
-"Grime","Electronic",0,7521
+"Grime","Electronic",1,7521
 "HexD","Electronic",0,515
 "Horror Synth","Electronic",0,962
 "Hyperpop","Electronic",0,728
 "IDM","Electronic",9,10955
-"Illbient","Electronic",0,527
+"Illbient","Electronic",1,527
 "Indietronica","Electronic",4,10749
 "Latin Electronic","Electronic",0,1327
 "Microsound","Electronic",2,272
@@ -179,7 +179,7 @@
 "Minimal Wave","Electronic",1,7918
 "Nightcore","Electronic",0,1222
 "Nu Jazz","Electronic",1,2728
-"Progressive Electronic","Electronic",6,10348
+"Progressive Electronic","Electronic",7,10348
 "Psybient","Electronic",0,859
 "Synthpop","Electronic",26,29724
 "Synth Punk","Electronic",2,2345
@@ -190,7 +190,7 @@
 "Conducted Improvisation","Experimental",0,64
 "Drone","Experimental",8,19002
 "Electroacoustic","Experimental",5,10300
-"Free Improvisation","Experimental",1,13105
+"Free Improvisation","Experimental",2,13105
 "Futurism","Experimental",1,92
 "Glitch","Experimental",3,4509
 "Indeterminacy","Experimental",1,733
@@ -273,7 +273,7 @@
 "Dangdut","Pop",0,137
 "Dansbandsmusik","Pop",0,605
 "Dansktop","Pop",0,115
-"Easy Listening","Pop",0,9643
+"Easy Listening","Pop",1,9643
 "Electropop","Pop",4,20155
 "Europop","Pop",0,2076
 "Flamenco Pop","Pop",0,813
@@ -340,7 +340,7 @@
 "New Orleans R&B","R&B",2,898
 "Rhythm & Blues","R&B",3,8282
 "Soul","R&B",12,32430
-"African Music","Regional Music",13,14340
+"African Music","Regional Music",14,14340
 "Ancient Music","Regional Music",0,220
 "Arabic Music","Regional Music",2,3976
 "Balkan Music","Regional Music",0,4979
@@ -512,7 +512,7 @@
 "Surf Rock","Surf Music",7,3352
 "Vocal Surf","Surf Music",9,321
 "Experimental Big Band","Avant-Garde Jazz",1,771
-"Free Jazz","Avant-Garde Jazz",4,6449
+"Free Jazz","Avant-Garde Jazz",5,6449
 "Spiritual Jazz","Avant-Garde Jazz",6,823
 "Yass","Avant-Garde Jazz",0,106
 "Hard Bop","Bebop",9,2458
@@ -657,7 +657,7 @@
 "Trance","Electronic Dance Music",1,13174
 "Trap [EDM]","Electronic Dance Music",0,4569
 "Tribal Guarachero","Electronic Dance Music",0,29
-"UK Bass","Electronic Dance Music",0,4340
+"UK Bass","Electronic Dance Music",1,4340
 "UK Garage","Electronic Dance Music",1,5892
 "Wonky","Electronic Dance Music",2,2444
 "Chiptune","Bit Music",0,3911
@@ -794,7 +794,7 @@
 "Light Music","Easy Listening",0,537
 "Lounge","Easy Listening",0,2058
 "Pops Orchestra","Easy Listening",0,347
-"Space Age Pop","Easy Listening",0,820
+"Space Age Pop","Easy Listening",1,820
 "Bedroom Pop","Indie Pop",0,1872
 "C86","Indie Pop",0,577
 "Chamber Pop","Indie Pop",3,5697
@@ -851,7 +851,7 @@
 "North African Music","African Music",1,1755
 "Northeastern African Music","African Music",2,741
 "Southern African Music","African Music",3,1645
-"West African Music","African Music",5,5843
+"West African Music","African Music",6,5843
 "Ancient Chinese Music","Ancient Music",0,31
 "Ancient Egyptian Music","Ancient Music",0,44
 "Ancient Greek Music","Ancient Music",0,56
@@ -1567,7 +1567,7 @@
 "Kabye Folk Music","West African Music",0,4
 "Mande Music","West African Music",0,1077
 "Palm Wine Music","West African Music",0,36
-"Songhai Music","West African Music",1,95
+"Songhai Music","West African Music",2,95
 "Wassoulou","West African Music",0,95
 "Wolof Music","West African Music",0,518
 "Yoruba Music","West African Music",2,1867
