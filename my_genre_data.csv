@@ -1,25 +1,25 @@
 "Genre","Parent","MyCount","PopCount"
-"Rock","Top",1066,680297
-"Jazz","Top",84,85608
+"Rock","Top",1067,680297
+"Jazz","Top",85,85608
 "Ambient","Top",32,54523
 "Blues","Top",19,19499
 "Classical Music","Top",84,89247
 "Comedy","Other",2,12686
-"Country","Top",79,45278
-"Dance","Top",41,214422
-"Electronic","Top",99,321367
+"Country","Top",85,45278
+"Dance","Top",42,214422
+"Electronic","Top",100,321367
 "Experimental","Top",29,92878
 "Field Recordings","Other",1,5383
-"Folk","Top",81,115819
+"Folk","Top",85,115819
 "Hip Hop","Top",24,131911
 "Industrial Music","Other",20,53318
 "New Age","Top",3,8263
 "Pop","Top",244,334591
 "Psychedelia","Other",109,51272
 "Punk","Top",155,169732
-"R&B","Top",34,79444
+"R&B","Top",35,79444
 "Regional Music","Top",49,112176
-"Singer/Songwriter","Other",133,40840
+"Singer/Songwriter","Other",139,40840
 "Ska","Top",4,5397
 "Sounds and Effects","Other",1,535
 "Spoken Word","Other",2,13694
@@ -47,7 +47,7 @@
 "Hard Rock","Rock",114,49325
 "Heartland Rock","Rock",34,1399
 "Industrial Rock","Rock",13,4419
-"Jam Band","Rock",72,4291
+"Jam Band","Rock",73,4291
 "Jazz-Rock","Rock",5,6531
 "Latin Rock","Rock",2,906
 "Math Rock","Rock",4,4498
@@ -67,7 +67,7 @@
 "Rock & Roll","Rock",5,13094
 "Rock Opera","Rock",3,889
 "Rock urbano español","Rock",1,733
-"Roots Rock","Rock",22,2959
+"Roots Rock","Rock",23,2959
 "Southern Rock","Rock",1,3351
 "Sufi Rock","Rock",1,34
 "Surf Music","Rock",11,3914
@@ -91,8 +91,8 @@
 "ECM Style Jazz","Jazz",1,1067
 "Ethio-Jazz","Jazz",1,282
 "Flamenco Jazz","Jazz",1,123
-"Jazz-Funk","Jazz",2,3967
-"Jazz Fusion","Jazz",11,11662
+"Jazz-Funk","Jazz",3,3967
+"Jazz Fusion","Jazz",12,11662
 "Jazz manouche","Jazz",1,865
 "Jazz Poetry","Jazz",1,187
 "Latin Jazz","Jazz",2,2257
@@ -137,19 +137,19 @@
 "Sketch Comedy","Comedy",0,398
 "Stand-Up Comedy","Comedy",0,2628
 "Alt-Country","Country",28,6181
-"Americana","Country",40,5948
+"Americana","Country",45,5948
 "Contemporary Country","Country",2,4543
 "Country & Irish","Country",1,152
 "Country Pop","Country",3,6646
 "Honky Tonk","Country",2,1587
-"Progressive Country","Country",10,2627
+"Progressive Country","Country",15,2627
 "Traditional Country","Country",7,8238
 "Western Swing","Country",1,759
 "Alternative Dance","Dance",7,4222
 "Dance-Pop","Dance",6,25817
 "Dance-Punk","Dance",4,2552
 "Disco","Dance",4,25540
-"Electronic Dance Music","Dance",22,182281
+"Electronic Dance Music","Dance",23,182281
 "Acid Croft","Electronic",0,101
 "Algorave","Electronic",0,31
 "Ambient Dub","Electronic",1,1417
@@ -159,14 +159,14 @@
 "Dungeon Synth","Electronic",0,5159
 "Electroacoustic","Electronic",5,10300
 "Electro-Industrial","Electronic",3,5101
-"Electronic Dance Music","Electronic",22,182281
+"Electronic Dance Music","Electronic",23,182281
 "Electropop","Electronic",4,20155
 "Flashcore","Electronic",0,236
 "Folktronica","Electronic",0,2104
 "Glitch","Electronic",3,4509
 "Glitch Hop","Electronic",1,2256
 "Glitch Pop","Electronic",1,1892
-"Grime","Electronic",1,7521
+"Grime","Electronic",2,7521
 "HexD","Electronic",0,515
 "Horror Synth","Electronic",0,962
 "Hyperpop","Electronic",0,728
@@ -205,7 +205,7 @@
 "Turntable Music","Experimental",0,451
 "Nature Recordings","Field Recordings",0,1172
 "Radio Broadcast Recordings","Field Recordings",0,209
-"Contemporary Folk","Folk",58,54144
+"Contemporary Folk","Folk",62,54144
 "Traditional Folk Music","Folk",25,65012
 "Abstract Hip Hop","Hip Hop",1,5545
 "Afroswing","Hip Hop",0,109
@@ -336,7 +336,7 @@
 "Boogie","R&B",0,2767
 "Contemporary R&B","R&B",7,24794
 "Doo-Wop","R&B",0,2724
-"Funk","R&B",15,20114
+"Funk","R&B",16,20114
 "New Orleans R&B","R&B",2,898
 "Rhythm & Blues","R&B",3,8282
 "Soul","R&B",12,32430
@@ -583,7 +583,7 @@
 "Urban Cowboy","Country Pop",0,362
 "Bakersfield Sound","Honky Tonk",1,387
 "Truck Driving Country","Honky Tonk",1,215
-"Outlaw Country","Progressive Country",6,1159
+"Outlaw Country","Progressive Country",7,1159
 "Progressive Bluegrass","Progressive Country",1,1112
 "Bluegrass","Traditional Country",2,3647
 "Close Harmony","Traditional Country",1,682
@@ -657,7 +657,7 @@
 "Trance","Electronic Dance Music",1,13174
 "Trap [EDM]","Electronic Dance Music",0,4569
 "Tribal Guarachero","Electronic Dance Music",0,29
-"UK Bass","Electronic Dance Music",1,4340
+"UK Bass","Electronic Dance Music",2,4340
 "UK Garage","Electronic Dance Music",1,5892
 "Wonky","Electronic Dance Music",2,2444
 "Chiptune","Bit Music",0,3911
@@ -824,7 +824,7 @@
 "Afro-Funk","Funk",0,791
 "Deep Funk","Funk",1,126
 "Go-Go","Funk",0,151
-"Jazz-Funk","Funk",2,3967
+"Jazz-Funk","Funk",3,3967
 "Latin Funk","Funk",0,359
 "P-Funk","Funk",0,416
 "Porn Groove","Funk",0,102
