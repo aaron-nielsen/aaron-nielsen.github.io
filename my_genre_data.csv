@@ -1,21 +1,21 @@
 "Genre","Parent","MyCount","PopCount"
-"Rock","Top",1070,680297
+"Rock","Top",1074,680297
 "Jazz","Top",85,85608
 "Ambient","Top",32,54523
 "Blues","Top",19,19499
-"Classical Music","Top",84,89247
+"Classical Music","Top",85,89247
 "Comedy","Other",2,12686
 "Country","Top",86,45278
 "Dance","Top",42,214422
 "Electronic","Top",100,321367
-"Experimental","Top",29,92878
+"Experimental","Top",30,92878
 "Field Recordings","Other",1,5383
 "Folk","Top",85,115819
 "Hip Hop","Top",24,131911
 "Industrial Music","Other",20,53318
 "New Age","Top",3,8263
 "Pop","Top",245,334591
-"Psychedelia","Other",110,51272
+"Psychedelia","Other",114,51272
 "Punk","Top",155,169732
 "R&B","Top",35,79444
 "Regional Music","Top",49,112176
@@ -40,11 +40,11 @@
 "Emo","Rock",16,17946
 "Experimental Rock","Rock",32,20348
 "Folk Rock","Rock",121,16413
-"Funk Rock","Rock",3,3495
+"Funk Rock","Rock",4,3495
 "Garage Rock","Rock",9,19740
 "Glam Rock","Rock",5,3623
 "Hardcore [Punk]","Rock",48,82879
-"Hard Rock","Rock",114,49325
+"Hard Rock","Rock",116,49325
 "Heartland Rock","Rock",34,1399
 "Industrial Rock","Rock",13,4419
 "Jam Band","Rock",73,4291
@@ -60,7 +60,7 @@
 "Post-Rock","Rock",26,16649
 "Progressive Rock","Rock",58,36864
 "Proto-Punk","Rock",7,1004
-"Psychedelic Rock","Rock",91,28129
+"Psychedelic Rock","Rock",95,28129
 "Pub Rock","Rock",1,1017
 "Punk Rock","Rock",56,98802
 "Rap Rock","Rock",1,2910
@@ -129,7 +129,7 @@
 "South Asian Classical Music","Classical Music",3,2459
 "Southeast Asian Classical Music","Classical Music",2,1037
 "Turkish Classical Music","Classical Music",1,291
-"Western Classical Music","Classical Music",73,82670
+"Western Classical Music","Classical Music",74,82670
 "Dutch Cabaret","Comedy",0,537
 "Kabarett","Comedy",0,123
 "Musical Comedy","Comedy",2,6311
@@ -193,7 +193,7 @@
 "Free Improvisation","Experimental",2,13105
 "Futurism","Experimental",1,92
 "Glitch","Experimental",3,4509
-"Indeterminacy","Experimental",1,733
+"Indeterminacy","Experimental",2,733
 "Industrial","Experimental",3,13269
 "Noise","Experimental",3,27918
 "Plunderphonics","Experimental",1,4109
@@ -323,7 +323,7 @@
 "Neo-Psychedelia","Psychedelia",4,12010
 "Psychedelic Folk","Psychedelia",5,7860
 "Psychedelic Pop","Psychedelia",15,9566
-"Psychedelic Rock","Psychedelia",91,28129
+"Psychedelic Rock","Psychedelia",95,28129
 "Psychedelic Soul","Psychedelia",3,1208
 "Art Punk","Punk",8,3184
 "Digital Hardcore","Punk",1,672
@@ -427,7 +427,7 @@
 "Nintendocore","Hardcore [Punk]",0,321
 "Post-Hardcore","Hardcore [Punk]",30,22249
 "Glam Metal","Hard Rock",0,4873
-"Heavy Psych","Hard Rock",1,3451
+"Heavy Psych","Hard Rock",3,3451
 "Stoner Rock","Hard Rock",2,6100
 "Alternative Metal","Metal",17,13688
 "Avant-Garde Metal","Metal",3,3086
@@ -480,8 +480,8 @@
 "Krautrock","Progressive Rock",12,3280
 "Neo-Prog","Progressive Rock",0,2048
 "Symphonic Prog","Progressive Rock",1,3165
-"Acid Rock","Psychedelic Rock",12,1081
-"Heavy Psych","Psychedelic Rock",1,3451
+"Acid Rock","Psychedelic Rock",16,1081
+"Heavy Psych","Psychedelic Rock",3,3451
 "Raga Rock","Psychedelic Rock",0,359
 "Space Rock","Psychedelic Rock",0,4447
 "Anarcho-Punk","Punk Rock",1,1431
@@ -565,7 +565,7 @@
 "Lieder","Western Classical Music",1,1347
 "Madrigal","Western Classical Music",1,244
 "Medieval Classical Music","Western Classical Music",1,1574
-"Modern Classical","Western Classical Music",53,30630
+"Modern Classical","Western Classical Music",54,30630
 "Neoclassicism","Western Classical Music",1,877
 "Opera","Western Classical Music",3,5735
 "Oratorio","Western Classical Music",1,803
@@ -1178,9 +1178,9 @@
 "Expressionism","Modern Classical",2,161
 "Futurism","Modern Classical",1,92
 "Impressionism","Modern Classical",3,1298
-"Indeterminacy","Modern Classical",1,733
+"Indeterminacy","Modern Classical",2,733
 "Microtonal Classical","Modern Classical",2,326
-"Minimalism","Modern Classical",17,2798
+"Minimalism","Modern Classical",18,2798
 "Musique concrète instrumentale","Modern Classical",1,37
 "New Complexity","Modern Classical",1,57
 "Post-Minimalism","Modern Classical",8,1306
