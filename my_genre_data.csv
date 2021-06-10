@@ -1,11 +1,11 @@
 "Genre","Parent","MyCount","PopCount"
-"Rock","Top",1067,680297
+"Rock","Top",1070,680297
 "Jazz","Top",85,85608
 "Ambient","Top",32,54523
 "Blues","Top",19,19499
 "Classical Music","Top",84,89247
 "Comedy","Other",2,12686
-"Country","Top",85,45278
+"Country","Top",86,45278
 "Dance","Top",42,214422
 "Electronic","Top",100,321367
 "Experimental","Top",29,92878
@@ -14,18 +14,18 @@
 "Hip Hop","Top",24,131911
 "Industrial Music","Other",20,53318
 "New Age","Top",3,8263
-"Pop","Top",244,334591
-"Psychedelia","Other",109,51272
+"Pop","Top",245,334591
+"Psychedelia","Other",110,51272
 "Punk","Top",155,169732
 "R&B","Top",35,79444
 "Regional Music","Top",49,112176
-"Singer/Songwriter","Other",139,40840
+"Singer/Songwriter","Other",140,40840
 "Ska","Top",4,5397
 "Sounds and Effects","Other",1,535
 "Spoken Word","Other",2,13694
 "Acoustic Rock","Rock",19,6747
 "Afro-Rock","Rock",1,99
-"Alternative Rock","Rock",322,119305
+"Alternative Rock","Rock",325,119305
 "Andean Rock","Rock",1,156
 "AOR","Rock",3,10047
 "Art Punk","Rock",8,3184
@@ -51,7 +51,7 @@
 "Jazz-Rock","Rock",5,6531
 "Latin Rock","Rock",2,906
 "Math Rock","Rock",4,4498
-"Metal","Rock",90,217985
+"Metal","Rock",91,217985
 "Mod","Rock",2,1744
 "New Wave","Rock",28,17094
 "Noise Rock","Rock",23,13820
@@ -136,8 +136,8 @@
 "Prank Calls","Comedy",0,312
 "Sketch Comedy","Comedy",0,398
 "Stand-Up Comedy","Comedy",0,2628
-"Alt-Country","Country",28,6181
-"Americana","Country",45,5948
+"Alt-Country","Country",29,6181
+"Americana","Country",46,5948
 "Contemporary Country","Country",2,4543
 "Country & Irish","Country",1,152
 "Country Pop","Country",3,6646
@@ -302,7 +302,7 @@
 "Pop Soul","Pop",2,8188
 "Pop Sunda","Pop",0,43
 "Progressive Pop","Pop",4,4208
-"Psychedelic Pop","Pop",14,9566
+"Psychedelic Pop","Pop",15,9566
 "Rabiz","Pop",0,58
 "Rigsar","Pop",0,2
 "Rumba catalana","Pop",0,402
@@ -320,9 +320,9 @@
 "Turkish Pop","Pop",0,1908
 "V-Pop","Pop",0,377
 "Yé-yé","Pop",0,820
-"Neo-Psychedelia","Psychedelia",3,12010
+"Neo-Psychedelia","Psychedelia",4,12010
 "Psychedelic Folk","Psychedelia",5,7860
-"Psychedelic Pop","Psychedelia",14,9566
+"Psychedelic Pop","Psychedelia",15,9566
 "Psychedelic Rock","Psychedelia",91,28129
 "Psychedelic Soul","Psychedelia",3,1208
 "Art Punk","Punk",8,3184
@@ -392,7 +392,7 @@
 "Britpop","Alternative Rock",3,2953
 "Dream Pop","Alternative Rock",13,11900
 "Emo-Pop","Alternative Rock",3,2834
-"Grunge","Alternative Rock",35,3491
+"Grunge","Alternative Rock",37,3491
 "Indie Rock","Alternative Rock",97,54088
 "Jangle Pop","Alternative Rock",15,7477
 "Noise Pop","Alternative Rock",6,4742
@@ -429,7 +429,7 @@
 "Glam Metal","Hard Rock",0,4873
 "Heavy Psych","Hard Rock",1,3451
 "Stoner Rock","Hard Rock",2,6100
-"Alternative Metal","Metal",16,13688
+"Alternative Metal","Metal",17,13688
 "Avant-Garde Metal","Metal",3,3086
 "Black Metal","Metal",9,52870
 "Death Metal","Metal",3,42965
