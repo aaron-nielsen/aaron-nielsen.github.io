@@ -1,25 +1,25 @@
 "Genre","Parent","MyCount","PopCount"
-"Rock","Top",1089,680297
+"Rock","Top",1090,680297
 "Jazz","Top",86,85608
 "Ambient","Top",32,54523
 "Blues","Top",19,19499
 "Classical Music","Top",96,89247
 "Comedy","Other",2,12686
-"Country","Top",100,45278
+"Country","Top",106,45278
 "Dance","Top",43,214422
 "Electronic","Top",101,321367
 "Experimental","Top",30,92878
 "Field Recordings","Other",1,5383
-"Folk","Top",92,115819
+"Folk","Top",96,115819
 "Hip Hop","Top",26,131911
 "Industrial Music","Other",20,53318
 "New Age","Top",3,8263
-"Pop","Top",247,334591
+"Pop","Top",248,334591
 "Psychedelia","Other",117,51272
 "Punk","Top",156,169732
 "R&B","Top",35,79444
 "Regional Music","Top",52,112176
-"Singer/Songwriter","Other",148,40840
+"Singer/Songwriter","Other",153,40840
 "Ska","Top",4,5397
 "Sounds and Effects","Other",1,535
 "Spoken Word","Other",2,13694
@@ -34,7 +34,7 @@
 "British Rhythm & Blues","Rock",1,940
 "Christian Rock","Rock",2,2517
 "Comedy Rock","Rock",1,2448
-"Country Rock","Rock",57,5688
+"Country Rock","Rock",58,5688
 "Dark Cabaret","Rock",1,1046
 "Deutschrock","Rock",1,1259
 "Emo","Rock",16,17946
@@ -136,8 +136,8 @@
 "Prank Calls","Comedy",0,312
 "Sketch Comedy","Comedy",0,398
 "Stand-Up Comedy","Comedy",0,2628
-"Alt-Country","Country",32,6181
-"Americana","Country",50,5948
+"Alt-Country","Country",34,6181
+"Americana","Country",52,5948
 "Contemporary Country","Country",2,4543
 "Country & Irish","Country",1,152
 "Country Pop","Country",5,6646
@@ -205,8 +205,8 @@
 "Turntable Music","Experimental",0,451
 "Nature Recordings","Field Recordings",0,1172
 "Radio Broadcast Recordings","Field Recordings",0,209
-"Contemporary Folk","Folk",68,54144
-"Traditional Folk Music","Folk",26,65012
+"Contemporary Folk","Folk",71,54144
+"Traditional Folk Music","Folk",27,65012
 "Abstract Hip Hop","Hip Hop",1,5545
 "Afroswing","Hip Hop",0,109
 "Afro Trap","Hip Hop",0,123
@@ -283,7 +283,7 @@
 "Glitch Pop","Pop",1,1892
 "Hyperpop","Pop",0,728
 "Indian Pop","Pop",0,374
-"Indie Pop","Pop",12,41239
+"Indie Pop","Pop",13,41239
 "Irish Showband","Pop",0,30
 "Italo Pop","Pop",0,1276
 "Jazz Pop","Pop",0,3432
@@ -718,7 +718,7 @@
 "Skiffle","Contemporary Folk",0,228
 "Tamborera","Contemporary Folk",0,10
 "African Folk Music","Traditional Folk Music",0,1555
-"American Folk Music","Traditional Folk Music",16,20033
+"American Folk Music","Traditional Folk Music",17,20033
 "Arabic Folk Music","Traditional Folk Music",0,803
 "Australian Folk Music","Traditional Folk Music",0,118
 "Austronesian Traditional Music","Traditional Folk Music",0,136
