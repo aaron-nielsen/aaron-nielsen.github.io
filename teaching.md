@@ -21,6 +21,7 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 - [STAT 201](/teaching/stat201) (General Statistics)
 - [STAT 204](/teaching/stat204) (Statistics with Business Applications)
 - [STAT 301](/teaching/stat301) (Introduction to Statistical Methods)
+- [STAT 305](/teaching/stat305) (Sampling Techniques)
 - [STAT 315](/teaching/stat315) (Introduction to the Theory and Practice of Statistics) 
 - [STAT 460](/teaching/stat460) (Applied Multivariate Analysis) 
 - [STAT 472](/teaching/stat472) (Statistical Research: Data, Design, and Methods) 
@@ -40,6 +41,7 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 
 ## By semester
 
+Fall 2021: [STAT 305](/teaching/stat305), [STAT 315](/teaching/stat315), [STAT 472](/teaching/stat472)<br>
 Summer 2021: [STAA 556](/teaching/staa556)<br>
 Spring 2021: [STAT 315](/teaching/stat315) (2 sec.), [STAT 472](/teaching/stat472)<br>
 Fall 2020: [STAT 100](/teaching/stat100), [STAT 315](/teaching/stat315) (3 sec.), [STAT 472](/teaching/stat472)<br>
