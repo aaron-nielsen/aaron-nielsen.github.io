@@ -1,35 +1,35 @@
 "Genre","Parent","MyCount","PopCount"
-"Rock","Top",1103,680297
+"Rock","Top",1129,680297
 "Jazz","Top",86,85608
 "Ambient","Top",32,54523
 "Blues","Top",19,19499
 "Classical Music","Top",96,89247
 "Comedy","Other",2,12686
 "Country","Top",114,45278
-"Dance","Top",43,214422
-"Electronic","Top",101,321367
+"Dance","Top",46,214422
+"Electronic","Top",103,321367
 "Experimental","Top",30,92878
 "Field Recordings","Other",1,5383
 "Folk","Top",100,115819
 "Hip Hop","Top",26,131911
-"Industrial Music","Other",20,53318
+"Industrial Music","Other",22,53318
 "New Age","Top",3,8263
-"Pop","Top",253,334591
+"Pop","Top",267,334591
 "Psychedelia","Other",119,51272
 "Punk","Top",156,169732
-"R&B","Top",35,79444
+"R&B","Top",36,79444
 "Regional Music","Top",53,112176
 "Singer/Songwriter","Other",156,40840
 "Ska","Top",4,5397
 "Sounds and Effects","Other",1,535
 "Spoken Word","Other",2,13694
-"Acoustic Rock","Rock",20,6747
+"Acoustic Rock","Rock",21,6747
 "Afro-Rock","Rock",1,99
-"Alternative Rock","Rock",334,119305
+"Alternative Rock","Rock",339,119305
 "Andean Rock","Rock",1,156
 "AOR","Rock",3,10047
 "Art Punk","Rock",8,3184
-"Art Rock","Rock",42,9782
+"Art Rock","Rock",54,9782
 "Blues Rock","Rock",25,15624
 "British Rhythm & Blues","Rock",1,940
 "Christian Rock","Rock",2,2517
@@ -42,20 +42,20 @@
 "Folk Rock","Rock",126,16413
 "Funk Rock","Rock",4,3495
 "Garage Rock","Rock",9,19740
-"Glam Rock","Rock",8,3623
+"Glam Rock","Rock",10,3623
 "Hardcore [Punk]","Rock",49,82879
-"Hard Rock","Rock",116,49325
-"Heartland Rock","Rock",38,1399
-"Industrial Rock","Rock",13,4419
+"Hard Rock","Rock",117,49325
+"Heartland Rock","Rock",39,1399
+"Industrial Rock","Rock",15,4419
 "Jam Band","Rock",76,4291
 "Jazz-Rock","Rock",6,6531
 "Latin Rock","Rock",2,906
 "Math Rock","Rock",4,4498
 "Metal","Rock",93,217985
 "Mod","Rock",2,1744
-"New Wave","Rock",28,17094
+"New Wave","Rock",31,17094
 "Noise Rock","Rock",23,13820
-"Pop Rock","Rock",169,97605
+"Pop Rock","Rock",181,97605
 "Post-Punk","Rock",51,36281
 "Post-Rock","Rock",27,16649
 "Progressive Rock","Rock",58,36864
@@ -145,11 +145,11 @@
 "Progressive Country","Country",21,2627
 "Traditional Country","Country",8,8238
 "Western Swing","Country",1,759
-"Alternative Dance","Dance",7,4222
-"Dance-Pop","Dance",6,25817
+"Alternative Dance","Dance",8,4222
+"Dance-Pop","Dance",7,25817
 "Dance-Punk","Dance",4,2552
-"Disco","Dance",4,25540
-"Electronic Dance Music","Dance",24,182281
+"Disco","Dance",5,25540
+"Electronic Dance Music","Dance",25,182281
 "Acid Croft","Electronic",0,101
 "Algorave","Electronic",0,31
 "Ambient Dub","Electronic",1,1417
@@ -159,7 +159,7 @@
 "Dungeon Synth","Electronic",0,5159
 "Electroacoustic","Electronic",5,10300
 "Electro-Industrial","Electronic",3,5101
-"Electronic Dance Music","Electronic",24,182281
+"Electronic Dance Music","Electronic",25,182281
 "Electropop","Electronic",4,20155
 "Flashcore","Electronic",0,236
 "Folktronica","Electronic",0,2104
@@ -248,14 +248,14 @@
 "UK Hip Hop","Hip Hop",1,4931
 "West Coast Hip Hop","Hip Hop",6,11251
 "Industrial","Industrial Music",3,13269
-"Post-Industrial","Industrial Music",19,44309
+"Post-Industrial","Industrial Music",21,44309
 "Andean New Age","New Age",0,85
 "Celtic New Age","New Age",2,305
 "Neoclassical New Age","New Age",1,816
 "Adult Contemporary","Pop",1,5987
 "Ambient Pop","Pop",3,5167
 "Arabic Pop","Pop",0,791
-"Art Pop","Pop",9,17618
+"Art Pop","Pop",10,17618
 "Balkan Pop-Folk","Pop",0,1662
 "Baroque Pop","Pop",8,4211
 "Bitpop","Pop",0,901
@@ -269,7 +269,7 @@
 "Classical Crossover","Pop",0,1997
 "Country Pop","Pop",5,6646
 "C-Pop","Pop",0,5015
-"Dance-Pop","Pop",6,25817
+"Dance-Pop","Pop",7,25817
 "Dangdut","Pop",0,137
 "Dansbandsmusik","Pop",0,605
 "Dansktop","Pop",0,115
@@ -283,7 +283,7 @@
 "Glitch Pop","Pop",1,1892
 "Hyperpop","Pop",0,728
 "Indian Pop","Pop",0,374
-"Indie Pop","Pop",13,41239
+"Indie Pop","Pop",14,41239
 "Irish Showband","Pop",0,30
 "Italo Pop","Pop",0,1276
 "Jazz Pop","Pop",0,3432
@@ -298,7 +298,7 @@
 "Persian Pop","Pop",0,367
 "Pop Ghazal","Pop",0,24
 "Pop Raï","Pop",0,170
-"Pop Rock","Pop",169,97605
+"Pop Rock","Pop",181,97605
 "Pop Soul","Pop",2,8188
 "Pop Sunda","Pop",0,43
 "Progressive Pop","Pop",4,4208
@@ -339,7 +339,7 @@
 "Funk","R&B",16,20114
 "New Orleans R&B","R&B",2,898
 "Rhythm & Blues","R&B",3,8282
-"Soul","R&B",12,32430
+"Soul","R&B",13,32430
 "African Music","Regional Music",15,14340
 "Ancient Music","Regional Music",0,220
 "Arabic Music","Regional Music",2,3976
@@ -387,13 +387,13 @@
 "Poetry","Spoken Word",2,2967
 "Radio Drama","Spoken Word",0,1333
 "Speeches","Spoken Word",0,414
-"Alternative Dance","Alternative Rock",7,4222
+"Alternative Dance","Alternative Rock",8,4222
 "Baggy / Madchester","Alternative Rock",1,817
 "Britpop","Alternative Rock",3,2953
 "Dream Pop","Alternative Rock",14,11900
 "Emo-Pop","Alternative Rock",3,2834
 "Grunge","Alternative Rock",37,3491
-"Indie Rock","Alternative Rock",104,54088
+"Indie Rock","Alternative Rock",105,54088
 "Jangle Pop","Alternative Rock",16,7477
 "Noise Pop","Alternative Rock",6,4742
 "Paisley Underground","Alternative Rock",0,291
@@ -602,7 +602,7 @@
 "Tecnorumba","Dance-Pop",0,70
 "Township Bubblegum","Dance-Pop",0,80
 "Boogie","Disco",0,2767
-"Electro-Disco","Disco",0,7198
+"Electro-Disco","Disco",1,7198
 "Euro-Disco","Disco",0,1851
 "Latin Disco","Disco",0,201
 "Nu-Disco","Disco",0,5493
@@ -621,7 +621,7 @@
 "EBM","Electronic Dance Music",0,6499
 "Electro","Electronic Dance Music",1,7251
 "Electroclash","Electronic Dance Music",0,1688
-"Electro-Disco","Electronic Dance Music",0,7198
+"Electro-Disco","Electronic Dance Music",1,7198
 "Electro latino","Electronic Dance Music",0,116
 "Electro Swing","Electronic Dance Music",0,343
 "Eurobeat","Electronic Dance Music",0,925
@@ -772,7 +772,7 @@
 "Industrial Hardcore","Post-Industrial",0,862
 "Industrial Hip Hop","Post-Industrial",1,1886
 "Industrial Metal","Post-Industrial",3,4856
-"Industrial Rock","Post-Industrial",13,4419
+"Industrial Rock","Post-Industrial",15,4419
 "Industrial Techno","Post-Industrial",0,4261
 "Martial Industrial","Post-Industrial",0,1038
 "Power Noise","Post-Industrial",0,1563
@@ -832,7 +832,7 @@
 "British Rhythm & Blues","Rhythm & Blues",1,940
 "Chicago Soul","Soul",2,411
 "Country Soul","Soul",0,459
-"Deep Soul","Soul",1,546
+"Deep Soul","Soul",2,546
 "Latin Soul","Soul",0,212
 "Neo-Soul","Soul",1,3664
 "Northern Soul","Soul",0,1237
@@ -841,7 +841,7 @@
 "Psychedelic Soul","Soul",3,1208
 "Samba Soul","Soul",0,231
 "Smooth Soul","Soul",1,2618
-"Southern Soul","Soul",1,1929
+"Southern Soul","Soul",2,1929
 "African Folk Music","African Music",0,1555
 "Afro-Jazz","African Music",1,604
 "Cape Verdean Music","African Music",0,319
