@@ -1,12 +1,12 @@
 "Genre","Parent","MyCount","PopCount"
-"Rock","Top",1129,680297
+"Rock","Top",1134,680297
 "Jazz","Top",86,85608
 "Ambient","Top",32,54523
 "Blues","Top",19,19499
 "Classical Music","Top",96,89247
 "Comedy","Other",2,12686
 "Country","Top",114,45278
-"Dance","Top",46,214422
+"Dance","Top",47,214422
 "Electronic","Top",103,321367
 "Experimental","Top",30,92878
 "Field Recordings","Other",1,5383
@@ -14,7 +14,7 @@
 "Hip Hop","Top",26,131911
 "Industrial Music","Other",22,53318
 "New Age","Top",3,8263
-"Pop","Top",267,334591
+"Pop","Top",270,334591
 "Psychedelia","Other",119,51272
 "Punk","Top",156,169732
 "R&B","Top",36,79444
@@ -25,11 +25,11 @@
 "Spoken Word","Other",2,13694
 "Acoustic Rock","Rock",21,6747
 "Afro-Rock","Rock",1,99
-"Alternative Rock","Rock",339,119305
+"Alternative Rock","Rock",340,119305
 "Andean Rock","Rock",1,156
 "AOR","Rock",3,10047
 "Art Punk","Rock",8,3184
-"Art Rock","Rock",54,9782
+"Art Rock","Rock",57,9782
 "Blues Rock","Rock",25,15624
 "British Rhythm & Blues","Rock",1,940
 "Christian Rock","Rock",2,2517
@@ -42,7 +42,7 @@
 "Folk Rock","Rock",126,16413
 "Funk Rock","Rock",4,3495
 "Garage Rock","Rock",9,19740
-"Glam Rock","Rock",10,3623
+"Glam Rock","Rock",12,3623
 "Hardcore [Punk]","Rock",49,82879
 "Hard Rock","Rock",117,49325
 "Heartland Rock","Rock",39,1399
@@ -55,7 +55,7 @@
 "Mod","Rock",2,1744
 "New Wave","Rock",31,17094
 "Noise Rock","Rock",23,13820
-"Pop Rock","Rock",181,97605
+"Pop Rock","Rock",184,97605
 "Post-Punk","Rock",51,36281
 "Post-Rock","Rock",27,16649
 "Progressive Rock","Rock",58,36864
@@ -70,7 +70,7 @@
 "Roots Rock","Rock",24,2959
 "Southern Rock","Rock",2,3351
 "Sufi Rock","Rock",1,34
-"Surf Music","Rock",11,3914
+"Surf Music","Rock",12,3914
 "Symphonic Rock","Rock",1,1466
 "Visual kei","Rock",1,2571
 "Zamrock","Rock",1,97
@@ -148,7 +148,7 @@
 "Alternative Dance","Dance",8,4222
 "Dance-Pop","Dance",7,25817
 "Dance-Punk","Dance",4,2552
-"Disco","Dance",5,25540
+"Disco","Dance",6,25540
 "Electronic Dance Music","Dance",25,182281
 "Acid Croft","Electronic",0,101
 "Algorave","Electronic",0,31
@@ -298,7 +298,7 @@
 "Persian Pop","Pop",0,367
 "Pop Ghazal","Pop",0,24
 "Pop Raï","Pop",0,170
-"Pop Rock","Pop",181,97605
+"Pop Rock","Pop",184,97605
 "Pop Soul","Pop",2,8188
 "Pop Sunda","Pop",0,43
 "Progressive Pop","Pop",4,4208
@@ -466,7 +466,7 @@
 "Soft Rock","Pop Rock",5,5780
 "Stereo","Pop Rock",0,124
 "Twee Pop","Pop Rock",1,3767
-"Vocal Surf","Pop Rock",9,321
+"Vocal Surf","Pop Rock",10,321
 "Yacht Rock","Pop Rock",2,2610
 "Coldwave","Post-Punk",1,2098
 "Dance-Punk","Post-Punk",4,2552
@@ -510,7 +510,7 @@
 "Red Dirt","Southern Rock",0,216
 "Surf Punk","Surf Music",1,514
 "Surf Rock","Surf Music",7,3352
-"Vocal Surf","Surf Music",9,321
+"Vocal Surf","Surf Music",10,321
 "Experimental Big Band","Avant-Garde Jazz",1,771
 "Free Jazz","Avant-Garde Jazz",5,6449
 "Spiritual Jazz","Avant-Garde Jazz",6,823
