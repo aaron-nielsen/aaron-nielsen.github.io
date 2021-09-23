@@ -1,8 +1,8 @@
 "Genre","Parent","MyCount","PopCount"
-"Rock","Top",1134,680297
+"Rock","Top",1154,680297
 "Jazz","Top",86,85608
 "Ambient","Top",32,54523
-"Blues","Top",19,19499
+"Blues","Top",20,19499
 "Classical Music","Top",96,89247
 "Comedy","Other",2,12686
 "Country","Top",114,45278
@@ -14,8 +14,8 @@
 "Hip Hop","Top",26,131911
 "Industrial Music","Other",22,53318
 "New Age","Top",3,8263
-"Pop","Top",270,334591
-"Psychedelia","Other",119,51272
+"Pop","Top",277,334591
+"Psychedelia","Other",123,51272
 "Punk","Top",156,169732
 "R&B","Top",36,79444
 "Regional Music","Top",53,112176
@@ -23,14 +23,14 @@
 "Ska","Top",4,5397
 "Sounds and Effects","Other",1,535
 "Spoken Word","Other",2,13694
-"Acoustic Rock","Rock",21,6747
+"Acoustic Rock","Rock",22,6747
 "Afro-Rock","Rock",1,99
-"Alternative Rock","Rock",340,119305
+"Alternative Rock","Rock",342,119305
 "Andean Rock","Rock",1,156
 "AOR","Rock",3,10047
 "Art Punk","Rock",8,3184
-"Art Rock","Rock",57,9782
-"Blues Rock","Rock",25,15624
+"Art Rock","Rock",58,9782
+"Blues Rock","Rock",35,15624
 "British Rhythm & Blues","Rock",1,940
 "Christian Rock","Rock",2,2517
 "Comedy Rock","Rock",1,2448
@@ -55,19 +55,19 @@
 "Mod","Rock",2,1744
 "New Wave","Rock",31,17094
 "Noise Rock","Rock",23,13820
-"Pop Rock","Rock",184,97605
+"Pop Rock","Rock",190,97605
 "Post-Punk","Rock",51,36281
 "Post-Rock","Rock",27,16649
 "Progressive Rock","Rock",58,36864
 "Proto-Punk","Rock",7,1004
-"Psychedelic Rock","Rock",97,28129
+"Psychedelic Rock","Rock",101,28129
 "Pub Rock","Rock",1,1017
 "Punk Rock","Rock",57,98802
 "Rap Rock","Rock",1,2910
 "Rock & Roll","Rock",5,13094
 "Rock Opera","Rock",3,889
 "Rock urbano español","Rock",1,733
-"Roots Rock","Rock",24,2959
+"Roots Rock","Rock",25,2959
 "Southern Rock","Rock",2,3351
 "Sufi Rock","Rock",1,34
 "Surf Music","Rock",12,3914
@@ -113,7 +113,7 @@
 "Tribal Ambient","Ambient",1,1874
 "Acoustic Blues","Blues",4,4569
 "Boogie Woogie","Blues",2,469
-"Electric Blues","Blues",5,5564
+"Electric Blues","Blues",6,5564
 "Hill Country Blues","Blues",1,218
 "Jump Blues","Blues",2,674
 "New Orleans Blues","Blues",1,264
@@ -283,7 +283,7 @@
 "Glitch Pop","Pop",1,1892
 "Hyperpop","Pop",0,728
 "Indian Pop","Pop",0,374
-"Indie Pop","Pop",14,41239
+"Indie Pop","Pop",15,41239
 "Irish Showband","Pop",0,30
 "Italo Pop","Pop",0,1276
 "Jazz Pop","Pop",0,3432
@@ -298,7 +298,7 @@
 "Persian Pop","Pop",0,367
 "Pop Ghazal","Pop",0,24
 "Pop Raï","Pop",0,170
-"Pop Rock","Pop",184,97605
+"Pop Rock","Pop",190,97605
 "Pop Soul","Pop",2,8188
 "Pop Sunda","Pop",0,43
 "Progressive Pop","Pop",4,4208
@@ -323,7 +323,7 @@
 "Neo-Psychedelia","Psychedelia",5,12010
 "Psychedelic Folk","Psychedelia",6,7860
 "Psychedelic Pop","Psychedelia",16,9566
-"Psychedelic Rock","Psychedelia",97,28129
+"Psychedelic Rock","Psychedelia",101,28129
 "Psychedelic Soul","Psychedelia",3,1208
 "Art Punk","Punk",8,3184
 "Digital Hardcore","Punk",1,672
@@ -390,14 +390,14 @@
 "Alternative Dance","Alternative Rock",8,4222
 "Baggy / Madchester","Alternative Rock",1,817
 "Britpop","Alternative Rock",3,2953
-"Dream Pop","Alternative Rock",14,11900
+"Dream Pop","Alternative Rock",15,11900
 "Emo-Pop","Alternative Rock",3,2834
 "Grunge","Alternative Rock",37,3491
 "Indie Rock","Alternative Rock",105,54088
 "Jangle Pop","Alternative Rock",16,7477
 "Noise Pop","Alternative Rock",6,4742
 "Paisley Underground","Alternative Rock",0,291
-"Post-Grunge","Alternative Rock",18,2847
+"Post-Grunge","Alternative Rock",19,2847
 "Shoegaze","Alternative Rock",22,8460
 "Boogie Rock","Blues Rock",0,993
 "Cowpunk","Country Rock",2,509
@@ -527,7 +527,7 @@
 "Acoustic Chicago Blues","Acoustic Blues",0,330
 "Country Blues","Acoustic Blues",2,3110
 "Jug Band","Acoustic Blues",0,208
-"British Blues","Electric Blues",1,558
+"British Blues","Electric Blues",2,558
 "Chicago Blues","Electric Blues",1,1217
 "Electric Texas Blues","Electric Blues",1,444
 "Swamp Blues","Electric Blues",0,160
