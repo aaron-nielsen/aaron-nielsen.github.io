@@ -19,7 +19,7 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 ## Colorado State University
 
 
-| Course   	| Title                              	| Semesters Taught                	|
+| Course        | Title                           | Semesters Taught                     |
 |:-----------------	|:------------------------------------------	|--------------------------------------	|
 | STAT 100 	| Statistical Literacy              	| FA20                            	|
 | STAT 201 	| General Statistics                	| SP19, FA18, SM15                	|
