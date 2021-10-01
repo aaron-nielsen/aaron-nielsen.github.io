@@ -26,7 +26,7 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 | STAT 301 	| Applied Statistical Methods       	| SP15, FA14                      	|
 | STAT 305 	| Sampling Techniques               	| FA21                            	|
 | STAT 315 	| Theory and Practice of Statistics               | FA21, SP21 (+6 other semesters) 	|
-| d        	|                                   	|                                 	|
+| a        	|                                   	|                                 	|
 |          	|                                   	|                                 	|
 |          	|                                   	|                                 	|
 |          	|                                   	|                                 	|
