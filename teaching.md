@@ -18,7 +18,7 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 
 ## Colorado State University
   
-| Course &nbsp; &nbsp; &nbsp;                | Title | Semesters Taught                         |
+| Course &nbsp; &nbsp; &nbsp;                | Title &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Semesters Taught                         |
 |:--------------------	|:------------------------------------------ |:--------------------------------------- |
 | STAT 100 	| Statistical Literacy              	| FA20             |
 | STAT 201 	| General Statistics                	| SP19, FA18, SM15 |
@@ -35,8 +35,8 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 <br>
 
 ## University of Colorado Denver
-  
-| Course &nbsp; &nbsp; &nbsp;                | Title | Semesters Taught                         |
+
+| Course &nbsp; &nbsp; &nbsp;                | Title &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Semesters Taught                         |
 |:--------------------	|:------------------------------------------ |:--------------------------------------- |
 | MATH 1110 | College Algebra | FA17 |
 | MATH 1401 | Calculus I | FA16 |
