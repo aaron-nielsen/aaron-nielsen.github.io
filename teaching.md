@@ -17,8 +17,8 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 # Courses I've Taught
 
 ## Colorado State University
-| Course &nbsp; &nbsp; &nbsp;                | Title                                     | Semesters Taught                         |
-|:--------------------	|:-------------------------------------------------------------- |:---------------------------------------- |
+| Course &nbsp; &nbsp; &nbsp;                | Title | Semesters Taught                         |
+|:--------------------	|:------------------------------------------ |:--------------------------------------- |
 | STAT 100 	| Statistical Literacy              	| FA20             |
 | STAT 201 	| General Statistics                	| SP19, FA18, SM15 |
 | STAT 204 	| Business Statistics               	| SM14, SP14, FA13 |
@@ -27,16 +27,12 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 | STAT 315 	| Theory and Practice of Statistics | FA21, SP21, FA20, SM20, SP20, FA19, SM19, SP19, FA18 |
 | STAT 460  | Applied Multivariate Analysis     	| SP20, SP19                        |
 | STAT 472  | Statistical Research                  | FA21, SP21, FA20, SP20, FA19, SP19 |
-| STAT 502  | Applied Multivariate Analysis for Researchers &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | FA19 |
+| STAT 502  | Applied Multivariate Analysis for Researchers  &nbsp; &nbsp; &nbsp; | FA19 |
 | STAA 556  | Statistical Consulting | SM21 |
-| STAA 574  | Methods in Multivariate Analysis | SP20 | 
-
-d
+| STAA 574  | Methods in Multivariate Analysis | SP20 |
 
 
 ## University of Colorado Denver
-
-
 - MATH 1110 (College Algebra)
 - MATH 1401 (Calculus I)
 - MATH 2411 (Calculus II)
