@@ -32,7 +32,7 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 | STAA 556  | Statistical Consulting | SM21 |
 | STAA 574  | Methods in Multivariate Analysis | SP20 | 
 
-<br><br>
+<br>
 
 ## University of Colorado Denver
   
@@ -48,7 +48,7 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 | MATH 4820 | Mathematical Statistics | SM16 |
 | MATH 5320 | Mathematical Statistics | SM16 |
 
-<br><br>
+<br>
 
 
 {% include image.html url="/images/bateman.png" caption="Receiving Bateman Teaching Award (2016)" width=250 align="left" %}
