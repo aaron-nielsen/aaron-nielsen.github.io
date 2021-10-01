@@ -31,6 +31,8 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 | STAA 556  | Statistical Consulting | SM21 |
 | STAA 574  | Methods in Multivariate Analysis | SP20 | 
 
+d
+
 
 ## University of Colorado Denver
 | Course &nbsp; &nbsp; &nbsp; | Title | Semesters Taught                         |
