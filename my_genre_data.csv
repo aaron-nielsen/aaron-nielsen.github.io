@@ -1,25 +1,25 @@
 "Genre","Parent","MyCount","PopCount"
-"Rock","Top",1164,680297
+"Rock","Top",1167,680297
 "Jazz","Top",86,85608
 "Ambient","Top",32,54523
-"Blues","Top",21,19499
+"Blues","Top",22,19499
 "Classical Music","Top",96,89247
 "Comedy","Other",2,12686
-"Country","Top",115,45278
+"Country","Top",116,45278
 "Dance","Top",47,214422
 "Electronic","Top",103,321367
 "Experimental","Top",30,92878
 "Field Recordings","Other",1,5383
-"Folk","Top",100,115819
+"Folk","Top",103,115819
 "Hip Hop","Top",26,131911
 "Industrial Music","Other",22,53318
 "New Age","Top",3,8263
-"Pop","Top",279,334591
+"Pop","Top",281,334591
 "Psychedelia","Other",125,51272
 "Punk","Top",157,169732
 "R&B","Top",36,79444
 "Regional Music","Top",53,112176
-"Singer/Songwriter","Other",157,40840
+"Singer/Songwriter","Other",160,40840
 "Ska","Top",4,5397
 "Sounds and Effects","Other",1,535
 "Spoken Word","Other",2,13694
@@ -39,7 +39,7 @@
 "Deutschrock","Rock",1,1259
 "Emo","Rock",16,17946
 "Experimental Rock","Rock",32,20348
-"Folk Rock","Rock",126,16413
+"Folk Rock","Rock",128,16413
 "Funk Rock","Rock",4,3495
 "Garage Rock","Rock",9,19740
 "Glam Rock","Rock",12,3623
@@ -55,7 +55,7 @@
 "Mod","Rock",2,1744
 "New Wave","Rock",32,17094
 "Noise Rock","Rock",23,13820
-"Pop Rock","Rock",192,97605
+"Pop Rock","Rock",194,97605
 "Post-Punk","Rock",52,36281
 "Post-Rock","Rock",27,16649
 "Progressive Rock","Rock",58,36864
@@ -67,7 +67,7 @@
 "Rock & Roll","Rock",5,13094
 "Rock Opera","Rock",3,889
 "Rock urbano español","Rock",1,733
-"Roots Rock","Rock",25,2959
+"Roots Rock","Rock",26,2959
 "Southern Rock","Rock",2,3351
 "Sufi Rock","Rock",1,34
 "Surf Music","Rock",12,3914
@@ -111,7 +111,7 @@
 "Dark Ambient","Ambient",2,15596
 "Space Ambient","Ambient",2,2291
 "Tribal Ambient","Ambient",1,1874
-"Acoustic Blues","Blues",5,4569
+"Acoustic Blues","Blues",6,4569
 "Boogie Woogie","Blues",2,469
 "Electric Blues","Blues",6,5564
 "Hill Country Blues","Blues",1,218
@@ -137,7 +137,7 @@
 "Sketch Comedy","Comedy",0,398
 "Stand-Up Comedy","Comedy",0,2628
 "Alt-Country","Country",38,6181
-"Americana","Country",59,5948
+"Americana","Country",60,5948
 "Contemporary Country","Country",2,4543
 "Country & Irish","Country",1,152
 "Country Pop","Country",5,6646
@@ -205,8 +205,8 @@
 "Turntable Music","Experimental",0,451
 "Nature Recordings","Field Recordings",0,1172
 "Radio Broadcast Recordings","Field Recordings",0,209
-"Contemporary Folk","Folk",75,54144
-"Traditional Folk Music","Folk",27,65012
+"Contemporary Folk","Folk",78,54144
+"Traditional Folk Music","Folk",29,65012
 "Abstract Hip Hop","Hip Hop",1,5545
 "Afroswing","Hip Hop",0,109
 "Afro Trap","Hip Hop",0,123
@@ -298,7 +298,7 @@
 "Persian Pop","Pop",0,367
 "Pop Ghazal","Pop",0,24
 "Pop Raï","Pop",0,170
-"Pop Rock","Pop",192,97605
+"Pop Rock","Pop",194,97605
 "Pop Soul","Pop",2,8188
 "Pop Sunda","Pop",0,43
 "Progressive Pop","Pop",4,4208
@@ -525,7 +525,7 @@
 "Black Ambient","Dark Ambient",0,1140
 "Ritual Ambient","Dark Ambient",0,1367
 "Acoustic Chicago Blues","Acoustic Blues",0,330
-"Country Blues","Acoustic Blues",2,3110
+"Country Blues","Acoustic Blues",3,3110
 "Jug Band","Acoustic Blues",0,208
 "British Blues","Electric Blues",2,558
 "Chicago Blues","Electric Blues",1,1217
@@ -718,7 +718,7 @@
 "Skiffle","Contemporary Folk",0,228
 "Tamborera","Contemporary Folk",0,10
 "African Folk Music","Traditional Folk Music",0,1555
-"American Folk Music","Traditional Folk Music",17,20033
+"American Folk Music","Traditional Folk Music",19,20033
 "Arabic Folk Music","Traditional Folk Music",0,803
 "Australian Folk Music","Traditional Folk Music",0,118
 "Austronesian Traditional Music","Traditional Folk Music",0,136
@@ -1353,7 +1353,7 @@
 "Barbershop","American Folk Music",0,106
 "Boogie Woogie","American Folk Music",2,469
 "Cajun Music","American Folk Music",0,727
-"Country Blues","American Folk Music",2,3110
+"Country Blues","American Folk Music",3,3110
 "Gospel","American Folk Music",2,5651
 "Jug Band","American Folk Music",0,208
 "Ragtime","American Folk Music",4,1594
