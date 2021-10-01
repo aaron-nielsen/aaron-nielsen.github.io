@@ -18,8 +18,11 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 
 ## Colorado State University
 
-STAT 100: Statistical Literacy
-STAT 201: General Statistics 
+STAT 100: Statistical Literacy, FA20<br>
+STAT 201: General Statistics, SP19, FA18, SM15<br>
+STAT 204: Business Statistics, SM14, SP14, FA13<br>
+STAT 301: Applied Statistical Methods, SP15, FA14<br>
+
 
 - [STAT 100](/teaching/stat100) (Statistical Literacy)
 - [STAT 201](/teaching/stat201) (General Statistics)
