@@ -34,7 +34,7 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 
 <br>
 
-## University of Colorado Denver
+## University of Colorado Denver 
 
 | Course &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Title &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Semesters Taught |
 |:--------------------	|:------------------------------------------ |:--------------------------------------- |
