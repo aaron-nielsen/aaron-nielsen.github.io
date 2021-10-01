@@ -29,7 +29,7 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 | STAT 472  | Statistical Research                  | FA21, SP21, FA20, SP20, FA19, SP19 |
 | STAT 502  | Applied Multivariate Analysis for Researchers  &nbsp; &nbsp; &nbsp; | FA19 |
 | STAA 556  | Statistical Consulting | SM21 |
-| STAA 574  | Methods in Multivariate Analysis | SP20 |
+| STAA 574  | Methods in Multivariate Analysis | SP20 | 
 
 
 ## University of Colorado Denver
