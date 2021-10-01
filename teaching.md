@@ -17,6 +17,10 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 # Classes I've Taught
 
 ## Colorado State University
+
+STAT 100: Statistical Literacy
+STAT 201: General Statistics
+
 - [STAT 100](/teaching/stat100) (Statistical Literacy)
 - [STAT 201](/teaching/stat201) (General Statistics)
 - [STAT 204](/teaching/stat204) (Statistics with Business Applications)
