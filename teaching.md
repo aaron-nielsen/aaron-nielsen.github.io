@@ -27,7 +27,7 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 | STAT 305 	| Sampling Techniques               	| FA21             |
 | STAT 315 	| Theory and Practice of Statistics &nbsp; &nbsp; &nbsp;| FA21, SP21, FA20, SM20, SP20, FA19, SM19, SP19, FA18 |
 | STAT 460  | Applied Multivariate Analysis     	| SP20, SP19                        |
-| STAT 472
+| STAT 472  | Statistical Research                  | FA21, SP21, FA20, SP20, FA19, SP19 |
 
 - [STAT 100](/teaching/stat100) (Statistical Literacy)
 - [STAT 201](/teaching/stat201) (General Statistics)
