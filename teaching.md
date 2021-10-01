@@ -19,8 +19,8 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 ## Colorado State University
 
 
-
-|`Course   	      `|`Title                             	`|`Semesters Taught                	`|
+|----------	|-----------------------------------	|---------------------------------	|
+| Course   	| Title                             	| Semesters Taught                	|
 |----------	|-----------------------------------	|---------------------------------	|
 | STAT 100 	| Statistical Literacy              	| FA20                            	|
 | STAT 201 	| General Statistics                	| SP19, FA18, SM15                	|
@@ -28,7 +28,7 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 | STAT 301 	| Applied Statistical Methods       	| SP15, FA14                      	|
 | STAT 305 	| Sampling Techniques               	| FA21                            	|
 | STAT 315 	| Theory and Practice of Statistics 	| FA21, SP21 (+6 other semesters) 	|
-| a         	|                                   	|                                 	|
+|          	|                                   	|                                 	|
 |          	|                                   	|                                 	|
 |          	|                                   	|                                 	|
 |          	|                                   	|                                 	|
