@@ -35,17 +35,7 @@ d
 
 
 ## University of Colorado Denver
-| Course &nbsp; &nbsp; &nbsp; | Title | Semesters Taught                         |
-|:--------------------	|:------------------------------------------ |:--------------------------------------- |
-| MATH 1110 | College Algebra | FA17 |
-| MATH 1401 | Calculus I | FA16 |
-| MATH 2411 | Calculus II | SP17 |
-| MATH 3191 | Applied Linear Algebra | SP18 |
-| MATH 3382 | Statistical Theory | SM17 |
-| MATH 3800 | Probability and Statistics for Engineers &nbsp; &nbsp; &nbsp; | SM18, SM17, SM17, SP16, FA15 |
-| MATH 4800 | Probability | SP15 |
-| MATH 4820 | Mathematical Statistics | SM16 |
-| MATH 5320 | Mathematical Statistics | SM16 |
+
 
 - MATH 1110 (College Algebra)
 - MATH 1401 (Calculus I)
