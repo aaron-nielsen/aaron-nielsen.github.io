@@ -1,6 +1,6 @@
 "Genre","Parent","MyCount","PopCount"
-"Rock","Top",1167,680297
-"Jazz","Top",86,85608
+"Rock","Top",1173,680297
+"Jazz","Top",87,85608
 "Ambient","Top",32,54523
 "Blues","Top",22,19499
 "Classical Music","Top",96,89247
@@ -10,16 +10,16 @@
 "Electronic","Top",103,321367
 "Experimental","Top",30,92878
 "Field Recordings","Other",1,5383
-"Folk","Top",103,115819
+"Folk","Top",104,115819
 "Hip Hop","Top",26,131911
 "Industrial Music","Other",22,53318
 "New Age","Top",3,8263
-"Pop","Top",281,334591
+"Pop","Top",282,334591
 "Psychedelia","Other",125,51272
 "Punk","Top",157,169732
 "R&B","Top",36,79444
 "Regional Music","Top",53,112176
-"Singer/Songwriter","Other",160,40840
+"Singer/Songwriter","Other",161,40840
 "Ska","Top",4,5397
 "Sounds and Effects","Other",1,535
 "Spoken Word","Other",2,13694
@@ -30,7 +30,7 @@
 "AOR","Rock",3,10047
 "Art Punk","Rock",8,3184
 "Art Rock","Rock",58,9782
-"Blues Rock","Rock",40,15624
+"Blues Rock","Rock",43,15624
 "British Rhythm & Blues","Rock",1,940
 "Christian Rock","Rock",2,2517
 "Comedy Rock","Rock",1,2448
@@ -44,14 +44,14 @@
 "Garage Rock","Rock",9,19740
 "Glam Rock","Rock",12,3623
 "Hardcore [Punk]","Rock",49,82879
-"Hard Rock","Rock",119,49325
+"Hard Rock","Rock",121,49325
 "Heartland Rock","Rock",39,1399
 "Industrial Rock","Rock",15,4419
-"Jam Band","Rock",78,4291
+"Jam Band","Rock",79,4291
 "Jazz-Rock","Rock",6,6531
 "Latin Rock","Rock",2,906
 "Math Rock","Rock",4,4498
-"Metal","Rock",93,217985
+"Metal","Rock",94,217985
 "Mod","Rock",2,1744
 "New Wave","Rock",32,17094
 "Noise Rock","Rock",23,13820
@@ -67,8 +67,8 @@
 "Rock & Roll","Rock",5,13094
 "Rock Opera","Rock",3,889
 "Rock urbano español","Rock",1,733
-"Roots Rock","Rock",26,2959
-"Southern Rock","Rock",2,3351
+"Roots Rock","Rock",27,2959
+"Southern Rock","Rock",6,3351
 "Sufi Rock","Rock",1,34
 "Surf Music","Rock",12,3914
 "Symphonic Rock","Rock",1,1466
@@ -106,7 +106,7 @@
 "Stride","Jazz",2,251
 "Swing","Jazz",5,4012
 "Third Stream","Jazz",6,778
-"Vocal Jazz","Jazz",5,9536
+"Vocal Jazz","Jazz",6,9536
 "Ambient Dub","Ambient",1,1417
 "Dark Ambient","Ambient",2,15596
 "Space Ambient","Ambient",2,2291
@@ -205,7 +205,7 @@
 "Turntable Music","Experimental",0,451
 "Nature Recordings","Field Recordings",0,1172
 "Radio Broadcast Recordings","Field Recordings",0,209
-"Contemporary Folk","Folk",78,54144
+"Contemporary Folk","Folk",79,54144
 "Traditional Folk Music","Folk",29,65012
 "Abstract Hip Hop","Hip Hop",1,5545
 "Afroswing","Hip Hop",0,109
@@ -316,7 +316,7 @@
 "Sunshine Pop","Pop",9,2474
 "Synthpop","Pop",26,29724
 "Teen Pop","Pop",0,3207
-"Traditional Pop","Pop",4,10284
+"Traditional Pop","Pop",5,10284
 "Turkish Pop","Pop",0,1908
 "V-Pop","Pop",0,377
 "Yé-yé","Pop",0,820
@@ -445,7 +445,7 @@
 "Neoclassical Metal","Metal",1,1016
 "Post-Metal","Metal",10,5666
 "Power Metal","Metal",1,10864
-"Progressive Metal","Metal",3,17903
+"Progressive Metal","Metal",4,17903
 "Sludge Metal","Metal",2,11303
 "Southern Metal","Metal",0,303
 "Speed Metal","Metal",4,3487
@@ -812,7 +812,7 @@
 "Picopop","Shibuya-kei",0,296
 "British Dance Band","Traditional Pop",1,1897
 "Romanţe","Traditional Pop",0,33
-"Standards","Traditional Pop",2,2398
+"Standards","Traditional Pop",3,2398
 "Hypnagogic Pop","Neo-Psychedelia",0,2615
 "Paisley Underground","Neo-Psychedelia",0,291
 "Freak Folk","Psychedelic Folk",1,1102
