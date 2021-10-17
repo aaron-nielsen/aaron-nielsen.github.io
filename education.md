@@ -29,6 +29,7 @@ At the moment, I'm most interested in learning more about the intersection of ph
 I am an active member in the <a href="https://sites.google.com/view/csustatisticsbookclub/">CSU Statistics Book Club</a>. 
 
 I have been taking a semi-random sample of courses at CSU since joining the faculty in August 2018 as a part of the university's employee study privilege. These classes include:
+
 | | | |
 |--------|---|:-------:|
 | PHIL 438: Philosophy of Mindc | | Fall 2021 |
