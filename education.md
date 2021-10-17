@@ -29,7 +29,7 @@ I am an active member in the <a href="https://sites.google.com/view/csustatistic
 
 I have been taking a semi-random sample of courses at CSU since joining the faculty in August 2018 as a part of the university's employee study privilege. These classes include:
 
-|--------: |--- |----- |:------- |
+|--------:|---|-----|:-------|
 | Fall 2021 | | PHIL 438: Philosophy of Mind |
 | Summer 2021 | | POLS 437: International Security |
 | Spring 2021 | | POLS 241: Comparative Government and Politics |
