@@ -18,7 +18,7 @@ I received a Ph.D. in Applied Mathematics from the University of Colorado Denver
 | M.S. | | Electrical Engineering | | University of Colorado Boulder | | 2008 |
 | B.S. | | Mathematics | | Colorado State University | | 2007 |
 | B.S. | | Electrical Engineering | | Colorado State University | | 2007 |
-
+<br>
  
 # Other Interests
 
@@ -28,7 +28,7 @@ I am an active member in the <a href="https://sites.google.com/view/csustatistic
 
 I have been taking a semi-random sample of courses at CSU since joining the faculty in August 2018 as a part of the university's employee study privilege. These classes include:
 
-| --------: |----- |:------- |
+|--------: |--- |----- |:------- |
 | Fall 2021 | | PHIL 438: Philosophy of Mind |
 | Summer 2021 | | POLS 437: International Security |
 | Spring 2021 | | POLS 241: Comparative Government and Politics |
@@ -37,6 +37,7 @@ I have been taking a semi-random sample of courses at CSU since joining the facu
 | Fall 2019 | | PHIL 120: History and Philosophy of Scientific Thought |
 | Summer 2019 | | POLS 232: International Relations |
 | Spring 2019 | | PH 361: Physical Thermodynamics |
+<br>
 
 {% include image.html url="/images/aaron-bsee.png" caption="Undergraduate commencement with Dr. Tony Maciejewski (2007)" width=250 align="left" %} 
 
