@@ -32,7 +32,7 @@ I have been taking a semi-random sample of courses at CSU since joining the facu
 
 | | | |
 |--------|---|:-------:|
-| PHIL 438: Philosophy of Mindc | | Fall 2021 |
+| PHIL 438: Philosophy of Mind | | Fall 2021 |
 | POLS 437: International Security | | Summer 2021 |
 | POLS 241: Comparative Government and Politics | | Spring 2021 |
 | PHIL 410: Gödel's Incompleteness Theorems | | Fall 2020 |
