@@ -10,7 +10,6 @@ I received a Ph.D. in Applied Mathematics from the University of Colorado Denver
 <hr style="clear:both;visibility: hidden;" />   
 
 # Degrees
-
 | | | | | | | |
 |--------:|-----|:--------|---|:------|---|:------|
 | Ph.D. | | Applied Mathematics | |University of Colorado Denver | | 2018 |
@@ -29,16 +28,16 @@ At the moment, I'm most interested in learning more about the intersection of ph
 I am an active member in the <a href="https://sites.google.com/view/csustatisticsbookclub/">CSU Statistics Book Club</a>. 
 
 I have been taking a semi-random sample of courses at CSU since joining the faculty in August 2018 as a part of the university's employee study privilege. These classes include:
-| | | | |
-|--------:|---|-----|:-------|
-| Fall 2021 | | PHIL 438: Philosophy of Mind |
-| Summer 2021 | | POLS 437: International Security |
-| Spring 2021 | | POLS 241: Comparative Government and Politics |
-| Fall 2020 | | PHIL 410: Gödel's Incompleteness Theorems |
-| Spring 2020 | | PHIL 325: Philosophy of Natural Science |
-| Fall 2019 | | PHIL 120: History and Philosophy of Scientific Thought |
-| Summer 2019 | | POLS 232: International Relations |
-| Spring 2019 | | PH 361: Physical Thermodynamics |
+| | | |
+|--------|---|:-------:|
+| PHIL 438: Philosophy of Mind | | Fall 2021 |
+| POLS 437: International Security | | Summer 2021 |
+| POLS 241: Comparative Government and Politics | | Spring 2021 |
+| PHIL 410: Gödel's Incompleteness Theorems | | Fall 2020 |
+| PHIL 325: Philosophy of Natural Science | | Spring 2020 |
+| PHIL 120: History and Philosophy of Scientific Thought | | Fall 2019 |
+| POLS 232: International Relations | | Summer 2019 |
+| PH 361: Physical Thermodynamics | | Spring 2019 |
 
 <br>
 
