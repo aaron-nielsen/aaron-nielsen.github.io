@@ -1,5 +1,5 @@
 "Genre","Parent","MyCount","PopCount"
-"Rock","Top",1173,680297
+"Rock","Top",1175,680297
 "Jazz","Top",87,85608
 "Ambient","Top",32,54523
 "Blues","Top",22,19499
@@ -7,7 +7,7 @@
 "Comedy","Other",2,12686
 "Country","Top",116,45278
 "Dance","Top",47,214422
-"Electronic","Top",103,321367
+"Electronic","Top",106,321367
 "Experimental","Top",30,92878
 "Field Recordings","Other",1,5383
 "Folk","Top",104,115819
@@ -18,14 +18,14 @@
 "Psychedelia","Other",125,51272
 "Punk","Top",157,169732
 "R&B","Top",36,79444
-"Regional Music","Top",53,112176
+"Regional Music","Top",55,112176
 "Singer/Songwriter","Other",161,40840
 "Ska","Top",4,5397
 "Sounds and Effects","Other",1,535
 "Spoken Word","Other",2,13694
 "Acoustic Rock","Rock",23,6747
 "Afro-Rock","Rock",1,99
-"Alternative Rock","Rock",342,119305
+"Alternative Rock","Rock",344,119305
 "Andean Rock","Rock",1,156
 "AOR","Rock",3,10047
 "Art Punk","Rock",8,3184
@@ -42,9 +42,9 @@
 "Folk Rock","Rock",128,16413
 "Funk Rock","Rock",4,3495
 "Garage Rock","Rock",9,19740
-"Glam Rock","Rock",12,3623
+"Glam Rock","Rock",14,3623
 "Hardcore [Punk]","Rock",49,82879
-"Hard Rock","Rock",121,49325
+"Hard Rock","Rock",122,49325
 "Heartland Rock","Rock",39,1399
 "Industrial Rock","Rock",15,4419
 "Jam Band","Rock",79,4291
@@ -155,7 +155,7 @@
 "Ambient Dub","Electronic",1,1417
 "Bit Music","Electronic",2,6083
 "Bitpop","Electronic",0,901
-"Downtempo","Electronic",3,14012
+"Downtempo","Electronic",6,14012
 "Dungeon Synth","Electronic",0,5159
 "Electroacoustic","Electronic",5,10300
 "Electro-Industrial","Electronic",3,5101
@@ -345,7 +345,7 @@
 "Arabic Music","Regional Music",2,3976
 "Balkan Music","Regional Music",0,4979
 "Brazilian Music","Regional Music",2,14512
-"Caribbean Music","Regional Music",8,28249
+"Caribbean Music","Regional Music",10,28249
 "Caucasian Music","Regional Music",0,266
 "Chanson","Regional Music",2,13169
 "Christian Liturgical Music","Regional Music",4,2335
@@ -392,7 +392,7 @@
 "Britpop","Alternative Rock",3,2953
 "Dream Pop","Alternative Rock",15,11900
 "Emo-Pop","Alternative Rock",3,2834
-"Grunge","Alternative Rock",37,3491
+"Grunge","Alternative Rock",39,3491
 "Indie Rock","Alternative Rock",105,54088
 "Jangle Pop","Alternative Rock",16,7477
 "Noise Pop","Alternative Rock",6,4742
@@ -903,7 +903,7 @@
 "Caribbean Folk Music","Caribbean Music",1,263
 "French Caribbean Music","Caribbean Music",1,1590
 "Goombay","Caribbean Music",0,60
-"Jamaican Music","Caribbean Music",5,24378
+"Jamaican Music","Caribbean Music",7,24378
 "Kaseko","Caribbean Music",0,41
 "Parang","Caribbean Music",0,58
 "Punta","Caribbean Music",0,21
@@ -1642,7 +1642,7 @@
 "Jamaican Ska","Jamaican Music",0,728
 "Mento","Jamaican Music",0,166
 "Nyahbinghi","Jamaican Music",0,66
-"Reggae","Jamaican Music",5,17674
+"Reggae","Jamaican Music",7,17674
 "Rocksteady","Jamaican Music",0,1126
 "Chutney","Soca",0,114
 "Dennery Segment","Soca",0,15
@@ -1966,7 +1966,7 @@
 "Dub","Reggae",1,4276
 "Lovers Rock","Reggae",0,547
 "Pop Reggae","Reggae",1,2245
-"Roots Reggae","Reggae",4,3645
+"Roots Reggae","Reggae",6,3645
 "Seggae","Reggae",0,19
 "Skinhead Reggae","Reggae",0,268
 "Mood Kayō","Kayōkyoku",0,43
