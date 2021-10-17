@@ -10,7 +10,8 @@ I received a Ph.D. in Applied Mathematics from the University of Colorado Denver
 <hr style="clear:both;visibility: hidden;" />   
 
 # Degrees
- | | | | | | | |
+
+| | | | | | | |
 |--------:|-----|:--------|---|:------|---|:------|
 | Ph.D. | | Applied Mathematics | |University of Colorado Denver | | 2018 |
 | M.S. | | Statistics | | Colorado State University | | 2014 |
