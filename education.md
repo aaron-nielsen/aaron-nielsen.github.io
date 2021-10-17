@@ -11,13 +11,14 @@ I received a Ph.D. in Applied Mathematics from the University of Colorado Denver
 
 # Degrees
 
-|--------: |----- |:-------- |--- |:------ |--- |:------ |
+|--------:|-----|:--------|---|:------|---|:------|
 | Ph.D. | | Applied Mathematics | |University of Colorado Denver | | 2018 |
 | M.S. | | Statistics | | Colorado State University | | 2014 |
 | M.S. | | Applied Mathematics | | University of Colorado Denver | | 2012 |
 | M.S. | | Electrical Engineering | | University of Colorado Boulder | | 2008 |
 | B.S. | | Mathematics | | Colorado State University | | 2007 |
 | B.S. | | Electrical Engineering | | Colorado State University | | 2007 |
+
 <br>
  
 # Other Interests
@@ -37,6 +38,7 @@ I have been taking a semi-random sample of courses at CSU since joining the facu
 | Fall 2019 | | PHIL 120: History and Philosophy of Scientific Thought |
 | Summer 2019 | | POLS 232: International Relations |
 | Spring 2019 | | PH 361: Physical Thermodynamics |
+
 <br>
 
 {% include image.html url="/images/aaron-bsee.png" caption="Undergraduate commencement with Dr. Tony Maciejewski (2007)" width=250 align="left" %} 
