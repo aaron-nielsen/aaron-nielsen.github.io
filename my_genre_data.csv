@@ -1,24 +1,24 @@
 "Genre","Parent","MyCount","PopCount"
 "Rock","Top",1175,680297
 "Jazz","Top",87,85608
-"Ambient","Top",32,54523
+"Ambient","Top",33,54523
 "Blues","Top",22,19499
 "Classical Music","Top",96,89247
 "Comedy","Other",2,12686
 "Country","Top",116,45278
 "Dance","Top",47,214422
-"Electronic","Top",106,321367
+"Electronic","Top",111,321367
 "Experimental","Top",30,92878
 "Field Recordings","Other",1,5383
 "Folk","Top",104,115819
 "Hip Hop","Top",26,131911
 "Industrial Music","Other",22,53318
 "New Age","Top",3,8263
-"Pop","Top",282,334591
+"Pop","Top",285,334591
 "Psychedelia","Other",125,51272
 "Punk","Top",157,169732
 "R&B","Top",36,79444
-"Regional Music","Top",55,112176
+"Regional Music","Top",56,112176
 "Singer/Songwriter","Other",161,40840
 "Ska","Top",4,5397
 "Sounds and Effects","Other",1,535
@@ -153,16 +153,16 @@
 "Acid Croft","Electronic",0,101
 "Algorave","Electronic",0,31
 "Ambient Dub","Electronic",1,1417
-"Bit Music","Electronic",2,6083
-"Bitpop","Electronic",0,901
+"Bit Music","Electronic",3,6083
+"Bitpop","Electronic",1,901
 "Downtempo","Electronic",6,14012
-"Dungeon Synth","Electronic",0,5159
+"Dungeon Synth","Electronic",1,5159
 "Electroacoustic","Electronic",5,10300
 "Electro-Industrial","Electronic",3,5101
 "Electronic Dance Music","Electronic",25,182281
 "Electropop","Electronic",4,20155
 "Flashcore","Electronic",0,236
-"Folktronica","Electronic",0,2104
+"Folktronica","Electronic",1,2104
 "Glitch","Electronic",3,4509
 "Glitch Hop","Electronic",1,2256
 "Glitch Pop","Electronic",1,1892
@@ -170,10 +170,10 @@
 "HexD","Electronic",0,515
 "Horror Synth","Electronic",0,962
 "Hyperpop","Electronic",0,728
-"IDM","Electronic",9,10955
+"IDM","Electronic",10,10955
 "Illbient","Electronic",1,527
 "Indietronica","Electronic",4,10749
-"Latin Electronic","Electronic",0,1327
+"Latin Electronic","Electronic",1,1327
 "Microsound","Electronic",2,272
 "Minatory","Electronic",0,91
 "Minimal Wave","Electronic",1,7918
@@ -181,12 +181,12 @@
 "Nu Jazz","Electronic",1,2728
 "Progressive Electronic","Electronic",7,10348
 "Psybient","Electronic",0,859
-"Synthpop","Electronic",26,29724
+"Synthpop","Electronic",27,29724
 "Synth Punk","Electronic",2,2345
 "Synthwave","Electronic",1,6595
 "Vapor","Electronic",1,9122
 "Wave","Electronic",0,632
-"Witch House","Electronic",0,1204
+"Witch House","Electronic",1,1204
 "Conducted Improvisation","Experimental",0,64
 "Drone","Experimental",8,19002
 "Electroacoustic","Experimental",5,10300
@@ -255,10 +255,10 @@
 "Adult Contemporary","Pop",1,5987
 "Ambient Pop","Pop",3,5167
 "Arabic Pop","Pop",0,791
-"Art Pop","Pop",11,17618
+"Art Pop","Pop",12,17618
 "Balkan Pop-Folk","Pop",0,1662
 "Baroque Pop","Pop",8,4211
-"Bitpop","Pop",0,901
+"Bitpop","Pop",1,901
 "Blue-Eyed Soul","Pop",2,2898
 "Boy Band","Pop",0,1487
 "Brill Building","Pop",0,619
@@ -314,7 +314,7 @@
 "Sophisti-Pop","Pop",0,3226
 "Soviet Estrada","Pop",0,1288
 "Sunshine Pop","Pop",9,2474
-"Synthpop","Pop",26,29724
+"Synthpop","Pop",27,29724
 "Teen Pop","Pop",0,3207
 "Traditional Pop","Pop",5,10284
 "Turkish Pop","Pop",0,1908
@@ -352,7 +352,7 @@
 "East Asian Music","Regional Music",3,4634
 "Ghazal","Regional Music",0,121
 "Greek Music","Regional Music",1,1948
-"Hispanic Music","Regional Music",8,37032
+"Hispanic Music","Regional Music",9,37032
 "Islamic Modal Music","Regional Music",5,1801
 "Islamic Religious Music & Recitation","Regional Music",0,190
 "Jewish Music","Regional Music",0,1726
@@ -660,7 +660,7 @@
 "UK Bass","Electronic Dance Music",2,4340
 "UK Garage","Electronic Dance Music",1,5892
 "Wonky","Electronic Dance Music",2,2444
-"Chiptune","Bit Music",0,3911
+"Chiptune","Bit Music",1,3911
 "FM Synthesis","Bit Music",0,336
 "Sequencer & Tracker","Bit Music",2,2189
 "Trip Hop","Downtempo",1,5413
@@ -939,7 +939,7 @@
 "Greek Folk Music","Greek Music",0,843
 "Laika","Greek Music",0,354
 "Canción melódica","Hispanic Music",0,2856
-"Latin American Music","Hispanic Music",6,26855
+"Latin American Music","Hispanic Music",7,26855
 "Murga","Hispanic Music",0,59
 "Spanish Music","Hispanic Music",2,7993
 "Tonada","Hispanic Music",0,92
@@ -1683,7 +1683,7 @@
 "Latin American Classical Music","Latin American Music",1,222
 "Latin American Folk Music","Latin American Music",0,3148
 "Latin Disco","Latin American Music",0,201
-"Latin Electronic","Latin American Music",0,1327
+"Latin Electronic","Latin American Music",1,1327
 "Latin Freestyle","Latin American Music",0,72
 "Latin Funk","Latin American Music",0,359
 "Latin Jazz","Latin American Music",2,2257
