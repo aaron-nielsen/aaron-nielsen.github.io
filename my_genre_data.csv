@@ -1,13 +1,13 @@
 "Genre","Parent","MyCount","PopCount"
 "Rock","Top",1175,680297
 "Jazz","Top",87,85608
-"Ambient","Top",33,54523
+"Ambient","Top",34,54523
 "Blues","Top",22,19499
 "Classical Music","Top",96,89247
 "Comedy","Other",2,12686
 "Country","Top",116,45278
 "Dance","Top",47,214422
-"Electronic","Top",111,321367
+"Electronic","Top",115,321367
 "Experimental","Top",30,92878
 "Field Recordings","Other",1,5383
 "Folk","Top",104,115819
@@ -155,7 +155,7 @@
 "Ambient Dub","Electronic",1,1417
 "Bit Music","Electronic",3,6083
 "Bitpop","Electronic",1,901
-"Downtempo","Electronic",6,14012
+"Downtempo","Electronic",7,14012
 "Dungeon Synth","Electronic",1,5159
 "Electroacoustic","Electronic",5,10300
 "Electro-Industrial","Electronic",3,5101
@@ -172,7 +172,7 @@
 "Hyperpop","Electronic",0,728
 "IDM","Electronic",10,10955
 "Illbient","Electronic",1,527
-"Indietronica","Electronic",4,10749
+"Indietronica","Electronic",5,10749
 "Latin Electronic","Electronic",1,1327
 "Microsound","Electronic",2,272
 "Minatory","Electronic",0,91
@@ -180,12 +180,12 @@
 "Nightcore","Electronic",0,1222
 "Nu Jazz","Electronic",1,2728
 "Progressive Electronic","Electronic",7,10348
-"Psybient","Electronic",0,859
+"Psybient","Electronic",1,859
 "Synthpop","Electronic",27,29724
 "Synth Punk","Electronic",2,2345
 "Synthwave","Electronic",1,6595
 "Vapor","Electronic",1,9122
-"Wave","Electronic",0,632
+"Wave","Electronic",1,632
 "Witch House","Electronic",1,1204
 "Conducted Improvisation","Experimental",0,64
 "Drone","Experimental",8,19002
@@ -663,7 +663,7 @@
 "Chiptune","Bit Music",1,3911
 "FM Synthesis","Bit Music",0,336
 "Sequencer & Tracker","Bit Music",2,2189
-"Trip Hop","Downtempo",1,5413
+"Trip Hop","Downtempo",2,5413
 "EAI","Electroacoustic",0,2438
 "Musique concrète","Electroacoustic",4,3215
 "Dark Electro","Electro-Industrial",0,1763
