@@ -1,5 +1,5 @@
 "Genre","Parent","MyCount","PopCount"
-"Rock","Top",1175,680297
+"Rock","Top",1177,680297
 "Jazz","Top",87,85608
 "Ambient","Top",34,54523
 "Blues","Top",22,19499
@@ -7,19 +7,19 @@
 "Comedy","Other",2,12686
 "Country","Top",116,45278
 "Dance","Top",47,214422
-"Electronic","Top",115,321367
+"Electronic","Top",120,321367
 "Experimental","Top",30,92878
 "Field Recordings","Other",1,5383
-"Folk","Top",104,115819
+"Folk","Top",105,115819
 "Hip Hop","Top",26,131911
 "Industrial Music","Other",22,53318
 "New Age","Top",3,8263
-"Pop","Top",285,334591
-"Psychedelia","Other",125,51272
+"Pop","Top",288,334591
+"Psychedelia","Other",126,51272
 "Punk","Top",157,169732
 "R&B","Top",36,79444
 "Regional Music","Top",56,112176
-"Singer/Songwriter","Other",161,40840
+"Singer/Songwriter","Other",163,40840
 "Ska","Top",4,5397
 "Sounds and Effects","Other",1,535
 "Spoken Word","Other",2,13694
@@ -39,7 +39,7 @@
 "Deutschrock","Rock",1,1259
 "Emo","Rock",16,17946
 "Experimental Rock","Rock",32,20348
-"Folk Rock","Rock",128,16413
+"Folk Rock","Rock",130,16413
 "Funk Rock","Rock",4,3495
 "Garage Rock","Rock",9,19740
 "Glam Rock","Rock",14,3623
@@ -155,7 +155,7 @@
 "Ambient Dub","Electronic",1,1417
 "Bit Music","Electronic",3,6083
 "Bitpop","Electronic",1,901
-"Downtempo","Electronic",7,14012
+"Downtempo","Electronic",8,14012
 "Dungeon Synth","Electronic",1,5159
 "Electroacoustic","Electronic",5,10300
 "Electro-Industrial","Electronic",3,5101
@@ -165,12 +165,12 @@
 "Folktronica","Electronic",1,2104
 "Glitch","Electronic",3,4509
 "Glitch Hop","Electronic",1,2256
-"Glitch Pop","Electronic",1,1892
+"Glitch Pop","Electronic",3,1892
 "Grime","Electronic",2,7521
 "HexD","Electronic",0,515
 "Horror Synth","Electronic",0,962
 "Hyperpop","Electronic",0,728
-"IDM","Electronic",10,10955
+"IDM","Electronic",11,10955
 "Illbient","Electronic",1,527
 "Indietronica","Electronic",5,10749
 "Latin Electronic","Electronic",1,1327
@@ -181,7 +181,7 @@
 "Nu Jazz","Electronic",1,2728
 "Progressive Electronic","Electronic",7,10348
 "Psybient","Electronic",1,859
-"Synthpop","Electronic",27,29724
+"Synthpop","Electronic",28,29724
 "Synth Punk","Electronic",2,2345
 "Synthwave","Electronic",1,6595
 "Vapor","Electronic",1,9122
@@ -205,7 +205,7 @@
 "Turntable Music","Experimental",0,451
 "Nature Recordings","Field Recordings",0,1172
 "Radio Broadcast Recordings","Field Recordings",0,209
-"Contemporary Folk","Folk",79,54144
+"Contemporary Folk","Folk",80,54144
 "Traditional Folk Music","Folk",29,65012
 "Abstract Hip Hop","Hip Hop",1,5545
 "Afroswing","Hip Hop",0,109
@@ -255,7 +255,7 @@
 "Adult Contemporary","Pop",1,5987
 "Ambient Pop","Pop",3,5167
 "Arabic Pop","Pop",0,791
-"Art Pop","Pop",12,17618
+"Art Pop","Pop",13,17618
 "Balkan Pop-Folk","Pop",0,1662
 "Baroque Pop","Pop",8,4211
 "Bitpop","Pop",1,901
@@ -280,7 +280,7 @@
 "Folk Pop","Pop",3,9672
 "French Pop","Pop",1,4874
 "Girl Group","Pop",0,1732
-"Glitch Pop","Pop",1,1892
+"Glitch Pop","Pop",3,1892
 "Hyperpop","Pop",0,728
 "Indian Pop","Pop",0,374
 "Indie Pop","Pop",15,41239
@@ -302,7 +302,7 @@
 "Pop Soul","Pop",2,8188
 "Pop Sunda","Pop",0,43
 "Progressive Pop","Pop",4,4208
-"Psychedelic Pop","Pop",16,9566
+"Psychedelic Pop","Pop",17,9566
 "Rabiz","Pop",0,58
 "Rigsar","Pop",0,2
 "Rumba catalana","Pop",0,402
@@ -314,15 +314,15 @@
 "Sophisti-Pop","Pop",0,3226
 "Soviet Estrada","Pop",0,1288
 "Sunshine Pop","Pop",9,2474
-"Synthpop","Pop",27,29724
+"Synthpop","Pop",28,29724
 "Teen Pop","Pop",0,3207
 "Traditional Pop","Pop",5,10284
 "Turkish Pop","Pop",0,1908
 "V-Pop","Pop",0,377
 "Yé-yé","Pop",0,820
-"Neo-Psychedelia","Psychedelia",5,12010
+"Neo-Psychedelia","Psychedelia",6,12010
 "Psychedelic Folk","Psychedelia",6,7860
-"Psychedelic Pop","Psychedelia",16,9566
+"Psychedelic Pop","Psychedelia",17,9566
 "Psychedelic Rock","Psychedelia",103,28129
 "Psychedelic Soul","Psychedelia",3,1208
 "Art Punk","Punk",8,3184
@@ -663,12 +663,12 @@
 "Chiptune","Bit Music",1,3911
 "FM Synthesis","Bit Music",0,336
 "Sequencer & Tracker","Bit Music",2,2189
-"Trip Hop","Downtempo",2,5413
+"Trip Hop","Downtempo",3,5413
 "EAI","Electroacoustic",0,2438
 "Musique concrète","Electroacoustic",4,3215
 "Dark Electro","Electro-Industrial",0,1763
 "Weightless","Grime",0,209
-"Drill and Bass","IDM",1,606
+"Drill and Bass","IDM",2,606
 "Chillwave","Indietronica",1,2330
 "Digital Cumbia","Latin Electronic",0,253
 "Electro latino","Latin Electronic",0,116
