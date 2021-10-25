@@ -1,5 +1,5 @@
 "Genre","Parent","MyCount","PopCount"
-"Rock","Top",1177,680297
+"Rock","Top",1180,680297
 "Jazz","Top",87,85608
 "Ambient","Top",34,54523
 "Blues","Top",22,19499
@@ -7,15 +7,15 @@
 "Comedy","Other",2,12686
 "Country","Top",116,45278
 "Dance","Top",47,214422
-"Electronic","Top",120,321367
+"Electronic","Top",123,321367
 "Experimental","Top",30,92878
 "Field Recordings","Other",1,5383
 "Folk","Top",105,115819
 "Hip Hop","Top",26,131911
 "Industrial Music","Other",22,53318
 "New Age","Top",3,8263
-"Pop","Top",288,334591
-"Psychedelia","Other",126,51272
+"Pop","Top",291,334591
+"Psychedelia","Other",129,51272
 "Punk","Top",157,169732
 "R&B","Top",36,79444
 "Regional Music","Top",56,112176
@@ -25,7 +25,7 @@
 "Spoken Word","Other",2,13694
 "Acoustic Rock","Rock",23,6747
 "Afro-Rock","Rock",1,99
-"Alternative Rock","Rock",344,119305
+"Alternative Rock","Rock",346,119305
 "Andean Rock","Rock",1,156
 "AOR","Rock",3,10047
 "Art Punk","Rock",8,3184
@@ -38,7 +38,7 @@
 "Dark Cabaret","Rock",1,1046
 "Deutschrock","Rock",1,1259
 "Emo","Rock",16,17946
-"Experimental Rock","Rock",32,20348
+"Experimental Rock","Rock",33,20348
 "Folk Rock","Rock",130,16413
 "Funk Rock","Rock",4,3495
 "Garage Rock","Rock",9,19740
@@ -55,7 +55,7 @@
 "Mod","Rock",2,1744
 "New Wave","Rock",32,17094
 "Noise Rock","Rock",23,13820
-"Pop Rock","Rock",194,97605
+"Pop Rock","Rock",195,97605
 "Post-Punk","Rock",52,36281
 "Post-Rock","Rock",27,16649
 "Progressive Rock","Rock",58,36864
@@ -172,7 +172,7 @@
 "Hyperpop","Electronic",0,728
 "IDM","Electronic",11,10955
 "Illbient","Electronic",1,527
-"Indietronica","Electronic",5,10749
+"Indietronica","Electronic",6,10749
 "Latin Electronic","Electronic",1,1327
 "Microsound","Electronic",2,272
 "Minatory","Electronic",0,91
@@ -181,7 +181,7 @@
 "Nu Jazz","Electronic",1,2728
 "Progressive Electronic","Electronic",7,10348
 "Psybient","Electronic",1,859
-"Synthpop","Electronic",28,29724
+"Synthpop","Electronic",30,29724
 "Synth Punk","Electronic",2,2345
 "Synthwave","Electronic",1,6595
 "Vapor","Electronic",1,9122
@@ -283,7 +283,7 @@
 "Glitch Pop","Pop",3,1892
 "Hyperpop","Pop",0,728
 "Indian Pop","Pop",0,374
-"Indie Pop","Pop",15,41239
+"Indie Pop","Pop",16,41239
 "Irish Showband","Pop",0,30
 "Italo Pop","Pop",0,1276
 "Jazz Pop","Pop",0,3432
@@ -298,11 +298,11 @@
 "Persian Pop","Pop",0,367
 "Pop Ghazal","Pop",0,24
 "Pop Raï","Pop",0,170
-"Pop Rock","Pop",194,97605
+"Pop Rock","Pop",195,97605
 "Pop Soul","Pop",2,8188
 "Pop Sunda","Pop",0,43
 "Progressive Pop","Pop",4,4208
-"Psychedelic Pop","Pop",17,9566
+"Psychedelic Pop","Pop",19,9566
 "Rabiz","Pop",0,58
 "Rigsar","Pop",0,2
 "Rumba catalana","Pop",0,402
@@ -314,15 +314,15 @@
 "Sophisti-Pop","Pop",0,3226
 "Soviet Estrada","Pop",0,1288
 "Sunshine Pop","Pop",9,2474
-"Synthpop","Pop",28,29724
+"Synthpop","Pop",30,29724
 "Teen Pop","Pop",0,3207
 "Traditional Pop","Pop",5,10284
 "Turkish Pop","Pop",0,1908
 "V-Pop","Pop",0,377
 "Yé-yé","Pop",0,820
-"Neo-Psychedelia","Psychedelia",6,12010
+"Neo-Psychedelia","Psychedelia",8,12010
 "Psychedelic Folk","Psychedelia",6,7860
-"Psychedelic Pop","Psychedelia",17,9566
+"Psychedelic Pop","Psychedelia",19,9566
 "Psychedelic Rock","Psychedelia",103,28129
 "Psychedelic Soul","Psychedelia",3,1208
 "Art Punk","Punk",8,3184
@@ -393,7 +393,7 @@
 "Dream Pop","Alternative Rock",15,11900
 "Emo-Pop","Alternative Rock",3,2834
 "Grunge","Alternative Rock",39,3491
-"Indie Rock","Alternative Rock",105,54088
+"Indie Rock","Alternative Rock",107,54088
 "Jangle Pop","Alternative Rock",16,7477
 "Noise Pop","Alternative Rock",6,4742
 "Paisley Underground","Alternative Rock",0,291
@@ -463,7 +463,7 @@
 "Manila Sound","Pop Rock",0,65
 "Piano Rock","Pop Rock",0,3286
 "Power Pop","Pop Rock",13,18389
-"Soft Rock","Pop Rock",5,5780
+"Soft Rock","Pop Rock",6,5780
 "Stereo","Pop Rock",0,124
 "Twee Pop","Pop Rock",1,3767
 "Vocal Surf","Pop Rock",10,321
