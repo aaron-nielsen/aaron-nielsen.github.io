@@ -1,5 +1,5 @@
 "Genre","Parent","MyCount","PopCount"
-"Rock","Top",1204,680297
+"Rock","Top",1211,680297
 "Jazz","Top",90,85608
 "Ambient","Top",34,54523
 "Blues","Top",22,19499
@@ -8,10 +8,10 @@
 "Country","Top",118,45278
 "Dance","Top",48,214422
 "Electronic","Top",126,321367
-"Experimental","Top",31,92878
+"Experimental","Top",32,92878
 "Field Recordings","Other",1,5383
 "Folk","Top",108,115819
-"Hip Hop","Top",27,131911
+"Hip Hop","Top",28,131911
 "Industrial Music","Other",22,53318
 "New Age","Top",3,8263
 "Pop","Top",303,334591
@@ -19,13 +19,13 @@
 "Punk","Top",160,169732
 "R&B","Top",43,79444
 "Regional Music","Top",57,112176
-"Singer/Songwriter","Other",163,40840
+"Singer/Songwriter","Other",164,40840
 "Ska","Top",4,5397
 "Sounds and Effects","Other",1,535
 "Spoken Word","Other",2,13694
 "Acoustic Rock","Rock",23,6747
 "Afro-Rock","Rock",1,99
-"Alternative Rock","Rock",363,119305
+"Alternative Rock","Rock",366,119305
 "Andean Rock","Rock",1,156
 "AOR","Rock",3,10047
 "Art Punk","Rock",8,3184
@@ -38,7 +38,7 @@
 "Dark Cabaret","Rock",1,1046
 "Deutschrock","Rock",1,1259
 "Emo","Rock",16,17946
-"Experimental Rock","Rock",34,20348
+"Experimental Rock","Rock",36,20348
 "Folk Rock","Rock",130,16413
 "Funk Rock","Rock",4,3495
 "Garage Rock","Rock",10,19740
@@ -57,7 +57,7 @@
 "Noise Rock","Rock",24,13820
 "Pop Rock","Rock",196,97605
 "Post-Punk","Rock",52,36281
-"Post-Rock","Rock",31,16649
+"Post-Rock","Rock",35,16649
 "Progressive Rock","Rock",58,36864
 "Proto-Punk","Rock",7,1004
 "Psychedelic Rock","Rock",103,28129
@@ -228,7 +228,7 @@
 "French Hip Hop","Hip Hop",1,4919
 "Genge","Hip Hop",0,7
 "G-Funk","Hip Hop",2,1090
-"Hardcore Hip Hop","Hip Hop",7,25250
+"Hardcore Hip Hop","Hip Hop",8,25250
 "Hiplife","Hip Hop",0,43
 "Hyphy","Hip Hop",0,889
 "Instrumental Hip Hop","Hip Hop",3,12422
@@ -392,8 +392,8 @@
 "Britpop","Alternative Rock",3,2953
 "Dream Pop","Alternative Rock",15,11900
 "Emo-Pop","Alternative Rock",3,2834
-"Grunge","Alternative Rock",42,3491
-"Indie Rock","Alternative Rock",119,54088
+"Grunge","Alternative Rock",43,3491
+"Indie Rock","Alternative Rock",121,54088
 "Jangle Pop","Alternative Rock",17,7477
 "Noise Pop","Alternative Rock",6,4742
 "Paisley Underground","Alternative Rock",0,291
