@@ -1,5 +1,5 @@
 "Genre","Parent","MyCount","PopCount"
-"Rock","Top",1217,680297
+"Rock","Top",1225,680297
 "Jazz","Top",90,85608
 "Ambient","Top",34,54523
 "Blues","Top",22,19499
@@ -7,7 +7,7 @@
 "Comedy","Other",2,12686
 "Country","Top",120,45278
 "Dance","Top",48,214422
-"Electronic","Top",126,321367
+"Electronic","Top",127,321367
 "Experimental","Top",32,92878
 "Field Recordings","Other",1,5383
 "Folk","Top",110,115819
@@ -25,12 +25,12 @@
 "Spoken Word","Other",2,13694
 "Acoustic Rock","Rock",23,6747
 "Afro-Rock","Rock",1,99
-"Alternative Rock","Rock",367,119305
+"Alternative Rock","Rock",368,119305
 "Andean Rock","Rock",1,156
 "AOR","Rock",3,10047
 "Art Punk","Rock",8,3184
 "Art Rock","Rock",59,9782
-"Blues Rock","Rock",44,15624
+"Blues Rock","Rock",45,15624
 "British Rhythm & Blues","Rock",1,940
 "Christian Rock","Rock",2,2517
 "Comedy Rock","Rock",1,2448
@@ -38,13 +38,13 @@
 "Dark Cabaret","Rock",1,1046
 "Deutschrock","Rock",1,1259
 "Emo","Rock",16,17946
-"Experimental Rock","Rock",36,20348
+"Experimental Rock","Rock",37,20348
 "Folk Rock","Rock",130,16413
 "Funk Rock","Rock",4,3495
 "Garage Rock","Rock",10,19740
 "Glam Rock","Rock",14,3623
 "Hardcore [Punk]","Rock",51,82879
-"Hard Rock","Rock",128,49325
+"Hard Rock","Rock",130,49325
 "Heartland Rock","Rock",39,1399
 "Industrial Rock","Rock",15,4419
 "Jam Band","Rock",79,4291
@@ -57,7 +57,7 @@
 "Noise Rock","Rock",24,13820
 "Pop Rock","Rock",196,97605
 "Post-Punk","Rock",52,36281
-"Post-Rock","Rock",36,16649
+"Post-Rock","Rock",41,16649
 "Progressive Rock","Rock",58,36864
 "Proto-Punk","Rock",7,1004
 "Psychedelic Rock","Rock",103,28129
@@ -393,7 +393,7 @@
 "Dream Pop","Alternative Rock",16,11900
 "Emo-Pop","Alternative Rock",3,2834
 "Grunge","Alternative Rock",43,3491
-"Indie Rock","Alternative Rock",121,54088
+"Indie Rock","Alternative Rock",122,54088
 "Jangle Pop","Alternative Rock",17,7477
 "Noise Pop","Alternative Rock",6,4742
 "Paisley Underground","Alternative Rock",0,291
@@ -1060,7 +1060,7 @@
 "Lo-Fi / Slacker Rock","Indie Rock",6,9992
 "Midwest Emo","Indie Rock",7,3815
 "Post-Punk Revival","Indie Rock",5,2635
-"Slowcore","Indie Rock",1,3152
+"Slowcore","Indie Rock",2,3152
 "C86","Jangle Pop",0,577
 "Emoviolence","Screamo",1,846
 "Rock in Opposition","Avant-Prog",0,624
