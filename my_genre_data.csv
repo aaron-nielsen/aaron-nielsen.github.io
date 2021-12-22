@@ -1,25 +1,25 @@
 "Genre","Parent","MyCount","PopCount"
-"Rock","Top",1227,680297
-"Jazz","Top",90,85608
+"Rock","Top",1234,680297
+"Jazz","Top",103,85608
 "Ambient","Top",35,54523
 "Blues","Top",22,19499
-"Classical Music","Top",97,89247
+"Classical Music","Top",98,89247
 "Comedy","Other",2,12686
 "Country","Top",120,45278
-"Dance","Top",48,214422
-"Electronic","Top",127,321367
+"Dance","Top",50,214422
+"Electronic","Top",130,321367
 "Experimental","Top",32,92878
 "Field Recordings","Other",1,5383
-"Folk","Top",110,115819
+"Folk","Top",111,115819
 "Hip Hop","Top",28,131911
 "Industrial Music","Other",22,53318
 "New Age","Top",3,8263
-"Pop","Top",304,334591
+"Pop","Top",305,334591
 "Psychedelia","Other",133,51272
 "Punk","Top",160,169732
 "R&B","Top",43,79444
 "Regional Music","Top",57,112176
-"Singer/Songwriter","Other",164,40840
+"Singer/Songwriter","Other",165,40840
 "Ska","Top",4,5397
 "Sounds and Effects","Other",1,535
 "Spoken Word","Other",2,13694
@@ -44,14 +44,14 @@
 "Garage Rock","Rock",10,19740
 "Glam Rock","Rock",14,3623
 "Hardcore [Punk]","Rock",51,82879
-"Hard Rock","Rock",130,49325
+"Hard Rock","Rock",134,49325
 "Heartland Rock","Rock",39,1399
 "Industrial Rock","Rock",15,4419
 "Jam Band","Rock",79,4291
-"Jazz-Rock","Rock",6,6531
+"Jazz-Rock","Rock",7,6531
 "Latin Rock","Rock",2,906
 "Math Rock","Rock",4,4498
-"Metal","Rock",95,217985
+"Metal","Rock",97,217985
 "Mod","Rock",2,1744
 "New Wave","Rock",32,17094
 "Noise Rock","Rock",24,13820
@@ -78,28 +78,28 @@
 "Afro-Jazz","Jazz",2,604
 "Arabic Jazz","Jazz",1,205
 "Avant-Garde Jazz","Jazz",20,15410
-"Bebop","Jazz",15,3789
+"Bebop","Jazz",22,3789
 "Big Band","Jazz",3,5478
 "British Dance Band","Jazz",1,1897
 "Bulawayo Jazz","Jazz",1,12
 "Cape Jazz","Jazz",1,102
 "Cartoon Music","Jazz",1,147
 "Chamber Jazz","Jazz",2,1251
-"Cool Jazz","Jazz",4,2031
+"Cool Jazz","Jazz",12,2031
 "Dark Jazz","Jazz",1,521
 "Dixieland","Jazz",2,1762
 "ECM Style Jazz","Jazz",1,1067
 "Ethio-Jazz","Jazz",1,282
 "Flamenco Jazz","Jazz",1,123
 "Jazz-Funk","Jazz",3,3967
-"Jazz Fusion","Jazz",14,11662
+"Jazz Fusion","Jazz",15,11662
 "Jazz manouche","Jazz",1,865
 "Jazz Poetry","Jazz",1,187
 "Latin Jazz","Jazz",2,2257
 "Marabi","Jazz",2,321
-"Modal Jazz","Jazz",7,646
+"Modal Jazz","Jazz",8,646
 "New Orleans Brass Band","Jazz",1,160
-"Post-Bop","Jazz",11,2765
+"Post-Bop","Jazz",12,2765
 "Samba-Jazz","Jazz",1,736
 "Smooth Jazz","Jazz",2,2959
 "Soul Jazz","Jazz",2,2889
@@ -129,7 +129,7 @@
 "South Asian Classical Music","Classical Music",4,2459
 "Southeast Asian Classical Music","Classical Music",2,1037
 "Turkish Classical Music","Classical Music",1,291
-"Western Classical Music","Classical Music",85,82670
+"Western Classical Music","Classical Music",86,82670
 "Dutch Cabaret","Comedy",0,537
 "Kabarett","Comedy",0,123
 "Musical Comedy","Comedy",2,6311
@@ -149,7 +149,7 @@
 "Dance-Pop","Dance",7,25817
 "Dance-Punk","Dance",4,2552
 "Disco","Dance",6,25540
-"Electronic Dance Music","Dance",26,182281
+"Electronic Dance Music","Dance",28,182281
 "Acid Croft","Electronic",0,101
 "Algorave","Electronic",0,31
 "Ambient Dub","Electronic",1,1417
@@ -159,10 +159,10 @@
 "Dungeon Synth","Electronic",1,5159
 "Electroacoustic","Electronic",5,10300
 "Electro-Industrial","Electronic",3,5101
-"Electronic Dance Music","Electronic",26,182281
+"Electronic Dance Music","Electronic",28,182281
 "Electropop","Electronic",5,20155
 "Flashcore","Electronic",0,236
-"Folktronica","Electronic",1,2104
+"Folktronica","Electronic",2,2104
 "Glitch","Electronic",3,4509
 "Glitch Hop","Electronic",1,2256
 "Glitch Pop","Electronic",3,1892
@@ -170,9 +170,9 @@
 "HexD","Electronic",0,515
 "Horror Synth","Electronic",0,962
 "Hyperpop","Electronic",1,728
-"IDM","Electronic",11,10955
+"IDM","Electronic",12,10955
 "Illbient","Electronic",1,527
-"Indietronica","Electronic",6,10749
+"Indietronica","Electronic",7,10749
 "Latin Electronic","Electronic",1,1327
 "Microsound","Electronic",2,272
 "Minatory","Electronic",0,91
@@ -205,7 +205,7 @@
 "Turntable Music","Experimental",0,451
 "Nature Recordings","Field Recordings",0,1172
 "Radio Broadcast Recordings","Field Recordings",0,209
-"Contemporary Folk","Folk",84,54144
+"Contemporary Folk","Folk",85,54144
 "Traditional Folk Music","Folk",30,65012
 "Abstract Hip Hop","Hip Hop",1,5545
 "Afroswing","Hip Hop",0,109
@@ -277,7 +277,7 @@
 "Electropop","Pop",5,20155
 "Europop","Pop",0,2076
 "Flamenco Pop","Pop",0,813
-"Folk Pop","Pop",3,9672
+"Folk Pop","Pop",4,9672
 "French Pop","Pop",1,4874
 "Girl Group","Pop",3,1732
 "Glitch Pop","Pop",3,1892
@@ -443,10 +443,10 @@
 "Industrial Metal","Metal",3,4856
 "Metalcore","Metal",2,19901
 "Neoclassical Metal","Metal",1,1016
-"Post-Metal","Metal",10,5666
+"Post-Metal","Metal",12,5666
 "Power Metal","Metal",1,10864
 "Progressive Metal","Metal",4,17903
-"Sludge Metal","Metal",2,11303
+"Sludge Metal","Metal",4,11303
 "Southern Metal","Metal",0,303
 "Speed Metal","Metal",4,3487
 "Stoner Metal","Metal",1,4914
@@ -515,7 +515,7 @@
 "Free Jazz","Avant-Garde Jazz",5,6449
 "Spiritual Jazz","Avant-Garde Jazz",7,823
 "Yass","Avant-Garde Jazz",0,106
-"Hard Bop","Bebop",10,2458
+"Hard Bop","Bebop",13,2458
 "Experimental Big Band","Big Band",1,771
 "Progressive Big Band","Big Band",0,365
 "Afro-Cuban Jazz","Latin Jazz",1,905
@@ -565,7 +565,7 @@
 "Lieder","Western Classical Music",1,1347
 "Madrigal","Western Classical Music",1,244
 "Medieval Classical Music","Western Classical Music",1,1574
-"Modern Classical","Western Classical Music",57,30630
+"Modern Classical","Western Classical Music",58,30630
 "Neoclassicism","Western Classical Music",1,877
 "Opera","Western Classical Music",3,5735
 "Oratorio","Western Classical Music",1,803
@@ -637,7 +637,7 @@
 "Hard Drum","Electronic Dance Music",0,173
 "Hardstyle","Electronic Dance Music",0,1332
 "Hardvapour","Electronic Dance Music",0,163
-"House","Electronic Dance Music",7,58285
+"House","Electronic Dance Music",8,58285
 "Kuduro","Electronic Dance Music",0,287
 "Lento violento","Electronic Dance Music",0,23
 "Mahraganat","Electronic Dance Music",0,31
@@ -650,7 +650,7 @@
 "Shangaan Electro","Electronic Dance Music",0,42
 "Singeli","Electronic Dance Music",0,50
 "Spacesynth","Electronic Dance Music",0,729
-"Techno","Electronic Dance Music",5,31628
+"Techno","Electronic Dance Music",6,31628
 "Techno Bass","Electronic Dance Music",0,143
 "Tecnobrega","Electronic Dance Music",0,290
 "Tecnorumba","Electronic Dance Music",0,70
@@ -706,7 +706,7 @@
 "Chamber Folk","Contemporary Folk",4,3036
 "Euskal kantagintza berria","Contemporary Folk",0,118
 "Folk Baroque","Contemporary Folk",0,333
-"Folk Pop","Contemporary Folk",3,9672
+"Folk Pop","Contemporary Folk",4,9672
 "Indie Folk","Contemporary Folk",15,8975
 "Música de intervenção","Contemporary Folk",0,142
 "Neofolk","Contemporary Folk",1,4538
@@ -1109,9 +1109,9 @@
 "US Power Metal","Heavy Metal",0,1374
 "Cyber Metal","Industrial Metal",0,458
 "Neue Deutsche Härte","Industrial Metal",0,512
-"Atmospheric Sludge Metal","Post-Metal",1,3601
+"Atmospheric Sludge Metal","Post-Metal",3,3601
 "Djent","Progressive Metal",0,2230
-"Atmospheric Sludge Metal","Sludge Metal",1,3601
+"Atmospheric Sludge Metal","Sludge Metal",3,3601
 "Crossover Thrash","Thrash Metal",0,2671
 "Technical Thrash Metal","Thrash Metal",0,913
 "Freakbeat","Beat Music",1,618
@@ -1180,7 +1180,7 @@
 "Impressionism","Modern Classical",3,1298
 "Indeterminacy","Modern Classical",2,733
 "Microtonal Classical","Modern Classical",2,326
-"Minimalism","Modern Classical",19,2798
+"Minimalism","Modern Classical",20,2798
 "Musique concrète instrumentale","Modern Classical",1,37
 "New Complexity","Modern Classical",1,57
 "Post-Minimalism","Modern Classical",8,1306
@@ -1283,18 +1283,18 @@
 "Jersey Club","House",0,486
 "Kwaito","House",0,223
 "Latin House","House",0,217
-"Microhouse","House",0,1462
+"Microhouse","House",1,1462
 "Nu-Disco","House",0,5493
 "Philly Club","House",0,49
 "Progressive House","House",0,4684
-"Tech House","House",0,8139
+"Tech House","House",1,8139
 "Tribal House","House",0,725
 "Tropical House","House",0,963
 "UK Hard House","House",0,852
 "Batida","Kuduro",0,117
 "Moombahcore","Moombahton",0,237
 "Acid Techno","Techno",1,3356
-"Ambient Techno","Techno",3,4516
+"Ambient Techno","Techno",4,4516
 "Bleep Techno","Techno",0,146
 "Detroit Techno","Techno",0,1304
 "Freetekno","Techno",0,460
