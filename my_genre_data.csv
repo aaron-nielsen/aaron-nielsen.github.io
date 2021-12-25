@@ -1,6 +1,6 @@
 "Genre","Parent","MyCount","PopCount"
 "Rock","Top",1234,680297
-"Jazz","Top",103,85608
+"Jazz","Top",110,85608
 "Ambient","Top",35,54523
 "Blues","Top",22,19499
 "Classical Music","Top",98,89247
@@ -17,7 +17,7 @@
 "Pop","Top",305,334591
 "Psychedelia","Other",133,51272
 "Punk","Top",160,169732
-"R&B","Top",43,79444
+"R&B","Top",44,79444
 "Regional Music","Top",57,112176
 "Singer/Songwriter","Other",165,40840
 "Ska","Top",4,5397
@@ -85,23 +85,23 @@
 "Cape Jazz","Jazz",1,102
 "Cartoon Music","Jazz",1,147
 "Chamber Jazz","Jazz",2,1251
-"Cool Jazz","Jazz",12,2031
+"Cool Jazz","Jazz",13,2031
 "Dark Jazz","Jazz",1,521
 "Dixieland","Jazz",2,1762
 "ECM Style Jazz","Jazz",1,1067
 "Ethio-Jazz","Jazz",1,282
 "Flamenco Jazz","Jazz",1,123
-"Jazz-Funk","Jazz",3,3967
-"Jazz Fusion","Jazz",15,11662
+"Jazz-Funk","Jazz",4,3967
+"Jazz Fusion","Jazz",17,11662
 "Jazz manouche","Jazz",1,865
 "Jazz Poetry","Jazz",1,187
 "Latin Jazz","Jazz",2,2257
 "Marabi","Jazz",2,321
-"Modal Jazz","Jazz",8,646
+"Modal Jazz","Jazz",10,646
 "New Orleans Brass Band","Jazz",1,160
-"Post-Bop","Jazz",12,2765
+"Post-Bop","Jazz",15,2765
 "Samba-Jazz","Jazz",1,736
-"Smooth Jazz","Jazz",2,2959
+"Smooth Jazz","Jazz",3,2959
 "Soul Jazz","Jazz",2,2889
 "Stride","Jazz",2,251
 "Swing","Jazz",5,4012
@@ -336,7 +336,7 @@
 "Boogie","R&B",0,2767
 "Contemporary R&B","R&B",7,24794
 "Doo-Wop","R&B",0,2724
-"Funk","R&B",16,20114
+"Funk","R&B",17,20114
 "New Orleans R&B","R&B",2,898
 "Rhythm & Blues","R&B",3,8282
 "Soul","R&B",20,32430
@@ -824,7 +824,7 @@
 "Afro-Funk","Funk",0,791
 "Deep Funk","Funk",1,126
 "Go-Go","Funk",0,151
-"Jazz-Funk","Funk",3,3967
+"Jazz-Funk","Funk",4,3967
 "Latin Funk","Funk",0,359
 "P-Funk","Funk",0,416
 "Porn Groove","Funk",0,102
