@@ -1,6 +1,6 @@
 "Genre","Parent","MyCount","PopCount"
-"Rock","Top",1234,680297
-"Jazz","Top",110,85608
+"Rock","Top",1237,680297
+"Jazz","Top",118,85608
 "Ambient","Top",35,54523
 "Blues","Top",22,19499
 "Classical Music","Top",98,89247
@@ -18,14 +18,14 @@
 "Psychedelia","Other",133,51272
 "Punk","Top",160,169732
 "R&B","Top",44,79444
-"Regional Music","Top",57,112176
+"Regional Music","Top",60,112176
 "Singer/Songwriter","Other",165,40840
 "Ska","Top",4,5397
 "Sounds and Effects","Other",1,535
 "Spoken Word","Other",2,13694
 "Acoustic Rock","Rock",23,6747
 "Afro-Rock","Rock",1,99
-"Alternative Rock","Rock",368,119305
+"Alternative Rock","Rock",370,119305
 "Andean Rock","Rock",1,156
 "AOR","Rock",3,10047
 "Art Punk","Rock",8,3184
@@ -57,7 +57,7 @@
 "Noise Rock","Rock",24,13820
 "Pop Rock","Rock",196,97605
 "Post-Punk","Rock",52,36281
-"Post-Rock","Rock",43,16649
+"Post-Rock","Rock",44,16649
 "Progressive Rock","Rock",58,36864
 "Proto-Punk","Rock",7,1004
 "Psychedelic Rock","Rock",103,28129
@@ -78,7 +78,7 @@
 "Afro-Jazz","Jazz",2,604
 "Arabic Jazz","Jazz",1,205
 "Avant-Garde Jazz","Jazz",20,15410
-"Bebop","Jazz",22,3789
+"Bebop","Jazz",27,3789
 "Big Band","Jazz",3,5478
 "British Dance Band","Jazz",1,1897
 "Bulawayo Jazz","Jazz",1,12
@@ -89,7 +89,7 @@
 "Dark Jazz","Jazz",1,521
 "Dixieland","Jazz",2,1762
 "ECM Style Jazz","Jazz",1,1067
-"Ethio-Jazz","Jazz",1,282
+"Ethio-Jazz","Jazz",4,282
 "Flamenco Jazz","Jazz",1,123
 "Jazz-Funk","Jazz",4,3967
 "Jazz Fusion","Jazz",17,11662
@@ -340,7 +340,7 @@
 "New Orleans R&B","R&B",2,898
 "Rhythm & Blues","R&B",3,8282
 "Soul","R&B",20,32430
-"African Music","Regional Music",16,14340
+"African Music","Regional Music",19,14340
 "Ancient Music","Regional Music",0,220
 "Arabic Music","Regional Music",2,3976
 "Balkan Music","Regional Music",0,4979
@@ -393,11 +393,11 @@
 "Dream Pop","Alternative Rock",16,11900
 "Emo-Pop","Alternative Rock",3,2834
 "Grunge","Alternative Rock",43,3491
-"Indie Rock","Alternative Rock",122,54088
+"Indie Rock","Alternative Rock",123,54088
 "Jangle Pop","Alternative Rock",17,7477
 "Noise Pop","Alternative Rock",6,4742
 "Paisley Underground","Alternative Rock",0,291
-"Post-Grunge","Alternative Rock",20,2847
+"Post-Grunge","Alternative Rock",21,2847
 "Shoegaze","Alternative Rock",23,8460
 "Boogie Rock","Blues Rock",1,993
 "Cowpunk","Country Rock",2,509
@@ -515,7 +515,7 @@
 "Free Jazz","Avant-Garde Jazz",5,6449
 "Spiritual Jazz","Avant-Garde Jazz",7,823
 "Yass","Avant-Garde Jazz",0,106
-"Hard Bop","Bebop",13,2458
+"Hard Bop","Bebop",18,2458
 "Experimental Big Band","Big Band",1,771
 "Progressive Big Band","Big Band",0,365
 "Afro-Cuban Jazz","Latin Jazz",1,905
@@ -849,7 +849,7 @@
 "East African Music","African Music",0,720
 "Malagasy Music","African Music",0,145
 "North African Music","African Music",1,1755
-"Northeastern African Music","African Music",2,741
+"Northeastern African Music","African Music",5,741
 "Southern African Music","African Music",3,1645
 "West African Music","African Music",7,5843
 "Ancient Chinese Music","Ancient Music",0,31
@@ -1530,7 +1530,7 @@
 "Raï","North African Music",0,433
 "Shaʻabi","North African Music",0,117
 "Azmari","Northeastern African Music",0,22
-"Ethio-Jazz","Northeastern African Music",1,282
+"Ethio-Jazz","Northeastern African Music",4,282
 "Ethiopian Church Music","Northeastern African Music",0,55
 "Nubian Music","Northeastern African Music",1,109
 "Qaraami","Northeastern African Music",0,35
