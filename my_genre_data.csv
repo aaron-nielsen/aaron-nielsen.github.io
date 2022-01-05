@@ -1,6 +1,6 @@
 "Genre","Parent","MyCount","PopCount"
 "Rock","Top",1237,680297
-"Jazz","Top",118,85608
+"Jazz","Top",119,85608
 "Ambient","Top",35,54523
 "Blues","Top",22,19499
 "Classical Music","Top",98,89247
@@ -17,8 +17,8 @@
 "Pop","Top",305,334591
 "Psychedelia","Other",133,51272
 "Punk","Top",160,169732
-"R&B","Top",44,79444
-"Regional Music","Top",60,112176
+"R&B","Top",45,79444
+"Regional Music","Top",61,112176
 "Singer/Songwriter","Other",165,40840
 "Ska","Top",4,5397
 "Sounds and Effects","Other",1,535
@@ -89,9 +89,9 @@
 "Dark Jazz","Jazz",1,521
 "Dixieland","Jazz",2,1762
 "ECM Style Jazz","Jazz",1,1067
-"Ethio-Jazz","Jazz",4,282
+"Ethio-Jazz","Jazz",5,282
 "Flamenco Jazz","Jazz",1,123
-"Jazz-Funk","Jazz",4,3967
+"Jazz-Funk","Jazz",5,3967
 "Jazz Fusion","Jazz",17,11662
 "Jazz manouche","Jazz",1,865
 "Jazz Poetry","Jazz",1,187
@@ -336,11 +336,11 @@
 "Boogie","R&B",0,2767
 "Contemporary R&B","R&B",7,24794
 "Doo-Wop","R&B",0,2724
-"Funk","R&B",17,20114
+"Funk","R&B",18,20114
 "New Orleans R&B","R&B",2,898
 "Rhythm & Blues","R&B",3,8282
 "Soul","R&B",20,32430
-"African Music","Regional Music",19,14340
+"African Music","Regional Music",20,14340
 "Ancient Music","Regional Music",0,220
 "Arabic Music","Regional Music",2,3976
 "Balkan Music","Regional Music",0,4979
@@ -824,7 +824,7 @@
 "Afro-Funk","Funk",0,791
 "Deep Funk","Funk",1,126
 "Go-Go","Funk",0,151
-"Jazz-Funk","Funk",4,3967
+"Jazz-Funk","Funk",5,3967
 "Latin Funk","Funk",0,359
 "P-Funk","Funk",0,416
 "Porn Groove","Funk",0,102
@@ -849,7 +849,7 @@
 "East African Music","African Music",0,720
 "Malagasy Music","African Music",0,145
 "North African Music","African Music",1,1755
-"Northeastern African Music","African Music",5,741
+"Northeastern African Music","African Music",6,741
 "Southern African Music","African Music",3,1645
 "West African Music","African Music",7,5843
 "Ancient Chinese Music","Ancient Music",0,31
@@ -1530,7 +1530,7 @@
 "Raï","North African Music",0,433
 "Shaʻabi","North African Music",0,117
 "Azmari","Northeastern African Music",0,22
-"Ethio-Jazz","Northeastern African Music",4,282
+"Ethio-Jazz","Northeastern African Music",5,282
 "Ethiopian Church Music","Northeastern African Music",0,55
 "Nubian Music","Northeastern African Music",1,109
 "Qaraami","Northeastern African Music",0,35
