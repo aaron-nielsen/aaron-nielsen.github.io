@@ -1,13 +1,13 @@
 "Genre","Parent","MyCount","PopCount"
 "Rock","Top",1237,680297
-"Jazz","Top",119,85608
+"Jazz","Top",120,85608
 "Ambient","Top",35,54523
 "Blues","Top",22,19499
 "Classical Music","Top",98,89247
 "Comedy","Other",2,12686
 "Country","Top",120,45278
 "Dance","Top",50,214422
-"Electronic","Top",130,321367
+"Electronic","Top",131,321367
 "Experimental","Top",32,92878
 "Field Recordings","Other",1,5383
 "Folk","Top",111,115819
@@ -92,7 +92,7 @@
 "Ethio-Jazz","Jazz",5,282
 "Flamenco Jazz","Jazz",1,123
 "Jazz-Funk","Jazz",5,3967
-"Jazz Fusion","Jazz",17,11662
+"Jazz Fusion","Jazz",18,11662
 "Jazz manouche","Jazz",1,865
 "Jazz Poetry","Jazz",1,187
 "Latin Jazz","Jazz",2,2257
@@ -178,7 +178,7 @@
 "Minatory","Electronic",0,91
 "Minimal Wave","Electronic",1,7918
 "Nightcore","Electronic",0,1222
-"Nu Jazz","Electronic",1,2728
+"Nu Jazz","Electronic",2,2728
 "Progressive Electronic","Electronic",7,10348
 "Psybient","Electronic",1,859
 "Synthpop","Electronic",30,29724
