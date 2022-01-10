@@ -1,13 +1,13 @@
 "Genre","Parent","MyCount","PopCount"
 "Rock","Top",1237,680297
-"Jazz","Top",123,85608
+"Jazz","Top",127,85608
 "Ambient","Top",35,54523
 "Blues","Top",22,19499
 "Classical Music","Top",98,89247
 "Comedy","Other",2,12686
 "Country","Top",120,45278
 "Dance","Top",50,214422
-"Electronic","Top",131,321367
+"Electronic","Top",132,321367
 "Experimental","Top",32,92878
 "Field Recordings","Other",1,5383
 "Folk","Top",111,115819
@@ -18,7 +18,7 @@
 "Psychedelia","Other",133,51272
 "Punk","Top",160,169732
 "R&B","Top",45,79444
-"Regional Music","Top",61,112176
+"Regional Music","Top",62,112176
 "Singer/Songwriter","Other",165,40840
 "Ska","Top",4,5397
 "Sounds and Effects","Other",1,535
@@ -77,22 +77,22 @@
 "Zolo","Rock",3,1278
 "Afro-Jazz","Jazz",2,604
 "Arabic Jazz","Jazz",1,205
-"Avant-Garde Jazz","Jazz",22,15410
+"Avant-Garde Jazz","Jazz",24,15410
 "Bebop","Jazz",27,3789
 "Big Band","Jazz",4,5478
 "British Dance Band","Jazz",1,1897
 "Bulawayo Jazz","Jazz",1,12
-"Cape Jazz","Jazz",1,102
+"Cape Jazz","Jazz",2,102
 "Cartoon Music","Jazz",1,147
 "Chamber Jazz","Jazz",2,1251
-"Cool Jazz","Jazz",13,2031
+"Cool Jazz","Jazz",14,2031
 "Dark Jazz","Jazz",1,521
 "Dixieland","Jazz",2,1762
 "ECM Style Jazz","Jazz",1,1067
 "Ethio-Jazz","Jazz",5,282
 "Flamenco Jazz","Jazz",1,123
 "Jazz-Funk","Jazz",5,3967
-"Jazz Fusion","Jazz",19,11662
+"Jazz Fusion","Jazz",20,11662
 "Jazz manouche","Jazz",1,865
 "Jazz Poetry","Jazz",1,187
 "Latin Jazz","Jazz",2,2257
@@ -340,7 +340,7 @@
 "New Orleans R&B","R&B",2,898
 "Rhythm & Blues","R&B",3,8282
 "Soul","R&B",20,32430
-"African Music","Regional Music",20,14340
+"African Music","Regional Music",21,14340
 "Ancient Music","Regional Music",0,220
 "Arabic Music","Regional Music",2,3976
 "Balkan Music","Regional Music",0,4979
@@ -512,8 +512,8 @@
 "Surf Rock","Surf Music",7,3352
 "Vocal Surf","Surf Music",10,321
 "Experimental Big Band","Avant-Garde Jazz",2,771
-"Free Jazz","Avant-Garde Jazz",6,6449
-"Spiritual Jazz","Avant-Garde Jazz",7,823
+"Free Jazz","Avant-Garde Jazz",7,6449
+"Spiritual Jazz","Avant-Garde Jazz",9,823
 "Yass","Avant-Garde Jazz",0,106
 "Hard Bop","Bebop",18,2458
 "Experimental Big Band","Big Band",2,771
@@ -850,7 +850,7 @@
 "Malagasy Music","African Music",0,145
 "North African Music","African Music",1,1755
 "Northeastern African Music","African Music",6,741
-"Southern African Music","African Music",3,1645
+"Southern African Music","African Music",4,1645
 "West African Music","African Music",7,5843
 "Ancient Chinese Music","Ancient Music",0,31
 "Ancient Egyptian Music","Ancient Music",0,44
@@ -1538,7 +1538,7 @@
 "Tizita","Northeastern African Music",0,208
 "Amapiano","Southern African Music",0,114
 "Bulawayo Jazz","Southern African Music",1,12
-"Cape Jazz","Southern African Music",1,102
+"Cape Jazz","Southern African Music",2,102
 "Chimurenga","Southern African Music",0,120
 "Famo","Southern African Music",0,11
 "Gqom","Southern African Music",0,189
