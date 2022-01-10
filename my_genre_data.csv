@@ -1,6 +1,6 @@
 "Genre","Parent","MyCount","PopCount"
 "Rock","Top",1237,680297
-"Jazz","Top",120,85608
+"Jazz","Top",123,85608
 "Ambient","Top",35,54523
 "Blues","Top",22,19499
 "Classical Music","Top",98,89247
@@ -77,9 +77,9 @@
 "Zolo","Rock",3,1278
 "Afro-Jazz","Jazz",2,604
 "Arabic Jazz","Jazz",1,205
-"Avant-Garde Jazz","Jazz",20,15410
+"Avant-Garde Jazz","Jazz",22,15410
 "Bebop","Jazz",27,3789
-"Big Band","Jazz",3,5478
+"Big Band","Jazz",4,5478
 "British Dance Band","Jazz",1,1897
 "Bulawayo Jazz","Jazz",1,12
 "Cape Jazz","Jazz",1,102
@@ -92,7 +92,7 @@
 "Ethio-Jazz","Jazz",5,282
 "Flamenco Jazz","Jazz",1,123
 "Jazz-Funk","Jazz",5,3967
-"Jazz Fusion","Jazz",18,11662
+"Jazz Fusion","Jazz",19,11662
 "Jazz manouche","Jazz",1,865
 "Jazz Poetry","Jazz",1,187
 "Latin Jazz","Jazz",2,2257
@@ -105,7 +105,7 @@
 "Soul Jazz","Jazz",2,2889
 "Stride","Jazz",2,251
 "Swing","Jazz",5,4012
-"Third Stream","Jazz",6,778
+"Third Stream","Jazz",7,778
 "Vocal Jazz","Jazz",6,9536
 "Ambient Dub","Ambient",1,1417
 "Dark Ambient","Ambient",2,15596
@@ -511,12 +511,12 @@
 "Surf Punk","Surf Music",1,514
 "Surf Rock","Surf Music",7,3352
 "Vocal Surf","Surf Music",10,321
-"Experimental Big Band","Avant-Garde Jazz",1,771
-"Free Jazz","Avant-Garde Jazz",5,6449
+"Experimental Big Band","Avant-Garde Jazz",2,771
+"Free Jazz","Avant-Garde Jazz",6,6449
 "Spiritual Jazz","Avant-Garde Jazz",7,823
 "Yass","Avant-Garde Jazz",0,106
 "Hard Bop","Bebop",18,2458
-"Experimental Big Band","Big Band",1,771
+"Experimental Big Band","Big Band",2,771
 "Progressive Big Band","Big Band",0,365
 "Afro-Cuban Jazz","Latin Jazz",1,905
 "Kwela","Marabi",0,46
