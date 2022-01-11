@@ -1,6 +1,6 @@
 "Genre","Parent","MyCount","PopCount"
-"Rock","Top",1237,680297
-"Jazz","Top",127,85608
+"Rock","Top",1239,680297
+"Jazz","Top",133,85608
 "Ambient","Top",35,54523
 "Blues","Top",22,19499
 "Classical Music","Top",98,89247
@@ -8,16 +8,16 @@
 "Country","Top",120,45278
 "Dance","Top",50,214422
 "Electronic","Top",132,321367
-"Experimental","Top",32,92878
+"Experimental","Top",33,92878
 "Field Recordings","Other",1,5383
 "Folk","Top",111,115819
 "Hip Hop","Top",28,131911
 "Industrial Music","Other",22,53318
 "New Age","Top",3,8263
 "Pop","Top",305,334591
-"Psychedelia","Other",133,51272
-"Punk","Top",160,169732
-"R&B","Top",45,79444
+"Psychedelia","Other",134,51272
+"Punk","Top",161,169732
+"R&B","Top",46,79444
 "Regional Music","Top",62,112176
 "Singer/Songwriter","Other",165,40840
 "Ska","Top",4,5397
@@ -25,7 +25,7 @@
 "Spoken Word","Other",2,13694
 "Acoustic Rock","Rock",23,6747
 "Afro-Rock","Rock",1,99
-"Alternative Rock","Rock",370,119305
+"Alternative Rock","Rock",371,119305
 "Andean Rock","Rock",1,156
 "AOR","Rock",3,10047
 "Art Punk","Rock",8,3184
@@ -37,7 +37,7 @@
 "Country Rock","Rock",60,5688
 "Dark Cabaret","Rock",1,1046
 "Deutschrock","Rock",1,1259
-"Emo","Rock",16,17946
+"Emo","Rock",17,17946
 "Experimental Rock","Rock",37,20348
 "Folk Rock","Rock",130,16413
 "Funk Rock","Rock",4,3495
@@ -60,7 +60,7 @@
 "Post-Rock","Rock",44,16649
 "Progressive Rock","Rock",58,36864
 "Proto-Punk","Rock",7,1004
-"Psychedelic Rock","Rock",103,28129
+"Psychedelic Rock","Rock",104,28129
 "Pub Rock","Rock",1,1017
 "Punk Rock","Rock",58,98802
 "Rap Rock","Rock",1,2910
@@ -77,7 +77,7 @@
 "Zolo","Rock",3,1278
 "Afro-Jazz","Jazz",2,604
 "Arabic Jazz","Jazz",1,205
-"Avant-Garde Jazz","Jazz",24,15410
+"Avant-Garde Jazz","Jazz",27,15410
 "Bebop","Jazz",27,3789
 "Big Band","Jazz",4,5478
 "British Dance Band","Jazz",1,1897
@@ -88,25 +88,25 @@
 "Cool Jazz","Jazz",14,2031
 "Dark Jazz","Jazz",1,521
 "Dixieland","Jazz",2,1762
-"ECM Style Jazz","Jazz",1,1067
+"ECM Style Jazz","Jazz",2,1067
 "Ethio-Jazz","Jazz",5,282
 "Flamenco Jazz","Jazz",1,123
-"Jazz-Funk","Jazz",5,3967
-"Jazz Fusion","Jazz",20,11662
+"Jazz-Funk","Jazz",6,3967
+"Jazz Fusion","Jazz",21,11662
 "Jazz manouche","Jazz",1,865
 "Jazz Poetry","Jazz",1,187
 "Latin Jazz","Jazz",2,2257
 "Marabi","Jazz",2,321
 "Modal Jazz","Jazz",10,646
 "New Orleans Brass Band","Jazz",1,160
-"Post-Bop","Jazz",15,2765
+"Post-Bop","Jazz",17,2765
 "Samba-Jazz","Jazz",1,736
 "Smooth Jazz","Jazz",3,2959
-"Soul Jazz","Jazz",2,2889
+"Soul Jazz","Jazz",3,2889
 "Stride","Jazz",2,251
 "Swing","Jazz",5,4012
 "Third Stream","Jazz",7,778
-"Vocal Jazz","Jazz",6,9536
+"Vocal Jazz","Jazz",7,9536
 "Ambient Dub","Ambient",1,1417
 "Dark Ambient","Ambient",2,15596
 "Space Ambient","Ambient",2,2291
@@ -190,7 +190,7 @@
 "Conducted Improvisation","Experimental",0,64
 "Drone","Experimental",9,19002
 "Electroacoustic","Experimental",5,10300
-"Free Improvisation","Experimental",2,13105
+"Free Improvisation","Experimental",3,13105
 "Futurism","Experimental",1,92
 "Glitch","Experimental",3,4509
 "Indeterminacy","Experimental",2,733
@@ -323,11 +323,11 @@
 "Neo-Psychedelia","Psychedelia",10,12010
 "Psychedelic Folk","Psychedelia",7,7860
 "Psychedelic Pop","Psychedelia",20,9566
-"Psychedelic Rock","Psychedelia",103,28129
+"Psychedelic Rock","Psychedelia",104,28129
 "Psychedelic Soul","Psychedelia",4,1208
 "Art Punk","Punk",8,3184
 "Digital Hardcore","Punk",1,672
-"Emo","Punk",16,17946
+"Emo","Punk",17,17946
 "Hardcore [Punk]","Punk",51,82879
 "Post-Punk","Punk",52,36281
 "Proto-Punk","Punk",7,1004
@@ -336,7 +336,7 @@
 "Boogie","R&B",0,2767
 "Contemporary R&B","R&B",7,24794
 "Doo-Wop","R&B",0,2724
-"Funk","R&B",18,20114
+"Funk","R&B",19,20114
 "New Orleans R&B","R&B",2,898
 "Rhythm & Blues","R&B",3,8282
 "Soul","R&B",20,32430
@@ -393,7 +393,7 @@
 "Dream Pop","Alternative Rock",16,11900
 "Emo-Pop","Alternative Rock",3,2834
 "Grunge","Alternative Rock",43,3491
-"Indie Rock","Alternative Rock",123,54088
+"Indie Rock","Alternative Rock",124,54088
 "Jangle Pop","Alternative Rock",17,7477
 "Noise Pop","Alternative Rock",6,4742
 "Paisley Underground","Alternative Rock",0,291
@@ -513,7 +513,7 @@
 "Vocal Surf","Surf Music",10,321
 "Experimental Big Band","Avant-Garde Jazz",2,771
 "Free Jazz","Avant-Garde Jazz",7,6449
-"Spiritual Jazz","Avant-Garde Jazz",9,823
+"Spiritual Jazz","Avant-Garde Jazz",10,823
 "Yass","Avant-Garde Jazz",0,106
 "Hard Bop","Bebop",18,2458
 "Experimental Big Band","Big Band",2,771
@@ -824,7 +824,7 @@
 "Afro-Funk","Funk",0,791
 "Deep Funk","Funk",1,126
 "Go-Go","Funk",0,151
-"Jazz-Funk","Funk",5,3967
+"Jazz-Funk","Funk",6,3967
 "Latin Funk","Funk",0,359
 "P-Funk","Funk",0,416
 "Porn Groove","Funk",0,102
