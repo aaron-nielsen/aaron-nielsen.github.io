@@ -1,6 +1,6 @@
 "Genre","Parent","MyCount","PopCount"
 "Rock","Top",1239,680297
-"Jazz","Top",133,85608
+"Jazz","Top",136,85608
 "Ambient","Top",35,54523
 "Blues","Top",22,19499
 "Classical Music","Top",98,89247
@@ -14,7 +14,7 @@
 "Hip Hop","Top",28,131911
 "Industrial Music","Other",22,53318
 "New Age","Top",3,8263
-"Pop","Top",305,334591
+"Pop","Top",306,334591
 "Psychedelia","Other",134,51272
 "Punk","Top",161,169732
 "R&B","Top",46,79444
@@ -77,8 +77,8 @@
 "Zolo","Rock",3,1278
 "Afro-Jazz","Jazz",2,604
 "Arabic Jazz","Jazz",1,205
-"Avant-Garde Jazz","Jazz",27,15410
-"Bebop","Jazz",27,3789
+"Avant-Garde Jazz","Jazz",29,15410
+"Bebop","Jazz",28,3789
 "Big Band","Jazz",4,5478
 "British Dance Band","Jazz",1,1897
 "Bulawayo Jazz","Jazz",1,12
@@ -255,7 +255,7 @@
 "Adult Contemporary","Pop",1,5987
 "Ambient Pop","Pop",3,5167
 "Arabic Pop","Pop",0,791
-"Art Pop","Pop",15,17618
+"Art Pop","Pop",16,17618
 "Balkan Pop-Folk","Pop",0,1662
 "Baroque Pop","Pop",8,4211
 "Bitpop","Pop",1,901
@@ -301,7 +301,7 @@
 "Pop Rock","Pop",196,97605
 "Pop Soul","Pop",8,8188
 "Pop Sunda","Pop",0,43
-"Progressive Pop","Pop",4,4208
+"Progressive Pop","Pop",5,4208
 "Psychedelic Pop","Pop",20,9566
 "Rabiz","Pop",0,58
 "Rigsar","Pop",0,2
@@ -512,10 +512,10 @@
 "Surf Rock","Surf Music",7,3352
 "Vocal Surf","Surf Music",10,321
 "Experimental Big Band","Avant-Garde Jazz",2,771
-"Free Jazz","Avant-Garde Jazz",7,6449
+"Free Jazz","Avant-Garde Jazz",8,6449
 "Spiritual Jazz","Avant-Garde Jazz",10,823
 "Yass","Avant-Garde Jazz",0,106
-"Hard Bop","Bebop",18,2458
+"Hard Bop","Bebop",19,2458
 "Experimental Big Band","Big Band",2,771
 "Progressive Big Band","Big Band",0,365
 "Afro-Cuban Jazz","Latin Jazz",1,905
