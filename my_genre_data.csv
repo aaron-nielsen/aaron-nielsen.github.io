@@ -1,6 +1,6 @@
 "Genre","Parent","MyCount","PopCount"
 "Rock","Top",1239,680297
-"Jazz","Top",136,85608
+"Jazz","Top",145,85608
 "Ambient","Top",35,54523
 "Blues","Top",22,19499
 "Classical Music","Top",98,89247
@@ -10,7 +10,7 @@
 "Electronic","Top",132,321367
 "Experimental","Top",33,92878
 "Field Recordings","Other",1,5383
-"Folk","Top",111,115819
+"Folk","Top",112,115819
 "Hip Hop","Top",28,131911
 "Industrial Music","Other",22,53318
 "New Age","Top",3,8263
@@ -77,15 +77,15 @@
 "Zolo","Rock",3,1278
 "Afro-Jazz","Jazz",2,604
 "Arabic Jazz","Jazz",1,205
-"Avant-Garde Jazz","Jazz",29,15410
-"Bebop","Jazz",28,3789
+"Avant-Garde Jazz","Jazz",35,15410
+"Bebop","Jazz",29,3789
 "Big Band","Jazz",4,5478
 "British Dance Band","Jazz",1,1897
 "Bulawayo Jazz","Jazz",1,12
 "Cape Jazz","Jazz",2,102
 "Cartoon Music","Jazz",1,147
 "Chamber Jazz","Jazz",2,1251
-"Cool Jazz","Jazz",14,2031
+"Cool Jazz","Jazz",15,2031
 "Dark Jazz","Jazz",1,521
 "Dixieland","Jazz",2,1762
 "ECM Style Jazz","Jazz",2,1067
@@ -103,9 +103,9 @@
 "Samba-Jazz","Jazz",1,736
 "Smooth Jazz","Jazz",3,2959
 "Soul Jazz","Jazz",3,2889
-"Stride","Jazz",2,251
-"Swing","Jazz",5,4012
-"Third Stream","Jazz",7,778
+"Stride","Jazz",3,251
+"Swing","Jazz",6,4012
+"Third Stream","Jazz",8,778
 "Vocal Jazz","Jazz",7,9536
 "Ambient Dub","Ambient",1,1417
 "Dark Ambient","Ambient",2,15596
@@ -206,7 +206,7 @@
 "Nature Recordings","Field Recordings",0,1172
 "Radio Broadcast Recordings","Field Recordings",0,209
 "Contemporary Folk","Folk",85,54144
-"Traditional Folk Music","Folk",30,65012
+"Traditional Folk Music","Folk",31,65012
 "Abstract Hip Hop","Hip Hop",1,5545
 "Afroswing","Hip Hop",0,109
 "Afro Trap","Hip Hop",0,123
@@ -512,10 +512,10 @@
 "Surf Rock","Surf Music",7,3352
 "Vocal Surf","Surf Music",10,321
 "Experimental Big Band","Avant-Garde Jazz",2,771
-"Free Jazz","Avant-Garde Jazz",8,6449
-"Spiritual Jazz","Avant-Garde Jazz",10,823
+"Free Jazz","Avant-Garde Jazz",10,6449
+"Spiritual Jazz","Avant-Garde Jazz",12,823
 "Yass","Avant-Garde Jazz",0,106
-"Hard Bop","Bebop",19,2458
+"Hard Bop","Bebop",20,2458
 "Experimental Big Band","Big Band",2,771
 "Progressive Big Band","Big Band",0,365
 "Afro-Cuban Jazz","Latin Jazz",1,905
@@ -718,7 +718,7 @@
 "Skiffle","Contemporary Folk",0,228
 "Tamborera","Contemporary Folk",0,10
 "African Folk Music","Traditional Folk Music",0,1555
-"American Folk Music","Traditional Folk Music",20,20033
+"American Folk Music","Traditional Folk Music",21,20033
 "Arabic Folk Music","Traditional Folk Music",0,803
 "Australian Folk Music","Traditional Folk Music",0,118
 "Austronesian Traditional Music","Traditional Folk Music",0,136
@@ -1356,7 +1356,7 @@
 "Country Blues","American Folk Music",3,3110
 "Gospel","American Folk Music",2,5651
 "Jug Band","American Folk Music",0,208
-"Ragtime","American Folk Music",4,1594
+"Ragtime","American Folk Music",5,1594
 "Sacred Harp Music","American Folk Music",0,58
 "Spirituals","American Folk Music",0,418
 "Talking Blues","American Folk Music",0,68
@@ -1822,7 +1822,7 @@
 "Cakewalk","Ragtime",0,56
 "Coon Song","Ragtime",0,148
 "Novelty Piano","Ragtime",0,78
-"Stride","Ragtime",2,251
+"Stride","Ragtime",3,251
 "Cape Breton Folk Music","Canadian Maritime Folk",0,127
 "Upopo","Ainu Folk Music",0,17
 "Yukar","Ainu Folk Music",0,2
