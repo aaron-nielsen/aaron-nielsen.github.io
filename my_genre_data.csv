@@ -1,6 +1,6 @@
 "Genre","Parent","MyCount","PopCount"
 "Rock","Top",1239,680297
-"Jazz","Top",155,85608
+"Jazz","Top",159,85608
 "Ambient","Top",35,54523
 "Blues","Top",22,19499
 "Classical Music","Top",98,89247
@@ -77,7 +77,7 @@
 "Zolo","Rock",3,1278
 "Afro-Jazz","Jazz",2,604
 "Arabic Jazz","Jazz",1,205
-"Avant-Garde Jazz","Jazz",38,15410
+"Avant-Garde Jazz","Jazz",41,15410
 "Bebop","Jazz",31,3789
 "Big Band","Jazz",5,5478
 "British Dance Band","Jazz",1,1897
@@ -99,7 +99,7 @@
 "Marabi","Jazz",2,321
 "Modal Jazz","Jazz",10,646
 "New Orleans Brass Band","Jazz",1,160
-"Post-Bop","Jazz",20,2765
+"Post-Bop","Jazz",21,2765
 "Samba-Jazz","Jazz",1,736
 "Smooth Jazz","Jazz",3,2959
 "Soul Jazz","Jazz",3,2889
