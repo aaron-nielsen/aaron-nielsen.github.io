@@ -17,8 +17,7 @@ I received a Ph.D. in Applied Mathematics from the University of Colorado Denver
 | M.S. | | Statistics | | Colorado State University | | 2014 |
 | M.S. | | Applied Mathematics | | University of Colorado Denver | | 2012 |
 | M.S. | | Electrical Engineering | | University of Colorado Boulder | | 2008 |
-| B.S. | | Mathematics | | Colorado State University | | 2007 |
-| B.S. | | Electrical Engineering | | Colorado State University | | 2007 |
+| B.S. | | Electrical Engineering and Mathematics  | | Colorado State University | | 2007 |
 
 <br>
  
@@ -32,6 +31,7 @@ I have been taking a semi-random sample of courses at CSU since joining the facu
 
 | | | | | |
 |--------|---|:---------|------|-------:|
+| PHIL 205 | | Ethics | | Spring 2022 |
 | PHIL 438 | | Philosophy of Mind | | Fall 2021 |
 | POLS 437 | | International Security | | Summer 2021 |
 | POLS 241 | | Comparative Government and Politics | | Spring 2021 |

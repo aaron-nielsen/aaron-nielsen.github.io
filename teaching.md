@@ -12,13 +12,18 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 
 {% include image.html url="/images/class.jpg" caption="Teaching during my first year as a faculty member at CSU (2018)" align="left" %}
  
-
+# This Semester I'm Teaching (Spring 2022)
+|:-------- |:--------- |:--------- |
+| STAT 315 | Section 1 | MWF 9:00 -- 9:50am |
+| STAT 315 | Section 2 | MWF 10:00 -- 10:50am |
+| STAT 342 | Section 1 | MWF 2:00 -- 2:50pm |
+| STAT 472 | Section 1 | MWF 8:00 -- 8:50am |
 
 # Courses I've Taught
 
 ## Colorado State University
   
-| Course &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Title &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Semesters Taught |
+| Course &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Title &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Semesters Taught |
 |:--------------------	|:------------------------------------------ |:--------------------------------------- |
 | STAT 100 	| Statistical Literacy              	| FA20             |
 | STAT 201 	| General Statistics                	| SP19, FA18, SM15 |
