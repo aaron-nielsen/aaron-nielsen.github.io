@@ -12,7 +12,7 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 
 {% include image.html url="/images/class.jpg" caption="Teaching during my first year as a faculty member at CSU (2018)" align="left" %}
  
-# This Semester I'm Teaching (Spring 2022)
+# Courses I'm Teaching This Semester (Spring 2022)
 
 | Course | Section | Time |
 |:--------------------	|:------------------------------------------ |:--------------------------------------- |
@@ -20,6 +20,8 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 | STAT 315 | 002 | MWF 10:00 -- 10:50am |
 | STAT 342 | 001 | MWF 2:00 -- 2:50pm |
 | STAT 472 | 001 | MWF 8:00 -- 8:50am |
+
+<br>
 
 # Courses I've Taught
 
