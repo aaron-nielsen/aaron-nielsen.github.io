@@ -1,6 +1,6 @@
 "Genre","Parent","MyCount","PopCount"
-"Rock","Top",1239,680297
-"Jazz","Top",159,85608
+"Rock","Top",1240,680297
+"Jazz","Top",163,85608
 "Ambient","Top",35,54523
 "Blues","Top",22,19499
 "Classical Music","Top",98,89247
@@ -47,7 +47,7 @@
 "Hard Rock","Rock",134,49325
 "Heartland Rock","Rock",39,1399
 "Industrial Rock","Rock",15,4419
-"Jam Band","Rock",79,4291
+"Jam Band","Rock",80,4291
 "Jazz-Rock","Rock",7,6531
 "Latin Rock","Rock",2,906
 "Math Rock","Rock",4,4498
@@ -77,8 +77,8 @@
 "Zolo","Rock",3,1278
 "Afro-Jazz","Jazz",2,604
 "Arabic Jazz","Jazz",1,205
-"Avant-Garde Jazz","Jazz",41,15410
-"Bebop","Jazz",31,3789
+"Avant-Garde Jazz","Jazz",44,15410
+"Bebop","Jazz",32,3789
 "Big Band","Jazz",5,5478
 "British Dance Band","Jazz",1,1897
 "Bulawayo Jazz","Jazz",1,12
@@ -99,7 +99,7 @@
 "Marabi","Jazz",2,321
 "Modal Jazz","Jazz",10,646
 "New Orleans Brass Band","Jazz",1,160
-"Post-Bop","Jazz",21,2765
+"Post-Bop","Jazz",22,2765
 "Samba-Jazz","Jazz",1,736
 "Smooth Jazz","Jazz",3,2959
 "Soul Jazz","Jazz",3,2889
@@ -512,10 +512,10 @@
 "Surf Rock","Surf Music",7,3352
 "Vocal Surf","Surf Music",10,321
 "Experimental Big Band","Avant-Garde Jazz",2,771
-"Free Jazz","Avant-Garde Jazz",12,6449
+"Free Jazz","Avant-Garde Jazz",13,6449
 "Spiritual Jazz","Avant-Garde Jazz",13,823
 "Yass","Avant-Garde Jazz",0,106
-"Hard Bop","Bebop",22,2458
+"Hard Bop","Bebop",23,2458
 "Experimental Big Band","Big Band",2,771
 "Progressive Big Band","Big Band",0,365
 "Afro-Cuban Jazz","Latin Jazz",1,905
