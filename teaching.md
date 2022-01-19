@@ -11,6 +11,8 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 
 
 {% include image.html url="/images/class.jpg" caption="Teaching during my first year as a faculty member at CSU (2018)" align="left" %}
+
+<br>
  
 # Courses I'm Teaching This Semester (Spring 2022)
 
