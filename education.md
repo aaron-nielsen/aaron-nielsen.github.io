@@ -11,7 +11,6 @@ I received a Ph.D. in Applied Mathematics from the University of Colorado Denver
 
 # Degrees
 
-| | | | | | | |
 |--------:|-----|:--------|---|:------|---|:------|
 | Ph.D. | | Applied Mathematics | |University of Colorado Denver | | 2018 |
 | M.S. | | Statistics | | Colorado State University | | 2014 |
@@ -29,7 +28,6 @@ I am an active member in the <a href="https://sites.google.com/view/csustatistic
 
 I have been taking a semi-random sample of courses at CSU since joining the faculty in August 2018 as a part of the university's employee study privilege. These classes include:
 
-| | | | | |
 |--------|---|:---------|------|-------:|
 | PHIL 205 | | Ethics | | Spring 2022 |
 | PHIL 438 | | Philosophy of Mind | | Fall 2021 |
