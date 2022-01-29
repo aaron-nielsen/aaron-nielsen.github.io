@@ -1,11 +1,11 @@
 "Genre","Parent","MyCount","PopCount"
 "Rock","Top",1241,680297
-"Jazz","Top",180,85608
+"Jazz","Top",182,85608
 "Ambient","Top",35,54523
 "Blues","Top",22,19499
 "Classical Music","Top",98,89247
 "Comedy","Other",2,12686
-"Country","Top",120,45278
+"Country","Top",121,45278
 "Dance","Top",50,214422
 "Electronic","Top",132,321367
 "Experimental","Top",33,92878
@@ -106,7 +106,7 @@
 "Stride","Jazz",3,251
 "Swing","Jazz",6,4012
 "Third Stream","Jazz",8,778
-"Vocal Jazz","Jazz",7,9536
+"Vocal Jazz","Jazz",9,9536
 "Ambient Dub","Ambient",1,1417
 "Dark Ambient","Ambient",2,15596
 "Space Ambient","Ambient",2,2291
@@ -137,7 +137,7 @@
 "Sketch Comedy","Comedy",0,398
 "Stand-Up Comedy","Comedy",0,2628
 "Alt-Country","Country",40,6181
-"Americana","Country",62,5948
+"Americana","Country",63,5948
 "Contemporary Country","Country",2,4543
 "Country & Irish","Country",1,152
 "Country Pop","Country",5,6646
