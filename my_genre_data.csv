@@ -1,24 +1,24 @@
 "Genre","Parent","MyCount","PopCount"
 "Rock","Top",1241,680297
-"Jazz","Top",182,85608
+"Jazz","Top",187,85608
 "Ambient","Top",35,54523
 "Blues","Top",22,19499
-"Classical Music","Top",98,89247
+"Classical Music","Top",100,89247
 "Comedy","Other",2,12686
 "Country","Top",121,45278
 "Dance","Top",50,214422
-"Electronic","Top",132,321367
+"Electronic","Top",133,321367
 "Experimental","Top",33,92878
 "Field Recordings","Other",1,5383
 "Folk","Top",112,115819
 "Hip Hop","Top",28,131911
 "Industrial Music","Other",22,53318
 "New Age","Top",3,8263
-"Pop","Top",306,334591
+"Pop","Top",307,334591
 "Psychedelia","Other",134,51272
 "Punk","Top",161,169732
 "R&B","Top",47,79444
-"Regional Music","Top",62,112176
+"Regional Music","Top",64,112176
 "Singer/Songwriter","Other",165,40840
 "Ska","Top",4,5397
 "Sounds and Effects","Other",1,535
@@ -75,17 +75,17 @@
 "Visual kei","Rock",1,2571
 "Zamrock","Rock",1,97
 "Zolo","Rock",3,1278
-"Afro-Jazz","Jazz",2,604
+"Afro-Jazz","Jazz",4,604
 "Arabic Jazz","Jazz",1,205
-"Avant-Garde Jazz","Jazz",54,15410
-"Bebop","Jazz",32,3789
+"Avant-Garde Jazz","Jazz",56,15410
+"Bebop","Jazz",33,3789
 "Big Band","Jazz",5,5478
 "British Dance Band","Jazz",1,1897
 "Bulawayo Jazz","Jazz",1,12
 "Cape Jazz","Jazz",2,102
 "Cartoon Music","Jazz",1,147
 "Chamber Jazz","Jazz",2,1251
-"Cool Jazz","Jazz",15,2031
+"Cool Jazz","Jazz",16,2031
 "Dark Jazz","Jazz",1,521
 "Dixieland","Jazz",2,1762
 "ECM Style Jazz","Jazz",2,1067
@@ -99,7 +99,7 @@
 "Marabi","Jazz",2,321
 "Modal Jazz","Jazz",10,646
 "New Orleans Brass Band","Jazz",1,160
-"Post-Bop","Jazz",30,2765
+"Post-Bop","Jazz",31,2765
 "Samba-Jazz","Jazz",1,736
 "Smooth Jazz","Jazz",3,2959
 "Soul Jazz","Jazz",3,2889
@@ -129,7 +129,7 @@
 "South Asian Classical Music","Classical Music",4,2459
 "Southeast Asian Classical Music","Classical Music",2,1037
 "Turkish Classical Music","Classical Music",1,291
-"Western Classical Music","Classical Music",86,82670
+"Western Classical Music","Classical Music",88,82670
 "Dutch Cabaret","Comedy",0,537
 "Kabarett","Comedy",0,123
 "Musical Comedy","Comedy",2,6311
@@ -172,7 +172,7 @@
 "Hyperpop","Electronic",1,728
 "IDM","Electronic",12,10955
 "Illbient","Electronic",1,527
-"Indietronica","Electronic",7,10749
+"Indietronica","Electronic",8,10749
 "Latin Electronic","Electronic",1,1327
 "Microsound","Electronic",2,272
 "Minatory","Electronic",0,91
@@ -255,7 +255,7 @@
 "Adult Contemporary","Pop",1,5987
 "Ambient Pop","Pop",3,5167
 "Arabic Pop","Pop",0,791
-"Art Pop","Pop",16,17618
+"Art Pop","Pop",17,17618
 "Balkan Pop-Folk","Pop",0,1662
 "Baroque Pop","Pop",8,4211
 "Bitpop","Pop",1,901
@@ -301,7 +301,7 @@
 "Pop Rock","Pop",196,97605
 "Pop Soul","Pop",8,8188
 "Pop Sunda","Pop",0,43
-"Progressive Pop","Pop",5,4208
+"Progressive Pop","Pop",6,4208
 "Psychedelic Pop","Pop",20,9566
 "Rabiz","Pop",0,58
 "Rigsar","Pop",0,2
@@ -340,7 +340,7 @@
 "New Orleans R&B","R&B",2,898
 "Rhythm & Blues","R&B",3,8282
 "Soul","R&B",20,32430
-"African Music","Regional Music",21,14340
+"African Music","Regional Music",23,14340
 "Ancient Music","Regional Music",0,220
 "Arabic Music","Regional Music",2,3976
 "Balkan Music","Regional Music",0,4979
@@ -513,9 +513,9 @@
 "Vocal Surf","Surf Music",10,321
 "Experimental Big Band","Avant-Garde Jazz",2,771
 "Free Jazz","Avant-Garde Jazz",17,6449
-"Spiritual Jazz","Avant-Garde Jazz",14,823
+"Spiritual Jazz","Avant-Garde Jazz",16,823
 "Yass","Avant-Garde Jazz",0,106
-"Hard Bop","Bebop",23,2458
+"Hard Bop","Bebop",24,2458
 "Experimental Big Band","Big Band",2,771
 "Progressive Big Band","Big Band",0,365
 "Afro-Cuban Jazz","Latin Jazz",1,905
@@ -565,7 +565,7 @@
 "Lieder","Western Classical Music",1,1347
 "Madrigal","Western Classical Music",1,244
 "Medieval Classical Music","Western Classical Music",1,1574
-"Modern Classical","Western Classical Music",58,30630
+"Modern Classical","Western Classical Music",60,30630
 "Neoclassicism","Western Classical Music",1,877
 "Opera","Western Classical Music",3,5735
 "Oratorio","Western Classical Music",1,803
@@ -843,7 +843,7 @@
 "Smooth Soul","Soul",1,2618
 "Southern Soul","Soul",2,1929
 "African Folk Music","African Music",0,1555
-"Afro-Jazz","African Music",2,604
+"Afro-Jazz","African Music",4,604
 "Cape Verdean Music","African Music",0,319
 "Central African Music","African Music",1,2387
 "East African Music","African Music",0,720
@@ -1180,7 +1180,7 @@
 "Impressionism","Modern Classical",3,1298
 "Indeterminacy","Modern Classical",2,733
 "Microtonal Classical","Modern Classical",2,326
-"Minimalism","Modern Classical",20,2798
+"Minimalism","Modern Classical",22,2798
 "Musique concrète instrumentale","Modern Classical",1,37
 "New Complexity","Modern Classical",1,57
 "Post-Minimalism","Modern Classical",8,1306
