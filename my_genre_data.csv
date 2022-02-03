@@ -1,6 +1,6 @@
 "Genre","Parent","MyCount","PopCount"
 "Rock","Top",1241,680297
-"Jazz","Top",187,85608
+"Jazz","Top",192,85608
 "Ambient","Top",35,54523
 "Blues","Top",22,19499
 "Classical Music","Top",100,89247
@@ -17,7 +17,7 @@
 "Pop","Top",307,334591
 "Psychedelia","Other",134,51272
 "Punk","Top",161,169732
-"R&B","Top",47,79444
+"R&B","Top",48,79444
 "Regional Music","Top",64,112176
 "Singer/Songwriter","Other",165,40840
 "Ska","Top",4,5397
@@ -77,22 +77,22 @@
 "Zolo","Rock",3,1278
 "Afro-Jazz","Jazz",4,604
 "Arabic Jazz","Jazz",1,205
-"Avant-Garde Jazz","Jazz",56,15410
+"Avant-Garde Jazz","Jazz",59,15410
 "Bebop","Jazz",33,3789
 "Big Band","Jazz",5,5478
 "British Dance Band","Jazz",1,1897
 "Bulawayo Jazz","Jazz",1,12
 "Cape Jazz","Jazz",2,102
 "Cartoon Music","Jazz",1,147
-"Chamber Jazz","Jazz",2,1251
+"Chamber Jazz","Jazz",3,1251
 "Cool Jazz","Jazz",16,2031
 "Dark Jazz","Jazz",1,521
 "Dixieland","Jazz",2,1762
-"ECM Style Jazz","Jazz",2,1067
+"ECM Style Jazz","Jazz",3,1067
 "Ethio-Jazz","Jazz",5,282
 "Flamenco Jazz","Jazz",1,123
 "Jazz-Funk","Jazz",7,3967
-"Jazz Fusion","Jazz",23,11662
+"Jazz Fusion","Jazz",24,11662
 "Jazz manouche","Jazz",1,865
 "Jazz Poetry","Jazz",1,187
 "Latin Jazz","Jazz",2,2257
@@ -102,7 +102,7 @@
 "Post-Bop","Jazz",31,2765
 "Samba-Jazz","Jazz",1,736
 "Smooth Jazz","Jazz",3,2959
-"Soul Jazz","Jazz",3,2889
+"Soul Jazz","Jazz",4,2889
 "Stride","Jazz",3,251
 "Swing","Jazz",6,4012
 "Third Stream","Jazz",8,778
@@ -339,7 +339,7 @@
 "Funk","R&B",20,20114
 "New Orleans R&B","R&B",2,898
 "Rhythm & Blues","R&B",3,8282
-"Soul","R&B",20,32430
+"Soul","R&B",21,32430
 "African Music","Regional Music",23,14340
 "Ancient Music","Regional Music",0,220
 "Arabic Music","Regional Music",2,3976
@@ -513,7 +513,7 @@
 "Vocal Surf","Surf Music",10,321
 "Experimental Big Band","Avant-Garde Jazz",2,771
 "Free Jazz","Avant-Garde Jazz",17,6449
-"Spiritual Jazz","Avant-Garde Jazz",16,823
+"Spiritual Jazz","Avant-Garde Jazz",17,823
 "Yass","Avant-Garde Jazz",0,106
 "Hard Bop","Bebop",24,2458
 "Experimental Big Band","Big Band",2,771
