@@ -17,3 +17,5 @@ excerpt_separator: "<!--more-->"
 dept: Department of Statistics
 room: 220 Statistics Building
 location: Fort Collins, CO 80523-1877
+
+theme: jekyll-theme-cayman
