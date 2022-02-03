@@ -1,6 +1,6 @@
 "Genre","Parent","MyCount","PopCount"
 "Rock","Top",1241,680297
-"Jazz","Top",192,85608
+"Jazz","Top",193,85608
 "Ambient","Top",35,54523
 "Blues","Top",22,19499
 "Classical Music","Top",100,89247
@@ -84,7 +84,7 @@
 "Bulawayo Jazz","Jazz",1,12
 "Cape Jazz","Jazz",2,102
 "Cartoon Music","Jazz",1,147
-"Chamber Jazz","Jazz",3,1251
+"Chamber Jazz","Jazz",4,1251
 "Cool Jazz","Jazz",16,2031
 "Dark Jazz","Jazz",1,521
 "Dixieland","Jazz",2,1762
