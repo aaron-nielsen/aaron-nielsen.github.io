@@ -1,6 +1,6 @@
 "Genre","Parent","MyCount","PopCount"
 "Rock","Top",1241,680297
-"Jazz","Top",193,85608
+"Jazz","Top",200,85608
 "Ambient","Top",35,54523
 "Blues","Top",22,19499
 "Classical Music","Top",100,89247
@@ -8,7 +8,7 @@
 "Country","Top",121,45278
 "Dance","Top",50,214422
 "Electronic","Top",133,321367
-"Experimental","Top",33,92878
+"Experimental","Top",34,92878
 "Field Recordings","Other",1,5383
 "Folk","Top",112,115819
 "Hip Hop","Top",28,131911
@@ -18,7 +18,7 @@
 "Psychedelia","Other",134,51272
 "Punk","Top",161,169732
 "R&B","Top",48,79444
-"Regional Music","Top",64,112176
+"Regional Music","Top",66,112176
 "Singer/Songwriter","Other",165,40840
 "Ska","Top",4,5397
 "Sounds and Effects","Other",1,535
@@ -77,9 +77,9 @@
 "Zolo","Rock",3,1278
 "Afro-Jazz","Jazz",4,604
 "Arabic Jazz","Jazz",1,205
-"Avant-Garde Jazz","Jazz",59,15410
-"Bebop","Jazz",33,3789
-"Big Band","Jazz",5,5478
+"Avant-Garde Jazz","Jazz",61,15410
+"Bebop","Jazz",34,3789
+"Big Band","Jazz",6,5478
 "British Dance Band","Jazz",1,1897
 "Bulawayo Jazz","Jazz",1,12
 "Cape Jazz","Jazz",2,102
@@ -96,10 +96,10 @@
 "Jazz manouche","Jazz",1,865
 "Jazz Poetry","Jazz",1,187
 "Latin Jazz","Jazz",2,2257
-"Marabi","Jazz",2,321
+"Marabi","Jazz",4,321
 "Modal Jazz","Jazz",10,646
 "New Orleans Brass Band","Jazz",1,160
-"Post-Bop","Jazz",31,2765
+"Post-Bop","Jazz",32,2765
 "Samba-Jazz","Jazz",1,736
 "Smooth Jazz","Jazz",3,2959
 "Soul Jazz","Jazz",4,2889
@@ -190,7 +190,7 @@
 "Conducted Improvisation","Experimental",0,64
 "Drone","Experimental",9,19002
 "Electroacoustic","Experimental",5,10300
-"Free Improvisation","Experimental",3,13105
+"Free Improvisation","Experimental",4,13105
 "Futurism","Experimental",1,92
 "Glitch","Experimental",3,4509
 "Indeterminacy","Experimental",2,733
@@ -340,7 +340,7 @@
 "New Orleans R&B","R&B",2,898
 "Rhythm & Blues","R&B",3,8282
 "Soul","R&B",21,32430
-"African Music","Regional Music",23,14340
+"African Music","Regional Music",25,14340
 "Ancient Music","Regional Music",0,220
 "Arabic Music","Regional Music",2,3976
 "Balkan Music","Regional Music",0,4979
@@ -514,13 +514,13 @@
 "Experimental Big Band","Avant-Garde Jazz",2,771
 "Free Jazz","Avant-Garde Jazz",17,6449
 "Spiritual Jazz","Avant-Garde Jazz",17,823
-"Yass","Avant-Garde Jazz",0,106
-"Hard Bop","Bebop",24,2458
+"Yass","Avant-Garde Jazz",1,106
+"Hard Bop","Bebop",25,2458
 "Experimental Big Band","Big Band",2,771
-"Progressive Big Band","Big Band",0,365
+"Progressive Big Band","Big Band",1,365
 "Afro-Cuban Jazz","Latin Jazz",1,905
-"Kwela","Marabi",0,46
-"Mbaqanga","Marabi",1,208
+"Kwela","Marabi",1,46
+"Mbaqanga","Marabi",2,208
 "Swing Revival","Swing",1,435
 "Black Ambient","Dark Ambient",0,1140
 "Ritual Ambient","Dark Ambient",0,1367
@@ -850,7 +850,7 @@
 "Malagasy Music","African Music",0,145
 "North African Music","African Music",1,1755
 "Northeastern African Music","African Music",6,741
-"Southern African Music","African Music",4,1645
+"Southern African Music","African Music",6,1645
 "West African Music","African Music",7,5843
 "Ancient Chinese Music","Ancient Music",0,31
 "Ancient Egyptian Music","Ancient Music",0,44
@@ -1544,13 +1544,13 @@
 "Gqom","Southern African Music",0,189
 "Jit","Southern African Music",0,49
 "Kwaito","Southern African Music",0,223
-"Marabi","Southern African Music",2,321
+"Marabi","Southern African Music",4,321
 "Mbube","Southern African Music",0,92
 "Shangaan Electro","Southern African Music",0,42
 "Southern African Folk Music","Southern African Music",0,224
 "Sungura","Southern African Music",0,59
 "Township Bubblegum","Southern African Music",0,80
-"Township Jive","Southern African Music",0,60
+"Township Jive","Southern African Music",1,60
 "Tsonga Disco","Southern African Music",0,18
 "Afro-Funk","West African Music",0,791
 "Afro-Rock","West African Music",1,99
