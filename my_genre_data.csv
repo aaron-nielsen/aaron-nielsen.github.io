@@ -1,6 +1,6 @@
 "Genre","Parent","MyCount","PopCount"
-"Rock","Top",1241,680297
-"Jazz","Top",200,85608
+"Rock","Top",1242,680297
+"Jazz","Top",204,85608
 "Ambient","Top",35,54523
 "Blues","Top",22,19499
 "Classical Music","Top",100,89247
@@ -17,7 +17,7 @@
 "Pop","Top",307,334591
 "Psychedelia","Other",134,51272
 "Punk","Top",161,169732
-"R&B","Top",48,79444
+"R&B","Top",49,79444
 "Regional Music","Top",66,112176
 "Singer/Songwriter","Other",165,40840
 "Ska","Top",4,5397
@@ -25,7 +25,7 @@
 "Spoken Word","Other",2,13694
 "Acoustic Rock","Rock",23,6747
 "Afro-Rock","Rock",1,99
-"Alternative Rock","Rock",371,119305
+"Alternative Rock","Rock",372,119305
 "Andean Rock","Rock",1,156
 "AOR","Rock",3,10047
 "Art Punk","Rock",8,3184
@@ -44,7 +44,7 @@
 "Garage Rock","Rock",10,19740
 "Glam Rock","Rock",14,3623
 "Hardcore [Punk]","Rock",51,82879
-"Hard Rock","Rock",134,49325
+"Hard Rock","Rock",135,49325
 "Heartland Rock","Rock",39,1399
 "Industrial Rock","Rock",15,4419
 "Jam Band","Rock",81,4291
@@ -77,7 +77,7 @@
 "Zolo","Rock",3,1278
 "Afro-Jazz","Jazz",4,604
 "Arabic Jazz","Jazz",1,205
-"Avant-Garde Jazz","Jazz",61,15410
+"Avant-Garde Jazz","Jazz",64,15410
 "Bebop","Jazz",34,3789
 "Big Band","Jazz",6,5478
 "British Dance Band","Jazz",1,1897
@@ -91,8 +91,8 @@
 "ECM Style Jazz","Jazz",3,1067
 "Ethio-Jazz","Jazz",5,282
 "Flamenco Jazz","Jazz",1,123
-"Jazz-Funk","Jazz",7,3967
-"Jazz Fusion","Jazz",24,11662
+"Jazz-Funk","Jazz",8,3967
+"Jazz Fusion","Jazz",25,11662
 "Jazz manouche","Jazz",1,865
 "Jazz Poetry","Jazz",1,187
 "Latin Jazz","Jazz",2,2257
@@ -101,7 +101,7 @@
 "New Orleans Brass Band","Jazz",1,160
 "Post-Bop","Jazz",32,2765
 "Samba-Jazz","Jazz",1,736
-"Smooth Jazz","Jazz",3,2959
+"Smooth Jazz","Jazz",4,2959
 "Soul Jazz","Jazz",4,2889
 "Stride","Jazz",3,251
 "Swing","Jazz",6,4012
@@ -336,7 +336,7 @@
 "Boogie","R&B",0,2767
 "Contemporary R&B","R&B",7,24794
 "Doo-Wop","R&B",0,2724
-"Funk","R&B",20,20114
+"Funk","R&B",21,20114
 "New Orleans R&B","R&B",2,898
 "Rhythm & Blues","R&B",3,8282
 "Soul","R&B",21,32430
@@ -397,7 +397,7 @@
 "Jangle Pop","Alternative Rock",17,7477
 "Noise Pop","Alternative Rock",6,4742
 "Paisley Underground","Alternative Rock",0,291
-"Post-Grunge","Alternative Rock",21,2847
+"Post-Grunge","Alternative Rock",22,2847
 "Shoegaze","Alternative Rock",23,8460
 "Boogie Rock","Blues Rock",1,993
 "Cowpunk","Country Rock",2,509
@@ -512,7 +512,7 @@
 "Surf Rock","Surf Music",7,3352
 "Vocal Surf","Surf Music",10,321
 "Experimental Big Band","Avant-Garde Jazz",2,771
-"Free Jazz","Avant-Garde Jazz",17,6449
+"Free Jazz","Avant-Garde Jazz",19,6449
 "Spiritual Jazz","Avant-Garde Jazz",17,823
 "Yass","Avant-Garde Jazz",1,106
 "Hard Bop","Bebop",25,2458
@@ -824,7 +824,7 @@
 "Afro-Funk","Funk",0,791
 "Deep Funk","Funk",1,126
 "Go-Go","Funk",0,151
-"Jazz-Funk","Funk",7,3967
+"Jazz-Funk","Funk",8,3967
 "Latin Funk","Funk",0,359
 "P-Funk","Funk",0,416
 "Porn Groove","Funk",0,102
@@ -1128,7 +1128,7 @@
 "Eleki","Surf Rock",0,102
 "Rautalanka","Surf Rock",0,206
 "Shadow Music","Surf Rock",0,42
-"European Free Jazz","Free Jazz",1,1088
+"European Free Jazz","Free Jazz",3,1088
 "Acoustic Texas Blues","Country Blues",1,326
 "Delta Blues","Country Blues",0,864
 "Piedmont Blues","Country Blues",1,522
