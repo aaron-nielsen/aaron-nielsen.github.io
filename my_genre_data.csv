@@ -1,6 +1,6 @@
 "Genre","Parent","MyCount","PopCount"
-"Rock","Top",1250,680297
-"Jazz","Top",209,85608
+"Rock","Top",1255,680297
+"Jazz","Top",211,85608
 "Ambient","Top",35,54523
 "Blues","Top",22,19499
 "Classical Music","Top",100,89247
@@ -10,11 +10,11 @@
 "Electronic","Top",135,321367
 "Experimental","Top",34,92878
 "Field Recordings","Other",1,5383
-"Folk","Top",113,115819
+"Folk","Top",114,115819
 "Hip Hop","Top",28,131911
-"Industrial Music","Other",25,53318
+"Industrial Music","Other",27,53318
 "New Age","Top",3,8263
-"Pop","Top",309,334591
+"Pop","Top",310,334591
 "Psychedelia","Other",134,51272
 "Punk","Top",161,169732
 "R&B","Top",49,79444
@@ -25,11 +25,11 @@
 "Spoken Word","Other",2,13694
 "Acoustic Rock","Rock",23,6747
 "Afro-Rock","Rock",1,99
-"Alternative Rock","Rock",373,119305
+"Alternative Rock","Rock",374,119305
 "Andean Rock","Rock",1,156
 "AOR","Rock",3,10047
 "Art Punk","Rock",8,3184
-"Art Rock","Rock",60,9782
+"Art Rock","Rock",61,9782
 "Blues Rock","Rock",45,15624
 "British Rhythm & Blues","Rock",1,940
 "Christian Rock","Rock",2,2517
@@ -39,14 +39,14 @@
 "Deutschrock","Rock",1,1259
 "Emo","Rock",17,17946
 "Experimental Rock","Rock",37,20348
-"Folk Rock","Rock",132,16413
+"Folk Rock","Rock",133,16413
 "Funk Rock","Rock",4,3495
 "Garage Rock","Rock",10,19740
 "Glam Rock","Rock",14,3623
 "Hardcore [Punk]","Rock",51,82879
 "Hard Rock","Rock",135,49325
-"Heartland Rock","Rock",40,1399
-"Industrial Rock","Rock",18,4419
+"Heartland Rock","Rock",41,1399
+"Industrial Rock","Rock",20,4419
 "Jam Band","Rock",81,4291
 "Jazz-Rock","Rock",7,6531
 "Latin Rock","Rock",2,906
@@ -57,7 +57,7 @@
 "Noise Rock","Rock",24,13820
 "Pop Rock","Rock",196,97605
 "Post-Punk","Rock",52,36281
-"Post-Rock","Rock",45,16649
+"Post-Rock","Rock",46,16649
 "Progressive Rock","Rock",58,36864
 "Proto-Punk","Rock",7,1004
 "Psychedelic Rock","Rock",104,28129
@@ -78,7 +78,7 @@
 "Afro-Jazz","Jazz",4,604
 "Arabic Jazz","Jazz",1,205
 "Avant-Garde Jazz","Jazz",67,15410
-"Bebop","Jazz",35,3789
+"Bebop","Jazz",36,3789
 "Big Band","Jazz",6,5478
 "British Dance Band","Jazz",1,1897
 "Bulawayo Jazz","Jazz",1,12
@@ -99,7 +99,7 @@
 "Marabi","Jazz",4,321
 "Modal Jazz","Jazz",10,646
 "New Orleans Brass Band","Jazz",1,160
-"Post-Bop","Jazz",32,2765
+"Post-Bop","Jazz",33,2765
 "Samba-Jazz","Jazz",1,736
 "Smooth Jazz","Jazz",4,2959
 "Soul Jazz","Jazz",5,2889
@@ -205,7 +205,7 @@
 "Turntable Music","Experimental",0,451
 "Nature Recordings","Field Recordings",0,1172
 "Radio Broadcast Recordings","Field Recordings",0,209
-"Contemporary Folk","Folk",86,54144
+"Contemporary Folk","Folk",87,54144
 "Traditional Folk Music","Folk",31,65012
 "Abstract Hip Hop","Hip Hop",1,5545
 "Afroswing","Hip Hop",0,109
@@ -248,7 +248,7 @@
 "UK Hip Hop","Hip Hop",1,4931
 "West Coast Hip Hop","Hip Hop",6,11251
 "Industrial","Industrial Music",3,13269
-"Post-Industrial","Industrial Music",24,44309
+"Post-Industrial","Industrial Music",26,44309
 "Andean New Age","New Age",0,85
 "Celtic New Age","New Age",2,305
 "Neoclassical New Age","New Age",1,816
@@ -283,7 +283,7 @@
 "Glitch Pop","Pop",3,1892
 "Hyperpop","Pop",1,728
 "Indian Pop","Pop",0,374
-"Indie Pop","Pop",19,41239
+"Indie Pop","Pop",20,41239
 "Irish Showband","Pop",0,30
 "Italo Pop","Pop",0,1276
 "Jazz Pop","Pop",0,3432
@@ -393,7 +393,7 @@
 "Dream Pop","Alternative Rock",16,11900
 "Emo-Pop","Alternative Rock",3,2834
 "Grunge","Alternative Rock",43,3491
-"Indie Rock","Alternative Rock",124,54088
+"Indie Rock","Alternative Rock",125,54088
 "Jangle Pop","Alternative Rock",17,7477
 "Noise Pop","Alternative Rock",6,4742
 "Paisley Underground","Alternative Rock",0,291
@@ -515,7 +515,7 @@
 "Free Jazz","Avant-Garde Jazz",20,6449
 "Spiritual Jazz","Avant-Garde Jazz",17,823
 "Yass","Avant-Garde Jazz",1,106
-"Hard Bop","Bebop",26,2458
+"Hard Bop","Bebop",27,2458
 "Experimental Big Band","Big Band",2,771
 "Progressive Big Band","Big Band",1,365
 "Afro-Cuban Jazz","Latin Jazz",1,905
@@ -707,7 +707,7 @@
 "Euskal kantagintza berria","Contemporary Folk",0,118
 "Folk Baroque","Contemporary Folk",0,333
 "Folk Pop","Contemporary Folk",4,9672
-"Indie Folk","Contemporary Folk",16,8975
+"Indie Folk","Contemporary Folk",17,8975
 "Música de intervenção","Contemporary Folk",0,142
 "Neofolk","Contemporary Folk",1,4538
 "Nova cançó","Contemporary Folk",0,380
@@ -772,7 +772,7 @@
 "Industrial Hardcore","Post-Industrial",0,862
 "Industrial Hip Hop","Post-Industrial",1,1886
 "Industrial Metal","Post-Industrial",3,4856
-"Industrial Rock","Post-Industrial",18,4419
+"Industrial Rock","Post-Industrial",20,4419
 "Industrial Techno","Post-Industrial",0,4261
 "Martial Industrial","Post-Industrial",0,1038
 "Power Noise","Post-Industrial",0,1563
@@ -797,7 +797,7 @@
 "Space Age Pop","Easy Listening",1,820
 "Bedroom Pop","Indie Pop",0,1872
 "C86","Indie Pop",0,577
-"Chamber Pop","Indie Pop",4,5697
+"Chamber Pop","Indie Pop",5,5697
 "Sonido Donosti","Indie Pop",0,55
 "Twee Pop","Indie Pop",1,3767
 "Canzone neomelodica","Italo Pop",0,19
