@@ -35,11 +35,11 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 | STAT 204 	| Business Statistics               	| SM14, SP14, FA13 |
 | STAT 301 	| Applied Statistical Methods       	| SP15, FA14       |
 | STAT 305 	| Sampling Techniques               	| FA21             |
-| STAT 315 	| Theory and Practice of Statistics &nbsp; &nbsp; &nbsp;| SP22, FA21, SP21, FA20, SM20, SP20, FA19, SM19, SP19, FA18 |
+| STAT 315 	| Theory and Practice of Statistics | SP22, FA21, SP21, FA20, SM20, SP20, FA19, SM19, SP19, FA18 |
 | STAT 342  | Statistical Data Analysis II          | SP22 |
 | STAT 460  | Applied Multivariate Analysis     	| SP20, SP19                        |
 | STAT 472  | Statistical Research                  | SP22, FA21, SP21, FA20, SP20, FA19, SP19 |
-| STAT 502  | Applied Multivariate Analysis for Researchers  &nbsp; &nbsp; &nbsp; | FA19 |
+| STAT 502  | Applied Multivariate Analysis for Researchers | FA19 |
 | STAA 556  | Statistical Consulting | SM21 |
 | STAA 574  | Methods in Multivariate Analysis | SP20 | 
 
@@ -54,7 +54,7 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 | MATH 2411 | Calculus II | SP17 |
 | MATH 3191 | Applied Linear Algebra | SP18 |
 | MATH 3382 | Statistical Theory | SM17 |
-| MATH 3800 | Probability and Statistics for Engineers &nbsp; &nbsp; &nbsp; | SM18, SM17, SM17, SP16, FA15 |
+| MATH 3800 | Probability and Statistics for Engineers | SM18, SM17, SM17, SP16, FA15 |
 | MATH 4800 | Probability | SP15 |
 | MATH 4820 | Mathematical Statistics | SM16 |
 | MATH 5320 | Mathematical Statistics | SM16 |
