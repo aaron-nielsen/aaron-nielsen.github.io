@@ -1,0 +1,163 @@
+---
+title: "aaron's jazz music report"
+date: "Updated: `r format(Sys.time(),'%b %d, %Y (%R %Z)')`"
+output:
+  html_document:
+    toc: false
+    theme: yeti
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{css, echo = FALSE}
+caption {
+      font-weight: bold;
+      font-size: 2.0em;
+    }
+```
+
+```{r intro, echo = FALSE, message = FALSE, warning=FALSE}
+library(stringr)
+library(ggplot2)
+library(rvest)
+
+url = "https://rateyourmusic.com/stats/userstats?user=adnielsen"
+webpage <- read_html(url)
+p = webpage %>% html_nodes('td:nth-child(3) , .artist') %>% html_text()
+idx = which(p == "Miles Davis" | p == "Anthony Braxton" | p == "John Coltrane" |
+            p == "Thelonious Monk" | p == "Art Blakey" | p == "Charles Mingus" |
+            p == "Herbie Hancock" | p == "Pharoah Sanders" | p == "Rahsaan Roland Kirk" |
+            p == "Cecil Taylor" | p == "Albert Ayler")
+artists = data.frame(Artist=p[idx],Count=p[idx+1])
+
+my_data = read.csv("my_data.csv")
+my_data = my_data[,-1]
+
+g3 = str_split(my_data$Genres,",",simplify=TRUE)
+k = read.csv("jazz_genres.csv")
+k = k$k
+
+jazz_idx = unique(c(which(match(g3[,1],k)>0),
+                                  which(match(g3[,2],k)>0),
+                                  which(match(g3[,3],k)>0),
+                                  which(match(g3[,4],k)>0),
+                                  which(match(g3[,5],k)>0)))
+jazz_data = my_data[jazz_idx,]
+jazz_data$Genres = str_replace_all(jazz_data$Genres,",",", ")
+jazz_data$Album = str_replace_all(jazz_data$Album,",",", ")
+jazz_data$Artist = str_replace_all(jazz_data$Artist,",",", ")
+n_albums = length(jazz_data$Album)
+```
+
+# About 
+
+Currently, I have listened to `r n_albums` jazz albums. This webpage describes the various characteristics of these jazz albums.
+
+
+# Jazz Albums Listened to by Genre
+
+In the following table, MyCount is the number of albums I've listened to in the genre, PopCount is the number of albums in the RateYourMusic database in the genre, and LR is the likelihood ratio. LR > 1 means I listen to the genre more than expected based on the number of albums in the genre and LR < 1 means I listen to the genre less than expected.
+
+```{r definition, echo = FALSE, warning=FALSE, message=FALSE}
+  library(kableExtra)
+  library(readr)
+  library(dplyr)
+  library(RColorBrewer)
+  library(gt)
+  round_dig = 2
+  my_genre_data <- read_csv("my_genre_data.csv")
+  g2 = my_genre_data
+  g2 = g2[which(!is.na(match(g2$Genre,k))),]
+  top = g2[-1,]
+  
+  top$MyPerc = top$MyCount/sum(top$MyCount)
+  top$PopPerc = top$PopCount/sum(top$PopCount)
+  top$DiffPerc = top$MyPerc - top$PopPerc
+  top$LR = round(top$MyPerc/top$PopPerc,2)
+  top = top %>% select(-Parent) %>% arrange(desc(MyPerc),desc(-DiffPerc)) %>% select(-MyPerc) %>% select(-PopPerc) %>% select(-DiffPerc)
+  top = unique(top)
+
+  my_colors = brewer.pal(5, "RdYlGn")
+  my_colors = rev(my_colors)
+  my_colors = adjust_luminance(my_colors, 1)
+  LRcol = rep(my_colors[5],length(top$Genre))
+  LRcol[top$LR > 0.2] = my_colors[4]
+  LRcol[top$LR > 0.5] = my_colors[3]
+  LRcol[top$LR > 2] = my_colors[2]
+  LRcol[top$LR > 5] = my_colors[1]
+  
+  # top = top %>% mutate(MyCount=paste0('[',MyCount,'](','https://rateyourmusic.com/collection/adnielsen/strm_h/',gsub(" ","+",Genre),')',sep=''))
+  # top = top %>% mutate(PopCount=paste0('[',PopCount,'](','https://rateyourmusic.com/charts/popular/album/all-time/g:',gsub(" ","-",Genre),'/excl:ratings/',')',sep=''))
+  # top = top %>% mutate(Genre=paste0('[',Genre,'](','https://rateyourmusic.com/genre/',gsub(" ","+",Genre),')',sep=''))
+  
+  top %>% kbl(align=c('l',rep('c', 3))) %>%
+    kable_styling(bootstrap_options = c("striped", "hover"),position = "left") %>%
+    column_spec(4, color = "black", background = LRcol)
+```
+
+# Most Jazz Albums Listened to by Artist
+
+```{r artists, echo = FALSE, warning=FALSE, message=FALSE}
+artists %>% kbl(align=c('l',rep('c', 3))) %>%
+    kable_styling(bootstrap_options = c("striped", "hover"),position = "left")
+```
+
+# Jazz Albums Listened to by Release Year
+```{r hist, echo = FALSE, message = FALSE, warning=FALSE}
+top_idx = c(119,104,100,28,10,169,12,158,9,8)
+top_jazz = jazz_data[top_idx,]
+top_jazz = top_jazz[order(top_jazz$Artist),]
+
+new_jazz = jazz_data[,]
+
+jazz_data = jazz_data[order(jazz_data$Artist,jazz_data$Year),]
+
+# ggplot(jazz_data, aes(x=Year)) +
+#   geom_histogram(binwidth=1, fill="#69b3a2", color="#e9ecef", alpha=0.9) +
+#   geom_density(aes(y=1 * ..count..),alpha=0.1, fill="gray") +
+#   scale_x_continuous(name="Year", breaks = seq(1900,2025,10)) +
+#   scale_y_continuous(name="Count") +
+#   ggtitle("Albums by Year")
+
+ggplot(jazz_data, aes(x=Year)) +
+  geom_histogram(binwidth=5, fill="#69b3a2", color="#e9ecef", alpha=0.9) +
+  geom_density(aes(y=5 * ..count..),alpha=0.1, fill="gray") +
+  scale_x_continuous(name="Year", breaks = seq(1900,2025,10)) +
+  scale_y_continuous(name="Count") +
+  ggtitle("Albums by Release Year")
+
+# ggplot(jazz_data, aes(x=Year)) +
+#   geom_histogram(binwidth=10, fill="#69b3a2", color="#e9ecef", alpha=0.9) +
+#   geom_density(aes(y=10 * ..count..),alpha=0.1, fill="gray") +
+#   scale_x_continuous(name="Year", breaks = seq(1900,2025,10)) +
+#   scale_y_continuous(name="Count") +
+#   ggtitle("Albums by Decade")
+
+```
+
+
+
+# Ten Jazz Album Favorites
+```{r top_albums, echo = FALSE, message = FALSE, warning=FALSE}
+kbl(top_jazz,row.names=FALSE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"),position = "left")  %>%
+  column_spec(1, width = "20em") %>%
+  column_spec(2, width = "20em") %>%
+  column_spec(3, width = "5em") %>%
+  column_spec(4, width = "20em")
+```
+
+# List of Jazz Albums Listened to
+```{r albums, echo = FALSE, message = FALSE, warning=FALSE}
+kbl(jazz_data,row.names=FALSE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"),position = "left") %>%
+  column_spec(1, width = "20em") %>%
+  column_spec(2, width = "20em") %>%
+  column_spec(3, width = "5em") %>%
+  column_spec(4, width = "20em")
+```
+
+
