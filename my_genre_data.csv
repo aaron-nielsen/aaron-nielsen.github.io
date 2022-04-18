@@ -1,6 +1,6 @@
 "Genre","Parent","MyCount","PopCount"
-"Rock","Top",1274,703213
-"Jazz","Top",238,83294
+"Rock","Top",1290,703213
+"Jazz","Top",244,83294
 "Ambient","Top",39,50310
 "Blues","Top",23,17709
 "Classical Music","Top",99,90430
@@ -13,21 +13,21 @@
 "Folk","Top",98,104477
 "Hip Hop","Top",28,151773
 "Industrial Music","Top",34,50422
-"Metal","Top",98,226421
+"Metal","Top",99,226421
 "Musical Theatre and Entertainment","Other",1,6529
 "New Age","Top",3,7702
-"Pop","Top",323,342820
-"Psychedelia","Top",139,46356
-"Punk","Top",160,164930
-"R&B","Top",50,78368
-"Regional Music","Top",237,224061
+"Pop","Top",324,342820
+"Psychedelia","Top",141,46356
+"Punk","Top",162,164930
+"R&B","Top",51,78368
+"Regional Music","Top",240,224061
 "Singer-Songwriter","Top",170,39026
 "Ska","Top",4,4849
 "Sounds and Effects","Other",0,393
 "Spoken Word","Other",2,11097
 "Acoustic Rock","Rock",22,4493
 "Afro-Rock","Rock",1,90
-"Alternative Rock","Rock",212,112808
+"Alternative Rock","Rock",214,112808
 "Alternative Dance","Rock",9,3098
 "Grebo","Rock",0,131
 "New Rave","Rock",0,398
@@ -35,8 +35,8 @@
 "Britpop","Rock",3,2123
 "Dream Pop","Rock",17,8735
 "Emo-Pop","Rock",3,2041
-"Grunge","Rock",43,2529
-"Indie Rock","Rock",112,48844
+"Grunge","Rock",46,2529
+"Indie Rock","Rock",116,48844
 "Dunedin Sound","Rock",0,349
 "Garage Rock Revival","Rock",3,2108
 "Hamburger Schule","Rock",0,50
@@ -53,7 +53,7 @@
 "Noise Pop","Rock",6,3210
 "Paisley Underground","Rock",0,275
 "Post-Grunge","Rock",23,1874
-"Shoegaze","Rock",23,6921
+"Shoegaze","Rock",25,6921
 "Anatolian Rock","Rock",0,589
 "Andean Rock","Rock",1,125
 "AOR","Rock",2,8869
@@ -68,7 +68,7 @@
 "Country Rock","Rock",63,3995
 "Dark Cabaret","Rock",1,786
 "Deutschrock","Rock",1,1060
-"Emo","Rock",7,16063
+"Emo","Rock",8,16063
 "Emocore","Rock",0,731
 "Emo-Pop","Rock",3,2041
 "Midwest Emo","Rock",7,3189
@@ -81,7 +81,7 @@
 "Brutal Prog","Rock",0,367
 "Krautrock","Rock",12,2218
 "No Wave","Rock",5,517
-"Folk Rock","Rock",129,11661
+"Folk Rock","Rock",131,11661
 "Alpenrock","Rock",0,55
 "British Folk Rock","Rock",0,782
 "Celtic Rock","Rock",0,814
@@ -129,18 +129,18 @@
 "Sasscore","Rock",0,510
 "Trancecore","Rock",0,648
 "Hard Rock","Rock",134,43855
-"Glam Metal","Rock",0,3577
+"Glam Metal","Rock",1,3577
 "Heavy Psych","Rock",3,2534
 "Stoner Rock","Rock",2,5269
 "Heartland Rock","Rock",39,1075
 "Industrial Rock","Rock",24,3340
-"Jam Band","Rock",79,3722
+"Jam Band","Rock",81,3722
 "Jamgrass","Rock",0,95
-"Jazz-Rock","Rock",8,5125
+"Jazz-Rock","Rock",9,5125
 "Latin Rock","Rock",2,478
 "Manguebeat","Rock",0,89
 "Math Rock","Rock",4,3745
-"Alternative Metal","Rock",17,11727
+"Alternative Metal","Rock",18,11727
 "Funk Metal","Rock",1,485
 "Neue Deutsche Härte","Rock",0,456
 "Nu Metal","Rock",1,3364
@@ -211,7 +211,7 @@
 "Neue Deutsche Welle","Rock",1,1298
 "New Romantic","Rock",3,563
 "Noise Rock","Rock",24,11172
-"Pop Rock","Rock",164,87887
+"Pop Rock","Rock",165,87887
 "Beat Music","Rock",0,4817
 "Freakbeat","Rock",1,540
 "Group Sounds","Rock",0,520
@@ -224,14 +224,14 @@
 "Neo-Acoustic","Rock",0,192
 "Manila Sound","Rock",0,129
 "Piano Rock","Rock",0,1836
-"Power Pop","Rock",14,16862
+"Power Pop","Rock",15,16862
 "Soft Rock","Rock",7,3593
 "Stereo","Rock",0,148
 "Tropical Rock","Rock",0,220
 "Twee Pop","Rock",1,2917
 "Vocal Surf","Rock",11,277
 "Yacht Rock","Rock",1,1536
-"Post-Punk","Rock",37,31042
+"Post-Punk","Rock",38,31042
 "Coldwave","Rock",1,1548
 "Dance-Punk","Rock",4,1613
 "Gothic Rock","Rock",6,7719
@@ -249,7 +249,7 @@
 "Neo-Prog","Rock",0,1462
 "Symphonic Prog","Rock",1,2239
 "Proto-Punk","Rock",6,443
-"Psychedelic Rock","Rock",105,24802
+"Psychedelic Rock","Rock",106,24802
 "Acid Rock","Rock",17,608
 "Heavy Psych","Rock",3,2534
 "Raga Rock","Rock",0,197
@@ -298,7 +298,7 @@
 "Psychobilly","Rock",1,1156
 "Rock Opera","Rock",3,647
 "Rock urbano español","Rock",1,678
-"Roots Rock","Rock",27,2052
+"Roots Rock","Rock",28,2052
 "Swamp Rock","Rock",5,357
 "Tex-Mex","Rock",0,245
 "Southern Rock","Rock",6,2918
@@ -317,14 +317,14 @@
 "Zolo","Rock",2,706
 "Afro-Jazz","Jazz",5,446
 "Arabic Jazz","Jazz",4,190
-"Avant-Garde Jazz","Jazz",39,14368
+"Avant-Garde Jazz","Jazz",64,14368
 "Experimental Big Band","Jazz",2,676
-"Free Jazz","Jazz",23,5395
+"Free Jazz","Jazz",26,5395
 "European Free Jazz","Jazz",3,912
 "Spiritual Jazz","Jazz",20,734
 "Yass","Jazz",1,93
 "Bebop","Jazz",13,2739
-"Big Band","Jazz",3,5423
+"Big Band","Jazz",6,5423
 "Experimental Big Band","Jazz",2,676
 "Progressive Big Band","Jazz",2,329
 "British Dance Band","Jazz",2,1925
@@ -333,22 +333,22 @@
 "Cartoon Music","Jazz",1,66
 "Chamber Jazz","Jazz",7,1116
 "Cool Jazz","Jazz",17,1784
-"Dark Jazz","Jazz",1,369
-"Dixieland","Jazz",3,1947
+"Dark Jazz","Jazz",2,369
+"Dixieland","Jazz",4,1947
 "ECM Style Jazz","Jazz",3,947
 "Ethio-Jazz","Jazz",5,273
 "Flamenco Jazz","Jazz",1,112
 "Hard Bop","Jazz",35,2359
 "Jazz-Funk","Jazz",9,3573
-"Jazz Fusion","Jazz",27,10701
+"Jazz Fusion","Jazz",29,10701
 "Jazz manouche","Jazz",2,749
 "Jazz Poetry","Jazz",0,138
-"Latin Jazz","Jazz",2,1802
+"Latin Jazz","Jazz",3,1802
 "Afro-Cuban Jazz","Jazz",1,670
-"Marabi","Jazz",1,300
+"Marabi","Jazz",4,300
 "Kwela","Jazz",1,41
 "Mbaqanga","Jazz",2,198
-"Modal Jazz","Jazz",11,515
+"Modal Jazz","Jazz",12,515
 "Post-Bop","Jazz",35,2653
 "Samba-jazz","Jazz",1,685
 "Smooth Jazz","Jazz",4,2580
@@ -357,7 +357,7 @@
 "Swing","Jazz",7,3792
 "Swing Revival","Jazz",1,357
 "Third Stream","Jazz",7,603
-"Vocal Jazz","Jazz",11,9052
+"Vocal Jazz","Jazz",12,9052
 "Ambient Dub","Ambient",1,1160
 "Ambient Noise Wall","Ambient",0,367
 "Dark Ambient","Ambient",4,13249
@@ -1720,7 +1720,7 @@
 "Industrial Techno","Industrial Music",0,4417
 "Martial Industrial","Industrial Music",0,854
 "Power Noise","Industrial Music",0,1239
-"Alternative Metal","Metal",17,11727
+"Alternative Metal","Metal",18,11727
 "Funk Metal","Metal",1,485
 "Neue Deutsche Härte","Metal",0,456
 "Nu Metal","Metal",1,3364
@@ -1907,7 +1907,7 @@
 "Pop Ghazal","Pop",0,105
 "Pop Raï","Pop",0,192
 "Pop Reggae","Pop",1,1779
-"Pop Rock","Pop",164,87887
+"Pop Rock","Pop",165,87887
 "Beat Music","Pop",0,4817
 "Freakbeat","Pop",1,540
 "Group Sounds","Pop",0,520
@@ -1920,7 +1920,7 @@
 "Neo-Acoustic","Pop",0,192
 "Manila Sound","Pop",0,129
 "Piano Rock","Pop",0,1836
-"Power Pop","Pop",14,16862
+"Power Pop","Pop",15,16862
 "Soft Rock","Pop",7,3593
 "Stereo","Pop",0,148
 "Tropical Rock","Pop",0,220
@@ -1960,7 +1960,7 @@
 "Turkish Pop","Pop",0,1903
 "V-Pop","Pop",0,656
 "Yé-yé","Pop",0,794
-"Neo-Psychedelia","Psychedelia",12,10286
+"Neo-Psychedelia","Psychedelia",13,10286
 "Hypnagogic Pop","Psychedelia",0,2083
 "Paisley Underground","Psychedelia",0,275
 "Space Rock Revival","Psychedelia",0,639
@@ -1968,7 +1968,7 @@
 "Freak Folk","Psychedelia",1,470
 "Free Folk","Psychedelia",0,1400
 "Psychedelic Pop","Psychedelia",19,7669
-"Psychedelic Rock","Psychedelia",105,24802
+"Psychedelic Rock","Psychedelia",106,24802
 "Acid Rock","Psychedelia",17,608
 "Heavy Psych","Psychedelia",3,2534
 "Raga Rock","Psychedelia",0,197
@@ -1980,7 +1980,7 @@
 "Tropicália","Psychedelia",0,110
 "Art Punk","Punk",7,2310
 "Digital Hardcore","Punk",1,562
-"Emo","Punk",7,16063
+"Emo","Punk",8,16063
 "Emocore","Punk",0,731
 "Emo-Pop","Punk",3,2041
 "Midwest Emo","Punk",7,3189
@@ -2021,7 +2021,7 @@
 "Sasscore","Punk",0,510
 "Trancecore","Punk",0,648
 "Mod Revival","Punk",1,854
-"Post-Punk","Punk",37,31042
+"Post-Punk","Punk",38,31042
 "Coldwave","Punk",1,1548
 "Dance-Punk","Punk",4,1613
 "Gothic Rock","Punk",6,7719
@@ -2084,9 +2084,9 @@
 "Porn Groove","R&B",0,67
 "Synth Funk","R&B",4,2994
 "New Orleans R&B","R&B",2,831
-"Rhythm & Blues","R&B",2,6730
+"Rhythm & Blues","R&B",3,6730
 "British Rhythm & Blues","R&B",1,725
-"Soul","R&B",6,30166
+"Soul","R&B",7,30166
 "Chicago Soul","R&B",2,439
 "Country Soul","R&B",0,405
 "Deep Soul","R&B",2,498
@@ -2208,7 +2208,7 @@
 "Gqom","Regional Music",0,205
 "Jit","Regional Music",0,47
 "Kwaito","Regional Music",0,223
-"Marabi","Regional Music",1,300
+"Marabi","Regional Music",4,300
 "Kwela","Regional Music",1,41
 "Mbaqanga","Regional Music",2,198
 "Mbube","Regional Music",0,85
@@ -2795,7 +2795,7 @@
 "Nortec","Regional Music",0,29
 "Tribal Guarachero","Regional Music",0,37
 "Latin Funk","Regional Music",0,274
-"Latin Jazz","Regional Music",2,1802
+"Latin Jazz","Regional Music",3,1802
 "Afro-Cuban Jazz","Regional Music",1,670
 "Latin Pop","Regional Music",0,2384
 "Cumbia pop","Regional Music",0,28
@@ -2926,7 +2926,7 @@
 "Papuan Folk Music","Regional Music",0,52
 "Mulatós","Regional Music",0,21
 "Northern American Music","Regional Music",0,7494
-"Americana","Regional Music",60,4867
+"Americana","Regional Music",61,4867
 "American Folk Music","Regional Music",3,15535
 "Appalachian Folk Music","Regional Music",0,752
 "Old-Time","Regional Music",1,1301
@@ -3000,11 +3000,11 @@
 "New Orleans Brass Band","Regional Music",1,183
 "Zydeco","Regional Music",0,415
 "Nouveau zydeco","Regional Music",0,NA
-"Ragtime","Regional Music",3,1456
+"Ragtime","Regional Music",4,1456
 "Cakewalk","Regional Music",0,51
 "Novelty Piano","Regional Music",0,36
 "Stride","Regional Music",3,242
-"Roots Rock","Regional Music",27,2052
+"Roots Rock","Regional Music",28,2052
 "Swamp Rock","Regional Music",5,357
 "Tex-Mex","Regional Music",0,245
 "Vaudeville","Regional Music",0,1973
@@ -3706,3 +3706,13 @@
 "Sound Poetry","Spoken Word",0,413
 "Radio Drama","Spoken Word",0,NA
 "Speeches","Spoken Word",0,NA
+"Experimental Big Band","Avant-Garde Jazz",2,676
+"Free Jazz","Avant-Garde Jazz",26,5395
+"European Free Jazz","Free Jazz",3,912
+"Yass","Avant-Garde Jazz",1,93
+"Experimental Big Band","Big Band",2,676
+"Progressive Big Band","Big Band",2,329
+"Afro-Cuban Jazz","Latin Jazz",1,670
+"Kwela","Marabi",1,41
+"Mbaqanga","Marabi",2,198
+"Swing Revival","Swing",1,357
