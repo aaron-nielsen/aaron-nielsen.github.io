@@ -11,10 +11,12 @@ At present count I have visited <a href="/images/countries.png">24 countries</a>
 {% include image.html url="/images/22-gc.jpeg" caption="Grand Canyon, Arizona (2022)" width=250 align="left" %}
 {% include image.html url="/images/21-nebraska.jpeg" caption="Lincoln, Nebraska (2021)" width=250 align="left" %}
 {% include image.html url="/images/21-nashville.jpeg" caption="Nashville, Tennessee (2021)" width=250 align="left" %}
-{% include image.html url="/images/20-covid.jpeg" caption="COVID Staycation (2020)" width=250 align="left" %}
+{% include image.html url="/images/21-austin.jpeg" caption="Austin, Texas (2020)" width=250 align="left" %}
 {% include image.html url="/images/hawaii.jpg" caption="Maui, Hawaii (2019)" width=250 align="left" %}
 {% include image.html url="/images/costarica.png" caption="Arenal Volcano, Costa Rica (2018)" width=250 align="left" %}
 {% include image.html url="/images/mexico.png" caption="Chichen Itza, Mexico (2018)" width=250 align="left" %}
+{% include image.html url="/images/17-wilmington.png" caption="Wilmington, North Carolina (2017)" width=250 align="left" %}
+{% include image.html url="/images/16-wrigley.png" caption="Wrigley Field, Chicago (2016)" width=250 align="left" %}
 {% include image.html url="/images/curacao.jpg" caption="Willemstad, Curacao (2015)" width=250 align="left" %}
 {% include image.html url="/images/ferry.jpg" caption="Ferry to Fanø Island, Denmark (2012)" width=250 align="left" %}
 {% include image.html url="/images/iceland.jpg" caption="Waterfall near Reykjavík, Iceland (2012)" width=250 align="left" %}
