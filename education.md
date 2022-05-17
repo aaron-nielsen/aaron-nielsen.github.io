@@ -12,6 +12,7 @@ image: " "
 | B.S. | | Electrical Engineering and Mathematics  | | Colorado State University | | 2007 |
  
 <hr style="clear:both;visibility: hidden;" />  
+<hr style="clear:both;visibility: hidden;" />  
 
 ## Education Overview
 
