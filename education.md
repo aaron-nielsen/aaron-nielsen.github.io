@@ -2,7 +2,6 @@
 layout: page
 title: Education 
 permalink: /education/
-image: " "
 ---
 
 | Ph.D. | | Applied Mathematics | |University of Colorado Denver | | 2018 |
@@ -11,8 +10,7 @@ image: " "
 | M.S. | | Electrical Engineering | | University of Colorado Boulder | | 2008 |
 | B.S. | | Electrical Engineering and Mathematics  | | Colorado State University | | 2007 |
  
-<hr style="clear:both;visibility: hidden;" />  
-<hr style="clear:both;visibility: hidden;" />  
+<br>
 
 ## Education Overview
 
