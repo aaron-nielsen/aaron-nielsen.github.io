@@ -24,7 +24,7 @@ From 2009-2012, I worked as an electrical engineer for a government contractor i
 
 In 2012, I returned to CSU to study Statistics and earned a master's degree in Statistics two years later (M.S.'14). I taught my first course (STAT 204, Business Statistics) in Fall 2013 and quickly became interested in pursuing teaching as a career. I taught full-time as an instructor in the Department of Statistics in Spring 2015 before returning to University of Colorado Denver to complete my graduate studies.
 
-I received a Ph.D. in Applied Mathematics with a concentration in Applied Probability and Applied Statistics from University of Colorado Denver (Ph.D.'18) advised by <a href="http://math.ucdenver.edu/~bsimon/">Dr. Burt Simon</a>. My dissertation was titled "Statistical Analysis of Some Problems in Evolutionary Population Dynamics" and it explored stochastic and deterministic models for evolutionary population models, particularly with respect to the evolution of cooperation. 
+I received a Ph.D. in Applied Mathematics from University of Colorado Denver (Ph.D.'18) with a concentration in Applied Probability and Applied Statistics and advised by <a href="http://math.ucdenver.edu/~bsimon/">Dr. Burt Simon</a>. My dissertation was titled "Statistical Analysis of Some Problems in Evolutionary Population Dynamics" and it explored stochastic and deterministic models for evolutionary population models, particularly with respect to the evolution of cooperation. 
 
 In August 2018, I joined the faculty in the Department of Statistics as an assistant professor. In addition to currently teaching, I am also working on a second bachelor's degree in Philosophy which I hope to complete in 2024. 
 
