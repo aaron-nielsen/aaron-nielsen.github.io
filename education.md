@@ -5,12 +5,6 @@ permalink: /education/
 image: " "
 ---
 
-I received a Ph.D. in Applied Mathematics from the University of Colorado Denver in 2018 advised by <a href="http://math.ucdenver.edu/~bsimon/">Dr. Burt Simon</a>, and my specialty lies in statistics education. My dissertation was called "Statistical Analysis of Some Problems in Evolutionary Population Dynamics" and it explored stochastic and deterministic models for evolutionary population models, particularly with respect to the evolution of cooperation. 
-
-<hr style="clear:both;visibility: hidden;" />    
-
-# Degrees
-
 |--------:|-----|:--------|---|:------|---|:------|
 | Ph.D. | | Applied Mathematics | |University of Colorado Denver | | 2018 |
 | M.S. | | Statistics | | Colorado State University | | 2014 |
@@ -19,16 +13,23 @@ I received a Ph.D. in Applied Mathematics from the University of Colorado Denver
 | B.S. | | Electrical Engineering and Mathematics  | | Colorado State University | | 2007 |
  
 <br>
- 
-# Other Interests
 
-At the moment, I'm most interested in learning more about the intersection of philosophy, mathematics, and statistics. I am also interested in exploring more in the areas of international relations, modern physics, philosophy of biology, and number theory.
+I am also a graduate of <a href="https://fch.psdschools.org/">Fort Collins High School</a> ('02). Go Lambkins!
 
-I am an active member in the <a href="https://sites.google.com/view/csustatisticsbookclub/">CSU Statistics Book Club</a>. 
+I began my CSU career as an undergraduate student in August 2002 and earned a bachelor's degree double majoring in Electrical Engineering and Mathematics (B.S.'07).
 
-I have been taking a semi-random sample of courses at CSU since joining the faculty in August 2018 as a part of the university's employee study privilege. These classes include:
+After undergrad, I started my graduate studies at University of Colorado Boulder studying Electrical Engineering with a focus on Digitial Signal Processing and Digital Communications (M.S.'08).
+
+From 2009-2012, I worked as an electrical engineer for a government contractor in electronic intelligence. During this time, I also completed a second master's degree in Applied Mathematics from University of Colorado Denver (M.S.'12) with a concentration in Applied Probability. My master's project involved the creation of a "hybrid" simulation model to study multilevel group poulation models.
+
+In 2012, I returned to CSU to study Statistics and earned a master's degree in Statistics two years later (M.S.'14). I taught my first course (STAT 204, Business Statistics) in Fall 2013 and quickly became interested in pursuing teaching as a career. I taught full-time as an instructor in the Department of Statistics in Spring 2015 before returning to University of Colorado Denver to complete my graduate studies.
+
+I received a Ph.D. in Applied Mathematics from University of Colorado Denver ('18) advised by <a href="http://math.ucdenver.edu/~bsimon/">Dr. Burt Simon</a>, and my specialty lies in statistics education. My dissertation was called "Statistical Analysis of Some Problems in Evolutionary Population Dynamics" and it explored stochastic and deterministic models for evolutionary population models, particularly with respect to the evolution of cooperation. 
+
+In August 2018, I joined the faculty in the Department of Statistics as an assistant professor. I have continued my studies by taking one course each semester as a part of the university's employee study privilege. These classes include:
 
 |--------|---|:---------|------|-------:|
+| PHIL 322 | | Biomedical Ethics | | Summer 2022 |
 | PHIL 205 | | Ethics | | Spring 2022 |
 | PHIL 438 | | Philosophy of Mind | | Fall 2021 |
 | POLS 437 | | International Security | | Summer 2021 |
