@@ -4,7 +4,6 @@ title: Education
 permalink: /education/
 image: " "
 ---
-
 |--------:|-----|:--------|---|:------|---|:------|
 | Ph.D. | | Applied Mathematics | |University of Colorado Denver | | 2018 |
 | M.S. | | Statistics | | Colorado State University | | 2014 |
