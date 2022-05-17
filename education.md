@@ -12,7 +12,6 @@ image: " "
 | M.S. | | Electrical Engineering | | University of Colorado Boulder | | 2008 |
 | B.S. | | Electrical Engineering and Mathematics  | | Colorado State University | | 2007 |
  
-<br>
 
 ## Education Overview
 
