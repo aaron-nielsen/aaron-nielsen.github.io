@@ -14,6 +14,8 @@ image: " "
  
 <br>
 
+## Education Overview
+
 I am also a graduate of <a href="https://fch.psdschools.org/">Fort Collins High School</a> ('02). Go Lambkins!
 
 I began my CSU career as an undergraduate student in August 2002 and earned a bachelor's degree double majoring in Electrical Engineering and Mathematics (B.S.'07).
@@ -26,7 +28,12 @@ In 2012, I returned to CSU to study Statistics and earned a master's degree in S
 
 I received a Ph.D. in Applied Mathematics from University of Colorado Denver ('18) advised by <a href="http://math.ucdenver.edu/~bsimon/">Dr. Burt Simon</a>, and my specialty lies in statistics education. My dissertation was called "Statistical Analysis of Some Problems in Evolutionary Population Dynamics" and it explored stochastic and deterministic models for evolutionary population models, particularly with respect to the evolution of cooperation. 
 
-In August 2018, I joined the faculty in the Department of Statistics as an assistant professor. I have continued my studies by taking one course each semester as a part of the university's employee study privilege. These classes include:
+In August 2018, I joined the faculty in the Department of Statistics as an assistant professor. In addition to teaching, I am also currently working on a second bachelor's degree in Philosophy which I hope to complete in 2024. 
+
+
+## Recent Studies
+
+I have been taking a semi-random sample of courses at CSU since joining the faculty in August 2018 as a part of the university’s employee study privilege. These classes include:
 
 |--------|---|:---------|------|-------:|
 | PHIL 322 | | Biomedical Ethics | | Summer 2022 |
