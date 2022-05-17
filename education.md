@@ -16,7 +16,7 @@ image: " "
 
 ## Education Overview
 
-I am also a graduate of <a href="https://fch.psdschools.org/">Fort Collins High School</a> ('02). Go Lambkins!
+I am a graduate of <a href="https://fch.psdschools.org/">Fort Collins High School</a> ('02). Go Lambkins!
 
 I began my CSU career as an undergraduate student in August 2002 and earned a bachelor's degree double majoring in Electrical Engineering and Mathematics (B.S.'07).
 

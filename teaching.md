@@ -14,15 +14,6 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 
 <br>
  
-## Courses I'm Teaching This Semester (Spring 2022)
-
-|:--------------------  |:--------------------------------------- |
-| STAT 315 (Section 1) &nbsp; &nbsp; &nbsp; | MWF 9:00 -- 9:50am |
-| STAT 315 (Section 2) | MWF 10:00 -- 10:50am |
-| STAT 342 | MWF 2:00 -- 2:50pm |
-| STAT 472 | MWF 8:00 -- 8:50am | 
-
-<br>
 
 ## Courses I've Taught
 
