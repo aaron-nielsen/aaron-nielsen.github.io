@@ -4,14 +4,14 @@ title: Education
 permalink: /education/
 image: " "
 ---
-|--------:|-----|:--------|---|:------|---|:------|
+
 | Ph.D. | | Applied Mathematics | |University of Colorado Denver | | 2018 |
 | M.S. | | Statistics | | Colorado State University | | 2014 |
 | M.S. | | Applied Mathematics | | University of Colorado Denver | | 2012 |
 | M.S. | | Electrical Engineering | | University of Colorado Boulder | | 2008 |
 | B.S. | | Electrical Engineering and Mathematics  | | Colorado State University | | 2007 |
  
-
+<br>
 ## Education Overview
 
 I am a graduate of Fort Collins High School ('02). Go Lambkins!
