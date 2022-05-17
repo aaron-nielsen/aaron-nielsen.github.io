@@ -11,7 +11,8 @@ image: " "
 | M.S. | | Electrical Engineering | | University of Colorado Boulder | | 2008 |
 | B.S. | | Electrical Engineering and Mathematics  | | Colorado State University | | 2007 |
  
-<br>
+<hr style="clear:both;visibility: hidden;" />  
+
 ## Education Overview
 
 I am a graduate of Fort Collins High School ('02). Go Lambkins!
