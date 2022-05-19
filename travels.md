@@ -9,7 +9,7 @@ I enjoy traveling, whether it be roadtripping in the USA or backpacking abroad.
 At present count I have visited <a href="/images/countries.png">24 countries</a> and <a href="/images/states.png">46 states</a>.
 
 {% include image.html url="/images/22-gc.jpeg" caption="Grand Canyon, Arizona (2022)" width=250 align="left" %}
-{% include image.html url="/images/21-nebraska.jpeg" caption="Memorial Stadium, Lincoln, Nebraska (2021)" width=250 align="left" %}
+{% include image.html url="/images/21-nebraska.jpeg" caption="Lincoln, Nebraska (2021)" width=250 align="left" %}
 {% include image.html url="/images/21-nashville.jpeg" caption="Nashville, Tennessee (2021)" width=250 align="left" %}
 {% include image.html url="/images/21-austin.jpeg" caption="Austin, Texas (2021)" width=250 align="left" %}
 {% include image.html url="/images/hawaii.jpg" caption="Maui, Hawaii (2019)" width=250 align="left" %}
