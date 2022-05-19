@@ -16,7 +16,7 @@ permalink: /education/
 
 I am a graduate of Fort Collins High School ('02). Go Lambkins!
 
-I began my CSU career as an undergraduate student in August 2002 and earned a bachelor's degree double majoring in Electrical Engineering and Mathematics (B.S.'07).
+I began my CSU career as an undergraduate student in August 2002 and earned a bachelor's degree, double majoring in Electrical Engineering and Mathematics (B.S.'07).
 
 After undergrad, I was a graduate student at University of Colorado Boulder and earned a master's degree in Electrical Engineering (M.S.'08) with a focus on Digitial Signal Processing and Digital Communications.
 
@@ -26,7 +26,7 @@ In 2012, I returned to CSU to study Statistics and earned a master's degree in S
 
 I received a Ph.D. in Applied Mathematics from University of Colorado Denver (Ph.D.'18) with a concentration in Applied Probability and Applied Statistics and advised by <a href="http://math.ucdenver.edu/~bsimon/">Dr. Burt Simon</a>. My dissertation was titled "Statistical Analysis of Some Problems in Evolutionary Population Dynamics" and it explored stochastic and deterministic models for evolutionary population models, particularly with respect to the evolution of cooperation. 
 
-In August 2018, I joined the faculty in the Department of Statistics as an assistant professor. In addition to currently teaching, I am also working on a second bachelor's degree in Philosophy which I hope to complete in 2024. I am particularly interested in Philosophy of Science, Philosophy of Mathematics, Philosophy of Statistics, Epistemology, and Logic.
+In August 2018, I joined the faculty in the Department of Statistics as an assistant professor. In addition to currently teaching, I am also working on a second bachelor's degree in Philosophy which I hope to complete in 2024. I am particularly interested in Philosophy of Science and Logic.
 
 
 ## Recent Studies
