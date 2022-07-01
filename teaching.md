@@ -13,7 +13,15 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 {% include image.html url="/images/class.jpg" caption="Teaching during my first year as a faculty member at CSU (2018)" align="left" %}
 
 <br>
- 
+
+## Courses I'm Teaching Fall 2022
+| Course | Title |
+|:--------------------	|:------------------------------------------ |
+| STAT 305 	| Sampling Techniques  |
+| STAT381A2 | Sports Statistics and Analytics Methods |
+| STAT 472 | Statistical Research |
+
+<br>
 
 ## Courses I've Taught
 
