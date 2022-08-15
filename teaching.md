@@ -15,6 +15,7 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 <br>
 
 ## Courses I'm Teaching Fall 2022
+
 | Course | Title |
 |:--------------------	|:------------------------------------------ |
 | STAT 305 	| Sampling Techniques  |
