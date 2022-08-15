@@ -34,8 +34,7 @@ In August 2018, I joined the faculty in the Department of Statistics as an assis
 I have been taking a semi-random sample of courses at CSU since joining the faculty in August 2018 as a part of the university’s employee study privilege. These classes include:
 
 |--------|---|:---------|------|-------:|
-| PHIL 300 | | Ancient Greek Philosophy | | Fall 2022 |
-| PHIL 354 | | Philosophy and Science Fiction | | Fall 2022 |
+| PHIL 301 | | 17th and 18th Century European Philosophy | | Fall 2022 |
 | PHIL 322 | | Biomedical Ethics | | Summer 2022 |
 | PHIL 205 | | Ethics | | Spring 2022 |
 | PHIL 438 | | Philosophy of Mind | | Fall 2021 |

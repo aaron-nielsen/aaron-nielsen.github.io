@@ -19,7 +19,7 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 | Course | Title |
 |:--------------------	|:------------------------------------------ |
 | STAT 305 	| Sampling Techniques  |
-| STAT381A2 | Sports Statistics and Analytics Methods |
+| STAT381 | Sports Statistics and Analytics I |
 | STAT 472 | Statistical Research |
 
 <br>
@@ -37,6 +37,7 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 | STAT 305 	| Sampling Techniques               	| FA21             |
 | STAT 315 	| Theory and Practice of Statistics | SP22, FA21, SP21, FA20, SM20, SP20, FA19, SM19, SP19, FA18 |
 | STAT 342  | Statistical Data Analysis II          | SP22 |
+| STAT 381  | Sports Statistics and Analytics I          | FA22 |
 | STAT 460  | Applied Multivariate Analysis     	| SP20, SP19                        |
 | STAT 472  | Statistical Research                  | SP22, FA21, SP21, FA20, SP20, FA19, SP19 |
 | STAT 502  | Applied Multivariate Analysis for Researchers | FA19 |
