@@ -19,7 +19,7 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 | Course &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  | Title &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  |
 |:--------------------	|:------------------------------------------ |
 | STAT 305 	| Sampling Techniques  |
-| STAT381 | Sports Statistics and Analytics I |
+| STAT 381 | Sports Statistics and Analytics I |
 | STAT 472 | Statistical Research |
 
 <br>
