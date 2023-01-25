@@ -16,16 +16,7 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 
 ## Courses I'm Teaching Spring 2023
 
-<style>
-table th:first-of-type {
-    width: 20%;
-}
-table th:nth-of-type(2) {
-    width: 80%;
-}
-</style>
-
-| Course &nbsp; | Title &nbsp;  |
+| Course &nbsp; &nbsp; &nbsp; &nbsp; | Title &nbsp;  |
 |:--------------------	|:------------------------------------------ |
 | STAT 315 	| Theory and Practice of Statistics  |
 | STAT 380 | Sports Statistics and Analytics II |
@@ -37,19 +28,7 @@ table th:nth-of-type(2) {
 
 ### Colorado State University
  
- 
- <style>
-table th:first-of-type {
-    width: 20%;
-}
-table th:nth-of-type(2) {
-    width: 60%;
-}
-table th:nth-of-type(3) {
-    width: 20%;
-}
-</style> 
-| Course &nbsp;  | Title  | Semesters Taught |
+| Course &nbsp; &nbsp; &nbsp; &nbsp; | Title  | Semesters Taught |
 |:--------------------	|:------------------------------------------ |:--------------------------------------- |
 | STAT 100 	| Statistical Literacy              	| FA20 |
 | STAT 201 	| General Statistics                	| SP19, FA18, SM15 |
