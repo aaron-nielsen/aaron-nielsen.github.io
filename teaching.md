@@ -14,12 +14,21 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 
 <br>
 
-## Courses I'm Teaching Fall 2022
+## Courses I'm Teaching Spring 2023
+
+<style>
+table th:first-of-type {
+    width: 20%;
+}
+table th:nth-of-type(2) {
+    width: 80%;
+}
+</style>
 
 | Course &nbsp; | Title &nbsp;  |
 |:--------------------	|:------------------------------------------ |
-| STAT 305 	| Sampling Techniques  |
-| STAT 381 | Sports Statistics and Analytics I |
+| STAT 315 	| Theory and Practice of Statistics  |
+| STAT 380 | Sports Statistics and Analytics II |
 | STAT 472 | Statistical Research |
 
 <br>
@@ -27,7 +36,19 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 ## Courses I've Taught
 
 ### Colorado State University
-  
+ 
+ 
+ <style>
+table th:first-of-type {
+    width: 20%;
+}
+table th:nth-of-type(2) {
+    width: 60%;
+}
+table th:nth-of-type(3) {
+    width: 20%;
+}
+</style> 
 | Course &nbsp;  | Title  | Semesters Taught |
 |:--------------------	|:------------------------------------------ |:--------------------------------------- |
 | STAT 100 	| Statistical Literacy              	| FA20 |
@@ -35,11 +56,12 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 | STAT 204 	| Business Statistics               	| SM14, SP14, FA13 |
 | STAT 301 	| Applied Statistical Methods       	| SP15, FA14       |
 | STAT 305 	| Sampling Techniques               	| FA22, FA21             |
-| STAT 315 	| Theory and Practice of Statistics | FA22, SP22, FA21, SP21, FA20, SM20, SP20, FA19, SM19, SP19, FA18 |
+| STAT 315 	| Theory and Practice of Statistics | SP23, SP22, FA21, SP21, FA20, SM20, SP20, FA19, SM19, SP19, FA18 |
 | STAT 342  | Statistical Data Analysis II          | SP22 |
-| STAT 381  | Sports Statistics and Analytics I          | FA22 |
+| STAT 351  | Sports Statistics and Analytics I          | FA22 |
+| STAT 451  | Sports Statistics and Analytics II          | SP23 |
 | STAT 460  | Applied Multivariate Analysis     	| SP20, SP19  |
-| STAT 472  | Statistical Research                  | SP22, FA21, SP21, FA20, SP20, FA19, SP19 |
+| STAT 472  | Statistical Research                  | SP23, FA22, SP22, FA21, SP21, FA20, SP20, FA19, SP19 |
 | STAT 502  | Applied Multivariate Analysis for Researchers | FA19 |
 | STAA 556  | Statistical Consulting | SM21 |
 | STAA 574  | Methods in Multivariate Analysis | SP20 | 
