@@ -25,7 +25,7 @@ table th:nth-of-type(2) {
 }
 </style>
 
-| Course &nbsp; | Title &nbsp;  |
+| Course | Title |
 |:--------------------	|:------------------------------------------ |
 | STAT 315 	| Theory and Practice of Statistics  |
 | STAT 380 | Sports Statistics and Analytics II |
@@ -49,7 +49,8 @@ table th:nth-of-type(3) {
     width: 40%;
 }
 </style> 
-| Course &nbsp;  | Title  | Semesters Taught |
+
+| Course   | Title  | Semesters Taught |
 |:--------------------	|:------------------------------------------ |:--------------------------------------- |
 | STAT 100 	| Statistical Literacy              	| FA20 |
 | STAT 201 	| General Statistics                	| SP19, FA18, SM15 |
