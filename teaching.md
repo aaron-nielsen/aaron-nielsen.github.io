@@ -71,7 +71,7 @@ table th:nth-of-type(3) {
 
 ### University of Colorado Denver 
 
-| Course &nbsp;  | Title  | Semesters Taught |
+| Course | Title | Semesters Taught |
 |:--------------------	|:------------------------------------------ |:--------------------------------------- |
 | MATH 1110 | College Algebra | FA17 |
 | MATH 1401 | Calculus I | FA16 |
