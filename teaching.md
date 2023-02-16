@@ -48,7 +48,7 @@ table th:nth-of-type(2) {
     <li>STAT 315: Theory and Practice of Statistics</li>
     <li>Spring 2023, Spring 2022, Fall 2021, Spring 2021, Fall 2020, Summer 2020, Spring 2020, Fall 2019, Summer 2019, Spring 2019, Fall 2018</li>
 </ul>
-<br>
+<br> 
 
 <ul style="list-style-type:disc">
     <li></li>
