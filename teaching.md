@@ -15,16 +15,6 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 <br>
 
 ## Courses I'm Teaching Spring 2023
-
-<style>
-table th:first-of-type {
-    width: 10%;
-}
-table th:nth-of-type(2) {
-    width: 90%;
-}
-</style>
-
 <ul class="list">
     <li>STAT 315: Theory and Practice of Statistics</li>
     <li>MWF 9:00-9:50am, MWF 10:00-10:50am</li>
@@ -38,7 +28,6 @@ table th:nth-of-type(2) {
 ## Courses I've Taught
 
 ### Colorado State University
-
 <ul class="list">
     <li>STAT 100: Statistical Literacy</li>
         <li>Fall 2020</li>
@@ -72,18 +61,24 @@ table th:nth-of-type(2) {
 
 
 ### University of Colorado Denver 
-
-| Course | Title | Semesters Taught |
-|:--------------------	|:------------------------------------------ |:--------------------------------------- |
-| MATH 1110 | College Algebra | FA17 |
-| MATH 1401 | Calculus I | FA16 |
-| MATH 2411 | Calculus II | SP17 |
-| MATH 3191 | Applied Linear Algebra | SP18 |
-| MATH 3382 | Statistical Theory | SM17 |
-| MATH 3800 | Probability and Statistics for Engineers | SM18, SM17, SM17, SP16, FA15 |
-| MATH 4800 | Probability | SP15 |
-| MATH 4820 | Mathematical Statistics | SM16 |
-| MATH 5320 | Mathematical Statistics | SM16 |
+<ul class="list">
+    <li>MATH 1110: College Algebra</li>
+        <li>Fall 2017</li>
+    <li>MATH 1401: Calculus I</li>
+        <li>Fall 2016</li>
+    <li>Math 2411: Calculus II</li>
+        <li>Spring 2017</li>
+    <li>Math 3191: Applied Linear Algebra</li>
+        <li>Spring 2018</li>
+    <li>Math 3382: Statistical Theory</li>
+        <li>Summer 2017</li>
+    <li>Math 3800: Probability and Statistics for Engineers</li>
+        <li>Summer 2018, Summer 2017, Summer 2016, Spring 2016, Fall 2015</li>
+    <li>Math 4800: Probability</li>
+        <li>Spring 2015</li>
+    <li>Math 4820/5320: Mathematical Statistics</li>
+        <li>Summer 2016</li>
+</ul>
 
 <br>
 
