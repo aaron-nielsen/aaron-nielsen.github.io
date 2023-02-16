@@ -25,7 +25,7 @@ table th:nth-of-type(2) {
 }
 </style>
 
-<ul style="list-style-type:none">
+<ul style="list-style-type:disc">
     <li>STAT 315: Theory and Practice of Statistics (MWF 9:00-9:50am, MWF 10:00-10:50am)</li>
     <li>STAT 451: Sports Statistics and Analytics III (MW 4:30-5:45pm)</li>
     <li>STAT 472: Statistical Research (MW 3:00-4:15pm)</li>
@@ -44,6 +44,26 @@ table th:nth-of-type(2) {
     <li>STAT 201: General Statistics</li>
     <ul style="list-style-type:none">
         <li>Spring 2019, Fall 2018, Summer 2015</li>
+    </ul>
+    <li>STAT 204: Business Statistics</li>
+    <ul style="list-style-type:square">
+        <li>Summer 2014, Spring 2014, Fall 2013</li>
+    </ul>
+    <li>STAT 301: Applied Statistical Methods</li>
+    <ul style="list-style-type:square">
+        <li>Spring 2015, Fall 2014</li>
+    </ul>
+    <li></li>
+    <ul style="list-style-type:square">
+        <li>STAT 305: Sampling Techniques</li>
+    </ul>
+    <li>Fall 2022, Fall 2021</li>
+    <ul style="list-style-type:square">
+        <li></li>
+    </ul>
+    <li>STAT 315: Theory and Practice of Statistics</li>
+    <ul style="list-style-type:square">
+        <li>Spring 2023, Spring 2022, Fall 2021, Spring 2021, Fall 2020, Summer 2020, Spring 2020, Fall 2019, Summer 2019, Spring 2019, Fall 2018</li>
     </ul>
 </ul>
  
