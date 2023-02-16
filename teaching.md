@@ -51,7 +51,7 @@ table th:nth-of-type(2) {
 <br> 
 
 <ul style="list-style-type:disc">
-    <li></li>
+    <li>STAT 100: Statistical Literacy</li>
     <ul style="list-style-type:square">
         <li>Fall 2020</li>
     </ul>

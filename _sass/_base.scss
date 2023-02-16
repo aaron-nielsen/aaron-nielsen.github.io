@@ -240,17 +240,13 @@ font-family: 'Capita', Georgia, serif;
 list-style-type: disc;
 padding: 10px;
 margin: 0;
-width: 100%;
 }
 
 .list li {
-float: left;
-width: 45%;
 color: #fff;
 }
 
 .list li:nth-child(even) {
-margin-right: 0;
 list-style-type: square;
 }
 
