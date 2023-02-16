@@ -238,20 +238,19 @@ font-family: 'Capita', Georgia, serif;
 
 .list {
   list-style-type: disc;
-  flex-wrap: wrap;
-  display: flex;
-  padding: 0;
+  padding: 10px;
   margin: 0;
+  width: 100%;
 }
 
 .list li {
-  border-bottom: 1px solid #fff;
-  flex: 1 0 50%;
+  width: 45%;
   padding: 10px;
   color: #fff;
 }
 
 .list li:nth-child(even) {
+  margin-right: 0;
   list-style-type: square;
 }
 
