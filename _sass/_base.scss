@@ -237,7 +237,7 @@ font-family: 'Capita', Georgia, serif;
 
 
 .list {
-  list-style-type: square;
+  list-style-type: disc;
   flex-wrap: wrap;
   display: flex;
   padding: 0;
@@ -246,20 +246,13 @@ font-family: 'Capita', Georgia, serif;
 
 .list li {
   border-bottom: 1px solid #fff;
-  flex: 1 0 25%;
+  flex: 1 0 50%;
   padding: 10px;
   color: #fff;
 }
 
-.list li:nth-child(2n + 1) {
+.list li:nth-child(even) {
   list-style-type: square;
 }
 
-.list li:nth-child(2n + 2) {
-  list-style-type: disc;
-}
-
-#double li {
-  width: 50%;
-}
 

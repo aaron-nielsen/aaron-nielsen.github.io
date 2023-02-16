@@ -25,7 +25,7 @@ table th:nth-of-type(2) {
 }
 </style>
 
-<ul class="double">
+<ul class="list">
     <li>STAT 315: Theory and Practice of Statistics</li>
     <li>MWF 9:00-9:50am, MWF 10:00-10:50am</li>
     <li>STAT 451: Sports Statistics and Analytics III</li>
