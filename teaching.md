@@ -25,23 +25,27 @@ table th:nth-of-type(2) {
 }
 </style>
 
-<ul  style="list-style-type:square">
+<ul style="list-style-type:none">
     <li>STAT 315: Theory and Practice of Statistics (MWF 9:00-9:50am, MWF 10:00-10:50am)</li>
     <li>STAT 451: Sports Statistics and Analytics III (MW 4:30-5:45pm)</li>
-    <li>STAT 472: Statistical Research (MW 3:00--4:15pm)</li>
+    <li>STAT 472: Statistical Research (MW 3:00-4:15pm)</li>
 </ul>
 
-| Course | Title |
-|:--------------------	|:------------------------------------------ |
-| STAT 315 	| Theory and Practice of Statistics  |
-| STAT 380 | Sports Statistics and Analytics II |
-| STAT 472 | Statistical Research |
-
-<br>
 
 ## Courses I've Taught
 
 ### Colorado State University
+
+<ul style="list-style-type:none">
+    <li>STAT 100: Statistical Literacy</li>
+    <ul style="list-style-type:none">
+        <li>Fall 2020</li>
+    </ul>
+    <li>STAT 201: General Statistics</li>
+    <ul style="list-style-type:none">
+        <li>Spring 2019, Fall 2018, Summer 2015</li>
+    </ul>
+</ul>
  
  
  <style>
