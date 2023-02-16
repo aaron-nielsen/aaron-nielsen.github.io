@@ -158,8 +158,12 @@ html {
 }
 
 ul.listing {
-	list-style-type: none;
+	list-style-type: square;
 	margin-left: 0px;
+}
+
+ul.b {
+  list-style-type: square;
 }
 
 ul.listing li.listing-seperator {
