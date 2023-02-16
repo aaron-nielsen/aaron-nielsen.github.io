@@ -247,19 +247,20 @@ width: 100%;
 
 .list li {
 float: left;
-width: 45%;
+width: 400px;
 color: #fff;
+margin: 0 0 10px 0;
 }
 
 .list li:nth-child(odd) {
 float: left;
-width: 45%;
+width: 400px;
 list-style-type: square;
+margin: 0 0 10px 0;
 }
 
 .list li:nth-child(even) {
 float: right;
-width: 45%;
 list-style-type: square;
 }
 
