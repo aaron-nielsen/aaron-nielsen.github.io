@@ -25,6 +25,12 @@ table th:nth-of-type(2) {
 }
 </style>
 
+<ul  style="list-style-type:square">
+    <li>STAT 315: Theory and Practice of Statistics (MWF 9:00-9:50am, MWF 10:00-10:50am)</li>
+    <li>STAT 451: Sports Statistics and Analytics III (MW 4:30-5:45pm)</li>
+    <li>STAT 472: Statistical Research (MW 3:00--4:15pm)</li>
+</ul>
+
 | Course | Title |
 |:--------------------	|:------------------------------------------ |
 | STAT 315 	| Theory and Practice of Statistics  |
