@@ -245,7 +245,8 @@ font-family: 'Capita', Georgia, serif;
 }
 
 .list li {
-  flex: 1 50%;
+  border-bottom: 1px solid #fff;
+  flex: 1 0 50%;
   padding: 10px;
   color: #fff;
 }
