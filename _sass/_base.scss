@@ -255,13 +255,13 @@ margin: 0 0 5px 0;
 .list li:nth-child(odd) {
 float: left;
 width: 400px;
-list-style-type: none;
+list-style-type: square;
 margin: 0 0 5px 0;
 }
 
 .list li:nth-child(even) {
 float: right;
-list-style-type: square;
+list-style-type: none;
 margin: 0 0 5px 5px;
 }
 
