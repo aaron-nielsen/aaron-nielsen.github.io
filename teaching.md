@@ -71,65 +71,6 @@ table th:nth-of-type(2) {
 </ul>
 
 
-<ul style="list-style-type:disc">
-    <li>STAT 100: Statistical Literacy</li>
-    <ul style="list-style-type:square">
-        <li>Fall 2020</li>
-    </ul>
-    <li>STAT 201: General Statistics</li>
-    <ul style="list-style-type:square">
-        <li>Spring 2019, Fall 2018, Summer 2015</li>
-    </ul>
-    <li>STAT 204: Business Statistics</li>
-    <ul style="list-style-type:square">
-        <li>Summer 2014, Spring 2014, Fall 2013</li>
-    </ul>
-    <li>STAT 301: Applied Statistical Methods</li>
-    <ul style="list-style-type:square">
-        <li>Spring 2015, Fall 2014</li>
-    </ul>
-    <li>STAT 305: Sampling Techniques</li>
-    <ul style="list-style-type:square">
-        <li>Fall 2022, Fall 2021</li>
-    </ul>
-    <li>STAT 315: Theory and Practice of Statistics</li>
-    <ul style="list-style-type:square">
-        <li>Spring 2023, Spring 2022, Fall 2021, Spring 2021, Fall 2020, Summer 2020, Spring 2020, Fall 2019, Summer 2019, Spring 2019, Fall 2018</li>
-    </ul>
-    <li>STAT 342: Statistical Data Analysis II</li>
-    <ul style="list-style-type:square">
-        <li>Spring 2022</li>
-    </ul>
-    <li>STAT 351: Sports Statistics and Analytics I</li>
-    <ul style="list-style-type:square">
-        <li>Fall 2022</li>
-    </ul>
-    <li>STAT 451: Sports Statistics and Analytics II</li>
-    <ul style="list-style-type:square">
-        <li>Spring 2023</li>
-    </ul>
-    <li>STAT 460: Applied Multivariate Analysis</li>
-    <ul style="list-style-type:square">
-        <li>Spring 2020, Spring 2019</li>
-    </ul>
-    <li>STAT 472: Statistical Research</li>
-    <ul style="list-style-type:square">
-        <li>Spring 2023, Fall 2022, Spring 2022, Fall 2021, Spring 2021, Fall 2020, Spring 2020, Fall 2019, Spring 2019</li>
-    </ul>
-    <li>STAR 502: Applied Multivariate Analysis for Researchers</li>
-    <ul style="list-style-type:square">
-        <li>Fall 2019</li>
-    </ul>
-    <li>STAA 556: Statistical Consulting</li>
-    <ul style="list-style-type:square">
-        <li>Summer 2021</li>
-    </ul>
-    <li>STAA 574: Methods in Multivariate Analysis</li>
-    <ul style="list-style-type:square">
-        <li>Spring 2020</li>
-    </ul>
-</ul>
-
 ### University of Colorado Denver 
 
 | Course | Title | Semesters Taught |
