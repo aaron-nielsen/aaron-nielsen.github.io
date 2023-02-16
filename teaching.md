@@ -42,7 +42,7 @@ table th:nth-of-type(2) {
         <li>Fall 2020</li>
     </ul>
     <li>STAT 201: General Statistics</li>
-    <ul style="list-style-type:none">
+    <ul style="list-style-type:square">
         <li>Spring 2019, Fall 2018, Summer 2015</li>
     </ul>
     <li>STAT 204: Business Statistics</li>
@@ -53,51 +53,47 @@ table th:nth-of-type(2) {
     <ul style="list-style-type:square">
         <li>Spring 2015, Fall 2014</li>
     </ul>
-    <li></li>
+    <li>STAT 305: Sampling Techniques</li>
     <ul style="list-style-type:square">
-        <li>STAT 305: Sampling Techniques</li>
-    </ul>
-    <li>Fall 2022, Fall 2021</li>
-    <ul style="list-style-type:square">
-        <li></li>
+        <li>Fall 2022, Fall 2021</li>
     </ul>
     <li>STAT 315: Theory and Practice of Statistics</li>
     <ul style="list-style-type:square">
         <li>Spring 2023, Spring 2022, Fall 2021, Spring 2021, Fall 2020, Summer 2020, Spring 2020, Fall 2019, Summer 2019, Spring 2019, Fall 2018</li>
     </ul>
+    <li>STAT 342: Statistical Data Analysis II</li>
+    <ul style="list-style-type:square">
+        <li>Spring 2022</li>
+    </ul>
+    <li>STAT 351: Sports Statistics and Analytics I</li>
+    <ul style="list-style-type:square">
+        <li>Fall 2022</li>
+    </ul>
+    <li>STAT 451: Sports Statistics and Analytics II</li>
+    <ul style="list-style-type:square">
+        <li>Spring 2023</li>
+    </ul>
+    <li>STAT 460: Applied Multivariate Analysis</li>
+    <ul style="list-style-type:square">
+        <li>Spring 2020, Spring 2019</li>
+    </ul>
+    <li>STAT 472: Statistical Research</li>
+    <ul style="list-style-type:square">
+        <li>Spring 2023, Fall 2022, Spring 2022, Fall 2021, Spring 2021, Fall 2020, Spring 2020, Fall 2019, Spring 2019</li>
+    </ul>
+    <li>STAR 502: Applied Multivariate Analysis for Researchers</li>
+    <ul style="list-style-type:square">
+        <li>Fall 2019</li>
+    </ul>
+    <li>STAA 556: Statistical Consulting</li>
+    <ul style="list-style-type:square">
+        <li>Summer 2021</li>
+    </ul>
+    <li>STAA 574: Methods in Multivariate Analysis</li>
+    <ul style="list-style-type:square">
+        <li>Spring 2020</li>
+    </ul>
 </ul>
- 
- 
- <style>
-table th:first-of-type {
-    width: 10%;
-}
-table th:nth-of-type(2) {
-    width: 50%;
-}
-table th:nth-of-type(3) {
-    width: 40%;
-}
-</style> 
-
-| Course   | Title  | Semesters Taught |
-|:--------------------	|:------------------------------------------ |:--------------------------------------- |
-| STAT 100 	| Statistical Literacy              	| FA20 |
-| STAT 201 	| General Statistics                	| SP19, FA18, SM15 |
-| STAT 204 	| Business Statistics               	| SM14, SP14, FA13 |
-| STAT 301 	| Applied Statistical Methods       	| SP15, FA14       |
-| STAT 305 	| Sampling Techniques               	| FA22, FA21             |
-| STAT 315 	| Theory and Practice of Statistics | SP23, SP22, FA21, SP21, FA20, SM20, SP20, FA19, SM19, SP19, FA18 |
-| STAT 342  | Statistical Data Analysis II          | SP22 |
-| STAT 351  | Sports Statistics and Analytics I          | FA22 |
-| STAT 451  | Sports Statistics and Analytics II          | SP23 |
-| STAT 460  | Applied Multivariate Analysis     	| SP20, SP19  |
-| STAT 472  | Statistical Research                  | SP23, FA22, SP22, FA21, SP21, FA20, SP20, FA19, SP19 |
-| STAT 502  | Applied Multivariate Analysis for Researchers | FA19 |
-| STAA 556  | Statistical Consulting | SM21 |
-| STAA 574  | Methods in Multivariate Analysis | SP20 | 
-
-<br>
 
 ### University of Colorado Denver 
 
