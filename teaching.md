@@ -24,6 +24,8 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
     <li>MW 3:00-4:15pm</li>
 </ul>
 
+<hr>
+
 
 ## Courses I've Taught
 
@@ -58,6 +60,8 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
     <li>STAA 574: Methods in Multivariate Analysis</li>
         <li>Spring 2020</li>
 </ul>
+
+<hr>
 
 
 ### University of Colorado Denver 
