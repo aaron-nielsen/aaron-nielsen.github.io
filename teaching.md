@@ -33,14 +33,25 @@ table th:nth-of-type(2) {
     <li>STAT 472: Statistical Research</li>
     <li>MW 3:00-4:15pm</li>
 </ul>
+<br>
 
 
 ## Courses I've Taught
 
 ### Colorado State University
 
-<ul style="list-style-type:disc">
+<ul class="list">
     <li>STAT 100: Statistical Literacy</li>
+    <li>Fall 2020</li>
+    <li>STAT 201: General Statistics</li>
+    <li>Spring 2019, Fall 2018, Summer 2015</li>
+    <li>STAT 315: Theory and Practice of Statistics</li>
+    <li>Spring 2023, Spring 2022, Fall 2021, Spring 2021, Fall 2020, Summer 2020, Spring 2020, Fall 2019, Summer 2019, Spring 2019, Fall 2018</li>
+</ul>
+<br>
+
+<ul style="list-style-type:disc">
+    <li></li>
     <ul style="list-style-type:square">
         <li>Fall 2020</li>
     </ul>
