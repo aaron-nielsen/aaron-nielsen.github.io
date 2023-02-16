@@ -77,7 +77,7 @@ margin-left: $spacing-unit;
 li {
 > ul,
 > ol {
-     margin-bottom: 0;
+ margin-bottom: 0;
 }
 }
 
@@ -114,8 +114,8 @@ text-decoration: none;
 } 
 
 &:hover {
-    color: $text-color;
-    text-decoration: underline;
+color: $text-color;
+text-decoration: underline;
 }
 }
 
@@ -135,7 +135,7 @@ letter-spacing: -1px;
 font-style: italic;
 
 > :last-child {
-    margin-bottom: 0;
+margin-bottom: 0;
 }
 }
 
@@ -161,9 +161,9 @@ padding: 8px 12px;
 overflow-x: scroll;
 
 > code {
-    border: 0;
-    padding-right: 0;
-    padding-left: 0;
+border: 0;
+padding-right: 0;
+padding-left: 0;
 }
 }
 
@@ -184,10 +184,10 @@ padding-left: $spacing-unit;
 @extend %clearfix;
 
 @include media-query($on-laptop) {
-    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
-    max-width:         calc(#{$content-width} - (#{$spacing-unit}));
-    padding-right: $spacing-unit / 2;
-    padding-left: $spacing-unit / 2;
+max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
+max-width:         calc(#{$content-width} - (#{$spacing-unit}));
+padding-right: $spacing-unit / 2;
+padding-left: $spacing-unit / 2;
 }
 }
 
@@ -199,9 +199,9 @@ padding-left: $spacing-unit;
 %clearfix {
 
 &:after {
-    content: "";
-    display: table;
-    clear: both;
+content: "";
+display: table;
+clear: both;
 }
 }
 
@@ -213,14 +213,14 @@ padding-left: $spacing-unit;
 .icon {
 
 > svg {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    vertical-align: middle;
+display: inline-block;
+width: 16px;
+height: 16px;
+vertical-align: middle;
 
-    path {#
-        fill: $grey-color;
-    }
+path {#
+    fill: $grey-color;
+}
 }
 }
 
@@ -239,6 +239,8 @@ font-family: 'Capita', Georgia, serif;
 .list {
 list-style-type: disc;
 padding: 10px;
+flex-wrap: wrap;
+display: flex;
 margin: 0;
 width: 100%;
 }
@@ -249,8 +251,14 @@ width: 45%;
 color: #fff;
 }
 
+.list li:nth-child(odd) {
+float: left;
+width: 45%;
+list-style-type: square;
+}
+
 .list li:nth-child(even) {
-margin-right: 0;
+float: right;
 width: 45%;
 list-style-type: square;
 }
