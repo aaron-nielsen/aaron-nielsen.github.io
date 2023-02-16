@@ -36,9 +36,9 @@ table th:nth-of-type(2) {
 
 ### Colorado State University
 
-<ul style="list-style-type:none">
+<ul style="list-style-type:disc">
     <li>STAT 100: Statistical Literacy</li>
-    <ul style="list-style-type:none">
+    <ul style="list-style-type:square">
         <li>Fall 2020</li>
     </ul>
     <li>STAT 201: General Statistics</li>
