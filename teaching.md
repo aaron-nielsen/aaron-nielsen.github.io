@@ -18,7 +18,7 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 <ul class="list">
     <li>STAT 315: Theory and Practice of Statistics</li>
     <li>MWF 9:00-9:50am, MWF 10:00-10:50am</li>
-    <li>STAT 451: Sports Statistics and Analytics III</li>
+    <li>STAT 451: Sports Statistics and Analytics II</li>
     <li>MW 4:30-5:45pm</li>
     <li>STAT 472: Statistical Research</li>
     <li>MW 3:00-4:15pm</li>
