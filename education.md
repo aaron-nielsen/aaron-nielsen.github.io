@@ -55,3 +55,5 @@ I have been taking a semi-random sample of courses at CSU since joining the facu
 
 {% include image.html url="/images/defense.jpeg" caption="Dissertation defense at the University of Colorado Denver (2018)" width=250 align="left" %}
 
+{% include image.html url="/images/cu-parents.jpg" caption="Undergraduate commencement with Dr. Tony Maciejewski (2007)" width=250 align="left" %} 
+
