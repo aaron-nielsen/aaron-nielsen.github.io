@@ -51,11 +51,7 @@ I have been taking a semi-random sample of courses at CSU since joining the facu
 
 {% include image.html url="/images/aaron-bsee.png" caption="Undergraduate commencement with Dr. Tony Maciejewski (2007)" width=250 align="left" %} 
 
-{% include image.html url="/images/cu-parents.jpg" caption="M.S.E.E. Graduation with my parents (2008)" width=250 align="left" %} 
-
 {% include image.html url="/images/aaron-burt.jpg" caption="With my Ph.D. advisor, Dr. Burt Simon (2018)" width=250  align="left" %}
 
-
-
-
+{% include image.html url="/images/cu-parents.jpg" caption="M.S.E.E. Graduation with my parents (2008)" width=250 align="left" %} 
 
