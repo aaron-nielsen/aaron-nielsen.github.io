@@ -14,8 +14,8 @@ I have also developed two new classes in Sports Statistics and Analytics that ar
 </ul>
 
 I have advised undergraduate research projects involving Sports Statistics and Analytics:
-- Matthew Boyd - <a href="boyd-shifting-research.pdf">Playing the Odds: Defensive Positioning Strategies to Minimize Batting Average in Major League Baseball</a>, 2022.
-- Ethan Creagar - <a href="creagar-soccer-tracking.pdf">Reading the Game: Predicting Soccer Defender Movement Using Neural Networks</a>, 2022.
+- Matthew Boyd, 2022: <a href="boyd-shifting-research.pdf">Playing the Odds: Defensive Positioning Strategies to Minimize Batting Average in Major League Baseball</a>
+- Ethan Creagar, 2022: <a href="creagar-soccer-tracking.pdf">Reading the Game: Predicting Soccer Defender Movement Using Neural Networks</a>
 
 {% include image.html url="/images/certificate.png" align="center" %}
 
