@@ -23,7 +23,7 @@ I began my CSU career as an undergraduate student in August 2002 and earned a ba
 
 After undergrad, I was a graduate student at University of Colorado Boulder and earned a master's degree in Electrical Engineering (M.S.'08) with a focus on Digitial Signal Processing and Digital Communications.</p>
 
-<br clear="left"/>
+<br clear="right"/>
 
 {% include image.html url="/images/cu-parents.jpg" caption="Masters graduation at CU-Boulder with my parents (2008)" width=250 align="left" %} 
 
@@ -39,12 +39,15 @@ In 2012, I returned to CSU to study Statistics and earned a master's degree in S
 
 In August 2018, I joined the faculty in the Department of Statistics as an assistant professor. In addition to currently teaching, I am also working on a second bachelor's degree in Philosophy which I hope to complete in 2024. I am particularly interested in Philosophy of Science and Logic. </p>
 
+<br clear="right"/>
 
 ## Recent Studies
 
 I have been taking a semi-random sample of courses at CSU since joining the faculty in August 2018 as a part of the university’s employee study privilege. These classes include:
 
 |--------|---|:---------|------|-------:|
+| PHIL 300 | | Ancient Greek Philosophy | | Fall 2023 |
+| PHIL 462 | | Philosophy Capstone | | Fall 2023 |
 | PHIL 301 | | 17th and 18th Century European Philosophy | | Spring 2023 |
 | PHIL 354 | | Philosophy and Science Fiction | | Fall 2022 |
 | PHIL 322 | | Biomedical Ethics | | Summer 2022 |
