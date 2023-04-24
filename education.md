@@ -4,14 +4,13 @@ title: Education
 permalink: /education/
 ---
 
-{% include image.html url="/images/aaron-burt.jpg" caption="With my Ph.D. advisor, Dr. Burt Simon (2018)" width=250  align="left" %}
+Ph.D. Applied Mathematics, University of Colorado Denver (2018)
+M.S. Statistics, Colorado State University (2014)
+M.S. Applied Mathematics, University of Colorado Denver (2012)
+M.S. Electrical Engineering, University of Colorado Boulder (2008)
+B.S. Electrical Engineering and Mathematics, Colorado State University (2007)
+B.A. Philosophy, Colorado State University (exp. 2024)
 
-| Ph.D. | | Applied Mathematics | |University of Colorado Denver | | 2018 |
-| M.S. | | Statistics | | Colorado State University | | 2014 |
-| M.S. | | Applied Mathematics | | University of Colorado Denver | | 2012 |
-| M.S. | | Electrical Engineering | | University of Colorado Boulder | | 2008 |
-| B.S. | | Electrical Engineering and Mathematics  | | Colorado State University | | 2007 |
- 
 <br>
 
 ## Education Overview
@@ -29,6 +28,8 @@ After undergrad, I was a graduate student at University of Colorado Boulder and 
 From 2009-2012, I worked as an electrical engineer for a government contractor in Denver. During this time, I also completed a second master's degree in Applied Mathematics from University of Colorado Denver (M.S.'12) with a concentration in Applied Probability. My master's project involved the creation of a "hybrid" simulation model to study multilevel group population models.
 
 In 2012, I returned to CSU to study Statistics and earned a master's degree in Statistics two years later (M.S.'14). I taught my first course (STAT 204, Business Statistics) in Fall 2013 and quickly became interested in pursuing teaching as a career. I taught full-time as an instructor in the Department of Statistics in Spring 2015 before returning to University of Colorado Denver to complete my graduate studies.
+
+{% include image.html url="/images/aaron-burt.jpg" caption="With my Ph.D. advisor, Dr. Burt Simon (2018)" width=250  align="right" %}
 
 I received a Ph.D. in Applied Mathematics from University of Colorado Denver (Ph.D.'18) with a concentration in Applied Probability and Statistics and was advised by <a href="http://math.ucdenver.edu/~bsimon/">Dr. Burt Simon</a>. My dissertation was titled "Statistical Analysis of Some Problems in Evolutionary Population Dynamics" and it explored stochastic and deterministic models for evolutionary population models, particularly with respect to the evolution of cooperation. 
 
