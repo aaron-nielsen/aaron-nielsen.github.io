@@ -4,6 +4,8 @@ title: Education
 permalink: /education/
 ---
 
+{% include image.html url="/images/aaron-burt.jpg" caption="With my Ph.D. advisor, Dr. Burt Simon (2018)" width=250  align="left" %}
+
 | Ph.D. | | Applied Mathematics | |University of Colorado Denver | | 2018 |
 | M.S. | | Statistics | | Colorado State University | | 2014 |
 | M.S. | | Applied Mathematics | | University of Colorado Denver | | 2012 |
@@ -14,11 +16,15 @@ permalink: /education/
 
 ## Education Overview
 
+{% include image.html url="/images/aaron-bsee.png" caption="Undergraduate commencement with Dr. Tony Maciejewski (2007)" width=250 align="right" %} 
+
 I am a graduate of Fort Collins High School ('02). Go Lambkins!
 
 I began my CSU career as an undergraduate student in August 2002 and earned a bachelor's degree, double majoring in Electrical Engineering and Mathematics (B.S.'07).
 
 After undergrad, I was a graduate student at University of Colorado Boulder and earned a master's degree in Electrical Engineering (M.S.'08) with a focus on Digitial Signal Processing and Digital Communications.
+
+{% include image.html url="/images/cu-parents.jpg" caption="Masters graduation at CU-Boulder with my parents (2008)" width=250 align="left" %} 
 
 From 2009-2012, I worked as an electrical engineer for a government contractor in Denver. During this time, I also completed a second master's degree in Applied Mathematics from University of Colorado Denver (M.S.'12) with a concentration in Applied Probability. My master's project involved the creation of a "hybrid" simulation model to study multilevel group population models.
 
