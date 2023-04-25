@@ -23,16 +23,14 @@ I began my CSU career as an undergraduate student in August 2002 and earned a ba
 
 After undergrad, I was a graduate student at University of Colorado Boulder and earned a master's degree in Electrical Engineering (M.S.'08) with a focus on Digitial Signal Processing and Digital Communications.<br><br>
 
-<br clear="right"/>
 
 
-{% include image.html url="/images/cu-parents.jpg" caption="Masters graduation at CU-Boulder with my parents (2008)" width=250 align="left" %} 
+{% include image.html url="/images/cu-parents.jpg" caption="Masters graduation at CU-Boulder with my parents (2008)" width=250 align="right" %} 
 
 From 2009-2012, I worked as an electrical engineer for a government contractor in Denver. During this time, I also completed a second master's degree in Applied Mathematics from University of Colorado Denver (M.S.'12) with a concentration in Applied Probability. My master's project involved the creation of a "hybrid" simulation model to study multilevel group population models.
 
 In 2012, I returned to CSU to study Statistics and earned a master's degree in Statistics two years later (M.S.'14). I taught my first course (STAT 204, Business Statistics) in Fall 2013 and quickly became interested in pursuing teaching as a career. I taught full-time as an instructor in the Department of Statistics in Spring 2015 before returning to University of Colorado Denver to complete my graduate studies.<br><br>
 
-<br clear="left"/>
 
 {% include image.html url="/images/aaron-burt.jpg" caption="With my Ph.D. advisor, Dr. Burt Simon (2018)" width=250  align="right" %}
 
