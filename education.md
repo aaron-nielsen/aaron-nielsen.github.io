@@ -26,6 +26,7 @@ After undergrad, I was a graduate student at University of Colorado Boulder and 
 <br clear="right"/>
 
 
+{% include image.html url="/images/cu-parents.jpg" caption="Masters graduation at CU-Boulder with my parents (2008)" width=250 align="left" %} 
 
 From 2009-2012, I worked as an electrical engineer for a government contractor in Denver. During this time, I also completed a second master's degree in Applied Mathematics from University of Colorado Denver (M.S.'12) with a concentration in Applied Probability. My master's project involved the creation of a "hybrid" simulation model to study multilevel group population models.
 
