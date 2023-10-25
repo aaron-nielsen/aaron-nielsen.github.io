@@ -14,6 +14,10 @@ I have also developed two new classes in Sports Statistics and Analytics that ar
 </ul>
 
 I have advised undergraduate research projects involving Sports Statistics and Analytics:
+- Aidan Feeley, 2023: Statistical Analysis of College Softball Hitting Using Rapsodo Data
+- Danielle Contreras, 2023: Statistical Analysis of College Softball Pitching Using Rapsodo Data
+- Justin Eldridge, 2023: Nonparametric Estimation of Draft Pick Values for Professional Sports
+- Nick Brinegar, 2023: <a href="https://csu-statistics.shinyapps.io/D1_SoftBall_Elo/">Shiny App to Visualize ELO for Division I Softball Teams</a>
 - Ryan Marquart, 2023: 
 An Analysis on the Importance of Defensive Statistics in the NFL
 - Matthew Boyd, 2022: 
