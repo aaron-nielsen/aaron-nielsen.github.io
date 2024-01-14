@@ -17,7 +17,7 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 ## Courses I'm Teaching in Spring 2024
 <ul class="list">
     <li>STAT 315: Theory and Practice of Statistics</li>
-    <li>MWF 10:00-10:50am, MWF 10:00-10:50am</li>
+    <li>MWF 10:00-10:50am, MWF 11:00-11:50am</li>
     <li>STAT 451: Sports Statistics and Analytics I</li>
     <li>MWF 9:00-9:50am</li>
     <li>STAT 472: Statistical Research</li>
