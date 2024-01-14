@@ -11,7 +11,6 @@ permalink: /education/
 - B.S. Electrical Engineering and Mathematics, Colorado State University (2007) <br>
 - B.A. Philosophy, Colorado State University (expected Spring 2024)
 
-<br>
 
 ## Education Overview
 
@@ -36,7 +35,8 @@ In August 2018, I joined the faculty in the Department of Statistics as an assis
 I have been taking a semi-random sample of courses at CSU since joining the faculty in August 2018 as a part of the university’s employee study privilege. These classes include:
 
 |--------|---|:---------|------|-------:|
-| PHIL 300 | | Ancient Greek Philosophy | | Fall 2023 |
+| PHIL 300 | | Ancient Greek Philosophy | | Spring 2024 |
+| PHIL 353 | | Feminist Philosophies | | Spring 2024 |
 | PHIL 462 | | Philosophy Capstone | | Fall 2023 |
 | PHIL 301 | | 17th and 18th Century European Philosophy | | Spring 2023 |
 | PHIL 354 | | Philosophy and Science Fiction | | Fall 2022 |
