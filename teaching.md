@@ -14,14 +14,14 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 
 <br>
 
-## Courses I'm Teaching Fall 2023
+## Courses I'm Teaching in Spring 2024
 <ul class="list">
     <li>STAT 315: Theory and Practice of Statistics</li>
     <li>MWF 10:00-10:50am, MWF 10:00-10:50am</li>
-    <li>STAT 315: Theory and Practice of Statistics</li>
-    <li>MWF 11:00-11:50am, MWF 10:00-10:50am</li>
-    <li>STAT 351: Sports Statistics and Analytics I</li>
-    <li>MW 8:30-9:45am</li>
+    <li>STAT 451: Sports Statistics and Analytics I</li>
+    <li>MWF 9:00-9:50am</li>
+    <li>STAT 472: Statistical Research</li>
+    <li>MW 3:00-4:15pm</li>
 </ul>
 
 
@@ -40,17 +40,17 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
     <li>STAT 305: Sampling Techniques</li>
         <li>Fall 2022, Fall 2021</li>
     <li>STAT 315: Theory and Practice of Statistics</li>
-        <li>Fall 2023, Spring 2023, Spring 2022, Fall 2021, Spring 2021, Fall 2020, Summer 2020, Spring 2020, Fall 2019, Summer 2019, Spring 2019, Fall 2018</li>
+        <li>Spring 2024, Fall 2023, Spring 2023, Spring 2022, Fall 2021, Spring 2021, Fall 2020, Summer 2020, Spring 2020, Fall 2019, Summer 2019, Spring 2019, Fall 2018</li>
     <li>STAT 342: Statistical Data Analysis II</li>
         <li>Spring 2022</li>
     <li>STAT 351: Sports Statistics and Analytics I</li>
         <li>Fall 2023, Fall 2022</li>
     <li>STAT 451: Sports Statistics and Analytics II</li>
-        <li>Spring 2023</li>
+        <li>Spring 2024, Spring 2023</li>
     <li>STAT 460: Applied Multivariate Analysis</li>
         <li>Spring 2020, Spring 2019</li>
     <li>STAT 472: Statistical Research</li>
-        <li>Spring 2023, Fall 2022, Spring 2022, Fall 2021, Spring 2021, Fall 2020, Spring 2020, Fall 2019, Spring 2019</li>
+        <li>Spring 2024, Spring 2023, Fall 2022, Spring 2022, Fall 2021, Spring 2021, Fall 2020, Spring 2020, Fall 2019, Spring 2019</li>
     <li>STAR 502: Applied Multivariate Analysis for Researchers</li>
         <li>Fall 2019</li>
     <li>STAA 556: Statistical Consulting</li>
