@@ -7,7 +7,7 @@ image: " "
 
 I have coordinated the creation of a new undergraduate certificate in Sports Statistics and Analytics that will be available starting in Fall 2023 (see below or <a href="/images/certificate.png">click here</a>).
 
-I have also developed two new classes in Sports Statistics and Analytics that are being offered for the first time this year at CSU:<br>
+I have also developed two new classes in Sports Statistics and Analytics that are now being offered at CSU:<br>
 <ul style="list-style-type:disc">
 <li>STAT 351 / Sports Statistics and Analytics I / Fall: <a href="../sports1-flier.pdf">(Flier)</a> <a href="../stat351-syllabus.pdf">(Syllabus)</a></li>
     <li>STAT 451 / Sports Statistics and Analytics II / Spring: <a href="../sports2-flier.pdf">(Flier)</a> <a href="../stat451-syllabus.pdf">(Syllabus)</a></li>
