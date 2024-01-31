@@ -53,10 +53,10 @@ I have been taking a semi-random sample of courses at CSU since joining the facu
 
 <br>
 
-{% include image.html url="/images/aaron-bsee.png" caption="Undergraduate commencement with Dr. Tony Maciejewski (2007)" width=250 align="left" %} 
+{% include image.html url="/images/aaron-bsee.png" caption="Undergraduate commencement at CSU with Dr. Tony Maciejewski (2007)" width=250 align="left" %} 
 
 {% include image.html url="/images/cu-parents.jpg" caption="Masters graduation at CU-Boulder with my parents (2008)" width=250 align="left" %} 
 
-{% include image.html url="/images/aaron-burt.jpg" caption="With my Ph.D. advisor, Dr. Burt Simon (2018)" width=250  align="left" %}
+{% include image.html url="/images/aaron-burt.jpg" caption="With my Ph.D. advisor, Dr. Burt Simon, at CU-Denver (2018)" width=250  align="left" %}
 
 
