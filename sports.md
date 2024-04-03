@@ -19,7 +19,7 @@ I have also developed two new classes in Sports Statistics and Analytics that ar
 
 I have coordinated the creation of a new undergraduate certificate in Sports Statistics and Analytics that is now available at CSU (see below or <a href="/images/certificate.png">click here</a>).
 
-{% include image.html url="/images/certificate.png" align="center" width=500 %}
+{% include image.html url="/images/certificate.png" align="center" width=250 %}
 
 ## Research Projects
 
@@ -37,5 +37,6 @@ An Analysis on the Importance of Defensive Statistics in the NFL
 
 ## Conferences
 
-{% include image.html url="/images/24-sabr.jpg" align="center" caption="SABR Analytics Conference with Danielle and Aidan (2024)" width=500 %}
+- Society for American Baseball Research (SABR) Analytics Conference, Phoenix, Arizona (2024)
 
+{% include image.html url="/images/24-sabr.jpg" align="center" caption="SABR Analytics Conference with Danielle and Aidan (2024)" width=250 %}
