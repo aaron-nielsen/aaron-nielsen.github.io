@@ -40,7 +40,7 @@ I have been taking a semi-random sample of courses at CSU since joining the facu
 | POLS 435 | | United States Foreign Policy | | Summer 2024 |
 | PHIL 300 | | Ancient Greek Philosophy | | Spring 2024 |
 | PHIL 353 | | Feminist Philosophies | | Spring 2024 |
-| PHIL 462 | | Philosophy Capstone | | Fall 2023 |
+| PHIL 462 | | Democracy and Free Speech (Capstone) | | Fall 2023 |
 | PHIL 301 | | 17th and 18th Century European Philosophy | | Spring 2023 |
 | PHIL 354 | | Philosophy and Science Fiction | | Fall 2022 |
 | PHIL 322 | | Biomedical Ethics | | Summer 2022 |
