@@ -1,18 +1,36 @@
 ---
 layout: default
 ---
-<img src="/images/1b.jpg"> <br><br>
-
-
+<style>
+    .home {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+    }
+    .home img.profile {
+        width: 250px; /* consistent size */
+        float: right; /* align to the right */
+        margin-left: 20px; /* spacing between text and image */
+        margin-bottom: 20px; /* spacing below the image */
+    }
+    .home img.banner {
+        width: 100%; /* make the banner full width */
+        display: block; /* ensures it's on its own line */
+        margin-bottom: 20px; /* space after the banner */
+    }
+    .home ul {
+        padding-left: 20px; /* indent lists */
+    }
+    .home h1, .home h3 {
+        color: #333; /* darker font for better readability */
+    }
+</style>
 
 <div class="home">
+    <img src="/images/1b.jpg" alt="Department Banner" class="banner">
+    <img src="/images/aaron.jpeg" alt="Aaron Nielsen" class="profile">
 
-
-
-{% include image2.html url="/images/aaron.jpeg" caption="" width=300 align="right" %} 
-
-<h1>Welcome!</h1>
-
+    <h1>Welcome!</h1>
     <p>My name is Aaron Nielsen, and I'm an assistant professor in the <a href="https://www.stat.colostate.edu">Department of Statistics</a> at <a href="https://www.colostate.edu">Colorado State University</a>, specializing in undergraduate education and sports analytics.</p>
 
     <h3>Teaching Schedule Summer 2024</h3>
@@ -33,10 +51,7 @@ layout: default
     </ul>
 
     <h3>Undergraduate Certificate</h3>
-    <p>I coordinated the creation of a new undergraduate certificate in Sports Statistics and Analytics, now available. View <a href="images/certificate.png">Flyer</a> for more details.</p>
+    <p>I coordinated the creation of a new <a href="images/certificate.png">undergraduate certificate in Sports Statistics and Analytics</a> that is now available.</p>
 
     <p>Feel free to <a href="mailto:aaron.nielsen@colostate.edu">email me</a> for more information about my courses, research interests, or other inquiries.</p>
-
-
 </div>
-
