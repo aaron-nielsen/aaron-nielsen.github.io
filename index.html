@@ -2,39 +2,51 @@
 layout: default
 ---
 
-
-<div class="home">
-
 <img src="/images/1b.jpg"> <br><br>
 
-{% include image2.html url="/images/aaron.jpeg" caption="" width=200 align="right" %} 
+    <style>
+        body {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 20px;
+        }
+        .content {
+            max-width: 800px;
+        }
+        .profile-photo {
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-photo">
+        <img src="aaron24.jpg" alt="Aaron Nielsen" style="height: 200px;">
+    </div>
+    <div class="content">
+        <h1>Welcome!</h1>
 
-<h1>Welcome!</h1>
+        <p>My name is Aaron Nielsen, and I'm an assistant professor in the <a href="https://www.stat.colostate.edu">Department of Statistics</a> at <a href="https://www.colostate.edu">Colorado State University</a>, specializing in undergraduate education and sports analytics.</p>
 
-    <p>My name is Aaron Nielsen, and I'm an assistant professor in the <a href="https://www.stat.colostate.edu">Department of Statistics</a> at <a href="https://www.colostate.edu">Colorado State University</a>, specializing in undergraduate education and sports analytics.</p>
+        <h3>Teaching Schedule Summer 2024</h3>
+        <ul>
+            <li>STAT 315 (Theory and Practice of Statistics): MTWRF 9:00-11:00am</li>
+        </ul>
 
-    <h3>Teaching Schedule Summer 2024</h3>
-    <ul>
-        <li>STAT 315 (Theory and Practice of Statistics): MTWRF 9:00-11:00am</li>
-    </ul>
+        <h3>Recent Projects</h3>
+        <ul>
+            <li><a href="http://tinyurl.com/csu-phil-presentation">A Statistical Analysis of Philosophers on Philosophy</a>: I advised an undergraduate research project by Jake Shankles that created a <a href="https://csu-statistics.shinyapps.io/Phil/">Shiny app</a> to visualize the <a href="https://survey2020.philpeople.org/">2020 PhilPapers survey</a>.</li>
+            <li><a href="https://aaron-nielsen.github.io/images/24-sabr.jpg">Society of American Baseball Research Analytics Conference 2024</a>: I attended this conference in March 2024 with undergraduate students Danielle Contreras and Aidan Feeley. They have worked on research projects analyzing tracking data in collaboration with the CSU Softball team.</li>
+        </ul>
 
-    <h3>Recent Projects</h3>
-    <ul>
-        <li><a href="http://tinyurl.com/csu-phil-presentation">A Statistical Analysis of Philosophers on Philosophy</a>: I advised an undergraduate research project by Jake Shankles that created a <a href="https://csu-statistics.shinyapps.io/Phil/">Shiny app</a> to visualize the <a href="https://survey2020.philpeople.org/">2020 PhilPapers survey</a>.</li>
-        <li><a href="https://aaron-nielsen.github.io/images/24-sabr.jpg">Society of American Baseball Research Analytics Conference 2024</a>: I attended this conference in March 2024 with undergraduate students Danielle Contreras and Aidan Feeley. They have worked on research projects analyzing tracking data in collaboration with the CSU Softball team.</li>
-    </ul>
+        <h3>Courses Developed</h3>
+        <ul>
+            <li>STAT 351 / Sports Statistics and Analytics I / Fall: <a href="path/to/syllabus">Syllabus</a></li>
+            <li>STAT 451 / Sports Statistics and Analytics II / Spring: <a href="path/to/syllabus">Syllabus</a></li>
+        </ul>
 
-    <h3>Courses Developed</h3>
-    <ul>
-        <li>STAT 351 / Sports Statistics and Analytics I / Fall: <a href="path/to/syllabus">Syllabus</a></li>
-        <li>STAT 451 / Sports Statistics and Analytics II / Spring: <a href="path/to/syllabus">Syllabus</a></li>
-    </ul>
+        <h3>Undergraduate Certificate</h3>
+        <p>I coordinated the creation of a new undergraduate certificate in Sports Statistics and Analytics, now available. View <a href="images/certificate.png">Flyer</a> for more details.</p>
 
-    <h3>Undergraduate Certificate</h3>
-    <p>I coordinated the creation of a new undergraduate certificate in Sports Statistics and Analytics, now available. View <a href="images/certificate.png">Flyer</a> for more details.</p>
-
-    <p>Feel free to <a href="mailto:aaron.nielsen@colostate.edu">email me</a> for more information about my courses, research interests, or other inquiries.</p>
-
-
-</div>
-
+        <p>Feel free to <a href="mailto:aaron.nielsen@colostate.edu">email me</a> for more information about my courses, research interests, or other inquiries.</p>
+    </div>
