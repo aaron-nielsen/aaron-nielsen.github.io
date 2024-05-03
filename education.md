@@ -28,9 +28,7 @@ In 2012, I returned to CSU to study Statistics and earned a master's degree in S
 
 I received a Ph.D. in Applied Mathematics from University of Colorado Denver (Ph.D.'18) with a concentration in Applied Probability and Statistics and was advised by <a href="http://math.ucdenver.edu/~bsimon/">Dr. Burt Simon</a>. My dissertation was titled "Statistical Analysis of Some Problems in Evolutionary Population Dynamics" and it explored stochastic and deterministic models for evolutionary population models, particularly with respect to the evolution of cooperation. 
 
-In August 2018, I joined the faculty in the Department of Statistics as an assistant professor. In addition to currently teaching, 
-
-I am also working on a second bachelor's degree in Philosophy which I hope to complete in May 2024. I am particularly interested in Philosophy of Science and Logic. 
+In August 2018, I joined the faculty in the Department of Statistics as an assistant professor. In addition to currently teaching, I am also working on a second bachelor's degree in Philosophy which I hope to complete in May 2024. I am particularly interested in Philosophy of Science and Logic. 
 
 ## Recent Studies
 
