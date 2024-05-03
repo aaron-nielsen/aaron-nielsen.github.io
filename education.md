@@ -13,26 +13,23 @@ permalink: /education/
 
 
 ## Education Overview
+I am a proud graduate of Fort Collins High School ('02). Go Lambkins!
 
-I am a graduate of Fort Collins High School ('02). Go Lambkins!
+I began my academic career at Colorado State University (CSU) in August 2002, earning a Bachelor of Science in Electrical Engineering and Mathematics by 2007.
 
-I began my CSU career as an undergraduate student in August 2002 and earned a bachelor's degree, double majoring in Electrical Engineering and Mathematics (B.S.'07).
+Following my undergraduate studies, I pursued a Master of Science in Electrical Engineering at the University of Colorado Boulder, specializing in Digital Signal Processing and Digital Communications, which I completed in 2008.
 
-After undergrad, I was a graduate student at University of Colorado Boulder and earned a master's degree in Electrical Engineering (M.S.'08) with a focus on Digital Signal Processing and Digital Communications.
+From 2009 to 2012, while working as an electrical engineer for a defense contractor in Denver, I also earned a second master's degree in Applied Mathematics from the University of Colorado Denver. My focus was on Applied Probability, and for my master's project, I developed a hybrid simulation model to analyze multilevel group population dynamics. This research was inspired by group selection models proposed by philosophers of biology.
 
+In 2012, I returned to CSU to study Statistics, earning another master’s degree in 2014. I taught my first class, STAT 204: Statistics for Business Students, in 2013, which piqued my interest in an academic career. After teaching full-time as an instructor in the Department of Statistics in spring 2015, I returned to the University of Colorado Denver to complete my graduate studies in Mathematics.
 
-From 2009-2012, I worked as an electrical engineer for a government contractor in Denver. During this time, I also completed a second master's degree in Applied Mathematics from University of Colorado Denver (M.S.'12) with a concentration in Applied Probability. My master's project involved the creation of a "hybrid" simulation model to study multilevel group population models.
+I earned a Ph.D. in Applied Mathematics in 2018, under the guidance of Dr. Burt Simon. My dissertation, titled "Statistical Analysis of Some Problems in Evolutionary Population Dynamics," explored stochastic and deterministic models, focusing particularly on the evolution of cooperation.
 
-In 2012, I returned to CSU to study Statistics and earned a master's degree in Statistics two years later (M.S.'14). I taught my first course (STAT 204, Business Statistics) in Fall 2013 and quickly became interested in pursuing teaching as a career. I taught full-time as an instructor in the Department of Statistics in Spring 2015 before returning to University of Colorado Denver to complete my graduate studies.
-
-
-I received a Ph.D. in Applied Mathematics from University of Colorado Denver (Ph.D.'18) with a concentration in Applied Probability and Statistics and was advised by <a href="http://math.ucdenver.edu/~bsimon/">Dr. Burt Simon</a>. My dissertation was titled "Statistical Analysis of Some Problems in Evolutionary Population Dynamics" and it explored stochastic and deterministic models for evolutionary population models, particularly with respect to the evolution of cooperation. 
-
-In August 2018, I joined the faculty in the Department of Statistics as an assistant professor. In addition to currently teaching, I am also working on a second bachelor's degree in Philosophy which I hope to complete in May 2024. I am particularly interested in Philosophy of Science and Logic. 
+In August 2018, I joined the CSU Department of Statistics as an Assistant Professor. Currently, I teach a variety of statistics courses and am pursuing a second bachelor’s degree in Philosophy, which I expect to complete in May 2024. My interest in Philosophy stems from a deep curiosity about the foundational aspects of mathematics, statistics, science, and logic.
 
 ## Recent Studies
 
-I have been taking a semi-random sample of courses at CSU since joining the faculty in August 2018 as a part of the university’s employee study privilege. These classes include:
+I have been taking about one class per semester at CSU since joining the faculty in August 2018, utilizing the university’s employee study privilege. My coursework has covered several disciplines, including philosophy, political science, and physics, enriching my understanding and teaching across these varied fields. These classes include:
 
 |--------|---|:---------|------|-------:|
 | POLS 435 | | United States Foreign Policy | | Summer 2024 |
