@@ -4,7 +4,7 @@ title: About Me
 permalink: /about/
 ---
 
-{% include image.html url="/images/aaron24.jpg" caption=“Munich, “January 2024 width=300 align="right" %} 
+{% include image.html url="/images/aaron24.jpg" caption=“Munich, January 2024” width=300 align="right" %} 
 
 I was born in Lincoln, Nebraska, and moved with my family to Fort Collins, Colorado, in 1998, where I've lived ever since. I am an alumnus of Fort Collins High School ('02) and have earned multiple degrees from Colorado State University ('07, '14, '24) and the University of Colorado ('08, '12, '18), including a Ph.D. in Applied Mathematics in 2018.
 
