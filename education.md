@@ -32,7 +32,6 @@ In August 2018, I joined the CSU Department of Statistics as an Assistant Profes
 I have been taking about one class per semester at CSU since joining the faculty in August 2018, utilizing the university’s employee study privilege. My coursework has covered several disciplines, including philosophy, political science, and physics, enriching my understanding and teaching across these varied fields. These classes include:
 
 |--------|---|:---------|------|-------:|
-| POLS 435 | | United States Foreign Policy | | Summer 2024 |
 | PHIL 300 | | Ancient Greek Philosophy | | Spring 2024 |
 | PHIL 353 | | Feminist Philosophies | | Spring 2024 |
 | PHIL 462 | | Democracy and Free Speech (Capstone) | | Fall 2023 |
