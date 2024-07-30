@@ -21,13 +21,13 @@ Following my undergraduate studies, I pursued a Master of Science in Electrical 
 
 From 2009 to 2012, while working as an electrical engineer for a defense contractor in Denver, I also earned a second master's degree in Applied Mathematics from the University of Colorado Denver. My focus was on Applied Probability, and for my master's project, I developed a hybrid simulation model to analyze multilevel group population dynamics. This research was inspired by group selection models proposed by philosophers of biology.
 
-In 2012, I returned to CSU to study Statistics, earning another master’s degree in 2014. I taught my first class, STAT 204: Statistics for Business Students, in 2013, which piqued my interest in an academic career. After teaching full-time as an instructor in the Department of Statistics in spring 2015, I returned to the University of Colorado Denver to complete my graduate studies in Mathematics.
+In 2012, I returned to CSU to study Statistics, earning another master’s degree in 2014. I taught my first class, STAT 204: Statistics for Business Students, in 2013, which piqued my interest in an academic career. After teaching full-time as an instructor in the Department of Statistics in 2015, I returned to the University of Colorado Denver to complete my graduate studies in Mathematics.
 
 I earned a Ph.D. in Applied Mathematics in 2018, under the guidance of Dr. Burt Simon. My dissertation, titled "Statistical Analysis of Some Problems in Evolutionary Population Dynamics," explored stochastic and deterministic models, focusing particularly on the evolution of cooperation.
 
 In August 2018, I joined the CSU Department of Statistics as an Assistant Professor and was promoted to Associate Professor in July 2024. 
 
-In May 2024, I completed a Bachelor of Arts degree in Philosophy at Colorado State University. I plan to continue my studies in Philosophy and begin work on a graduate degree soon. My interest in Philosophy stems from a deep curiosity about the foundational aspects of mathematics, statistics, science, and logic.
+After taking undergraduate Philosophy courses part-time as a faculty member at CSU, In May 2024, I completed a Bachelor of Arts degree in Philosophy. I plan to continue my studies in Philosophy and begin work on a graduate degree soon. My interest in Philosophy stems from a deep curiosity about the foundational aspects of mathematics, statistics, science, and logic.
 
 ## Recent Studies
 
