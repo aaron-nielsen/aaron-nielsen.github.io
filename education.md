@@ -9,7 +9,7 @@ permalink: /education/
 - M.S. Applied Mathematics, University of Colorado Denver (2012) <br>
 - M.S. Electrical Engineering, University of Colorado Boulder (2008) <br>
 - B.S. Electrical Engineering and Mathematics, Colorado State University (2007) <br>
-- B.A. Philosophy, Colorado State University (expected May 2024)
+- B.A. Philosophy, Colorado State University (2024)
 
 
 ## Education Overview
@@ -25,7 +25,9 @@ In 2012, I returned to CSU to study Statistics, earning another master’s degre
 
 I earned a Ph.D. in Applied Mathematics in 2018, under the guidance of Dr. Burt Simon. My dissertation, titled "Statistical Analysis of Some Problems in Evolutionary Population Dynamics," explored stochastic and deterministic models, focusing particularly on the evolution of cooperation.
 
-In August 2018, I joined the CSU Department of Statistics as an Assistant Professor. Currently, I teach a variety of statistics courses and am pursuing a second bachelor’s degree in Philosophy, which I expect to complete in May 2024. My interest in Philosophy stems from a deep curiosity about the foundational aspects of mathematics, statistics, science, and logic.
+In August 2018, I joined the CSU Department of Statistics as an Assistant Professor and was promoted to Associate Professor in July 2024. 
+
+In May 2024, I completed a Bachelor of Arts degree in Philosophy at Colorado State University. I plan to continue my studies in Philosophy and begin work on a graduate degree soon. My interest in Philosophy stems from a deep curiosity about the foundational aspects of mathematics, statistics, science, and logic.
 
 ## Recent Studies
 
@@ -52,8 +54,11 @@ I have been taking about one class per semester at CSU since joining the faculty
 
 {% include image.html url="/images/aaron-bsee.png" caption="Undergraduate commencement at CSU with Dr. Tony Maciejewski (2007)" width=250 align="left" %} 
 
-{% include image.html url="/images/cu-parents.jpg" caption="Masters graduation at CU-Boulder with my parents (2008)" width=250 align="left" %} 
+{% include image.html url="/images/cu-parents.jpg" caption="Masters graduation at CU-Boulder with my parents (2008)" width=250 align="left" %}
 
 {% include image.html url="/images/aaron-burt.jpg" caption="With my Ph.D. advisor, Dr. Burt Simon, at CU-Denver (2018)" width=250  align="left" %}
+
+{% include image.html url="/images/aaron-baphil.jpg" caption="Undergraduate commencement at CSU with Dr. Matt MacKenzie (2024)" width=250  align="left" %}
+
 
 
