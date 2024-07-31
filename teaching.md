@@ -17,11 +17,11 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 ## Courses I'm Teaching in Spring 2024
 <ul class="list">
     <li>STAT 315: Theory and Practice of Statistics</li>
-    <li>MWF 10:00-10:50am, MWF 11:00-11:50am</li>
-    <li>STAT 451: Sports Statistics and Analytics I</li>
-    <li>MWF 9:00-9:50am</li>
-    <li>STAT 472: Statistical Research</li>
-    <li>MW 3:00-4:15pm</li>
+    <li>MWF 11:00-11:50am, MWF 11:00-11:50am</li>
+    <li>STAT 204: Business Statistics</li>
+    <li>TR 4:00-4:50am</li>
+    <li>STAT 100: Statistical Literacy</li>
+    <li>MWF 3:00-3:50pm</li>
 </ul>
 
 
@@ -30,17 +30,17 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
 ### Colorado State University
 <ul class="list">
     <li>STAT 100: Statistical Literacy</li>
-        <li>Fall 2020</li>
+        <li>Fall 2024, Fall 2020</li>
     <li>STAT 201: General Statistics</li>
         <li>Spring 2019, Fall 2018, Summer 2015</li>
     <li>STAT 204: Business Statistics</li>
-        <li>Summer 2014, Spring 2014, Fall 2013</li>
+        <li>Fall 2024, Summer 2014, Spring 2014, Fall 2013</li>
     <li>STAT 301: Applied Statistical Methods</li>
         <li>Spring 2015, Fall 2014</li>
     <li>STAT 305: Sampling Techniques</li>
         <li>Fall 2022, Fall 2021</li>
     <li>STAT 315: Theory and Practice of Statistics</li>
-        <li>Spring 2024, Fall 2023, Spring 2023, Spring 2022, Fall 2021, Spring 2021, Fall 2020, Summer 2020, Spring 2020, Fall 2019, Summer 2019, Spring 2019, Fall 2018</li>
+        <li>Fall 2024, Summer 2024, Spring 2024, Fall 2023, Spring 2023, Spring 2022, Fall 2021, Spring 2021, Fall 2020, Summer 2020, Spring 2020, Fall 2019, Summer 2019, Spring 2019, Fall 2018</li>
     <li>STAT 342: Statistical Data Analysis II</li>
         <li>Spring 2022</li>
     <li>STAT 351: Sports Statistics and Analytics I</li>
