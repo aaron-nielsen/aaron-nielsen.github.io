@@ -21,7 +21,7 @@ I am an assistant professor in the Department of Statistics at Colorado State Un
     <li>STAT 204: Business Statistics</li>
     <li>TR 4:00-4:50am</li>
     <li>STAT 315: Theory and Practice of Statistics</li>
-    <li>MWF 11:00-11:50am, MWF 11:00-11:50am</li>
+    <li>MWF 11:00-11:50am</li>
 </ul>
 
 
