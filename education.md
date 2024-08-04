@@ -27,7 +27,7 @@ I earned a Ph.D. in Applied Mathematics in 2018, under the guidance of Dr. Burt 
 
 In August 2018, I joined the CSU Department of Statistics as an Assistant Professor and was promoted to Associate Professor in July 2024. 
 
-After taking undergraduate Philosophy courses part-time as a faculty member at CSU, In May 2024, I completed a Bachelor of Arts degree in Philosophy. I plan to continue my studies in Philosophy and begin work on a graduate degree soon. My interest in Philosophy stems from a deep curiosity about the foundational aspects of mathematics, statistics, science, and logic.
+After taking undergraduate Philosophy courses part-time as a faculty member at CSU, I completed a Bachelor of Arts degree in Philosophy in May 2024. I plan to continue my studies in Philosophy and begin work on a graduate degree soon. My interest in Philosophy stems from a deep curiosity about the foundational aspects of mathematics, statistics, science, and logic.
 
 ## Recent Studies
 

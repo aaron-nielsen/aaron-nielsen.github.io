@@ -6,6 +6,6 @@ permalink: /cv/
 
 The current version of my CV is below. You can also [download the PDF here](cv.pdf).
 
-<iframe src="../cv.pdf" width="600" height="700">
+<iframe src="../cv.pdf" width="900" height="900">
 
 
