@@ -15,20 +15,17 @@ I am an associate professor in the Department of Statistics at Colorado State Un
 <br>
 
 ## Courses I'm Teaching in Spring 2024
-<ul class="list">
-    <li>STAT 100: Statistical Literacy</li>
-    <li>MWF 2:00-2:50pm</li>
-    <li>STAT 204: Business Statistics</li>
-    <li>TR 4:00-4:50pm</li>
-    <li>STAT 315: Theory and Practice of Statistics</li>
-    <li>MWF 11:00-11:50am</li>
+<ul>
+    <li>STAT 100: Statistical Literacy: MWF 2:00-2:50pm</li>
+    <li>STAT 204: Business Statistics: TR 4:00-4:50pm</li>
+    <li>STAT 315: Theory and Practice of Statistics: MWF 11:00-11:50am</li>
 </ul>
 
 
 ## Courses I've Taught
 
 ### Colorado State University
-<ul class="list">
+<ul>
     <li>STAT 100: Statistical Literacy: Fall 2024, Fall 2020</li>
     <li>STAT 201: General Statistics: Spring 2019, Fall 2018, Summer 2015</li>
     <li>STAT 204: Business Statistics: Fall 2024, Summer 2014, Spring 2014, Fall 2013</li>
@@ -47,7 +44,7 @@ I am an associate professor in the Department of Statistics at Colorado State Un
 
 
 ### University of Colorado Denver 
-<ul class="list">
+<ul>
     <li>MATH 1110: College Algebra: Fall 2017</li>
     <li>MATH 1401: Calculus I: Fall 2016</li>
     <li>Math 2411: Calculus II: Spring 2017</li>
