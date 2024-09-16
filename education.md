@@ -34,6 +34,7 @@ After taking undergraduate Philosophy courses part-time as a faculty member at C
 I have been taking about one class per semester at CSU since joining the faculty in August 2018, utilizing the university’s employee study privilege. My coursework has covered several disciplines, including philosophy, political science, and physics, enriching my understanding and teaching across these varied fields. These classes include:
 
 |--------|---|:---------|------|-------:|
+| POLS 436 | | Comparative Foreign Policy | | Fall 2024 |
 | PHIL 300 | | Ancient Greek Philosophy | | Spring 2024 |
 | PHIL 353 | | Feminist Philosophies | | Spring 2024 |
 | PHIL 462 | | Democracy and Free Speech (Capstone) | | Fall 2023 |
@@ -59,6 +60,3 @@ I have been taking about one class per semester at CSU since joining the faculty
 {% include image.html url="/images/aaron-burt.jpg" caption="With my Ph.D. advisor, Dr. Burt Simon, at CU-Denver (2018)" width=300  align="left" %}
 
 {% include image.html url="/images/aaron-baphil.jpg" caption="Undergraduate commencement at CSU with Dr. Matt MacKenzie (2024)" width=300  align="left" %}
-
-
-
