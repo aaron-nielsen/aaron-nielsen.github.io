@@ -5,7 +5,7 @@ permalink: /teaching/
 image: " "
 ---
 
-I am an associate professor in the Department of Statistics at Colorado State University. I typically teach 3-4 courses each semester. Below is a list of courses that I have taught going back to my days as a graduate student. 
+I am an Associate Professor in the Department of Statistics at Colorado State University. I typically teach 3-4 courses each semester. Below is a list of courses that I have taught going back to my days as a graduate student. 
 
 <hr style="clear:both;visibility: hidden;" />  
 
@@ -14,11 +14,11 @@ I am an associate professor in the Department of Statistics at Colorado State Un
 
 <br>
 
-## Courses I'm Teaching in Spring 2024
+## Courses I'm Teaching in Spring 2025
 <ul>
-    <li>STAT 100: Statistical Literacy [MWF 2:00-2:50pm]</li>
-    <li>STAT 204: Business Statistics [TR 4:00-4:50pm]</li>
+    <li>STAT 204: Statistics with Business Applications [MWF 3:00-3:50pm]</li>
     <li>STAT 315: Theory and Practice of Statistics [MWF 11:00-11:50am]</li>
+    <li>STAT 472: Statistical Research [MW 4:00-5:15pm]</li>
 </ul>
 
 
