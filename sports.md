@@ -21,9 +21,13 @@ I have coordinated the creation of a new undergraduate certificate in Sports Sta
 
 {% include image.html url="/images/certificate.png" align="center" width=500 %}
 
+
+
 ## Research Projects
 
 I have advised undergraduate research projects involving Sports Statistics and Analytics:
+- Gabe Macklem, 2024: <a href="macklem-college-football.pdf">Informing Tactical Periodization in Collegiate Football</a>
+- Chandler Grote, 2024: <a href="grote-college-football.pdf">College Football Players' Path to the Draft</a>
 - Aidan Feeley, 2023: <a href="feeley-spin-direction.pdf">Analyzing Spin Direction for Division I Softball</a>
 - Danielle Contreras, 2023: <a href="contreras-pitching-analysis.pdf">Statistical Analysis of College Softball Pitching Using Rapsodo Data</a>
 - Justin Eldridge, 2023: Nonparametric Estimation of Draft Pick Values for Professional Sports
