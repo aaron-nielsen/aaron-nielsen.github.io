@@ -34,7 +34,7 @@ After taking undergraduate Philosophy courses part-time as a faculty member at C
 I have been taking about one class per semester at CSU since joining the faculty in August 2018, utilizing the university’s employee study privilege. My coursework has covered several disciplines, including philosophy, political science, and physics, enriching my understanding and teaching across these varied fields. These classes include:
 
 |--------|---|:---------|------|-------:|
-
+| POLS 345 | | Russian, Central, and Eastern European Politics | | Fall 2025 |
 | POLS 101 | | American Government and Politics | | Summer 2025 |
 | POLS 103 | | State and Local Government and Politics | | Spring 2025 |
 | POLS 436 | | Comparative Foreign Policy | | Fall 2024 |
