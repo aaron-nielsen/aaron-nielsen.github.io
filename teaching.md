@@ -14,11 +14,11 @@ I am an Associate Professor in the Department of Statistics at Colorado State Un
 
 <br>
 
-## Courses I'm Teaching in Spring 2025
+## Courses I'm Teaching in Fall 2025
 <ul>
-    <li>STAT 204: Statistics with Business Applications [MWF 3:00-3:50pm]</li>
-    <li>STAT 315: Theory and Practice of Statistics [MWF 11:00-11:50am]</li>
-    <li>STAT 472: Statistical Research [MW 4:00-5:15pm]</li>
+        <li>STAT 201 (General Statistics): Tues 3:20-5:00pm</li>
+        <li>STAT 204 (Business Statistics): Tues 11:00-12:50pm</li>
+        <li>STAT 495 (Indpendent Study in Sports Analytics)</li>
 </ul>
 
 
@@ -27,16 +27,16 @@ I am an Associate Professor in the Department of Statistics at Colorado State Un
 ### Colorado State University
 <ul>
     <li>STAT 100: Statistical Literacy [Fall 2024, Fall 2020]</li>
-    <li>STAT 201: General Statistics [Spring 2019, Fall 2018, Summer 2015]</li>
-    <li>STAT 204: Business Statistics [Fall 2024, Summer 2014, Spring 2014, Fall 2013]</li>
+    <li>STAT 201: General Statistics [Fall 2025, Spring 2019, Fall 2018, Summer 2015]</li>
+    <li>STAT 204: Business Statistics [Fall 2025, Spring 2025, Fall 2024, Summer 2014, Spring 2014, Fall 2013]</li>
     <li>STAT 301: Applied Statistical Methods [Spring 2015, Fall 2014]</li>
     <li>STAT 305: Sampling Techniques [Fall 2022, Fall 2021]</li>
-    <li>STAT 315: Theory and Practice of Statistics [Fall 2024, Summer 2024, Spring 2024, Fall 2023, Spring 2023, Spring 2022, Fall 2021, Spring 2021, Fall 2020, Summer 2020, Spring 2020, Fall 2019, Summer 2019, Spring 2019, Fall 2018]</li>
+    <li>STAT 315: Theory and Practice of Statistics [Summer 2025, Spring 2025, Fall 2024, Summer 2024, Spring 2024, Fall 2023, Spring 2023, Spring 2022, Fall 2021, Spring 2021, Fall 2020, Summer 2020, Spring 2020, Fall 2019, Summer 2019, Spring 2019, Fall 2018]</li>
     <li>STAT 342: Statistical Data Analysis II [Spring 2022]</li>
     <li>STAT 351: Sports Statistics and Analytics I [Fall 2023, Fall 2022]</li>
     <li>STAT 451: Sports Statistics and Analytics II [Spring 2024, Spring 2023]</li>
     <li>STAT 460: Applied Multivariate Analysis [Spring 2020, Spring 2019]</li>
-    <li>STAT 472: Statistical Research [Spring 2024, Spring 2023, Fall 2022, Spring 2022, Fall 2021, Spring 2021, Fall 2020, Spring 2020, Fall 2019, Spring 2019]</li>
+    <li>STAT 472: Statistical Research [Spring 2025, Spring 2024, Spring 2023, Fall 2022, Spring 2022, Fall 2021, Spring 2021, Fall 2020, Spring 2020, Fall 2019, Spring 2019]</li>
     <li>STAR 502: Applied Multivariate Analysis for Researchers [Fall 2019]</li>
     <li>STAA 556: Statistical Consulting [Summer 2021]</li>
     <li>STAA 574: Methods in Multivariate Analysis [Spring 2020]</li>
