@@ -15,11 +15,11 @@ I am an Associate Professor in the Department of Statistics at Colorado State Un
 <br>
 
 ## Courses I'm Teaching in Spring 2026
-    <ul>
-        <li>STAT 204 (Business Statistics): Tues 11:00-12:50pm</li>
-        <li>STAT 451 (Sports Statistics 2): Mon/Wed 2:00-3:15pm</li>
-        <li>STAT 472 (Statistical Research Capstone): Mon/Wed 3:30-4:45pm</li>
-    </ul>
+<ul>
+    <li>STAT 204 (Business Statistics): Tues 11:00-12:50pm</li>
+    <li>STAT 451 (Sports Statistics 2): Mon/Wed 2:00-3:15pm</li>
+    <li>STAT 472 (Statistical Research Capstone): Mon/Wed 3:30-4:45pm</li>
+</ul>
 
 
 ## Courses I've Taught
