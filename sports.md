@@ -45,4 +45,4 @@ An Analysis on the Importance of Defensive Statistics in the NFL
 
 {% include image.html url="/images/24-sabr.jpg" align="center" caption="SABR Analytics Conference with Danielle and Aidan (2024)" width=500 %}
 
-{% include image.html url="/images/basketball-jan3-2026" align="center" caption="My wife and I (center left) enjoying a half court buzzer beater. CSU Women's Basketball game (2026)" width=500 %}
+{% include image.html url="/images/basketball-jan3-2026.jpg" align="center" caption="My wife and I (center left) enjoying a half court buzzer beater. CSU Women's Basketball game (2026)" width=500 %}
