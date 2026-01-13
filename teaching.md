@@ -59,7 +59,7 @@ I am an Associate Professor in the Department of Statistics at Colorado State Un
 
 
 {% include image.html url="/images/bateman.png" caption="Receiving Bateman Teaching Award (2016)" width=250 align="left" %}
-{% include image.html url="/images/abstract.jpeg" caption="Abstract art or statistics?" width=250 align="left" %}
+{% include image.html url="/images/abstract.jpeg" caption="Abstract art or statistics?" width=250 align="left" %} <br>
 
 {% include image.html url="/images/teaching-award-2025.jpg" caption="Receiving CNS Teaching Award (2025)" width=500 align="center" %}
 
