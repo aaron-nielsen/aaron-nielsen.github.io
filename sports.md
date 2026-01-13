@@ -39,9 +39,6 @@ An Analysis on the Importance of Defensive Statistics in the NFL
 - Ethan Creagar, 2022: 
 <a href="creagar-soccer-tracking.pdf">Reading the Game: Predicting Soccer Defender Movement Using Neural Networks</a>
 
-## Conferences
-
-- Society for American Baseball Research (SABR) Analytics Conference, Phoenix, Arizona (2024)
 
 {% include image.html url="/images/24-sabr.jpg" align="center" caption="SABR Analytics Conference with Danielle and Aidan (2024)" width=500 %}
 
