@@ -14,7 +14,7 @@ In August 2018, I joined the Department of Statistics at Colorado State Universi
 
 I spearheaded the development of two new courses and an undergraduate certificate in Sports Statistics and Analytics, and I’ve taught a wide range of statistics and mathematics courses at both the undergraduate and graduate levels. I also enjoy mentoring undergraduate projects in sports analytics. 
 
-While teaching full-time, I completed a B.A. in Philosophy (Spring 2024) and I’m currently working on a B.A. in Political Science (est. Spring 2027).
+Alongside teaching full-time, I completed a B.A. in Philosophy (Spring 2024) and I’m currently working on a B.A. in Political Science (est. Spring 2027).
 
 My wife, Rachel, is a kindergarten teacher, and we share our home with a <a href="/images/cats-dec25.jpg">clowder of ten cats</a>. I’m an avid reader with broad interests in philosophy, politics, history, and science fiction. My musical tastes range from the free jazz of <a href="https://youtu.be/_0F3Uqmgt-k">Anthony Braxton</a> to the minimalism of <a href="https://www.youtube.com/watch?v=8l9Lr9loHG4">Philip Glass</a>, with the <a href="https://www.youtube.com/watch?v=fpKQOvlDr-s">Grateful Dead</a> and <a href="https://youtu.be/2kuWvNv7WV4?t=48">Smashing Pumpkins</a> as my all-time favorite bands. I’ve seen the Omaha indie rock band <a href="https://www.youtube.com/watch?v=NZNiA5867Eo">Bright Eyes</a> play live 26 times.
 
