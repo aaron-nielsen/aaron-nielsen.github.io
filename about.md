@@ -4,7 +4,7 @@ title: About Me
 permalink: /about/
 ---
 
-{% include image.html url="/images/aaron-vegas.jpg" caption="Las Vegas, April 2022" width=320 align="right" %} 
+<img src="/images/aaron-vegas.jpg" alt="Aaron Nielsen" style="float:right; height:500px; margin:0 0 1rem 1rem;">
 
 I was born in Lincoln, Nebraska, and moved with my family to Fort Collins, Colorado, in 1998, where I've lived ever since. I’m an alumnus of Fort Collins High School ('02) and have earned multiple degrees from Colorado State University ('07, '14, '24) and the University of Colorado ('08, '12, '18), including a Ph.D. in Applied Mathematics (2018).
 
