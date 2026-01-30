@@ -47,6 +47,37 @@ $on-laptop:        950px;
     }
 }
 
+/* Responsive photo grid */
+.travel-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* default: 2 across */
+  gap: 14px;
+  align-items: start;
+}
+
+/* iPad portrait width ~834px: force 3 across */
+@media screen and (min-width: 800px) and (max-width: 900px){
+  .travel-grid{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* desktop and larger: 4 across (optional; change to 3 if you prefer) */
+@media screen and (min-width: 901px){
+  .travel-grid{
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* If your include floats images left, neutralize inside the grid */
+.travel-grid .wp-caption,
+.travel-grid figure{
+  float: none !important;
+  margin: 0 !important;
+  max-width: 100% !important;
+}
+
+
 
 
 // Import partials from `sass_dir` (defaults to `_sass`)
