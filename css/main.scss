@@ -111,6 +111,48 @@ $on-laptop:        950px;
   opacity: .75;
 }
 
+/* Flip-through viewer sizing */
+.travel-swiper{
+  max-width: 420px;      /* smaller on desktop */
+  margin: 18px auto;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,.15);
+}
+
+/* Make whatever your include outputs behave nicely inside slides */
+.travel-swiper .swiper-slide{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+/* Handle both <figure><img> and <dl><dt><img> include variants */
+.travel-swiper img{
+  width: 100% !important;
+  max-width: 400px;
+  height: 260px;         /* adjust: 220–320 */
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+}
+
+.travel-swiper figcaption,
+.travel-swiper dd{
+  font-size: 0.92rem;
+  opacity: .85;
+  margin-top: 8px;
+  text-align: center;
+}
+
+/* Pagination dots spacing */
+.travel-swiper .swiper-pagination{
+  position: static;
+  margin: 10px 0 14px;
+}
+
 
 
 
