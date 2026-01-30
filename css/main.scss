@@ -111,46 +111,70 @@ $on-laptop:        950px;
   opacity: .75;
 }
 
-/* Flip-through viewer sizing */
+/* Make the slider responsive + not huge */
 .travel-swiper{
-  max-width: 420px;      /* smaller on desktop */
+  width: min(380px, 92vw);
   margin: 18px auto;
   border-radius: 12px;
   overflow: hidden;
   border: 1px solid rgba(0,0,0,.15);
 }
 
-/* Make whatever your include outputs behave nicely inside slides */
+/* Swiper needs this sometimes to avoid horizontal drift on mobile */
+.travel-swiper .swiper-wrapper{
+  align-items: center;
+}
+
+/* Center slide content reliably */
 .travel-swiper .swiper-slide{
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px;
+  box-sizing: border-box;
 }
 
-/* Handle both <figure><img> and <dl><dt><img> include variants */
+/* Neutralize your include’s float/width behavior inside the slider */
+.travel-swiper figure,
+.travel-swiper dl.wp-caption{
+  float: none !important;
+  margin: 0 !important;
+  width: auto !important;
+  max-width: 100% !important;
+}
+
+.travel-swiper dt,
+.travel-swiper dd{
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Image sizing: smaller + consistent */
 .travel-swiper img{
   width: 100% !important;
-  max-width: 400px;
-  height: 260px;         /* adjust: 220–320 */
+  max-width: 360px !important;
+  height: 220px !important;
   object-fit: cover;
   border-radius: 10px;
   display: block;
-  margin: 0 auto;
 }
 
+/* Captions */
 .travel-swiper figcaption,
 .travel-swiper dd{
   font-size: 0.92rem;
   opacity: .85;
-  margin-top: 8px;
+  margin-top: 8px !important;
   text-align: center;
 }
 
-/* Pagination dots spacing */
+/* Pagination as a centered fraction */
 .travel-swiper .swiper-pagination{
-  position: static;
-  margin: 10px 0 14px;
+  position: static !important;
+  margin: 10px 0 14px !important;
+  text-align: center;
+  font-size: 0.95rem;
+  opacity: 0.85;
 }
 
 
