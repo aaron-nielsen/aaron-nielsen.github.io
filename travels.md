@@ -9,6 +9,7 @@ I enjoy traveling, whether it be roadtripping in the USA or backpacking abroad.
 At present count I have visited <a href="/images/countries.png">25 countries</a> and <a href="/images/states.png">46 states</a>.
 
 <div class="travel-grid">
+  {% include image.html url="/images/25-sturgis.png" caption="Sturgis, South Dakota (2025)" width=350 align="left" %}
   {% include image.html url="/images/24-bamberg.jpg" caption="Bamberg, Germany (2024)" width=350 align="left" %}
   {% include image.html url="/images/23-nebaska.jpeg" caption="Lincoln, Nebraska (2023)" width=350 align="left" %}
   {% include image.html url="/images/22-mexico.jpg" caption="Cancun, Mexico (2022)" width=350 align="left" %}
