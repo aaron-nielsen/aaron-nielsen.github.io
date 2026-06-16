@@ -42,8 +42,6 @@ permalink: /teaching/
 </style>
 
 <main class="wrap teaching-page">
-<h1 class="page-title">Teaching</h1>
-    <p class="intro">Associate Professor in the Department of Statistics at Colorado State University. I typically teach three courses each semester; below is a compact overview of current teaching and course history.</p>
 
 
     <section class="panel">
