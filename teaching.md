@@ -45,7 +45,7 @@ permalink: /teaching/
 
 
     <section class="panel">
-      <div class="panel-header"><h2>Fall 2026 Teaching</h2><p>Current courses for Fall 2026, listed with meeting times.</p></div>
+      <div class="panel-header"><h2>Fall 2026 Teaching</h2></div>
       <div class="current-grid">
         <article class="current-card"><div class="code">STAT 351</div><div class="course-name">Sports Statistics and Analytics I</div><div class="time">MWF 11:00–11:50am</div></article>
         <article class="current-card"><div class="code">STAT 204</div><div class="course-name">Business Statistics</div><div class="time">Tues 11:00am–12:50pm</div></article>
@@ -53,7 +53,7 @@ permalink: /teaching/
     </section>
 
     <section class="panel">
-      <div class="panel-header"><h2>Courses I’ve Taught</h2><p>A compact archive going back to graduate teaching, grouped by institution.</p></div>
+      <div class="panel-header"><h2>Courses I’ve Taught</h2></div>
       <div class="school-header">Colorado State University</div>
       <div class="course-list">
         <div class="row"><div class="code">STAT 100</div><div class="title">Statistical Literacy <span class="terms">Fall 2024, Fall 2020</span></div></div>
