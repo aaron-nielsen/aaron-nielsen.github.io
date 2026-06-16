@@ -40,10 +40,10 @@ permalink: /education/
     margin: 0;
     color: #fff;
     font-family: ui-serif, Georgia, serif;
-    font-size: clamp(1.35rem, 2.6vw, 1.85rem);
-    line-height: 1.08;
-    letter-spacing: -.02em;
-    font-weight: 450;
+    font-size: clamp(1.25rem, 2.3vw, 1.65rem);
+    line-height: 1.1;
+    letter-spacing: -.015em;
+    font-weight: 400;
   }
 
   .edu-section-head p,
@@ -108,7 +108,7 @@ permalink: /education/
   .timeline-list::before {
     content: "";
     position: absolute;
-    left: 21px;
+    left: 26px;
     top: .25rem;
     bottom: .25rem;
     width: 3px;
@@ -221,80 +221,8 @@ permalink: /education/
     border-style: dashed;
   }
 
-  .recent-studies-shell {
-    background: linear-gradient(180deg, rgba(31, 39, 52, .55), rgba(22, 29, 38, .42));
-    border: 1px solid var(--edu-line);
-    border-radius: 18px;
-    padding: 1rem 1.05rem 1.1rem;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, .12);
-  }
-
-  .recent-studies-head {
-    margin-bottom: .85rem;
-  }
-
-  .recent-studies-intro {
-    max-width: 820px;
-  }
-
-  .course-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: .72rem;
-  }
-
-  .course-card {
-    --accent: var(--csu);
-    display: grid;
-    grid-template-columns: 5.1rem 1fr;
-    min-height: 4.65rem;
-  }
-
-  .course-code {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: .18rem;
-    padding: .62rem .68rem;
-    border-bottom: 0;
-    border-right: 1px solid var(--edu-line);
-  }
-
-  .course-prefix {
-    color: #fff;
-    font-size: .76rem;
-    font-weight: 650;
-    letter-spacing: .05em;
-  }
-
-  .course-number {
-    color: var(--accent);
-    font-size: 1.15rem;
-    line-height: 1;
-    font-weight: 650;
-  }
-
-  .course-info {
-    padding: .65rem .78rem .7rem;
-  }
-
-  .course-term {
-    color: var(--accent);
-    font-size: .72rem;
-    font-weight: 650;
-    letter-spacing: .06em;
-    text-transform: uppercase;
-    margin-bottom: .3rem;
-  }
-
-  .course-title {
-    color: #fff;
-    font-size: .92rem;
-    line-height: 1.22;
-    font-weight: 400;
-  }
-
   @media (max-width: 760px) {
+
     .degree-grid,
     .course-grid {
       grid-template-columns: 1fr;
@@ -303,7 +231,7 @@ permalink: /education/
 
   @media (max-width: 700px) {
     .timeline-list::before {
-      left: 17px;
+      left: 19px;
     }
 
     .education-timeline .timeline-row {
@@ -498,80 +426,217 @@ permalink: /education/
   </div>
 </section>
 
-<section class="recent-studies-block" aria-labelledby="recent-studies-title">
-  <div class="recent-studies-shell">
-    <div class="recent-studies-head">
-      <h2 class="recent-studies-title" id="recent-studies-title">Recent Studies</h2>
-      <p class="recent-studies-intro">
-        Since joining the CSU faculty in August 2018, I have used the university’s employee study privilege to take roughly one course per semester. My coursework has covered philosophy, political science, and related fields.
+<style>
+  .recent-studies-simple {
+    --rs-card: #212b38;
+    --rs-card2: #1b232e;
+    --rs-text: #eef3f8;
+    --rs-muted: #b5c0cc;
+    --rs-muted2: #93a1b2;
+    --rs-line: rgba(255, 255, 255, .08);
+    --rs-csu: #5fbe7a;
+
+    max-width: 980px;
+    margin: 1.55rem auto;
+    color: var(--rs-text);
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  .recent-studies-simple * {
+    box-sizing: border-box;
+  }
+
+  .recent-studies-simple .rs-panel {
+    background: linear-gradient(180deg, rgba(31, 39, 52, .92), rgba(22, 29, 38, .96));
+    border: 1px solid var(--rs-line);
+    border-radius: 18px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .20);
+    overflow: hidden;
+  }
+
+  .recent-studies-simple .rs-header {
+    padding: .95rem 1.15rem .9rem;
+    border-bottom: 1px solid var(--rs-line);
+    background: linear-gradient(
+      180deg,
+      color-mix(in oklab, var(--rs-csu) 18%, #1f2937),
+      color-mix(in oklab, var(--rs-csu) 10%, #1b2430)
+    );
+  }
+
+  .recent-studies-simple .rs-header h2 {
+    margin: 0 0 .42rem;
+    color: #fff;
+    font-size: clamp(1.25rem, 2.3vw, 1.65rem);
+    line-height: 1.1;
+    letter-spacing: -.015em;
+    font-weight: 400;
+  }
+
+  .recent-studies-simple .rs-header p {
+    margin: 0;
+    max-width: 850px;
+    color: var(--rs-muted);
+    font-size: .88rem;
+    line-height: 1.45;
+  }
+
+  .recent-studies-simple .rs-list {
+    display: grid;
+    gap: 0;
+    padding: .35rem 0;
+  }
+
+  .recent-studies-simple .rs-course {
+    display: grid;
+    grid-template-columns: 5.1rem 1fr 6.7rem;
+    gap: .85rem;
+    align-items: baseline;
+    padding: .55rem 1.15rem;
+    border-top: 1px solid rgba(255, 255, 255, .055);
+  }
+
+  .recent-studies-simple .rs-course:first-child {
+    border-top: 0;
+  }
+
+  .recent-studies-simple .rs-code {
+    color: #fff;
+    font-size: .86rem;
+    font-weight: 650;
+    letter-spacing: .02em;
+    white-space: nowrap;
+  }
+
+  .recent-studies-simple .rs-code::before {
+    content: "";
+    display: inline-block;
+    width: .43rem;
+    height: .43rem;
+    margin-right: .45rem;
+    border-radius: 999px;
+    background: var(--rs-csu);
+    transform: translateY(-1px);
+  }
+
+  .recent-studies-simple .rs-title {
+    color: var(--rs-muted);
+    font-size: .9rem;
+    line-height: 1.28;
+  }
+
+  .recent-studies-simple .rs-term {
+    color: var(--rs-muted2);
+    font-size: .78rem;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 700px) {
+    .recent-studies-simple .rs-course {
+      grid-template-columns: 5rem 1fr;
+      gap: .3rem .75rem;
+      padding: .65rem 1rem;
+    }
+
+    .recent-studies-simple .rs-term {
+      grid-column: 2;
+      text-align: left;
+    }
+
+    .recent-studies-simple .rs-header {
+      padding: .95rem 1rem .9rem;
+    }
+  }
+</style>
+
+<section class="recent-studies-simple" aria-labelledby="recent-studies-title">
+  <div class="rs-panel">
+    <div class="rs-header">
+      <h2 id="recent-studies-title">Recent Studies</h2>
+      <p>
+        I have been taking about one class per semester at CSU since joining the faculty in August 2018, using the university’s employee study privilege. My coursework has covered philosophy, political science, and related fields.
       </p>
     </div>
 
-    <div class="course-grid">
-      <article class="course-card">
-        <div class="course-code"><span class="course-prefix">POLS</span><span class="course-number">345</span></div>
-        <div class="course-info"><div class="course-term">Fall 2025</div><h3 class="course-title">Russian, Central, and Eastern European Politics</h3></div>
-      </article>
+    <div class="rs-list" aria-label="Recent studies courses">
+      <div class="rs-course">
+        <div class="rs-code">POLS 345</div>
+        <div class="rs-title">Russian, Central, and Eastern European Politics</div>
+        <div class="rs-term">Fall 2025</div>
+      </div>
 
-      <article class="course-card">
-        <div class="course-code"><span class="course-prefix">POLS</span><span class="course-number">101</span></div>
-        <div class="course-info"><div class="course-term">Summer 2025</div><h3 class="course-title">American Government and Politics</h3></div>
-      </article>
+      <div class="rs-course">
+        <div class="rs-code">POLS 101</div>
+        <div class="rs-title">American Government and Politics</div>
+        <div class="rs-term">Summer 2025</div>
+      </div>
 
-      <article class="course-card">
-        <div class="course-code"><span class="course-prefix">POLS</span><span class="course-number">103</span></div>
-        <div class="course-info"><div class="course-term">Spring 2025</div><h3 class="course-title">State and Local Government and Politics</h3></div>
-      </article>
+      <div class="rs-course">
+        <div class="rs-code">POLS 103</div>
+        <div class="rs-title">State and Local Government and Politics</div>
+        <div class="rs-term">Spring 2025</div>
+      </div>
 
-      <article class="course-card">
-        <div class="course-code"><span class="course-prefix">POLS</span><span class="course-number">436</span></div>
-        <div class="course-info"><div class="course-term">Fall 2024</div><h3 class="course-title">Comparative Foreign Policy</h3></div>
-      </article>
+      <div class="rs-course">
+        <div class="rs-code">POLS 436</div>
+        <div class="rs-title">Comparative Foreign Policy</div>
+        <div class="rs-term">Fall 2024</div>
+      </div>
 
-      <article class="course-card">
-        <div class="course-code"><span class="course-prefix">PHIL</span><span class="course-number">300</span></div>
-        <div class="course-info"><div class="course-term">Spring 2024</div><h3 class="course-title">Ancient Greek Philosophy</h3></div>
-      </article>
+      <div class="rs-course">
+        <div class="rs-code">PHIL 300</div>
+        <div class="rs-title">Ancient Greek Philosophy</div>
+        <div class="rs-term">Spring 2024</div>
+      </div>
 
-      <article class="course-card">
-        <div class="course-code"><span class="course-prefix">PHIL</span><span class="course-number">353</span></div>
-        <div class="course-info"><div class="course-term">Spring 2024</div><h3 class="course-title">Feminist Philosophies</h3></div>
-      </article>
+      <div class="rs-course">
+        <div class="rs-code">PHIL 353</div>
+        <div class="rs-title">Feminist Philosophies</div>
+        <div class="rs-term">Spring 2024</div>
+      </div>
 
-      <article class="course-card">
-        <div class="course-code"><span class="course-prefix">PHIL</span><span class="course-number">462</span></div>
-        <div class="course-info"><div class="course-term">Fall 2023</div><h3 class="course-title">Democracy and Free Speech (Capstone)</h3></div>
-      </article>
+      <div class="rs-course">
+        <div class="rs-code">PHIL 462</div>
+        <div class="rs-title">Democracy and Free Speech (Capstone)</div>
+        <div class="rs-term">Fall 2023</div>
+      </div>
 
-      <article class="course-card">
-        <div class="course-code"><span class="course-prefix">PHIL</span><span class="course-number">301</span></div>
-        <div class="course-info"><div class="course-term">Spring 2023</div><h3 class="course-title">17th and 18th Century European Philosophy</h3></div>
-      </article>
+      <div class="rs-course">
+        <div class="rs-code">PHIL 301</div>
+        <div class="rs-title">17th and 18th Century European Philosophy</div>
+        <div class="rs-term">Spring 2023</div>
+      </div>
 
-      <article class="course-card">
-        <div class="course-code"><span class="course-prefix">PHIL</span><span class="course-number">354</span></div>
-        <div class="course-info"><div class="course-term">Fall 2022</div><h3 class="course-title">Philosophy and Science Fiction</h3></div>
-      </article>
+      <div class="rs-course">
+        <div class="rs-code">PHIL 354</div>
+        <div class="rs-title">Philosophy and Science Fiction</div>
+        <div class="rs-term">Fall 2022</div>
+      </div>
 
-      <article class="course-card">
-        <div class="course-code"><span class="course-prefix">PHIL</span><span class="course-number">322</span></div>
-        <div class="course-info"><div class="course-term">Summer 2022</div><h3 class="course-title">Biomedical Ethics</h3></div>
-      </article>
+      <div class="rs-course">
+        <div class="rs-code">PHIL 322</div>
+        <div class="rs-title">Biomedical Ethics</div>
+        <div class="rs-term">Summer 2022</div>
+      </div>
 
-      <article class="course-card">
-        <div class="course-code"><span class="course-prefix">PHIL</span><span class="course-number">205</span></div>
-        <div class="course-info"><div class="course-term">Spring 2022</div><h3 class="course-title">Ethics</h3></div>
-      </article>
+      <div class="rs-course">
+        <div class="rs-code">PHIL 205</div>
+        <div class="rs-title">Ethics</div>
+        <div class="rs-term">Spring 2022</div>
+      </div>
 
-      <article class="course-card">
-        <div class="course-code"><span class="course-prefix">PHIL</span><span class="course-number">438</span></div>
-        <div class="course-info"><div class="course-term">Fall 2021</div><h3 class="course-title">Philosophy of Mind</h3></div>
-      </article>
+      <div class="rs-course">
+        <div class="rs-code">PHIL 438</div>
+        <div class="rs-title">Philosophy of Mind</div>
+        <div class="rs-term">Fall 2021</div>
+      </div>
 
-      <article class="course-card">
-        <div class="course-code"><span class="course-prefix">POLS</span><span class="course-number">437</span></div>
-        <div class="course-info"><div class="course-term">Summer 2021</div><h3 class="course-title">International Security</h3></div>
-      </article>
+      <div class="rs-course">
+        <div class="rs-code">POLS 437</div>
+        <div class="rs-title">International Security</div>
+        <div class="rs-term">Summer 2021</div>
+      </div>
     </div>
   </div>
 </section>
