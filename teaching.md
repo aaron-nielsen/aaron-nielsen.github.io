@@ -42,8 +42,6 @@ permalink: /teaching/
 </style>
 
 <main class="wrap teaching-page">
-
-
     <section class="panel">
       <div class="panel-header"><h2>Fall 2026 Teaching</h2></div>
       <div class="current-grid">
