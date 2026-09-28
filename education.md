@@ -418,8 +418,8 @@ permalink: /education/
       <div class="timeline-card">
         <div class="timeline-school">Colorado State University</div>
         <div class="timeline-body">
-          <h3>B.A. Political Science <em>(in progress)</em></h3>
-          <p class="bullet">Currently taking courses while working full-time as an associate professor</p>
+          <h3>B.A. Political Science</h3>
+          <p class="bullet">Only a handful of courses away from completing the degree while working full-time as an associate professor</p>
         </div>
       </div>
     </article>
