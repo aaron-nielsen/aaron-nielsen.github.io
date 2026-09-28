@@ -14,7 +14,7 @@ In August 2018, I joined the Department of Statistics at Colorado State Universi
 
 I spearheaded the development of two new courses and an undergraduate certificate in Sports Statistics and Analytics, and I’ve taught a wide range of statistics and mathematics courses at both the undergraduate and graduate levels. I also enjoy mentoring undergraduate projects in sports analytics. 
 
-Alongside teaching full-time, I completed a B.A. in Philosophy (Spring 2024) and I’m currently working on a B.A. in Political Science (est. Spring 2027).
+Alongside teaching full-time, I completed a B.A. in Philosophy (Spring 2024) and am only a handful of courses away from a B.A. in Political Science.
 
 My wife, Rachel, is a kindergarten teacher, and we share our home with a <a href="/images/cats-dec25.jpg">clowder of ten cats</a>. I’m an avid reader with broad interests in philosophy, politics, history, and science fiction. I enjoy listening to <a href="https://www.youtube.com/watch?v=5cZC-1r4kVk">Grateful Dead</a>, <a href="https://www.youtube.com/watch?v=d3szzhg38m4">Smashing Pumpkins</a>, <a href="https://www.youtube.com/watch?v=lNFm5o5cb-0">Sigur Rós</a>, <a href="https://www.youtube.com/watch?v=N1CZRuao51w">Erik Satie</a>, <a href="https://www.youtube.com/watch?v=8l9Lr9loHG4">Philip Glass</a>, <a href="https://www.youtube.com/watch?v=_0F3Uqmgt-k">Anthony Braxton</a>, and <a href="https://www.youtube.com/watch?v=ehYM_cg2DHI">John Coltrane</a>. I’ve seen the Omaha indie rock band <a href="https://www.youtube.com/watch?v=NZNiA5867Eo">Bright Eyes</a> play live 26 times.
 
