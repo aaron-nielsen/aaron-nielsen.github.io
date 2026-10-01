@@ -108,7 +108,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.65)}
 
 <script>
 (function(){
-  var DATA_URL="/data/whiskey_ratings.json";
+  var DATA_URL="/data/whiskey_ratings.json?v="+Date.now();
   var data=null,rows=[],activeTab="main";
   var sortState={
     qualified:{key:"average",dir:-1},
