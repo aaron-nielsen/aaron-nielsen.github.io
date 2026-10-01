@@ -27,34 +27,84 @@ button,input,select{font:inherit}
 .whiskey-app{max-width:1180px;margin:0 auto;padding:24px 22px 56px}
 
 .hero{
-  min-height:190px;
-  border:1px solid #3d4c41;
-  border-radius:18px;
-  padding:28px 32px;
-  margin-bottom:18px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:24px;
+  min-height:188px;
+  border:1px solid #3b4a3f;
+  border-radius:16px;
+  margin-bottom:16px;
   overflow:hidden;
   position:relative;
+  display:flex;
+  align-items:stretch;
   background:
-    radial-gradient(circle at 88% 20%,rgba(200,138,61,.16),transparent 32%),
-    linear-gradient(135deg,#17241a 0%,#101612 55%,#1a211b 100%);
+    radial-gradient(circle at 76% 28%,rgba(212,145,63,.22),transparent 24%),
+    radial-gradient(circle at 93% 38%,rgba(130,78,31,.20),transparent 28%),
+    linear-gradient(90deg,#101612 0%,#111814 42%,#191815 73%,#17130f 100%);
+  box-shadow:0 16px 45px rgba(0,0,0,.20);
 }
-.hero:after{
+.hero:before{
   content:"";
   position:absolute;
-  inset:auto -80px -95px auto;
-  width:280px;height:280px;
-  border:1px solid rgba(155,197,165,.12);
-  border-radius:50%;
+  inset:0;
+  background:linear-gradient(90deg,rgba(6,10,7,.06) 0%,rgba(6,10,7,.12) 47%,rgba(6,10,7,0) 74%);
+  pointer-events:none;
 }
-.hero-copy{position:relative;z-index:2}
-.hero-kicker{text-transform:uppercase;letter-spacing:.16em;font-size:.75rem;color:var(--amber2);font-weight:700;margin-bottom:7px}
-.site-title{font-family:"Caveat",cursive;font-size:4rem;font-weight:600;line-height:.98;margin:0;color:#fbfcfb}
-.hero-subtitle{margin:10px 0 0;color:#c0cac2;font-size:.98rem}
-.hero-art{width:260px;min-width:230px;height:132px;position:relative;z-index:2}
+.hero-copy{
+  position:relative;
+  z-index:3;
+  flex:1 1 58%;
+  padding:25px 28px 22px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.hero-eyebrow{
+  font-family:Georgia,"Times New Roman",serif;
+  font-style:italic;
+  font-size:1.55rem;
+  color:#f2dfba;
+  line-height:1;
+  margin:0 0 1px;
+}
+.site-title{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:4.05rem;
+  font-weight:700;
+  letter-spacing:-.035em;
+  line-height:.98;
+  margin:0;
+  color:#f7e8c9;
+  text-shadow:0 2px 18px rgba(0,0,0,.45);
+}
+.hero-rule{
+  margin-top:14px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:var(--amber2);
+}
+.hero-rule:before,.hero-rule:after{
+  content:"";
+  width:55px;
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--amber2));
+}
+.hero-rule:after{background:linear-gradient(90deg,var(--amber2),transparent)}
+.hero-rule svg{width:23px;height:23px;opacity:.95}
+.hero-art{
+  flex:0 0 43%;
+  min-width:390px;
+  position:relative;
+  z-index:2;
+  overflow:hidden;
+}
+.hero-art:before{
+  content:"";
+  position:absolute;
+  inset:0 0 0 -90px;
+  background:linear-gradient(90deg,#121713 0%,rgba(18,23,19,.55) 30%,rgba(18,23,19,0) 62%);
+  z-index:2;
+  pointer-events:none;
+}
 .hero-art svg{width:100%;height:100%;display:block}
 
 .stats-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:0 0 16px}
@@ -114,17 +164,22 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
 .whiskey-history-list td,.whiskey-history-list th{border-bottom:1px solid #344037;padding:8px}
 
 @media(max-width:800px){
-  .hero{min-height:165px;padding:24px}
-  .site-title{font-size:3.45rem}
-  .hero-art{width:210px;min-width:190px}
+  .hero{min-height:160px}
+  .hero-copy{padding:22px 20px}
+  .hero-eyebrow{font-size:1.3rem}
+  .site-title{font-size:3.25rem}
+  .hero-art{min-width:300px;flex-basis:44%}
   .stats-row{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media(max-width:620px){
   .whiskey-app{padding:14px 10px 36px}
-  .hero{padding:20px;min-height:150px}
-  .hero-art{width:135px;min-width:120px;height:105px}
-  .site-title{font-size:2.8rem}
-  .hero-subtitle{font-size:.86rem}
+  .hero{min-height:138px}
+  .hero-copy{padding:18px 16px;flex-basis:63%}
+  .hero-eyebrow{font-size:1.05rem}
+  .site-title{font-size:2.35rem}
+  .hero-art{min-width:155px;flex-basis:37%}
+  .hero-rule{margin-top:9px}
+  .hero-rule:before,.hero-rule:after{width:30px}
   .stats-row{gap:8px}
   .stat-card{padding:11px}
   .stat-value{font-size:1.25rem}
@@ -139,23 +194,75 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
 <div class="whiskey-app notranslate" translate="no">
   <header class="hero">
     <div class="hero-copy">
-      <div class="hero-kicker">Personal tasting archive</div>
-      <h1 class="site-title">Aaron's Whiskey Ratings</h1>
-      <p class="hero-subtitle">A running record of bottles, pours, styles, and repeat tastings.</p>
+      <div class="hero-eyebrow">Aaron's</div>
+      <h1 class="site-title">Whiskey Ratings</h1>
+      <div class="hero-rule" aria-hidden="true">
+        <svg viewBox="0 0 28 28">
+          <path d="M9 4h10l-1 5c-.5 2.5-1 4-1 6v6c0 2-1 3-3 3s-3-1-3-3v-6c0-2-.5-3.5-1-6L9 4Z" fill="none" stroke="currentColor" stroke-width="1.6"/>
+          <path d="M11 15h6v5c0 1.5-1 2.5-3 2.5S11 21.5 11 20v-5Z" fill="currentColor" opacity=".7"/>
+        </svg>
+      </div>
     </div>
     <div class="hero-art" aria-hidden="true">
-      <svg viewBox="0 0 280 140" role="img">
-        <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <ellipse cx="70" cy="70" rx="43" ry="54" fill="#6c4728" stroke="#d4a568" stroke-width="3"/>
-          <path d="M31 51h78M28 70h84M31 89h78" stroke="#2d2118" stroke-width="8" opacity=".85"/>
-          <path d="M70 16v108M43 22c8 16 8 80 0 96M97 22c-8 16-8 80 0 96" stroke="#ba8450" stroke-width="2" opacity=".9"/>
-          <path d="M151 36h53l-8 65c-1 8-8 14-16 14h-7c-8 0-15-6-16-14z" fill="#25322a" stroke="#d8dfda" stroke-width="3"/>
-          <path d="M159 78h37l-4 23c-1 6-6 10-12 10h-7c-6 0-11-4-12-10z" fill="#c88a3d" opacity=".85" stroke="none"/>
-          <path d="M225 40h32l-5 57c-1 8-7 14-15 14s-14-6-15-14z" fill="#25322a" stroke="#d8dfda" stroke-width="3"/>
-          <path d="M228 77h26l-3 20c-1 6-6 10-13 10s-11-4-12-10z" fill="#d79a4a" opacity=".9" stroke="none"/>
-          <path d="M240 111v13M225 124h30" stroke="#d8dfda" stroke-width="3"/>
-          <path d="M151 36l7-12h39l7 12" stroke="#d8dfda" stroke-width="3"/>
+      <svg viewBox="0 0 520 190" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="wood" x1="0" x2="1">
+            <stop offset="0" stop-color="#5b3217"/>
+            <stop offset=".35" stop-color="#9a5a27"/>
+            <stop offset=".7" stop-color="#6b3819"/>
+            <stop offset="1" stop-color="#3d2215"/>
+          </linearGradient>
+          <linearGradient id="whiskey" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#e2a14f"/>
+            <stop offset=".55" stop-color="#a95d1f"/>
+            <stop offset="1" stop-color="#6d3410"/>
+          </linearGradient>
+          <linearGradient id="glass" x1="0" x2="1">
+            <stop offset="0" stop-color="#ffffff" stop-opacity=".12"/>
+            <stop offset=".45" stop-color="#ffffff" stop-opacity=".03"/>
+            <stop offset="1" stop-color="#ffffff" stop-opacity=".14"/>
+          </linearGradient>
+          <linearGradient id="bottle" x1="0" x2="1">
+            <stop offset="0" stop-color="#211a13"/>
+            <stop offset=".45" stop-color="#3a2415"/>
+            <stop offset=".8" stop-color="#17120e"/>
+          </linearGradient>
+          <filter id="glow"><feGaussianBlur stdDeviation="13"/></filter>
+          <filter id="shadow"><feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#000" flood-opacity=".55"/></filter>
+        </defs>
+
+        <ellipse cx="345" cy="170" rx="200" ry="26" fill="#080b09" opacity=".7"/>
+        <circle cx="390" cy="54" r="68" fill="#b96f2c" opacity=".18" filter="url(#glow)"/>
+        <circle cx="470" cy="72" r="52" fill="#d18c39" opacity=".14" filter="url(#glow)"/>
+
+        <g filter="url(#shadow)">
+          <rect x="363" y="-8" width="62" height="142" rx="15" fill="url(#bottle)" stroke="#5c4430" stroke-width="2"/>
+          <rect x="378" y="-20" width="32" height="36" rx="7" fill="#2a1d13"/>
+          <rect x="371" y="25" width="46" height="44" rx="3" fill="#d5ad72" opacity=".20"/>
+          <rect x="371" y="79" width="46" height="37" rx="4" fill="url(#whiskey)" opacity=".75"/>
+
+          <g>
+            <path d="M190 42h90l-7 101c-1 15-10 23-24 23h-28c-14 0-23-8-24-23Z" fill="url(#glass)" stroke="#e7e4dc" stroke-opacity=".85" stroke-width="3"/>
+            <path d="M198 102h74l-3 39c-1 12-8 18-20 18h-28c-12 0-19-6-20-18Z" fill="url(#whiskey)" opacity=".95"/>
+            <path d="M201 52h67M206 77h58M216 43l-6 112M238 43l-2 116M260 43l5 112" stroke="#fff" stroke-opacity=".16" stroke-width="1.2"/>
+            <path d="M203 43h64" stroke="#fff" stroke-opacity=".55" stroke-width="2"/>
+          </g>
+
+          <g>
+            <path d="M286 58h82l-7 86c-1 14-10 22-23 22h-22c-13 0-22-8-23-22Z" fill="url(#glass)" stroke="#ece8df" stroke-opacity=".9" stroke-width="3"/>
+            <path d="M294 108h66l-3 34c-1 11-8 17-19 17h-22c-11 0-18-6-19-17Z" fill="url(#whiskey)"/>
+            <path d="M299 66h59M305 87h48M313 60l-5 95M334 60l-1 99M351 60l5 95" stroke="#fff" stroke-opacity=".14" stroke-width="1.1"/>
+          </g>
+
+          <g transform="translate(420,25)">
+            <ellipse cx="64" cy="64" rx="70" ry="83" fill="url(#wood)" stroke="#c0844b" stroke-width="3"/>
+            <path d="M7 32h114M-2 63h132M6 95h116" stroke="#2a1b14" stroke-width="11" opacity=".8"/>
+            <path d="M64 -18v164M30 -10c10 26 10 118 0 146M98 -10c-10 26-10 118 0 146" stroke="#d49a60" stroke-opacity=".7" stroke-width="2"/>
+            <ellipse cx="64" cy="64" rx="70" ry="83" fill="none" stroke="#e0ad65" stroke-opacity=".35" stroke-width="2"/>
+          </g>
         </g>
+
+        <path d="M138 169h358" stroke="#8b5b2b" stroke-opacity=".35" stroke-width="2"/>
       </svg>
     </div>
   </header>
