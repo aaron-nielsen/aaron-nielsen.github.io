@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-09-30",
+  "updated": "2026-10-01",
   "notes": "Canonical whiskey rating history. Unknown historical dates are null. Summary statistics are calculated from raw ratings by whiskey.html.",
   "products": [
     {
@@ -1079,6 +1079,10 @@
         {
           "score": 4.1,
           "date": null
+        },
+        {
+          "score": 4.2,
+          "date": "2026-10-01"
         }
       ]
     },
