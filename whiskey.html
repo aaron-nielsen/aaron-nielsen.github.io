@@ -11,15 +11,16 @@ nocache: true
 .whiskey-app{max-width:1180px;margin:0 auto}
 .whiskey-app h1{margin:0 0 14px}
 .whiskey-muted{color:#b8b8b8;font-size:.92rem}
-.whiskey-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 14px}
-.whiskey-tabs button,.whiskey-controls input,.whiskey-controls select{background:#292929;color:#fff;border:1px solid #555;border-radius:7px;padding:8px 10px}
-.whiskey-tabs button{cursor:pointer}
-.whiskey-tabs button.active{background:#fff;color:#1d1d1d;border-color:#fff}
+.control-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;background:#242424;border:1px solid #454545;border-radius:10px;padding:8px 10px;margin:8px 0 12px}
+.control-group{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.control-label{font-weight:600;color:#cfcfcf;white-space:nowrap}
+.whiskey-tabs{display:flex;gap:7px;flex-wrap:wrap;margin:0}
+.whiskey-tabs button,.main-view{background:#202020;color:#ddd;border:1px solid #666;border-radius:999px;padding:6px 13px;cursor:pointer;font:inherit}
+.whiskey-tabs button:hover,.main-view:hover{border-color:#999}
+.whiskey-tabs button.active,.main-view.active{background:#e8e8e8;color:#222;border-color:#e8e8e8}
 .whiskey-controls{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
-.whiskey-summary{color:#c7c7c7;font-size:.95rem;margin:2px 0 16px}
-.main-controls{display:flex;align-items:center;gap:8px;margin:2px 0 12px}
-.main-controls label{color:#bbb}
-.main-controls select{background:#292929;color:#fff;border:1px solid #555;border-radius:7px;padding:8px 10px}
+.whiskey-summary{color:#aaa;font-size:.86rem;white-space:nowrap}
+.main-controls{display:flex;align-items:center;gap:9px;flex-wrap:wrap;background:#242424;border:1px solid #454545;border-radius:10px;padding:8px 10px;margin:0 0 12px}
 .whiskey-controls input{min-width:240px;flex:1}
 .whiskey-table-wrap{overflow-x:auto;border:1px solid #444;border-radius:8px}
 .main-more{display:flex;gap:8px;margin-top:10px}
@@ -47,28 +48,34 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.65)}
 .whiskey-dialog button.close{float:right;background:#333;color:#fff;border:1px solid #666;border-radius:5px;padding:5px 9px;cursor:pointer}
 .whiskey-history-list{width:100%;border-collapse:collapse}
 .whiskey-history-list td,.whiskey-history-list th{border-bottom:1px solid #444;padding:7px}
-@media(max-width:900px){.dashboard-grid{grid-template-columns:1fr}.dashboard-section .whiskey-table{min-width:620px}}
+.dashboard-section .whiskey-table{min-width:620px}}
 @media(max-width:700px){
-    .whiskey-controls{flex-direction:column}
+  .whiskey-controls{flex-direction:column}
   .whiskey-controls input{min-width:0}
-  .whiskey-tabs{gap:6px}
-  .whiskey-tabs button{padding:7px 9px}
+  .control-bar{align-items:flex-start}
+  .whiskey-summary{width:100%;white-space:normal}
+  .whiskey-tabs,.control-group{gap:6px}
+  .whiskey-tabs button,.main-view{padding:5px 10px}
 }
 </style>
 
 <div class="whiskey-app notranslate" translate="no">
   <h1>Whiskey Ratings</h1>
 
-  <div class="whiskey-summary" id="whiskey-summary">—</div>
-
-  <div class="whiskey-tabs" role="tablist">
-    <button class="active" data-tab="main">Main</button>
-    <button data-tab="overall">Overall</button>
-    <button data-tab="styles">Styles</button>
-    <button data-tab="substyles">Sub-styles</button>
-    <button data-tab="qualified">Qualified</button>
-    <button data-tab="need-more">Need More Ratings</button>
-    <button data-tab="history">History</button>
+  <div class="control-bar top-control-bar">
+    <div class="control-group">
+      <span class="control-label">Show:</span>
+      <div class="whiskey-tabs" role="tablist">
+        <button class="active" data-tab="main">Main</button>
+        <button data-tab="overall">Overall</button>
+        <button data-tab="styles">Styles</button>
+        <button data-tab="substyles">Sub-styles</button>
+        <button data-tab="qualified">Qualified</button>
+        <button data-tab="need-more">Need More</button>
+        <button data-tab="history">History</button>
+      </div>
+    </div>
+    <div class="whiskey-summary" id="whiskey-summary">—</div>
   </div>
 
   <div class="whiskey-controls" id="product-controls" style="display:none">
@@ -311,9 +318,11 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.65)}
       ["styles","Styles"],
       ["substyles","Sub-styles"]
     ];
-    return '<div class="main-controls"><label for="main-view-select">View</label><select id="main-view-select">'+
-      views.map(function(v){return '<option value="'+v[0]+'" '+(mainView===v[0]?"selected":"")+'>'+v[1]+'</option>';}).join("")+
-      '</select></div>';
+    return '<div class="main-controls"><span class="control-label">View:</span>'+
+      views.map(function(v){
+        return '<button type="button" class="main-view '+(mainView===v[0]?"active":"")+'" data-view="'+v[0]+'">'+v[1]+'</button>';
+      }).join("")+
+      '</div>';
   }
 
   function renderMain(){
@@ -400,15 +409,16 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.65)}
     document.querySelectorAll(".substyle-link").forEach(function(btn){
       btn.onclick=function(){drillSubstyle(btn.getAttribute("data-substyle"),btn.getAttribute("data-style"))};
     });
-    var mainSelect=document.getElementById("main-view-select");
-    if(mainSelect)mainSelect.onchange=function(){
-      mainView=mainSelect.value;
-      mainLimit=10;
-      if(mainView==="top")sortState.main={key:"average",dir:-1};
-      if(mainView==="recent")sortState.main={key:"date",dir:-1};
-      if(mainView==="styles"||mainView==="substyles")sortState.main={key:"average",dir:-1};
-      render();
-    };
+    document.querySelectorAll(".main-view").forEach(function(btn){
+      btn.onclick=function(){
+        mainView=btn.getAttribute("data-view");
+        mainLimit=10;
+        if(mainView==="top")sortState.main={key:"average",dir:-1};
+        if(mainView==="recent")sortState.main={key:"date",dir:-1};
+        if(mainView==="styles"||mainView==="substyles")sortState.main={key:"average",dir:-1};
+        render();
+      };
+    });
     var more=document.getElementById("main-more");
     if(more)more.onclick=function(){mainLimit+=10;render()};
     var less=document.getElementById("main-less");
