@@ -31,9 +31,9 @@ nocache: true
 .whiskey-table th,.whiskey-table td{padding:8px 10px;border-bottom:1px solid #3d3d3d;text-align:left;vertical-align:middle}
 .whiskey-table tr:last-child td{border-bottom:0}
 .whiskey-table th{background:#292929;position:sticky;top:0;white-space:nowrap}
-.whiskey-table th.sortable{cursor:pointer;user-select:none;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:4px}
+.whiskey-table th.sortable{cursor:pointer;user-select:none}
 .whiskey-table th.sortable:hover{background:#343434}
-.sort-arrow{display:inline-block;min-width:1em;margin-left:5px;color:#ddd;font-size:.78em}
+.sort-arrow{display:inline-block;min-width:1em;margin-left:5px;color:#bbb;font-size:.78em}
 .whiskey-table td.num,.whiskey-table th.num{text-align:right;font-variant-numeric:tabular-nums}
 .whiskey-table tr:hover td{background-color:#252525}
 .whiskey-name,.filter-link{color:#fff;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;text-decoration-color:#999;cursor:pointer;background:none;border:0;padding:0;font:inherit;text-align:left}
@@ -41,7 +41,6 @@ nocache: true
 .whiskey-panel{display:none}
 .whiskey-panel.active{display:block}
 .whiskey-note{margin:12px 0 16px;font-size:.9rem;color:#c8c8c8}
-.percentile-cell{font-weight:600}
 .history-table{min-width:1050px}
 .history-table td,.history-table th{white-space:nowrap}.history-table td:first-child,.history-table th:first-child{width:130px}
 .history-table td:last-child,.history-table th:last-child{width:85px}.history-table td:nth-child(2),.history-table th:nth-child(2){min-width:280px}.history-table td:nth-child(4),.history-table th:nth-child(4){min-width:210px}
@@ -125,16 +124,8 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.65)}
     var below=values.filter(function(v){return v<x-eps}).length;
     return Math.round(100*below/(values.length-1));
   }
-  function heatStyle(p){
-    if(p==null)return "";
-    var distance=Math.abs(p-50)/50;
-    var alpha=(0.06+0.34*distance).toFixed(2);
-    if(p>50)return "background-color:rgba(34,139,74,"+alpha+")";
-    if(p<50)return "background-color:rgba(170,55,55,"+alpha+")";
-    return "background-color:rgba(130,130,130,.16)";
-  }
   function pctCell(p){
-    return '<td class="num percentile-cell" style="'+heatStyle(p)+'">'+(p==null?"—":p)+'</td>';
+    return '<td class="num">'+(p==null?"—":p)+'</td>';
   }
   function prettyDate(s){
     if(!s)return "Unknown";
