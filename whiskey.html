@@ -11,19 +11,17 @@ nocache: true
 .whiskey-app{max-width:1180px;margin:0 auto}
 .whiskey-app h1{margin:0 0 14px}
 .whiskey-muted{color:#b8b8b8;font-size:.92rem}
-.whiskey-stats{display:grid;grid-template-columns:repeat(4,minmax(120px,1fr));gap:12px;margin:8px 0 18px}
-.whiskey-card{background:#292929;border:1px solid #444;border-radius:10px;padding:14px 16px}
-.whiskey-card .big{font-size:1.55rem;font-weight:600;display:block}
 .whiskey-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 14px}
 .whiskey-tabs button,.whiskey-controls input,.whiskey-controls select{background:#292929;color:#fff;border:1px solid #555;border-radius:7px;padding:8px 10px}
 .whiskey-tabs button{cursor:pointer}
 .whiskey-tabs button.active{background:#fff;color:#1d1d1d;border-color:#fff}
 .whiskey-controls{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.whiskey-summary{color:#c7c7c7;font-size:.95rem;margin:2px 0 16px}
+.main-controls{display:flex;align-items:center;gap:8px;margin:2px 0 12px}
+.main-controls label{color:#bbb}
+.main-controls select{background:#292929;color:#fff;border:1px solid #555;border-radius:7px;padding:8px 10px}
 .whiskey-controls input{min-width:240px;flex:1}
 .whiskey-table-wrap{overflow-x:auto;border:1px solid #444;border-radius:8px}
-.main-toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:4px 0 12px}
-.main-toolbar button{background:#292929;color:#fff;border:1px solid #555;border-radius:7px;padding:8px 11px;cursor:pointer}
-.main-toolbar button.active{background:#fff;color:#1d1d1d;border-color:#fff}
 .main-more{display:flex;gap:8px;margin-top:10px}
 .main-more button{background:#292929;color:#fff;border:1px solid #555;border-radius:7px;padding:7px 11px;cursor:pointer}
 #main .whiskey-table{min-width:720px}
@@ -51,8 +49,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.65)}
 .whiskey-history-list td,.whiskey-history-list th{border-bottom:1px solid #444;padding:7px}
 @media(max-width:900px){.dashboard-grid{grid-template-columns:1fr}.dashboard-section .whiskey-table{min-width:620px}}
 @media(max-width:700px){
-  .whiskey-stats{grid-template-columns:repeat(2,1fr)}
-  .whiskey-controls{flex-direction:column}
+    .whiskey-controls{flex-direction:column}
   .whiskey-controls input{min-width:0}
   .whiskey-tabs{gap:6px}
   .whiskey-tabs button{padding:7px 9px}
@@ -62,12 +59,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.65)}
 <div class="whiskey-app notranslate" translate="no">
   <h1>Whiskey Ratings</h1>
 
-  <div class="whiskey-stats">
-    <div class="whiskey-card"><span class="big" id="stat-qualified">—</span>qualified</div>
-    <div class="whiskey-card"><span class="big" id="stat-whiskeys">—</span>whiskeys</div>
-    <div class="whiskey-card"><span class="big" id="stat-ratings">—</span>ratings</div>
-    <div class="whiskey-card"><span class="big" id="stat-average">—</span>avg rating / 5.0</div>
-  </div>
+  <div class="whiskey-summary" id="whiskey-summary">—</div>
 
   <div class="whiskey-tabs" role="tablist">
     <button class="active" data-tab="main">Main</button>
@@ -312,29 +304,24 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.65)}
     return {html:html+'</tbody></table></div>',total:source.length};
   }
 
-  function mainButtons(){
+  function mainControls(){
     var views=[
-      ["top","Top Rated"],
+      ["top","Whiskeys"],
       ["recent","Recent Ratings"],
       ["styles","Styles"],
-      ["substyles","Sub-styles"],
-      ["most","Most Rated"]
+      ["substyles","Sub-styles"]
     ];
-    return '<div class="main-toolbar">'+views.map(function(v){
-      return '<button type="button" class="main-view '+(mainView===v[0]?"active":"")+'" data-view="'+v[0]+'">'+v[1]+'</button>';
-    }).join("")+'</div>';
+    return '<div class="main-controls"><label for="main-view-select">View</label><select id="main-view-select">'+
+      views.map(function(v){return '<option value="'+v[0]+'" '+(mainView===v[0]?"selected":"")+'>'+v[1]+'</option>';}).join("")+
+      '</select></div>';
   }
 
   function renderMain(){
     var result;
     if(mainView==="top"){
       result=mainProductRows(rows);
-    }else if(mainView==="most"){
-      result=mainProductRows(rows);
     }else if(mainView==="recent"){
-      if(sortState.main.key!=="date"&&sortState.main.key!=="name"&&sortState.main.key!=="style"&&sortState.main.key!=="substyle"&&sortState.main.key!=="score"){
-        sortState.main={key:"date",dir:-1};
-      }
+      if(["date","name","style","substyle","score"].indexOf(sortState.main.key)<0)sortState.main={key:"date",dir:-1};
       result=mainHistoryRows();
     }else if(mainView==="styles"){
       if(["name","whiskeys","ratings","average"].indexOf(sortState.main.key)<0)sortState.main={key:"average",dir:-1};
@@ -347,7 +334,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.65)}
     var more='';
     if(mainLimit<result.total) more+='<button type="button" id="main-more">Show 10 more</button>';
     if(mainLimit>10) more+='<button type="button" id="main-less">Show fewer</button>';
-    document.getElementById("main").innerHTML=mainButtons()+result.html+(more?'<div class="main-more">'+more+'</div>':"");
+    document.getElementById("main").innerHTML=mainControls()+result.html+(more?'<div class="main-more">'+more+'</div>':"");
   }
 
   function switchTab(tab){
@@ -413,17 +400,15 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.65)}
     document.querySelectorAll(".substyle-link").forEach(function(btn){
       btn.onclick=function(){drillSubstyle(btn.getAttribute("data-substyle"),btn.getAttribute("data-style"))};
     });
-    document.querySelectorAll(".main-view").forEach(function(btn){
-      btn.onclick=function(){
-        mainView=btn.getAttribute("data-view");
-        mainLimit=10;
-        if(mainView==="top")sortState.main={key:"average",dir:-1};
-        if(mainView==="most")sortState.main={key:"n",dir:-1};
-        if(mainView==="recent")sortState.main={key:"date",dir:-1};
-        if(mainView==="styles"||mainView==="substyles")sortState.main={key:"average",dir:-1};
-        render();
-      };
-    });
+    var mainSelect=document.getElementById("main-view-select");
+    if(mainSelect)mainSelect.onchange=function(){
+      mainView=mainSelect.value;
+      mainLimit=10;
+      if(mainView==="top")sortState.main={key:"average",dir:-1};
+      if(mainView==="recent")sortState.main={key:"date",dir:-1};
+      if(mainView==="styles"||mainView==="substyles")sortState.main={key:"average",dir:-1};
+      render();
+    };
     var more=document.getElementById("main-more");
     if(more)more.onclick=function(){mainLimit+=10;render()};
     var less=document.getElementById("main-less");
@@ -455,10 +440,9 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.65)}
       var totalRatings=rows.reduce(function(a,r){return a+r.n},0);
       var allScores=[];
       rows.forEach(function(r){r.ratings.forEach(function(x){allScores.push(x.score)})});
-      document.getElementById("stat-qualified").textContent=rows.filter(function(r){return r.n>=3}).length;
-      document.getElementById("stat-whiskeys").textContent=rows.length;
-      document.getElementById("stat-ratings").textContent=totalRatings;
-      document.getElementById("stat-average").textContent=fmt(avg(allScores));
+      var qualifiedCount=rows.filter(function(r){return r.n>=3}).length;
+      document.getElementById("whiskey-summary").textContent=
+        rows.length+" whiskeys · "+totalRatings+" ratings · "+qualifiedCount+" qualified · "+fmt(avg(allScores))+"/5.0 average";
 
       document.querySelectorAll(".whiskey-tabs button").forEach(function(btn){
         btn.onclick=function(){switchTab(btn.getAttribute("data-tab"))};
