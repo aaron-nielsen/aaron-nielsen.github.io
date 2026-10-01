@@ -345,17 +345,25 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
   }
 
   function ratingDistribution(){
-    var bins=[
-      {label:"Under 2.5",min:-Infinity,max:2.5,count:0},
-      {label:"2.5–2.9",min:2.5,max:3.0,count:0},
-      {label:"3.0–3.4",min:3.0,max:3.5,count:0},
-      {label:"3.5–3.9",min:3.5,max:4.0,count:0},
-      {label:"4.0+",min:4.0,max:Infinity,count:0}
-    ];
-    rows.forEach(function(r){r.ratings.forEach(function(x){
-      var b=bins.find(function(z){return x.score>=z.min&&x.score<z.max});
+    var scores=[];
+    rows.forEach(function(r){r.ratings.forEach(function(x){scores.push(Math.round(x.score*10))})});
+    var minScore=Math.min.apply(null,scores);
+    var maxScore=Math.max.apply(null,scores);
+    var start=Math.floor(minScore/2)*2;
+    var bins=[];
+    for(var lo=start;lo<=maxScore;lo+=2){
+      var hi=lo+1;
+      bins.push({
+        label:(lo/10).toFixed(1)+"–"+(hi/10).toFixed(1),
+        lo:lo,
+        hi:hi,
+        count:0
+      });
+    }
+    scores.forEach(function(s){
+      var b=bins.find(function(z){return s>=z.lo&&s<=z.hi});
       if(b)b.count++;
-    })});
+    });
     return barChart(bins,"label","count");
   }
 
