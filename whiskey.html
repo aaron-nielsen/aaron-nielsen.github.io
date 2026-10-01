@@ -4,13 +4,14 @@ title: Whiskey Ratings
 permalink: /whiskey/
 noindex: true
 notranslate: true
+nocache: true
 ---
 
 <style>
 .whiskey-app{max-width:1180px;margin:0 auto}
-.whiskey-app h1{margin-bottom:.2rem}
+.whiskey-app h1{margin:0 0 14px}
 .whiskey-muted{color:#b8b8b8;font-size:.92rem}
-.whiskey-stats{display:grid;grid-template-columns:repeat(4,minmax(120px,1fr));gap:12px;margin:20px 0}
+.whiskey-stats{display:grid;grid-template-columns:repeat(4,minmax(120px,1fr));gap:12px;margin:8px 0 18px}
 .whiskey-card{background:#292929;border:1px solid #444;border-radius:10px;padding:14px 16px}
 .whiskey-card .big{font-size:1.55rem;font-weight:600;display:block}
 .whiskey-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 14px}
@@ -22,34 +23,33 @@ notranslate: true
 .dashboard-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 .dashboard-section{background:#232323;border:1px solid #444;border-radius:10px;overflow:hidden}
 .dashboard-section h3{margin:0;padding:13px 15px;background:#292929;font-size:1.05rem}
-.dashboard-foot{padding:8px 13px 10px;color:#aaa;font-size:.82rem}
 .whiskey-table-wrap{overflow-x:auto;border:1px solid #444;border-radius:8px}
 .dashboard-section .whiskey-table-wrap{border:0;border-radius:0}
 .whiskey-table{width:100%;border-collapse:collapse;margin:0;min-width:760px}
-.dashboard-section .whiskey-table{min-width:0}
-.whiskey-table th,.whiskey-table td{padding:9px 10px;border-bottom:1px solid #3d3d3d;text-align:left;vertical-align:middle}
+.dashboard-section .whiskey-table{min-width:560px}.dashboard-section .whiskey-table td,.dashboard-section .whiskey-table th{white-space:nowrap}
+.whiskey-table th,.whiskey-table td{padding:8px 10px;border-bottom:1px solid #3d3d3d;text-align:left;vertical-align:middle}
 .whiskey-table tr:last-child td{border-bottom:0}
 .whiskey-table th{background:#292929;position:sticky;top:0;white-space:nowrap}
-.whiskey-table th.sortable{cursor:pointer;user-select:none}
+.whiskey-table th.sortable{cursor:pointer;user-select:none;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:4px}
 .whiskey-table th.sortable:hover{background:#343434}
-.sort-arrow{display:inline-block;min-width:1em;margin-left:4px;color:#aaa;font-size:.8em}
+.sort-arrow{display:inline-block;min-width:1em;margin-left:5px;color:#ddd;font-size:.78em}
 .whiskey-table td.num,.whiskey-table th.num{text-align:right;font-variant-numeric:tabular-nums}
 .whiskey-table tr:hover td{background-color:#252525}
-.whiskey-name,.filter-link{color:#fff;text-decoration:underline;text-decoration-color:#666;cursor:pointer;background:none;border:0;padding:0;font:inherit;text-align:left}
+.whiskey-name,.filter-link{color:#fff;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;text-decoration-color:#999;cursor:pointer;background:none;border:0;padding:0;font:inherit;text-align:left}
 .whiskey-name:hover,.filter-link:hover{text-decoration-color:#fff}
 .whiskey-panel{display:none}
 .whiskey-panel.active{display:block}
 .whiskey-note{margin:12px 0 16px;font-size:.9rem;color:#c8c8c8}
 .percentile-cell{font-weight:600}
-.history-table{min-width:900px}
-.history-table td:first-child,.history-table th:first-child{white-space:nowrap;width:120px}
-.history-table td:last-child,.history-table th:last-child{width:85px}
+.history-table{min-width:1050px}
+.history-table td,.history-table th{white-space:nowrap}.history-table td:first-child,.history-table th:first-child{width:130px}
+.history-table td:last-child,.history-table th:last-child{width:85px}.history-table td:nth-child(2),.history-table th:nth-child(2){min-width:280px}.history-table td:nth-child(4),.history-table th:nth-child(4){min-width:210px}
 dialog.whiskey-dialog{background:#222;color:#fff;border:1px solid #666;border-radius:10px;max-width:620px;width:90%}
 dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.65)}
 .whiskey-dialog button.close{float:right;background:#333;color:#fff;border:1px solid #666;border-radius:5px;padding:5px 9px;cursor:pointer}
 .whiskey-history-list{width:100%;border-collapse:collapse}
 .whiskey-history-list td,.whiskey-history-list th{border-bottom:1px solid #444;padding:7px}
-@media(max-width:900px){.dashboard-grid{grid-template-columns:1fr}}
+@media(max-width:900px){.dashboard-grid{grid-template-columns:1fr}.dashboard-section .whiskey-table{min-width:620px}}
 @media(max-width:700px){
   .whiskey-stats{grid-template-columns:repeat(2,1fr)}
   .whiskey-controls{flex-direction:column}
@@ -62,7 +62,6 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.65)}
 
 <div class="whiskey-app notranslate" translate="no">
   <h1>Whiskey Ratings</h1>
-  <p class="whiskey-muted">Personal tasting ratings on a 5.0 scale. Q%ile includes only whiskeys with at least 3 ratings. S%ile compares whiskeys within broad style with no minimum.</p>
 
   <div class="whiskey-stats">
     <div class="whiskey-card"><span class="big" id="stat-qualified">—</span>qualified</div>
@@ -94,8 +93,6 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.65)}
   <div id="qualified" class="whiskey-panel"></div>
   <div id="need-more" class="whiskey-panel"></div>
   <div id="history" class="whiskey-panel"></div>
-
-  <p class="whiskey-note">Percentiles use exact, unrounded averages. Ties share the same percentile using minimum rank. Historical rating dates that were not preserved are shown as unknown.</p>
 </div>
 
 <dialog id="whiskey-dialog" class="whiskey-dialog">
@@ -210,7 +207,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.65)}
   function th(tab,key,label,cls){
     var s=sortState[tab];
     var arrow=(s&&s.key===key)?(s.dir===1?"▲":"▼"):"↕";
-    return '<th class="sortable '+(cls||"")+'" data-tab="'+tab+'" data-sort="'+key+'">'+label+'<span class="sort-arrow">'+arrow+'</span></th>';
+    return '<th class="sortable '+(cls||"")+'" data-tab="'+tab+'" data-sort="'+key+'" title="Sort by '+label+'" aria-label="Sort by '+label+'">'+label+'<span class="sort-arrow">'+arrow+'</span></th>';
   }
 
   function productTable(list,target,tab){
@@ -331,12 +328,12 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.65)}
 
     document.getElementById("main").innerHTML=
       '<div class="dashboard-grid">'+
-        '<section class="dashboard-section"><h3>Top Rated Whiskeys</h3>'+miniWhiskeyRows(topWhiskeys,"main-top-whiskeys",true)+'<div class="dashboard-foot">Qualified whiskeys only (N ≥ 3).</div></section>'+
-        '<section class="dashboard-section"><h3>Most Rated Whiskeys</h3>'+miniWhiskeyRows(mostRated,"main-most-rated",false)+'<div class="dashboard-foot">Ranked by number of tastings.</div></section>'+
-        '<section class="dashboard-section"><h3>Top Styles</h3>'+miniGroupRows(topStyles,"main-top-styles","Style","style")+'<div class="dashboard-foot">Average of whiskey averages within each broad style.</div></section>'+
-        '<section class="dashboard-section"><h3>Most Rated Styles</h3>'+miniGroupRows(mostRatedStyles,"main-most-rated-styles","Style","style")+'<div class="dashboard-foot">Ranked by total tasting ratings.</div></section>'+
-        '<section class="dashboard-section"><h3>Top Sub-styles</h3>'+miniGroupRows(topSubstyles,"main-top-substyles","Sub-style","substyle")+'<div class="dashboard-foot">Average of whiskey averages within each sub-style.</div></section>'+
-        '<section class="dashboard-section"><h3>Recent Ratings</h3>'+recentMini(recent,"main-recent")+'<div class="dashboard-foot">Only ratings with known dates are shown.</div></section>'+
+        '<section class="dashboard-section"><h3>Top Rated Whiskeys</h3>'+miniWhiskeyRows(topWhiskeys,"main-top-whiskeys",true)+'</section>'+
+        '<section class="dashboard-section"><h3>Most Rated Whiskeys</h3>'+miniWhiskeyRows(mostRated,"main-most-rated",false)+'</section>'+
+        '<section class="dashboard-section"><h3>Top Styles</h3>'+miniGroupRows(topStyles,"main-top-styles","Style","style")+'</section>'+
+        '<section class="dashboard-section"><h3>Most Rated Styles</h3>'+miniGroupRows(mostRatedStyles,"main-most-rated-styles","Style","style")+'</section>'+
+        '<section class="dashboard-section"><h3>Top Sub-styles</h3>'+miniGroupRows(topSubstyles,"main-top-substyles","Sub-style","substyle")+'</section>'+
+        '<section class="dashboard-section"><h3>Recent Ratings</h3>'+recentMini(recent,"main-recent")+'</section>'+
       '</div>';
   }
 
