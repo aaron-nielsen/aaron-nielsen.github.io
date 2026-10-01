@@ -3,6 +3,7 @@ layout: default
 title: Whiskey Ratings
 permalink: /whiskey/
 noindex: true
+notranslate: true
 ---
 
 <style>
@@ -59,7 +60,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.65)}
 }
 </style>
 
-<div class="whiskey-app">
+<div class="whiskey-app notranslate" translate="no">
   <h1>Whiskey Ratings</h1>
   <p class="whiskey-muted">Personal tasting ratings on a 5.0 scale. Q%ile includes only whiskeys with at least 3 ratings. S%ile compares whiskeys within broad style with no minimum.</p>
 
@@ -71,7 +72,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.65)}
   </div>
 
   <div class="whiskey-tabs" role="tablist">
-    <button class="active" data-tab="home">Home</button>
+    <button class="active" data-tab="main">Main</button>
     <button data-tab="overall">Overall</button>
     <button data-tab="styles">Styles</button>
     <button data-tab="substyles">Sub-styles</button>
@@ -86,7 +87,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.65)}
     <select id="substyle-filter"><option value="">All sub-styles</option></select>
   </div>
 
-  <div id="home" class="whiskey-panel active"></div>
+  <div id="main" class="whiskey-panel active"></div>
   <div id="overall" class="whiskey-panel"></div>
   <div id="styles" class="whiskey-panel"></div>
   <div id="substyles" class="whiskey-panel"></div>
@@ -105,14 +106,20 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.65)}
 <script>
 (function(){
   var DATA_URL="/data/whiskey_ratings.json";
-  var data=null, rows=[], activeTab="home";
+  var data=null, rows=[], activeTab="main";
   var sortState={
     overall:{key:"name",dir:1},
     qualified:{key:"average",dir:-1},
     "need-more":{key:"n",dir:-1},
     styles:{key:"average",dir:-1},
     substyles:{key:"average",dir:-1},
-    history:{key:"date",dir:-1}
+    history:{key:"date",dir:-1},
+    "main-top-whiskeys":{key:"average",dir:-1},
+    "main-most-rated":{key:"n",dir:-1},
+    "main-top-styles":{key:"average",dir:-1},
+    "main-most-rated-styles":{key:"ratings",dir:-1},
+    "main-top-substyles":{key:"average",dir:-1},
+    "main-recent":{key:"date",dir:-1}
   };
 
   function avg(xs){return xs.reduce(function(a,b){return a+b},0)/xs.length}
@@ -273,43 +280,63 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.65)}
     document.getElementById("history").innerHTML=html;
   }
 
-  function miniWhiskeyRows(xs){
-    var html='<div class="whiskey-table-wrap"><table class="whiskey-table"><thead><tr><th>Whiskey</th><th class="num">N</th><th class="num">Avg</th><th class="num">Q%ile</th></tr></thead><tbody>';
+  function miniWhiskeyRows(xs,tab,showQ){
+    var html='<div class="whiskey-table-wrap"><table class="whiskey-table"><thead><tr>'+
+      th(tab,"name","Whiskey")+th(tab,"n","N","num")+th(tab,"average","Avg","num")+
+      (showQ?th(tab,"qPercentile","Q%ile","num"):"")+
+      '</tr></thead><tbody>';
     xs.forEach(function(r){
-      html+='<tr><td><button class="whiskey-name" data-name="'+esc(r.name)+'">'+esc(r.name)+'</button></td><td class="num">'+r.n+'</td><td class="num">'+fmt(r.average)+'</td>'+pctCell(r.qPercentile)+'</tr>';
+      html+='<tr><td><button class="whiskey-name" data-name="'+esc(r.name)+'">'+esc(r.name)+'</button></td>'+
+        '<td class="num">'+r.n+'</td><td class="num">'+fmt(r.average)+'</td>'+
+        (showQ?pctCell(r.qPercentile):"")+'</tr>';
     });
     return html+'</tbody></table></div>';
   }
 
-  function miniGroupRows(xs){
-    var html='<div class="whiskey-table-wrap"><table class="whiskey-table"><thead><tr><th>Style</th><th class="num">Whiskeys</th><th class="num">Ratings</th><th class="num">Avg</th></tr></thead><tbody>';
+  function miniGroupRows(xs,tab,label,key){
+    var html='<div class="whiskey-table-wrap"><table class="whiskey-table"><thead><tr>'+
+      th(tab,"name",label)+th(tab,"whiskeys","Whiskeys","num")+th(tab,"ratings","Ratings","num")+th(tab,"average","Avg","num")+
+      '</tr></thead><tbody>';
     xs.forEach(function(g){
-      html+='<tr><td><button class="filter-link style-link" data-style="'+esc(g.name)+'">'+esc(g.name)+'</button></td><td class="num">'+g.whiskeys+'</td><td class="num">'+g.ratings+'</td><td class="num">'+fmt(g.average)+'</td></tr>';
+      var linkClass=key==="style"?"style-link":"substyle-link";
+      var attr=key==="style"?' data-style="'+esc(g.name)+'"':' data-substyle="'+esc(g.name)+'"';
+      html+='<tr><td><button class="filter-link '+linkClass+'"'+attr+'>'+esc(g.name)+'</button></td>'+
+        '<td class="num">'+g.whiskeys+'</td><td class="num">'+g.ratings+'</td><td class="num">'+fmt(g.average)+'</td></tr>';
     });
     return html+'</tbody></table></div>';
   }
 
-  function recentMini(xs){
-    var html='<div class="whiskey-table-wrap"><table class="whiskey-table"><thead><tr><th>Date</th><th>Whiskey</th><th class="num">Rating</th></tr></thead><tbody>';
+  function recentMini(xs,tab){
+    var html='<div class="whiskey-table-wrap"><table class="whiskey-table"><thead><tr>'+
+      th(tab,"date","Date")+th(tab,"name","Whiskey")+th(tab,"score","Rating","num")+
+      '</tr></thead><tbody>';
     xs.forEach(function(h){
-      html+='<tr><td style="white-space:nowrap">'+prettyDate(h.date)+'</td><td>'+esc(h.name)+'</td><td class="num">'+h.score.toFixed(1)+'</td></tr>';
+      html+='<tr><td style="white-space:nowrap">'+prettyDate(h.date)+'</td>'+
+        '<td><button class="whiskey-name" data-name="'+esc(h.name)+'">'+esc(h.name)+'</button></td>'+
+        '<td class="num">'+h.score.toFixed(1)+'</td></tr>';
     });
     return html+'</tbody></table></div>';
   }
 
-  function renderHome(){
-    var qualified=rows.filter(function(r){return r.n>=3}).sort(function(a,b){return b.average-a.average||b.n-a.n}).slice(0,5);
-    var groups=groupRows("style");
-    var topStyles=groups.slice().sort(function(a,b){return b.average-a.average||b.ratings-a.ratings}).slice(0,5);
-    var mostRated=groups.slice().sort(function(a,b){return b.ratings-a.ratings||b.whiskeys-a.whiskeys}).slice(0,5);
-    var recent=historyRows().filter(function(h){return h.date}).sort(function(a,b){return b.date.localeCompare(a.date)||a.name.localeCompare(b.name)}).slice(0,6);
+  function renderMain(){
+    var qualified=rows.filter(function(r){return r.n>=3});
+    var topWhiskeys=sortedFor("main-top-whiskeys",qualified).slice(0,5);
+    var mostRated=sortedFor("main-most-rated",rows).slice(0,5);
+    var styles=groupRows("style");
+    var topStyles=sortedFor("main-top-styles",styles).slice(0,5);
+    var mostRatedStyles=sortedFor("main-most-rated-styles",styles).slice(0,5);
+    var substyles=groupRows("substyle");
+    var topSubstyles=sortedFor("main-top-substyles",substyles).slice(0,5);
+    var recent=sortedFor("main-recent",historyRows().filter(function(h){return h.date})).slice(0,6);
 
-    document.getElementById("home").innerHTML=
+    document.getElementById("main").innerHTML=
       '<div class="dashboard-grid">'+
-        '<section class="dashboard-section"><h3>Top Qualified Whiskeys</h3>'+miniWhiskeyRows(qualified)+'<div class="dashboard-foot">At least 3 ratings.</div></section>'+
-        '<section class="dashboard-section"><h3>Top Styles</h3>'+miniGroupRows(topStyles)+'<div class="dashboard-foot">Average of whiskey averages within each broad style.</div></section>'+
-        '<section class="dashboard-section"><h3>Most Rated Styles</h3>'+miniGroupRows(mostRated)+'<div class="dashboard-foot">Ranked by total tasting ratings.</div></section>'+
-        '<section class="dashboard-section"><h3>Recent Ratings</h3>'+recentMini(recent)+'<div class="dashboard-foot">Only ratings with known dates are shown.</div></section>'+
+        '<section class="dashboard-section"><h3>Top Rated Whiskeys</h3>'+miniWhiskeyRows(topWhiskeys,"main-top-whiskeys",true)+'<div class="dashboard-foot">Qualified whiskeys only (N ≥ 3).</div></section>'+
+        '<section class="dashboard-section"><h3>Most Rated Whiskeys</h3>'+miniWhiskeyRows(mostRated,"main-most-rated",false)+'<div class="dashboard-foot">Ranked by number of tastings.</div></section>'+
+        '<section class="dashboard-section"><h3>Top Styles</h3>'+miniGroupRows(topStyles,"main-top-styles","Style","style")+'<div class="dashboard-foot">Average of whiskey averages within each broad style.</div></section>'+
+        '<section class="dashboard-section"><h3>Most Rated Styles</h3>'+miniGroupRows(mostRatedStyles,"main-most-rated-styles","Style","style")+'<div class="dashboard-foot">Ranked by total tasting ratings.</div></section>'+
+        '<section class="dashboard-section"><h3>Top Sub-styles</h3>'+miniGroupRows(topSubstyles,"main-top-substyles","Sub-style","substyle")+'<div class="dashboard-foot">Average of whiskey averages within each sub-style.</div></section>'+
+        '<section class="dashboard-section"><h3>Recent Ratings</h3>'+recentMini(recent,"main-recent")+'<div class="dashboard-foot">Only ratings with known dates are shown.</div></section>'+
       '</div>';
   }
 
@@ -343,7 +370,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.65)}
   }
 
   function render(){
-    if(activeTab==="home")renderHome();
+    if(activeTab==="main")renderMain();
     if(activeTab==="overall")productTable(filteredRows(),"overall","overall");
     if(activeTab==="qualified")productTable(filteredRows(rows.filter(function(r){return r.n>=3})),"qualified","qualified");
     if(activeTab==="need-more")productTable(filteredRows(rows.filter(function(r){return r.n<3})),"need-more","need-more");
@@ -421,7 +448,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.65)}
       document.getElementById("dialog-close").onclick=function(){document.getElementById("whiskey-dialog").close()};
       render();
     }).catch(function(err){
-      document.getElementById("home").innerHTML="<p>Could not load whiskey data.</p>";
+      document.getElementById("main").innerHTML="<p>Could not load whiskey data.</p>";
       console.error(err);
     });
   }
