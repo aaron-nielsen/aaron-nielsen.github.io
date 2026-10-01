@@ -267,31 +267,14 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.65)}
   function mainProductRows(source){
     var xs=sortedFor("main",source).slice(0,mainLimit);
     var html='<div class="whiskey-table-wrap"><table class="whiskey-table"><thead><tr>'+
-      th("main","name","Whiskey")+th("main","style","Style")+th("main","substyle","Sub-style")+
-      th("main","n","N","num")+th("main","average","Avg","num")+th("main","percentile","%ile","num")+
+      th("main","name","Whiskey")+th("main","n","N","num")+th("main","average","Avg","num")+
+      th("main","percentile","%ile","num")+th("main","style","Style")+th("main","substyle","Sub-style")+
       '</tr></thead><tbody>';
     xs.forEach(function(r){
       html+='<tr><td><button class="whiskey-name" data-name="'+esc(r.name)+'">'+esc(r.name)+'</button></td>'+
+        '<td class="num">'+r.n+'</td><td class="num">'+fmt(r.average)+'</td>'+pctCell(r.percentile)+
         '<td><button class="filter-link style-link" data-style="'+esc(r.style)+'">'+esc(r.style)+'</button></td>'+
-        '<td><button class="filter-link substyle-link" data-style="'+esc(r.style)+'" data-substyle="'+esc(r.substyle)+'">'+esc(r.substyle)+'</button></td>'+
-        '<td class="num">'+r.n+'</td><td class="num">'+fmt(r.average)+'</td>'+pctCell(r.percentile)+'</tr>';
-    });
-    return {html:html+'</tbody></table></div>',total:source.length};
-  }
-
-  function mainHistoryRows(){
-    var source=historyRows().filter(function(h){return h.date});
-    var xs=sortedFor("main",source).slice(0,mainLimit);
-    var html='<div class="whiskey-table-wrap"><table class="whiskey-table"><thead><tr>'+
-      th("main","date","Date")+th("main","name","Whiskey")+th("main","style","Style")+
-      th("main","substyle","Sub-style")+th("main","score","Rating","num")+
-      '</tr></thead><tbody>';
-    xs.forEach(function(h){
-      html+='<tr><td style="white-space:nowrap">'+prettyDate(h.date)+'</td>'+
-        '<td><button class="whiskey-name" data-name="'+esc(h.name)+'">'+esc(h.name)+'</button></td>'+
-        '<td><button class="filter-link style-link" data-style="'+esc(h.style)+'">'+esc(h.style)+'</button></td>'+
-        '<td><button class="filter-link substyle-link" data-style="'+esc(h.style)+'" data-substyle="'+esc(h.substyle)+'">'+esc(h.substyle)+'</button></td>'+
-        '<td class="num">'+h.score.toFixed(1)+'</td></tr>';
+        '<td><button class="filter-link substyle-link" data-style="'+esc(r.style)+'" data-substyle="'+esc(r.substyle)+'">'+esc(r.substyle)+'</button></td></tr>';
     });
     return {html:html+'</tbody></table></div>',total:source.length};
   }
@@ -314,7 +297,6 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.65)}
   function mainControls(){
     var views=[
       ["top","Whiskeys"],
-      ["recent","Recent Ratings"],
       ["styles","Styles"],
       ["substyles","Sub-styles"]
     ];
@@ -328,15 +310,19 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.65)}
   function renderMain(){
     var result;
     if(mainView==="top"){
+      if(["name","style","substyle","n","average","percentile"].indexOf(sortState.main.key)<0){
+        sortState.main={key:"average",dir:-1};
+      }
       result=mainProductRows(rows);
-    }else if(mainView==="recent"){
-      if(["date","name","style","substyle","score"].indexOf(sortState.main.key)<0)sortState.main={key:"date",dir:-1};
-      result=mainHistoryRows();
     }else if(mainView==="styles"){
-      if(["name","whiskeys","ratings","average"].indexOf(sortState.main.key)<0)sortState.main={key:"average",dir:-1};
+      if(["name","whiskeys","ratings","average"].indexOf(sortState.main.key)<0){
+        sortState.main={key:"average",dir:-1};
+      }
       result=mainGroupRows("style","Style");
     }else{
-      if(["name","whiskeys","ratings","average"].indexOf(sortState.main.key)<0)sortState.main={key:"average",dir:-1};
+      if(["name","whiskeys","ratings","average"].indexOf(sortState.main.key)<0){
+        sortState.main={key:"average",dir:-1};
+      }
       result=mainGroupRows("substyle","Sub-style");
     }
 
@@ -414,7 +400,6 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.65)}
         mainView=btn.getAttribute("data-view");
         mainLimit=10;
         if(mainView==="top")sortState.main={key:"average",dir:-1};
-        if(mainView==="recent")sortState.main={key:"date",dir:-1};
         if(mainView==="styles"||mainView==="substyles")sortState.main={key:"average",dir:-1};
         render();
       };
