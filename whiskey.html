@@ -6,40 +6,56 @@ noindex: true
 ---
 
 <style>
-.whiskey-app { max-width: 1180px; margin: 0 auto; }
-.whiskey-app h1 { margin-bottom: .2rem; }
-.whiskey-muted { color: #b8b8b8; font-size: .92rem; }
-.whiskey-stats { display:grid; grid-template-columns:repeat(4,minmax(120px,1fr)); gap:12px; margin:20px 0; }
-.whiskey-card { background:#292929; border:1px solid #444; border-radius:8px; padding:14px 16px; }
-.whiskey-card .big { font-size:1.55rem; font-weight:600; display:block; }
-.whiskey-tabs { display:flex; gap:8px; flex-wrap:wrap; margin:18px 0 12px; }
-.whiskey-tabs button, .whiskey-controls input, .whiskey-controls select {
-  background:#292929; color:#fff; border:1px solid #555; border-radius:6px; padding:8px 10px;
-}
-.whiskey-tabs button { cursor:pointer; }
-.whiskey-tabs button.active { background:#fff; color:#1d1d1d; border-color:#fff; }
-.whiskey-controls { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px; }
-.whiskey-controls input { min-width:240px; flex:1; }
-.whiskey-table-wrap { overflow-x:auto; border:1px solid #444; border-radius:8px; }
-.whiskey-table { width:100%; border-collapse:collapse; margin:0; min-width:760px; }
-.whiskey-table th, .whiskey-table td { padding:9px 10px; border-bottom:1px solid #3d3d3d; text-align:left; }
-.whiskey-table th { background:#292929; position:sticky; top:0; cursor:pointer; white-space:nowrap; }
-.whiskey-table td.num, .whiskey-table th.num { text-align:right; font-variant-numeric:tabular-nums; }
-.whiskey-table tr:hover td { background:#252525; }
-.whiskey-name { color:#fff; text-decoration:underline; text-decoration-color:#666; cursor:pointer; background:none; border:0; padding:0; font:inherit; text-align:left; }
-.whiskey-name:hover { text-decoration-color:#fff; }
-.whiskey-panel { display:none; }
-.whiskey-panel.active { display:block; }
-.whiskey-note { margin:10px 0 16px; font-size:.9rem; color:#c8c8c8; }
-dialog.whiskey-dialog { background:#222; color:#fff; border:1px solid #666; border-radius:10px; max-width:620px; width:90%; }
-dialog.whiskey-dialog::backdrop { background:rgba(0,0,0,.65); }
-.whiskey-dialog button.close { float:right; background:#333; color:#fff; border:1px solid #666; border-radius:5px; padding:5px 9px; cursor:pointer; }
-.whiskey-history-list { width:100%; border-collapse:collapse; }
-.whiskey-history-list td, .whiskey-history-list th { border-bottom:1px solid #444; padding:7px; }
-@media (max-width:700px) {
-  .whiskey-stats { grid-template-columns:repeat(2,1fr); }
-  .whiskey-controls { flex-direction:column; }
-  .whiskey-controls input { min-width:0; }
+.whiskey-app{max-width:1180px;margin:0 auto}
+.whiskey-app h1{margin-bottom:.2rem}
+.whiskey-muted{color:#b8b8b8;font-size:.92rem}
+.whiskey-stats{display:grid;grid-template-columns:repeat(4,minmax(120px,1fr));gap:12px;margin:20px 0}
+.whiskey-card{background:#292929;border:1px solid #444;border-radius:10px;padding:14px 16px}
+.whiskey-card .big{font-size:1.55rem;font-weight:600;display:block}
+.whiskey-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 14px}
+.whiskey-tabs button,.whiskey-controls input,.whiskey-controls select{background:#292929;color:#fff;border:1px solid #555;border-radius:7px;padding:8px 10px}
+.whiskey-tabs button{cursor:pointer}
+.whiskey-tabs button.active{background:#fff;color:#1d1d1d;border-color:#fff}
+.whiskey-controls{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.whiskey-controls input{min-width:240px;flex:1}
+.dashboard-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.dashboard-section{background:#232323;border:1px solid #444;border-radius:10px;overflow:hidden}
+.dashboard-section h3{margin:0;padding:13px 15px;background:#292929;font-size:1.05rem}
+.dashboard-foot{padding:8px 13px 10px;color:#aaa;font-size:.82rem}
+.whiskey-table-wrap{overflow-x:auto;border:1px solid #444;border-radius:8px}
+.dashboard-section .whiskey-table-wrap{border:0;border-radius:0}
+.whiskey-table{width:100%;border-collapse:collapse;margin:0;min-width:760px}
+.dashboard-section .whiskey-table{min-width:0}
+.whiskey-table th,.whiskey-table td{padding:9px 10px;border-bottom:1px solid #3d3d3d;text-align:left;vertical-align:middle}
+.whiskey-table tr:last-child td{border-bottom:0}
+.whiskey-table th{background:#292929;position:sticky;top:0;white-space:nowrap}
+.whiskey-table th.sortable{cursor:pointer;user-select:none}
+.whiskey-table th.sortable:hover{background:#343434}
+.sort-arrow{display:inline-block;min-width:1em;margin-left:4px;color:#aaa;font-size:.8em}
+.whiskey-table td.num,.whiskey-table th.num{text-align:right;font-variant-numeric:tabular-nums}
+.whiskey-table tr:hover td{background-color:#252525}
+.whiskey-name{color:#fff;text-decoration:underline;text-decoration-color:#666;cursor:pointer;background:none;border:0;padding:0;font:inherit;text-align:left}
+.whiskey-name:hover{text-decoration-color:#fff}
+.whiskey-panel{display:none}
+.whiskey-panel.active{display:block}
+.whiskey-note{margin:12px 0 16px;font-size:.9rem;color:#c8c8c8}
+.percentile-cell{font-weight:600}
+.history-table{min-width:900px}
+.history-table td:first-child,.history-table th:first-child{white-space:nowrap;width:120px}
+.history-table td:last-child,.history-table th:last-child{width:85px}
+dialog.whiskey-dialog{background:#222;color:#fff;border:1px solid #666;border-radius:10px;max-width:620px;width:90%}
+dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.65)}
+.whiskey-dialog button.close{float:right;background:#333;color:#fff;border:1px solid #666;border-radius:5px;padding:5px 9px;cursor:pointer}
+.whiskey-history-list{width:100%;border-collapse:collapse}
+.whiskey-history-list td,.whiskey-history-list th{border-bottom:1px solid #444;padding:7px}
+@media(max-width:900px){.dashboard-grid{grid-template-columns:1fr}}
+@media(max-width:700px){
+  .whiskey-stats{grid-template-columns:repeat(2,1fr)}
+  .whiskey-controls{flex-direction:column}
+  .whiskey-controls input{min-width:0}
+  .whiskey-tabs{gap:6px}
+  .whiskey-tabs button{padding:7px 9px}
+  .dashboard-section .whiskey-table{font-size:.9rem}
 }
 </style>
 
@@ -48,14 +64,15 @@ dialog.whiskey-dialog::backdrop { background:rgba(0,0,0,.65); }
   <p class="whiskey-muted">Personal tasting ratings on a 5.0 scale. Q%ile includes only whiskeys with at least 3 ratings. S%ile compares whiskeys within broad style with no minimum.</p>
 
   <div class="whiskey-stats">
-    <div class="whiskey-card"><span class="big" id="stat-products">—</span>products</div>
-    <div class="whiskey-card"><span class="big" id="stat-ratings">—</span>ratings</div>
     <div class="whiskey-card"><span class="big" id="stat-qualified">—</span>qualified</div>
-    <div class="whiskey-card"><span class="big" id="stat-average">—</span>collection avg</div>
+    <div class="whiskey-card"><span class="big" id="stat-whiskeys">—</span>whiskeys</div>
+    <div class="whiskey-card"><span class="big" id="stat-ratings">—</span>ratings</div>
+    <div class="whiskey-card"><span class="big" id="stat-average">—</span>avg rating / 5.0</div>
   </div>
 
   <div class="whiskey-tabs" role="tablist">
-    <button class="active" data-tab="overall">Overall</button>
+    <button class="active" data-tab="home">Home</button>
+    <button data-tab="overall">Overall</button>
     <button data-tab="styles">Styles</button>
     <button data-tab="substyles">Sub-styles</button>
     <button data-tab="qualified">Qualified</button>
@@ -63,20 +80,21 @@ dialog.whiskey-dialog::backdrop { background:rgba(0,0,0,.65); }
     <button data-tab="history">History</button>
   </div>
 
-  <div class="whiskey-controls" id="product-controls">
+  <div class="whiskey-controls" id="product-controls" style="display:none">
     <input id="search" type="search" placeholder="Search whiskey…">
     <select id="style-filter"><option value="">All styles</option></select>
     <select id="substyle-filter"><option value="">All sub-styles</option></select>
   </div>
 
-  <div id="overall" class="whiskey-panel active"></div>
+  <div id="home" class="whiskey-panel active"></div>
+  <div id="overall" class="whiskey-panel"></div>
   <div id="styles" class="whiskey-panel"></div>
   <div id="substyles" class="whiskey-panel"></div>
   <div id="qualified" class="whiskey-panel"></div>
   <div id="need-more" class="whiskey-panel"></div>
   <div id="history" class="whiskey-panel"></div>
 
-  <p class="whiskey-note">Percentiles use exact, unrounded averages. Ties share the same percentile using minimum rank. Historical rating dates that were not preserved in the original spreadsheet are shown as unknown.</p>
+  <p class="whiskey-note">Percentiles use exact, unrounded averages. Ties share the same percentile using minimum rank. Historical rating dates that were not preserved are shown as unknown.</p>
 </div>
 
 <dialog id="whiskey-dialog" class="whiskey-dialog">
@@ -85,190 +103,293 @@ dialog.whiskey-dialog::backdrop { background:rgba(0,0,0,.65); }
 </dialog>
 
 <script>
-(() => {
-  const DATA_URL = "/data/whiskey_ratings.json";
-  let data = null;
-  let rows = [];
-  let sortKey = "name";
-  let sortDir = 1;
-  let activeTab = "overall";
-
-  const avg = xs => xs.reduce((a,b)=>a+b,0)/xs.length;
-  const fmt = x => Number(x).toFixed(2);
-  const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[c]));
-  const pctRank = (values, x) => {
-    if (values.length <= 1) return 100;
-    const eps = 1e-12;
-    const below = values.filter(v => v < x - eps).length;
-    return Math.round(100 * below / (values.length - 1));
+(function(){
+  var DATA_URL="/data/whiskey_ratings.json";
+  var data=null, rows=[], activeTab="home";
+  var sortState={
+    overall:{key:"name",dir:1},
+    qualified:{key:"average",dir:-1},
+    "need-more":{key:"n",dir:-1},
+    styles:{key:"average",dir:-1},
+    substyles:{key:"average",dir:-1},
+    history:{key:"date",dir:-1}
   };
 
-  function computeRows() {
-    rows = data.products.map(p => {
-      const scores = p.ratings.map(r => r.score);
-      return {...p, n:scores.length, average:avg(scores)};
+  function avg(xs){return xs.reduce(function(a,b){return a+b},0)/xs.length}
+  function fmt(x){return Number(x).toFixed(2)}
+  function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[c]})}
+  function pctRank(values,x){
+    if(values.length<=1)return 100;
+    var eps=1e-12;
+    var below=values.filter(function(v){return v<x-eps}).length;
+    return Math.round(100*below/(values.length-1));
+  }
+  function heatStyle(p){
+    if(p==null)return "";
+    var distance=Math.abs(p-50)/50;
+    var alpha=(0.06+0.34*distance).toFixed(2);
+    if(p>50)return "background-color:rgba(34,139,74,"+alpha+")";
+    if(p<50)return "background-color:rgba(170,55,55,"+alpha+")";
+    return "background-color:rgba(130,130,130,.16)";
+  }
+  function pctCell(p){
+    return '<td class="num percentile-cell" style="'+heatStyle(p)+'">'+(p==null?"—":p)+'</td>';
+  }
+  function prettyDate(s){
+    if(!s)return "Unknown";
+    var d=new Date(s+"T00:00:00");
+    return d.toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"});
+  }
+
+  function computeRows(){
+    rows=data.products.map(function(p){
+      var scores=p.ratings.map(function(r){return r.score});
+      return Object.assign({},p,{n:scores.length,average:avg(scores)});
     });
-    const all = rows.map(r=>r.average);
-    const qualified = rows.filter(r=>r.n>=3).map(r=>r.average);
-    const byStyle = {};
-    rows.forEach(r => (byStyle[r.style] ||= []).push(r.average));
-    rows = rows.map(r => ({
-      ...r,
-      percentile:pctRank(all,r.average),
-      qPercentile:r.n>=3 ? pctRank(qualified,r.average) : null,
-      sPercentile:pctRank(byStyle[r.style],r.average)
-    }));
-  }
-
-  function setupFilters() {
-    const styles = [...new Set(rows.map(r=>r.style))].sort();
-    const subs = [...new Set(rows.map(r=>r.substyle))].sort();
-    document.getElementById("style-filter").innerHTML = '<option value="">All styles</option>' + styles.map(x=>'<option>'+esc(x)+'</option>').join("");
-    document.getElementById("substyle-filter").innerHTML = '<option value="">All sub-styles</option>' + subs.map(x=>'<option>'+esc(x)+'</option>').join("");
-  }
-
-  function filteredRows(source=rows) {
-    const q = document.getElementById("search").value.trim().toLowerCase();
-    const style = document.getElementById("style-filter").value;
-    const sub = document.getElementById("substyle-filter").value;
-    return source.filter(r =>
-      (!q || (r.name+" "+r.style+" "+r.substyle).toLowerCase().includes(q)) &&
-      (!style || r.style===style) &&
-      (!sub || r.substyle===sub)
-    );
-  }
-
-  function sorted(xs) {
-    return [...xs].sort((a,b)=>{
-      let av=a[sortKey], bv=b[sortKey];
-      if (av===null || av===undefined) av=-Infinity;
-      if (bv===null || bv===undefined) bv=-Infinity;
-      if (typeof av==="string") return sortDir * av.localeCompare(bv);
-      return sortDir * (av-bv);
+    var all=rows.map(function(r){return r.average});
+    var qualified=rows.filter(function(r){return r.n>=3}).map(function(r){return r.average});
+    var byStyle={};
+    rows.forEach(function(r){(byStyle[r.style]||(byStyle[r.style]=[])).push(r.average)});
+    rows=rows.map(function(r){
+      return Object.assign({},r,{
+        percentile:pctRank(all,r.average),
+        qPercentile:r.n>=3?pctRank(qualified,r.average):null,
+        sPercentile:pctRank(byStyle[r.style],r.average)
+      });
     });
   }
 
-  function productTable(list, target, defaultMessage="No matching whiskeys.") {
-    const xs = sorted(list);
-    document.getElementById(target).innerHTML = xs.length ? `
-      <div class="whiskey-table-wrap"><table class="whiskey-table">
-      <thead><tr>
-        <th data-sort="name">Whiskey</th>
-        <th data-sort="style">Style</th>
-        <th data-sort="substyle">Sub-style</th>
-        <th class="num" data-sort="n">N</th>
-        <th class="num" data-sort="average">Avg</th>
-        <th class="num" data-sort="percentile">%ile</th>
-        <th class="num" data-sort="qPercentile">Q%ile</th>
-        <th class="num" data-sort="sPercentile">S%ile</th>
-      </tr></thead>
-      <tbody>${xs.map(r=>`<tr>
-        <td><button class="whiskey-name" data-name="${esc(r.name)}">${esc(r.name)}</button></td>
-        <td>${esc(r.style)}</td><td>${esc(r.substyle)}</td>
-        <td class="num">${r.n}</td><td class="num">${fmt(r.average)}</td>
-        <td class="num">${r.percentile}</td><td class="num">${r.qPercentile ?? "—"}</td>
-        <td class="num">${r.sPercentile}</td>
-      </tr>`).join("")}</tbody></table></div>` : '<p>'+defaultMessage+'</p>';
+  function setupFilters(){
+    var styles=Array.from(new Set(rows.map(function(r){return r.style}))).sort();
+    document.getElementById("style-filter").innerHTML='<option value="">All styles</option>'+styles.map(function(x){return "<option>"+esc(x)+"</option>"}).join("");
+    updateSubstyleFilter();
   }
 
-  function summaryTable(key, target, label) {
-    const groups = {};
-    rows.forEach(r => {
-      const g = r[key];
-      (groups[g] ||= []).push(r);
+  function updateSubstyleFilter(){
+    var style=document.getElementById("style-filter").value;
+    var subSelect=document.getElementById("substyle-filter");
+    var current=subSelect.value;
+    var source=style?rows.filter(function(r){return r.style===style}):rows;
+    var subs=Array.from(new Set(source.map(function(r){return r.substyle}))).sort();
+    subSelect.innerHTML='<option value="">All sub-styles</option>'+subs.map(function(x){return "<option>"+esc(x)+"</option>"}).join("");
+    if(subs.indexOf(current)>=0)subSelect.value=current;
+    else subSelect.value="";
+  }
+
+  function filteredRows(source){
+    source=source||rows;
+    var q=document.getElementById("search").value.trim().toLowerCase();
+    var style=document.getElementById("style-filter").value;
+    var sub=document.getElementById("substyle-filter").value;
+    return source.filter(function(r){
+      return (!q||(r.name+" "+r.style+" "+r.substyle).toLowerCase().indexOf(q)>=0)&&(!style||r.style===style)&&(!sub||r.substyle===sub);
     });
-    const vals = Object.entries(groups).map(([name,rs]) => ({
-      name,
-      products:rs.length,
-      ratings:rs.reduce((a,r)=>a+r.n,0),
-      average:avg(rs.map(r=>r.average))
-    })).sort((a,b)=>b.average-a.average);
-    document.getElementById(target).innerHTML = `
-      <div class="whiskey-table-wrap"><table class="whiskey-table">
-      <thead><tr><th>${label}</th><th class="num">Products</th><th class="num">Ratings</th><th class="num">Avg</th></tr></thead>
-      <tbody>${vals.map(g=>`<tr><td>${esc(g.name)}</td><td class="num">${g.products}</td><td class="num">${g.ratings}</td><td class="num">${fmt(g.average)}</td></tr>`).join("")}</tbody>
-      </table></div>`;
   }
 
-  function historyTable() {
-    const history = [];
-    rows.forEach(r => r.ratings.forEach((x,i)=>history.push({
-      name:r.name, style:r.style, substyle:r.substyle, score:x.score, date:x.date, sequence:i+1
-    })));
-    history.sort((a,b)=>{
-      if (a.date && b.date) return b.date.localeCompare(a.date) || a.name.localeCompare(b.name) || b.sequence-a.sequence;
-      if (a.date) return -1;
-      if (b.date) return 1;
-      return a.name.localeCompare(b.name) || b.sequence-a.sequence;
+  function compareVals(a,b,key,dir){
+    var av=a[key],bv=b[key];
+    if(av==null&&bv==null)return 0;
+    if(av==null)return 1;
+    if(bv==null)return -1;
+    if(typeof av==="string"&&typeof bv==="string")return dir*av.localeCompare(bv);
+    return dir*(av-bv);
+  }
+
+  function sortedFor(tab,xs){
+    var s=sortState[tab]||{key:"name",dir:1};
+    return xs.slice().sort(function(a,b){return compareVals(a,b,s.key,s.dir)});
+  }
+
+  function th(tab,key,label,cls){
+    var s=sortState[tab];
+    var arrow=(s&&s.key===key)?(s.dir===1?"▲":"▼"):"↕";
+    return '<th class="sortable '+(cls||"")+'" data-tab="'+tab+'" data-sort="'+key+'">'+label+'<span class="sort-arrow">'+arrow+'</span></th>';
+  }
+
+  function productTable(list,target,tab){
+    var xs=sortedFor(tab,list);
+    var html='<div class="whiskey-table-wrap"><table class="whiskey-table"><thead><tr>'+
+      th(tab,"name","Whiskey")+th(tab,"style","Style")+th(tab,"substyle","Sub-style")+
+      th(tab,"n","N","num")+th(tab,"average","Avg","num")+th(tab,"percentile","%ile","num")+
+      th(tab,"qPercentile","Q%ile","num")+th(tab,"sPercentile","S%ile","num")+
+      '</tr></thead><tbody>';
+    xs.forEach(function(r){
+      html+='<tr><td><button class="whiskey-name" data-name="'+esc(r.name)+'">'+esc(r.name)+'</button></td>'+
+        '<td>'+esc(r.style)+'</td><td>'+esc(r.substyle)+'</td>'+
+        '<td class="num">'+r.n+'</td><td class="num">'+fmt(r.average)+'</td>'+
+        pctCell(r.percentile)+pctCell(r.qPercentile)+pctCell(r.sPercentile)+'</tr>';
     });
-    document.getElementById("history").innerHTML = `
-      <div class="whiskey-table-wrap"><table class="whiskey-table">
-      <thead><tr><th>Date</th><th>Whiskey</th><th>Style</th><th>Sub-style</th><th class="num">Rating</th></tr></thead>
-      <tbody>${history.map(h=>`<tr><td>${h.date || "—"}</td><td>${esc(h.name)}</td><td>${esc(h.style)}</td><td>${esc(h.substyle)}</td><td class="num">${h.score.toFixed(1)}</td></tr>`).join("")}</tbody>
-      </table></div>`;
+    html+='</tbody></table></div>';
+    document.getElementById(target).innerHTML=xs.length?html:"<p>No matching whiskeys.</p>";
   }
 
-  function render() {
-    if (activeTab==="overall") productTable(filteredRows(), "overall");
-    if (activeTab==="qualified") productTable(filteredRows(rows.filter(r=>r.n>=3)), "qualified");
-    if (activeTab==="need-more") {
-      const xs = filteredRows(rows.filter(r=>r.n<3)).sort((a,b)=>b.n-a.n || b.average-a.average);
-      const oldKey=sortKey, oldDir=sortDir; sortKey="n"; sortDir=-1; productTable(xs,"need-more"); sortKey=oldKey; sortDir=oldDir;
-    }
-    if (activeTab==="styles") summaryTable("style","styles","Style");
-    if (activeTab==="substyles") summaryTable("substyle","substyles","Sub-style");
-    if (activeTab==="history") historyTable();
+  function groupRows(key){
+    var groups={};
+    rows.forEach(function(r){(groups[r[key]]||(groups[r[key]]=[])).push(r)});
+    return Object.keys(groups).map(function(name){
+      var rs=groups[name];
+      return {name:name,whiskeys:rs.length,ratings:rs.reduce(function(a,r){return a+r.n},0),average:avg(rs.map(function(r){return r.average}))};
+    });
+  }
+
+  function groupTable(key,target,label,tab){
+    var vals=sortedFor(tab,groupRows(key));
+    var html='<div class="whiskey-table-wrap"><table class="whiskey-table"><thead><tr>'+
+      th(tab,"name",label)+th(tab,"whiskeys","Whiskeys","num")+th(tab,"ratings","Ratings","num")+th(tab,"average","Avg","num")+
+      '</tr></thead><tbody>';
+    vals.forEach(function(g){
+      html+='<tr><td>'+esc(g.name)+'</td><td class="num">'+g.whiskeys+'</td><td class="num">'+g.ratings+'</td><td class="num">'+fmt(g.average)+'</td></tr>';
+    });
+    html+='</tbody></table></div>';
+    document.getElementById(target).innerHTML=html;
+  }
+
+  function historyRows(){
+    var out=[];
+    rows.forEach(function(r){
+      r.ratings.forEach(function(x,i){
+        out.push({date:x.date||"",name:r.name,style:r.style,substyle:r.substyle,score:x.score,sequence:i+1});
+      });
+    });
+    return out;
+  }
+
+  function historyTable(){
+    var xs=sortedFor("history",historyRows());
+    var html='<div class="whiskey-table-wrap"><table class="whiskey-table history-table"><thead><tr>'+
+      th("history","date","Date")+th("history","name","Whiskey")+th("history","style","Style")+th("history","substyle","Sub-style")+th("history","score","Rating","num")+
+      '</tr></thead><tbody>';
+    xs.forEach(function(h){
+      html+='<tr><td>'+(h.date?prettyDate(h.date):"—")+'</td><td>'+esc(h.name)+'</td><td>'+esc(h.style)+'</td><td>'+esc(h.substyle)+'</td><td class="num">'+h.score.toFixed(1)+'</td></tr>';
+    });
+    html+='</tbody></table></div>';
+    document.getElementById("history").innerHTML=html;
+  }
+
+  function miniWhiskeyRows(xs){
+    var html='<div class="whiskey-table-wrap"><table class="whiskey-table"><thead><tr><th>Whiskey</th><th class="num">N</th><th class="num">Avg</th><th class="num">Q%ile</th></tr></thead><tbody>';
+    xs.forEach(function(r){
+      html+='<tr><td><button class="whiskey-name" data-name="'+esc(r.name)+'">'+esc(r.name)+'</button></td><td class="num">'+r.n+'</td><td class="num">'+fmt(r.average)+'</td>'+pctCell(r.qPercentile)+'</tr>';
+    });
+    return html+'</tbody></table></div>';
+  }
+
+  function miniGroupRows(xs){
+    var html='<div class="whiskey-table-wrap"><table class="whiskey-table"><thead><tr><th>Style</th><th class="num">Whiskeys</th><th class="num">Ratings</th><th class="num">Avg</th></tr></thead><tbody>';
+    xs.forEach(function(g){
+      html+='<tr><td>'+esc(g.name)+'</td><td class="num">'+g.whiskeys+'</td><td class="num">'+g.ratings+'</td><td class="num">'+fmt(g.average)+'</td></tr>';
+    });
+    return html+'</tbody></table></div>';
+  }
+
+  function recentMini(xs){
+    var html='<div class="whiskey-table-wrap"><table class="whiskey-table"><thead><tr><th>Date</th><th>Whiskey</th><th class="num">Rating</th></tr></thead><tbody>';
+    xs.forEach(function(h){
+      html+='<tr><td style="white-space:nowrap">'+prettyDate(h.date)+'</td><td>'+esc(h.name)+'</td><td class="num">'+h.score.toFixed(1)+'</td></tr>';
+    });
+    return html+'</tbody></table></div>';
+  }
+
+  function renderHome(){
+    var qualified=rows.filter(function(r){return r.n>=3}).sort(function(a,b){return b.average-a.average||b.n-a.n}).slice(0,5);
+    var groups=groupRows("style");
+    var topStyles=groups.slice().sort(function(a,b){return b.average-a.average||b.ratings-a.ratings}).slice(0,5);
+    var mostRated=groups.slice().sort(function(a,b){return b.ratings-a.ratings||b.whiskeys-a.whiskeys}).slice(0,5);
+    var recent=historyRows().filter(function(h){return h.date}).sort(function(a,b){return b.date.localeCompare(a.date)||a.name.localeCompare(b.name)}).slice(0,6);
+
+    document.getElementById("home").innerHTML=
+      '<div class="dashboard-grid">'+
+        '<section class="dashboard-section"><h3>Top Qualified Whiskeys</h3>'+miniWhiskeyRows(qualified)+'<div class="dashboard-foot">At least 3 ratings.</div></section>'+
+        '<section class="dashboard-section"><h3>Top Styles</h3>'+miniGroupRows(topStyles)+'<div class="dashboard-foot">Average of whiskey averages within each broad style.</div></section>'+
+        '<section class="dashboard-section"><h3>Most Rated Styles</h3>'+miniGroupRows(mostRated)+'<div class="dashboard-foot">Ranked by total tasting ratings.</div></section>'+
+        '<section class="dashboard-section"><h3>Recent Ratings</h3>'+recentMini(recent)+'<div class="dashboard-foot">Only ratings with known dates are shown.</div></section>'+
+      '</div>';
+  }
+
+  function render(){
+    if(activeTab==="home")renderHome();
+    if(activeTab==="overall")productTable(filteredRows(),"overall","overall");
+    if(activeTab==="qualified")productTable(filteredRows(rows.filter(function(r){return r.n>=3})),"qualified","qualified");
+    if(activeTab==="need-more")productTable(filteredRows(rows.filter(function(r){return r.n<3})),"need-more","need-more");
+    if(activeTab==="styles")groupTable("style","styles","Style","styles");
+    if(activeTab==="substyles")groupTable("substyle","substyles","Sub-style","substyles");
+    if(activeTab==="history")historyTable();
     bindTableEvents();
   }
 
-  function bindTableEvents() {
-    document.querySelectorAll(".whiskey-table th[data-sort]").forEach(th => th.onclick = () => {
-      const k=th.dataset.sort;
-      if (sortKey===k) sortDir*=-1; else {sortKey=k; sortDir=(["name","style","substyle"].includes(k)?1:-1);}
-      render();
+  function bindTableEvents(){
+    document.querySelectorAll(".whiskey-table th.sortable").forEach(function(cell){
+      cell.onclick=function(){
+        var tab=cell.getAttribute("data-tab");
+        var key=cell.getAttribute("data-sort");
+        var s=sortState[tab]||(sortState[tab]={key:key,dir:1});
+        if(s.key===key)s.dir*=-1;
+        else{
+          s.key=key;
+          s.dir=(key==="name"||key==="style"||key==="substyle"||key==="date")?1:-1;
+        }
+        render();
+      };
     });
-    document.querySelectorAll(".whiskey-name").forEach(btn => btn.onclick = () => showDetail(btn.dataset.name));
+    document.querySelectorAll(".whiskey-name").forEach(function(btn){
+      btn.onclick=function(){showDetail(btn.getAttribute("data-name"))};
+    });
   }
 
-  function showDetail(name) {
-    const r = rows.find(x=>x.name===name);
-    if (!r) return;
-    const hist = r.ratings.map((x,i)=>`<tr><td>${i+1}</td><td>${x.date || "Unknown"}</td><td>${x.score.toFixed(1)}</td></tr>`).join("");
-    document.getElementById("dialog-content").innerHTML = `
-      <h2>${esc(r.name)}</h2>
-      <p>${esc(r.style)} · ${esc(r.substyle)}</p>
-      <p><strong>Avg:</strong> ${fmt(r.average)} &nbsp; <strong>N:</strong> ${r.n} &nbsp; <strong>%ile:</strong> ${r.percentile} &nbsp; <strong>Q%ile:</strong> ${r.qPercentile ?? "—"} &nbsp; <strong>S%ile:</strong> ${r.sPercentile}</p>
-      <table class="whiskey-history-list"><thead><tr><th>#</th><th>Date</th><th>Rating</th></tr></thead><tbody>${hist}</tbody></table>`;
+  function showDetail(name){
+    var r=rows.find(function(x){return x.name===name});
+    if(!r)return;
+    var hist=r.ratings.map(function(x,i){
+      return '<tr><td>'+(i+1)+'</td><td>'+(x.date?prettyDate(x.date):"Unknown")+'</td><td>'+x.score.toFixed(1)+'</td></tr>';
+    }).join("");
+    document.getElementById("dialog-content").innerHTML=
+      '<h2>'+esc(r.name)+'</h2>'+
+      '<p>'+esc(r.style)+' · '+esc(r.substyle)+'</p>'+
+      '<p><strong>Avg:</strong> '+fmt(r.average)+' / 5.0 &nbsp; <strong>N:</strong> '+r.n+
+      ' &nbsp; <strong>%ile:</strong> '+r.percentile+
+      ' &nbsp; <strong>Q%ile:</strong> '+(r.qPercentile==null?"—":r.qPercentile)+
+      ' &nbsp; <strong>S%ile:</strong> '+r.sPercentile+'</p>'+
+      '<table class="whiskey-history-list"><thead><tr><th>#</th><th>Date</th><th>Rating</th></tr></thead><tbody>'+hist+'</tbody></table>';
     document.getElementById("whiskey-dialog").showModal();
   }
 
-  async function init() {
-    const res = await fetch(DATA_URL,{cache:"no-store"});
-    data = await res.json();
-    computeRows();
-    setupFilters();
-    const totalRatings = rows.reduce((a,r)=>a+r.n,0);
-    const allScores = rows.flatMap(r=>r.ratings.map(x=>x.score));
-    document.getElementById("stat-products").textContent = rows.length;
-    document.getElementById("stat-ratings").textContent = totalRatings;
-    document.getElementById("stat-qualified").textContent = rows.filter(r=>r.n>=3).length;
-    document.getElementById("stat-average").textContent = fmt(avg(allScores));
+  function init(){
+    fetch(DATA_URL,{cache:"no-store"}).then(function(res){return res.json()}).then(function(json){
+      data=json;
+      computeRows();
+      setupFilters();
+      var totalRatings=rows.reduce(function(a,r){return a+r.n},0);
+      var allScores=[];
+      rows.forEach(function(r){r.ratings.forEach(function(x){allScores.push(x.score)})});
+      document.getElementById("stat-qualified").textContent=rows.filter(function(r){return r.n>=3}).length;
+      document.getElementById("stat-whiskeys").textContent=rows.length;
+      document.getElementById("stat-ratings").textContent=totalRatings;
+      document.getElementById("stat-average").textContent=fmt(avg(allScores));
 
-    document.querySelectorAll(".whiskey-tabs button").forEach(btn => btn.onclick = () => {
-      activeTab=btn.dataset.tab;
-      document.querySelectorAll(".whiskey-tabs button").forEach(x=>x.classList.toggle("active",x===btn));
-      document.querySelectorAll(".whiskey-panel").forEach(x=>x.classList.toggle("active",x.id===activeTab));
-      document.getElementById("product-controls").style.display = ["overall","qualified","need-more"].includes(activeTab) ? "flex" : "none";
+      document.querySelectorAll(".whiskey-tabs button").forEach(function(btn){
+        btn.onclick=function(){
+          activeTab=btn.getAttribute("data-tab");
+          document.querySelectorAll(".whiskey-tabs button").forEach(function(x){x.classList.toggle("active",x===btn)});
+          document.querySelectorAll(".whiskey-panel").forEach(function(x){x.classList.toggle("active",x.id===activeTab)});
+          document.getElementById("product-controls").style.display=["overall","qualified","need-more"].indexOf(activeTab)>=0?"flex":"none";
+          render();
+        };
+      });
+
+      document.getElementById("style-filter").addEventListener("change",function(){
+        updateSubstyleFilter();
+        render();
+      });
+      document.getElementById("substyle-filter").addEventListener("change",render);
+      document.getElementById("search").addEventListener("input",render);
+      document.getElementById("dialog-close").onclick=function(){document.getElementById("whiskey-dialog").close()};
       render();
+    }).catch(function(err){
+      document.getElementById("home").innerHTML="<p>Could not load whiskey data.</p>";
+      console.error(err);
     });
-    ["search","style-filter","substyle-filter"].forEach(id=>document.getElementById(id).addEventListener("input",render));
-    document.getElementById("dialog-close").onclick=()=>document.getElementById("whiskey-dialog").close();
-    render();
   }
 
-  init().catch(err => {
-    document.getElementById("overall").innerHTML = "<p>Could not load whiskey data.</p>";
-    console.error(err);
-  });
+  init();
 })();
 </script>
