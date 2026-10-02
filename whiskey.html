@@ -260,7 +260,8 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
     var sub=document.getElementById("substyle-filter").value;
     return source.filter(function(r){
       return (!q||(r.name+" "+r.region+" "+r.style+" "+(r.substyle||"")).toLowerCase().indexOf(q)>=0)&&
-        (!region||r.region===region)&&(!style||r.style===style)&&(!sub||r.substyle===sub);
+        (!region||r.region===region)&&(!style||r.style===style)&&
+        (!sub||r.substyle===sub||(r.substyle&&r.substyle.indexOf(sub+" / ")===0));
     });
   }
 
@@ -331,7 +332,13 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
 
   function substyleRows(){
     var groups={};
-    rows.forEach(function(r){if(r.substyle)(groups[r.substyle]||(groups[r.substyle]=[])).push(r)});
+    rows.forEach(function(r){
+      if(!r.substyle)return;
+      var full=r.substyle;
+      var parent=full.split(" / ")[0];
+      (groups[parent]||(groups[parent]=[])).push(r);
+      if(full!==parent)(groups[full]||(groups[full]=[])).push(r);
+    });
     return Object.keys(groups).map(function(name){
       var rs=groups[name];
       return {name:name,whiskeys:rs.length,average:avg(rs.map(function(r){return r.average}))};
