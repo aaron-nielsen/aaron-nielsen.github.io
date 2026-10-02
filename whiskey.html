@@ -96,7 +96,8 @@ button,input,select{font:inherit}
 .bar-fill{height:100%;background:linear-gradient(90deg,var(--green),var(--green2));border-radius:999px;min-width:2px}
 .bar-value{text-align:right;color:#e5d8cc;font-variant-numeric:tabular-nums;font-size:.9rem}
 .bar-value .pct-range{color:var(--muted);font-size:.78rem;margin-left:5px}
-.distribution-chart .bar-row{grid-template-columns:minmax(155px,210px) minmax(140px,1fr) 44px}
+.distribution-chart{max-width:760px}
+.distribution-chart .bar-row{grid-template-columns:220px minmax(220px,420px) 44px;justify-content:start}
 .distribution-chart .bar-label{white-space:nowrap;overflow:visible;text-overflow:clip;font-variant-numeric:tabular-nums}
 .distribution-chart .rating-name{color:var(--amber2);font-size:.8rem;margin-left:7px}
 .distribution-chart .pct-inline{color:var(--muted);font-size:.82rem;margin-left:5px}
@@ -136,7 +137,12 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
   .whiskey-controls input{min-width:0}
   .bar-row{grid-template-columns:105px 1fr 90px;gap:8px}
   .substyle-chart .bar-row{grid-template-columns:minmax(170px,45%) 1fr 34px}
-  .distribution-chart .bar-row{grid-template-columns:minmax(135px,42%) 1fr 34px}
+  .distribution-chart{max-width:none}
+  .distribution-chart .bar-row{grid-template-columns:170px minmax(120px,1fr) 34px}
+}
+@media(max-width:460px){
+  .distribution-chart .bar-row{grid-template-columns:145px minmax(90px,1fr) 30px;gap:6px}
+  .distribution-chart .rating-name{display:block;margin-left:0;margin-top:2px}
 }
 </style>
 
