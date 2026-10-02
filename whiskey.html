@@ -247,12 +247,20 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
     return "linear-gradient(90deg,hsl("+h1+",68%,"+l1+"%),hsl("+h2+",72%,"+l2+"%))";
   }
   function ratingGradient(value,min,max){
-    var span=max-min;
-    var t=span>0?Math.max(0,Math.min(1,(value-min)/span)):0;
-    var h1=Math.round(42-24*t),h2=Math.round(38-24*t);
-    var l1=Math.round(72-38*t),l2=Math.round(79-37*t);
-    var s1=Math.round(66+10*t),s2=Math.round(70+8*t);
-    return "linear-gradient(90deg,hsl("+h1+","+s1+"%,"+l1+"%),hsl("+h2+","+s2+"%,"+l2+"%))";
+    var mid=30;
+    if(value===mid)return "#f4f1ed";
+    if(value<mid){
+      var lowSpan=Math.max(1,mid-min);
+      var t=Math.max(0,Math.min(1,(mid-value)/lowSpan));
+      var light=Math.round(96-50*t);
+      var sat=Math.round(18+62*t);
+      return "hsl(216,"+sat+"%,"+light+"%)";
+    }
+    var highSpan=Math.max(1,max-mid);
+    var t=Math.max(0,Math.min(1,(value-mid)/highSpan));
+    var light=Math.round(96-52*t);
+    var sat=Math.round(22+60*t);
+    return "hsl(4,"+sat+"%,"+light+"%)";
   }
   function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[c]})}
   function pctRank(values,x){
@@ -660,7 +668,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
     var head='<div class="distillery-head"><span></span><span></span><span>Ratings</span><span>Whiskeys</span></div>';
     var body=shown.map(function(x,i){
       var w=max?100*x.ratings/max:0;
-      return '<div class="bar-row"><div class="bar-label">'+(i+1)+'. <button class="filter-link distillery-link" data-distillery="'+esc(x.name)+'">'+esc(x.name)+'</button></div>'+
+      return '<div class="bar-row"><div class="bar-label"><button class="filter-link distillery-link" data-distillery="'+esc(x.name)+'">'+esc(x.name)+'</button></div>'+
         '<div class="bar-track"><div class="bar-fill" style="width:'+w.toFixed(1)+'%;background:'+whiskeyGradient(x.ratings,max)+'"></div></div>'+
         '<div class="dist-num">'+x.ratings+'</div>'+
         '<div class="dist-num">'+x.whiskeys+'</div></div>';
