@@ -69,7 +69,7 @@ button,input,select{font:inherit}
 .whiskey-table th{background:#251a14;color:#f5eee7;white-space:nowrap;font-weight:650}
 .whiskey-table th.sortable{cursor:pointer;user-select:none}
 .whiskey-table th.sortable:hover{background:#302019}
-.sort-arrow{display:inline-block;min-width:1em;margin-left:5px;color:#98a69c;font-size:.72em}
+.whiskey-table th.active-sort{box-shadow:inset 0 -2px 0 var(--green2)}
 .whiskey-table td.num,.whiskey-table th.num{text-align:center;font-variant-numeric:tabular-nums}
 .whiskey-table tr:hover td{background:#211815}
 .detail-table th:first-child,.detail-table td:first-child{min-width:240px}
@@ -268,15 +268,15 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
 
   function th(tab,key,label,cls){
     var s=sortState[tab];
-    var arrow=s&&s.key===key?(s.dir===1?"▲":"▼"):"↕";
-    return '<th class="sortable '+(cls||"")+'" data-tab="'+tab+'" data-sort="'+key+'">'+
-      label+'<span class="sort-arrow">'+arrow+'</span></th>';
+    var active=s&&s.key===key?" active-sort":"";
+    return '<th class="sortable'+active+' '+(cls||"")+'" data-tab="'+tab+'" data-sort="'+key+'">'+
+      label+'</th>';
   }
   function mth(section,key,label,cls){
     var s=mainSort[section];
-    var arrow=s.key===key?(s.dir===1?"▲":"▼"):"↕";
-    return '<th class="sortable '+(cls||"")+'" data-main-section="'+section+'" data-main-sort="'+key+'">'+
-      label+'<span class="sort-arrow">'+arrow+'</span></th>';
+    var active=s.key===key?" active-sort":"";
+    return '<th class="sortable'+active+' '+(cls||"")+'" data-main-section="'+section+'" data-main-sort="'+key+'">'+
+      label+'</th>';
   }
 
   function whiskeyTable(source,tab){
