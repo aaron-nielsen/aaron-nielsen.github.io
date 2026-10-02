@@ -115,7 +115,8 @@ button,input,select{font:inherit}
 dialog.whiskey-dialog{background:#171310;color:var(--text);border:1px solid #65472f;border-radius:12px;max-width:650px;width:92%}
 dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
 .whiskey-dialog button.close{float:right;background:#251a14;color:#fff;border:1px solid #6a4a31;border-radius:6px;padding:6px 10px;cursor:pointer}
-.history-note{margin:4px 0 10px;color:var(--muted);font-size:.88rem}
+.earlier-ratings{margin:12px 0 2px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--panel2);color:var(--muted);font-size:.9rem}
+.earlier-ratings strong{color:var(--text);font-weight:600}
 .whiskey-history-list{width:100%;border-collapse:collapse}
 .whiskey-history-list td,.whiskey-history-list th{border-bottom:1px solid #4a3425;padding:8px}
 .whiskey-history-list th:first-child,.whiskey-history-list td:first-child,
@@ -611,18 +612,24 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
     var indexed=r.ratings.map(function(x,i){
       return {score:x.score,date:x.date||"",number:i+1};
     });
-    indexed.sort(function(a,b){
-      if(a.date&&b.date)return b.date.localeCompare(a.date)||b.number-a.number;
-      if(a.date)return -1;
-      if(b.date)return 1;
+    var dated=indexed.filter(function(x){return x.date}).sort(function(a,b){
+      return b.date.localeCompare(a.date)||b.number-a.number;
+    });
+    var undated=indexed.filter(function(x){return !x.date}).sort(function(a,b){
       return b.number-a.number;
     });
-    var unknownCount=indexed.filter(function(x){return !x.date}).length;
-    var hist=indexed.map(function(x){
+
+    var hist=dated.map(function(x){
       return '<tr><td>'+x.number+'</td><td>'+prettyDate(x.date)+'</td><td>'+x.score.toFixed(1)+'</td></tr>';
     }).join("");
-    var unknownNote=unknownCount
-      ? '<p class="history-note">'+unknownCount+' earlier rating'+(unknownCount===1?' has':'s have')+' unknown date'+(unknownCount===1?'':'s')+'.</p>'
+
+    var undatedNote=undated.length
+      ? '<div class="earlier-ratings"><strong>Earlier ratings (dates unknown):</strong> '+
+        undated.map(function(x){return '#'+x.number+' '+x.score.toFixed(1)}).join(' · ')+'</div>'
+      : '';
+
+    var datedTable=dated.length
+      ? '<table class="whiskey-history-list"><thead><tr><th>#</th><th>Date</th><th>Rating</th></tr></thead><tbody>'+hist+'</tbody></table>'
       : '';
 
     document.getElementById("dialog-content").innerHTML=
@@ -632,8 +639,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
       ' &nbsp; <strong>%ile:</strong> '+r.percentile+
       ' &nbsp; <strong>Qualified %ile:</strong> '+(r.qPercentile==null?"—":r.qPercentile)+
       ' &nbsp; <strong>Style %ile:</strong> '+r.sPercentile+'</p>'+
-      unknownNote+
-      '<table class="whiskey-history-list"><thead><tr><th>#</th><th>Date</th><th>Rating</th></tr></thead><tbody>'+hist+'</tbody></table>';
+      datedTable+undatedNote;
     document.getElementById("whiskey-dialog").showModal();
   }
 
@@ -657,7 +663,13 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
       document.getElementById("region-filter").addEventListener("change",function(){updateStyles();render()});
       document.getElementById("style-filter").addEventListener("change",function(){updateSubstyles();render()});
       document.getElementById("substyle-filter").addEventListener("change",render);
-      document.getElementById("dialog-close").onclick=function(){document.getElementById("whiskey-dialog").close()};
+      var dialog=document.getElementById("whiskey-dialog");
+      document.getElementById("dialog-close").onclick=function(){dialog.close()};
+      dialog.addEventListener("click",function(e){
+        var r=dialog.getBoundingClientRect();
+        var inside=e.clientX>=r.left&&e.clientX<=r.right&&e.clientY>=r.top&&e.clientY<=r.bottom;
+        if(!inside)dialog.close();
+      });
       render();
     }).catch(function(err){
       document.getElementById("main").innerHTML="<p>Could not load whiskey data.</p>";
