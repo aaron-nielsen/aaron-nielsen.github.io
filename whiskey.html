@@ -186,7 +186,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
 <script>
 (function(){
   var DATA_URL="/data/whiskey_ratings.json?v="+Date.now();
-  var data=null,rows=[],activeTab="main",substyleExpanded=false;
+  var data=null,rows=[],activeTab="main",substyleExpanded=false,topExpanded=false;
   var sortState={
     all:{key:"average",dir:-1},
     "need-more":{key:"average",dir:-1},
@@ -376,7 +376,8 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
 
   function mainTopRated(){
     var source=rows.filter(function(r){return r.n>=3});
-    var xs=sorted(mainSort.top,source).slice(0,10);
+    var sortedSource=sorted(mainSort.top,source);
+    var xs=topExpanded?sortedSource:sortedSource.slice(0,10);
     var html='<div class="whiskey-table-wrap"><table class="whiskey-table"><thead><tr>'+
       mth("top","name","Whiskey")+mth("top","average","Avg","num")+mth("top","n","N","num")+
       mth("top","qPercentile","%ile","num")+mth("top","region","Region")+mth("top","style","Style")+
@@ -386,7 +387,12 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
         '<td class="num">'+fmt(r.average)+'</td><td class="num">'+r.n+'</td>'+
         '<td class="num">'+r.qPercentile+'</td><td>'+esc(r.region)+'</td><td>'+esc(r.style)+'</td></tr>';
     });
-    return html+'</tbody></table></div>';
+    html+='</tbody></table></div>';
+    if(source.length>10){
+      html+='<div class="substyle-more"><button type="button" id="top-toggle">'+
+        (topExpanded?"Show top 10":"Show all "+source.length)+'</button></div>';
+    }
+    return html;
   }
 
   function mainStyles(){
@@ -598,6 +604,11 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
     document.querySelectorAll(".substyle-link").forEach(function(btn){
       btn.onclick=function(){drillSubstyle(btn.getAttribute("data-substyle"))};
     });
+    var topToggle=document.getElementById("top-toggle");
+    if(topToggle)topToggle.onclick=function(){
+      topExpanded=!topExpanded;
+      render();
+    };
     var subToggle=document.getElementById("substyle-toggle");
     if(subToggle)subToggle.onclick=function(){
       substyleExpanded=!substyleExpanded;
