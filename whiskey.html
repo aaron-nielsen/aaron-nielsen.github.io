@@ -108,6 +108,7 @@ button,input,select{font:inherit}
 .bar-label{color:#efe5db;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .bar-track{height:14px;background:#2c211a;border-radius:999px;overflow:hidden}
 .bar-fill{height:100%;background:linear-gradient(90deg,var(--green),var(--green2));border-radius:999px;min-width:2px}
+.distribution-chart .bar-fill.empty{min-width:0}
 .bar-value{text-align:right;color:#e5d8cc;font-variant-numeric:tabular-nums;font-size:.9rem}
 .bar-value .pct-range{color:var(--muted);font-size:.78rem;margin-left:5px}
 .distribution-chart{max-width:none;width:auto;padding:10px 12px 14px}
@@ -245,6 +246,14 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
     var l1=Math.round(66-30*t),l2=Math.round(74-30*t);
     return "linear-gradient(90deg,hsl("+h1+",68%,"+l1+"%),hsl("+h2+",72%,"+l2+"%))";
   }
+  function ratingGradient(value,min,max){
+    var span=max-min;
+    var t=span>0?Math.max(0,Math.min(1,(value-min)/span)):0;
+    var h1=Math.round(42-24*t),h2=Math.round(38-24*t);
+    var l1=Math.round(72-38*t),l2=Math.round(79-37*t);
+    var s1=Math.round(66+10*t),s2=Math.round(70+8*t);
+    return "linear-gradient(90deg,hsl("+h1+","+s1+"%,"+l1+"%),hsl("+h2+","+s2+"%,"+l2+"%))";
+  }
   function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[c]})}
   function pctRank(values,x){
     if(values.length<=1)return 100;
@@ -261,7 +270,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
       "Jim Beam":"Kentucky","Heaven Hill":"Kentucky","Wild Turkey":"Kentucky","Four Roses":"Kentucky",
       "Jack Daniel":"Tennessee","Buffalo Trace":"Kentucky","Maker's Mark":"Kentucky",
       "Woodford Reserve":"Kentucky","Stranahan's":"Colorado","Angel's Envy":"Kentucky",
-      "Michter's":"Kentucky","Port Chilkoot":"Alaska","Woody Creek":"Colorado",
+      "Michter's":"Kentucky","Port Chilkoot":"Alaska","Woody Creek":"Colorado","Jefferson's":"Kentucky",
       "Brown-Forman":"Kentucky","Barton 1792":"Kentucky","Bulleit":"Kentucky",
       "New Riff":"Kentucky","Kentucky Peerless":"Kentucky","Wilderness Trail":"Kentucky",
       "Bardstown Bourbon Company":"Kentucky","Sagamore Spirit":"Maryland",
@@ -627,6 +636,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
     if(/^Michter's/.test(name))return "Michter's";
     if(/^Port Chilkoot/.test(name))return "Port Chilkoot";
     if(/^Woody Creek/.test(name))return "Woody Creek";
+    if(/^Jefferson's/.test(name))return "Jefferson's";
     return "";
   }
 
@@ -724,7 +734,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
         '<div class="dist-name">'+(ratingNames[x.score]||"")+'</div>'+
         '<div class="dist-percentile">'+(x.percentile==null?"":x.percentile)+'</div>'+
         '<div class="dist-rating">'+x.label+'</div>'+
-        '<div class="bar-track"><div class="bar-fill" style="width:'+w.toFixed(1)+'%;background:'+whiskeyGradient(x.score,maxScore)+'"></div></div>'+
+        '<div class="bar-track"><div class="bar-fill'+(x.count===0?' empty':'')+'" style="width:'+w.toFixed(1)+'%;background:'+ratingGradient(x.score,minScore,maxScore)+'"></div></div>'+
         '<div class="bar-value">'+x.count+'</div></div>';
     }).join("")+'</div>';
   }
