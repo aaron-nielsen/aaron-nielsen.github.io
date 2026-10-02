@@ -461,7 +461,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
   function mainMostRated(){
     var xs=sorted(mainSort.most,rows).slice(0,10);
     var html='<div class="whiskey-table-wrap"><table class="whiskey-table"><thead><tr>'+
-      mth("most","name","Whiskey")+mth("most","n","N","num")+mth("most","average","Avg","num")+mth("most","region","Region")+mth("most","style","Style")+
+      mth("most","name","Whiskey")+mth("most","n","n","num")+mth("most","average","Avg","num")+mth("most","region","Region")+mth("most","style","Style")+
       '</tr></thead><tbody>';
     xs.forEach(function(r){
       html+='<tr><td><button class="whiskey-name" data-name="'+esc(r.name)+'">'+esc(r.name)+'</button></td>'+
