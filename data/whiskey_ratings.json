@@ -279,6 +279,10 @@
         {
           "score": 2.6,
           "date": null
+        },
+        {
+          "score": 2.3,
+          "date": "2026-10-01"
         }
       ],
       "region": "Canadian"
@@ -1123,6 +1127,10 @@
         {
           "score": 3.9,
           "date": "2026-09-30"
+        },
+        {
+          "score": 3.8,
+          "date": "2026-10-01"
         }
       ],
       "region": "American"
