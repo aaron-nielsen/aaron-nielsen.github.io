@@ -76,25 +76,23 @@ button,input,select{font:inherit}
 .whiskey-table tr:hover td{background:#211815}
 .detail-table{table-layout:fixed;min-width:0}
 .detail-table th,.detail-table td{padding:9px 9px}
-.detail-table th:nth-child(1),.detail-table td:nth-child(1){width:31%}
+.detail-table th:nth-child(1),.detail-table td:nth-child(1){width:34%}
 .detail-table th:nth-child(2),.detail-table td:nth-child(2){width:14%}
-.detail-table th:nth-child(3),.detail-table td:nth-child(3){width:15%}
-.detail-table th:nth-child(4),.detail-table td:nth-child(4){width:22%}
-.detail-table th:nth-child(5),.detail-table td:nth-child(5){width:5%}
+.detail-table th:nth-child(3),.detail-table td:nth-child(3){width:32%}
+.detail-table th:nth-child(4),.detail-table td:nth-child(4){width:5%}
+.detail-table th:nth-child(5),.detail-table td:nth-child(5){width:8%}
 .detail-table th:nth-child(6),.detail-table td:nth-child(6){width:7%}
-.detail-table th:nth-child(7),.detail-table td:nth-child(7){width:6%}
-.detail-table td:nth-child(1),.detail-table td:nth-child(4){overflow-wrap:anywhere}
-.detail-table td:nth-child(2),.detail-table td:nth-child(3){overflow-wrap:break-word}
+.detail-table td:nth-child(1),.detail-table td:nth-child(3){overflow-wrap:anywhere}
+.detail-table td:nth-child(2){overflow-wrap:break-word}
 .unrated-table{table-layout:fixed;min-width:0}
-.unrated-table th,.unrated-table td{padding:9px 7px}
-.unrated-table th:nth-child(1),.unrated-table td:nth-child(1){width:4%}
-.unrated-table th:nth-child(2),.unrated-table td:nth-child(2){width:25%;overflow-wrap:anywhere}
-.unrated-table th:nth-child(3),.unrated-table td:nth-child(3){width:9%}
-.unrated-table th:nth-child(4),.unrated-table td:nth-child(4){width:12%;overflow-wrap:anywhere}
-.unrated-table th:nth-child(5),.unrated-table td:nth-child(5){width:15%;overflow-wrap:anywhere}
-.unrated-table th:nth-child(6),.unrated-table td:nth-child(6){width:10%;overflow-wrap:anywhere}
-.unrated-table th:nth-child(7),.unrated-table td:nth-child(7){width:17%;overflow-wrap:anywhere}
-.unrated-table th:nth-child(8),.unrated-table td:nth-child(8){width:8%}
+.unrated-table th,.unrated-table td{padding:9px 8px}
+.unrated-table th:nth-child(1),.unrated-table td:nth-child(1){width:5%}
+.unrated-table th:nth-child(2),.unrated-table td:nth-child(2){width:37%;overflow-wrap:anywhere}
+.unrated-table th:nth-child(3),.unrated-table td:nth-child(3){width:12%}
+.unrated-table th:nth-child(4),.unrated-table td:nth-child(4){width:27%;overflow-wrap:anywhere}
+.unrated-table th:nth-child(5),.unrated-table td:nth-child(5){width:11%;overflow-wrap:anywhere}
+.unrated-table th:nth-child(6),.unrated-table td:nth-child(6){width:8%}
+.style-sep{color:var(--muted);padding:0 2px}
 .geo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 .geo-grid .chart-section{margin:0}
 .place-chart .bar-row{grid-template-columns:minmax(100px,150px) 1fr 34px}
@@ -138,12 +136,11 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
 .history-undated{margin:10px 2px 0;color:var(--muted);font-size:.9rem}
 .history-table{table-layout:fixed;min-width:0}
 .history-table th,.history-table td{padding:9px 8px}
-.history-table th:nth-child(1),.history-table td:nth-child(1){width:15%}
-.history-table th:nth-child(2),.history-table td:nth-child(2){width:31%;overflow-wrap:anywhere}
-.history-table th:nth-child(3),.history-table td:nth-child(3){width:8%}
-.history-table th:nth-child(4),.history-table td:nth-child(4){width:12%}
-.history-table th:nth-child(5),.history-table td:nth-child(5){width:15%;overflow-wrap:anywhere}
-.history-table th:nth-child(6),.history-table td:nth-child(6){width:19%;overflow-wrap:anywhere}
+.history-table th:nth-child(1),.history-table td:nth-child(1){width:16%}
+.history-table th:nth-child(2),.history-table td:nth-child(2){width:34%;overflow-wrap:anywhere}
+.history-table th:nth-child(3),.history-table td:nth-child(3){width:9%}
+.history-table th:nth-child(4),.history-table td:nth-child(4){width:13%}
+.history-table th:nth-child(5),.history-table td:nth-child(5){width:28%;overflow-wrap:anywhere}
 .whiskey-history-list{width:100%;border-collapse:collapse}
 .whiskey-history-list td,.whiskey-history-list th{border-bottom:1px solid #4a3425;padding:8px}
 .whiskey-history-list th:first-child,.whiskey-history-list td:first-child,
@@ -157,7 +154,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
 @media(max-width:700px){
   .history-table{table-layout:auto;min-width:760px}
   .history-table th:nth-child(n),.history-table td:nth-child(n){width:auto}
-  .unrated-table{table-layout:auto;min-width:980px}
+  .unrated-table{table-layout:auto;min-width:760px}
   .unrated-table th:nth-child(n),.unrated-table td:nth-child(n){width:auto}
   .geo-grid{grid-template-columns:1fr}
 }
@@ -394,12 +391,22 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
       label+'</th>';
   }
 
+  function styleSubstyleCell(r,unrated){
+    var styleClass=unrated?"unrated-style-link":"style-link";
+    var subClass=unrated?"unrated-substyle-link":"substyle-link";
+    var html='<button class="filter-link '+styleClass+'" data-style="'+esc(r.style)+'">'+esc(r.style)+'</button>';
+    if(r.substyle){
+      html+=' <span class="style-sep">–</span> <button class="filter-link '+subClass+'" data-substyle="'+esc(r.substyle)+'">'+esc(r.substyle)+'</button>';
+    }
+    return html;
+  }
+
   function whiskeyTable(source,tab){
     var xs=sorted(sortState[tab],source);
     var pctKey=tab==="qualified"?"qPercentile":"percentile";
     var pctLabel="%ile";
     var html='<div class="whiskey-table-wrap"><table class="whiskey-table detail-table"><thead><tr>'+
-      th(tab,"name","Whiskey")+th(tab,"region","Region")+th(tab,"style","Style")+th(tab,"substyle","Sub-style")+
+      th(tab,"name","Whiskey")+th(tab,"region","Region")+th(tab,"style","Style – Sub-style")+
       th(tab,"n","n","num")+th(tab,"average","Avg","num")+th(tab,pctKey,pctLabel,"num")+
       '</tr></thead><tbody>';
     xs.forEach(function(r){
@@ -407,8 +414,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
       html+='<tr>'+
         '<td><button class="whiskey-name" data-name="'+esc(r.name)+'">'+esc(r.name)+'</button></td>'+
         '<td><button class="filter-link region-link" data-region="'+esc(r.region)+'">'+esc(r.region)+'</button></td>'+
-        '<td><button class="filter-link style-link" data-style="'+esc(r.style)+'">'+esc(r.style)+'</button></td>'+
-        '<td>'+(r.substyle?'<button class="filter-link substyle-link" data-substyle="'+esc(r.substyle)+'">'+esc(r.substyle)+'</button>':'')+'</td>'+
+        '<td>'+styleSubstyleCell(r,false)+'</td>'+
         '<td class="num">'+r.n+'</td><td class="num">'+fmt(r.average)+'</td>'+
         '<td class="num">'+(pct==null?"—":pct)+'</td></tr>';
     });
@@ -419,19 +425,16 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
     var xs=sorted(sortState.unrated,source);
     var html='<div class="whiskey-table-wrap"><table class="whiskey-table unrated-table"><thead><tr>'+
       th("unrated","priority","#","num")+th("unrated","name","Whiskey")+
-      th("unrated","region","Region")+th("unrated","style","Style")+th("unrated","substyle","Sub-style")+
-      th("unrated","place","Place")+th("unrated","distillery","Distillery")+
-      th("unrated","estimated_price_usd","Est. $","num")+
+      th("unrated","region","Region")+th("unrated","style","Style – Sub-style")+
+      th("unrated","place","Place")+th("unrated","estimated_price_usd","Est. $","num")+
       '</tr></thead><tbody>';
     xs.forEach(function(r){
       html+='<tr>'+
         '<td class="num">'+r.priority+'</td>'+
         '<td>'+esc(r.name)+'</td>'+
         '<td><button class="filter-link unrated-region-link" data-region="'+esc(r.region)+'">'+esc(r.region)+'</button></td>'+
-        '<td><button class="filter-link unrated-style-link" data-style="'+esc(r.style)+'">'+esc(r.style)+'</button></td>'+
-        '<td>'+(r.substyle?'<button class="filter-link unrated-substyle-link" data-substyle="'+esc(r.substyle)+'">'+esc(r.substyle)+'</button>':'')+'</td>'+
+        '<td>'+styleSubstyleCell(r,true)+'</td>'+
         '<td>'+(r.place?'<button class="filter-link unrated-place-link" data-place="'+esc(r.place)+'">'+esc(r.place)+'</button>':'')+'</td>'+
-        '<td>'+(r.distillery?'<button class="filter-link unrated-distillery-link" data-distillery="'+esc(r.distillery)+'">'+esc(r.distillery)+'</button>':'')+'</td>'+
         '<td class="num">$'+r.estimated_price_usd+'</td>'+
         '</tr>';
     });
@@ -455,16 +458,15 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
     var xs=sorted(sortState.history,dated);
     var html='<div class="whiskey-table-wrap"><table class="whiskey-table history-table"><thead><tr>'+
       th("history","date","Date")+th("history","name","Whiskey")+th("history","score","Rating","num")+
-      th("history","region","Region")+th("history","style","Style")+th("history","substyle","Sub-style")+
+      th("history","region","Region")+th("history","style","Style – Sub-style")+
       '</tr></thead><tbody>';
     xs.forEach(function(h){
       html+='<tr>'+
         '<td style="white-space:nowrap">'+prettyDate(h.date)+'</td>'+
         '<td><button class="whiskey-name" data-name="'+esc(h.name)+'">'+esc(h.name)+'</button></td>'+
         '<td class="num">'+h.score.toFixed(1)+'</td>'+
-        '<td>'+esc(h.region)+'</td>'+
-        '<td>'+esc(h.style)+'</td>'+
-        '<td>'+esc(h.substyle||"")+'</td>'+
+        '<td><button class="filter-link region-link" data-region="'+esc(h.region)+'">'+esc(h.region)+'</button></td>'+
+        '<td>'+styleSubstyleCell(h,false)+'</td>'+
         '</tr>';
     });
     html+='</tbody></table></div>';
@@ -501,14 +503,14 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
   function mainRecent(){
     var xs=sorted(mainSort.recent,historyRows().filter(function(h){return h.date})).slice(0,10);
     var html='<div class="whiskey-table-wrap"><table class="whiskey-table"><thead><tr>'+
-      mth("recent","date","Date")+mth("recent","name","Whiskey")+mth("recent","score","Rating","num")+mth("recent","region","Region")+mth("recent","style","Style")+
+      mth("recent","date","Date")+mth("recent","name","Whiskey")+mth("recent","score","Rating","num")+mth("recent","region","Region")+mth("recent","style","Style – Sub-style")+
       '</tr></thead><tbody>';
     xs.forEach(function(h){
       html+='<tr><td style="white-space:nowrap">'+prettyDate(h.date)+'</td>'+
         '<td><button class="whiskey-name" data-name="'+esc(h.name)+'">'+esc(h.name)+'</button></td>'+
         '<td class="num">'+h.score.toFixed(1)+'</td>'+
         '<td><button class="filter-link region-link" data-region="'+esc(h.region)+'">'+esc(h.region)+'</button></td>'+
-        '<td><button class="filter-link style-link" data-style="'+esc(h.style)+'">'+esc(h.style)+'</button></td></tr>';
+        '<td>'+styleSubstyleCell(h,false)+'</td></tr>';
     });
     return html+'</tbody></table></div>';
   }
@@ -525,14 +527,14 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
     var xs=topExpanded?sortedSource:sortedSource.slice(0,10);
     var html='<div class="whiskey-table-wrap"><table class="whiskey-table"><thead><tr>'+
       '<th class="num">#</th>'+mth("top","name","Whiskey")+mth("top","average","Avg","num")+mth("top","n","n","num")+
-      mth("top","qPercentile","%ile","num")+mth("top","region","Region")+mth("top","style","Style")+
+      mth("top","qPercentile","%ile","num")+mth("top","region","Region")+mth("top","style","Style – Sub-style")+
       '</tr></thead><tbody>';
     xs.forEach(function(r){
       html+='<tr><td class="num">'+rankMap[r.name]+'</td><td><button class="whiskey-name" data-name="'+esc(r.name)+'">'+esc(r.name)+'</button></td>'+
         '<td class="num">'+fmt(r.average)+'</td><td class="num">'+r.n+'</td>'+
         '<td class="num">'+r.qPercentile+'</td>'+
         '<td><button class="filter-link region-link" data-region="'+esc(r.region)+'">'+esc(r.region)+'</button></td>'+
-        '<td><button class="filter-link style-link" data-style="'+esc(r.style)+'">'+esc(r.style)+'</button></td></tr>';
+        '<td>'+styleSubstyleCell(r,false)+'</td></tr>';
     });
     html+='</tbody></table></div>';
     if(source.length>10){
@@ -755,9 +757,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
       document.getElementById("need-more").innerHTML=whiskeyTable(filtered(rows.filter(function(r){return r.n<3})),"need-more");
     }else if(activeTab==="unrated"){
       document.getElementById("whiskey-controls").style.display="grid";
-      document.getElementById("unrated").innerHTML=
-        '<p class="view-note">100 curated whiskeys you have not rated, emphasizing well-known bottles and broad style coverage. Prices are rough U.S. retail estimates.</p>'+
-        unratedTable(filtered(unratedRows));
+      document.getElementById("unrated").innerHTML=unratedTable(filtered(unratedRows));
     }else if(activeTab==="history"){
       document.getElementById("whiskey-controls").style.display="none";
       document.getElementById("history").innerHTML=historyTable();
