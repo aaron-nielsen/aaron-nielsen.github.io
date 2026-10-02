@@ -93,6 +93,8 @@ button,input,select{font:inherit}
 .unrated-table th:nth-child(5),.unrated-table td:nth-child(5){width:11%;overflow-wrap:anywhere}
 .unrated-table th:nth-child(6),.unrated-table td:nth-child(6){width:8%}
 .style-sep{color:var(--muted);padding:0 2px}
+.style-substyle-cell{display:inline;white-space:normal}
+.style-substyle-cell .filter-link{display:inline;white-space:normal;overflow-wrap:normal;word-break:normal}
 .geo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 .geo-grid .chart-section{margin:0}
 .place-chart .bar-row{grid-template-columns:minmax(100px,150px) 1fr 34px}
@@ -394,11 +396,11 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
   function styleSubstyleCell(r,unrated){
     var styleClass=unrated?"unrated-style-link":"style-link";
     var subClass=unrated?"unrated-substyle-link":"substyle-link";
-    var html='<button class="filter-link '+styleClass+'" data-style="'+esc(r.style)+'">'+esc(r.style)+'</button>';
+    var html='<span class="style-substyle-cell"><button class="filter-link '+styleClass+'" data-style="'+esc(r.style)+'">'+esc(r.style)+'</button>';
     if(r.substyle){
       html+=' <span class="style-sep">–</span> <button class="filter-link '+subClass+'" data-substyle="'+esc(r.substyle)+'">'+esc(r.substyle)+'</button>';
     }
-    return html;
+    return html+'</span>';
   }
 
   function whiskeyTable(source,tab){
