@@ -51,10 +51,11 @@ button,input,select{font:inherit}
 .nav-row button:hover{border-color:var(--green2)}
 .nav-row button.active{background:var(--green);border-color:var(--green);color:#0e1710;font-weight:700}
 
-.whiskey-controls{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 14px}
+.whiskey-controls{display:grid;grid-template-columns:minmax(240px,2.1fr) minmax(135px,.8fr) minmax(170px,1.15fr) minmax(170px,1.15fr) auto;gap:10px;margin:0 0 14px;align-items:stretch}
 .view-note{margin:4px 0 12px;color:var(--muted);font-size:.9rem}
-.whiskey-controls input,.whiskey-controls select{background:#181411;color:var(--text);border:1px solid #5a3f2b;border-radius:9px;padding:9px 11px}
-.whiskey-controls input{min-width:260px;flex:1}
+.whiskey-controls input,.whiskey-controls select{width:100%;min-width:0;background:#181411;color:var(--text);border:1px solid #5a3f2b;border-radius:9px;padding:9px 11px}
+.whiskey-controls .clear-filters{background:#251a14;color:var(--text);border:1px solid #6a4a31;border-radius:9px;padding:9px 14px;cursor:pointer;white-space:nowrap}
+.whiskey-controls .clear-filters:hover{border-color:var(--green2);color:#fff}
 .whiskey-panel{display:none}
 .whiskey-panel.active{display:block}
 
@@ -129,8 +130,8 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
   .stat-value{font-size:1.25rem}
   .nav-row{gap:6px}
   .nav-row button{padding:6px 10px}
-  .whiskey-controls{flex-direction:column}
-  .whiskey-controls input{min-width:0}
+  .whiskey-controls{grid-template-columns:1fr}
+  .whiskey-controls .clear-filters{width:100%}
   .bar-row{grid-template-columns:105px 1fr 90px;gap:8px}
   .substyle-chart .bar-row{grid-template-columns:minmax(170px,45%) 1fr 34px}
   .distribution-chart{max-width:none}
@@ -164,6 +165,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
     <select id="region-filter"><option value="">All regions</option></select>
     <select id="style-filter"><option value="">All styles</option></select>
     <select id="substyle-filter"><option value="">All sub-styles</option></select>
+    <button type="button" class="clear-filters" id="clear-filters">Clear</button>
   </div>
 
   <div id="main" class="whiskey-panel active"></div>
@@ -496,10 +498,10 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
     if(activeTab==="main"){
       renderMain();
     }else if(activeTab==="all"){
-      document.getElementById("whiskey-controls").style.display="flex";
+      document.getElementById("whiskey-controls").style.display="grid";
       document.getElementById("all").innerHTML=whiskeyTable(filtered(rows),"all");
     }else if(activeTab==="need-more"){
-      document.getElementById("whiskey-controls").style.display="flex";
+      document.getElementById("whiskey-controls").style.display="grid";
       document.getElementById("need-more").innerHTML=whiskeyTable(filtered(rows.filter(function(r){return r.n<3})),"need-more");
     }
     bindEvents();
@@ -655,6 +657,15 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
       document.getElementById("region-filter").addEventListener("change",function(){updateStyles();render()});
       document.getElementById("style-filter").addEventListener("change",function(){updateSubstyles();render()});
       document.getElementById("substyle-filter").addEventListener("change",render);
+      document.getElementById("clear-filters").onclick=function(){
+        document.getElementById("search").value="";
+        document.getElementById("region-filter").value="";
+        updateStyles();
+        document.getElementById("style-filter").value="";
+        updateSubstyles();
+        document.getElementById("substyle-filter").value="";
+        render();
+      };
       var dialog=document.getElementById("whiskey-dialog");
       document.getElementById("dialog-close").onclick=function(){dialog.close()};
       dialog.addEventListener("click",function(e){
