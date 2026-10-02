@@ -106,10 +106,11 @@ button,input,select{font:inherit}
 .distribution-chart .dist-percentile{color:var(--muted);font-size:.8rem;text-align:right;font-variant-numeric:tabular-nums}
 .distribution-chart .dist-rating{color:#efe5db;text-align:right;font-variant-numeric:tabular-nums;padding-right:6px}
 .distribution-chart .bar-value{text-align:right}
-.distillery-chart .bar-row{grid-template-columns:minmax(170px,230px) minmax(180px,1fr) 180px}
+.distillery-chart .bar-row,.distillery-chart .distillery-head{grid-template-columns:minmax(170px,230px) minmax(180px,1fr) 64px 72px;gap:10px}
 .distillery-chart .bar-label{white-space:normal;overflow:visible}
-.distillery-chart .bar-value{white-space:nowrap}
-.chart-note{padding:5px 0 0;color:var(--muted);font-size:.78rem}
+.distillery-chart .distillery-head{display:grid;align-items:end;margin:0 0 4px;color:var(--muted);font-size:.72rem;font-weight:650;text-transform:uppercase;letter-spacing:.04em}
+.distillery-chart .distillery-head span:nth-child(3),.distillery-chart .distillery-head span:nth-child(4){text-align:right}
+.distillery-chart .dist-num{text-align:right;color:#e5d8cc;font-variant-numeric:tabular-nums;font-size:.9rem}
 .substyle-chart .bar-row{grid-template-columns:minmax(250px,34%) minmax(140px,1fr) 44px}
 .substyle-chart .bar-label{white-space:normal;overflow:visible;text-overflow:clip;line-height:1.2}
 .substyle-more{padding:0 16px 15px}
@@ -154,7 +155,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
   .whiskey-controls{grid-template-columns:1fr}
   .whiskey-controls .clear-filters{width:100%}
   .bar-row{grid-template-columns:105px 1fr 90px;gap:8px}
-  .distillery-chart .bar-row{grid-template-columns:150px minmax(120px,1fr) 128px}
+  .distillery-chart .bar-row,.distillery-chart .distillery-head{grid-template-columns:140px minmax(120px,1fr) 50px 58px;gap:6px}
   .substyle-chart .bar-row{grid-template-columns:minmax(170px,45%) 1fr 34px}
   .distribution-chart{max-width:none}
   .distribution-chart .bar-row,.distribution-chart .distribution-head{grid-template-columns:68px 30px 38px minmax(120px,1fr) 28px;gap:5px}
@@ -222,8 +223,8 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
   function fmt(x){return Number(x).toFixed(2)}
   function whiskeyGradient(value,max){
     var t=max>0?Math.max(0,Math.min(1,value/max)):0;
-    var h1=Math.round(38-16*t),h2=Math.max(18,h1-4);
-    var l1=Math.round(64-24*t),l2=Math.round(72-24*t);
+    var h1=Math.round(40-20*t),h2=Math.max(16,h1-5);
+    var l1=Math.round(66-30*t),l2=Math.round(74-30*t);
     return "linear-gradient(90deg,hsl("+h1+",68%,"+l1+"%),hsl("+h2+",72%,"+l2+"%))";
   }
   function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[c]})}
@@ -546,13 +547,15 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
   function distilleryChart(items){
     var shown=items.slice(0,10);
     var max=Math.max.apply(null,shown.map(function(x){return x.ratings}));
-    return '<div class="chart-body distillery-chart">'+shown.map(function(x,i){
+    var head='<div class="distillery-head"><span></span><span></span><span>Ratings</span><span>Whiskeys</span></div>';
+    var body=shown.map(function(x,i){
       var w=max?100*x.ratings/max:0;
       return '<div class="bar-row"><div class="bar-label">'+(i+1)+'. '+esc(x.name)+'</div>'+
-        '<div class="bar-track"><div class="bar-fill" style="width:'+w.toFixed(1)+'%;background:'+whiskeyGradient(x.whiskeys,max)+'"></div></div>'+
-        '<div class="bar-value">'+x.ratings+' ratings <span class="pct-range">· '+x.whiskeys+' whiskeys</span></div></div>';
-    }).join('')+
-      '<div class="chart-note">Grouped by producing distillery where clear; sourced or blended brands are omitted.</div></div>';
+        '<div class="bar-track"><div class="bar-fill" style="width:'+w.toFixed(1)+'%;background:'+whiskeyGradient(x.ratings,max)+'"></div></div>'+
+        '<div class="dist-num">'+x.ratings+'</div>'+
+        '<div class="dist-num">'+x.whiskeys+'</div></div>';
+    }).join('');
+    return '<div class="chart-body distillery-chart">'+head+body+'</div>';
   }
 
   function ratingDistribution(){
