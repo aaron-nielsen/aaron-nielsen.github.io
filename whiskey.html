@@ -208,7 +208,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
 <script>
 (function(){
   var DATA_URL="/data/whiskey_ratings.json?v="+Date.now();
-  var data=null,rows=[],activeTab="main",substyleExpanded=false,topExpanded=false;
+  var data=null,rows=[],activeTab="main",substyleExpanded=false,topExpanded=false,activeDistillery="";
   var sortState={
     all:{key:"average",dir:-1},
     "need-more":{key:"average",dir:-1},
@@ -297,7 +297,8 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
     return source.filter(function(r){
       return (!q||(r.name+" "+r.region+" "+r.style+" "+(r.substyle||"")).toLowerCase().indexOf(q)>=0)&&
         (!region||r.region===region)&&(!style||r.style===style)&&
-        (!sub||r.substyle===sub||(r.substyle&&r.substyle.indexOf(sub+" / ")===0));
+        (!sub||r.substyle===sub||(r.substyle&&r.substyle.indexOf(sub+" / ")===0))&&
+        (!activeDistillery||distilleryName(r.name)===activeDistillery);
     });
   }
 
@@ -423,7 +424,9 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
     xs.forEach(function(h){
       html+='<tr><td style="white-space:nowrap">'+prettyDate(h.date)+'</td>'+
         '<td><button class="whiskey-name" data-name="'+esc(h.name)+'">'+esc(h.name)+'</button></td>'+
-        '<td class="num">'+h.score.toFixed(1)+'</td><td>'+esc(h.region)+'</td><td>'+esc(h.style)+'</td></tr>';
+        '<td class="num">'+h.score.toFixed(1)+'</td>'+
+        '<td><button class="filter-link region-link" data-region="'+esc(h.region)+'">'+esc(h.region)+'</button></td>'+
+        '<td><button class="filter-link style-link" data-style="'+esc(h.style)+'">'+esc(h.style)+'</button></td></tr>';
     });
     return html+'</tbody></table></div>';
   }
@@ -445,7 +448,9 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
     xs.forEach(function(r){
       html+='<tr><td class="num">'+rankMap[r.name]+'</td><td><button class="whiskey-name" data-name="'+esc(r.name)+'">'+esc(r.name)+'</button></td>'+
         '<td class="num">'+fmt(r.average)+'</td><td class="num">'+r.n+'</td>'+
-        '<td class="num">'+r.qPercentile+'</td><td>'+esc(r.region)+'</td><td>'+esc(r.style)+'</td></tr>';
+        '<td class="num">'+r.qPercentile+'</td>'+
+        '<td><button class="filter-link region-link" data-region="'+esc(r.region)+'">'+esc(r.region)+'</button></td>'+
+        '<td><button class="filter-link style-link" data-style="'+esc(r.style)+'">'+esc(r.style)+'</button></td></tr>';
     });
     html+='</tbody></table></div>';
     if(source.length>10){
@@ -558,7 +563,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
     var head='<div class="distillery-head"><span></span><span></span><span>Ratings</span><span>Whiskeys</span></div>';
     var body=shown.map(function(x,i){
       var w=max?100*x.ratings/max:0;
-      return '<div class="bar-row"><div class="bar-label">'+(i+1)+'. '+esc(x.name)+'</div>'+
+      return '<div class="bar-row"><div class="bar-label">'+(i+1)+'. <button class="filter-link distillery-link" data-distillery="'+esc(x.name)+'">'+esc(x.name)+'</button></div>'+
         '<div class="bar-track"><div class="bar-fill" style="width:'+w.toFixed(1)+'%;background:'+whiskeyGradient(x.ratings,max)+'"></div></div>'+
         '<div class="dist-num">'+x.ratings+'</div>'+
         '<div class="dist-num">'+x.whiskeys+'</div></div>';
@@ -634,7 +639,9 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
       renderMain();
     }else if(activeTab==="all"){
       document.getElementById("whiskey-controls").style.display="grid";
-      document.getElementById("all").innerHTML=whiskeyTable(filtered(rows),"all");
+      document.getElementById("all").innerHTML=
+        (activeDistillery?'<p class="view-note">Distillery: '+esc(activeDistillery)+'</p>':'')+
+        whiskeyTable(filtered(rows),"all");
     }else if(activeTab==="need-more"){
       document.getElementById("whiskey-controls").style.display="grid";
       document.getElementById("need-more").innerHTML=whiskeyTable(filtered(rows.filter(function(r){return r.n<3})),"need-more");
@@ -646,6 +653,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
   }
 
   function switchPrimary(tab){
+    activeDistillery="";
     activeTab=tab;
     document.querySelectorAll("#primary-tabs button").forEach(function(b){
       b.classList.toggle("active",b.getAttribute("data-tab")===tab);
@@ -666,8 +674,21 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
     });
   }
 
+  function drillDistillery(distillery){
+    activateAll();
+    activeDistillery=distillery;
+    document.getElementById("search").value="";
+    document.getElementById("region-filter").value="";
+    updateStyles();
+    document.getElementById("style-filter").value="";
+    updateSubstyles();
+    document.getElementById("substyle-filter").value="";
+    render();
+  }
+
   function drillRegion(region){
     activateAll();
+    activeDistillery="";
     document.getElementById("search").value="";
     document.getElementById("region-filter").value=region;
     updateStyles();
@@ -676,6 +697,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
 
   function drillStyle(style){
     activateAll();
+    activeDistillery="";
     document.getElementById("search").value="";
     document.getElementById("region-filter").value="";
     updateStyles();
@@ -687,6 +709,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
 
   function drillSubstyle(substyle){
     activateAll();
+    activeDistillery="";
     document.getElementById("search").value="";
     document.getElementById("region-filter").value="";
     updateStyles();
@@ -724,6 +747,9 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
     });
     document.querySelectorAll(".substyle-link").forEach(function(btn){
       btn.onclick=function(){drillSubstyle(btn.getAttribute("data-substyle"))};
+    });
+    document.querySelectorAll(".distillery-link").forEach(function(btn){
+      btn.onclick=function(){drillDistillery(btn.getAttribute("data-distillery"))};
     });
     var topToggle=document.getElementById("top-toggle");
     if(topToggle)topToggle.onclick=function(){
@@ -796,6 +822,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
       document.getElementById("style-filter").addEventListener("change",function(){updateSubstyles();render()});
       document.getElementById("substyle-filter").addEventListener("change",render);
       document.getElementById("clear-filters").onclick=function(){
+        activeDistillery="";
         document.getElementById("search").value="";
         document.getElementById("region-filter").value="";
         updateStyles();
