@@ -84,8 +84,8 @@ button,input,select{font:inherit}
 .detail-table th:nth-child(7),.detail-table td:nth-child(7){width:6%}
 .detail-table td:nth-child(1),.detail-table td:nth-child(4){overflow-wrap:anywhere}
 .detail-table td:nth-child(2),.detail-table td:nth-child(3){overflow-wrap:break-word}
-.whiskey-name{color:#f3ebe3;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;text-decoration-color:#8d6a4e;cursor:pointer;background:none;border:0;padding:0;font:inherit;text-align:left}
-.whiskey-name:hover{color:#fff;text-decoration-color:var(--green2)}
+.whiskey-name{color:#f3ebe3;text-decoration:none;cursor:pointer;background:none;border:0;padding:0;font:inherit;text-align:left}
+.whiskey-name:hover{color:var(--green2)}
 .filter-link{color:#f3ebe3;text-decoration:none;cursor:pointer;background:none;border:0;padding:0;font:inherit;text-align:left}
 .filter-link:hover{color:var(--green2)}
 
@@ -114,8 +114,11 @@ button,input,select{font:inherit}
 dialog.whiskey-dialog{background:#171310;color:var(--text);border:1px solid #65472f;border-radius:12px;max-width:650px;width:92%}
 dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
 .whiskey-dialog button.close{float:right;background:#251a14;color:#fff;border:1px solid #6a4a31;border-radius:6px;padding:6px 10px;cursor:pointer}
+.history-note{margin:4px 0 10px;color:var(--muted);font-size:.88rem}
 .whiskey-history-list{width:100%;border-collapse:collapse}
 .whiskey-history-list td,.whiskey-history-list th{border-bottom:1px solid #4a3425;padding:8px}
+.whiskey-history-list th:first-child,.whiskey-history-list td:first-child,
+.whiskey-history-list th:last-child,.whiskey-history-list td:last-child{text-align:center}
 
 @media(max-width:800px){
   .stats-row{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -149,9 +152,8 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
   </div>
 
   <nav class="nav-row" id="primary-tabs" aria-label="Whiskey views">
-    <button class="active" data-tab="main">Main</button>
+    <button class="active" data-tab="main">Home</button>
     <button data-tab="all">All Whiskeys</button>
-    <button data-tab="qualified">Qualified</button>
     <button data-tab="need-more">Need More</button>
     <button data-tab="history">History</button>
   </nav>
@@ -165,7 +167,6 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
 
   <div id="main" class="whiskey-panel active"></div>
   <div id="all" class="whiskey-panel"></div>
-  <div id="qualified" class="whiskey-panel"></div>
   <div id="need-more" class="whiskey-panel"></div>
   <div id="history" class="whiskey-panel"></div>
 </div>
@@ -181,7 +182,6 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
   var data=null,rows=[],activeTab="main",substyleExpanded=false;
   var sortState={
     all:{key:"average",dir:-1},
-    qualified:{key:"average",dir:-1},
     "need-more":{key:"n",dir:-1},
     history:{key:"date",dir:-1}
   };
@@ -503,11 +503,6 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
     }else if(activeTab==="all"){
       document.getElementById("whiskey-controls").style.display="flex";
       document.getElementById("all").innerHTML=whiskeyTable(filtered(rows),"all");
-    }else if(activeTab==="qualified"){
-      document.getElementById("whiskey-controls").style.display="flex";
-      document.getElementById("qualified").innerHTML=
-        '<p class="view-note">Qualified = 3 or more ratings.</p>'+
-        whiskeyTable(filtered(rows.filter(function(r){return r.n>=3})),"qualified");
     }else if(activeTab==="need-more"){
       document.getElementById("whiskey-controls").style.display="flex";
       document.getElementById("need-more").innerHTML=whiskeyTable(filtered(rows.filter(function(r){return r.n<3})),"need-more");
@@ -529,18 +524,18 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
     render();
   }
 
-  function activateQualified(){
-    activeTab="qualified";
+  function activateAll(){
+    activeTab="all";
     document.querySelectorAll("#primary-tabs button").forEach(function(b){
-      b.classList.toggle("active",b.getAttribute("data-tab")==="qualified");
+      b.classList.toggle("active",b.getAttribute("data-tab")==="all");
     });
     document.querySelectorAll(".whiskey-panel").forEach(function(p){
-      p.classList.toggle("active",p.id==="qualified");
+      p.classList.toggle("active",p.id==="all");
     });
   }
 
   function drillRegion(region){
-    activateQualified();
+    activateAll();
     document.getElementById("search").value="";
     document.getElementById("region-filter").value=region;
     updateStyles();
@@ -548,7 +543,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
   }
 
   function drillStyle(style){
-    activateQualified();
+    activateAll();
     document.getElementById("search").value="";
     document.getElementById("region-filter").value="";
     updateStyles();
@@ -559,7 +554,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
   }
 
   function drillSubstyle(substyle){
-    activateQualified();
+    activateAll();
     document.getElementById("search").value="";
     document.getElementById("region-filter").value="";
     updateStyles();
@@ -608,9 +603,24 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
   function showDetail(name){
     var r=rows.find(function(x){return x.name===name});
     if(!r)return;
-    var hist=r.ratings.map(function(x,i){
-      return '<tr><td>'+(i+1)+'</td><td>'+prettyDate(x.date)+'</td><td>'+x.score.toFixed(1)+'</td></tr>';
+
+    var indexed=r.ratings.map(function(x,i){
+      return {score:x.score,date:x.date||"",number:i+1};
+    });
+    indexed.sort(function(a,b){
+      if(a.date&&b.date)return b.date.localeCompare(a.date)||b.number-a.number;
+      if(a.date)return -1;
+      if(b.date)return 1;
+      return b.number-a.number;
+    });
+    var unknownCount=indexed.filter(function(x){return !x.date}).length;
+    var hist=indexed.map(function(x){
+      return '<tr><td>'+x.number+'</td><td>'+prettyDate(x.date)+'</td><td>'+x.score.toFixed(1)+'</td></tr>';
     }).join("");
+    var unknownNote=unknownCount
+      ? '<p class="history-note">'+unknownCount+' earlier rating'+(unknownCount===1?' has':'s have')+' unknown date'+(unknownCount===1?'':'s')+'.</p>'
+      : '';
+
     document.getElementById("dialog-content").innerHTML=
       '<h2>'+esc(r.name)+'</h2>'+
       '<p>'+esc(r.region)+' · '+esc(r.style)+(r.substyle?' · '+esc(r.substyle):'')+'</p>'+
@@ -618,6 +628,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
       ' &nbsp; <strong>%ile:</strong> '+r.percentile+
       ' &nbsp; <strong>Qualified %ile:</strong> '+(r.qPercentile==null?"—":r.qPercentile)+
       ' &nbsp; <strong>Style %ile:</strong> '+r.sPercentile+'</p>'+
+      unknownNote+
       '<table class="whiskey-history-list"><thead><tr><th>#</th><th>Date</th><th>Rating</th></tr></thead><tbody>'+hist+'</tbody></table>';
     document.getElementById("whiskey-dialog").showModal();
   }
