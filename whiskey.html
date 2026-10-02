@@ -73,10 +73,17 @@ button,input,select{font:inherit}
 .whiskey-table th.active-sort{box-shadow:inset 0 -2px 0 var(--green2)}
 .whiskey-table td.num,.whiskey-table th.num{text-align:center;font-variant-numeric:tabular-nums}
 .whiskey-table tr:hover td{background:#211815}
-.detail-table th:first-child,.detail-table td:first-child{min-width:240px}
-.detail-table th:nth-child(2),.detail-table td:nth-child(2){min-width:105px}
-.detail-table th:nth-child(3),.detail-table td:nth-child(3){min-width:130px}
-.detail-table th:nth-child(4),.detail-table td:nth-child(4){min-width:190px}
+.detail-table{table-layout:fixed;min-width:0}
+.detail-table th,.detail-table td{padding:9px 9px}
+.detail-table th:nth-child(1),.detail-table td:nth-child(1){width:31%}
+.detail-table th:nth-child(2),.detail-table td:nth-child(2){width:14%}
+.detail-table th:nth-child(3),.detail-table td:nth-child(3){width:15%}
+.detail-table th:nth-child(4),.detail-table td:nth-child(4){width:22%}
+.detail-table th:nth-child(5),.detail-table td:nth-child(5){width:5%}
+.detail-table th:nth-child(6),.detail-table td:nth-child(6){width:7%}
+.detail-table th:nth-child(7),.detail-table td:nth-child(7){width:6%}
+.detail-table td:nth-child(1),.detail-table td:nth-child(4){overflow-wrap:anywhere}
+.detail-table td:nth-child(2),.detail-table td:nth-child(3){overflow-wrap:break-word}
 .whiskey-name{color:#f3ebe3;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;text-decoration-color:#8d6a4e;cursor:pointer;background:none;border:0;padding:0;font:inherit;text-align:left}
 .whiskey-name:hover{color:#fff;text-decoration-color:var(--green2)}
 .filter-link{color:#f3ebe3;text-decoration:none;cursor:pointer;background:none;border:0;padding:0;font:inherit;text-align:left}
@@ -112,6 +119,8 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
 
 @media(max-width:800px){
   .stats-row{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .detail-table{table-layout:auto;min-width:760px}
+  .detail-table th:nth-child(n),.detail-table td:nth-child(n){width:auto}
 }
 @media(max-width:620px){
   .whiskey-app{padding:14px 10px 36px}
@@ -285,7 +294,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
   function whiskeyTable(source,tab){
     var xs=sorted(sortState[tab],source);
     var pctKey=tab==="qualified"?"qPercentile":"percentile";
-    var pctLabel=tab==="qualified"?"%ile":"Overall %ile";
+    var pctLabel="%ile";
     var html='<div class="whiskey-table-wrap"><table class="whiskey-table detail-table"><thead><tr>'+
       th(tab,"name","Whiskey")+th(tab,"region","Region")+th(tab,"style","Style")+th(tab,"substyle","Sub-style")+
       th(tab,"n","N","num")+th(tab,"average","Avg","num")+th(tab,pctKey,pctLabel,"num")+
@@ -606,7 +615,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
       '<h2>'+esc(r.name)+'</h2>'+
       '<p>'+esc(r.region)+' · '+esc(r.style)+(r.substyle?' · '+esc(r.substyle):'')+'</p>'+
       '<p><strong>Avg:</strong> '+fmt(r.average)+' / 5.0 &nbsp; <strong>N:</strong> '+r.n+
-      ' &nbsp; <strong>Overall %ile:</strong> '+r.percentile+
+      ' &nbsp; <strong>%ile:</strong> '+r.percentile+
       ' &nbsp; <strong>Qualified %ile:</strong> '+(r.qPercentile==null?"—":r.qPercentile)+
       ' &nbsp; <strong>Style %ile:</strong> '+r.sPercentile+'</p>'+
       '<table class="whiskey-history-list"><thead><tr><th>#</th><th>Date</th><th>Rating</th></tr></thead><tbody>'+hist+'</tbody></table>';
