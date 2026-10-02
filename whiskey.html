@@ -113,6 +113,8 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
 .whiskey-dialog button.close{float:right;background:#251a14;color:#fff;border:1px solid #6a4a31;border-radius:6px;padding:6px 10px;cursor:pointer}
 .earlier-ratings{margin:12px 0 2px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--panel2);color:var(--muted);font-size:.9rem}
 .earlier-ratings strong{color:var(--text);font-weight:600}
+.history-undated{margin:10px 2px 0;color:var(--muted);font-size:.9rem}
+.history-table{min-width:900px}
 .whiskey-history-list{width:100%;border-collapse:collapse}
 .whiskey-history-list td,.whiskey-history-list th{border-bottom:1px solid #4a3425;padding:8px}
 .whiskey-history-list th:first-child,.whiskey-history-list td:first-child,
@@ -158,6 +160,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
     <button class="active" data-tab="main">At a Glance</button>
     <button data-tab="all">All Whiskeys</button>
     <button data-tab="need-more">Need More</button>
+    <button data-tab="history">History</button>
   </nav>
 
   <div class="whiskey-controls" id="whiskey-controls" style="display:none">
@@ -171,6 +174,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
   <div id="main" class="whiskey-panel active"></div>
   <div id="all" class="whiskey-panel"></div>
   <div id="need-more" class="whiskey-panel"></div>
+  <div id="history" class="whiskey-panel"></div>
 </div>
 
 <dialog id="whiskey-dialog" class="whiskey-dialog">
@@ -184,7 +188,8 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
   var data=null,rows=[],activeTab="main",substyleExpanded=false,topExpanded=false;
   var sortState={
     all:{key:"average",dir:-1},
-    "need-more":{key:"average",dir:-1}
+    "need-more":{key:"average",dir:-1},
+    history:{key:"date",dir:-1}
   };
   var mainSort={
     recent:{key:"date",dir:-1},
@@ -321,6 +326,32 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
       });
     });
     return out;
+  }
+
+  function historyTable(){
+    var allHistory=historyRows();
+    var dated=allHistory.filter(function(h){return h.date});
+    var undated=allHistory.length-dated.length;
+    var xs=sorted(sortState.history,dated);
+    var html='<div class="whiskey-table-wrap"><table class="whiskey-table history-table"><thead><tr>'+
+      th("history","date","Date")+th("history","name","Whiskey")+th("history","score","Rating","num")+
+      th("history","region","Region")+th("history","style","Style")+th("history","substyle","Sub-style")+
+      '</tr></thead><tbody>';
+    xs.forEach(function(h){
+      html+='<tr>'+
+        '<td style="white-space:nowrap">'+prettyDate(h.date)+'</td>'+
+        '<td><button class="whiskey-name" data-name="'+esc(h.name)+'">'+esc(h.name)+'</button></td>'+
+        '<td class="num">'+h.score.toFixed(1)+'</td>'+
+        '<td>'+esc(h.region)+'</td>'+
+        '<td>'+esc(h.style)+'</td>'+
+        '<td>'+esc(h.substyle||"")+'</td>'+
+        '</tr>';
+    });
+    html+='</tbody></table></div>';
+    if(undated){
+      html+='<p class="history-undated">'+undated+' earlier rating'+(undated===1?' has':'s have')+' unknown date'+(undated===1?'':'s')+'.</p>';
+    }
+    return html;
   }
 
   function styleRows(){
@@ -503,6 +534,9 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
     }else if(activeTab==="need-more"){
       document.getElementById("whiskey-controls").style.display="grid";
       document.getElementById("need-more").innerHTML=whiskeyTable(filtered(rows.filter(function(r){return r.n<3})),"need-more");
+    }else if(activeTab==="history"){
+      document.getElementById("whiskey-controls").style.display="none";
+      document.getElementById("history").innerHTML=historyTable();
     }
     bindEvents();
   }
