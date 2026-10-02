@@ -331,7 +331,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
     var pctLabel="%ile";
     var html='<div class="whiskey-table-wrap"><table class="whiskey-table detail-table"><thead><tr>'+
       th(tab,"name","Whiskey")+th(tab,"region","Region")+th(tab,"style","Style")+th(tab,"substyle","Sub-style")+
-      th(tab,"n","N","num")+th(tab,"average","Avg","num")+th(tab,pctKey,pctLabel,"num")+
+      th(tab,"n","n","num")+th(tab,"average","Avg","num")+th(tab,pctKey,pctLabel,"num")+
       '</tr></thead><tbody>';
     xs.forEach(function(r){
       var pct=r[pctKey];
@@ -430,7 +430,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
     var sortedSource=sorted(mainSort.top,source);
     var xs=topExpanded?sortedSource:sortedSource.slice(0,10);
     var html='<div class="whiskey-table-wrap"><table class="whiskey-table"><thead><tr>'+
-      '<th class="num">#</th>'+mth("top","name","Whiskey")+mth("top","average","Avg","num")+mth("top","n","N","num")+
+      '<th class="num">#</th>'+mth("top","name","Whiskey")+mth("top","average","Avg","num")+mth("top","n","n","num")+
       mth("top","qPercentile","%ile","num")+mth("top","region","Region")+mth("top","style","Style")+
       '</tr></thead><tbody>';
     xs.forEach(function(r){
@@ -592,7 +592,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
 
     var maxCount=Math.max.apply(null,bins.map(function(x){return x.count}));
     return '<div class="chart-body distribution-chart">'+
-      '<div class="distribution-head"><span></span><span>%ile</span><span>Rating</span><span></span><span>N</span></div>'+
+      '<div class="distribution-head"><span></span><span>%ile</span><span>Rating</span><span></span><span>n</span></div>'+
       bins.map(function(x,i){
       var w=maxCount?100*x.count/maxCount:0;
       return '<div class="bar-row">'+
@@ -756,7 +756,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
     document.getElementById("dialog-content").innerHTML=
       '<h2>'+esc(r.name)+'</h2>'+
       '<p>'+esc(r.region)+' · '+esc(r.style)+(r.substyle?' · '+esc(r.substyle):'')+'</p>'+
-      '<p><strong>Avg:</strong> '+fmt(r.average)+' / 5.0 &nbsp; <strong>N:</strong> '+r.n+
+      '<p><strong>Avg:</strong> '+fmt(r.average)+' / 5.0 &nbsp; <strong>n:</strong> '+r.n+
       ' &nbsp; <strong>%ile:</strong> '+r.percentile+
       ' &nbsp; <strong>Qualified %ile:</strong> '+(r.qPercentile==null?"—":r.qPercentile)+
       ' &nbsp; <strong>Style %ile:</strong> '+r.sPercentile+'</p>'+
