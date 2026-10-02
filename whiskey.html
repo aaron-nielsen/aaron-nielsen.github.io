@@ -90,7 +90,7 @@ button,input,select{font:inherit}
 .filter-link:hover{color:var(--green2)}
 
 .chart-body{padding:14px 16px 16px}
-.bar-row{display:grid;grid-template-columns:minmax(150px,230px) 1fr 112px;gap:12px;align-items:center;margin:9px 0}
+.bar-row{display:grid;grid-template-columns:minmax(150px,230px) 1fr 128px;gap:12px;align-items:center;margin:9px 0}
 .bar-label{color:#efe5db;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .bar-track{height:14px;background:#2c211a;border-radius:999px;overflow:hidden}
 .bar-fill{height:100%;background:linear-gradient(90deg,var(--green),var(--green2));border-radius:999px;min-width:2px}
@@ -187,8 +187,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
   };
   var mainSort={
     recent:{key:"date",dir:-1},
-    top:{key:"average",dir:-1},
-    styles:{key:"whiskeys",dir:-1}
+    top:{key:"average",dir:-1}
   };
 
   function avg(xs){return xs.reduce(function(a,b){return a+b},0)/xs.length}
@@ -414,7 +413,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
       return '<div class="bar-row"><div class="bar-label" title="'+esc(x[labelKey])+'">'+
         '<button class="filter-link style-link" data-style="'+esc(x[labelKey])+'">'+esc(x[labelKey])+'</button></div>'+
         '<div class="bar-track"><div class="bar-fill" style="width:'+w.toFixed(1)+'%"></div></div>'+
-        '<div class="bar-value">'+x[valueKey]+'</div></div>';
+        '<div class="bar-value">'+x[valueKey]+' · '+fmt(x.average)+' avg</div></div>';
     }).join("")+'</div>';
   }
 
@@ -490,7 +489,6 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
     document.getElementById("main").innerHTML=
       '<section class="main-section"><h2>Recent Ratings</h2>'+mainRecent()+'</section>'+
       '<section class="main-section"><h2>Top Rated Whiskeys</h2>'+mainTopRated()+'</section>'+
-      '<section class="main-section"><h2>By Style</h2>'+mainStyles()+'</section>'+
       '<section class="chart-section"><h2>Whiskeys by Style</h2>'+barChart(styles,"name","whiskeys")+'</section>'+
       '<section class="chart-section"><h2>Whiskeys by Sub-style</h2>'+substyleChart(substyles)+'</section>'+
 
