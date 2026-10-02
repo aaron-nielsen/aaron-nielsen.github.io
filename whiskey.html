@@ -247,20 +247,12 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
     return "linear-gradient(90deg,hsl("+h1+",68%,"+l1+"%),hsl("+h2+",72%,"+l2+"%))";
   }
   function ratingGradient(value,min,max){
-    var mid=30;
-    if(value===mid)return "#f4f1ed";
-    if(value<mid){
-      var lowSpan=Math.max(1,mid-min);
-      var t=Math.max(0,Math.min(1,(mid-value)/lowSpan));
-      var light=Math.round(96-50*t);
-      var sat=Math.round(18+62*t);
-      return "hsl(216,"+sat+"%,"+light+"%)";
-    }
-    var highSpan=Math.max(1,max-mid);
-    var t=Math.max(0,Math.min(1,(value-mid)/highSpan));
-    var light=Math.round(96-52*t);
-    var sat=Math.round(22+60*t);
-    return "hsl(4,"+sat+"%,"+light+"%)";
+    var span=Math.max(1,max-min);
+    var t=Math.max(0,Math.min(1,(value-min)/span));
+    var h1=Math.round(42-24*t),h2=Math.round(38-22*t);
+    var l1=Math.round(76-42*t),l2=Math.round(82-40*t);
+    var s1=Math.round(62+14*t),s2=Math.round(66+12*t);
+    return "linear-gradient(90deg,hsl("+h1+","+s1+"%,"+l1+"%),hsl("+h2+","+s2+"%,"+l2+"%))";
   }
   function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[c]})}
   function pctRank(values,x){
