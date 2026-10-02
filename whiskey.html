@@ -52,6 +52,7 @@ button,input,select{font:inherit}
 .nav-row button.active{background:var(--green);border-color:var(--green);color:#0e1710;font-weight:700}
 
 .whiskey-controls{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 14px}
+.view-note{margin:4px 0 12px;color:var(--muted);font-size:.9rem}
 .whiskey-controls input,.whiskey-controls select{background:#181411;color:var(--text);border:1px solid #5a3f2b;border-radius:9px;padding:9px 11px}
 .whiskey-controls input{min-width:260px;flex:1}
 .whiskey-panel{display:none}
@@ -135,12 +136,12 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
   <div class="stats-row">
     <div class="stat-card"><div class="stat-value" id="stat-whiskeys">—</div><div class="stat-label">Whiskeys</div></div>
     <div class="stat-card"><div class="stat-value" id="stat-ratings">—</div><div class="stat-label">Ratings</div></div>
-    <div class="stat-card"><div class="stat-value" id="stat-qualified">—</div><div class="stat-label">Qualified</div></div>
     <div class="stat-card"><div class="stat-value" id="stat-average">—</div><div class="stat-label">Average / 5.0</div></div>
   </div>
 
   <nav class="nav-row" id="primary-tabs" aria-label="Whiskey views">
     <button class="active" data-tab="main">Main</button>
+    <button data-tab="all">All Whiskeys</button>
     <button data-tab="qualified">Qualified</button>
     <button data-tab="need-more">Need More</button>
     <button data-tab="history">History</button>
@@ -154,6 +155,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
   </div>
 
   <div id="main" class="whiskey-panel active"></div>
+  <div id="all" class="whiskey-panel"></div>
   <div id="qualified" class="whiskey-panel"></div>
   <div id="need-more" class="whiskey-panel"></div>
   <div id="history" class="whiskey-panel"></div>
@@ -169,6 +171,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
   var DATA_URL="/data/whiskey_ratings.json?v="+Date.now();
   var data=null,rows=[],activeTab="main",substyleExpanded=false;
   var sortState={
+    all:{key:"average",dir:-1},
     qualified:{key:"average",dir:-1},
     "need-more":{key:"n",dir:-1},
     history:{key:"date",dir:-1}
@@ -444,7 +447,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
     var total=scores.length;
     var bins=[];
 
-    for(var score=minScore;score<=maxScore;score++){
+    for(var score=maxScore;score>=minScore;score--){
       var below=scores.filter(function(s){return s<score}).length;
       var count=scores.filter(function(s){return s===score}).length;
       var medianPct=count
@@ -488,9 +491,14 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
   function render(){
     if(activeTab==="main"){
       renderMain();
+    }else if(activeTab==="all"){
+      document.getElementById("whiskey-controls").style.display="flex";
+      document.getElementById("all").innerHTML=whiskeyTable(filtered(rows),"all");
     }else if(activeTab==="qualified"){
       document.getElementById("whiskey-controls").style.display="flex";
-      document.getElementById("qualified").innerHTML=whiskeyTable(filtered(rows.filter(function(r){return r.n>=3})),"qualified");
+      document.getElementById("qualified").innerHTML=
+        '<p class="view-note">Qualified = 3 or more ratings.</p>'+
+        whiskeyTable(filtered(rows.filter(function(r){return r.n>=3})),"qualified");
     }else if(activeTab==="need-more"){
       document.getElementById("whiskey-controls").style.display="flex";
       document.getElementById("need-more").innerHTML=whiskeyTable(filtered(rows.filter(function(r){return r.n<3})),"need-more");
@@ -614,10 +622,8 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
       var totalRatings=rows.reduce(function(a,r){return a+r.n},0);
       var scores=[];
       rows.forEach(function(r){r.ratings.forEach(function(x){scores.push(x.score)})});
-      var qualified=rows.filter(function(r){return r.n>=3}).length;
       document.getElementById("stat-whiskeys").textContent=rows.length;
       document.getElementById("stat-ratings").textContent=totalRatings;
-      document.getElementById("stat-qualified").textContent=qualified;
       document.getElementById("stat-average").textContent=fmt(avg(scores));
 
       document.querySelectorAll("#primary-tabs button").forEach(function(btn){
