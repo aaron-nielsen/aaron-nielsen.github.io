@@ -97,11 +97,12 @@ button,input,select{font:inherit}
 .bar-fill{height:100%;background:linear-gradient(90deg,var(--green),var(--green2));border-radius:999px;min-width:2px}
 .bar-value{text-align:right;color:#e5d8cc;font-variant-numeric:tabular-nums;font-size:.9rem}
 .bar-value .pct-range{color:var(--muted);font-size:.78rem;margin-left:5px}
-.distribution-chart{max-width:760px}
-.distribution-chart .bar-row{grid-template-columns:185px minmax(220px,420px) 44px;justify-content:start}
-.distribution-chart .bar-label{white-space:nowrap;overflow:visible;text-overflow:clip;font-variant-numeric:tabular-nums}
-.distribution-chart .rating-name{color:var(--amber2);font-size:.8rem;margin-left:7px}
-.distribution-chart .pct-inline{color:var(--muted);font-size:.82rem;margin-left:5px}
+.distribution-chart{max-width:780px}
+.distribution-chart .bar-row{grid-template-columns:92px 42px 42px minmax(220px,420px) 44px;justify-content:start;gap:8px}
+.distribution-chart .dist-name{color:var(--amber2);font-size:.8rem;text-align:right;white-space:nowrap}
+.distribution-chart .dist-percentile{color:var(--muted);font-size:.82rem;text-align:right;font-variant-numeric:tabular-nums}
+.distribution-chart .dist-rating{color:#efe5db;text-align:right;font-variant-numeric:tabular-nums}
+.distribution-chart .bar-value{text-align:right}
 .distillery-chart .bar-row{grid-template-columns:minmax(170px,230px) minmax(180px,1fr) 180px}
 .distillery-chart .bar-label{white-space:normal;overflow:visible}
 .distillery-chart .bar-value{white-space:nowrap}
@@ -153,11 +154,12 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
   .distillery-chart .bar-row{grid-template-columns:150px minmax(120px,1fr) 128px}
   .substyle-chart .bar-row{grid-template-columns:minmax(170px,45%) 1fr 34px}
   .distribution-chart{max-width:none}
-  .distribution-chart .bar-row{grid-template-columns:150px minmax(120px,1fr) 34px}
+  .distribution-chart .bar-row{grid-template-columns:78px 34px 36px minmax(120px,1fr) 34px;gap:6px}
 }
 @media(max-width:460px){
-  .distribution-chart .bar-row{grid-template-columns:132px minmax(90px,1fr) 30px;gap:6px}
-  .distribution-chart .rating-name{display:block;margin-left:0;margin-top:2px}
+  .distribution-chart .bar-row{grid-template-columns:64px 30px 34px minmax(90px,1fr) 28px;gap:5px}
+  .distribution-chart .dist-name{font-size:.72rem}
+  .distribution-chart .dist-percentile{font-size:.76rem}
 }
 </style>
 
@@ -588,10 +590,9 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
     return '<div class="chart-body distribution-chart">'+bins.map(function(x,i){
       var w=maxCount?100*x.count/maxCount:0;
       return '<div class="bar-row">'+
-        '<div class="bar-label">'+x.label+
-          '<span class="pct-inline">'+(x.percentile==null?"":"· "+x.percentile)+'</span>'+
-          (ratingNames[x.score]?'<span class="rating-name">'+ratingNames[x.score]+'</span>':'')+
-        '</div>'+
+        '<div class="dist-name">'+(ratingNames[x.score]||"")+'</div>'+
+        '<div class="dist-percentile">'+(x.percentile==null?"":x.percentile)+'</div>'+
+        '<div class="dist-rating">'+x.label+'</div>'+
         '<div class="bar-track"><div class="bar-fill" style="width:'+w.toFixed(1)+'%;background:'+whiskeyGradient(i,bins.length)+'"></div></div>'+
         '<div class="bar-value">'+x.count+'</div></div>';
     }).join("")+'</div>';
