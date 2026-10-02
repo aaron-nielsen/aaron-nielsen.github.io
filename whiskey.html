@@ -310,7 +310,15 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
     return dir*(av-bv);
   }
   function sorted(state,items){
-    return items.slice().sort(function(a,b){return compare(a,b,state.key,state.dir)});
+    return items.slice().sort(function(a,b){
+      var primary=compare(a,b,state.key,state.dir);
+      if(primary!==0)return primary;
+      if(state.key==="date"){
+        var ao=a.order||0,bo=b.order||0;
+        if(ao!==bo)return state.dir*(ao-bo);
+      }
+      return 0;
+    });
   }
 
   function th(tab,key,label,cls){
@@ -351,7 +359,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
     var out=[];
     rows.forEach(function(r){
       r.ratings.forEach(function(x){
-        out.push({date:x.date||"",name:r.name,region:r.region,style:r.style,substyle:r.substyle,score:x.score});
+        out.push({date:x.date||"",order:x.order||0,name:r.name,region:r.region,style:r.style,substyle:r.substyle,score:x.score});
       });
     });
     return out;
