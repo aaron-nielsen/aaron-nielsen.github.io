@@ -403,7 +403,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
       return '<div class="bar-row"><div class="bar-label" title="'+esc(x[labelKey])+'">'+
         '<button class="filter-link style-link" data-style="'+esc(x[labelKey])+'">'+esc(x[labelKey])+'</button></div>'+
         '<div class="bar-track"><div class="bar-fill" style="width:'+w.toFixed(1)+'%"></div></div>'+
-        '<div class="bar-value">'+x[valueKey]+' · '+fmt(x.average)+' avg</div></div>';
+        '<div class="bar-value">'+x[valueKey]+'</div></div>';
     }).join("")+'</div>';
   }
 
