@@ -114,7 +114,7 @@
     {
       "name": "Balvenie 12 Year Old Doublewood",
       "style": "Single Malt",
-      "substyle": "Speyside",
+      "substyle": "Speyside / Sherry Finish",
       "ratings": [
         {
           "score": 4.1,
@@ -468,9 +468,9 @@
       "region": "American"
     },
     {
-      "name": "Four Roses Barrel Select",
+      "name": "Four Roses Small Batch Select",
       "style": "Bourbon",
-      "substyle": "",
+      "substyle": "Small Batch",
       "ratings": [
         {
           "score": 2.9,
@@ -1145,8 +1145,8 @@
     },
     {
       "name": "Knob Creek Bourbon x Rye",
-      "style": "Bourbon/Rye Blend",
-      "substyle": "",
+      "style": "Blended Straight Whiskey",
+      "substyle": "Bourbon + Rye",
       "ratings": [
         {
           "score": 3.9,
@@ -1246,7 +1246,7 @@
     {
       "name": "Maker's 46",
       "style": "Bourbon",
-      "substyle": "French Oak Finish",
+      "substyle": "French Oaked",
       "ratings": [
         {
           "score": 3.5,
