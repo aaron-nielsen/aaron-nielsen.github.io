@@ -1542,7 +1542,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "place": "Indiana"
     },
     {
       "name": "Tullamore D.E.W.",
@@ -2161,7 +2162,106 @@
       "priority": 41
     },
     {
-      "priority": 42,
+      "name": "Breckenridge Bourbon",
+      "region": "American",
+      "style": "Bourbon",
+      "substyle": "",
+      "distillery": "Breckenridge",
+      "estimated_price_usd": 45,
+      "place": "Colorado",
+      "recommendation_group": "State priority",
+      "priority": 42
+    },
+    {
+      "name": "Breckenridge Rye Whiskey",
+      "region": "American",
+      "style": "Rye",
+      "substyle": "100 Proof",
+      "distillery": "Breckenridge",
+      "estimated_price_usd": 40,
+      "place": "Colorado",
+      "recommendation_group": "State/rye priority",
+      "priority": 43
+    },
+    {
+      "name": "Breckenridge Single Barrel",
+      "region": "American",
+      "style": "Bourbon",
+      "substyle": "Single Barrel",
+      "distillery": "Breckenridge",
+      "estimated_price_usd": 75,
+      "place": "Colorado",
+      "recommendation_group": "State/rye priority",
+      "priority": 44
+    },
+    {
+      "name": "Templeton Single Barrel",
+      "region": "American",
+      "style": "Rye",
+      "substyle": "Single Barrel / Cask Strength",
+      "distillery": "Templeton",
+      "estimated_price_usd": 50,
+      "place": "Iowa",
+      "recommendation_group": "State/rye priority",
+      "priority": 45
+    },
+    {
+      "name": "Cedar Ridge Bottled-in-Bond Rye",
+      "region": "American",
+      "style": "Rye",
+      "substyle": "Bottled in Bond",
+      "distillery": "Cedar Ridge",
+      "estimated_price_usd": 49,
+      "place": "Iowa",
+      "recommendation_group": "State/rye priority",
+      "priority": 46
+    },
+    {
+      "name": "Wyoming Whiskey Small Batch Bourbon",
+      "region": "American",
+      "style": "Bourbon",
+      "substyle": "Small Batch",
+      "distillery": "Wyoming Whiskey",
+      "estimated_price_usd": 45,
+      "place": "Wyoming",
+      "recommendation_group": "State priority",
+      "priority": 47
+    },
+    {
+      "name": "Ben Holladay 1856 Original Bourbon",
+      "region": "American",
+      "style": "Bourbon",
+      "substyle": "Bottled in Bond",
+      "distillery": "Holladay",
+      "estimated_price_usd": 60,
+      "place": "Missouri",
+      "recommendation_group": "State priority",
+      "priority": 48
+    },
+    {
+      "name": "Rock Town Four Grain Sour Mash Straight Bourbon",
+      "region": "American",
+      "style": "Bourbon",
+      "substyle": "Four Grain / Sour Mash",
+      "distillery": "Rock Town",
+      "estimated_price_usd": 55,
+      "place": "Arkansas",
+      "recommendation_group": "State priority",
+      "priority": 49
+    },
+    {
+      "name": "Middle West Spirits Straight Rye Whiskey, Dark Pumpernickel",
+      "region": "American",
+      "style": "Rye",
+      "substyle": "Dark Pumpernickel Rye",
+      "distillery": "Middle West Spirits",
+      "estimated_price_usd": 47,
+      "place": "Ohio",
+      "recommendation_group": "State/rye priority",
+      "priority": 50
+    },
+    {
+      "priority": 51,
       "name": "Lagavulin 16 Year Old",
       "region": "Scotch",
       "style": "Single Malt",
@@ -2171,7 +2271,7 @@
       "recommendation_group": "Classic"
     },
     {
-      "priority": 43,
+      "priority": 52,
       "name": "Bowmore 12 Year Old",
       "region": "Scotch",
       "style": "Single Malt",
@@ -2181,7 +2281,7 @@
       "recommendation_group": "Classic"
     },
     {
-      "priority": 44,
+      "priority": 53,
       "name": "Redbreast 12 Year Old",
       "region": "Irish",
       "style": "Single Pot Still",
@@ -2191,7 +2291,7 @@
       "recommendation_group": "Classic"
     },
     {
-      "priority": 45,
+      "priority": 54,
       "name": "Green Spot",
       "region": "Irish",
       "style": "Single Pot Still",
@@ -2201,7 +2301,7 @@
       "recommendation_group": "Classic"
     },
     {
-      "priority": 46,
+      "priority": 55,
       "name": "Bushmills Original",
       "region": "Irish",
       "style": "Blended",
@@ -2211,7 +2311,7 @@
       "recommendation_group": "Classic"
     },
     {
-      "priority": 47,
+      "priority": 56,
       "name": "Black Bush",
       "region": "Irish",
       "style": "Blended",
@@ -2221,7 +2321,7 @@
       "recommendation_group": "Classic"
     },
     {
-      "priority": 48,
+      "priority": 57,
       "name": "Jameson Black Barrel",
       "region": "Irish",
       "style": "Blended",
@@ -2231,7 +2331,7 @@
       "recommendation_group": "Classic"
     },
     {
-      "priority": 49,
+      "priority": 58,
       "name": "Powers Gold Label",
       "region": "Irish",
       "style": "Blended",
@@ -2241,7 +2341,7 @@
       "recommendation_group": "Classic"
     },
     {
-      "priority": 50,
+      "priority": 59,
       "name": "Suntory Toki",
       "region": "Japanese",
       "style": "Blended",
@@ -2251,7 +2351,7 @@
       "recommendation_group": "Classic"
     },
     {
-      "priority": 51,
+      "priority": 60,
       "name": "Hibiki Japanese Harmony",
       "region": "Japanese",
       "style": "Blended",
@@ -2261,7 +2361,7 @@
       "recommendation_group": "Classic"
     },
     {
-      "priority": 52,
+      "priority": 61,
       "name": "Nikka From the Barrel",
       "region": "Japanese",
       "style": "Blended",
@@ -2271,7 +2371,7 @@
       "recommendation_group": "Classic"
     },
     {
-      "priority": 53,
+      "priority": 62,
       "name": "Crown Royal Northern Harvest Rye",
       "region": "Canadian",
       "style": "Canadian Whisky",
@@ -2281,7 +2381,7 @@
       "recommendation_group": "Classic"
     },
     {
-      "priority": 54,
+      "priority": 63,
       "name": "Lot No. 40 Canadian Rye Whisky",
       "region": "Canadian",
       "style": "Canadian Whisky",
@@ -2298,7 +2398,7 @@
       "distillery": "The Famous Grouse",
       "estimated_price_usd": 25,
       "recommendation_group": "Classic",
-      "priority": 55
+      "priority": 64
     },
     {
       "name": "Johnnie Walker Double Black",
@@ -2308,10 +2408,10 @@
       "distillery": "Johnnie Walker",
       "estimated_price_usd": 40,
       "recommendation_group": "Classic",
-      "priority": 56
+      "priority": 65
     },
     {
-      "priority": 57,
+      "priority": 66,
       "name": "Old Forester 1920 Prohibition Style",
       "region": "American",
       "style": "Bourbon",
@@ -2321,7 +2421,7 @@
       "recommendation_group": "Explore"
     },
     {
-      "priority": 58,
+      "priority": 67,
       "name": "Old Forester 1910 Old Fine Whisky",
       "region": "American",
       "style": "Bourbon",
@@ -2331,7 +2431,7 @@
       "recommendation_group": "Explore"
     },
     {
-      "priority": 59,
+      "priority": 68,
       "name": "Henry McKenna Single Barrel 10 Year",
       "region": "American",
       "style": "Bourbon",
@@ -2341,7 +2441,7 @@
       "recommendation_group": "Explore"
     },
     {
-      "priority": 60,
+      "priority": 69,
       "name": "Larceny Barrel Proof",
       "region": "American",
       "style": "Bourbon",
@@ -2351,7 +2451,7 @@
       "recommendation_group": "Explore"
     },
     {
-      "priority": 61,
+      "priority": 70,
       "name": "Stagg",
       "region": "American",
       "style": "Bourbon",
@@ -2361,7 +2461,7 @@
       "recommendation_group": "Explore"
     },
     {
-      "priority": 62,
+      "priority": 71,
       "name": "Weller Antique 107",
       "region": "American",
       "style": "Bourbon",
@@ -2371,7 +2471,7 @@
       "recommendation_group": "Explore"
     },
     {
-      "priority": 63,
+      "priority": 72,
       "name": "New Riff Kentucky Straight Bourbon",
       "region": "American",
       "style": "Bourbon",
@@ -2381,7 +2481,7 @@
       "recommendation_group": "Explore"
     },
     {
-      "priority": 64,
+      "priority": 73,
       "name": "Peerless Kentucky Straight Bourbon",
       "region": "American",
       "style": "Bourbon",
@@ -2391,7 +2491,7 @@
       "recommendation_group": "Explore"
     },
     {
-      "priority": 65,
+      "priority": 74,
       "name": "Penelope Four Grain Bourbon",
       "region": "American",
       "style": "Bourbon",
@@ -2401,7 +2501,7 @@
       "recommendation_group": "Explore"
     },
     {
-      "priority": 66,
+      "priority": 75,
       "name": "New Riff Kentucky Straight Rye",
       "region": "American",
       "style": "Rye",
@@ -2411,7 +2511,7 @@
       "recommendation_group": "Explore"
     },
     {
-      "priority": 67,
+      "priority": 76,
       "name": "Sagamore Spirit Double Oak Rye",
       "region": "American",
       "style": "Rye",
@@ -2421,7 +2521,7 @@
       "recommendation_group": "Explore"
     },
     {
-      "priority": 68,
+      "priority": 77,
       "name": "Wild Turkey Rare Breed Rye",
       "region": "American",
       "style": "Rye",
@@ -2431,7 +2531,7 @@
       "recommendation_group": "Explore"
     },
     {
-      "priority": 69,
+      "priority": 78,
       "name": "Russell's Reserve Single Barrel Rye",
       "region": "American",
       "style": "Rye",
@@ -2441,7 +2541,7 @@
       "recommendation_group": "Explore"
     },
     {
-      "priority": 70,
+      "priority": 79,
       "name": "Jack Daniel's Triple Mash",
       "region": "American",
       "style": "Blended Straight Whiskey",
@@ -2451,7 +2551,7 @@
       "recommendation_group": "Explore"
     },
     {
-      "priority": 71,
+      "priority": 80,
       "name": "Westland American Single Malt",
       "region": "American",
       "style": "American Single Malt",
@@ -2461,7 +2561,7 @@
       "recommendation_group": "Explore"
     },
     {
-      "priority": 72,
+      "priority": 81,
       "name": "Westward American Single Malt",
       "region": "American",
       "style": "American Single Malt",
@@ -2471,7 +2571,7 @@
       "recommendation_group": "Explore"
     },
     {
-      "priority": 73,
+      "priority": 82,
       "name": "Aberlour A'bunadh",
       "region": "Scotch",
       "style": "Single Malt",
@@ -2481,7 +2581,7 @@
       "recommendation_group": "Explore"
     },
     {
-      "priority": 74,
+      "priority": 83,
       "name": "Glenmorangie Quinta Ruban 14 Year Old",
       "region": "Scotch",
       "style": "Single Malt",
@@ -2491,7 +2591,7 @@
       "recommendation_group": "Explore"
     },
     {
-      "priority": 75,
+      "priority": 84,
       "name": "Clynelish 14 Year Old",
       "region": "Scotch",
       "style": "Single Malt",
@@ -2501,7 +2601,7 @@
       "recommendation_group": "Explore"
     },
     {
-      "priority": 76,
+      "priority": 85,
       "name": "Ardbeg Uigeadail",
       "region": "Scotch",
       "style": "Single Malt",
@@ -2511,7 +2611,7 @@
       "recommendation_group": "Explore"
     },
     {
-      "priority": 77,
+      "priority": 86,
       "name": "Port Charlotte 10 Year Old",
       "region": "Scotch",
       "style": "Single Malt",
@@ -2521,7 +2621,7 @@
       "recommendation_group": "Explore"
     },
     {
-      "priority": 78,
+      "priority": 87,
       "name": "Bunnahabhain 12 Year Old",
       "region": "Scotch",
       "style": "Single Malt",
@@ -2531,7 +2631,7 @@
       "recommendation_group": "Explore"
     },
     {
-      "priority": 79,
+      "priority": 88,
       "name": "Springbank 10 Year Old",
       "region": "Scotch",
       "style": "Single Malt",
@@ -2541,7 +2641,7 @@
       "recommendation_group": "Explore"
     },
     {
-      "priority": 80,
+      "priority": 89,
       "name": "Glen Scotia Double Cask",
       "region": "Scotch",
       "style": "Single Malt",
@@ -2551,7 +2651,7 @@
       "recommendation_group": "Explore"
     },
     {
-      "priority": 81,
+      "priority": 90,
       "name": "Kilkerran 12 Year Old",
       "region": "Scotch",
       "style": "Single Malt",
@@ -2561,7 +2661,7 @@
       "recommendation_group": "Explore"
     },
     {
-      "priority": 82,
+      "priority": 91,
       "name": "Auchentoshan 12 Year Old",
       "region": "Scotch",
       "style": "Single Malt",
@@ -2571,7 +2671,7 @@
       "recommendation_group": "Explore"
     },
     {
-      "priority": 83,
+      "priority": 92,
       "name": "Glenkinchie 12 Year Old",
       "region": "Scotch",
       "style": "Single Malt",
@@ -2581,7 +2681,7 @@
       "recommendation_group": "Explore"
     },
     {
-      "priority": 84,
+      "priority": 93,
       "name": "Redbreast 12 Year Old Cask Strength",
       "region": "Irish",
       "style": "Single Pot Still",
@@ -2591,7 +2691,7 @@
       "recommendation_group": "Explore"
     },
     {
-      "priority": 85,
+      "priority": 94,
       "name": "Yellow Spot",
       "region": "Irish",
       "style": "Single Pot Still",
@@ -2601,7 +2701,7 @@
       "recommendation_group": "Explore"
     },
     {
-      "priority": 86,
+      "priority": 95,
       "name": "Powers John's Lane 12 Year Old",
       "region": "Irish",
       "style": "Single Pot Still",
@@ -2611,7 +2711,7 @@
       "recommendation_group": "Explore"
     },
     {
-      "priority": 87,
+      "priority": 96,
       "name": "Teeling Small Batch",
       "region": "Irish",
       "style": "Blended",
@@ -2621,7 +2721,7 @@
       "recommendation_group": "Explore"
     },
     {
-      "priority": 88,
+      "priority": 97,
       "name": "Yamazaki 12 Year Old",
       "region": "Japanese",
       "style": "Single Malt",
@@ -2631,7 +2731,7 @@
       "recommendation_group": "Explore"
     },
     {
-      "priority": 89,
+      "priority": 98,
       "name": "Hakushu 12 Year Old",
       "region": "Japanese",
       "style": "Single Malt",
@@ -2641,7 +2741,7 @@
       "recommendation_group": "Explore"
     },
     {
-      "priority": 90,
+      "priority": 99,
       "name": "Nikka Coffey Grain",
       "region": "Japanese",
       "style": "Grain Whisky",
@@ -2651,7 +2751,7 @@
       "recommendation_group": "Explore"
     },
     {
-      "priority": 91,
+      "priority": 100,
       "name": "Alberta Premium Cask Strength Rye",
       "region": "Canadian",
       "style": "Canadian Whisky",
@@ -2668,10 +2768,10 @@
       "distillery": "Kavalan",
       "estimated_price_usd": 80,
       "recommendation_group": "Explore",
-      "priority": 92
+      "priority": 101
     },
     {
-      "priority": 93,
+      "priority": 102,
       "name": "Amrut Fusion",
       "region": "Indian",
       "style": "Single Malt",
@@ -2688,7 +2788,7 @@
       "distillery": "Penderyn",
       "estimated_price_usd": 70,
       "recommendation_group": "Explore",
-      "priority": 94
+      "priority": 103
     },
     {
       "name": "Starward Two-Fold",
@@ -2698,7 +2798,7 @@
       "distillery": "Starward",
       "estimated_price_usd": 40,
       "recommendation_group": "Explore",
-      "priority": 95
+      "priority": 104
     },
     {
       "name": "Cotswolds Signature Single Malt",
@@ -2708,7 +2808,7 @@
       "distillery": "Cotswolds",
       "estimated_price_usd": 65,
       "recommendation_group": "Explore",
-      "priority": 96
+      "priority": 105
     },
     {
       "name": "Knob Creek 18 Year Bourbon",
@@ -2719,7 +2819,7 @@
       "estimated_price_usd": 170,
       "place": "Kentucky",
       "recommendation_group": "Familiar distillery",
-      "priority": 97
+      "priority": 106
     },
     {
       "name": "Knob Creek Single Barrel Select Bourbon",
@@ -2730,7 +2830,7 @@
       "estimated_price_usd": 60,
       "place": "Kentucky",
       "recommendation_group": "Familiar distillery",
-      "priority": 98
+      "priority": 107
     },
     {
       "name": "Jim Beam Double Oak",
@@ -2741,7 +2841,7 @@
       "estimated_price_usd": 25,
       "place": "Kentucky",
       "recommendation_group": "Familiar distillery",
-      "priority": 99
+      "priority": 108
     },
     {
       "name": "Basil Hayden Dark Rye",
@@ -2752,7 +2852,7 @@
       "estimated_price_usd": 45,
       "place": "Kentucky",
       "recommendation_group": "Familiar distillery",
-      "priority": 100
+      "priority": 109
     },
     {
       "name": "Russell's Reserve 15 Year Bourbon",
@@ -2763,7 +2863,7 @@
       "estimated_price_usd": 250,
       "place": "Kentucky",
       "recommendation_group": "Familiar distillery",
-      "priority": 101
+      "priority": 110
     },
     {
       "name": "Wild Turkey Master's Keep Voyage",
@@ -2774,7 +2874,7 @@
       "estimated_price_usd": 275,
       "place": "Kentucky",
       "recommendation_group": "Familiar distillery",
-      "priority": 102
+      "priority": 111
     },
     {
       "name": "Wild Turkey Master's Keep Unforgotten",
@@ -2785,7 +2885,7 @@
       "estimated_price_usd": 200,
       "place": "Kentucky",
       "recommendation_group": "Familiar distillery",
-      "priority": 103
+      "priority": 112
     },
     {
       "name": "Wild Turkey 70th Anniversary 8 Year Bourbon",
@@ -2796,7 +2896,7 @@
       "estimated_price_usd": 55,
       "place": "Kentucky",
       "recommendation_group": "Familiar distillery",
-      "priority": 104
+      "priority": 113
     },
     {
       "name": "Parker's Heritage Collection",
@@ -2807,7 +2907,7 @@
       "estimated_price_usd": 175,
       "place": "Kentucky",
       "recommendation_group": "Familiar distillery",
-      "priority": 105
+      "priority": 114
     },
     {
       "name": "Old Fitzgerald Bottled-in-Bond",
@@ -2818,7 +2918,7 @@
       "estimated_price_usd": 130,
       "place": "Kentucky",
       "recommendation_group": "Familiar distillery",
-      "priority": 106
+      "priority": 115
     },
     {
       "name": "Jack Daniel's Single Barrel Barrel Proof",
@@ -2829,7 +2929,7 @@
       "estimated_price_usd": 70,
       "place": "Tennessee",
       "recommendation_group": "Familiar distillery",
-      "priority": 107
+      "priority": 116
     },
     {
       "name": "Jack Daniel's 10 Year Old",
@@ -2840,7 +2940,7 @@
       "estimated_price_usd": 80,
       "place": "Tennessee",
       "recommendation_group": "Familiar distillery",
-      "priority": 108
+      "priority": 117
     },
     {
       "name": "Jack Daniel's 12 Year Old",
@@ -2851,7 +2951,7 @@
       "estimated_price_usd": 95,
       "place": "Tennessee",
       "recommendation_group": "Familiar distillery",
-      "priority": 109
+      "priority": 118
     },
     {
       "name": "Jack Daniel's Sinatra Select",
@@ -2862,7 +2962,7 @@
       "estimated_price_usd": 175,
       "place": "Tennessee",
       "recommendation_group": "Familiar distillery",
-      "priority": 110
+      "priority": 119
     },
     {
       "name": "Four Roses Limited Edition Small Batch",
@@ -2873,7 +2973,7 @@
       "estimated_price_usd": 220,
       "place": "Kentucky",
       "recommendation_group": "Familiar distillery",
-      "priority": 111
+      "priority": 120
     },
     {
       "name": "Four Roses Single Barrel Barrel Strength",
@@ -2884,7 +2984,7 @@
       "estimated_price_usd": 100,
       "place": "Kentucky",
       "recommendation_group": "Familiar distillery",
-      "priority": 112
+      "priority": 121
     },
     {
       "name": "E.H. Taylor Single Barrel",
@@ -2895,7 +2995,7 @@
       "estimated_price_usd": 80,
       "place": "Kentucky",
       "recommendation_group": "Familiar distillery",
-      "priority": 113
+      "priority": 122
     },
     {
       "name": "E.H. Taylor Barrel Proof",
@@ -2906,7 +3006,7 @@
       "estimated_price_usd": 90,
       "place": "Kentucky",
       "recommendation_group": "Familiar distillery",
-      "priority": 114
+      "priority": 123
     },
     {
       "name": "Blanton's Gold Edition",
@@ -2917,7 +3017,7 @@
       "estimated_price_usd": 120,
       "place": "Kentucky",
       "recommendation_group": "Familiar distillery",
-      "priority": 115
+      "priority": 124
     },
     {
       "name": "Blanton's Straight From the Barrel",
@@ -2928,7 +3028,7 @@
       "estimated_price_usd": 150,
       "place": "Kentucky",
       "recommendation_group": "Familiar distillery",
-      "priority": 116
+      "priority": 125
     },
     {
       "name": "Woodford Reserve Batch Proof",
@@ -2939,7 +3039,7 @@
       "estimated_price_usd": 150,
       "place": "Kentucky",
       "recommendation_group": "Familiar distillery",
-      "priority": 117
+      "priority": 126
     },
     {
       "name": "Woodford Reserve Double Double Oaked",
@@ -2950,7 +3050,7 @@
       "estimated_price_usd": 80,
       "place": "Kentucky",
       "recommendation_group": "Familiar distillery",
-      "priority": 118
+      "priority": 127
     },
     {
       "name": "Glenmorangie Nectar d'Or",
@@ -2961,7 +3061,7 @@
       "estimated_price_usd": 85,
       "place": "Highland",
       "recommendation_group": "Familiar distillery",
-      "priority": 119
+      "priority": 128
     },
     {
       "name": "Glenmorangie Signet",
@@ -2972,7 +3072,7 @@
       "estimated_price_usd": 250,
       "place": "Highland",
       "recommendation_group": "Familiar distillery",
-      "priority": 120
+      "priority": 129
     },
     {
       "name": "Balvenie 16 Year French Oak",
@@ -2983,7 +3083,7 @@
       "estimated_price_usd": 180,
       "place": "Speyside",
       "recommendation_group": "Familiar distillery",
-      "priority": 121
+      "priority": 130
     },
     {
       "name": "Balvenie 21 Year PortWood",
@@ -2994,7 +3094,7 @@
       "estimated_price_usd": 300,
       "place": "Speyside",
       "recommendation_group": "Familiar distillery",
-      "priority": 122
+      "priority": 131
     },
     {
       "name": "Ardbeg Corryvreckan",
@@ -3005,7 +3105,7 @@
       "estimated_price_usd": 100,
       "place": "Islay",
       "recommendation_group": "Familiar distillery",
-      "priority": 123
+      "priority": 132
     },
     {
       "name": "Laphroaig Quarter Cask",
@@ -3016,7 +3116,7 @@
       "estimated_price_usd": 70,
       "place": "Islay",
       "recommendation_group": "Familiar distillery",
-      "priority": 124
+      "priority": 133
     },
     {
       "name": "Laphroaig Sherry Oak Finish 10 Year",
@@ -3027,7 +3127,7 @@
       "estimated_price_usd": 90,
       "place": "Islay",
       "recommendation_group": "Familiar distillery",
-      "priority": 125
+      "priority": 134
     },
     {
       "name": "Glenfiddich 15 Year Old Solera",
@@ -3038,7 +3138,7 @@
       "estimated_price_usd": 65,
       "place": "Speyside",
       "recommendation_group": "Familiar distillery",
-      "priority": 126
+      "priority": 135
     },
     {
       "name": "Old Overholt Straight Rye",
@@ -3049,7 +3149,7 @@
       "estimated_price_usd": 25,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 127
+      "priority": 136
     },
     {
       "name": "Old Overholt Bottled in Bond Rye",
@@ -3060,7 +3160,7 @@
       "estimated_price_usd": 35,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 128
+      "priority": 137
     },
     {
       "name": "Old Overholt Cask Strength 10 Year Rye",
@@ -3071,7 +3171,7 @@
       "estimated_price_usd": 90,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 129
+      "priority": 138
     },
     {
       "name": "Knob Creek 10 Year Rye",
@@ -3082,7 +3182,7 @@
       "estimated_price_usd": 70,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 130
+      "priority": 139
     },
     {
       "name": "Knob Creek Single Barrel Rye",
@@ -3093,7 +3193,7 @@
       "estimated_price_usd": 60,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 131
+      "priority": 140
     },
     {
       "name": "Jack Daniel's Bonded Rye",
@@ -3104,7 +3204,7 @@
       "estimated_price_usd": 35,
       "place": "Tennessee",
       "recommendation_group": "Explore",
-      "priority": 132
+      "priority": 141
     },
     {
       "name": "Jack Daniel's Single Barrel Rye",
@@ -3115,7 +3215,7 @@
       "estimated_price_usd": 50,
       "place": "Tennessee",
       "recommendation_group": "Explore",
-      "priority": 133
+      "priority": 142
     },
     {
       "name": "George Dickel Rye",
@@ -3126,7 +3226,7 @@
       "estimated_price_usd": 25,
       "place": "Tennessee",
       "recommendation_group": "Explore",
-      "priority": 134
+      "priority": 143
     },
     {
       "name": "Chattanooga 99 Rye",
@@ -3137,7 +3237,7 @@
       "estimated_price_usd": 45,
       "place": "Tennessee",
       "recommendation_group": "Explore",
-      "priority": 135
+      "priority": 144
     },
     {
       "name": "Wilderness Trail Kentucky Straight Rye",
@@ -3148,7 +3248,7 @@
       "estimated_price_usd": 55,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 136
+      "priority": 145
     },
     {
       "name": "New Riff Single Barrel Rye",
@@ -3159,7 +3259,7 @@
       "estimated_price_usd": 60,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 137
+      "priority": 146
     },
     {
       "name": "New Riff Balboa Rye",
@@ -3170,7 +3270,7 @@
       "estimated_price_usd": 60,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 138
+      "priority": 147
     },
     {
       "name": "New Riff 6 Year Malted Rye",
@@ -3181,7 +3281,7 @@
       "estimated_price_usd": 70,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 139
+      "priority": 148
     },
     {
       "name": "Sagamore Spirit Cask Strength Rye",
@@ -3192,7 +3292,7 @@
       "estimated_price_usd": 65,
       "place": "Maryland",
       "recommendation_group": "Explore",
-      "priority": 140
+      "priority": 149
     },
     {
       "name": "Sagamore Spirit 8 Year Rye",
@@ -3203,7 +3303,7 @@
       "estimated_price_usd": 80,
       "place": "Maryland",
       "recommendation_group": "Explore",
-      "priority": 141
+      "priority": 150
     },
     {
       "name": "Sagamore Spirit Port Finish Rye",
@@ -3214,7 +3314,7 @@
       "estimated_price_usd": 75,
       "place": "Maryland",
       "recommendation_group": "Explore",
-      "priority": 142
+      "priority": 151
     },
     {
       "name": "Sagamore Spirit Sherry Finish Rye",
@@ -3225,7 +3325,7 @@
       "estimated_price_usd": 75,
       "place": "Maryland",
       "recommendation_group": "Explore",
-      "priority": 143
+      "priority": 152
     },
     {
       "name": "High West Midwinter Night's Dram",
@@ -3236,7 +3336,7 @@
       "estimated_price_usd": 150,
       "place": "Utah",
       "recommendation_group": "Explore",
-      "priority": 144
+      "priority": 153
     },
     {
       "name": "High West Bourye",
@@ -3247,7 +3347,7 @@
       "estimated_price_usd": 100,
       "place": "Utah",
       "recommendation_group": "Explore",
-      "priority": 145
+      "priority": 154
     },
     {
       "name": "Redwood Empire Rocket Top Rye",
@@ -3258,7 +3358,7 @@
       "estimated_price_usd": 80,
       "place": "California",
       "recommendation_group": "Explore",
-      "priority": 146
+      "priority": 155
     },
     {
       "name": "Redwood Empire Emerald Giant Cask Strength Rye",
@@ -3269,7 +3369,7 @@
       "estimated_price_usd": 70,
       "place": "California",
       "recommendation_group": "Explore",
-      "priority": 147
+      "priority": 156
     },
     {
       "name": "Redwood Empire Emerald Giant Rye",
@@ -3280,7 +3380,7 @@
       "estimated_price_usd": 35,
       "place": "California",
       "recommendation_group": "Explore",
-      "priority": 148
+      "priority": 157
     },
     {
       "name": "Rossville Union Master Crafted Rye",
@@ -3291,7 +3391,7 @@
       "estimated_price_usd": 45,
       "place": "Indiana",
       "recommendation_group": "Explore",
-      "priority": 149
+      "priority": 158
     },
     {
       "name": "Rossville Union Barrel Proof Rye",
@@ -3302,7 +3402,7 @@
       "estimated_price_usd": 65,
       "place": "Indiana",
       "recommendation_group": "Explore",
-      "priority": 150
+      "priority": 159
     },
     {
       "name": "Templeton 4 Year Rye",
@@ -3311,9 +3411,9 @@
       "substyle": "",
       "distillery": "Templeton",
       "estimated_price_usd": 35,
-      "place": "Iowa",
+      "place": "Indiana",
       "recommendation_group": "Explore",
-      "priority": 151
+      "priority": 160
     },
     {
       "name": "Templeton 6 Year Rye",
@@ -3322,9 +3422,9 @@
       "substyle": "",
       "distillery": "Templeton",
       "estimated_price_usd": 45,
-      "place": "Iowa",
+      "place": "Indiana",
       "recommendation_group": "Explore",
-      "priority": 152
+      "priority": 161
     },
     {
       "name": "Templeton 10 Year Rye",
@@ -3333,9 +3433,9 @@
       "substyle": "",
       "distillery": "Templeton",
       "estimated_price_usd": 85,
-      "place": "Iowa",
+      "place": "Indiana",
       "recommendation_group": "Explore",
-      "priority": 153
+      "priority": 162
     },
     {
       "name": "Frey Ranch Straight Rye",
@@ -3346,7 +3446,7 @@
       "estimated_price_usd": 60,
       "place": "Nevada",
       "recommendation_group": "Explore",
-      "priority": 154
+      "priority": 163
     },
     {
       "name": "Smoke Wagon Bottled in Bond Rye",
@@ -3357,7 +3457,7 @@
       "estimated_price_usd": 60,
       "place": "Nevada",
       "recommendation_group": "Explore",
-      "priority": 155
+      "priority": 164
     },
     {
       "name": "Leopold Bros Maryland Style Rye",
@@ -3368,7 +3468,7 @@
       "estimated_price_usd": 55,
       "place": "Colorado",
       "recommendation_group": "Explore",
-      "priority": 156
+      "priority": 165
     },
     {
       "name": "Leopold Bros Three Chamber Rye",
@@ -3379,7 +3479,7 @@
       "estimated_price_usd": 250,
       "place": "Colorado",
       "recommendation_group": "Explore",
-      "priority": 157
+      "priority": 166
     },
     {
       "name": "Laws San Luis Valley Straight Rye",
@@ -3390,7 +3490,7 @@
       "estimated_price_usd": 60,
       "place": "Colorado",
       "recommendation_group": "Explore",
-      "priority": 158
+      "priority": 167
     },
     {
       "name": "Laws San Luis Valley Rye Bottled in Bond",
@@ -3401,7 +3501,7 @@
       "estimated_price_usd": 80,
       "place": "Colorado",
       "recommendation_group": "Explore",
-      "priority": 159
+      "priority": 168
     },
     {
       "name": "291 Colorado Rye Whiskey",
@@ -3412,7 +3512,7 @@
       "estimated_price_usd": 75,
       "place": "Colorado",
       "recommendation_group": "Explore",
-      "priority": 160
+      "priority": 169
     },
     {
       "name": "291 Bad Guy Colorado Bourbon Rye",
@@ -3423,7 +3523,7 @@
       "estimated_price_usd": 100,
       "place": "Colorado",
       "recommendation_group": "Explore",
-      "priority": 161
+      "priority": 170
     },
     {
       "name": "Woody Creek 100% Rye",
@@ -3434,7 +3534,7 @@
       "estimated_price_usd": 55,
       "place": "Colorado",
       "recommendation_group": "Explore",
-      "priority": 162
+      "priority": 171
     },
     {
       "name": "Breckenridge Spiced Whiskey",
@@ -3445,7 +3545,7 @@
       "estimated_price_usd": 35,
       "place": "Colorado",
       "recommendation_group": "Explore",
-      "priority": 163
+      "priority": 172
     },
     {
       "name": "Breckenridge PX Sherry Cask Finish",
@@ -3456,7 +3556,7 @@
       "estimated_price_usd": 70,
       "place": "Colorado",
       "recommendation_group": "Explore",
-      "priority": 164
+      "priority": 173
     },
     {
       "name": "Dad's Hat Pennsylvania Rye",
@@ -3467,7 +3567,7 @@
       "estimated_price_usd": 45,
       "place": "Pennsylvania",
       "recommendation_group": "Explore",
-      "priority": 165
+      "priority": 174
     },
     {
       "name": "Dad's Hat Port Finished Rye",
@@ -3478,7 +3578,7 @@
       "estimated_price_usd": 55,
       "place": "Pennsylvania",
       "recommendation_group": "Explore",
-      "priority": 166
+      "priority": 175
     },
     {
       "name": "Wigle Organic Pennsylvania Rye",
@@ -3489,7 +3589,7 @@
       "estimated_price_usd": 50,
       "place": "Pennsylvania",
       "recommendation_group": "Explore",
-      "priority": 167
+      "priority": 176
     },
     {
       "name": "Liberty Pole Rye Whiskey",
@@ -3500,7 +3600,7 @@
       "estimated_price_usd": 45,
       "place": "Pennsylvania",
       "recommendation_group": "Explore",
-      "priority": 168
+      "priority": 177
     },
     {
       "name": "Thistle Finch Straight Rye",
@@ -3511,7 +3611,7 @@
       "estimated_price_usd": 45,
       "place": "Pennsylvania",
       "recommendation_group": "Explore",
-      "priority": 169
+      "priority": 178
     },
     {
       "name": "Coppersea Excelsior Straight Rye",
@@ -3522,7 +3622,7 @@
       "estimated_price_usd": 65,
       "place": "New York",
       "recommendation_group": "Explore",
-      "priority": 170
+      "priority": 179
     },
     {
       "name": "Kings County Empire Rye",
@@ -3533,7 +3633,7 @@
       "estimated_price_usd": 75,
       "place": "New York",
       "recommendation_group": "Explore",
-      "priority": 171
+      "priority": 180
     },
     {
       "name": "Hudson Do The Rye Thing",
@@ -3544,7 +3644,7 @@
       "estimated_price_usd": 50,
       "place": "New York",
       "recommendation_group": "Explore",
-      "priority": 172
+      "priority": 181
     },
     {
       "name": "Hillrock Double Cask Rye",
@@ -3555,7 +3655,7 @@
       "estimated_price_usd": 100,
       "place": "New York",
       "recommendation_group": "Explore",
-      "priority": 173
+      "priority": 182
     },
     {
       "name": "Hillrock Estate Rye",
@@ -3566,7 +3666,7 @@
       "estimated_price_usd": 100,
       "place": "New York",
       "recommendation_group": "Explore",
-      "priority": 174
+      "priority": 183
     },
     {
       "name": "Ragtime Rye",
@@ -3577,7 +3677,7 @@
       "estimated_price_usd": 45,
       "place": "New York",
       "recommendation_group": "Explore",
-      "priority": 175
+      "priority": 184
     },
     {
       "name": "Ragtime Rye Bottled in Bond",
@@ -3588,7 +3688,7 @@
       "estimated_price_usd": 55,
       "place": "New York",
       "recommendation_group": "Explore",
-      "priority": 176
+      "priority": 185
     },
     {
       "name": "Balcones Texas Rye 100 Proof",
@@ -3599,7 +3699,7 @@
       "estimated_price_usd": 45,
       "place": "Texas",
       "recommendation_group": "Explore",
-      "priority": 177
+      "priority": 186
     },
     {
       "name": "Still Austin The Artist Rye",
@@ -3610,7 +3710,7 @@
       "estimated_price_usd": 45,
       "place": "Texas",
       "recommendation_group": "Explore",
-      "priority": 178
+      "priority": 187
     },
     {
       "name": "Still Austin Cask Strength Rye",
@@ -3621,7 +3721,7 @@
       "estimated_price_usd": 65,
       "place": "Texas",
       "recommendation_group": "Explore",
-      "priority": 179
+      "priority": 188
     },
     {
       "name": "Andalusia Revenant Oak Rye",
@@ -3632,7 +3732,7 @@
       "estimated_price_usd": 55,
       "place": "Texas",
       "recommendation_group": "Explore",
-      "priority": 180
+      "priority": 189
     },
     {
       "name": "Casey Jones Small Batch Rye",
@@ -3643,7 +3743,7 @@
       "estimated_price_usd": 45,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 181
+      "priority": 190
     },
     {
       "name": "Willett Family Estate 4 Year Rye",
@@ -3654,7 +3754,7 @@
       "estimated_price_usd": 70,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 182
+      "priority": 191
     },
     {
       "name": "Michter's US*1 Barrel Strength Rye",
@@ -3665,7 +3765,7 @@
       "estimated_price_usd": 110,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 183
+      "priority": 192
     },
     {
       "name": "Peerless Kentucky Straight Rye",
@@ -3676,7 +3776,7 @@
       "estimated_price_usd": 80,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 184
+      "priority": 193
     },
     {
       "name": "Peerless Double Oak Rye",
@@ -3687,7 +3787,7 @@
       "estimated_price_usd": 95,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 185
+      "priority": 194
     },
     {
       "name": "Castle & Key Restoration Rye",
@@ -3698,7 +3798,7 @@
       "estimated_price_usd": 45,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 186
+      "priority": 195
     },
     {
       "name": "Pinhook Tiz Rye Time",
@@ -3709,7 +3809,7 @@
       "estimated_price_usd": 45,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 187
+      "priority": 196
     },
     {
       "name": "Casey Jones Kentucky Straight Rye",
@@ -3720,7 +3820,7 @@
       "estimated_price_usd": 45,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 188
+      "priority": 197
     },
     {
       "name": "Minor Case Rye",
@@ -3731,7 +3831,7 @@
       "estimated_price_usd": 40,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 189
+      "priority": 198
     },
     {
       "name": "Thomas H. Handy Sazerac Rye",
@@ -3742,7 +3842,7 @@
       "estimated_price_usd": 150,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 190
+      "priority": 199
     },
     {
       "name": "Van Winkle Family Reserve Rye 13 Year",
@@ -3753,7 +3853,7 @@
       "estimated_price_usd": 250,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 191
+      "priority": 200
     },
     {
       "name": "WhistlePig 12 Year Old World Rye",
@@ -3764,7 +3864,7 @@
       "estimated_price_usd": 140,
       "place": "Vermont",
       "recommendation_group": "Explore",
-      "priority": 192
+      "priority": 201
     },
     {
       "name": "WhistlePig 15 Year Rye",
@@ -3775,7 +3875,7 @@
       "estimated_price_usd": 250,
       "place": "Vermont",
       "recommendation_group": "Explore",
-      "priority": 193
+      "priority": 202
     },
     {
       "name": "WhistlePig FarmStock Rye",
@@ -3786,7 +3886,7 @@
       "estimated_price_usd": 80,
       "place": "Vermont",
       "recommendation_group": "Explore",
-      "priority": 194
+      "priority": 203
     },
     {
       "name": "WhistlePig PiggyBack 100% Rye",
@@ -3797,7 +3897,7 @@
       "estimated_price_usd": 50,
       "place": "Vermont",
       "recommendation_group": "Explore",
-      "priority": 195
+      "priority": 204
     },
     {
       "name": "Catoctin Creek Roundstone Rye 80 Proof",
@@ -3808,7 +3908,7 @@
       "estimated_price_usd": 45,
       "place": "Virginia",
       "recommendation_group": "Explore",
-      "priority": 196
+      "priority": 205
     },
     {
       "name": "Catoctin Creek Roundstone Rye 92 Proof",
@@ -3819,7 +3919,7 @@
       "estimated_price_usd": 55,
       "place": "Virginia",
       "recommendation_group": "Explore",
-      "priority": 197
+      "priority": 206
     },
     {
       "name": "Copper Fox Rye Whisky",
@@ -3830,7 +3930,7 @@
       "estimated_price_usd": 50,
       "place": "Virginia",
       "recommendation_group": "Explore",
-      "priority": 198
+      "priority": 207
     },
     {
       "name": "KO Distilling Bare Knuckle Rye",
@@ -3841,7 +3941,7 @@
       "estimated_price_usd": 45,
       "place": "Virginia",
       "recommendation_group": "Explore",
-      "priority": 199
+      "priority": 208
     },
     {
       "name": "Reservoir Rye Whiskey",
@@ -3852,7 +3952,7 @@
       "estimated_price_usd": 80,
       "place": "Virginia",
       "recommendation_group": "Explore",
-      "priority": 200
+      "priority": 209
     },
     {
       "name": "A. Smith Bowman Abraham Bowman Rye",
@@ -3863,7 +3963,7 @@
       "estimated_price_usd": 90,
       "place": "Virginia",
       "recommendation_group": "Explore",
-      "priority": 201
+      "priority": 210
     },
     {
       "name": "FEW Rye Whiskey",
@@ -3874,7 +3974,7 @@
       "estimated_price_usd": 45,
       "place": "Illinois",
       "recommendation_group": "Explore",
-      "priority": 202
+      "priority": 211
     },
     {
       "name": "Koval Rye",
@@ -3885,7 +3985,7 @@
       "estimated_price_usd": 45,
       "place": "Illinois",
       "recommendation_group": "Explore",
-      "priority": 203
+      "priority": 212
     },
     {
       "name": "Journeyman Last Feather Rye",
@@ -3896,7 +3996,7 @@
       "estimated_price_usd": 50,
       "place": "Michigan",
       "recommendation_group": "Explore",
-      "priority": 204
+      "priority": 213
     },
     {
       "name": "Traverse City North Coast Rye",
@@ -3907,7 +4007,7 @@
       "estimated_price_usd": 45,
       "place": "Michigan",
       "recommendation_group": "Explore",
-      "priority": 205
+      "priority": 214
     },
     {
       "name": "Wilderness Trail High Rye Bourbon",
@@ -3918,7 +4018,7 @@
       "estimated_price_usd": 50,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 206
+      "priority": 215
     },
     {
       "name": "Wilderness Trail Wheated Bourbon",
@@ -3929,7 +4029,7 @@
       "estimated_price_usd": 50,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 207
+      "priority": 216
     },
     {
       "name": "Bardstown Bourbon Company Origin Series Bottled-in-Bond",
@@ -3940,7 +4040,7 @@
       "estimated_price_usd": 50,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 208
+      "priority": 217
     },
     {
       "name": "Bardstown Bourbon Company Origin Series High Wheat",
@@ -3951,7 +4051,7 @@
       "estimated_price_usd": 50,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 209
+      "priority": 218
     },
     {
       "name": "Bardstown Bourbon Company Discovery Series",
@@ -3962,7 +4062,7 @@
       "estimated_price_usd": 140,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 210
+      "priority": 219
     },
     {
       "name": "Old Forester 1870 Original Batch",
@@ -3973,7 +4073,7 @@
       "estimated_price_usd": 50,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 211
+      "priority": 220
     },
     {
       "name": "Old Forester 1897 Bottled in Bond",
@@ -3984,18 +4084,7 @@
       "estimated_price_usd": 55,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 212
-    },
-    {
-      "name": "Old Forester Statesman",
-      "region": "American",
-      "style": "Bourbon",
-      "substyle": "",
-      "distillery": "Brown-Forman",
-      "estimated_price_usd": 55,
-      "place": "Kentucky",
-      "recommendation_group": "Explore",
-      "priority": 213
+      "priority": 221
     },
     {
       "name": "Early Times Bottled-in-Bond",
@@ -4006,18 +4095,7 @@
       "estimated_price_usd": 25,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 214
-    },
-    {
-      "name": "Very Old Barton 100 Proof",
-      "region": "American",
-      "style": "Bourbon",
-      "substyle": "",
-      "distillery": "Barton 1792",
-      "estimated_price_usd": 20,
-      "place": "Kentucky",
-      "recommendation_group": "Explore",
-      "priority": 215
+      "priority": 222
     },
     {
       "name": "J.T.S. Brown Bottled in Bond",
@@ -4028,29 +4106,7 @@
       "estimated_price_usd": 20,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 216
-    },
-    {
-      "name": "Rebel 100",
-      "region": "American",
-      "style": "Bourbon",
-      "substyle": "Wheated",
-      "distillery": "Lux Row",
-      "estimated_price_usd": 25,
-      "place": "Kentucky",
-      "recommendation_group": "Explore",
-      "priority": 217
-    },
-    {
-      "name": "Ezra Brooks 99",
-      "region": "American",
-      "style": "Bourbon",
-      "substyle": "",
-      "distillery": "Lux Row",
-      "estimated_price_usd": 25,
-      "place": "Kentucky",
-      "recommendation_group": "Explore",
-      "priority": 218
+      "priority": 223
     },
     {
       "name": "Yellowstone Select",
@@ -4061,7 +4117,7 @@
       "estimated_price_usd": 40,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 219
+      "priority": 224
     },
     {
       "name": "Green River Kentucky Straight Bourbon",
@@ -4072,7 +4128,7 @@
       "estimated_price_usd": 35,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 220
+      "priority": 225
     },
     {
       "name": "Green River Wheated Bourbon",
@@ -4083,18 +4139,7 @@
       "estimated_price_usd": 35,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 221
-    },
-    {
-      "name": "Green River Full Proof Bourbon",
-      "region": "American",
-      "style": "Bourbon",
-      "substyle": "Full Proof",
-      "distillery": "Green River",
-      "estimated_price_usd": 50,
-      "place": "Kentucky",
-      "recommendation_group": "Explore",
-      "priority": 222
+      "priority": 226
     },
     {
       "name": "Blade and Bow Bourbon",
@@ -4105,7 +4150,7 @@
       "estimated_price_usd": 50,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 223
+      "priority": 227
     },
     {
       "name": "I.W. Harper Cabernet Cask Reserve",
@@ -4116,7 +4161,7 @@
       "estimated_price_usd": 50,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 224
+      "priority": 228
     },
     {
       "name": "I.W. Harper 15 Year Bourbon",
@@ -4127,7 +4172,7 @@
       "estimated_price_usd": 90,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 225
+      "priority": 229
     },
     {
       "name": "Willett Pot Still Reserve",
@@ -4138,7 +4183,7 @@
       "estimated_price_usd": 55,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 226
+      "priority": 230
     },
     {
       "name": "Rowan's Creek Bourbon",
@@ -4149,7 +4194,7 @@
       "estimated_price_usd": 50,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 227
+      "priority": 231
     },
     {
       "name": "Noah's Mill Bourbon",
@@ -4160,7 +4205,7 @@
       "estimated_price_usd": 60,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 228
+      "priority": 232
     },
     {
       "name": "Rabbit Hole Cavehill",
@@ -4171,18 +4216,7 @@
       "estimated_price_usd": 60,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 229
-    },
-    {
-      "name": "Rabbit Hole Heigold",
-      "region": "American",
-      "style": "Bourbon",
-      "substyle": "High-Rye",
-      "distillery": "Rabbit Hole",
-      "estimated_price_usd": 60,
-      "place": "Kentucky",
-      "recommendation_group": "Explore",
-      "priority": 230
+      "priority": 233
     },
     {
       "name": "Penelope Architect",
@@ -4193,7 +4227,7 @@
       "estimated_price_usd": 65,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 231
+      "priority": 234
     },
     {
       "name": "Penelope Toasted Series Bourbon",
@@ -4204,7 +4238,7 @@
       "estimated_price_usd": 60,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 232
+      "priority": 235
     },
     {
       "name": "Penelope Barrel Strength Bourbon",
@@ -4215,7 +4249,7 @@
       "estimated_price_usd": 65,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 233
+      "priority": 236
     },
     {
       "name": "Barrell Bourbon",
@@ -4226,7 +4260,7 @@
       "estimated_price_usd": 90,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 234
+      "priority": 237
     },
     {
       "name": "Barrell Vantage",
@@ -4237,7 +4271,7 @@
       "estimated_price_usd": 85,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 235
+      "priority": 238
     },
     {
       "name": "Kentucky Owl Confiscated",
@@ -4248,7 +4282,7 @@
       "estimated_price_usd": 125,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 236
+      "priority": 239
     },
     {
       "name": "Michter's US*1 Kentucky Straight Bourbon",
@@ -4259,7 +4293,7 @@
       "estimated_price_usd": 45,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 237
+      "priority": 240
     },
     {
       "name": "Michter's US*1 American Whiskey",
@@ -4270,7 +4304,7 @@
       "estimated_price_usd": 45,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 238
+      "priority": 241
     },
     {
       "name": "Michter's US*1 Sour Mash Whiskey",
@@ -4281,7 +4315,7 @@
       "estimated_price_usd": 45,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 239
+      "priority": 242
     },
     {
       "name": "Baker's 7 Year Single Barrel Bourbon",
@@ -4292,7 +4326,7 @@
       "estimated_price_usd": 65,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 240
+      "priority": 243
     },
     {
       "name": "Baker's 13 Year Single Barrel Bourbon",
@@ -4303,18 +4337,7 @@
       "estimated_price_usd": 140,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 241
-    },
-    {
-      "name": "Basil Hayden Toast",
-      "region": "American",
-      "style": "Bourbon",
-      "substyle": "Toasted",
-      "distillery": "Jim Beam",
-      "estimated_price_usd": 50,
-      "place": "Kentucky",
-      "recommendation_group": "Explore",
-      "priority": 242
+      "priority": 244
     },
     {
       "name": "Maker's Mark 46 Cask Strength",
@@ -4325,7 +4348,7 @@
       "estimated_price_usd": 65,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 243
+      "priority": 245
     },
     {
       "name": "Maker's Mark Private Selection",
@@ -4336,7 +4359,7 @@
       "estimated_price_usd": 75,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 244
+      "priority": 246
     },
     {
       "name": "Weller 12 Year",
@@ -4347,7 +4370,7 @@
       "estimated_price_usd": 55,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 245
+      "priority": 247
     },
     {
       "name": "Weller Full Proof",
@@ -4358,7 +4381,7 @@
       "estimated_price_usd": 60,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 246
+      "priority": 248
     },
     {
       "name": "Weller C.Y.P.B.",
@@ -4369,7 +4392,7 @@
       "estimated_price_usd": 55,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 247
+      "priority": 249
     },
     {
       "name": "Weller Single Barrel",
@@ -4380,7 +4403,7 @@
       "estimated_price_usd": 55,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 248
+      "priority": 250
     },
     {
       "name": "Elijah Craig Toasted Barrel",
@@ -4391,7 +4414,7 @@
       "estimated_price_usd": 55,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 249
+      "priority": 251
     },
     {
       "name": "Elijah Craig Barrel Proof",
@@ -4402,7 +4425,7 @@
       "estimated_price_usd": 75,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 250
+      "priority": 252
     },
     {
       "name": "Elijah Craig 18 Year Single Barrel",
@@ -4413,18 +4436,7 @@
       "estimated_price_usd": 170,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 251
-    },
-    {
-      "name": "Bulleit 10 Year Bourbon",
-      "region": "American",
-      "style": "Bourbon",
-      "substyle": "",
-      "distillery": "Bulleit",
-      "estimated_price_usd": 50,
-      "place": "Kentucky",
-      "recommendation_group": "Explore",
-      "priority": 252
+      "priority": 253
     },
     {
       "name": "Bulleit Barrel Strength Bourbon",
@@ -4435,7 +4447,7 @@
       "estimated_price_usd": 55,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 253
+      "priority": 254
     },
     {
       "name": "Angel's Envy Cask Strength Bourbon",
@@ -4446,7 +4458,7 @@
       "estimated_price_usd": 230,
       "place": "Kentucky",
       "recommendation_group": "Explore",
-      "priority": 254
+      "priority": 255
     },
     {
       "name": "George Dickel 8 Year Bourbon",
@@ -4457,7 +4469,7 @@
       "estimated_price_usd": 35,
       "place": "Tennessee",
       "recommendation_group": "Explore",
-      "priority": 255
+      "priority": 256
     },
     {
       "name": "Uncle Nearest 1856",
@@ -4468,7 +4480,7 @@
       "estimated_price_usd": 60,
       "place": "Tennessee",
       "recommendation_group": "Explore",
-      "priority": 256
+      "priority": 257
     },
     {
       "name": "Uncle Nearest 1884",
@@ -4479,7 +4491,7 @@
       "estimated_price_usd": 50,
       "place": "Tennessee",
       "recommendation_group": "Explore",
-      "priority": 257
+      "priority": 258
     },
     {
       "name": "Chattanooga Whiskey 91",
@@ -4490,7 +4502,7 @@
       "estimated_price_usd": 40,
       "place": "Tennessee",
       "recommendation_group": "Explore",
-      "priority": 258
+      "priority": 259
     },
     {
       "name": "Chattanooga Whiskey 111 Cask",
@@ -4501,7 +4513,7 @@
       "estimated_price_usd": 50,
       "place": "Tennessee",
       "recommendation_group": "Explore",
-      "priority": 259
+      "priority": 260
     },
     {
       "name": "Blue Note Juke Joint Bourbon",
@@ -4512,7 +4524,7 @@
       "estimated_price_usd": 35,
       "place": "Tennessee",
       "recommendation_group": "Explore",
-      "priority": 260
+      "priority": 261
     },
     {
       "name": "Frey Ranch Straight Bourbon",
@@ -4523,7 +4535,7 @@
       "estimated_price_usd": 55,
       "place": "Nevada",
       "recommendation_group": "Explore",
-      "priority": 261
+      "priority": 262
     },
     {
       "name": "Smoke Wagon Straight Bourbon",
@@ -4534,7 +4546,7 @@
       "estimated_price_usd": 35,
       "place": "Nevada",
       "recommendation_group": "Explore",
-      "priority": 262
+      "priority": 263
     },
     {
       "name": "Smoke Wagon Small Batch Bourbon",
@@ -4545,7 +4557,7 @@
       "estimated_price_usd": 50,
       "place": "Nevada",
       "recommendation_group": "Explore",
-      "priority": 263
+      "priority": 264
     },
     {
       "name": "Smoke Wagon Uncut Unfiltered Bourbon",
@@ -4556,7 +4568,7 @@
       "estimated_price_usd": 70,
       "place": "Nevada",
       "recommendation_group": "Explore",
-      "priority": 264
+      "priority": 265
     },
     {
       "name": "Old Elk Straight Bourbon",
@@ -4567,7 +4579,7 @@
       "estimated_price_usd": 55,
       "place": "Colorado",
       "recommendation_group": "Explore",
-      "priority": 265
+      "priority": 266
     },
     {
       "name": "Laws Four Grain Straight Bourbon",
@@ -4578,7 +4590,7 @@
       "estimated_price_usd": 60,
       "place": "Colorado",
       "recommendation_group": "Explore",
-      "priority": 266
+      "priority": 267
     },
     {
       "name": "Laws Four Grain Bourbon Bottled in Bond",
@@ -4589,7 +4601,7 @@
       "estimated_price_usd": 80,
       "place": "Colorado",
       "recommendation_group": "Explore",
-      "priority": 267
+      "priority": 268
     },
     {
       "name": "291 Colorado Bourbon Whiskey",
@@ -4598,17 +4610,6 @@
       "substyle": "",
       "distillery": "Distillery 291",
       "estimated_price_usd": 75,
-      "place": "Colorado",
-      "recommendation_group": "Explore",
-      "priority": 268
-    },
-    {
-      "name": "Breckenridge Bourbon",
-      "region": "American",
-      "style": "Bourbon",
-      "substyle": "",
-      "distillery": "Breckenridge",
-      "estimated_price_usd": 45,
       "place": "Colorado",
       "recommendation_group": "Explore",
       "priority": 269
