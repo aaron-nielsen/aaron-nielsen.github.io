@@ -97,10 +97,10 @@ button,input,select{font:inherit}
 .bar-fill{height:100%;background:linear-gradient(90deg,var(--green),var(--green2));border-radius:999px;min-width:2px}
 .bar-value{text-align:right;color:#e5d8cc;font-variant-numeric:tabular-nums;font-size:.9rem}
 .bar-value .pct-range{color:var(--muted);font-size:.78rem;margin-left:5px}
-.distribution-chart{max-width:780px}
-.distribution-chart .bar-row{grid-template-columns:92px 42px 42px minmax(220px,420px) 44px;justify-content:start;gap:8px}
-.distribution-chart .dist-name{color:var(--amber2);font-size:.8rem;text-align:right;white-space:nowrap}
-.distribution-chart .dist-percentile{color:var(--muted);font-size:.82rem;text-align:right;font-variant-numeric:tabular-nums}
+.distribution-chart{max-width:690px;padding:10px 12px 14px}
+.distribution-chart .bar-row{grid-template-columns:76px 34px 36px minmax(180px,360px) 30px;justify-content:start;gap:5px;margin:6px 0}
+.distribution-chart .dist-name{color:var(--amber2);font-size:.78rem;text-align:right;white-space:nowrap}
+.distribution-chart .dist-percentile{color:var(--muted);font-size:.8rem;text-align:right;font-variant-numeric:tabular-nums}
 .distribution-chart .dist-rating{color:#efe5db;text-align:right;font-variant-numeric:tabular-nums}
 .distribution-chart .bar-value{text-align:right}
 .distillery-chart .bar-row{grid-template-columns:minmax(170px,230px) minmax(180px,1fr) 180px}
@@ -154,10 +154,10 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
   .distillery-chart .bar-row{grid-template-columns:150px minmax(120px,1fr) 128px}
   .substyle-chart .bar-row{grid-template-columns:minmax(170px,45%) 1fr 34px}
   .distribution-chart{max-width:none}
-  .distribution-chart .bar-row{grid-template-columns:78px 34px 36px minmax(120px,1fr) 34px;gap:6px}
+  .distribution-chart .bar-row{grid-template-columns:68px 30px 34px minmax(110px,1fr) 28px;gap:4px;margin:5px 0}
 }
 @media(max-width:460px){
-  .distribution-chart .bar-row{grid-template-columns:64px 30px 34px minmax(90px,1fr) 28px;gap:5px}
+  .distribution-chart .bar-row{grid-template-columns:58px 28px 32px minmax(82px,1fr) 26px;gap:4px}
   .distribution-chart .dist-name{font-size:.72rem}
   .distribution-chart .dist-percentile{font-size:.76rem}
 }
