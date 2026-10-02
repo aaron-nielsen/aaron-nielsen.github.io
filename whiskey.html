@@ -9,14 +9,14 @@ nocache: true
 
 <style>
 :root{
-  --bg:#0e130f;
-  --panel:#171f19;
-  --panel2:#1d281f;
-  --line:#334237;
-  --text:#f2f5f3;
-  --muted:#a8b3ab;
-  --green:#78a985;
-  --green2:#9bc5a5;
+  --bg:#140f0b;
+  --panel:#20160f;
+  --panel2:#2a1c13;
+  --line:#4a3425;
+  --text:#f5eee7;
+  --muted:#b9aa9b;
+  --green:#b77736;
+  --green2:#d39a58;
   --amber:#c88a3d;
   --amber2:#e0ad65;
 }
@@ -30,7 +30,7 @@ button,input,select{font:inherit}
   width:100%;
   aspect-ratio:1000/156;
   min-height:156px;
-  border:1px solid #3b4a3f;
+  border:1px solid #5a3d29;
   border-radius:16px;
   margin-bottom:16px;
   overflow:hidden;
@@ -47,12 +47,12 @@ button,input,select{font:inherit}
 .stat-label{font-size:.78rem;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:.06em}
 
 .nav-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0 0 18px}
-.nav-row button{background:transparent;color:#d8dfda;border:1px solid #4b5b50;border-radius:999px;padding:7px 14px;cursor:pointer}
+.nav-row button{background:transparent;color:#e8ddd2;border:1px solid #6a4a31;border-radius:999px;padding:7px 14px;cursor:pointer}
 .nav-row button:hover{border-color:var(--green2)}
 .nav-row button.active{background:var(--green);border-color:var(--green);color:#0e1710;font-weight:700}
 
 .whiskey-controls{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 14px}
-.whiskey-controls input,.whiskey-controls select{background:#151b17;color:var(--text);border:1px solid #48584d;border-radius:9px;padding:9px 11px}
+.whiskey-controls input,.whiskey-controls select{background:#1b120d;color:var(--text);border:1px solid #5a3f2b;border-radius:9px;padding:9px 11px}
 .whiskey-controls input{min-width:260px;flex:1}
 .whiskey-panel{display:none}
 .whiskey-panel.active{display:block}
@@ -64,32 +64,32 @@ button,input,select{font:inherit}
 .whiskey-table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
 .whiskey-table{width:100%;border-collapse:collapse;margin:0;min-width:680px}
 .main-section .whiskey-table{min-width:620px}
-.whiskey-table th,.whiskey-table td{padding:10px 12px;border-bottom:1px solid #303d33;text-align:left;vertical-align:middle}
+.whiskey-table th,.whiskey-table td{padding:10px 12px;border-bottom:1px solid #3f2c20;text-align:left;vertical-align:middle}
 .whiskey-table tr:last-child td{border-bottom:0}
-.whiskey-table th{background:#202a22;color:#f2f5f3;white-space:nowrap;font-weight:650}
+.whiskey-table th{background:#2a1c13;color:#f5eee7;white-space:nowrap;font-weight:650}
 .whiskey-table th.sortable{cursor:pointer;user-select:none}
-.whiskey-table th.sortable:hover{background:#28352b}
+.whiskey-table th.sortable:hover{background:#352417}
 .sort-arrow{display:inline-block;min-width:1em;margin-left:5px;color:#98a69c;font-size:.72em}
 .whiskey-table td.num,.whiskey-table th.num{text-align:right;font-variant-numeric:tabular-nums}
-.whiskey-table tr:hover td{background:#1d261f}
+.whiskey-table tr:hover td{background:#261a12}
 .detail-table th:first-child,.detail-table td:first-child{min-width:240px}
 .detail-table th:nth-child(2),.detail-table td:nth-child(2){min-width:105px}
 .detail-table th:nth-child(3),.detail-table td:nth-child(3){min-width:130px}
 .detail-table th:nth-child(4),.detail-table td:nth-child(4){min-width:190px}
-.whiskey-name,.filter-link{color:#eff5f0;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;text-decoration-color:#718178;cursor:pointer;background:none;border:0;padding:0;font:inherit;text-align:left}
+.whiskey-name,.filter-link{color:#f3ebe3;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;text-decoration-color:#8d6a4e;cursor:pointer;background:none;border:0;padding:0;font:inherit;text-align:left}
 .whiskey-name:hover,.filter-link:hover{color:#fff;text-decoration-color:var(--green2)}
 
 .chart-body{padding:14px 16px 16px}
 .bar-row{display:grid;grid-template-columns:minmax(150px,230px) 1fr 112px;gap:12px;align-items:center;margin:9px 0}
-.bar-label{color:#e5ebe6;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.bar-track{height:14px;background:#263129;border-radius:999px;overflow:hidden}
+.bar-label{color:#efe5db;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar-track{height:14px;background:#332419;border-radius:999px;overflow:hidden}
 .bar-fill{height:100%;background:linear-gradient(90deg,var(--green),var(--green2));border-radius:999px;min-width:2px}
-.bar-value{text-align:right;color:#d7dfd9;font-variant-numeric:tabular-nums;font-size:.9rem}
+.bar-value{text-align:right;color:#e5d8cc;font-variant-numeric:tabular-nums;font-size:.9rem}
 .bar-value .pct-range{color:var(--muted);font-size:.78rem;margin-left:5px}
 .substyle-chart .bar-row{grid-template-columns:minmax(250px,34%) minmax(140px,1fr) 44px}
 .substyle-chart .bar-label{white-space:normal;overflow:visible;text-overflow:clip;line-height:1.2}
 .substyle-more{padding:0 16px 15px}
-.substyle-more button{background:transparent;color:#dce4de;border:1px solid #536258;border-radius:999px;padding:6px 11px;cursor:pointer}
+.substyle-more button{background:transparent;color:#eadfd4;border:1px solid #6a4a31;border-radius:999px;padding:6px 11px;cursor:pointer}
 .substyle-more button:hover{border-color:var(--green2)}
 
 .history-table{min-width:1120px}
@@ -97,11 +97,11 @@ button,input,select{font:inherit}
 .history-table td:nth-child(2),.history-table th:nth-child(2){min-width:260px}
 .history-table td:nth-child(4),.history-table th:nth-child(4){min-width:200px}
 
-dialog.whiskey-dialog{background:#151b17;color:var(--text);border:1px solid #536258;border-radius:12px;max-width:650px;width:92%}
+dialog.whiskey-dialog{background:#1a110c;color:var(--text);border:1px solid #65472f;border-radius:12px;max-width:650px;width:92%}
 dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
-.whiskey-dialog button.close{float:right;background:#202820;color:#fff;border:1px solid #5a695f;border-radius:6px;padding:6px 10px;cursor:pointer}
+.whiskey-dialog button.close{float:right;background:#2b1d14;color:#fff;border:1px solid #6a4a31;border-radius:6px;padding:6px 10px;cursor:pointer}
 .whiskey-history-list{width:100%;border-collapse:collapse}
-.whiskey-history-list td,.whiskey-history-list th{border-bottom:1px solid #344037;padding:8px}
+.whiskey-history-list td,.whiskey-history-list th{border-bottom:1px solid #4a3425;padding:8px}
 
 @media(max-width:800px){
   .hero{min-height:130px;background-position:center}
@@ -169,8 +169,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
   var mainSort={
     recent:{key:"date",dir:-1},
     top:{key:"average",dir:-1},
-    styles:{key:"whiskeys",dir:-1},
-    most:{key:"n",dir:-1}
+    styles:{key:"whiskeys",dir:-1}
   };
 
   function avg(xs){return xs.reduce(function(a,b){return a+b},0)/xs.length}
@@ -456,7 +455,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
       '<section class="main-section"><h2>By Style</h2>'+mainStyles()+'</section>'+
       '<section class="chart-section"><h2>Whiskeys by Style</h2>'+barChart(styles,"name","whiskeys")+'</section>'+
       '<section class="chart-section"><h2>Whiskeys by Sub-style</h2>'+substyleChart(substyles)+'</section>'+
-      '<section class="main-section"><h2>Most Rated Whiskeys</h2>'+mainMostRated()+'</section>'+
+
       '<section class="chart-section"><h2>Rating Distribution</h2>'+ratingDistribution()+'</section>';
   }
 
