@@ -220,10 +220,10 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
 
   function avg(xs){return xs.reduce(function(a,b){return a+b},0)/xs.length}
   function fmt(x){return Number(x).toFixed(2)}
-  function whiskeyGradient(i,n){
-    var t=n<=1?0.45:i/(n-1);
+  function whiskeyGradient(value,max){
+    var t=max>0?Math.max(0,Math.min(1,value/max)):0;
     var h1=Math.round(38-16*t),h2=Math.max(18,h1-4);
-    var l1=Math.round(60-17*t),l2=Math.round(68-18*t);
+    var l1=Math.round(64-24*t),l2=Math.round(72-24*t);
     return "linear-gradient(90deg,hsl("+h1+",68%,"+l1+"%),hsl("+h2+",72%,"+l2+"%))";
   }
   function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[c]})}
@@ -476,7 +476,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
       var w=max?100*x[valueKey]/max:0;
       return '<div class="bar-row"><div class="bar-label" title="'+esc(x[labelKey])+'">'+
         '<button class="filter-link style-link" data-style="'+esc(x[labelKey])+'">'+esc(x[labelKey])+'</button></div>'+
-        '<div class="bar-track"><div class="bar-fill" style="width:'+w.toFixed(1)+'%;background:'+whiskeyGradient(i,items.length)+'"></div></div>'+
+        '<div class="bar-track"><div class="bar-fill" style="width:'+w.toFixed(1)+'%;background:'+whiskeyGradient(x[valueKey],max)+'"></div></div>'+
         '<div class="bar-value">'+x[valueKey]+'</div></div>';
     }).join("")+'</div>';
   }
@@ -488,7 +488,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
       var w=max?100*x.whiskeys/max:0;
       return '<div class="bar-row"><div class="bar-label">'+
         '<button class="filter-link substyle-link" data-substyle="'+esc(x.name)+'">'+esc(x.name)+'</button></div>'+
-        '<div class="bar-track"><div class="bar-fill" style="width:'+w.toFixed(1)+'%;background:'+whiskeyGradient(i,shown.length)+'"></div></div>'+
+        '<div class="bar-track"><div class="bar-fill" style="width:'+w.toFixed(1)+'%;background:'+whiskeyGradient(x.whiskeys,max)+'"></div></div>'+
         '<div class="bar-value">'+x.whiskeys+'</div></div>';
     }).join("")+'</div>';
     if(items.length>12){
@@ -549,7 +549,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
     return '<div class="chart-body distillery-chart">'+shown.map(function(x,i){
       var w=max?100*x.ratings/max:0;
       return '<div class="bar-row"><div class="bar-label">'+(i+1)+'. '+esc(x.name)+'</div>'+
-        '<div class="bar-track"><div class="bar-fill" style="width:'+w.toFixed(1)+'%;background:'+whiskeyGradient(i,shown.length)+'"></div></div>'+
+        '<div class="bar-track"><div class="bar-fill" style="width:'+w.toFixed(1)+'%;background:'+whiskeyGradient(x.whiskeys,max)+'"></div></div>'+
         '<div class="bar-value">'+x.ratings+' ratings <span class="pct-range">· '+x.whiskeys+' whiskeys</span></div></div>';
     }).join('')+
       '<div class="chart-note">Grouped by producing distillery where clear; sourced or blended brands are omitted.</div></div>';
@@ -599,7 +599,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
         '<div class="dist-name">'+(ratingNames[x.score]||"")+'</div>'+
         '<div class="dist-percentile">'+(x.percentile==null?"":x.percentile)+'</div>'+
         '<div class="dist-rating">'+x.label+'</div>'+
-        '<div class="bar-track"><div class="bar-fill" style="width:'+w.toFixed(1)+'%;background:'+whiskeyGradient(i,bins.length)+'"></div></div>'+
+        '<div class="bar-track"><div class="bar-fill" style="width:'+w.toFixed(1)+'%;background:'+whiskeyGradient(x.count,maxCount)+'"></div></div>'+
         '<div class="bar-value">'+x.count+'</div></div>';
     }).join("")+'</div>';
   }
