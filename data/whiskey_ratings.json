@@ -1,12 +1,12 @@
 {
   "schema_version": 2,
   "updated": "2026-10-01",
-  "notes": "Canonical whiskey rating history. Unknown historical dates are null. Classification hierarchy is Region → Style → Sub-style; sub-style is blank when it would merely repeat Style. Summary statistics are calculated from raw ratings by whiskey.html.",
+  "notes": "Canonical whiskey rating history. Unknown historical dates are null. Classification hierarchy is Region → Style → Sub-style; sub-style contains only the distinguishing modifier and is blank when it would merely repeat Style. Summary statistics are calculated from raw ratings by whiskey.html.",
   "products": [
     {
       "name": "Aberlour 12 Year Old",
       "style": "Single Malt",
-      "substyle": "Single Malt – Speyside",
+      "substyle": "Speyside",
       "ratings": [
         {
           "score": 3.9,
@@ -30,7 +30,7 @@
     {
       "name": "Angel's Envy Port Finish",
       "style": "Bourbon",
-      "substyle": "Bourbon – Port Finish",
+      "substyle": "Port Finish",
       "ratings": [
         {
           "score": 3.8,
@@ -70,7 +70,7 @@
     {
       "name": "Ardbeg 10 Year Old",
       "style": "Single Malt",
-      "substyle": "Single Malt – Islay",
+      "substyle": "Islay",
       "ratings": [
         {
           "score": 3.4,
@@ -102,7 +102,7 @@
     {
       "name": "Ardbeg An Oa",
       "style": "Single Malt",
-      "substyle": "Single Malt – Islay",
+      "substyle": "Islay",
       "ratings": [
         {
           "score": 3.1,
@@ -114,7 +114,7 @@
     {
       "name": "Balvenie 12 Year Old Doublewood",
       "style": "Single Malt",
-      "substyle": "Single Malt – Speyside",
+      "substyle": "Speyside",
       "ratings": [
         {
           "score": 4.1,
@@ -138,7 +138,7 @@
     {
       "name": "Balvenie 14 Year Old Caribbean Cask",
       "style": "Single Malt",
-      "substyle": "Single Malt – Speyside / Rum Finish",
+      "substyle": "Speyside / Rum Finish",
       "ratings": [
         {
           "score": 4.1,
@@ -206,7 +206,7 @@
     {
       "name": "Blanton's Original Single Barrel",
       "style": "Bourbon",
-      "substyle": "Bourbon – Single Barrel",
+      "substyle": "Single Barrel",
       "ratings": [
         {
           "score": 3.3,
@@ -218,7 +218,7 @@
     {
       "name": "Booker's",
       "style": "Bourbon",
-      "substyle": "Bourbon – Barrel Proof",
+      "substyle": "Barrel Proof",
       "ratings": [
         {
           "score": 3.7,
@@ -306,7 +306,7 @@
     {
       "name": "Dalmore 12 Year Old",
       "style": "Single Malt",
-      "substyle": "Single Malt – Highland",
+      "substyle": "Highland",
       "ratings": [
         {
           "score": 3.9,
@@ -322,7 +322,7 @@
     {
       "name": "Dalwhinnie 15",
       "style": "Single Malt",
-      "substyle": "Single Malt – Highland",
+      "substyle": "Highland",
       "ratings": [
         {
           "score": 3.8,
@@ -450,7 +450,7 @@
     {
       "name": "Evan Williams Single Barrel Vintage",
       "style": "Bourbon",
-      "substyle": "Bourbon – Single Barrel",
+      "substyle": "Single Barrel",
       "ratings": [
         {
           "score": 4.1,
@@ -506,7 +506,7 @@
     {
       "name": "Four Roses Single Barrel",
       "style": "Bourbon",
-      "substyle": "Bourbon – Single Barrel",
+      "substyle": "Single Barrel",
       "ratings": [
         {
           "score": 3.5,
@@ -530,7 +530,7 @@
     {
       "name": "Four Roses Small Batch",
       "style": "Bourbon",
-      "substyle": "Bourbon – Small Batch",
+      "substyle": "Small Batch",
       "ratings": [
         {
           "score": 3.4,
@@ -554,7 +554,7 @@
     {
       "name": "Gentleman Jack",
       "style": "Tennessee Whiskey",
-      "substyle": "Tennessee Whiskey – Double Mellowed",
+      "substyle": "Double Mellowed",
       "ratings": [
         {
           "score": 3.5,
@@ -566,7 +566,7 @@
     {
       "name": "Glenfiddich 12 Year Old",
       "style": "Single Malt",
-      "substyle": "Single Malt – Speyside",
+      "substyle": "Speyside",
       "ratings": [
         {
           "score": 3.8,
@@ -586,7 +586,7 @@
     {
       "name": "Glenlivet 14 Year Old Cognac Cask Selection",
       "style": "Single Malt",
-      "substyle": "Single Malt – Speyside / Cognac Finish",
+      "substyle": "Speyside / Cognac Finish",
       "ratings": [
         {
           "score": 3.9,
@@ -610,7 +610,7 @@
     {
       "name": "Glenlivet Caribbean Reserve",
       "style": "Single Malt",
-      "substyle": "Single Malt – Speyside / Rum Finish",
+      "substyle": "Speyside / Rum Finish",
       "ratings": [
         {
           "score": 3.8,
@@ -634,7 +634,7 @@
     {
       "name": "Glenlivet Founder's Reserve",
       "style": "Single Malt",
-      "substyle": "Single Malt – Speyside",
+      "substyle": "Speyside",
       "ratings": [
         {
           "score": 3.9,
@@ -658,7 +658,7 @@
     {
       "name": "Glenmorangie 10 Year Old The Original",
       "style": "Single Malt",
-      "substyle": "Single Malt – Highland",
+      "substyle": "Highland",
       "ratings": [
         {
           "score": 3,
@@ -686,7 +686,7 @@
     {
       "name": "Glenmorangie 12 Year Old Lasanta",
       "style": "Single Malt",
-      "substyle": "Single Malt – Highland / Sherry Finish",
+      "substyle": "Highland / Sherry Finish",
       "ratings": [
         {
           "score": 3.6,
@@ -750,7 +750,7 @@
     {
       "name": "Highland Park 12",
       "style": "Single Malt",
-      "substyle": "Single Malt – Orkney",
+      "substyle": "Orkney",
       "ratings": [
         {
           "score": 3.7,
@@ -802,7 +802,7 @@
     {
       "name": "Jack Daniel's Single Barrel Barrel Proof Rye",
       "style": "Rye",
-      "substyle": "Rye – Single Barrel / Barrel Proof",
+      "substyle": "Single Barrel / Barrel Proof",
       "ratings": [
         {
           "score": 3.9,
@@ -814,7 +814,7 @@
     {
       "name": "Jack Daniel's Single Barrel Select",
       "style": "Tennessee Whiskey",
-      "substyle": "Tennessee Whiskey – Single Barrel",
+      "substyle": "Single Barrel",
       "ratings": [
         {
           "score": 3.4,
@@ -966,7 +966,7 @@
     {
       "name": "Jefferson's Reserve Pritchard Hill Cabernet Cask",
       "style": "Bourbon",
-      "substyle": "Bourbon – Cabernet Cask Finish",
+      "substyle": "Cabernet Cask Finish",
       "ratings": [
         {
           "score": 3.9,
@@ -1130,7 +1130,7 @@
     {
       "name": "Knob Creek 9 Year Single Barrel Reserve",
       "style": "Bourbon",
-      "substyle": "Bourbon – Single Barrel",
+      "substyle": "Single Barrel",
       "ratings": [
         {
           "score": 4.1,
@@ -1166,7 +1166,7 @@
     {
       "name": "Knob Creek Single Barrel Select Rye",
       "style": "Rye",
-      "substyle": "Rye – Single Barrel",
+      "substyle": "Single Barrel",
       "ratings": [
         {
           "score": 4.4,
@@ -1194,7 +1194,7 @@
     {
       "name": "Laphroaig 10",
       "style": "Single Malt",
-      "substyle": "Single Malt – Islay",
+      "substyle": "Islay",
       "ratings": [
         {
           "score": 4,
@@ -1210,7 +1210,7 @@
     {
       "name": "Laphroaig Oak Select",
       "style": "Single Malt",
-      "substyle": "Single Malt – Islay",
+      "substyle": "Islay",
       "ratings": [
         {
           "score": 3.9,
@@ -1230,7 +1230,7 @@
     {
       "name": "Macallan 10 Year Old Fine Oak",
       "style": "Single Malt",
-      "substyle": "Single Malt – Speyside",
+      "substyle": "Speyside",
       "ratings": [
         {
           "score": 3.4,
@@ -1274,7 +1274,7 @@
     {
       "name": "Maker's Mark Cask Strength",
       "style": "Bourbon",
-      "substyle": "Bourbon – Cask Strength",
+      "substyle": "Cask Strength",
       "ratings": [
         {
           "score": 3.4,
@@ -1286,7 +1286,7 @@
     {
       "name": "Michter's US*1 Single Barrel Straight Rye",
       "style": "Rye",
-      "substyle": "Rye – Single Barrel",
+      "substyle": "Single Barrel",
       "ratings": [
         {
           "score": 3.5,
@@ -1306,7 +1306,7 @@
     {
       "name": "Oban 14",
       "style": "Single Malt",
-      "substyle": "Single Malt – Highland",
+      "substyle": "Highland",
       "ratings": [
         {
           "score": 3.7,
@@ -1398,7 +1398,7 @@
     {
       "name": "Russell's Reserve Single Barrel",
       "style": "Bourbon",
-      "substyle": "Bourbon – Single Barrel",
+      "substyle": "Single Barrel",
       "ratings": [
         {
           "score": 3.9,
@@ -1490,7 +1490,7 @@
     {
       "name": "Talisker 10",
       "style": "Single Malt",
-      "substyle": "Single Malt – Isle of Skye",
+      "substyle": "Isle of Skye",
       "ratings": [
         {
           "score": 3.5,
@@ -1562,7 +1562,7 @@
     {
       "name": "Wild Turkey American Honey",
       "style": "Flavored Whiskey / Liqueur",
-      "substyle": "Flavored Bourbon / Liqueur",
+      "substyle": "Bourbon",
       "ratings": [
         {
           "score": 2.5,
@@ -1574,7 +1574,7 @@
     {
       "name": "Wild Turkey Kentucky Spirit",
       "style": "Bourbon",
-      "substyle": "Bourbon – Single Barrel",
+      "substyle": "Single Barrel",
       "ratings": [
         {
           "score": 3.4,
@@ -1610,7 +1610,7 @@
     {
       "name": "Wild Turkey Rare Breed",
       "style": "Bourbon",
-      "substyle": "Bourbon – Barrel Proof",
+      "substyle": "Barrel Proof",
       "ratings": [
         {
           "score": 3.5,
@@ -1690,7 +1690,7 @@
     {
       "name": "Woody Creek High Rye 70/30 Bourbon",
       "style": "Bourbon",
-      "substyle": "High-Rye Bourbon",
+      "substyle": "High-Rye",
       "ratings": [
         {
           "score": 3.7,
