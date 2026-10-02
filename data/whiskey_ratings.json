@@ -1,11 +1,11 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "updated": "2026-10-01",
-  "notes": "Canonical whiskey rating history. Unknown historical dates are null. Summary statistics are calculated from raw ratings by whiskey.html.",
+  "notes": "Canonical whiskey rating history. Unknown historical dates are null. Classification hierarchy is Region → Style → Sub-style. Summary statistics are calculated from raw ratings by whiskey.html.",
   "products": [
     {
       "name": "Aberlour 12 Year Old",
-      "style": "Scotch",
+      "style": "Single Malt",
       "substyle": "Single Malt – Speyside",
       "ratings": [
         {
@@ -24,11 +24,12 @@
           "score": 4,
           "date": null
         }
-      ]
+      ],
+      "region": "Scotch"
     },
     {
       "name": "Angel's Envy Port Finish",
-      "style": "American",
+      "style": "Bourbon",
       "substyle": "Bourbon – Port Finish",
       "ratings": [
         {
@@ -51,22 +52,24 @@
           "score": 3.9,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Angel's Envy Rye",
-      "style": "American",
+      "style": "Rye",
       "substyle": "Rye",
       "ratings": [
         {
           "score": 4,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Ardbeg 10 Year Old",
-      "style": "Scotch",
+      "style": "Single Malt",
       "substyle": "Single Malt – Islay",
       "ratings": [
         {
@@ -93,22 +96,24 @@
           "score": 3.9,
           "date": "2026-09-25"
         }
-      ]
+      ],
+      "region": "Scotch"
     },
     {
       "name": "Ardbeg An Oa",
-      "style": "Scotch",
+      "style": "Single Malt",
       "substyle": "Single Malt – Islay",
       "ratings": [
         {
           "score": 3.1,
           "date": "2026-09-25"
         }
-      ]
+      ],
+      "region": "Scotch"
     },
     {
       "name": "Balvenie 12 Year Old Doublewood",
-      "style": "Scotch",
+      "style": "Single Malt",
       "substyle": "Single Malt – Speyside",
       "ratings": [
         {
@@ -127,11 +132,12 @@
           "score": 3.9,
           "date": null
         }
-      ]
+      ],
+      "region": "Scotch"
     },
     {
       "name": "Balvenie 14 Year Old Caribbean Cask",
-      "style": "Scotch",
+      "style": "Single Malt",
       "substyle": "Single Malt – Speyside / Rum Finish",
       "ratings": [
         {
@@ -150,11 +156,12 @@
           "score": 3.8,
           "date": null
         }
-      ]
+      ],
+      "region": "Scotch"
     },
     {
       "name": "Basil Hayden Malted Rye",
-      "style": "American",
+      "style": "Rye",
       "substyle": "Rye",
       "ratings": [
         {
@@ -169,11 +176,12 @@
           "score": 3.8,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Bernheim Original Wheat Whiskey",
-      "style": "American",
+      "style": "Wheat Whiskey",
       "substyle": "Wheat Whiskey",
       "ratings": [
         {
@@ -192,22 +200,24 @@
           "score": 3.6,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Blanton's Original Single Barrel",
-      "style": "American",
+      "style": "Bourbon",
       "substyle": "Bourbon – Single Barrel",
       "ratings": [
         {
           "score": 3.3,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Booker's",
-      "style": "American",
+      "style": "Bourbon",
       "substyle": "Bourbon – Barrel Proof",
       "ratings": [
         {
@@ -222,22 +232,24 @@
           "score": 3.9,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Buffalo Trace",
-      "style": "American",
+      "style": "Bourbon",
       "substyle": "Bourbon",
       "ratings": [
         {
           "score": 3.9,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Bulleit 95 Rye",
-      "style": "American",
+      "style": "Rye",
       "substyle": "Rye",
       "ratings": [
         {
@@ -256,22 +268,24 @@
           "score": 2.9,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Canadian Club 1858",
-      "style": "Canadian",
+      "style": "Blended",
       "substyle": "Blended",
       "ratings": [
         {
           "score": 2.6,
           "date": null
         }
-      ]
+      ],
+      "region": "Canadian"
     },
     {
       "name": "Crown Royal",
-      "style": "Canadian",
+      "style": "Blended",
       "substyle": "Blended",
       "ratings": [
         {
@@ -286,11 +300,12 @@
           "score": 3,
           "date": null
         }
-      ]
+      ],
+      "region": "Canadian"
     },
     {
       "name": "Dalmore 12 Year Old",
-      "style": "Scotch",
+      "style": "Single Malt",
       "substyle": "Single Malt – Highland",
       "ratings": [
         {
@@ -301,22 +316,24 @@
           "score": 4,
           "date": null
         }
-      ]
+      ],
+      "region": "Scotch"
     },
     {
       "name": "Dalwhinnie 15",
-      "style": "Scotch",
+      "style": "Single Malt",
       "substyle": "Single Malt – Highland",
       "ratings": [
         {
           "score": 3.8,
           "date": "2026-09-25"
         }
-      ]
+      ],
+      "region": "Scotch"
     },
     {
       "name": "Eagle Rare 10 Year",
-      "style": "American",
+      "style": "Bourbon",
       "substyle": "Bourbon",
       "ratings": [
         {
@@ -331,11 +348,12 @@
           "score": 3.2,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Elijah Craig Small Batch Bourbon",
-      "style": "American",
+      "style": "Bourbon",
       "substyle": "Bourbon",
       "ratings": [
         {
@@ -350,11 +368,12 @@
           "score": 3.7,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Elijah Craig Straight Rye",
-      "style": "American",
+      "style": "Rye",
       "substyle": "Rye",
       "ratings": [
         {
@@ -373,11 +392,12 @@
           "score": 3.7,
           "date": "2026-09-30"
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Evan Williams 1783",
-      "style": "American",
+      "style": "Bourbon",
       "substyle": "Bourbon",
       "ratings": [
         {
@@ -392,11 +412,12 @@
           "score": 3.4,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Evan Williams Black Label",
-      "style": "American",
+      "style": "Bourbon",
       "substyle": "Bourbon",
       "ratings": [
         {
@@ -411,22 +432,24 @@
           "score": 3.5,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Evan Williams Green Label",
-      "style": "American",
+      "style": "Bourbon",
       "substyle": "Bourbon",
       "ratings": [
         {
           "score": 1.9,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Evan Williams Single Barrel Vintage",
-      "style": "American",
+      "style": "Bourbon",
       "substyle": "Bourbon – Single Barrel",
       "ratings": [
         {
@@ -441,22 +464,24 @@
           "score": 3.8,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Four Roses Barrel Select",
-      "style": "American",
+      "style": "Bourbon",
       "substyle": "Bourbon",
       "ratings": [
         {
           "score": 2.9,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Four Roses Bourbon",
-      "style": "American",
+      "style": "Bourbon",
       "substyle": "Bourbon",
       "ratings": [
         {
@@ -475,11 +500,12 @@
           "score": 2.8,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Four Roses Single Barrel",
-      "style": "American",
+      "style": "Bourbon",
       "substyle": "Bourbon – Single Barrel",
       "ratings": [
         {
@@ -498,44 +524,48 @@
           "score": 3,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Four Roses Small Batch",
-      "style": "American",
+      "style": "Bourbon",
       "substyle": "Bourbon – Small Batch",
       "ratings": [
         {
           "score": 3.4,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Four Roses Yellow Label",
-      "style": "American",
+      "style": "Bourbon",
       "substyle": "Bourbon",
       "ratings": [
         {
           "score": 3.2,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Gentleman Jack",
-      "style": "American",
+      "style": "Tennessee Whiskey",
       "substyle": "Tennessee Whiskey – Double Mellowed",
       "ratings": [
         {
           "score": 3.5,
           "date": "2026-09-25"
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Glenfiddich 12 Year Old",
-      "style": "Scotch",
+      "style": "Single Malt",
       "substyle": "Single Malt – Speyside",
       "ratings": [
         {
@@ -550,11 +580,12 @@
           "score": 3.9,
           "date": null
         }
-      ]
+      ],
+      "region": "Scotch"
     },
     {
       "name": "Glenlivet 14 Year Old Cognac Cask Selection",
-      "style": "Scotch",
+      "style": "Single Malt",
       "substyle": "Single Malt – Speyside / Cognac Finish",
       "ratings": [
         {
@@ -573,11 +604,12 @@
           "score": 3.9,
           "date": null
         }
-      ]
+      ],
+      "region": "Scotch"
     },
     {
       "name": "Glenlivet Caribbean Reserve",
-      "style": "Scotch",
+      "style": "Single Malt",
       "substyle": "Single Malt – Speyside / Rum Finish",
       "ratings": [
         {
@@ -596,11 +628,12 @@
           "score": 3.8,
           "date": null
         }
-      ]
+      ],
+      "region": "Scotch"
     },
     {
       "name": "Glenlivet Founder's Reserve",
-      "style": "Scotch",
+      "style": "Single Malt",
       "substyle": "Single Malt – Speyside",
       "ratings": [
         {
@@ -619,11 +652,12 @@
           "score": 3.6,
           "date": null
         }
-      ]
+      ],
+      "region": "Scotch"
     },
     {
       "name": "Glenmorangie 10 Year Old The Original",
-      "style": "Scotch",
+      "style": "Single Malt",
       "substyle": "Single Malt – Highland",
       "ratings": [
         {
@@ -646,11 +680,12 @@
           "score": 3.7,
           "date": null
         }
-      ]
+      ],
+      "region": "Scotch"
     },
     {
       "name": "Glenmorangie 12 Year Old Lasanta",
-      "style": "Scotch",
+      "style": "Single Malt",
       "substyle": "Single Malt – Highland / Sherry Finish",
       "ratings": [
         {
@@ -665,11 +700,12 @@
           "score": 3.9,
           "date": null
         }
-      ]
+      ],
+      "region": "Scotch"
     },
     {
       "name": "High West Double Rye!",
-      "style": "American",
+      "style": "Rye",
       "substyle": "Rye",
       "ratings": [
         {
@@ -688,11 +724,12 @@
           "score": 4,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "High West Rendezvous",
-      "style": "American",
+      "style": "Rye",
       "substyle": "Rye",
       "ratings": [
         {
@@ -707,22 +744,24 @@
           "score": 3.2,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Highland Park 12",
-      "style": "Scotch",
+      "style": "Single Malt",
       "substyle": "Single Malt – Orkney",
       "ratings": [
         {
           "score": 3.7,
           "date": "2026-09-25"
         }
-      ]
+      ],
+      "region": "Scotch"
     },
     {
       "name": "Indri Single Malt Indian Whisky",
-      "style": "Indian",
+      "style": "Single Malt",
       "substyle": "Single Malt",
       "ratings": [
         {
@@ -737,11 +776,12 @@
           "score": 3.6,
           "date": null
         }
-      ]
+      ],
+      "region": "Indian"
     },
     {
       "name": "Jack Daniel's Old No. 7",
-      "style": "American",
+      "style": "Tennessee Whiskey",
       "substyle": "Tennessee Whiskey",
       "ratings": [
         {
@@ -756,22 +796,24 @@
           "score": 3.4,
           "date": "2026-09-25"
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Jack Daniel's Single Barrel Barrel Proof Rye",
-      "style": "American",
+      "style": "Rye",
       "substyle": "Rye – Single Barrel / Barrel Proof",
       "ratings": [
         {
           "score": 3.9,
           "date": "2026-09-25"
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Jack Daniel's Single Barrel Select",
-      "style": "American",
+      "style": "Tennessee Whiskey",
       "substyle": "Tennessee Whiskey – Single Barrel",
       "ratings": [
         {
@@ -790,33 +832,36 @@
           "score": 3.7,
           "date": "2026-09-25"
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Jack Daniel's Tennessee Apple",
-      "style": "American",
+      "style": "Flavored Whiskey / Liqueur",
       "substyle": "Flavored Whiskey / Liqueur",
       "ratings": [
         {
           "score": 2.8,
           "date": "2026-09-25"
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Jack Daniel's Tennessee Blackberry",
-      "style": "American",
+      "style": "Flavored Whiskey / Liqueur",
       "substyle": "Flavored Whiskey / Liqueur",
       "ratings": [
         {
           "score": 3.2,
           "date": "2026-09-25"
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Jameson",
-      "style": "Irish",
+      "style": "Blended",
       "substyle": "Blended",
       "ratings": [
         {
@@ -831,11 +876,12 @@
           "score": 3.1,
           "date": null
         }
-      ]
+      ],
+      "region": "Irish"
     },
     {
       "name": "Jefferson's Bourbon",
-      "style": "American",
+      "style": "Bourbon",
       "substyle": "Bourbon",
       "ratings": [
         {
@@ -854,11 +900,12 @@
           "score": 3.8,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Jefferson's Ocean Aged at Sea Double Barrel Rye",
-      "style": "American",
+      "style": "Rye",
       "substyle": "Rye",
       "ratings": [
         {
@@ -881,11 +928,12 @@
           "score": 4,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Jefferson's Reserve",
-      "style": "American",
+      "style": "Bourbon",
       "substyle": "Bourbon",
       "ratings": [
         {
@@ -912,11 +960,12 @@
           "score": 4,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Jefferson's Reserve Pritchard Hill Cabernet Cask",
-      "style": "American",
+      "style": "Bourbon",
       "substyle": "Bourbon – Cabernet Cask Finish",
       "ratings": [
         {
@@ -931,11 +980,12 @@
           "score": 3.9,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Jefferson's Straight Rye Whiskey",
-      "style": "American",
+      "style": "Rye",
       "substyle": "Rye",
       "ratings": [
         {
@@ -954,11 +1004,12 @@
           "score": 3.8,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Johnnie Walker Black Label",
-      "style": "Scotch",
+      "style": "Blended",
       "substyle": "Blended",
       "ratings": [
         {
@@ -973,11 +1024,12 @@
           "score": 3.4,
           "date": null
         }
-      ]
+      ],
+      "region": "Scotch"
     },
     {
       "name": "Johnnie Walker Green Label",
-      "style": "Scotch",
+      "style": "Blended Malt",
       "substyle": "Blended Malt",
       "ratings": [
         {
@@ -1000,11 +1052,12 @@
           "score": 3.6,
           "date": null
         }
-      ]
+      ],
+      "region": "Scotch"
     },
     {
       "name": "Johnnie Walker Red Label",
-      "style": "Scotch",
+      "style": "Blended",
       "substyle": "Blended",
       "ratings": [
         {
@@ -1019,11 +1072,12 @@
           "score": 3.3,
           "date": null
         }
-      ]
+      ],
+      "region": "Scotch"
     },
     {
       "name": "Knob Creek 7 Year Old Rye",
-      "style": "American",
+      "style": "Rye",
       "substyle": "Rye",
       "ratings": [
         {
@@ -1054,11 +1108,12 @@
           "score": 4.1,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Knob Creek 9 Year Bourbon",
-      "style": "American",
+      "style": "Bourbon",
       "substyle": "Bourbon",
       "ratings": [
         {
@@ -1069,11 +1124,12 @@
           "score": 3.9,
           "date": "2026-09-30"
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Knob Creek 9 Year Single Barrel Reserve",
-      "style": "American",
+      "style": "Bourbon",
       "substyle": "Bourbon – Single Barrel",
       "ratings": [
         {
@@ -1084,11 +1140,12 @@
           "score": 4.2,
           "date": "2026-09-30"
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Knob Creek Bourbon x Rye",
-      "style": "American",
+      "style": "Bourbon",
       "substyle": "Bourbon/Rye Blend",
       "ratings": [
         {
@@ -1103,11 +1160,12 @@
           "score": 3.9,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Knob Creek Single Barrel Select Rye",
-      "style": "American",
+      "style": "Rye",
       "substyle": "Rye – Single Barrel",
       "ratings": [
         {
@@ -1130,11 +1188,12 @@
           "score": 4,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Laphroaig 10",
-      "style": "Scotch",
+      "style": "Single Malt",
       "substyle": "Single Malt – Islay",
       "ratings": [
         {
@@ -1145,11 +1204,12 @@
           "score": 3.8,
           "date": null
         }
-      ]
+      ],
+      "region": "Scotch"
     },
     {
       "name": "Laphroaig Oak Select",
-      "style": "Scotch",
+      "style": "Single Malt",
       "substyle": "Single Malt – Islay",
       "ratings": [
         {
@@ -1164,11 +1224,12 @@
           "score": 3.5,
           "date": null
         }
-      ]
+      ],
+      "region": "Scotch"
     },
     {
       "name": "Macallan 10 Year Old Fine Oak",
-      "style": "Scotch",
+      "style": "Single Malt",
       "substyle": "Single Malt – Speyside",
       "ratings": [
         {
@@ -1179,22 +1240,24 @@
           "score": 3.2,
           "date": null
         }
-      ]
+      ],
+      "region": "Scotch"
     },
     {
       "name": "Maker's 46",
-      "style": "American",
+      "style": "Bourbon",
       "substyle": "Bourbon",
       "ratings": [
         {
           "score": 3.5,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Maker's Mark",
-      "style": "American",
+      "style": "Bourbon",
       "substyle": "Bourbon",
       "ratings": [
         {
@@ -1205,22 +1268,24 @@
           "score": 3.2,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Maker's Mark Cask Strength",
-      "style": "American",
+      "style": "Bourbon",
       "substyle": "Bourbon – Cask Strength",
       "ratings": [
         {
           "score": 3.4,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Michter's US*1 Single Barrel Straight Rye",
-      "style": "American",
+      "style": "Rye",
       "substyle": "Rye – Single Barrel",
       "ratings": [
         {
@@ -1235,44 +1300,48 @@
           "score": 3.6,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Oban 14",
-      "style": "Scotch",
+      "style": "Single Malt",
       "substyle": "Single Malt – Highland",
       "ratings": [
         {
           "score": 3.7,
           "date": "2026-09-25"
         }
-      ]
+      ],
+      "region": "Scotch"
     },
     {
       "name": "Pinhook Rye",
-      "style": "American",
+      "style": "Rye",
       "substyle": "Rye",
       "ratings": [
         {
           "score": 2.8,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Port Chilkoot Rye",
-      "style": "American",
+      "style": "Rye",
       "substyle": "Rye",
       "ratings": [
         {
           "score": 3.5,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Russell's Reserve 10 Year",
-      "style": "American",
+      "style": "Bourbon",
       "substyle": "Bourbon",
       "ratings": [
         {
@@ -1291,11 +1360,12 @@
           "score": 3,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Russell's Reserve 6 Year Rye",
-      "style": "American",
+      "style": "Rye",
       "substyle": "Rye",
       "ratings": [
         {
@@ -1322,22 +1392,24 @@
           "score": 3.7,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Russell's Reserve Single Barrel",
-      "style": "American",
+      "style": "Bourbon",
       "substyle": "Bourbon – Single Barrel",
       "ratings": [
         {
           "score": 3.9,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Sazerac Rye",
-      "style": "American",
+      "style": "Rye",
       "substyle": "Rye",
       "ratings": [
         {
@@ -1352,11 +1424,12 @@
           "score": 3,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Shinsei Blended Japanese Whisky",
-      "style": "Japanese",
+      "style": "Blended",
       "substyle": "Blended",
       "ratings": [
         {
@@ -1371,11 +1444,12 @@
           "score": 3.4,
           "date": null
         }
-      ]
+      ],
+      "region": "Japanese"
     },
     {
       "name": "Stranahan's Blue Peak",
-      "style": "American",
+      "style": "Single Malt",
       "substyle": "Single Malt",
       "ratings": [
         {
@@ -1390,11 +1464,12 @@
           "score": 3.6,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Stranahan's Colorado Whiskey",
-      "style": "American",
+      "style": "Single Malt",
       "substyle": "Single Malt",
       "ratings": [
         {
@@ -1409,22 +1484,24 @@
           "score": 3.7,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Talisker 10",
-      "style": "Scotch",
+      "style": "Single Malt",
       "substyle": "Single Malt – Isle of Skye",
       "ratings": [
         {
           "score": 3.5,
           "date": "2026-09-25"
         }
-      ]
+      ],
+      "region": "Scotch"
     },
     {
       "name": "Templeton Rye",
-      "style": "American",
+      "style": "Rye",
       "substyle": "Rye",
       "ratings": [
         {
@@ -1439,33 +1516,36 @@
           "score": 3,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Tullamore D.E.W.",
-      "style": "Irish",
+      "style": "Blended",
       "substyle": "Blended",
       "ratings": [
         {
           "score": 3,
           "date": null
         }
-      ]
+      ],
+      "region": "Irish"
     },
     {
       "name": "Wild Turkey 101",
-      "style": "American",
+      "style": "Bourbon",
       "substyle": "Bourbon",
       "ratings": [
         {
           "score": 3,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Wild Turkey 101 Rye",
-      "style": "American",
+      "style": "Rye",
       "substyle": "Rye",
       "ratings": [
         {
@@ -1476,33 +1556,36 @@
           "score": 3.7,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Wild Turkey American Honey",
-      "style": "American",
+      "style": "Flavored Whiskey / Liqueur",
       "substyle": "Flavored Bourbon / Liqueur",
       "ratings": [
         {
           "score": 2.5,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Wild Turkey Kentucky Spirit",
-      "style": "American",
+      "style": "Bourbon",
       "substyle": "Bourbon – Single Barrel",
       "ratings": [
         {
           "score": 3.4,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Wild Turkey Longbranch",
-      "style": "American",
+      "style": "Bourbon",
       "substyle": "Bourbon",
       "ratings": [
         {
@@ -1521,44 +1604,48 @@
           "score": 3.3,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Wild Turkey Rare Breed",
-      "style": "American",
+      "style": "Bourbon",
       "substyle": "Bourbon – Barrel Proof",
       "ratings": [
         {
           "score": 3.5,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Wild Turkey Rye",
-      "style": "American",
+      "style": "Rye",
       "substyle": "Rye",
       "ratings": [
         {
           "score": 2,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Woodford Reserve Bourbon",
-      "style": "American",
+      "style": "Bourbon",
       "substyle": "Bourbon",
       "ratings": [
         {
           "score": 3.7,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Woodford Reserve Kentucky Straight Rye",
-      "style": "American",
+      "style": "Rye",
       "substyle": "Rye",
       "ratings": [
         {
@@ -1581,11 +1668,12 @@
           "score": 3.7,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Woodford Reserve Malt Whiskey",
-      "style": "American",
+      "style": "Malt Whiskey",
       "substyle": "Malt Whiskey",
       "ratings": [
         {
@@ -1596,11 +1684,12 @@
           "score": 3.3,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     },
     {
       "name": "Woody Creek High Rye 70/30 Bourbon",
-      "style": "American",
+      "style": "Bourbon",
       "substyle": "High-Rye Bourbon",
       "ratings": [
         {
@@ -1615,7 +1704,8 @@
           "score": 3.7,
           "date": null
         }
-      ]
+      ],
+      "region": "American"
     }
   ]
 }
