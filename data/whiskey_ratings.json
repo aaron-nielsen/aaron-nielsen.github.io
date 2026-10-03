@@ -59,7 +59,9 @@
         }
       ],
       "region": "American",
-      "abv": 43.3
+      "abv": 43.3,
+      "owned": true,
+      "owned_bottle_name": "Angel's Envy Bourbon Whiskey Port Barrel"
     },
     {
       "name": "Angel's Envy Rye",
@@ -218,7 +220,9 @@
         }
       ],
       "region": "American",
-      "abv": 45
+      "abv": 45,
+      "owned": true,
+      "owned_bottle_name": "Bernheim Original"
     },
     {
       "name": "Blanton's Original Single Barrel",
@@ -252,7 +256,9 @@
         }
       ],
       "region": "American",
-      "abv": 63
+      "abv": 63,
+      "owned": true,
+      "owned_bottle_name": "Booker's"
     },
     {
       "name": "Buffalo Trace",
@@ -290,7 +296,9 @@
         }
       ],
       "region": "American",
-      "abv": 45
+      "abv": 45,
+      "owned": true,
+      "owned_bottle_name": "Bulleit Rye"
     },
     {
       "name": "Canadian Club 1858",
@@ -308,7 +316,9 @@
         }
       ],
       "region": "Canadian",
-      "abv": 40
+      "abv": 40,
+      "owned": true,
+      "owned_bottle_name": "Canadian Club"
     },
     {
       "name": "Crown Royal",
@@ -385,7 +395,9 @@
         }
       ],
       "region": "American",
-      "abv": 45
+      "abv": 45,
+      "owned": true,
+      "owned_bottle_name": "Eagle Rare"
     },
     {
       "name": "Elijah Craig Small Batch Bourbon",
@@ -406,7 +418,9 @@
         }
       ],
       "region": "American",
-      "abv": 47
+      "abv": 47,
+      "owned": true,
+      "owned_bottle_name": "Elijah Craig Small Batch Bourbon"
     },
     {
       "name": "Elijah Craig Straight Rye",
@@ -432,7 +446,9 @@
         }
       ],
       "region": "American",
-      "abv": 47
+      "abv": 47,
+      "owned": true,
+      "owned_bottle_name": "Elijah Craig Straight Rye"
     },
     {
       "name": "Evan Williams 1783",
@@ -453,7 +469,9 @@
         }
       ],
       "region": "American",
-      "abv": 45
+      "abv": 45,
+      "owned": true,
+      "owned_bottle_name": "Evan Williams 1783"
     },
     {
       "name": "Evan Williams Black Label",
@@ -474,7 +492,9 @@
         }
       ],
       "region": "American",
-      "abv": 43
+      "abv": 43,
+      "owned": true,
+      "owned_bottle_name": "Evan Williams Black Label"
     },
     {
       "name": "Evan Williams Green Label",
@@ -508,7 +528,9 @@
         }
       ],
       "region": "American",
-      "abv": 43.3
+      "abv": 43.3,
+      "owned": true,
+      "owned_bottle_name": "Evan Williams Single Barrel"
     },
     {
       "name": "Four Roses Small Batch Select",
@@ -546,7 +568,9 @@
         }
       ],
       "region": "American",
-      "abv": 40
+      "abv": 40,
+      "owned": true,
+      "owned_bottle_name": "Four Roses Bourbon"
     },
     {
       "name": "Four Roses Single Barrel",
@@ -951,7 +975,9 @@
         }
       ],
       "region": "Irish",
-      "abv": 40
+      "abv": 40,
+      "owned": true,
+      "owned_bottle_name": "Jameson"
     },
     {
       "name": "Jefferson's Bourbon",
@@ -1203,7 +1229,9 @@
         }
       ],
       "region": "American",
-      "abv": 50
+      "abv": 50,
+      "owned": true,
+      "owned_bottle_name": "Knob Creek 7-year Rye"
     },
     {
       "name": "Knob Creek 9 Year Bourbon",
@@ -1226,7 +1254,9 @@
         }
       ],
       "region": "American",
-      "abv": 50
+      "abv": 50,
+      "owned": true,
+      "owned_bottle_name": "Knob Creek 9-year Bourbon"
     },
     {
       "name": "Knob Creek 9 Year Single Barrel Reserve",
@@ -1249,7 +1279,9 @@
         }
       ],
       "region": "American",
-      "abv": 60
+      "abv": 60,
+      "owned": true,
+      "owned_bottle_name": "Knob Creek 9-year Single Barrel Bourbon"
     },
     {
       "name": "Knob Creek Bourbon x Rye",
@@ -1270,7 +1302,9 @@
         }
       ],
       "region": "American",
-      "abv": 56.5
+      "abv": 56.5,
+      "owned": true,
+      "owned_bottle_name": "Knob Creek Bourbon X Rye"
     },
     {
       "name": "Knob Creek Single Barrel Select Rye",
@@ -1299,7 +1333,9 @@
         }
       ],
       "region": "American",
-      "abv": 57.5
+      "abv": 57.5,
+      "owned": true,
+      "owned_bottle_name": "Knob Creek Single Barrel Rye"
     },
     {
       "name": "Laphroaig 10",
@@ -1666,7 +1702,9 @@
         }
       ],
       "region": "Irish",
-      "abv": 40
+      "abv": 40,
+      "owned": true,
+      "owned_bottle_name": "Tullamore Dew"
     },
     {
       "name": "Wild Turkey 101",
@@ -1815,7 +1853,9 @@
         }
       ],
       "region": "American",
-      "abv": 45.2
+      "abv": 45.2,
+      "owned": true,
+      "owned_bottle_name": "Woodford Reserve Rye Whiskey"
     },
     {
       "name": "Woodford Reserve Malt Whiskey",
@@ -8200,6 +8240,20 @@
         "paid_price_usd": 4.49
       },
       "priority": 583
+    },
+    {
+      "name": "Leopold Bros Michigan Cherry Whiskey",
+      "region": "American",
+      "style": "Flavored Whiskey / Liqueur",
+      "substyle": "Michigan Cherry",
+      "distillery": "Leopold Bros",
+      "estimated_price_usd": 37,
+      "place": "Colorado",
+      "recommendation_group": "Owned",
+      "priority": 584,
+      "abv": 40,
+      "owned": true,
+      "owned_bottle_name": "Leopold Brothers Michigan Cherry"
     }
   ],
   "unrated_note": "Unrated recommendations are expanding toward 1,000. Priority balances classic and high-volume mass-market whiskeys, likely taste fit, familiar producers, strong rye coverage, all-50-state U.S. representation, Scotch-region gaps, Colorado depth, international exploration, bottles verified in local Wilbur's Total Beverage inventory, and purchased-but-not-yet-rated bottles. Estimated prices are rough local/U.S. retail guides; actual purchase size and paid price are stored separately when known.",
