@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "updated": "2026-10-03",
-  "notes": "Canonical whiskey rating history. Unknown historical dates are null. Classification hierarchy is Region → Style → Sub-style; sub-style contains only the distinguishing modifier/geographic detail and is blank when it would merely repeat Style. Summary statistics are calculated from raw ratings by whiskey.html. ABV is stored for each rated whiskey; proof-variable or market-dependent expressions use abv_display rather than a false single value.",
+  "notes": "Canonical whiskey rating history. Unknown historical dates are null. Classification hierarchy is Region → Style → Sub-style; sub-style contains only the distinguishing modifier/geographic detail and is blank when it would merely repeat Style. Summary statistics are calculated from raw ratings by whiskey.html. ABV is stored for each rated whiskey; batch-, barrel-, vintage-, or market-dependent expressions use a representative/typical ABV to keep the site display compact.",
   "products": [
     {
       "name": "Aberlour 12 Year Old",
@@ -250,7 +250,7 @@
         }
       ],
       "region": "American",
-      "abv_display": "Varies by batch (barrel strength)"
+      "abv": 63
     },
     {
       "name": "Buffalo Trace",
@@ -733,7 +733,7 @@
         }
       ],
       "region": "Scotch",
-      "abv_display": "40–43% (market/bottling dependent)"
+      "abv": 41.5
     },
     {
       "name": "Glenmorangie 12 Year Old Lasanta",
@@ -814,7 +814,7 @@
         }
       ],
       "region": "Scotch",
-      "abv_display": "40–43% (market/bottling dependent)"
+      "abv": 41.5
     },
     {
       "name": "Indri Single Malt Indian Whisky",
@@ -869,7 +869,7 @@
         }
       ],
       "region": "American",
-      "abv_display": "62.5–72.5% (125–145 proof; barrel dependent)"
+      "abv": 67.5
     },
     {
       "name": "Jack Daniel's Single Barrel Select",
@@ -1381,7 +1381,7 @@
         }
       ],
       "region": "American",
-      "abv_display": "53.5–57% (107–114 proof; batch dependent)"
+      "abv": 55.3
     },
     {
       "name": "Michter's US*1 Single Barrel Straight Rye",
@@ -1429,7 +1429,7 @@
         }
       ],
       "region": "American",
-      "abv_display": "Varies by vintage (about 49.5–50%)"
+      "abv": 49.8
     },
     {
       "name": "Port Chilkoot Rye",
