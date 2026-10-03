@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "updated": "2026-10-01",
+  "updated": "2026-10-03",
   "notes": "Canonical whiskey rating history. Unknown historical dates are null. Classification hierarchy is Region → Style → Sub-style; sub-style contains only the distinguishing modifier/geographic detail and is blank when it would merely repeat Style. Summary statistics are calculated from raw ratings by whiskey.html.",
   "products": [
     {
@@ -51,6 +51,10 @@
         {
           "score": 3.9,
           "date": null
+        },
+        {
+          "score": 3.8,
+          "date": "2026-10-03"
         }
       ],
       "region": "American"
