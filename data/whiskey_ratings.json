@@ -191,7 +191,9 @@
         }
       ],
       "region": "American",
-      "abv": 40
+      "abv": 40,
+      "owned": true,
+      "owned_bottle_name": "Basil Hayden Malted Rye"
     },
     {
       "name": "Bernheim Original Wheat Whiskey",
@@ -779,7 +781,9 @@
         }
       ],
       "region": "American",
-      "abv": 46
+      "abv": 46,
+      "owned": true,
+      "owned_bottle_name": "High West Double Rye"
     },
     {
       "name": "High West Rendezvous",
@@ -800,7 +804,9 @@
         }
       ],
       "region": "American",
-      "abv": 46
+      "abv": 46,
+      "owned": true,
+      "owned_bottle_name": "High West Rendezvous Rye"
     },
     {
       "name": "Highland Park 12",
@@ -970,7 +976,9 @@
         }
       ],
       "region": "American",
-      "abv": 41.15
+      "abv": 41.15,
+      "owned": true,
+      "owned_bottle_name": "Jefferson Bourbon Whiskey"
     },
     {
       "name": "Jefferson's Ocean Aged at Sea Double Barrel Rye",
@@ -999,7 +1007,9 @@
         }
       ],
       "region": "American",
-      "abv": 48
+      "abv": 48,
+      "owned": true,
+      "owned_bottle_name": "Jefferson Ocean Aged at Sea Double Rye"
     },
     {
       "name": "Jefferson's Reserve",
@@ -1032,7 +1042,9 @@
         }
       ],
       "region": "American",
-      "abv": 45.1
+      "abv": 45.1,
+      "owned": true,
+      "owned_bottle_name": "Jefferson Reserve Very Old"
     },
     {
       "name": "Jefferson's Reserve Pritchard Hill Cabernet Cask",
@@ -1053,7 +1065,9 @@
         }
       ],
       "region": "American",
-      "abv": 45.1
+      "abv": 45.1,
+      "owned": true,
+      "owned_bottle_name": "Jefferson Reserve Pritchard Hill"
     },
     {
       "name": "Jefferson's Straight Rye Whiskey",
@@ -1078,7 +1092,9 @@
         }
       ],
       "region": "American",
-      "abv": 44
+      "abv": 44,
+      "owned": true,
+      "owned_bottle_name": "Jefferson Straight Rye"
     },
     {
       "name": "Johnnie Walker Black Label",
@@ -1500,7 +1516,9 @@
         }
       ],
       "region": "American",
-      "abv": 45
+      "abv": 45,
+      "owned": true,
+      "owned_bottle_name": "Russell Reserve 6-Year Rye"
     },
     {
       "name": "Russell's Reserve Single Barrel",
@@ -1633,7 +1651,9 @@
       ],
       "region": "American",
       "place": "Indiana",
-      "abv": 40
+      "abv": 40,
+      "owned": true,
+      "owned_bottle_name": "Templeton 4-Year Rye"
     },
     {
       "name": "Tullamore D.E.W.",
