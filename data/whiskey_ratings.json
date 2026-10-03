@@ -1844,8 +1844,15 @@
       "style": "Bourbon",
       "substyle": "Bottled in Bond",
       "distillery": "Heaven Hill",
-      "estimated_price_usd": 20,
-      "recommendation_group": "Classic"
+      "estimated_price_usd": 20.99,
+      "recommendation_group": "Classic",
+      "local_purchase": {
+        "date": "2026-10-03",
+        "store": "Mulberry Max Wine & Spirits",
+        "volume_ml": 750,
+        "shelf_price_usd": 20.99,
+        "paid_price_usd": 18.89
+      }
     },
     {
       "priority": 2,
@@ -1854,8 +1861,15 @@
       "style": "Bourbon",
       "substyle": "",
       "distillery": "Jim Beam",
-      "estimated_price_usd": 20,
-      "recommendation_group": "Classic"
+      "estimated_price_usd": 17.99,
+      "recommendation_group": "Classic",
+      "local_purchase": {
+        "date": "2026-10-03",
+        "store": "Mulberry Max Wine & Spirits",
+        "volume_ml": 750,
+        "shelf_price_usd": 17.99,
+        "paid_price_usd": 16.19
+      }
     },
     {
       "name": "Jefferson's Triple Rye",
@@ -2214,10 +2228,17 @@
       "style": "Wheat Whiskey",
       "substyle": "",
       "distillery": "Woodford Reserve",
-      "estimated_price_usd": 40,
+      "estimated_price_usd": 41.99,
       "place": "Kentucky",
       "recommendation_group": "Familiar distillery",
-      "priority": 37
+      "priority": 37,
+      "local_purchase": {
+        "date": "2026-10-03",
+        "store": "Mulberry Max Wine & Spirits",
+        "volume_ml": 750,
+        "shelf_price_usd": 41.99,
+        "paid_price_usd": 37.79
+      }
     },
     {
       "name": "Woodford Reserve Personal Selection",
@@ -8095,7 +8116,117 @@
       "estimated_price_usd": 15,
       "recommendation_group": "Low-brow",
       "priority": 580
+    },
+    {
+      "name": "High West Bourbon",
+      "region": "American",
+      "style": "Bourbon",
+      "substyle": "Blend of Straight Bourbons",
+      "distillery": "High West",
+      "estimated_price_usd": 38.99,
+      "place": "Utah",
+      "recommendation_group": "Purchased",
+      "abv": 46,
+      "local_purchase": {
+        "date": "2026-10-03",
+        "store": "Mulberry Max Wine & Spirits",
+        "volume_ml": 750,
+        "shelf_price_usd": 38.99,
+        "paid_price_usd": 35.09
+      },
+      "priority": 581
+    },
+    {
+      "name": "Pendleton Original Canadian Whisky",
+      "region": "Canadian",
+      "style": "Canadian Whisky",
+      "substyle": "",
+      "distillery": "Pendleton",
+      "estimated_price_usd": 28,
+      "place": "Canada",
+      "recommendation_group": "Purchased",
+      "abv": 40,
+      "local_purchase": {
+        "date": "2026-10-03",
+        "store": "Mulberry Max Wine & Spirits",
+        "volume_ml": 375,
+        "shelf_price_usd": 13.99,
+        "paid_price_usd": 12.59
+      },
+      "priority": 582
+    },
+    {
+      "name": "Kentucky Deluxe Blended Whiskey",
+      "region": "American",
+      "style": "Blended Whiskey",
+      "substyle": "",
+      "distillery": "Barton 1792",
+      "estimated_price_usd": 10,
+      "place": "Kentucky",
+      "recommendation_group": "Purchased",
+      "abv": 40,
+      "local_purchase": {
+        "date": "2026-10-03",
+        "store": "Mulberry Max Wine & Spirits",
+        "volume_ml": 375,
+        "shelf_price_usd": 4.99,
+        "paid_price_usd": 4.49
+      },
+      "priority": 583
     }
   ],
-  "unrated_note": "Unrated recommendations are expanding toward 1,000. Priority balances classic and high-volume mass-market whiskeys, likely taste fit, familiar producers, strong rye coverage, all-50-state U.S. representation, Scotch-region gaps, Colorado depth, international exploration, and bottles verified in local Wilbur's Total Beverage inventory. Estimated prices are rough local/U.S. retail guides and are updated when a current Wilbur's price is available."
+  "unrated_note": "Unrated recommendations are expanding toward 1,000. Priority balances classic and high-volume mass-market whiskeys, likely taste fit, familiar producers, strong rye coverage, all-50-state U.S. representation, Scotch-region gaps, Colorado depth, international exploration, bottles verified in local Wilbur's Total Beverage inventory, and purchased-but-not-yet-rated bottles. Estimated prices are rough local/U.S. retail guides; actual purchase size and paid price are stored separately when known.",
+  "purchases": [
+    {
+      "date": "2026-10-03",
+      "store": "Mulberry Max Wine & Spirits",
+      "discount_percent": 10,
+      "merchandise_subtotal_usd": 131.34,
+      "total_after_tax_usd": 145.53,
+      "items": [
+        {
+          "name": "Evan Williams Bottled-in-Bond",
+          "volume_ml": 750,
+          "shelf_price_usd": 20.99,
+          "paid_price_usd": 18.89
+        },
+        {
+          "name": "Jim Beam Kentucky Straight Bourbon",
+          "volume_ml": 750,
+          "shelf_price_usd": 17.99,
+          "paid_price_usd": 16.19
+        },
+        {
+          "name": "High West Bourbon",
+          "volume_ml": 750,
+          "shelf_price_usd": 38.99,
+          "paid_price_usd": 35.09
+        },
+        {
+          "name": "Woodford Reserve Wheat Whiskey",
+          "volume_ml": 750,
+          "shelf_price_usd": 41.99,
+          "paid_price_usd": 37.79
+        },
+        {
+          "name": "Pendleton Original Canadian Whisky",
+          "volume_ml": 375,
+          "shelf_price_usd": 13.99,
+          "paid_price_usd": 12.59
+        },
+        {
+          "name": "Black Velvet Canadian Whisky",
+          "volume_ml": 375,
+          "shelf_price_usd": 6.99,
+          "paid_price_usd": 6.29
+        },
+        {
+          "name": "Kentucky Deluxe Blended Whiskey",
+          "volume_ml": 375,
+          "shelf_price_usd": 4.99,
+          "paid_price_usd": 4.49
+        }
+      ]
+    }
+  ]
 }
