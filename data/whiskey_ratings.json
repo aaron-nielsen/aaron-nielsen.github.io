@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "updated": "2026-10-03",
-  "notes": "Canonical whiskey rating history. Unknown historical dates are null. Classification hierarchy is Region → Style → Sub-style; sub-style contains only the distinguishing modifier/geographic detail and is blank when it would merely repeat Style. Summary statistics are calculated from raw ratings by whiskey.html.",
+  "notes": "Canonical whiskey rating history. Unknown historical dates are null. Classification hierarchy is Region → Style → Sub-style; sub-style contains only the distinguishing modifier/geographic detail and is blank when it would merely repeat Style. Summary statistics are calculated from raw ratings by whiskey.html. ABV is stored for each rated whiskey; proof-variable or market-dependent expressions use abv_display rather than a false single value.",
   "products": [
     {
       "name": "Aberlour 12 Year Old",
@@ -25,7 +25,8 @@
           "date": null
         }
       ],
-      "region": "Scotch"
+      "region": "Scotch",
+      "abv": 40
     },
     {
       "name": "Angel's Envy Port Finish",
@@ -57,7 +58,8 @@
           "date": "2026-10-03"
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 43.3
     },
     {
       "name": "Angel's Envy Rye",
@@ -69,7 +71,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 50
     },
     {
       "name": "Ardbeg 10 Year Old",
@@ -102,7 +105,8 @@
           "order": 4
         }
       ],
-      "region": "Scotch"
+      "region": "Scotch",
+      "abv": 46
     },
     {
       "name": "Ardbeg An Oa",
@@ -115,7 +119,8 @@
           "order": 1
         }
       ],
-      "region": "Scotch"
+      "region": "Scotch",
+      "abv": 46.6
     },
     {
       "name": "Balvenie 12 Year Old Doublewood",
@@ -139,7 +144,8 @@
           "date": null
         }
       ],
-      "region": "Scotch"
+      "region": "Scotch",
+      "abv": 43
     },
     {
       "name": "Balvenie 14 Year Old Caribbean Cask",
@@ -163,7 +169,8 @@
           "date": null
         }
       ],
-      "region": "Scotch"
+      "region": "Scotch",
+      "abv": 43
     },
     {
       "name": "Basil Hayden Malted Rye",
@@ -183,7 +190,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 40
     },
     {
       "name": "Bernheim Original Wheat Whiskey",
@@ -207,7 +215,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 45
     },
     {
       "name": "Blanton's Original Single Barrel",
@@ -219,7 +228,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 46.5
     },
     {
       "name": "Booker's",
@@ -239,7 +249,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv_display": "Varies by batch (barrel strength)"
     },
     {
       "name": "Buffalo Trace",
@@ -251,7 +262,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 45
     },
     {
       "name": "Bulleit 95 Rye",
@@ -275,7 +287,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 45
     },
     {
       "name": "Canadian Club 1858",
@@ -292,7 +305,8 @@
           "order": 1
         }
       ],
-      "region": "Canadian"
+      "region": "Canadian",
+      "abv": 40
     },
     {
       "name": "Crown Royal",
@@ -312,7 +326,8 @@
           "date": null
         }
       ],
-      "region": "Canadian"
+      "region": "Canadian",
+      "abv": 40
     },
     {
       "name": "Dalmore 12 Year Old",
@@ -332,7 +347,8 @@
           "date": "2026-10-03"
         }
       ],
-      "region": "Scotch"
+      "region": "Scotch",
+      "abv": 40
     },
     {
       "name": "Dalwhinnie 15",
@@ -345,7 +361,8 @@
           "order": 2
         }
       ],
-      "region": "Scotch"
+      "region": "Scotch",
+      "abv": 43
     },
     {
       "name": "Eagle Rare 10 Year",
@@ -365,7 +382,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 45
     },
     {
       "name": "Elijah Craig Small Batch Bourbon",
@@ -385,7 +403,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 47
     },
     {
       "name": "Elijah Craig Straight Rye",
@@ -410,7 +429,8 @@
           "order": 3
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 47
     },
     {
       "name": "Evan Williams 1783",
@@ -430,7 +450,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 45
     },
     {
       "name": "Evan Williams Black Label",
@@ -450,7 +471,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 43
     },
     {
       "name": "Evan Williams Green Label",
@@ -462,7 +484,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 40
     },
     {
       "name": "Evan Williams Single Barrel Vintage",
@@ -482,7 +505,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 43.3
     },
     {
       "name": "Four Roses Small Batch Select",
@@ -494,7 +518,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 52
     },
     {
       "name": "Four Roses Bourbon",
@@ -518,7 +543,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 40
     },
     {
       "name": "Four Roses Single Barrel",
@@ -542,7 +568,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 50
     },
     {
       "name": "Four Roses Small Batch",
@@ -554,7 +581,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 45
     },
     {
       "name": "Four Roses Yellow Label",
@@ -566,7 +594,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 40
     },
     {
       "name": "Gentleman Jack",
@@ -578,7 +607,8 @@
           "date": "2026-09-25"
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 40
     },
     {
       "name": "Glenfiddich 12 Year Old",
@@ -598,7 +628,8 @@
           "date": null
         }
       ],
-      "region": "Scotch"
+      "region": "Scotch",
+      "abv": 40
     },
     {
       "name": "Glenlivet 14 Year Old Cognac Cask Selection",
@@ -622,7 +653,8 @@
           "date": null
         }
       ],
-      "region": "Scotch"
+      "region": "Scotch",
+      "abv": 40
     },
     {
       "name": "Glenlivet Caribbean Reserve",
@@ -646,7 +678,8 @@
           "date": null
         }
       ],
-      "region": "Scotch"
+      "region": "Scotch",
+      "abv": 40
     },
     {
       "name": "Glenlivet Founder's Reserve",
@@ -670,7 +703,8 @@
           "date": null
         }
       ],
-      "region": "Scotch"
+      "region": "Scotch",
+      "abv": 40
     },
     {
       "name": "Glenmorangie 10 Year Old The Original",
@@ -698,7 +732,8 @@
           "date": null
         }
       ],
-      "region": "Scotch"
+      "region": "Scotch",
+      "abv_display": "40–43% (market/bottling dependent)"
     },
     {
       "name": "Glenmorangie 12 Year Old Lasanta",
@@ -718,7 +753,8 @@
           "date": null
         }
       ],
-      "region": "Scotch"
+      "region": "Scotch",
+      "abv": 43
     },
     {
       "name": "High West Double Rye!",
@@ -742,7 +778,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 46
     },
     {
       "name": "High West Rendezvous",
@@ -762,7 +799,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 46
     },
     {
       "name": "Highland Park 12",
@@ -775,7 +813,8 @@
           "order": 6
         }
       ],
-      "region": "Scotch"
+      "region": "Scotch",
+      "abv_display": "40–43% (market/bottling dependent)"
     },
     {
       "name": "Indri Single Malt Indian Whisky",
@@ -795,7 +834,8 @@
           "date": null
         }
       ],
-      "region": "Indian"
+      "region": "Indian",
+      "abv": 46
     },
     {
       "name": "Jack Daniel's Old No. 7",
@@ -815,7 +855,8 @@
           "date": "2026-09-25"
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 40
     },
     {
       "name": "Jack Daniel's Single Barrel Barrel Proof Rye",
@@ -827,7 +868,8 @@
           "date": "2026-09-25"
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv_display": "62.5–72.5% (125–145 proof; barrel dependent)"
     },
     {
       "name": "Jack Daniel's Single Barrel Select",
@@ -855,7 +897,8 @@
           "date": "2026-10-03"
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 47
     },
     {
       "name": "Jack Daniel's Tennessee Apple",
@@ -867,7 +910,8 @@
           "date": "2026-09-25"
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 35
     },
     {
       "name": "Jack Daniel's Tennessee Blackberry",
@@ -879,7 +923,8 @@
           "date": "2026-09-25"
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 35
     },
     {
       "name": "Jameson",
@@ -899,7 +944,8 @@
           "date": null
         }
       ],
-      "region": "Irish"
+      "region": "Irish",
+      "abv": 40
     },
     {
       "name": "Jefferson's Bourbon",
@@ -923,7 +969,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 41.15
     },
     {
       "name": "Jefferson's Ocean Aged at Sea Double Barrel Rye",
@@ -951,7 +998,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 48
     },
     {
       "name": "Jefferson's Reserve",
@@ -983,7 +1031,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 45.1
     },
     {
       "name": "Jefferson's Reserve Pritchard Hill Cabernet Cask",
@@ -1003,7 +1052,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 45.1
     },
     {
       "name": "Jefferson's Straight Rye Whiskey",
@@ -1027,7 +1077,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 44
     },
     {
       "name": "Johnnie Walker Black Label",
@@ -1047,7 +1098,8 @@
           "date": null
         }
       ],
-      "region": "Scotch"
+      "region": "Scotch",
+      "abv": 40
     },
     {
       "name": "Johnnie Walker Green Label",
@@ -1075,7 +1127,8 @@
           "date": null
         }
       ],
-      "region": "Scotch"
+      "region": "Scotch",
+      "abv": 43
     },
     {
       "name": "Johnnie Walker Red Label",
@@ -1095,7 +1148,8 @@
           "date": null
         }
       ],
-      "region": "Scotch"
+      "region": "Scotch",
+      "abv": 40
     },
     {
       "name": "Knob Creek 7 Year Old Rye",
@@ -1132,7 +1186,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 50
     },
     {
       "name": "Knob Creek 9 Year Bourbon",
@@ -1154,7 +1209,8 @@
           "order": 2
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 50
     },
     {
       "name": "Knob Creek 9 Year Single Barrel Reserve",
@@ -1176,7 +1232,8 @@
           "order": 3
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 60
     },
     {
       "name": "Knob Creek Bourbon x Rye",
@@ -1196,7 +1253,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 56.5
     },
     {
       "name": "Knob Creek Single Barrel Select Rye",
@@ -1224,7 +1282,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 57.5
     },
     {
       "name": "Laphroaig 10",
@@ -1240,7 +1299,8 @@
           "date": null
         }
       ],
-      "region": "Scotch"
+      "region": "Scotch",
+      "abv": 43
     },
     {
       "name": "Laphroaig Oak Select",
@@ -1260,7 +1320,8 @@
           "date": null
         }
       ],
-      "region": "Scotch"
+      "region": "Scotch",
+      "abv": 40
     },
     {
       "name": "Macallan 10 Year Old Fine Oak",
@@ -1276,7 +1337,8 @@
           "date": null
         }
       ],
-      "region": "Scotch"
+      "region": "Scotch",
+      "abv": 40
     },
     {
       "name": "Maker's 46",
@@ -1288,7 +1350,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 47
     },
     {
       "name": "Maker's Mark",
@@ -1304,7 +1367,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 45
     },
     {
       "name": "Maker's Mark Cask Strength",
@@ -1316,7 +1380,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv_display": "53.5–57% (107–114 proof; batch dependent)"
     },
     {
       "name": "Michter's US*1 Single Barrel Straight Rye",
@@ -1336,7 +1401,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 42.4
     },
     {
       "name": "Oban 14",
@@ -1349,7 +1415,8 @@
           "order": 3
         }
       ],
-      "region": "Scotch"
+      "region": "Scotch",
+      "abv": 43
     },
     {
       "name": "Pinhook Rye",
@@ -1361,7 +1428,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv_display": "Varies by vintage (about 49.5–50%)"
     },
     {
       "name": "Port Chilkoot Rye",
@@ -1373,7 +1441,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 45
     },
     {
       "name": "Russell's Reserve 10 Year",
@@ -1397,7 +1466,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 45
     },
     {
       "name": "Russell's Reserve 6 Year Rye",
@@ -1429,7 +1499,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 45
     },
     {
       "name": "Russell's Reserve Single Barrel",
@@ -1441,7 +1512,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 55
     },
     {
       "name": "Sazerac Rye",
@@ -1461,7 +1533,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 45
     },
     {
       "name": "Shinsei Blended Japanese Whisky",
@@ -1481,7 +1554,8 @@
           "date": null
         }
       ],
-      "region": "Japanese"
+      "region": "Japanese",
+      "abv": 40.5
     },
     {
       "name": "Stranahan's Blue Peak",
@@ -1501,7 +1575,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 43
     },
     {
       "name": "Stranahan's Colorado Whiskey",
@@ -1521,7 +1596,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 47
     },
     {
       "name": "Talisker 10",
@@ -1534,7 +1610,8 @@
           "order": 5
         }
       ],
-      "region": "Scotch"
+      "region": "Scotch",
+      "abv": 45.8
     },
     {
       "name": "Templeton Rye",
@@ -1555,7 +1632,8 @@
         }
       ],
       "region": "American",
-      "place": "Indiana"
+      "place": "Indiana",
+      "abv": 40
     },
     {
       "name": "Tullamore D.E.W.",
@@ -1567,7 +1645,8 @@
           "date": null
         }
       ],
-      "region": "Irish"
+      "region": "Irish",
+      "abv": 40
     },
     {
       "name": "Wild Turkey 101",
@@ -1579,7 +1658,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 50.5
     },
     {
       "name": "Wild Turkey 101 Rye",
@@ -1595,7 +1675,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 50.5
     },
     {
       "name": "Wild Turkey American Honey",
@@ -1607,7 +1688,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 35.5
     },
     {
       "name": "Wild Turkey Kentucky Spirit",
@@ -1619,7 +1701,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 50.5
     },
     {
       "name": "Wild Turkey Longbranch",
@@ -1643,7 +1726,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 43
     },
     {
       "name": "Wild Turkey Rare Breed",
@@ -1655,7 +1739,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 58.4
     },
     {
       "name": "Wild Turkey Rye",
@@ -1667,7 +1752,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 40.5
     },
     {
       "name": "Woodford Reserve Bourbon",
@@ -1679,7 +1765,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 45.2
     },
     {
       "name": "Woodford Reserve Kentucky Straight Rye",
@@ -1707,7 +1794,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 45.2
     },
     {
       "name": "Woodford Reserve Malt Whiskey",
@@ -1723,7 +1811,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 45.2
     },
     {
       "name": "Woody Creek High Rye 70/30 Bourbon",
@@ -1743,7 +1832,8 @@
           "date": null
         }
       ],
-      "region": "American"
+      "region": "American",
+      "abv": 47
     }
   ],
   "unrated_suggestions": [
