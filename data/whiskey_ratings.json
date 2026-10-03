@@ -3923,9 +3923,16 @@
       "style": "Blended",
       "substyle": "",
       "distillery": "Black Velvet",
-      "estimated_price_usd": 15,
+      "estimated_price_usd": 14,
       "recommendation_group": "Mass-market priority",
-      "priority": 196
+      "priority": 196,
+      "local_purchase": {
+        "date": "2026-10-03",
+        "store": "Mulberry Max Wine & Spirits",
+        "volume_ml": 375,
+        "shelf_price_usd": 6.99,
+        "paid_price_usd": 6.29
+      }
     },
     {
       "name": "Jack Daniel's 12 Year Old",
