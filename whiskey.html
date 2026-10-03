@@ -1048,12 +1048,19 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
       return b.number-a.number;
     });
 
-    var historyRows=dated.concat(undated);
-    var hist=historyRows.map(function(x){
-      return '<tr><td>'+x.number+'</td><td>'+(x.date?prettyDate(x.date):'Unknown')+'</td><td>'+x.score.toFixed(1)+'</td></tr>';
+    var hist=dated.map(function(x){
+      return '<tr><td>'+x.number+'</td><td>'+prettyDate(x.date)+'</td><td>'+x.score.toFixed(1)+'</td></tr>';
     }).join("");
 
-    var ratingsTable=historyRows.length
+    if(undated.length){
+      var nums=undated.map(function(x){return x.number}).sort(function(a,b){return a-b});
+      var scoresByNumber=undated.slice().sort(function(a,b){return a.number-b.number});
+      var numberLabel=nums.length===1?String(nums[0]):nums[0]+'–'+nums[nums.length-1];
+      hist+='<tr><td>'+numberLabel+'</td><td>Unknown</td><td>'+
+        scoresByNumber.map(function(x){return x.score.toFixed(1)}).join(' · ')+'</td></tr>';
+    }
+
+    var ratingsTable=(dated.length||undated.length)
       ? '<table class="whiskey-history-list"><thead><tr><th>#</th><th>Date</th><th>Rating</th></tr></thead><tbody>'+hist+'</tbody></table>'
       : '';
 
