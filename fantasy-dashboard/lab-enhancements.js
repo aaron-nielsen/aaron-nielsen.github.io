@@ -11,6 +11,7 @@ let selectedWeek = 5;
 let futureById = new Map();
 let selectedTradeFrom = 6;
 let tradeData = null;
+let draftData = null;
 function record(p, week) { return p?.weeks?.find(w => Number(w.week) === Number(week)); }
 function display(w, futureWeek) {
   if (!w) return '—';
@@ -164,9 +165,33 @@ function renderMine(){
     '<p class="micro-note">Four-game and ROS figures are healthy-play scenarios, not injury-adjusted expectations. Expand a player below for the scoring calculation.</p>';
 }
 const lookup=(id)=>futureById.get(String(id));
+
+function draftPick(p){
+ if(!draftData?.picks)return null;
+ const id=String(p.yahooId);
+ const match=draftData.picks.find(d=>String(d.playerId)===id);
+ return match?.pick??null;
+}
+function premiumTradeCheck(t){
+ const firstRound=ps=>ps.filter(p=>{const pick=draftPick(p);return pick!=null&&pick<=14;});
+ const outgoing=firstRound(t.youSend), incoming=firstRound(t.youReceive);
+ if(incoming.length && !outgoing.length){
+   return {ok:false, reason:'Premium asset: '+incoming.map(p=>p.name+' (draft pick #'+draftPick(p)+')').join(', ')+'. No first-round player offered in return.'};
+ }
+ if(outgoing.length && !incoming.length){
+   return {ok:false, reason:'You would surrender a first-round asset without receiving one.'};
+ }
+ return {ok:true,reason:null};
+}
+function stableGain(games,key){
+ if(!games.length)return false;
+ const gains=games.map(w=>Number(w[key]||0));
+ const total=gains.reduce((a,b)=>a+b,0);
+ return total-Math.max(...gains)>=0;
+}
 function showTrades(){
  const area=$el('tradeResults'),count=$el('tradeCount');
- if(!tradeData?.trades){
+ if(!tradeData?.trades || !draftData?.picks){
    count.textContent='Loading modeled trades…';
    area.innerHTML='<div class="empty-copy">Multi-player trade estimates are being prepared.</div>';
    return;
@@ -179,7 +204,8 @@ function showTrades(){
  const minimumWeeklyGain=packageFilter==='balanced'?0.5:0.15;
  const matches=tradeData.trades.flatMap(t=>{
    if(partner!=='all'&&t.partnerTeamId!==partner)return [];
-   if(packageFilter!=='all'&&t.requiresRosterAdjustment)return [];
+   const check=premiumTradeCheck(t);
+   if(packageFilter!=='all' && (t.requiresRosterAdjustment || !check.ok))return [];
    const both=[...t.youSend,...t.youReceive];
    if(pos==='offense_no_qb'&&both.some(p=>p.position==='QB'))return [];
    if(pos!=='offense_no_qb'&&pos!=='all'&&!t.youReceive.some(p=>p.position===pos))return [];
@@ -188,7 +214,9 @@ function showTrades(){
    const my=games.reduce((s,w)=>s+w.you,0);
    const theirs=games.reduce((s,w)=>s+w.them,0);
    if(my<minimumWeeklyGain*duration||theirs<minimumWeeklyGain*duration)return [];
-   return [{...t,my,theirs,score:Math.min(my,theirs)+0.12*Math.max(my,theirs)}];
+   // The favored horizon should not depend entirely on one spectacular bye week.
+   if(packageFilter==='balanced' && (!stableGain(games,'you')||!stableGain(games,'them')))return [];
+   return [{...t,my,theirs,marketCheck:check,score:Math.min(my,theirs)+0.12*Math.max(my,theirs)}];
  }).sort((a,b)=>b.score-a.score||b.my-a.my);
  const selected=[],teams=new Map();
  for(const p of matches){
@@ -208,7 +236,8 @@ function showTrades(){
    '<li class="trade-person"><span>'+clean(p.name)+'</span><span class="trade-pos">'+clean(p.position)+'</span></li>'
  ).join('')+'</ul>';
  area.innerHTML=selected.map((t,i)=>{
-   const note=t.requiresRosterAdjustment?'<p class="trade-balance-note">Unequal player counts: Yahoo may require extra roster moves.</p>':'';
+   const note=(t.requiresRosterAdjustment?'<p class="trade-balance-note">Unequal player counts: Yahoo may require extra roster moves.</p>':'')+
+      (!t.marketCheck.ok?'<p class="trade-balance-note trade-premium-warning">Market plausibility warning: '+clean(t.marketCheck.reason)+'</p>':'');
    return '<article class="trade-card compact-trade">'+
     '<div class="trade-card-top"><div class="trade-card-identity"><span class="trade-rank">'+String(i+1).padStart(2,'0')+'</span><strong>'+clean(t.partnerTeam)+'</strong></div>'+
     '<span class="trade-package-label">'+clean(t.packageShape)+'</span></div>'+
@@ -235,16 +264,17 @@ function init(){
   const partner=$el('tradePartner');
   if(partner){partner.innerHTML='<option value="all">All other teams</option>'+rosters.teams.filter(t=>String(t.id)!=='7').sort((a,b)=>a.name.localeCompare(b.name)).map(t=>'<option value="'+clean(t.id)+'">'+clean(t.name)+'</option>').join('');partner.addEventListener('change',showTrades);}
   renderFutureProjections();renderMine();showTrades();
-  fetch('./data/trades.json',{cache:'no-store'}).then(r=>{
-    if(!r.ok)throw Error('Trade dataset unavailable');
-    return r.json();
-  }).then(payload=>{
-    if(!Array.isArray(payload.trades))throw Error('Trade dataset incomplete');
-    tradeData=payload;
+  Promise.all([
+    fetch('./data/trades.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Trade dataset unavailable');return r.json();}),
+    fetch('./data/draft.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Draft capital unavailable');return r.json();})
+  ]).then(([trades,draft])=>{
+    if(!Array.isArray(trades.trades) || !Array.isArray(draft.picks) || draft.picks.length<100)
+      throw Error('Draft or trade data incomplete');
+    tradeData=trades;draftData=draft;
     showTrades();
   }).catch(()=>{
-    $el('tradeCount').textContent='Trade package search not yet available';
-    $el('tradeResults').innerHTML='<div class="empty-copy">Multi-player trade rankings are being generated. No speculative results are shown.</div>';
+    $el('tradeCount').textContent='Trade screening unavailable';
+    $el('tradeResults').innerHTML='<div class="empty-copy">Trade recommendations are withheld until league draft capital and forecasts can be verified.</div>';
   });
 }
 LAB.init=init;
