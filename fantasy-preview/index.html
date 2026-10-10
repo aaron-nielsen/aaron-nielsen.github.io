@@ -419,6 +419,11 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
  .waiver-note{margin:5px 12px 14px}
 }
 
+
+.waiver-section-label{padding:14px 3px 5px;font-weight:800;letter-spacing:.09em;font-size:11px;color:#875b38}
+.waiver-section-label:not(:first-child){border-top:1px solid #dac19f;margin-top:6px}
+.waiver-empty-note{color:#76563c;padding:15px 4px 19px;margin:0;line-height:1.5;font-size:14px}
+
 </style>
 <link rel="stylesheet" href="./clean-dashboard.css">
 </head><body>
@@ -448,7 +453,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
   <option value="rest_of_season">Rest of season · Weeks 6–17</option>
  </select></div>
  <div id="waiverRecommendations" class="waiver-list"><div class="empty-copy">Preparing free-agent recommendations…</div></div>
- <p class="waiver-note">Modeled lineup-point gains, not raw player rankings. Assumes scheduled players participate in future weeks; injuries, suspensions and waiver eligibility require separate confirmation. No player moves are made in Yahoo.</p>
+ <p class="waiver-note">Your roster was refreshed from Yahoo. Future-week estimates assume players are available to play and may overstate values for injured players. Rankings are advisory; no Yahoo moves are made.</p>
 </section>
 <section class="panel recommendations-panel" aria-label="Suggested lineup changes">
 <div class="panel-header"><div><div class="panel-title">Suggested lineup changes</div><div class="panel-sub">Based on this week's preliminary model · your current roster</div></div><span class="chip">WEEK 5</span></div>
@@ -559,22 +564,54 @@ function initOverview(){
 }
 function renderWaivers(){
  const root=$('#waiverRecommendations');
- if(!waivers?.horizons){root.innerHTML='<div class="empty-copy">Waiver-impact rankings have not been generated yet.</div>';return;}
+ if(!waivers?.horizons || !futureData?.players?.length || !available?.players?.length){
+   root.innerHTML='<div class="empty-copy">Horizon recommendations are still being processed.</div>';return;
+ }
  const key=$('#waiverHorizon').value;
  const selected=waivers.horizons[key];
- if(!selected){root.innerHTML='<div class="empty-copy">No recommendations for this horizon.</div>';return;}
- const items=selected.recommendations||[];
+ if(!selected){root.innerHTML='<div class="empty-copy">No data for this period.</div>';return;}
  const weeks=selected.weeks||[];
- if(!items.length){root.innerHTML='<div class="empty-copy">No modeled available player currently improves your legal starting lineup over the selected period.</div>';return;}
- root.innerHTML=items.slice(0,5).map((p,i)=>{
-   const context=p.suggestedDrop ? 'Drop: '+esc(p.suggestedDrop.name) : 'No drop suggested';
-   const rate=(p.yahooWideRosteredPercent==null?'':(' · '+Math.round(p.yahooWideRosteredPercent)+'% rostered Yahoo-wide'));
-   return '<div class="waiver-item"><span class="waiver-rank">'+(i+1)+'</span>'+
-     '<div class="waiver-details"><strong>'+esc(p.name)+'</strong><span>'+esc(p.position)+' · '+esc(p.nflTeam||'NFL free agent')+rate+'</span><small>'+context+'</small></div>'+
-     '<div class="waiver-points">+'+Number(p.lineupGain).toFixed(1)+'<span>lineup pts</span></div></div>';
- }).join('')+
- '<div class="waiver-footnote">Cumulative model gain over Weeks '+weeks[0]+(weeks.length>1?'–'+weeks[weeks.length-1]:'')+
- ' after a one-player replacement. The rest of your lineup is optimized each week.</div>';
+ const minimumEdge=weeks.length*0.5;
+ const upgrades=(selected.recommendations||[]).filter(p=>p.lineupGain>=minimumEdge).slice(0,4);
+ let cards='';
+ if(upgrades.length){
+   cards='<div class="waiver-section-label">MODEL-PROJECTED LINEUP IMPROVEMENTS</div>'+
+   upgrades.map((p,i)=>{
+      const drop=p.suggestedDrop?.name||'Unknown';
+      return '<div class="waiver-item"><span class="waiver-rank">'+(i+1)+'</span>'+
+      '<div class="waiver-details"><strong>'+esc(p.name)+'</strong><span>'+esc(p.position)+' · '+esc(p.nflTeam||'No club')+'</span><small>Possible drop: '+esc(drop)+'</small></div>'+
+      '<div class="waiver-points">+'+Number(p.lineupGain).toFixed(1)+'<span>starter pts</span></div></div>';
+   }).join('');
+ }else{
+   cards='<p class="waiver-empty-note">No clear projected starting-lineup upgrade over this period. Your current roster already covers these starting slots well.</p>';
+ }
+ const byId=new Map(futureData.players.map(p=>[String(p.yahooId),p]));
+ const excluded=new Set(['NA','N/A','IR','IR-R','PUP','PUP-R','NFI','NFI-R','CEL','SUSP','SUS','OUT']);
+ const candidates=available.players.filter(p=>{
+   if(!['QB','RB','WR','TE'].includes(p.position))return false;
+   const status=String(p.status||'').toUpperCase();
+   if(excluded.has(status)||status.startsWith('IR-')||status.startsWith('PUP-'))return false;
+   if(key==='next_week' && status==='O')return false;
+   return byId.has(String(p.id));
+ }).map(p=>{
+   const f=byId.get(String(p.id));
+   const raw=weeks.reduce((sum,w)=>{
+     const item=f.weeks?.find(x=>x.week===w);
+     return sum+Math.max(0,Number(item?.points)||0);
+   },0);
+   return {...p,raw};
+ }).sort((a,b)=>b.raw-a.raw||a.name.localeCompare(b.name)).slice(0,4);
+ const periodLabel=weeks.length===1?'week points':'total points';
+ const watch='<div class="waiver-section-label">HIGHEST PROJECTED AVAILABLE PLAYERS</div>'+
+  candidates.map((p,i)=>{
+    const caution=p.status ? ' · Yahoo status '+esc(p.status) : '';
+    return '<div class="waiver-item"><span class="waiver-rank">'+(i+1)+'</span>'+
+      '<div class="waiver-details"><strong>'+esc(p.name)+'</strong><span>'+esc(p.position)+' · '+esc(p.nflTeam||'NFL free agent')+caution+'</span><small>Projected production; may not improve your starting lineup</small></div>'+
+      '<div class="waiver-points">'+p.raw.toFixed(1)+'<span>'+periodLabel+'</span></div></div>';
+  }).join('');
+ root.innerHTML=cards+watch+
+ '<div class="waiver-footnote">Weeks '+weeks[0]+(weeks.length>1?'–'+weeks[weeks.length-1]:'')+
+ '. Starter gains come from optimizing a legal QB / 2 RB / 2 WR / TE / flex lineup. All future projections assume availability; verify injury and NFL-team status before pickup.</div>';
 }
 function renderRecommendations(){
  const area=$('#lineupRecommendations');
