@@ -68,9 +68,14 @@ function getCandidates(){
  for(const other of peers){
   const inbound=groupsBySize(packages(other.players,selectedIn,9));
   const shortlist=[];
-  for(const n of [1,2,3]){
+  const mode=$('tradePackageFilter')?.value||'balanced';
+  const sizes=mode==='three_each'?[3]:mode==='balanced'?[2,3]:[1,2,3];
+  for(const n of sizes){
    for(const send of outgoing[n]){
     for(const receive of inbound[n]){
+     const position=$('tradePosition')?.value||'all';
+     if(!selectedIn.size&&position!=='all'&&position!=='offense_no_qb'&&!receive.players.some(p=>p.position===position))continue;
+     if(!selectedIn.size&&position==='offense_no_qb'&&receive.players.some(p=>p.position==='QB'))continue;
      // Compare modeled rest-of-season value before more costly legal-lineup simulation.
      const gap=Math.abs(send.raw-receive.raw)/Math.max(12,send.raw,receive.raw);
      shortlist.push({partner:other,send,receive,gap,shape:n+'-for-'+n,
@@ -181,7 +186,7 @@ function draw(){
  rootEl.innerHTML='<div class="trade-personal-grid">'+
  '<details class="trade-player-dropdown" id="tradeSendBox"><summary>Players I would trade <strong id="tradeSendSelected">Any</strong></summary><input id="tradeSendSearch" type="search" placeholder="Find my players" aria-label="Search players to trade"><div class="trade-player-options" id="tradeSendChoices"></div></details>'+
  '<details class="trade-player-dropdown" id="tradeReceiveBox"><summary>Players I want <strong id="tradeReceiveSelected">Any</strong></summary><input id="tradeReceiveSearch" type="search" placeholder="Find league targets" aria-label="Search players to receive"><div class="trade-player-options" id="tradeReceiveChoices"></div></details>'+
- '</div><div class="trade-preference-footer"><span>Choose one or more names from either list.</span><button id="tradePreferenceClear" type="button">Clear choices</button></div>';
+ '</div><div class="trade-preference-footer"><span>Packages include at least one selected name.</span><button id="tradePreferenceClear" type="button">Clear choices</button></div>';
  for(const [type,set] of [['Send',selectedOut],['Receive',selectedIn]]){
   $('trade'+type+'Search').addEventListener('input',refresh);
   $('trade'+type+'Choices').addEventListener('change',event=>{
@@ -213,6 +218,8 @@ function init(settings){
  draw();
  $('tradeFromWeek')?.addEventListener('change',()=>{if(active())updated()});
  $('tradePartner')?.addEventListener('change',()=>{refresh();if(active())updated()});
+ $('tradePackageFilter')?.addEventListener('change',()=>{if(active())updated()});
+ $('tradePosition')?.addEventListener('change',()=>{if(active())updated()});
  updated();
 }
 root.DaVinciPersonalTrades={init,active,render};
