@@ -21,7 +21,7 @@ for(const {dir,id,label,minimum} of [
  const els=new Map();
  const node=id=>{
   if(!els.has(id))els.set(id,{value:id==='waiverHorizon'?'next_week':id==='lineupWeek'?'5':id==='txnSort'?'recent':id==='txnType'?'all':'all',
-    innerHTML:'',textContent:'',options:[],addEventListener(event,cb){this['on'+event]=cb;}});
+    innerHTML:'',textContent:'',options:[],addEventListener(event,cb){this['on'+event]=cb;},setAttribute(){}});
   return els.get(id);
  };
  const context={document:{getElementById:node}};
@@ -38,10 +38,11 @@ for(const {dir,id,label,minimum} of [
  context.DaVinciAdvice.init({rosters,available,week:5,future,teamId:id});
  const t0=Date.now();
  context.DaVinciTransactions.init({rosters,future,week:5,teamId:id,transactions,optimize:context.DaVinciAdvice.lineup});
+ context.DaVinciTransactions.update();
  const elapsed=Date.now()-t0;
  const html=node('transactionCards').innerHTML;
  assert.equal((html.match(/class="txn-card"/g)||[]).length,transactions.transactions.length);
- assert.match(html,/Actual: not yet measured/);
+ assert.match(html,/Actual gain unverified/);
  assert.ok(html.includes('ROS pts')||html.includes('Not rateable'),'Must show forecast impact or explicit unavailable');
  assert.ok(node('txnCoverage').textContent.includes('current rosters'),'Not claiming at-time projections');
  assert.ok(elapsed<20000,label+' transaction calculations too slow: '+elapsed+'ms');
