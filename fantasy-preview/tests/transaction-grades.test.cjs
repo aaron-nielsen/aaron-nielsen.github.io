@@ -11,7 +11,8 @@ function setup(){
  const element=id=>{
   if(!elements.has(id))elements.set(id,{
    value:'all',innerHTML:'',textContent:'',listeners:{},
-   addEventListener(type,fn){this.listeners[type]=fn;},setAttribute(){}
+   addEventListener(type,fn){this.listeners[type]=fn;},
+   setAttribute(name,value){this[name]=value;},setAttribute(){}
   });
   return elements.get(id);
  };
