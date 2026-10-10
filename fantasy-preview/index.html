@@ -528,6 +528,13 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 .lineup-compare-footnote{font-size:11px;color:#866951;line-height:1.5;margin:13px 0 0}
 @media(max-width:600px){.roster-mini{padding:3px 12px 13px}.lineup-pair{gap:7px}.lineup-column-person strong{font-size:13px}.lineup-column-person+.lineup-column-person{padding-left:9px}}
 
+
+.trade-package-players{display:flex;flex-direction:column;gap:6px;margin-top:7px}
+.trade-package-player{display:block;font:700 17px/1.2 'Source Sans 3',system-ui,sans-serif;color:#52301c}
+.trade-package-player small{font-size:11px;color:#8a654b;font-weight:600;margin-left:5px}
+.trade-balance-warning{background:#f1dfc1;border-top:1px solid #d2ad78;padding:11px 14px;font-size:12px;color:#755037}
+.trade-exchange{grid-template-columns:minmax(0,1fr) 24px minmax(0,1fr)}
+@media(max-width:650px){.trade-package-player{font-size:14px}.trade-package-player small{font-size:10px}}
 </style>
 <link rel="stylesheet" href="./clean-dashboard.css">
 </head><body>
@@ -603,7 +610,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
   <label for="tradeFromWeek">Evaluate <select id="tradeFromWeek" class="select"><option value="6">Weeks 6–17</option></select></label>
   <div id="tradeCount" class="trade-count">Calculating candidates…</div></div>
   <div id="tradeResults" class="trades-grid"><div class="empty-copy">Calculating lineup-adjusted trade ideas…</div></div>
-  <div class="trade-caveat"><strong>How to interpret:</strong> These are hypothetical healthy-player scenarios for future weeks, not availability-adjusted predictions. The simulator uses legal QB/RB/WR/TE/flex allocations on both rosters and ignores K/DEF (unchanged in these one-for-one trades). It excludes players currently in IR slots or marked unavailable from trade candidates, but still assumes future participation by other rostered players. It does not account for trade acceptance, Yahoo trade settings, playoff probabilities, injuries after this snapshot, or unmodeled scoring. No trades or lineup moves are submitted to Yahoo.</div>
+  <div class="trade-caveat"><strong>How to interpret:</strong> These are hypothetical healthy-player scenarios for future weeks, not injury-adjusted predictions. Both sides are evaluated using legal QB/RB/WR/TE/flex lineups. Package trades of up to three players per side are considered; unequal-size deals may require additional roster moves. The search is bounded to a subset of prominent players on each team and excludes K/DEF. It does not forecast trade acceptance, injuries, changing roles, or playoff outcomes. No Yahoo transactions are submitted.</div>
 </div></section>
 </main>
 <footer class="footer"><div>DA VINCI FANTASY LAB / CSU STATS · MMXXVI</div><div>READ-ONLY PROTOTYPE · POWERED BY YAHOO LEAGUE DATA</div></footer>
