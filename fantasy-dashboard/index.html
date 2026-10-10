@@ -542,7 +542,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
   <option value="rest_of_season">Rest of season · Weeks 6–17</option>
  </select></div>
  <div id="waiverRecommendations" class="waiver-list"><div class="empty-copy">Preparing free-agent recommendations…</div></div>
- <p class="waiver-note">Your roster was refreshed from Yahoo. Future-week estimates assume players are available to play and may overstate values for injured players. Rankings are advisory; no Yahoo moves are made.</p>
+ <p class="waiver-note">Your roster was refreshed from Yahoo. Future-week estimates are conditional scenarios. Players marked exempt, suspended, or on long-term reserve are held out until cleared; short-term injuries may still overstate availability. Rankings are advisory; no Yahoo moves are made.</p>
 </section>
 <section class="panel recommendations-panel" aria-label="Suggested lineup changes">
 <div class="panel-header"><div><div class="panel-title">Suggested lineup changes</div><div class="panel-sub">Based on this week's preliminary model · your current roster</div></div><span class="chip">WEEK 5</span></div>
@@ -720,7 +720,7 @@ function renderWaivers(){
   }).join('');
  root.innerHTML=cards+watch+
  '<div class="waiver-footnote">Weeks '+weeks[0]+(weeks.length>1?'–'+weeks[weeks.length-1]:'')+
- '. Starter gains come from optimizing a legal QB / 2 RB / 2 WR / TE / flex lineup. All future projections assume availability; verify injury and NFL-team status before pickup.</div>';
+ '. Starter gains come from optimizing a legal QB / 2 RB / 2 WR / TE / flex lineup. Current IR/exempt/suspended players are omitted from the optimized lineup until cleared. Other future forecasts assume availability; verify injury and NFL-team status.</div>';
 }
 function renderRecommendations(){
  const area=$('#lineupRecommendations');
