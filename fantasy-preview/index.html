@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#171c29"><title>CSU Stats Fantasy Dashboard</title>
+<style>
+:root{color-scheme:dark;--bg:#0f1420;--panel:#1b2231;--panel2:#222b3c;--ink:#f1efe9;--muted:#acb4c4;--line:#354054;--accent:#ffbf69;--cyan:#78d5cb}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.4}
+main{max-width:1260px;margin:0 auto;padding:26px 20px 80px}.mast{background:linear-gradient(135deg,#243145,#151d2e);border:1px solid #42516b;border-radius:20px;padding:24px;margin-bottom:20px}
+.eyebrow{color:var(--accent);font-size:.75rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}h1{font-size:clamp(1.8rem,5vw,2.85rem);line-height:1.1;margin:10px 0}p{margin:8px 0;color:var(--muted)}
+.topline{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;flex-wrap:wrap}.stamp{font-size:.78rem;color:var(--muted);margin-top:6px}
+.statline{display:flex;gap:18px;flex-wrap:wrap;margin-top:24px}.metric{padding-right:18px;border-right:1px solid var(--line)}.metric:last-child{border:0}.metric strong{display:block;font-size:1.55rem}.metric span{color:var(--muted);font-size:.79rem}
+.tabs{display:flex;gap:9px;margin-bottom:18px}.tab{background:var(--panel);color:var(--muted);border:1px solid var(--line);border-radius:10px;padding:11px 16px;font-size:.93rem;font-weight:700;cursor:pointer}.tab.active{background:#574026;border-color:var(--accent);color:#fff}
+.toolbar{background:var(--panel);padding:16px;border:1px solid var(--line);border-radius:14px;display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:18px}
+input,select{border:1px solid #57647b;background:#101828;color:var(--ink);padding:11px 12px;border-radius:8px;font:inherit;min-width:0}input{flex:2;min-width:210px}select{flex:1;min-width:150px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.team{background:var(--panel);border:1px solid var(--line);border-radius:15px;overflow:hidden}.team.mine{border-color:var(--accent)}.team-head{padding:16px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--panel2)}.team-head h2{font-size:1.06rem;margin:0}.team-head small{color:var(--muted)}
+.pill{padding:3px 8px;font-weight:750;font-size:.7rem;border-radius:100px;background:#3b3543;color:#fcd49c;white-space:nowrap}
+.player-groups{padding:2px 16px 16px}.group-title{font-size:.67rem;color:var(--muted);text-transform:uppercase;font-weight:800;letter-spacing:.11em;margin:15px 0 6px;border-bottom:1px solid var(--line);padding-bottom:5px}
+.player{display:grid;grid-template-columns:44px 1fr auto;gap:10px;align-items:center;padding:6px 0;font-size:.87rem}.pos{background:#323b4f;color:#d6dee9;border-radius:5px;padding:4px;font-size:.7rem;text-align:center;font-weight:800}.name{font-weight:600}.sub{font-size:.72rem;color:var(--muted);margin-top:2px}.slot{font-size:.72rem;color:var(--muted);text-align:right}.injury{color:#ffd18b;font-weight:750;margin-left:6px}.empty{padding:30px;text-align:center;color:var(--muted)}
+.finder{background:var(--panel);border-radius:15px;border:1px solid var(--line);overflow:hidden}.result{padding:14px 17px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:64px minmax(0,1fr) minmax(125px,1fr);gap:12px;align-items:center}.result:last-child{border:0}.result strong{display:block}.result small{color:var(--muted)}
+.note{font-size:.8rem;color:var(--muted);padding-top:12px}.hidden{display:none!important}
+@media(max-width:800px){.grid{grid-template-columns:1fr}main{padding:15px 12px 60px}.result{grid-template-columns:45px minmax(0,1fr);gap:10px}.result .ownership{grid-column:2}.toolbar input{flex-basis:100%}.mast{padding:20px}}
+</style></head>
+<body><main>
+<header class="mast"><div class="topline"><div><div class="eyebrow">Fantasy football · Yahoo · 2026</div><h1>CSU Stats <span style="color:var(--accent)">League Map</span></h1><p>A searchable, league-wide roster snapshot. Built to become a projection and transaction dashboard.</p></div><div class="stamp" id="stamp">Loading league snapshot…</div></div><div class="statline"><div class="metric"><strong id="teamsCount">—</strong><span>Teams</span></div><div class="metric"><strong id="playersCount">—</strong><span>Rostered players</span></div><div class="metric"><strong id="irCount">—</strong><span>Players in IR slots</span></div></div></header>
+<nav class="tabs" aria-label="Dashboard views"><button type="button" class="tab active" data-tab="rosters">Team rosters</button><button type="button" class="tab" data-tab="find">Player finder</button><button type="button" class="tab" data-tab="projections">Projections</button></nav>
+<div class="toolbar"><input id="search" type="search" placeholder="Search player, NFL club, or fantasy team" aria-label="Search players and teams"><select id="position" aria-label="Filter by position"><option value="">All positions</option><option>QB</option><option>RB</option><option>WR</option><option>TE</option><option>K</option><option>DEF</option></select><select id="slot" aria-label="Filter by roster slot"><option value="">All roster slots</option><option value="starter">Starters</option><option value="BN">Bench</option><option value="IR">Injured reserve</option></select></div>
+<section id="rosters" class="grid" aria-live="polite"></section><section id="find" class="finder hidden" aria-live="polite"></section><section id="projections" class="finder hidden" aria-live="polite"><div class="empty">Projection feed has not been generated yet. The new projection engine is in <code>model/</code>.</div></section>
+<div class="note">Read-only snapshot. Team/slot/injury labels reflect Yahoo at the capture time; they are not predictions. Unrostered players and trade values are not yet included. Team-owner names are intentionally excluded.</div>
+</main><script>
+const $=s=>document.querySelector(s);
+let data=null,projections=null,tab="rosters";
+function esc(x){return String(x??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+const group=p=>p.slot==="IR"?"IR":p.slot==="BN"?"Bench":"Starters";
+function playerRow(p){return '<div class="player"><span class="pos">'+esc(p.position)+'</span><div><div class="name">'+esc(p.name)+(p.status?'<span class="injury">'+esc(p.status)+'</span>':'')+'</div><div class="sub">'+esc(p.nflTeam||"FA")+' · Yahoo '+esc(p.id)+'</div></div><span class="slot">'+esc(p.slot)+'</span></div>';}
+function render(){
+ if(!data)return;
+ const q=$("#search").value.trim().toLowerCase(),position=$("#position").value,slot=$("#slot").value;
+ const filtered=data.teams.map(t=>({...t,visible:t.players.filter(p=>(!position||p.position===position)&&(!slot||(slot==="starter"?!["BN","IR"].includes(p.slot):p.slot===slot))&&(!q||[p.name,p.nflTeam,t.name,p.id].some(v=>String(v||"").toLowerCase().includes(q))))})).filter(t=>t.visible.length);
+ $("#rosters").innerHTML=filtered.length?filtered.map(t=>{
+  const sections=["Starters","Bench","IR"].map(g=>{const pp=t.visible.filter(p=>group(p)===g);return pp.length?'<div class="group-title">'+g+' · '+pp.length+'</div>'+pp.map(playerRow).join(""):"";}).join("");
+  return '<article class="team '+(t.id==="7"?"mine":"")+'"><div class="team-head"><h2>'+esc(t.name)+'</h2>'+(t.id==="7"?'<span class="pill">YOUR TEAM</span>':'<small>'+t.players.length+' players</small>')+'</div><div class="player-groups">'+sections+'</div></article>';
+ }).join(""):'<div class="empty">No matching rostered players.</div>';
+ const hits=filtered.flatMap(t=>t.visible.map(p=>({...p,fantasyTeam:t.name,isMine:t.id==="7"}))).sort((a,b)=>a.name.localeCompare(b.name));
+ $("#find").innerHTML=hits.length?hits.map(p=>'<div class="result"><span class="pos">'+esc(p.position)+'</span><div><strong>'+esc(p.name)+(p.status?'<span class="injury">'+esc(p.status)+'</span>':'')+'</strong><small>'+esc(p.nflTeam||"FA")+' · Yahoo '+esc(p.id)+'</small></div><div class="ownership"><strong>'+esc(p.fantasyTeam)+'</strong><small>'+esc(p.slot)+(p.isMine?" · Your roster":"")+'</small></div></div>').join(""):'<div class="empty">No matching players.</div>';
+}
+function renderProjections(){
+ const area=$("#projections");
+ if(!projections){
+   area.innerHTML='<div class="empty">Projection numbers are not published yet. The model must first ingest 2026 nflverse data and pass validation checks. No rankings are being fabricated.</div>'; return;
+ }
+ const q=$("#search").value.trim().toLowerCase(),position=$("#position").value,slot=$("#slot").value;
+ const filtered=projections.players.filter(p=>(!position||p.position===position)&&(!slot||(slot==="starter"?!["BN","IR"].includes(p.rosterSlot):p.rosterSlot===slot))&&(!q||[p.name,p.nflTeam,p.fantasyTeam,p.yahooId].some(v=>String(v||"").toLowerCase().includes(q)))).sort((a,b)=>b.conditionalPointsPerGame-a.conditionalPointsPerGame);
+ const caption='<div style="padding:16px;border-bottom:1px solid var(--line)"><strong>Per-active-game projections · provisional model</strong><div class="sub">2026 stats through Week '+esc(projections.statsThroughWeek||"?")+' · not injury, schedule, or bye-adjusted · excludes K / DEF</div></div>';
+ area.innerHTML=caption+(filtered.length?filtered.map(p=>'<div class="result" style="grid-template-columns:44px minmax(0,1fr) 95px"><span class="pos">'+esc(p.position)+'</span><div><strong>'+esc(p.name)+(p.injuryStatus?'<span class="injury">'+esc(p.injuryStatus)+'</span>':'')+'</strong><small>'+esc(p.fantasyTeam)+' · '+esc(p.nflTeam)+' · '+esc(p.sampleGames2026)+' games sampled</small><div class="sub">Carries '+esc(p.stats.carries)+' · Targets '+esc(p.stats.targets)+' · Pass att '+esc(p.stats.passAttempts)+'</div></div><div style="text-align:right"><strong style="color:var(--accent)">'+Number(p.conditionalPointsPerGame).toFixed(1)+'</strong><small>Pts / game</small></div></div>').join(""):'<div class="empty">No matching projected players.</div>');
+}
+for(const b of document.querySelectorAll("[data-tab]"))b.addEventListener("click",()=>{tab=b.dataset.tab;for(const x of document.querySelectorAll("[data-tab]"))x.classList.toggle("active",x.dataset.tab===tab);$("#rosters").classList.toggle("hidden",tab!=="rosters");$("#find").classList.toggle("hidden",tab!=="find");$("#projections").classList.toggle("hidden",tab!=="projections");});
+for(const id of ["search","position","slot"])$("#"+id).addEventListener(id==="search"?"input":"change",()=>{render();renderProjections();});
+fetch("./data/rosters.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("HTTP "+r.status);return r.json()}).then(d=>{data=d;data.teams.sort((a,b)=>(a.id==="7"?-1:0)-(b.id==="7"?-1:0)||a.name.localeCompare(b.name));$("#teamsCount").textContent=data.teams.length;$("#playersCount").textContent=data.teams.reduce((s,t)=>s+t.players.length,0);$("#irCount").textContent=data.teams.reduce((s,t)=>s+t.players.filter(p=>p.slot==="IR").length,0);$("#stamp").textContent="Snapshot: "+new Date(data.retrievedAt).toLocaleString(undefined,{dateStyle:"medium",timeStyle:"short"});render();}).catch(e=>{$("#stamp").textContent="Unable to load roster data";$("#rosters").innerHTML='<div class="empty">Serve this directory over HTTP to load data/rosters.json. '+esc(e.message)+'</div>';});
+fetch("./data/projections.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("Not yet published");return r.json();}).then(d=>{if(Array.isArray(d.players))projections=d;renderProjections();}).catch(()=>{renderProjections();});
+</script></body></html>
