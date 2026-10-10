@@ -391,6 +391,34 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
  .match-compact-footer{font-size:13px}
 }
 
+
+/* Compact, lineup-based available-player recommendations. */
+.waiver-panel{margin:18px 0;background:#f8e8c9}
+.waiver-horizon{font-size:14px;min-width:166px;max-width:260px}
+.waiver-list{padding:0 20px}
+.waiver-item{display:grid;grid-template-columns:25px minmax(0,1fr) 95px;gap:12px;align-items:center;padding:12px 3px;border-bottom:1px solid #dec6a5}
+.waiver-item:last-child{border-bottom:0}
+.waiver-rank{color:#a67c50;font:600 24px 'Cormorant Garamond',serif;text-align:center}
+.waiver-details{min-width:0}.waiver-details strong{font:700 16px 'Source Sans 3',sans-serif;color:#502f1b;display:block}
+.waiver-details span{font-size:12px;color:#82644a;display:block}
+.waiver-details small{font-size:12px;color:#65472e;display:block;margin-top:2px}
+.waiver-points{font:700 29px/.9 'Cormorant Garamond',Georgia,serif;color:#6f482b;text-align:right;white-space:nowrap}
+.waiver-points span{display:block;font:600 11px 'Source Sans 3',sans-serif;color:#816448;line-height:1.35}
+.waiver-footnote,.waiver-note{font-size:12px;line-height:1.5;color:#74553d}
+.waiver-footnote{padding:12px 3px 8px}
+.waiver-note{margin:6px 20px 16px}
+@media(max-width:650px){
+ .waiver-panel .panel-header{align-items:flex-start;flex-direction:column}
+ .waiver-horizon{width:100%;max-width:none}
+ .waiver-list{padding:0 12px}
+ .waiver-item{grid-template-columns:20px minmax(0,1fr) 73px;gap:7px}
+ .waiver-rank{font-size:21px}
+ .waiver-details strong{font-size:15px}
+ .waiver-details span,.waiver-details small{font-size:11px}
+ .waiver-points{font-size:24px}
+ .waiver-note{margin:5px 12px 14px}
+}
+
 </style>
 <link rel="stylesheet" href="./clean-dashboard.css">
 </head><body>
@@ -412,6 +440,16 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 <div class="matchup" id="hero"><div class="loading">Loading this week's matchup…</div></div>
 <div class="record-card"><div class="record-upper"><div class="eyebrow">SEASON RECORD</div><div class="record-fig mono" id="wl">—</div><div class="record-desc" id="rankDesc">League standings</div></div><div class="record-stats"><div><strong class="mono" id="pointsFor">—</strong><small>POINTS SCORED</small></div><div><strong id="waiverRank" class="mono">—</strong><small>WAIVER PRIORITY</small></div></div></div>
 </div>
+<section class="panel waiver-panel" aria-label="Best available player recommendations">
+ <div class="panel-header"><div><div class="panel-title">Best available players</div><div class="panel-sub">Estimated improvement to your optimal starting lineup</div></div>
+ <select id="waiverHorizon" class="select waiver-horizon" aria-label="Projection horizon">
+  <option value="next_week">Week 6</option>
+  <option value="four_weeks">Weeks 6–9</option>
+  <option value="rest_of_season">Rest of season · Weeks 6–17</option>
+ </select></div>
+ <div id="waiverRecommendations" class="waiver-list"><div class="empty-copy">Preparing free-agent recommendations…</div></div>
+ <p class="waiver-note">Modeled lineup-point gains, not raw player rankings. Assumes scheduled players participate in future weeks; injuries, suspensions and waiver eligibility require separate confirmation. No player moves are made in Yahoo.</p>
+</section>
 <section class="panel recommendations-panel" aria-label="Suggested lineup changes">
 <div class="panel-header"><div><div class="panel-title">Suggested lineup changes</div><div class="panel-sub">Based on this week's preliminary model · your current roster</div></div><span class="chip">WEEK 5</span></div>
 <div id="lineupRecommendations" class="recommendation-grid"><div class="empty-copy">Calculating lineup options…</div></div>
@@ -467,7 +505,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const number=n=>n==null?'—':Number(n).toFixed(1);
-let rosters=null,available=null,week=null,model=null,backtest=null,weekly=null,futureData=null,selectedTeam='7',finderVisible=36;
+let rosters=null,available=null,week=null,model=null,backtest=null,weekly=null,futureData=null,waivers=null,selectedTeam='7',finderVisible=36;
 const TEAM_ID='7';
 function team(id){return rosters.teams.find(t=>t.id===String(id));}
 function standing(id){return week.standings.find(s=>s.teamId===String(id));}
@@ -518,6 +556,25 @@ function initOverview(){
  $('#leagueBoard').innerHTML=week.matchups.map(m=>'<div class="scoreboard-item'+(m.home.id===TEAM_ID||m.away.id===TEAM_ID?' mine':'')+'"><div class="side">'+esc(m.home.name)+'</div><div class="pts mono">'+number(m.home.projectedPoints)+'</div><div class="dash">–</div><div class="pts mono">'+number(m.away.projectedPoints)+'</div><div class="side right">'+esc(m.away.name)+'</div></div>').join('');
  $('#boardWeek').textContent='WEEK '+week.week;$('#projectionWeek').textContent='WEEK '+week.week;
  $('#sync').textContent='Yahoo snapshot · '+new Date(week.retrievedAt).toLocaleString(undefined,{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'});
+}
+function renderWaivers(){
+ const root=$('#waiverRecommendations');
+ if(!waivers?.horizons){root.innerHTML='<div class="empty-copy">Waiver-impact rankings have not been generated yet.</div>';return;}
+ const key=$('#waiverHorizon').value;
+ const selected=waivers.horizons[key];
+ if(!selected){root.innerHTML='<div class="empty-copy">No recommendations for this horizon.</div>';return;}
+ const items=selected.recommendations||[];
+ const weeks=selected.weeks||[];
+ if(!items.length){root.innerHTML='<div class="empty-copy">No modeled available player currently improves your legal starting lineup over the selected period.</div>';return;}
+ root.innerHTML=items.slice(0,5).map((p,i)=>{
+   const context=p.suggestedDrop ? 'Drop: '+esc(p.suggestedDrop.name) : 'No drop suggested';
+   const rate=(p.yahooWideRosteredPercent==null?'':(' · '+Math.round(p.yahooWideRosteredPercent)+'% rostered Yahoo-wide'));
+   return '<div class="waiver-item"><span class="waiver-rank">'+(i+1)+'</span>'+
+     '<div class="waiver-details"><strong>'+esc(p.name)+'</strong><span>'+esc(p.position)+' · '+esc(p.nflTeam||'NFL free agent')+rate+'</span><small>'+context+'</small></div>'+
+     '<div class="waiver-points">+'+Number(p.lineupGain).toFixed(1)+'<span>lineup pts</span></div></div>';
+ }).join('')+
+ '<div class="waiver-footnote">Cumulative model gain over Weeks '+weeks[0]+(weeks.length>1?'–'+weeks[weeks.length-1]:'')+
+ ' after a one-player replacement. The rest of your lineup is optimized each week.</div>';
 }
 function renderRecommendations(){
  const area=$('#lineupRecommendations');
@@ -675,15 +732,16 @@ function showPage(page){
  document.querySelectorAll('.nav-btn').forEach(x=>{const on=x.dataset.page===page;x.classList.toggle('active',on);x.setAttribute('aria-current',on?'page':'false');});
  window.scrollTo({top:0,behavior:'smooth'});
 }
+$('#waiverHorizon').addEventListener('change',renderWaivers);
 document.querySelectorAll('.nav-btn').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
 document.querySelectorAll('[data-jump]').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.jump)));
 async function get(path){const r=await fetch('./data/'+path+'.json',{cache:'no-store'});if(!r.ok)throw Error('Data file '+path+' returned HTTP '+r.status);return r.json();}
 (async()=>{
  try{
-  [rosters,available,week,model,backtest,weekly,futureData]=await Promise.all([get('rosters'),get('available'),get('week'),get('projections').catch(()=>null),get('backtest').catch(()=>null),get('weekly').catch(()=>null),get('future').catch(()=>null)]);
+  [rosters,available,week,model,backtest,weekly,futureData,waivers]=await Promise.all([get('rosters'),get('available'),get('week'),get('projections').catch(()=>null),get('backtest').catch(()=>null),get('weekly').catch(()=>null),get('future').catch(()=>null),get('waivers').catch(()=>null)]);
   if(!Array.isArray(rosters.teams)||!Array.isArray(available.players)||!Array.isArray(week.matchups)||!Array.isArray(week.standings)||!team(TEAM_ID)||!matchup())throw Error('League data incomplete or mismatched');
   if(rosters.leagueId!==week.leagueId||available.leagueId!==rosters.leagueId)throw Error('League identity mismatch');
-  initOverview();initRosters();initFinder();renderProjection();renderRecommendations();window.DaVinciLab?.init();
+  initOverview();initRosters();initFinder();renderProjection();renderRecommendations();renderWaivers();window.DaVinciLab?.init();
  }catch(e){
   $('#hero').innerHTML='<div class="loading"><strong>Dashboard data could not be loaded.</strong><p>'+esc(e.message)+'</p><p>Check the published JSON files or reload this page.</p></div>';
   $('#sync').textContent='Data load failed';
