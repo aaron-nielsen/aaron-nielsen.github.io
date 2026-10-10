@@ -97,6 +97,22 @@ function setup(){
  assert.ok(element('transactionCards').innerHTML.includes('Not graded'));
  assert.ok(!element('transactionCards').innerHTML.includes('NaN'));
 }
+// No-op activity must not receive an invented C grade; summarize coverage reasons.
+{
+ const {ctx,element}=setup();
+ ctx.DaVinciTransactions.init({
+  rosters:{teams:[{id:'7',name:'No-op Team',players:[]}]},
+  future:{endWeek:5,players:[]},week:5,teamId:'7',
+  transactions:{transactions:[{transaction_id:'noop',timestamp:1,status:'complete',
+   type:'add',team_ids:['7'],players_added:[],players_dropped:[]}]},
+  optimize:()=>({score:0})
+ });
+ ctx.DaVinciTransactions.update();
+ assert.match(element('txnStats').textContent,/0 projected grades/);
+ assert.match(element('txnStats').textContent,/1 ungraded/);
+ assert.match(element('txnStats').textContent,/no player roster change/);
+ assert.match(element('transactionCards').innerHTML,/Not graded/);
+}
 // Real data snapshots: every verified transaction remains visible in CSU and Nebraska.
 require(path.join(base,'special-teams-model.js'));
 const context=load('data/special-teams-context.json');
