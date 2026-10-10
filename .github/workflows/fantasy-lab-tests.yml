@@ -21,4 +21,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Validate fantasy K/DST models and nine-starter lineups
-        run: node fantasy-preview/tests/special-teams.test.cjs
+        run: |
+          node fantasy-preview/tests/special-teams.test.cjs
+          node fantasy-preview/tests/roster-advice.test.cjs
