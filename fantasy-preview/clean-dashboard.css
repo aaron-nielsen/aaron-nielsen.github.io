@@ -152,3 +152,21 @@ body{font:16px/1.48 'Source Sans 3',Arial,sans-serif;color:var(--text);backgroun
  .stat-component{grid-template-columns:minmax(0,1fr) 83px 51px;gap:5px;font-size:11px;padding:8px 0}
  .stat-component strong{font-size:12px}
 }
+
+
+/* Evaluation panel: condensed, readable comparison across positions */
+.validation-wrap{padding:18px 20px 20px}
+.validation-columns{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.validation-columns h3{font:750 16px/1.3 'Source Sans 3',Arial,sans-serif;color:#403a33;margin:0 0 6px}
+.validation-columns p{font-size:13px;line-height:1.55;color:#72675b;margin:5px 0 12px}
+.validation-columns p strong{color:#4c5d47}
+.validation-table{width:100%;border-collapse:collapse;font-size:12px;font-variant-numeric:tabular-nums}
+.validation-table th,.validation-table td{padding:7px 9px;border-bottom:1px solid #e7ded2;text-align:right}
+.validation-table th:first-child{text-align:left}
+.validation-table thead{background:#f5ecde;color:#655c53}
+.validation-table tbody th{color:#4c5042}
+@media(max-width:750px){
+ .validation-columns{grid-template-columns:1fr;gap:16px}
+ .validation-wrap{padding:15px 13px}
+ .validation-table{font-size:12px}
+}
