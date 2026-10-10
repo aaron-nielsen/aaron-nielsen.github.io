@@ -92,6 +92,8 @@ function enrich({context,league,rosters,available,futureData,weekly}){
  const rules=league.scoringByYahooStatId,model=train(context),scores=new Map();
  const qbs=new Map();
  for(const p of futureData.players.filter(p=>p.position==="QB")){
+  const injury=String(p.injuryStatus||"").toUpperCase();
+  if(["O","OUT","IR","IR-R","SUSP","SUS","CEL","PUP","PUP-R","NFI","NFI-R"].includes(injury)||p.rosterSlot==="IR")continue;
   const k=asTeam(p.nflTeam),previous=qbs.get(k);
   if(!previous||val(p.baselineStats?.passAttempts)>val(previous.baselineStats?.passAttempts))qbs.set(k,p);
  }
