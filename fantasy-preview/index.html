@@ -346,18 +346,18 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 <div class="note"><strong>*Waiver caveat:</strong> Yahoo confirms which players are available to acquire in your league, but the connected data does not distinguish unrestricted free agents from players still on waivers. Check Yahoo for claim eligibility and processing times. Available-player data is a sampled pool (up to 100 per position), not every NFL player.</div>
 </section>
 <section id="page-projections" class="page" hidden>
-<div class="section-top"><div><div class="eyebrow">Current-season forecasts</div><h2>Player projections</h2><p>Experimental player estimates and Yahoo’s separate weekly team forecasts.</p></div></div>
+<div class="section-top"><div><div class="eyebrow">NFL Week 5 · CSU Stats</div><h2>Weekly player forecasts</h2><p>Schedule, opponent and availability adjustments. Experimental and separate from Yahoo.</p></div></div>
 <div class="projection-split">
-<div class="panel"><div class="panel-header"><div><div class="panel-title">My player projections</div><div class="panel-sub">Model points per active game · unvalidated</div></div><span class="chip">MODEL V0.3</span></div><div class="model-status" id="modelStatus"><div class="eyebrow">EXPERIMENTAL</div><div class="headline">Loading player projections</div></div></div>
+<div class="panel"><div class="panel-header"><div><div class="panel-title">My weekly forecasts</div><div class="panel-sub">Opponent and availability status</div></div><span class="chip">MODEL V0.3</span></div><div class="model-status" id="modelStatus"><div class="eyebrow">EXPERIMENTAL</div><div class="headline">Loading player projections</div></div></div>
 <div class="panel"><div class="panel-header"><div><div class="panel-title">Yahoo team projections</div><div class="panel-sub">Projected final points for all 14 teams, current week</div></div><span class="chip" id="projectionWeek">WEEK 5</span></div><div class="projection-list" id="forecastList"></div></div>
 </div>
 <div class="panel all-predictions-panel" style="margin-top:19px">
-  <div class="panel-header"><div><div class="panel-title">League player projections</div><div class="panel-sub" id="projectionCoverage">Experimental per-active-game estimates for rostered QB, RB, WR and TE</div></div></div>
+  <div class="panel-header"><div><div class="panel-title">All player forecasts</div><div class="panel-sub" id="projectionCoverage">Experimental weekly estimates for QB, RB, WR, TE</div></div></div>
   <div class="projection-controls"><input type="search" id="projectionSearch" placeholder="Search player or fantasy team" aria-label="Search player projections"><select id="projectionPos" class="select" aria-label="Filter projected position"><option value="all">All positions</option><option>QB</option><option>RB</option><option>WR</option><option>TE</option></select><select id="projectionOwnership" class="select" aria-label="Filter projected ownership"><option value="all">All players</option><option value="mine">My roster</option><option value="available">Available</option><option value="other">Other teams</option></select></div>
   <div id="allProjections" class="projection-league-list"><div class="empty-copy">Awaiting projection data</div></div>
 </div>
 <div class="panel" style="margin-top:19px"><div class="panel-header"><div><div class="panel-title">Historical accuracy</div><div class="panel-sub">Rolling as-of backtest · 2025 holdout weeks</div></div></div><div id="backtestResults" class="backtest-results"><div class="empty-copy">No historical evaluation file published yet.</div></div></div>
-<div class="note"><strong>Model limits:</strong> The independent projections are conditional-per-active-game estimates, NOT this week's expected points. Injuries, byes and opponents are not incorporated; no kicker or defense model is available yet. The historical test uses a subset of league scoring categories and assumes the player logged a statistical appearance. Yahoo team forecasts use a separate system.</div>
+<div class="note"><strong>Week 5 prototype:</strong> Byes and Yahoo-reported out/exempt/IR statuses yield zero; questionable players are marked CHECK rather than assigned an invented probability. Other forecasts assume the player is active. Opponent effects are based on completed 2026 games, heavily shrunk and capped at ±10%. Yahoo injury data is a dated snapshot. K/DEF and some scoring categories remain unmodeled. These forecasts are separate from Yahoo’s team forecasts.</div>
 </section>
 </main>
 <footer class="footer"><div>DA VINCI FANTASY LAB / CSU STATS · MMXXVI</div><div>READ-ONLY PROTOTYPE · POWERED BY YAHOO LEAGUE DATA</div></footer>
@@ -367,14 +367,33 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const number=n=>n==null?'—':Number(n).toFixed(1);
-let rosters=null,available=null,week=null,model=null,backtest=null,selectedTeam='7',finderVisible=36;
+let rosters=null,available=null,week=null,model=null,backtest=null,weekly=null,selectedTeam='7',finderVisible=36;
 const TEAM_ID='7';
 function team(id){return rosters.teams.find(t=>t.id===String(id));}
 function standing(id){return week.standings.find(s=>s.teamId===String(id));}
 function position(p){return '<span class="position '+esc(p)+'">'+esc(p)+'</span>';}
 function status(p){return p.status?'<span class="status">'+esc(p.status)+'</span>':'';}
 function percent(v){return v==null||v===''||!Number.isFinite(Number(v))?'—':Math.round(Number(v))+'%';}
-function row(p){return '<div class="player-line">'+position(p.position)+'<div class="player-info"><b>'+esc(p.name)+status(p)+'</b><span>'+esc(p.nflTeam||'NFL free agent')+'</span></div><span class="slot-badge">'+esc(p.slot)+'</span></div>';}
+function weeklyProjection(p){return weekly?.players?.find(w=>String(w.yahooId)===String(p.id))||null;}
+function weeklyDisplay(p){
+ if(!p)return '—';
+ if(p.forecastStatus==='bye')return 'BYE';
+ if(p.forecastStatus==='unavailable_reported')return 'OUT';
+ if(p.weeklyProjectedPoints==null)return 'CHECK';
+ return number(p.weeklyProjectedPoints);
+}
+function weeklyOpponent(p){
+ if(!p)return 'Opponent unknown';
+ if(p.forecastStatus==='bye')return 'Bye week';
+ return p.opponent?(p.location==='home'?'vs ':'@ ')+p.opponent:'Schedule unknown';
+}
+function row(p){
+ const w=weeklyProjection(p);
+ return '<div class="player-line">'+position(p.position)+
+ '<div class="player-info"><b>'+esc(p.name)+status(p)+'</b><span>'+esc(p.nflTeam||'NFL free agent')+' · '+esc(weeklyOpponent(w))+'</span></div>'+
+ '<span class="weekly-mini" title="Experimental weekly points; check injury status">'+esc(weeklyDisplay(w))+'</span>'+
+ '<span class="slot-badge">'+esc(p.slot)+'</span></div>';
+}
 function group(id,players,label){$('#'+id).innerHTML='<div class="group-label">'+label+' <span>'+players.length+' PLAYERS</span></div>'+(players.length?players.map(row).join(''):'<div class="empty-copy">No players in this group</div>');}
 function matchup(){return week.matchups.find(m=>m.home.id===TEAM_ID||m.away.id===TEAM_ID);}
 function initOverview(){
@@ -389,7 +408,7 @@ function initOverview(){
  const st=standing(TEAM_ID);$('#wl').innerHTML=esc(st.wins)+'<span>–</span>'+esc(st.losses);$('#rankDesc').textContent='#'+st.rank+' of '+rosters.teams.length+' in league standings';
  $('#pointsFor').textContent=number(st.pointsFor);$('#waiverRank').textContent=st.waiverPriority==null?'—':'#'+st.waiverPriority;
  const starters=team(TEAM_ID).players.filter(p=>p.slot!=='BN'&&p.slot!=='IR');
- $('#myLineup').innerHTML=starters.map(p=>'<div class="mini-row">'+position(p.position)+'<div><div class="row-name">'+esc(p.name)+status(p)+'</div><div class="row-detail">'+esc(p.nflTeam)+' · '+esc(p.slot)+'</div></div><span class="row-slot">STARTER</span></div>').join('');
+ $('#myLineup').innerHTML=starters.map(p=>'<div class="mini-row">'+position(p.position)+'<div><div class="row-name">'+esc(p.name)+status(p)+'</div><div class="row-detail">'+esc(p.nflTeam)+' · '+esc(p.slot)+' · '+esc(weeklyOpponent(weeklyProjection(p)))+'</div></div><span class="row-slot">'+esc(weeklyDisplay(weeklyProjection(p)))+'</span></div>').join('');
  $('#leagueBoard').innerHTML=week.matchups.map(m=>'<div class="scoreboard-item'+(m.home.id===TEAM_ID||m.away.id===TEAM_ID?' mine':'')+'"><div class="side">'+esc(m.home.name)+'</div><div class="pts mono">'+number(m.home.projectedPoints)+'</div><div class="dash">–</div><div class="pts mono">'+number(m.away.projectedPoints)+'</div><div class="side right">'+esc(m.away.name)+'</div></div>').join('');
  $('#weekHead').textContent=String(week.week).padStart(2,'0');$('#boardWeek').textContent='WEEK '+week.week;$('#projectionWeek').textContent='WEEK '+week.week;
  $('#sync').textContent='Yahoo snapshot · '+new Date(week.retrievedAt).toLocaleString(undefined,{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'});
@@ -504,7 +523,7 @@ document.querySelectorAll('[data-jump]').forEach(b=>b.addEventListener('click',(
 async function get(path){const r=await fetch('./data/'+path+'.json',{cache:'no-store'});if(!r.ok)throw Error('Data file '+path+' returned HTTP '+r.status);return r.json();}
 (async()=>{
  try{
-  [rosters,available,week,model,backtest]=await Promise.all([get('rosters'),get('available'),get('week'),get('projections').catch(()=>null),get('backtest').catch(()=>null)]);
+  [rosters,available,week,model,backtest,weekly]=await Promise.all([get('rosters'),get('available'),get('week'),get('projections').catch(()=>null),get('backtest').catch(()=>null),get('weekly').catch(()=>null)]);
   if(!Array.isArray(rosters.teams)||!Array.isArray(available.players)||!Array.isArray(week.matchups)||!Array.isArray(week.standings)||!team(TEAM_ID)||!matchup())throw Error('League data incomplete or mismatched');
   if(rosters.leagueId!==week.leagueId||available.leagueId!==rosters.leagueId)throw Error('League identity mismatch');
   initOverview();initRosters();initFinder();renderProjection();
