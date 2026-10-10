@@ -1,0 +1,3811 @@
+{
+  "modelVersion": "multi-package-trades-v0.1",
+  "generatedAt": "2026-10-10T05:00:50.682104+00:00",
+  "startWeek": 6,
+  "endWeek": 17,
+  "season": 2026,
+  "leagueId": "470.l.258793",
+  "userTeamId": "7",
+  "rosterSnapshotAt": "2026-10-10T04:43:49.995Z",
+  "forecastGeneratedAt": "2026-10-10T05:00:12.040101+00:00",
+  "evaluation": {
+    "skillSlots": [
+      "QB",
+      "RB",
+      "RB",
+      "WR",
+      "WR",
+      "TE",
+      "W/R/T"
+    ],
+    "maxPlayersEachSide": 3,
+    "candidatePoolMaxPerTeam": 6,
+    "excludeIRSlots": true,
+    "method": "Exact legal-lineup dynamic programming per week on retained players plus traded package; both sides must gain"
+  },
+  "candidatesChecked": 21385,
+  "mutualPositiveCount": 74,
+  "partnerTeamsSkipped": [],
+  "trades": [
+    {
+      "partnerTeamId": "12",
+      "partnerTeam": "Juicy Juke Brody",
+      "youSend": [
+        {
+          "yahooId": "33991",
+          "name": "Breece Hall",
+          "position": "RB",
+          "nflTeam": "NYJ"
+        },
+        {
+          "yahooId": "31960",
+          "name": "Tony Pollard",
+          "position": "RB",
+          "nflTeam": "Ten"
+        },
+        {
+          "yahooId": "32671",
+          "name": "Joe Burrow",
+          "position": "QB",
+          "nflTeam": "Cin"
+        }
+      ],
+      "youReceive": [
+        {
+          "yahooId": "32711",
+          "name": "Jonathan Taylor",
+          "position": "RB",
+          "nflTeam": "Ind"
+        },
+        {
+          "yahooId": "32705",
+          "name": "D'Andre Swift",
+          "position": "RB",
+          "nflTeam": "Chi"
+        }
+      ],
+      "packageShape": "3-for-2",
+      "requiresRosterAdjustment": true,
+      "yourGain": 18.77,
+      "theirGain": 15.25,
+      "weeklyGains": [
+        {
+          "week": 6,
+          "you": 3.08,
+          "them": -3.08
+        },
+        {
+          "week": 7,
+          "you": 0.65,
+          "them": 4.03
+        },
+        {
+          "week": 8,
+          "you": 1.52,
+          "them": -1.22
+        },
+        {
+          "week": 9,
+          "you": 6.73,
+          "them": 0.08
+        },
+        {
+          "week": 10,
+          "you": 0.12,
+          "them": 10.7
+        },
+        {
+          "week": 11,
+          "you": -0.47,
+          "them": 2.4
+        },
+        {
+          "week": 12,
+          "you": 1.74,
+          "them": 1.34
+        },
+        {
+          "week": 13,
+          "you": -3.18,
+          "them": 4.6
+        },
+        {
+          "week": 14,
+          "you": 4.84,
+          "them": -0.66
+        },
+        {
+          "week": 15,
+          "you": 2.46,
+          "them": -0.91
+        },
+        {
+          "week": 16,
+          "you": 0.27,
+          "them": -0.61
+        },
+        {
+          "week": 17,
+          "you": 1.01,
+          "them": -1.42
+        }
+      ],
+      "balanceScore": 17.502,
+      "positionsTraded": [
+        "QB",
+        "RB"
+      ]
+    },
+    {
+      "partnerTeamId": "12",
+      "partnerTeam": "Juicy Juke Brody",
+      "youSend": [
+        {
+          "yahooId": "33991",
+          "name": "Breece Hall",
+          "position": "RB",
+          "nflTeam": "NYJ"
+        },
+        {
+          "yahooId": "31960",
+          "name": "Tony Pollard",
+          "position": "RB",
+          "nflTeam": "Ten"
+        },
+        {
+          "yahooId": "32671",
+          "name": "Joe Burrow",
+          "position": "QB",
+          "nflTeam": "Cin"
+        }
+      ],
+      "youReceive": [
+        {
+          "yahooId": "32711",
+          "name": "Jonathan Taylor",
+          "position": "RB",
+          "nflTeam": "Ind"
+        },
+        {
+          "yahooId": "32705",
+          "name": "D'Andre Swift",
+          "position": "RB",
+          "nflTeam": "Chi"
+        },
+        {
+          "yahooId": "33389",
+          "name": "Trevor Lawrence",
+          "position": "QB",
+          "nflTeam": "Jax"
+        }
+      ],
+      "packageShape": "3-for-3",
+      "requiresRosterAdjustment": false,
+      "yourGain": 19.52,
+      "theirGain": 12.89,
+      "weeklyGains": [
+        {
+          "week": 6,
+          "you": 3.08,
+          "them": -5.44
+        },
+        {
+          "week": 7,
+          "you": 0.65,
+          "them": 4.03
+        },
+        {
+          "week": 8,
+          "you": 1.52,
+          "them": -1.22
+        },
+        {
+          "week": 9,
+          "you": 6.73,
+          "them": 0.08
+        },
+        {
+          "week": 10,
+          "you": 0.12,
+          "them": 10.7
+        },
+        {
+          "week": 11,
+          "you": -0.47,
+          "them": 2.4
+        },
+        {
+          "week": 12,
+          "you": 1.74,
+          "them": 1.34
+        },
+        {
+          "week": 13,
+          "you": -3.18,
+          "them": 4.6
+        },
+        {
+          "week": 14,
+          "you": 4.84,
+          "them": -0.66
+        },
+        {
+          "week": 15,
+          "you": 2.46,
+          "them": -0.91
+        },
+        {
+          "week": 16,
+          "you": 0.61,
+          "them": -0.61
+        },
+        {
+          "week": 17,
+          "you": 1.42,
+          "them": -1.42
+        }
+      ],
+      "balanceScore": 15.232,
+      "positionsTraded": [
+        "QB",
+        "RB"
+      ]
+    },
+    {
+      "partnerTeamId": "12",
+      "partnerTeam": "Juicy Juke Brody",
+      "youSend": [
+        {
+          "yahooId": "40121",
+          "name": "Michael Wilson",
+          "position": "WR",
+          "nflTeam": "Ari"
+        },
+        {
+          "yahooId": "31960",
+          "name": "Tony Pollard",
+          "position": "RB",
+          "nflTeam": "Ten"
+        },
+        {
+          "yahooId": "32671",
+          "name": "Joe Burrow",
+          "position": "QB",
+          "nflTeam": "Cin"
+        }
+      ],
+      "youReceive": [
+        {
+          "yahooId": "32703",
+          "name": "Tee Higgins",
+          "position": "WR",
+          "nflTeam": "Cin"
+        },
+        {
+          "yahooId": "32705",
+          "name": "D'Andre Swift",
+          "position": "RB",
+          "nflTeam": "Chi"
+        },
+        {
+          "yahooId": "40039",
+          "name": "Zay Flowers",
+          "position": "WR",
+          "nflTeam": "Bal"
+        }
+      ],
+      "packageShape": "3-for-3",
+      "requiresRosterAdjustment": false,
+      "yourGain": 12.9,
+      "theirGain": 18.46,
+      "weeklyGains": [
+        {
+          "week": 6,
+          "you": -1.58,
+          "them": 1.58
+        },
+        {
+          "week": 7,
+          "you": 3.08,
+          "them": 1.33
+        },
+        {
+          "week": 8,
+          "you": 2.73,
+          "them": -1.89
+        },
+        {
+          "week": 9,
+          "you": 7.54,
+          "them": -0.08
+        },
+        {
+          "week": 10,
+          "you": -3.64,
+          "them": 11.55
+        },
+        {
+          "week": 11,
+          "you": 3.41,
+          "them": 0.2
+        },
+        {
+          "week": 12,
+          "you": 0.37,
+          "them": 2.33
+        },
+        {
+          "week": 13,
+          "you": -3.05,
+          "them": 4.47
+        },
+        {
+          "week": 14,
+          "you": 7.33,
+          "them": -0.86
+        },
+        {
+          "week": 15,
+          "you": -1.91,
+          "them": 1.79
+        },
+        {
+          "week": 16,
+          "you": -0.83,
+          "them": -1.3
+        },
+        {
+          "week": 17,
+          "you": -0.55,
+          "them": -0.66
+        }
+      ],
+      "balanceScore": 15.115,
+      "positionsTraded": [
+        "QB",
+        "RB",
+        "WR"
+      ]
+    },
+    {
+      "partnerTeamId": "4",
+      "partnerTeam": "the football understander",
+      "youSend": [
+        {
+          "yahooId": "40121",
+          "name": "Michael Wilson",
+          "position": "WR",
+          "nflTeam": "Ari"
+        },
+        {
+          "yahooId": "33991",
+          "name": "Breece Hall",
+          "position": "RB",
+          "nflTeam": "NYJ"
+        },
+        {
+          "yahooId": "32671",
+          "name": "Joe Burrow",
+          "position": "QB",
+          "nflTeam": "Cin"
+        }
+      ],
+      "youReceive": [
+        {
+          "yahooId": "41791",
+          "name": "Ashton Jeanty",
+          "position": "RB",
+          "nflTeam": "LV"
+        },
+        {
+          "yahooId": "40993",
+          "name": "Bucky Irving",
+          "position": "RB",
+          "nflTeam": "TB"
+        },
+        {
+          "yahooId": "33393",
+          "name": "Ja'Marr Chase",
+          "position": "WR",
+          "nflTeam": "Cin"
+        }
+      ],
+      "packageShape": "3-for-3",
+      "requiresRosterAdjustment": false,
+      "yourGain": 13.86,
+      "theirGain": 12.27,
+      "weeklyGains": [
+        {
+          "week": 6,
+          "you": 0.52,
+          "them": 0.89
+        },
+        {
+          "week": 7,
+          "you": 1.41,
+          "them": -1.38
+        },
+        {
+          "week": 8,
+          "you": 2.2,
+          "them": 12.38
+        },
+        {
+          "week": 9,
+          "you": 6.04,
+          "them": -0.88
+        },
+        {
+          "week": 10,
+          "you": -1.02,
+          "them": 0.95
+        },
+        {
+          "week": 11,
+          "you": 2.33,
+          "them": 0.04
+        },
+        {
+          "week": 12,
+          "you": -2.7,
+          "them": 3.82
+        },
+        {
+          "week": 13,
+          "you": 0.2,
+          "them": 1.31
+        },
+        {
+          "week": 14,
+          "you": 6.86,
+          "them": -4.38
+        },
+        {
+          "week": 15,
+          "you": 2.04,
+          "them": -2.75
+        },
+        {
+          "week": 16,
+          "you": -3.56,
+          "them": 3.54
+        },
+        {
+          "week": 17,
+          "you": -0.46,
+          "them": -1.27
+        }
+      ],
+      "balanceScore": 13.933,
+      "positionsTraded": [
+        "QB",
+        "RB",
+        "WR"
+      ]
+    },
+    {
+      "partnerTeamId": "12",
+      "partnerTeam": "Juicy Juke Brody",
+      "youSend": [
+        {
+          "yahooId": "40878",
+          "name": "Brock Bowers",
+          "position": "TE",
+          "nflTeam": "LV"
+        },
+        {
+          "yahooId": "33991",
+          "name": "Breece Hall",
+          "position": "RB",
+          "nflTeam": "NYJ"
+        },
+        {
+          "yahooId": "31960",
+          "name": "Tony Pollard",
+          "position": "RB",
+          "nflTeam": "Ten"
+        }
+      ],
+      "youReceive": [
+        {
+          "yahooId": "32711",
+          "name": "Jonathan Taylor",
+          "position": "RB",
+          "nflTeam": "Ind"
+        },
+        {
+          "yahooId": "32705",
+          "name": "D'Andre Swift",
+          "position": "RB",
+          "nflTeam": "Chi"
+        },
+        {
+          "yahooId": "40039",
+          "name": "Zay Flowers",
+          "position": "WR",
+          "nflTeam": "Bal"
+        }
+      ],
+      "packageShape": "3-for-3",
+      "requiresRosterAdjustment": false,
+      "yourGain": 11.21,
+      "theirGain": 17.31,
+      "weeklyGains": [
+        {
+          "week": 6,
+          "you": 1.67,
+          "them": -0.02
+        },
+        {
+          "week": 7,
+          "you": 0.62,
+          "them": 0.94
+        },
+        {
+          "week": 8,
+          "you": -6.58,
+          "them": -0.58
+        },
+        {
+          "week": 9,
+          "you": 8.39,
+          "them": -0.61
+        },
+        {
+          "week": 10,
+          "you": -1.55,
+          "them": 9.26
+        },
+        {
+          "week": 11,
+          "you": -0.45,
+          "them": 2.69
+        },
+        {
+          "week": 12,
+          "you": 1.43,
+          "them": 1.24
+        },
+        {
+          "week": 13,
+          "you": 0.93,
+          "them": -0.93
+        },
+        {
+          "week": 14,
+          "you": 2.13,
+          "them": 2.05
+        },
+        {
+          "week": 15,
+          "you": 1.37,
+          "them": 1.76
+        },
+        {
+          "week": 16,
+          "you": 4.34,
+          "them": -2.33
+        },
+        {
+          "week": 17,
+          "you": -1.09,
+          "them": 3.84
+        }
+      ],
+      "balanceScore": 13.287,
+      "positionsTraded": [
+        "RB",
+        "TE",
+        "WR"
+      ]
+    },
+    {
+      "partnerTeamId": "4",
+      "partnerTeam": "the football understander",
+      "youSend": [
+        {
+          "yahooId": "31960",
+          "name": "Tony Pollard",
+          "position": "RB",
+          "nflTeam": "Ten"
+        },
+        {
+          "yahooId": "32671",
+          "name": "Joe Burrow",
+          "position": "QB",
+          "nflTeam": "Cin"
+        }
+      ],
+      "youReceive": [
+        {
+          "yahooId": "33514",
+          "name": "Chuba Hubbard",
+          "position": "RB",
+          "nflTeam": "Car"
+        },
+        {
+          "yahooId": "40993",
+          "name": "Bucky Irving",
+          "position": "RB",
+          "nflTeam": "TB"
+        }
+      ],
+      "packageShape": "2-for-2",
+      "requiresRosterAdjustment": false,
+      "yourGain": 11.33,
+      "theirGain": 15.24,
+      "weeklyGains": [
+        {
+          "week": 6,
+          "you": 1.71,
+          "them": -1.26
+        },
+        {
+          "week": 7,
+          "you": 2.75,
+          "them": -2.6
+        },
+        {
+          "week": 8,
+          "you": 2.55,
+          "them": 12.03
+        },
+        {
+          "week": 9,
+          "you": 5.82,
+          "them": -0.27
+        },
+        {
+          "week": 10,
+          "you": 2.24,
+          "them": -1.77
+        },
+        {
+          "week": 11,
+          "you": -1.86,
+          "them": 4.23
+        },
+        {
+          "week": 12,
+          "you": 1.02,
+          "them": 0.1
+        },
+        {
+          "week": 13,
+          "you": 1.97,
+          "them": -0.46
+        },
+        {
+          "week": 14,
+          "you": 3.74,
+          "them": -0.91
+        },
+        {
+          "week": 15,
+          "you": -1.38,
+          "them": 0.67
+        },
+        {
+          "week": 16,
+          "you": -4.16,
+          "them": 4.14
+        },
+        {
+          "week": 17,
+          "you": -3.07,
+          "them": 1.34
+        }
+      ],
+      "balanceScore": 13.159,
+      "positionsTraded": [
+        "QB",
+        "RB"
+      ]
+    },
+    {
+      "partnerTeamId": "12",
+      "partnerTeam": "Juicy Juke Brody",
+      "youSend": [
+        {
+          "yahooId": "40878",
+          "name": "Brock Bowers",
+          "position": "TE",
+          "nflTeam": "LV"
+        },
+        {
+          "yahooId": "31960",
+          "name": "Tony Pollard",
+          "position": "RB",
+          "nflTeam": "Ten"
+        },
+        {
+          "yahooId": "32671",
+          "name": "Joe Burrow",
+          "position": "QB",
+          "nflTeam": "Cin"
+        }
+      ],
+      "youReceive": [
+        {
+          "yahooId": "32711",
+          "name": "Jonathan Taylor",
+          "position": "RB",
+          "nflTeam": "Ind"
+        },
+        {
+          "yahooId": "32703",
+          "name": "Tee Higgins",
+          "position": "WR",
+          "nflTeam": "Cin"
+        },
+        {
+          "yahooId": "33389",
+          "name": "Trevor Lawrence",
+          "position": "QB",
+          "nflTeam": "Jax"
+        }
+      ],
+      "packageShape": "3-for-3",
+      "requiresRosterAdjustment": false,
+      "yourGain": 10.13,
+      "theirGain": 25.24,
+      "weeklyGains": [
+        {
+          "week": 6,
+          "you": -1.3,
+          "them": -0.23
+        },
+        {
+          "week": 7,
+          "you": 3.44,
+          "them": 2.8
+        },
+        {
+          "week": 8,
+          "you": -6.53,
+          "them": -0.33
+        },
+        {
+          "week": 9,
+          "you": 8.84,
+          "them": 1.97
+        },
+        {
+          "week": 10,
+          "you": 7.07,
+          "them": -2.26
+        },
+        {
+          "week": 11,
+          "you": -1.72,
+          "them": 5.89
+        },
+        {
+          "week": 12,
+          "you": 0.56,
+          "them": 5.19
+        },
+        {
+          "week": 13,
+          "you": -1.06,
+          "them": -4.76
+        },
+        {
+          "week": 14,
+          "you": 3.7,
+          "them": 4.66
+        },
+        {
+          "week": 15,
+          "you": -1.62,
+          "them": 6.3
+        },
+        {
+          "week": 16,
+          "you": 0.24,
+          "them": 1.77
+        },
+        {
+          "week": 17,
+          "you": -1.49,
+          "them": 4.24
+        }
+      ],
+      "balanceScore": 13.159,
+      "positionsTraded": [
+        "QB",
+        "RB",
+        "TE",
+        "WR"
+      ]
+    },
+    {
+      "partnerTeamId": "4",
+      "partnerTeam": "the football understander",
+      "youSend": [
+        {
+          "yahooId": "31960",
+          "name": "Tony Pollard",
+          "position": "RB",
+          "nflTeam": "Ten"
+        },
+        {
+          "yahooId": "32671",
+          "name": "Joe Burrow",
+          "position": "QB",
+          "nflTeam": "Cin"
+        }
+      ],
+      "youReceive": [
+        {
+          "yahooId": "40993",
+          "name": "Bucky Irving",
+          "position": "RB",
+          "nflTeam": "TB"
+        },
+        {
+          "yahooId": "41922",
+          "name": "Cam Skattebo",
+          "position": "RB",
+          "nflTeam": "NYG"
+        }
+      ],
+      "packageShape": "2-for-2",
+      "requiresRosterAdjustment": false,
+      "yourGain": 10.89,
+      "theirGain": 16.72,
+      "weeklyGains": [
+        {
+          "week": 6,
+          "you": 3.22,
+          "them": -2.77
+        },
+        {
+          "week": 7,
+          "you": 3.23,
+          "them": -3.08
+        },
+        {
+          "week": 8,
+          "you": -1.17,
+          "them": 16.66
+        },
+        {
+          "week": 9,
+          "you": 5.56,
+          "them": -0.01
+        },
+        {
+          "week": 10,
+          "you": 0.47,
+          "them": 0.0
+        },
+        {
+          "week": 11,
+          "you": -2.05,
+          "them": 4.42
+        },
+        {
+          "week": 12,
+          "you": 2.92,
+          "them": -1.8
+        },
+        {
+          "week": 13,
+          "you": 3.92,
+          "them": -2.41
+        },
+        {
+          "week": 14,
+          "you": 2.71,
+          "them": 0.12
+        },
+        {
+          "week": 15,
+          "you": -1.43,
+          "them": 0.85
+        },
+        {
+          "week": 16,
+          "you": -4.34,
+          "them": 4.32
+        },
+        {
+          "week": 17,
+          "you": -2.15,
+          "them": 0.42
+        }
+      ],
+      "balanceScore": 12.896,
+      "positionsTraded": [
+        "QB",
+        "RB"
+      ]
+    },
+    {
+      "partnerTeamId": "12",
+      "partnerTeam": "Juicy Juke Brody",
+      "youSend": [
+        {
+          "yahooId": "40878",
+          "name": "Brock Bowers",
+          "position": "TE",
+          "nflTeam": "LV"
+        },
+        {
+          "yahooId": "31960",
+          "name": "Tony Pollard",
+          "position": "RB",
+          "nflTeam": "Ten"
+        },
+        {
+          "yahooId": "32671",
+          "name": "Joe Burrow",
+          "position": "QB",
+          "nflTeam": "Cin"
+        }
+      ],
+      "youReceive": [
+        {
+          "yahooId": "32711",
+          "name": "Jonathan Taylor",
+          "position": "RB",
+          "nflTeam": "Ind"
+        },
+        {
+          "yahooId": "32703",
+          "name": "Tee Higgins",
+          "position": "WR",
+          "nflTeam": "Cin"
+        }
+      ],
+      "packageShape": "3-for-2",
+      "requiresRosterAdjustment": true,
+      "yourGain": 9.38,
+      "theirGain": 27.6,
+      "weeklyGains": [
+        {
+          "week": 6,
+          "you": -1.3,
+          "them": 2.13
+        },
+        {
+          "week": 7,
+          "you": 3.44,
+          "them": 2.8
+        },
+        {
+          "week": 8,
+          "you": -6.53,
+          "them": -0.33
+        },
+        {
+          "week": 9,
+          "you": 8.84,
+          "them": 1.97
+        },
+        {
+          "week": 10,
+          "you": 7.07,
+          "them": -2.26
+        },
+        {
+          "week": 11,
+          "you": -1.72,
+          "them": 5.89
+        },
+        {
+          "week": 12,
+          "you": 0.56,
+          "them": 5.19
+        },
+        {
+          "week": 13,
+          "you": -1.06,
+          "them": -4.76
+        },
+        {
+          "week": 14,
+          "you": 3.7,
+          "them": 4.66
+        },
+        {
+          "week": 15,
+          "you": -1.62,
+          "them": 6.3
+        },
+        {
+          "week": 16,
+          "you": -0.1,
+          "them": 1.77
+        },
+        {
+          "week": 17,
+          "you": -1.9,
+          "them": 4.24
+        }
+      ],
+      "balanceScore": 12.692,
+      "positionsTraded": [
+        "QB",
+        "RB",
+        "TE",
+        "WR"
+      ]
+    },
+    {
+      "partnerTeamId": "12",
+      "partnerTeam": "Juicy Juke Brody",
+      "youSend": [
+        {
+          "yahooId": "40121",
+          "name": "Michael Wilson",
+          "position": "WR",
+          "nflTeam": "Ari"
+        },
+        {
+          "yahooId": "31960",
+          "name": "Tony Pollard",
+          "position": "RB",
+          "nflTeam": "Ten"
+        },
+        {
+          "yahooId": "32671",
+          "name": "Joe Burrow",
+          "position": "QB",
+          "nflTeam": "Cin"
+        }
+      ],
+      "youReceive": [
+        {
+          "yahooId": "32711",
+          "name": "Jonathan Taylor",
+          "position": "RB",
+          "nflTeam": "Ind"
+        },
+        {
+          "yahooId": "40039",
+          "name": "Zay Flowers",
+          "position": "WR",
+          "nflTeam": "Bal"
+        },
+        {
+          "yahooId": "33989",
+          "name": "Christian Watson",
+          "position": "WR",
+          "nflTeam": "GB"
+        }
+      ],
+      "packageShape": "3-for-3",
+      "requiresRosterAdjustment": false,
+      "yourGain": 9.77,
+      "theirGain": 17.6,
+      "weeklyGains": [
+        {
+          "week": 6,
+          "you": 3.05,
+          "them": -4.55
+        },
+        {
+          "week": 7,
+          "you": 1.99,
+          "them": 2.42
+        },
+        {
+          "week": 8,
+          "you": 0.81,
+          "them": 0.03
+        },
+        {
+          "week": 9,
+          "you": 8.52,
+          "them": -1.06
+        },
+        {
+          "week": 10,
+          "you": 5.74,
+          "them": -3.3
+        },
+        {
+          "week": 11,
+          "you": -2.51,
+          "them": 4.44
+        },
+        {
+          "week": 12,
+          "you": 1.0,
+          "them": 2.05
+        },
+        {
+          "week": 13,
+          "you": -12.83,
+          "them": 15.1
+        },
+        {
+          "week": 14,
+          "you": 8.84,
+          "them": -2.37
+        },
+        {
+          "week": 15,
+          "you": -1.25,
+          "them": 2.8
+        },
+        {
+          "week": 16,
+          "you": -2.04,
+          "them": 1.7
+        },
+        {
+          "week": 17,
+          "you": -1.55,
+          "them": 0.34
+        }
+      ],
+      "balanceScore": 11.882,
+      "positionsTraded": [
+        "QB",
+        "RB",
+        "WR"
+      ]
+    },
+    {
+      "partnerTeamId": "4",
+      "partnerTeam": "the football understander",
+      "youSend": [
+        {
+          "yahooId": "40121",
+          "name": "Michael Wilson",
+          "position": "WR",
+          "nflTeam": "Ari"
+        },
+        {
+          "yahooId": "32671",
+          "name": "Joe Burrow",
+          "position": "QB",
+          "nflTeam": "Cin"
+        }
+      ],
+      "youReceive": [
+        {
+          "yahooId": "41791",
+          "name": "Ashton Jeanty",
+          "position": "RB",
+          "nflTeam": "LV"
+        },
+        {
+          "yahooId": "33393",
+          "name": "Ja'Marr Chase",
+          "position": "WR",
+          "nflTeam": "Cin"
+        }
+      ],
+      "packageShape": "2-for-2",
+      "requiresRosterAdjustment": false,
+      "yourGain": 14.51,
+      "theirGain": 8.59,
+      "weeklyGains": [
+        {
+          "week": 6,
+          "you": -0.01,
+          "them": 1.42
+        },
+        {
+          "week": 7,
+          "you": 1.57,
+          "them": -1.54
+        },
+        {
+          "week": 8,
+          "you": 3.56,
+          "them": 11.02
+        },
+        {
+          "week": 9,
+          "you": 6.61,
+          "them": -1.45
+        },
+        {
+          "week": 10,
+          "you": 2.39,
+          "them": -1.92
+        },
+        {
+          "week": 11,
+          "you": 3.02,
+          "them": -0.65
+        },
+        {
+          "week": 12,
+          "you": -2.54,
+          "them": 3.66
+        },
+        {
+          "week": 13,
+          "you": -6.07,
+          "them": 4.01
+        },
+        {
+          "week": 14,
+          "you": 8.59,
+          "them": -6.11
+        },
+        {
+          "week": 15,
+          "you": 0.04,
+          "them": -0.75
+        },
+        {
+          "week": 16,
+          "you": -2.43,
+          "them": 2.41
+        },
+        {
+          "week": 17,
+          "you": -0.22,
+          "them": -1.51
+        }
+      ],
+      "balanceScore": 10.331,
+      "positionsTraded": [
+        "QB",
+        "RB",
+        "WR"
+      ]
+    },
+    {
+      "partnerTeamId": "12",
+      "partnerTeam": "Juicy Juke Brody",
+      "youSend": [
+        {
+          "yahooId": "31960",
+          "name": "Tony Pollard",
+          "position": "RB",
+          "nflTeam": "Ten"
+        },
+        {
+          "yahooId": "32671",
+          "name": "Joe Burrow",
+          "position": "QB",
+          "nflTeam": "Cin"
+        }
+      ],
+      "youReceive": [
+        {
+          "yahooId": "32705",
+          "name": "D'Andre Swift",
+          "position": "RB",
+          "nflTeam": "Chi"
+        },
+        {
+          "yahooId": "40039",
+          "name": "Zay Flowers",
+          "position": "WR",
+          "nflTeam": "Bal"
+        },
+        {
+          "yahooId": "33389",
+          "name": "Trevor Lawrence",
+          "position": "QB",
+          "nflTeam": "Jax"
+        }
+      ],
+      "packageShape": "2-for-3",
+      "requiresRosterAdjustment": true,
+      "yourGain": 7.94,
+      "theirGain": 19.33,
+      "weeklyGains": [
+        {
+          "week": 6,
+          "you": 0.79,
+          "them": -5.24
+        },
+        {
+          "week": 7,
+          "you": 1.97,
+          "them": 2.44
+        },
+        {
+          "week": 8,
+          "you": 3.38,
+          "them": -2.54
+        },
+        {
+          "week": 9,
+          "you": 5.44,
+          "them": 2.02
+        },
+        {
+          "week": 10,
+          "you": -3.31,
+          "them": 11.22
+        },
+        {
+          "week": 11,
+          "you": 0.97,
+          "them": 2.64
+        },
+        {
+          "week": 12,
+          "you": 1.97,
+          "them": 0.73
+        },
+        {
+          "week": 13,
+          "you": -3.18,
+          "them": 4.6
+        },
+        {
+          "week": 14,
+          "you": 4.25,
+          "them": 1.83
+        },
+        {
+          "week": 15,
+          "you": -1.71,
+          "them": 1.59
+        },
+        {
+          "week": 16,
+          "you": -1.24,
+          "them": -0.55
+        },
+        {
+          "week": 17,
+          "you": -1.39,
+          "them": 0.59
+        }
+      ],
+      "balanceScore": 10.26,
+      "positionsTraded": [
+        "QB",
+        "RB",
+        "WR"
+      ]
+    },
+    {
+      "partnerTeamId": "4",
+      "partnerTeam": "the football understander",
+      "youSend": [
+        {
+          "yahooId": "40878",
+          "name": "Brock Bowers",
+          "position": "TE",
+          "nflTeam": "LV"
+        },
+        {
+          "yahooId": "33991",
+          "name": "Breece Hall",
+          "position": "RB",
+          "nflTeam": "NYJ"
+        },
+        {
+          "yahooId": "31960",
+          "name": "Tony Pollard",
+          "position": "RB",
+          "nflTeam": "Ten"
+        }
+      ],
+      "youReceive": [
+        {
+          "yahooId": "41791",
+          "name": "Ashton Jeanty",
+          "position": "RB",
+          "nflTeam": "LV"
+        },
+        {
+          "yahooId": "33514",
+          "name": "Chuba Hubbard",
+          "position": "RB",
+          "nflTeam": "Car"
+        },
+        {
+          "yahooId": "40993",
+          "name": "Bucky Irving",
+          "position": "RB",
+          "nflTeam": "TB"
+        }
+      ],
+      "packageShape": "3-for-3",
+      "requiresRosterAdjustment": false,
+      "yourGain": 9.05,
+      "theirGain": 9.9,
+      "weeklyGains": [
+        {
+          "week": 6,
+          "you": 2.82,
+          "them": -2.08
+        },
+        {
+          "week": 7,
+          "you": 0.47,
+          "them": 0.11
+        },
+        {
+          "week": 8,
+          "you": -5.36,
+          "them": 4.45
+        },
+        {
+          "week": 9,
+          "you": 7.79,
+          "them": -2.42
+        },
+        {
+          "week": 10,
+          "you": -1.96,
+          "them": 0.21
+        },
+        {
+          "week": 11,
+          "you": -0.57,
+          "them": 2.54
+        },
+        {
+          "week": 12,
+          "you": -2.0,
+          "them": 3.53
+        },
+        {
+          "week": 13,
+          "you": 6.08,
+          "them": -2.51
+        },
+        {
+          "week": 14,
+          "you": 1.84,
+          "them": 1.0
+        },
+        {
+          "week": 15,
+          "you": 1.91,
+          "them": -0.05
+        },
+        {
+          "week": 16,
+          "you": 1.17,
+          "them": -0.46
+        },
+        {
+          "week": 17,
+          "you": -3.14,
+          "them": 5.58
+        }
+      ],
+      "balanceScore": 10.238,
+      "positionsTraded": [
+        "RB",
+        "TE"
+      ]
+    },
+    {
+      "partnerTeamId": "4",
+      "partnerTeam": "the football understander",
+      "youSend": [
+        {
+          "yahooId": "40878",
+          "name": "Brock Bowers",
+          "position": "TE",
+          "nflTeam": "LV"
+        },
+        {
+          "yahooId": "33991",
+          "name": "Breece Hall",
+          "position": "RB",
+          "nflTeam": "NYJ"
+        },
+        {
+          "yahooId": "31960",
+          "name": "Tony Pollard",
+          "position": "RB",
+          "nflTeam": "Ten"
+        }
+      ],
+      "youReceive": [
+        {
+          "yahooId": "41791",
+          "name": "Ashton Jeanty",
+          "position": "RB",
+          "nflTeam": "LV"
+        },
+        {
+          "yahooId": "40993",
+          "name": "Bucky Irving",
+          "position": "RB",
+          "nflTeam": "TB"
+        },
+        {
+          "yahooId": "41922",
+          "name": "Cam Skattebo",
+          "position": "RB",
+          "nflTeam": "NYG"
+        }
+      ],
+      "packageShape": "3-for-3",
+      "requiresRosterAdjustment": false,
+      "yourGain": 8.48,
+      "theirGain": 11.38,
+      "weeklyGains": [
+        {
+          "week": 6,
+          "you": 4.33,
+          "them": -3.59
+        },
+        {
+          "week": 7,
+          "you": 0.95,
+          "them": -0.37
+        },
+        {
+          "week": 8,
+          "you": -9.08,
+          "them": 9.08
+        },
+        {
+          "week": 9,
+          "you": 7.53,
+          "them": -2.16
+        },
+        {
+          "week": 10,
+          "you": -3.73,
+          "them": 1.98
+        },
+        {
+          "week": 11,
+          "you": -0.76,
+          "them": 2.73
+        },
+        {
+          "week": 12,
+          "you": -0.1,
+          "them": 1.63
+        },
+        {
+          "week": 13,
+          "you": 8.03,
+          "them": -4.46
+        },
+        {
+          "week": 14,
+          "you": 0.81,
+          "them": 2.03
+        },
+        {
+          "week": 15,
+          "you": 1.73,
+          "them": 0.13
+        },
+        {
+          "week": 16,
+          "you": 0.99,
+          "them": -0.28
+        },
+        {
+          "week": 17,
+          "you": -2.22,
+          "them": 4.66
+        }
+      ],
+      "balanceScore": 9.846,
+      "positionsTraded": [
+        "RB",
+        "TE"
+      ]
+    },
+    {
+      "partnerTeamId": "12",
+      "partnerTeam": "Juicy Juke Brody",
+      "youSend": [
+        {
+          "yahooId": "31960",
+          "name": "Tony Pollard",
+          "position": "RB",
+          "nflTeam": "Ten"
+        },
+        {
+          "yahooId": "32671",
+          "name": "Joe Burrow",
+          "position": "QB",
+          "nflTeam": "Cin"
+        }
+      ],
+      "youReceive": [
+        {
+          "yahooId": "32705",
+          "name": "D'Andre Swift",
+          "position": "RB",
+          "nflTeam": "Chi"
+        },
+        {
+          "yahooId": "40039",
+          "name": "Zay Flowers",
+          "position": "WR",
+          "nflTeam": "Bal"
+        }
+      ],
+      "packageShape": "2-for-2",
+      "requiresRosterAdjustment": false,
+      "yourGain": 7.19,
+      "theirGain": 21.69,
+      "weeklyGains": [
+        {
+          "week": 6,
+          "you": 0.79,
+          "them": -2.88
+        },
+        {
+          "week": 7,
+          "you": 1.97,
+          "them": 2.44
+        },
+        {
+          "week": 8,
+          "you": 3.38,
+          "them": -2.54
+        },
+        {
+          "week": 9,
+          "you": 5.44,
+          "them": 2.02
+        },
+        {
+          "week": 10,
+          "you": -3.31,
+          "them": 11.22
+        },
+        {
+          "week": 11,
+          "you": 0.97,
+          "them": 2.64
+        },
+        {
+          "week": 12,
+          "you": 1.97,
+          "them": 0.73
+        },
+        {
+          "week": 13,
+          "you": -3.18,
+          "them": 4.6
+        },
+        {
+          "week": 14,
+          "you": 4.25,
+          "them": 1.83
+        },
+        {
+          "week": 15,
+          "you": -1.71,
+          "them": 1.59
+        },
+        {
+          "week": 16,
+          "you": -1.58,
+          "them": -0.55
+        },
+        {
+          "week": 17,
+          "you": -1.8,
+          "them": 0.59
+        }
+      ],
+      "balanceScore": 9.793,
+      "positionsTraded": [
+        "QB",
+        "RB",
+        "WR"
+      ]
+    },
+    {
+      "partnerTeamId": "12",
+      "partnerTeam": "Juicy Juke Brody",
+      "youSend": [
+        {
+          "yahooId": "40878",
+          "name": "Brock Bowers",
+          "position": "TE",
+          "nflTeam": "LV"
+        },
+        {
+          "yahooId": "31960",
+          "name": "Tony Pollard",
+          "position": "RB",
+          "nflTeam": "Ten"
+        }
+      ],
+      "youReceive": [
+        {
+          "yahooId": "32711",
+          "name": "Jonathan Taylor",
+          "position": "RB",
+          "nflTeam": "Ind"
+        },
+        {
+          "yahooId": "40039",
+          "name": "Zay Flowers",
+          "position": "WR",
+          "nflTeam": "Bal"
+        }
+      ],
+      "packageShape": "2-for-2",
+      "requiresRosterAdjustment": false,
+      "yourGain": 14.97,
+      "theirGain": 7.54,
+      "weeklyGains": [
+        {
+          "week": 6,
+          "you": 2.81,
+          "them": -1.16
+        },
+        {
+          "week": 7,
+          "you": 2.24,
+          "them": -0.68
+        },
+        {
+          "week": 8,
+          "you": -5.97,
+          "them": -1.19
+        },
+        {
+          "week": 9,
+          "you": 9.22,
+          "them": -1.44
+        },
+        {
+          "week": 10,
+          "you": 5.77,
+          "them": -4.92
+        },
+        {
+          "week": 11,
+          "you": -1.04,
+          "them": 3.28
+        },
+        {
+          "week": 12,
+          "you": 2.89,
+          "them": -0.22
+        },
+        {
+          "week": 13,
+          "you": -3.93,
+          "them": 4.78
+        },
+        {
+          "week": 14,
+          "you": 2.16,
+          "them": 2.02
+        },
+        {
+          "week": 15,
+          "you": -0.21,
+          "them": 3.34
+        },
+        {
+          "week": 16,
+          "you": 3.17,
+          "them": -1.16
+        },
+        {
+          "week": 17,
+          "you": -2.14,
+          "them": 4.89
+        }
+      ],
+      "balanceScore": 9.336,
+      "positionsTraded": [
+        "RB",
+        "TE",
+        "WR"
+      ]
+    },
+    {
+      "partnerTeamId": "12",
+      "partnerTeam": "Juicy Juke Brody",
+      "youSend": [
+        {
+          "yahooId": "40121",
+          "name": "Michael Wilson",
+          "position": "WR",
+          "nflTeam": "Ari"
+        },
+        {
+          "yahooId": "33991",
+          "name": "Breece Hall",
+          "position": "RB",
+          "nflTeam": "NYJ"
+        },
+        {
+          "yahooId": "32671",
+          "name": "Joe Burrow",
+          "position": "QB",
+          "nflTeam": "Cin"
+        }
+      ],
+      "youReceive": [
+        {
+          "yahooId": "32711",
+          "name": "Jonathan Taylor",
+          "position": "RB",
+          "nflTeam": "Ind"
+        },
+        {
+          "yahooId": "32703",
+          "name": "Tee Higgins",
+          "position": "WR",
+          "nflTeam": "Cin"
+        },
+        {
+          "yahooId": "33389",
+          "name": "Trevor Lawrence",
+          "position": "QB",
+          "nflTeam": "Jax"
+        }
+      ],
+      "packageShape": "3-for-3",
+      "requiresRosterAdjustment": false,
+      "yourGain": 7.08,
+      "theirGain": 15.49,
+      "weeklyGains": [
+        {
+          "week": 6,
+          "you": -1.79,
+          "them": -1.67
+        },
+        {
+          "week": 7,
+          "you": -0.24,
+          "them": 4.92
+        },
+        {
+          "week": 8,
+          "you": -0.48,
+          "them": 0.78
+        },
+        {
+          "week": 9,
+          "you": 3.72,
+          "them": -0.69
+        },
+        {
+          "week": 10,
+          "you": 3.7,
+          "them": 0.26
+        },
+        {
+          "week": 11,
+          "you": -0.2,
+          "them": 2.13
+        },
+        {
+          "week": 12,
+          "you": -2.08,
+          "them": 5.16
+        },
+        {
+          "week": 13,
+          "you": -3.98,
+          "them": 5.4
+        },
+        {
+          "week": 14,
+          "you": 6.57,
+          "them": -0.49
+        },
+        {
+          "week": 15,
+          "you": 0.77,
+          "them": 0.78
+        },
+        {
+          "week": 16,
+          "you": -1.02,
+          "them": 1.02
+        },
+        {
+          "week": 17,
+          "you": 2.11,
+          "them": -2.11
+        }
+      ],
+      "balanceScore": 8.939,
+      "positionsTraded": [
+        "QB",
+        "RB",
+        "WR"
+      ]
+    },
+    {
+      "partnerTeamId": "4",
+      "partnerTeam": "the football understander",
+      "youSend": [
+        {
+          "yahooId": "33991",
+          "name": "Breece Hall",
+          "position": "RB",
+          "nflTeam": "NYJ"
+        },
+        {
+          "yahooId": "32671",
+          "name": "Joe Burrow",
+          "position": "QB",
+          "nflTeam": "Cin"
+        }
+      ],
+      "youReceive": [
+        {
+          "yahooId": "41791",
+          "name": "Ashton Jeanty",
+          "position": "RB",
+          "nflTeam": "LV"
+        },
+        {
+          "yahooId": "41922",
+          "name": "Cam Skattebo",
+          "position": "RB",
+          "nflTeam": "NYG"
+        }
+      ],
+      "packageShape": "2-for-2",
+      "requiresRosterAdjustment": false,
+      "yourGain": 20.95,
+      "theirGain": 6.15,
+      "weeklyGains": [
+        {
+          "week": 6,
+          "you": 5.68,
+          "them": -5.23
+        },
+        {
+          "week": 7,
+          "you": -0.5,
+          "them": 0.53
+        },
+        {
+          "week": 8,
+          "you": 2.22,
+          "them": 13.27
+        },
+        {
+          "week": 9,
+          "you": 6.21,
+          "them": -1.05
+        },
+        {
+          "week": 10,
+          "you": 1.73,
+          "them": -1.26
+        },
+        {
+          "week": 11,
+          "you": 0.18,
+          "them": 2.19
+        },
+        {
+          "week": 12,
+          "you": -0.63,
+          "them": 1.75
+        },
+        {
+          "week": 13,
+          "you": 1.41,
+          "them": 0.1
+        },
+        {
+          "week": 14,
+          "you": 4.21,
+          "them": -1.38
+        },
+        {
+          "week": 15,
+          "you": 1.18,
+          "them": -1.76
+        },
+        {
+          "week": 16,
+          "you": -1.96,
+          "them": 1.94
+        },
+        {
+          "week": 17,
+          "you": 1.22,
+          "them": -2.95
+        }
+      ],
+      "balanceScore": 8.664,
+      "positionsTraded": [
+        "QB",
+        "RB"
+      ]
+    },
+    {
+      "partnerTeamId": "4",
+      "partnerTeam": "the football understander",
+      "youSend": [
+        {
+          "yahooId": "40878",
+          "name": "Brock Bowers",
+          "position": "TE",
+          "nflTeam": "LV"
+        },
+        {
+          "yahooId": "31960",
+          "name": "Tony Pollard",
+          "position": "RB",
+          "nflTeam": "Ten"
+        }
+      ],
+      "youReceive": [
+        {
+          "yahooId": "41791",
+          "name": "Ashton Jeanty",
+          "position": "RB",
+          "nflTeam": "LV"
+        },
+        {
+          "yahooId": "41922",
+          "name": "Cam Skattebo",
+          "position": "RB",
+          "nflTeam": "NYG"
+        }
+      ],
+      "packageShape": "2-for-2",
+      "requiresRosterAdjustment": false,
+      "yourGain": 11.46,
+      "theirGain": 7.16,
+      "weeklyGains": [
+        {
+          "week": 6,
+          "you": 3.8,
+          "them": -3.06
+        },
+        {
+          "week": 7,
+          "you": 1.11,
+          "them": -0.53
+        },
+        {
+          "week": 8,
+          "you": -7.72,
+          "them": 7.72
+        },
+        {
+          "week": 9,
+          "you": 8.1,
+          "them": -2.73
+        },
+        {
+          "week": 10,
+          "you": 2.01,
+          "them": -1.43
+        },
+        {
+          "week": 11,
+          "you": -0.07,
+          "them": 2.04
+        },
+        {
+          "week": 12,
+          "you": 0.06,
+          "them": 1.47
+        },
+        {
+          "week": 13,
+          "you": 1.76,
+          "them": -1.76
+        },
+        {
+          "week": 14,
+          "you": 2.54,
+          "them": 0.3
+        },
+        {
+          "week": 15,
+          "you": -0.27,
+          "them": 2.13
+        },
+        {
+          "week": 16,
+          "you": 2.12,
+          "them": -1.41
+        },
+        {
+          "week": 17,
+          "you": -1.98,
+          "them": 4.42
+        }
+      ],
+      "balanceScore": 8.535,
+      "positionsTraded": [
+        "RB",
+        "TE"
+      ]
+    },
+    {
+      "partnerTeamId": "12",
+      "partnerTeam": "Juicy Juke Brody",
+      "youSend": [
+        {
+          "yahooId": "40121",
+          "name": "Michael Wilson",
+          "position": "WR",
+          "nflTeam": "Ari"
+        },
+        {
+          "yahooId": "33991",
+          "name": "Breece Hall",
+          "position": "RB",
+          "nflTeam": "NYJ"
+        },
+        {
+          "yahooId": "32671",
+          "name": "Joe Burrow",
+          "position": "QB",
+          "nflTeam": "Cin"
+        }
+      ],
+      "youReceive": [
+        {
+          "yahooId": "32711",
+          "name": "Jonathan Taylor",
+          "position": "RB",
+          "nflTeam": "Ind"
+        },
+        {
+          "yahooId": "32703",
+          "name": "Tee Higgins",
+          "position": "WR",
+          "nflTeam": "Cin"
+        }
+      ],
+      "packageShape": "3-for-2",
+      "requiresRosterAdjustment": true,
+      "yourGain": 6.33,
+      "theirGain": 17.85,
+      "weeklyGains": [
+        {
+          "week": 6,
+          "you": -1.79,
+          "them": 0.69
+        },
+        {
+          "week": 7,
+          "you": -0.24,
+          "them": 4.92
+        },
+        {
+          "week": 8,
+          "you": -0.48,
+          "them": 0.78
+        },
+        {
+          "week": 9,
+          "you": 3.72,
+          "them": -0.69
+        },
+        {
+          "week": 10,
+          "you": 3.7,
+          "them": 0.26
+        },
+        {
+          "week": 11,
+          "you": -0.2,
+          "them": 2.13
+        },
+        {
+          "week": 12,
+          "you": -2.08,
+          "them": 5.16
+        },
+        {
+          "week": 13,
+          "you": -3.98,
+          "them": 5.4
+        },
+        {
+          "week": 14,
+          "you": 6.57,
+          "them": -0.49
+        },
+        {
+          "week": 15,
+          "you": 0.77,
+          "them": 0.78
+        },
+        {
+          "week": 16,
+          "you": -1.36,
+          "them": 1.02
+        },
+        {
+          "week": 17,
+          "you": 1.7,
+          "them": -2.11
+        }
+      ],
+      "balanceScore": 8.472,
+      "positionsTraded": [
+        "QB",
+        "RB",
+        "WR"
+      ]
+    },
+    {
+      "partnerTeamId": "4",
+      "partnerTeam": "the football understander",
+      "youSend": [
+        {
+          "yahooId": "32671",
+          "name": "Joe Burrow",
+          "position": "QB",
+          "nflTeam": "Cin"
+        }
+      ],
+      "youReceive": [
+        {
+          "yahooId": "33514",
+          "name": "Chuba Hubbard",
+          "position": "RB",
+          "nflTeam": "Car"
+        },
+        {
+          "yahooId": "41922",
+          "name": "Cam Skattebo",
+          "position": "RB",
+          "nflTeam": "NYG"
+        }
+      ],
+      "packageShape": "1-for-2",
+      "requiresRosterAdjustment": true,
+      "yourGain": 7.72,
+      "theirGain": 7.39,
+      "weeklyGains": [
+        {
+          "week": 6,
+          "you": 1.96,
+          "them": -2.69
+        },
+        {
+          "week": 7,
+          "you": -0.11,
+          "them": 0.26
+        },
+        {
+          "week": 8,
+          "you": 1.95,
+          "them": 12.63
+        },
+        {
+          "week": 9,
+          "you": 6.02,
+          "them": -0.47
+        },
+        {
+          "week": 10,
+          "you": 2.24,
+          "them": -5.67
+        },
+        {
+          "week": 11,
+          "you": -2.75,
+          "them": 4.07
+        },
+        {
+          "week": 12,
+          "you": -0.42,
+          "them": 1.13
+        },
+        {
+          "week": 13,
+          "you": 4.02,
+          "them": -2.44
+        },
+        {
+          "week": 14,
+          "you": 3.36,
+          "them": -0.53
+        },
+        {
+          "week": 15,
+          "you": -3.29,
+          "them": 1.24
+        },
+        {
+          "week": 16,
+          "you": -3.84,
+          "them": 1.89
+        },
+        {
+          "week": 17,
+          "you": -1.42,
+          "them": -2.03
+        }
+      ],
+      "balanceScore": 8.316,
+      "positionsTraded": [
+        "QB",
+        "RB"
+      ]
+    },
+    {
+      "partnerTeamId": "12",
+      "partnerTeam": "Juicy Juke Brody",
+      "youSend": [
+        {
+          "yahooId": "31960",
+          "name": "Tony Pollard",
+          "position": "RB",
+          "nflTeam": "Ten"
+        },
+        {
+          "yahooId": "32671",
+          "name": "Joe Burrow",
+          "position": "QB",
+          "nflTeam": "Cin"
+        }
+      ],
+      "youReceive": [
+        {
+          "yahooId": "32711",
+          "name": "Jonathan Taylor",
+          "position": "RB",
+          "nflTeam": "Ind"
+        }
+      ],
+      "packageShape": "2-for-1",
+      "requiresRosterAdjustment": true,
+      "yourGain": 22.53,
+      "theirGain": 5.48,
+      "weeklyGains": [
+        {
+          "week": 6,
+          "you": 4.22,
+          "them": -4.22
+        },
+        {
+          "week": 7,
+          "you": 2.27,
+          "them": 2.41
+        },
+        {
+          "week": 8,
+          "you": 2.13,
+          "them": -1.83
+        },
+        {
+          "week": 9,
+          "you": 7.56,
+          "them": -0.75
+        },
+        {
+          "week": 10,
+          "you": 7.44,
+          "them": -3.48
+        },
+        {
+          "week": 11,
+          "you": -1.06,
+          "them": 2.99
+        },
+        {
+          "week": 12,
+          "you": 3.2,
+          "them": -0.12
+        },
+        {
+          "week": 13,
+          "you": -8.04,
+          "them": 10.31
+        },
+        {
+          "week": 14,
+          "you": 4.87,
+          "them": -0.69
+        },
+        {
+          "week": 15,
+          "you": 0.88,
+          "them": 0.67
+        },
+        {
+          "week": 16,
+          "you": -0.9,
+          "them": 0.56
+        },
+        {
+          "week": 17,
+          "you": -0.04,
+          "them": -0.37
+        }
+      ],
+      "balanceScore": 8.184,
+      "positionsTraded": [
+        "QB",
+        "RB"
+      ]
+    },
+    {
+      "partnerTeamId": "4",
+      "partnerTeam": "the football understander",
+      "youSend": [
+        {
+          "yahooId": "40878",
+          "name": "Brock Bowers",
+          "position": "TE",
+          "nflTeam": "LV"
+        },
+        {
+          "yahooId": "33991",
+          "name": "Breece Hall",
+          "position": "RB",
+          "nflTeam": "NYJ"
+        }
+      ],
+      "youReceive": [
+        {
+          "yahooId": "41791",
+          "name": "Ashton Jeanty",
+          "position": "RB",
+          "nflTeam": "LV"
+        },
+        {
+          "yahooId": "33514",
+          "name": "Chuba Hubbard",
+          "position": "RB",
+          "nflTeam": "Car"
+        },
+        {
+          "yahooId": "41922",
+          "name": "Cam Skattebo",
+          "position": "RB",
+          "nflTeam": "NYG"
+        }
+      ],
+      "packageShape": "2-for-3",
+      "requiresRosterAdjustment": true,
+      "yourGain": 8.31,
+      "theirGain": 7.11,
+      "weeklyGains": [
+        {
+          "week": 6,
+          "you": 3.07,
+          "them": -3.07
+        },
+        {
+          "week": 7,
+          "you": -2.39,
+          "them": 2.97
+        },
+        {
+          "week": 8,
+          "you": -5.96,
+          "them": 5.05
+        },
+        {
+          "week": 9,
+          "you": 7.99,
+          "them": -2.62
+        },
+        {
+          "week": 10,
+          "you": 0.91,
+          "them": -0.37
+        },
+        {
+          "week": 11,
+          "you": -1.46,
+          "them": 2.38
+        },
+        {
+          "week": 12,
+          "you": -3.44,
+          "them": 4.56
+        },
+        {
+          "week": 13,
+          "you": 8.13,
+          "them": -4.49
+        },
+        {
+          "week": 14,
+          "you": 1.46,
+          "them": 1.38
+        },
+        {
+          "week": 15,
+          "you": 0.0,
+          "them": 0.52
+        },
+        {
+          "week": 16,
+          "you": 1.49,
+          "them": -1.41
+        },
+        {
+          "week": 17,
+          "you": -1.49,
+          "them": 2.21
+        }
+      ],
+      "balanceScore": 8.107,
+      "positionsTraded": [
+        "RB",
+        "TE"
+      ]
+    },
+    {
+      "partnerTeamId": "4",
+      "partnerTeam": "the football understander",
+      "youSend": [
+        {
+          "yahooId": "31960",
+          "name": "Tony Pollard",
+          "position": "RB",
+          "nflTeam": "Ten"
+        },
+        {
+          "yahooId": "32671",
+          "name": "Joe Burrow",
+          "position": "QB",
+          "nflTeam": "Cin"
+        }
+      ],
+      "youReceive": [
+        {
+          "yahooId": "33514",
+          "name": "Chuba Hubbard",
+          "position": "RB",
+          "nflTeam": "Car"
+        },
+        {
+          "yahooId": "41922",
+          "name": "Cam Skattebo",
+          "position": "RB",
+          "nflTeam": "NYG"
+        },
+        {
+          "yahooId": "34218",
+          "name": "Brock Purdy",
+          "position": "QB",
+          "nflTeam": "SF"
+        }
+      ],
+      "packageShape": "2-for-3",
+      "requiresRosterAdjustment": true,
+      "yourGain": 10.52,
+      "theirGain": 6.79,
+      "weeklyGains": [
+        {
+          "week": 6,
+          "you": 3.2,
+          "them": -19.85
+        },
+        {
+          "week": 7,
+          "you": 1.51,
+          "them": 0.26
+        },
+        {
+          "week": 8,
+          "you": -0.07,
+          "them": 15.56
+        },
+        {
+          "week": 9,
+          "you": 6.23,
+          "them": -0.47
+        },
+        {
+          "week": 10,
+          "you": 4.06,
+          "them": -4.06
+        },
+        {
+          "week": 11,
+          "you": -3.68,
+          "them": 6.05
+        },
+        {
+          "week": 12,
+          "you": -0.42,
+          "them": 1.54
+        },
+        {
+          "week": 13,
+          "you": 3.28,
+          "them": 0.29
+        },
+        {
+          "week": 14,
+          "you": 3.36,
+          "them": -0.53
+        },
+        {
+          "week": 15,
+          "you": -3.71,
+          "them": 3.71
+        },
+        {
+          "week": 16,
+          "you": -3.4,
+          "them": 3.82
+        },
+        {
+          "week": 17,
+          "you": 0.16,
+          "them": 0.47
+        }
+      ],
+      "balanceScore": 8.052,
+      "positionsTraded": [
+        "QB",
+        "RB"
+      ]
+    },
+    {
+      "partnerTeamId": "4",
+      "partnerTeam": "the football understander",
+      "youSend": [
+        {
+          "yahooId": "40121",
+          "name": "Michael Wilson",
+          "position": "WR",
+          "nflTeam": "Ari"
+        }
+      ],
+      "youReceive": [
+        {
+          "yahooId": "33514",
+          "name": "Chuba Hubbard",
+          "position": "RB",
+          "nflTeam": "Car"
+        },
+        {
+          "yahooId": "33393",
+          "name": "Ja'Marr Chase",
+          "position": "WR",
+          "nflTeam": "Cin"
+        }
+      ],
+      "packageShape": "1-for-2",
+      "requiresRosterAdjustment": true,
+      "yourGain": 6.38,
+      "theirGain": 9.91,
+      "weeklyGains": [
+        {
+          "week": 6,
+          "you": -4.83,
+          "them": 6.24
+        },
+        {
+          "week": 7,
+          "you": 0.35,
+          "them": 0.95
+        },
+        {
+          "week": 8,
+          "you": 1.08,
+          "them": -1.99
+        },
+        {
+          "week": 9,
+          "you": 5.86,
+          "them": -0.49
+        },
+        {
+          "week": 10,
+          "you": 0.1,
+          "them": 0.44
+        },
+        {
+          "week": 11,
+          "you": 2.15,
+          "them": -0.52
+        },
+        {
+          "week": 12,
+          "you": -3.08,
+          "them": 3.51
+        },
+        {
+          "week": 13,
+          "you": 1.61,
+          "them": 1.96
+        },
+        {
+          "week": 14,
+          "you": 5.68,
+          "them": -3.65
+        },
+        {
+          "week": 15,
+          "you": -2.0,
+          "them": 1.87
+        },
+        {
+          "week": 16,
+          "you": -0.36,
+          "them": 0.78
+        },
+        {
+          "week": 17,
+          "you": -0.18,
+          "them": 0.81
+        }
+      ],
+      "balanceScore": 7.569,
+      "positionsTraded": [
+        "RB",
+        "WR"
+      ]
+    },
+    {
+      "partnerTeamId": "4",
+      "partnerTeam": "the football understander",
+      "youSend": [
+        {
+          "yahooId": "40121",
+          "name": "Michael Wilson",
+          "position": "WR",
+          "nflTeam": "Ari"
+        }
+      ],
+      "youReceive": [
+        {
+          "yahooId": "33393",
+          "name": "Ja'Marr Chase",
+          "position": "WR",
+          "nflTeam": "Cin"
+        },
+        {
+          "yahooId": "41922",
+          "name": "Cam Skattebo",
+          "position": "RB",
+          "nflTeam": "NYG"
+        }
+      ],
+      "packageShape": "1-for-2",
+      "requiresRosterAdjustment": true,
+      "yourGain": 5.94,
+      "theirGain": 11.74,
+      "weeklyGains": [
+        {
+          "week": 6,
+          "you": -3.32,
+          "them": 4.73
+        },
+        {
+          "week": 7,
+          "you": 0.83,
+          "them": 0.82
+        },
+        {
+          "week": 8,
+          "you": -2.64,
+          "them": 2.64
+        },
+        {
+          "week": 9,
+          "you": 5.6,
+          "them": -0.23
+        },
+        {
+          "week": 10,
+          "you": -1.67,
+          "them": 2.21
+        },
+        {
+          "week": 11,
+          "you": 1.96,
+          "them": -0.33
+        },
+        {
+          "week": 12,
+          "you": -1.18,
+          "them": 1.61
+        },
+        {
+          "week": 13,
+          "you": 3.56,
+          "them": 0.01
+        },
+        {
+          "week": 14,
+          "you": 4.65,
+          "them": -2.62
+        },
+        {
+          "week": 15,
+          "you": -2.05,
+          "them": 2.05
+        },
+        {
+          "week": 16,
+          "you": -0.54,
+          "them": 0.96
+        },
+        {
+          "week": 17,
+          "you": 0.74,
+          "them": -0.11
+        }
+      ],
+      "balanceScore": 7.349,
+      "positionsTraded": [
+        "RB",
+        "WR"
+      ]
+    },
+    {
+      "partnerTeamId": "4",
+      "partnerTeam": "the football understander",
+      "youSend": [
+        {
+          "yahooId": "40121",
+          "name": "Michael Wilson",
+          "position": "WR",
+          "nflTeam": "Ari"
+        },
+        {
+          "yahooId": "31960",
+          "name": "Tony Pollard",
+          "position": "RB",
+          "nflTeam": "Ten"
+        }
+      ],
+      "youReceive": [
+        {
+          "yahooId": "33514",
+          "name": "Chuba Hubbard",
+          "position": "RB",
+          "nflTeam": "Car"
+        },
+        {
+          "yahooId": "33393",
+          "name": "Ja'Marr Chase",
+          "position": "WR",
+          "nflTeam": "Cin"
+        },
+        {
+          "yahooId": "41922",
+          "name": "Cam Skattebo",
+          "position": "RB",
+          "nflTeam": "NYG"
+        }
+      ],
+      "packageShape": "2-for-3",
+      "requiresRosterAdjustment": true,
+      "yourGain": 11.72,
+      "theirGain": 5.93,
+      "weeklyGains": [
+        {
+          "week": 6,
+          "you": -3.69,
+          "them": 5.1
+        },
+        {
+          "week": 7,
+          "you": 0.95,
+          "them": 0.82
+        },
+        {
+          "week": 8,
+          "you": -0.94,
+          "them": 0.94
+        },
+        {
+          "week": 9,
+          "you": 8.82,
+          "them": -3.06
+        },
+        {
+          "week": 10,
+          "you": 0.1,
+          "them": -0.1
+        },
+        {
+          "week": 11,
+          "you": 1.22,
+          "them": 0.41
+        },
+        {
+          "week": 12,
+          "you": -1.0,
+          "them": 1.43
+        },
+        {
+          "week": 13,
+          "you": 3.37,
+          "them": 0.2
+        },
+        {
+          "week": 14,
+          "you": 5.89,
+          "them": -3.86
+        },
+        {
+          "week": 15,
+          "you": -3.0,
+          "them": 3.0
+        },
+        {
+          "week": 16,
+          "you": 0.04,
+          "them": 0.38
+        },
+        {
+          "week": 17,
+          "you": -0.04,
+          "them": 0.67
+        }
+      ],
+      "balanceScore": 7.336,
+      "positionsTraded": [
+        "RB",
+        "WR"
+      ]
+    },
+    {
+      "partnerTeamId": "11",
+      "partnerTeam": "Stiff Arm Beth",
+      "youSend": [
+        {
+          "yahooId": "31960",
+          "name": "Tony Pollard",
+          "position": "RB",
+          "nflTeam": "Ten"
+        },
+        {
+          "yahooId": "32671",
+          "name": "Joe Burrow",
+          "position": "QB",
+          "nflTeam": "Cin"
+        }
+      ],
+      "youReceive": [
+        {
+          "yahooId": "29279",
+          "name": "Derrick Henry",
+          "position": "RB",
+          "nflTeam": "Bal"
+        }
+      ],
+      "packageShape": "2-for-1",
+      "requiresRosterAdjustment": true,
+      "yourGain": 10.99,
+      "theirGain": 5.87,
+      "weeklyGains": [
+        {
+          "week": 6,
+          "you": 1.94,
+          "them": -1.94
+        },
+        {
+          "week": 7,
+          "you": 2.22,
+          "them": -2.57
+        },
+        {
+          "week": 8,
+          "you": 3.58,
+          "them": -4.45
+        },
+        {
+          "week": 9,
+          "you": 4.63,
+          "them": -2.92
+        },
+        {
+          "week": 10,
+          "you": 5.3,
+          "them": 11.59
+        },
+        {
+          "week": 11,
+          "you": 0.54,
+          "them": -1.1
+        },
+        {
+          "week": 12,
+          "you": 0.86,
+          "them": -1.21
+        },
+        {
+          "week": 13,
+          "you": -8.04,
+          "them": 6.72
+        },
+        {
+          "week": 14,
+          "you": 2.32,
+          "them": -1.51
+        },
+        {
+          "week": 15,
+          "you": 0.72,
+          "them": 0.28
+        },
+        {
+          "week": 16,
+          "you": -2.74,
+          "them": 2.19
+        },
+        {
+          "week": 17,
+          "you": -0.34,
+          "them": 0.79
+        }
+      ],
+      "balanceScore": 7.189,
+      "positionsTraded": [
+        "QB",
+        "RB"
+      ]
+    },
+    {
+      "partnerTeamId": "4",
+      "partnerTeam": "the football understander",
+      "youSend": [
+        {
+          "yahooId": "40168",
+          "name": "Puka Nacua",
+          "position": "WR",
+          "nflTeam": "LAR"
+        },
+        {
+          "yahooId": "33991",
+          "name": "Breece Hall",
+          "position": "RB",
+          "nflTeam": "NYJ"
+        }
+      ],
+      "youReceive": [
+        {
+          "yahooId": "41791",
+          "name": "Ashton Jeanty",
+          "position": "RB",
+          "nflTeam": "LV"
+        },
+        {
+          "yahooId": "40993",
+          "name": "Bucky Irving",
+          "position": "RB",
+          "nflTeam": "TB"
+        },
+        {
+          "yahooId": "33393",
+          "name": "Ja'Marr Chase",
+          "position": "WR",
+          "nflTeam": "Cin"
+        }
+      ],
+      "packageShape": "2-for-3",
+      "requiresRosterAdjustment": true,
+      "yourGain": 11.42,
+      "theirGain": 5.81,
+      "weeklyGains": [
+        {
+          "week": 6,
+          "you": -4.17,
+          "them": 5.58
+        },
+        {
+          "week": 7,
+          "you": 0.86,
+          "them": 0.79
+        },
+        {
+          "week": 8,
+          "you": 1.54,
+          "them": -2.45
+        },
+        {
+          "week": 9,
+          "you": 3.19,
+          "them": 2.18
+        },
+        {
+          "week": 10,
+          "you": -5.64,
+          "them": 5.64
+        },
+        {
+          "week": 11,
+          "you": 11.72,
+          "them": -9.31
+        },
+        {
+          "week": 12,
+          "you": -1.2,
+          "them": 1.63
+        },
+        {
+          "week": 13,
+          "you": 3.84,
+          "them": -0.27
+        },
+        {
+          "week": 14,
+          "you": -0.3,
+          "them": 2.68
+        },
+        {
+          "week": 15,
+          "you": 1.01,
+          "them": -1.14
+        },
+        {
+          "week": 16,
+          "you": 0.09,
+          "them": 0.33
+        },
+        {
+          "week": 17,
+          "you": 0.48,
+          "them": 0.15
+        }
+      ],
+      "balanceScore": 7.18,
+      "positionsTraded": [
+        "RB",
+        "WR"
+      ]
+    },
+    {
+      "partnerTeamId": "12",
+      "partnerTeam": "Juicy Juke Brody",
+      "youSend": [
+        {
+          "yahooId": "40168",
+          "name": "Puka Nacua",
+          "position": "WR",
+          "nflTeam": "LAR"
+        },
+        {
+          "yahooId": "31960",
+          "name": "Tony Pollard",
+          "position": "RB",
+          "nflTeam": "Ten"
+        },
+        {
+          "yahooId": "32671",
+          "name": "Joe Burrow",
+          "position": "QB",
+          "nflTeam": "Cin"
+        }
+      ],
+      "youReceive": [
+        {
+          "yahooId": "32711",
+          "name": "Jonathan Taylor",
+          "position": "RB",
+          "nflTeam": "Ind"
+        },
+        {
+          "yahooId": "32703",
+          "name": "Tee Higgins",
+          "position": "WR",
+          "nflTeam": "Cin"
+        },
+        {
+          "yahooId": "33989",
+          "name": "Christian Watson",
+          "position": "WR",
+          "nflTeam": "GB"
+        }
+      ],
+      "packageShape": "3-for-3",
+      "requiresRosterAdjustment": false,
+      "yourGain": 5.0,
+      "theirGain": 17.07,
+      "weeklyGains": [
+        {
+          "week": 6,
+          "you": -3.43,
+          "them": 3.43
+        },
+        {
+          "week": 7,
+          "you": 2.64,
+          "them": 1.77
+        },
+        {
+          "week": 8,
+          "you": -0.41,
+          "them": 1.25
+        },
+        {
+          "week": 9,
+          "you": 5.29,
+          "them": 2.17
+        },
+        {
+          "week": 10,
+          "you": 2.42,
+          "them": 0.02
+        },
+        {
+          "week": 11,
+          "you": 6.2,
+          "them": -2.59
+        },
+        {
+          "week": 12,
+          "you": 0.17,
+          "them": 2.88
+        },
+        {
+          "week": 13,
+          "you": -6.32,
+          "them": 0.5
+        },
+        {
+          "week": 14,
+          "you": 4.16,
+          "them": 1.92
+        },
+        {
+          "week": 15,
+          "you": -3.69,
+          "them": 5.24
+        },
+        {
+          "week": 16,
+          "you": -1.66,
+          "them": 1.32
+        },
+        {
+          "week": 17,
+          "you": -0.37,
+          "them": -0.84
+        }
+      ],
+      "balanceScore": 7.048,
+      "positionsTraded": [
+        "QB",
+        "RB",
+        "WR"
+      ]
+    },
+    {
+      "partnerTeamId": "12",
+      "partnerTeam": "Juicy Juke Brody",
+      "youSend": [
+        {
+          "yahooId": "40878",
+          "name": "Brock Bowers",
+          "position": "TE",
+          "nflTeam": "LV"
+        },
+        {
+          "yahooId": "40121",
+          "name": "Michael Wilson",
+          "position": "WR",
+          "nflTeam": "Ari"
+        },
+        {
+          "yahooId": "31960",
+          "name": "Tony Pollard",
+          "position": "RB",
+          "nflTeam": "Ten"
+        }
+      ],
+      "youReceive": [
+        {
+          "yahooId": "32711",
+          "name": "Jonathan Taylor",
+          "position": "RB",
+          "nflTeam": "Ind"
+        },
+        {
+          "yahooId": "32705",
+          "name": "D'Andre Swift",
+          "position": "RB",
+          "nflTeam": "Chi"
+        },
+        {
+          "yahooId": "40039",
+          "name": "Zay Flowers",
+          "position": "WR",
+          "nflTeam": "Bal"
+        }
+      ],
+      "packageShape": "3-for-3",
+      "requiresRosterAdjustment": false,
+      "yourGain": 5.86,
+      "theirGain": 7.08,
+      "weeklyGains": [
+        {
+          "week": 6,
+          "you": 0.85,
+          "them": 0.8
+        },
+        {
+          "week": 7,
+          "you": 1.34,
+          "them": -0.21
+        },
+        {
+          "week": 8,
+          "you": -8.26,
+          "them": 0.5
+        },
+        {
+          "week": 9,
+          "you": 8.33,
+          "them": -10.66
+        },
+        {
+          "week": 10,
+          "you": 0.28,
+          "them": 0.36
+        },
+        {
+          "week": 11,
+          "you": 0.39,
+          "them": 1.85
+        },
+        {
+          "week": 12,
+          "you": 0.48,
+          "them": 2.19
+        },
+        {
+          "week": 13,
+          "you": -5.93,
+          "them": 7.9
+        },
+        {
+          "week": 14,
+          "you": 7.56,
+          "them": -2.05
+        },
+        {
+          "week": 15,
+          "you": 0.01,
+          "them": 3.12
+        },
+        {
+          "week": 16,
+          "you": 3.55,
+          "them": -1.54
+        },
+        {
+          "week": 17,
+          "you": -2.74,
+          "them": 4.82
+        }
+      ],
+      "balanceScore": 6.71,
+      "positionsTraded": [
+        "RB",
+        "TE",
+        "WR"
+      ]
+    },
+    {
+      "partnerTeamId": "11",
+      "partnerTeam": "Stiff Arm Beth",
+      "youSend": [
+        {
+          "yahooId": "31960",
+          "name": "Tony Pollard",
+          "position": "RB",
+          "nflTeam": "Ten"
+        },
+        {
+          "yahooId": "32671",
+          "name": "Joe Burrow",
+          "position": "QB",
+          "nflTeam": "Cin"
+        }
+      ],
+      "youReceive": [
+        {
+          "yahooId": "29279",
+          "name": "Derrick Henry",
+          "position": "RB",
+          "nflTeam": "Bal"
+        },
+        {
+          "yahooId": "32723",
+          "name": "Jalen Hurts",
+          "position": "QB",
+          "nflTeam": "Phi"
+        }
+      ],
+      "packageShape": "2-for-2",
+      "requiresRosterAdjustment": false,
+      "yourGain": 14.31,
+      "theirGain": 4.01,
+      "weeklyGains": [
+        {
+          "week": 6,
+          "you": 1.94,
+          "them": -3.8
+        },
+        {
+          "week": 7,
+          "you": 2.57,
+          "them": -2.57
+        },
+        {
+          "week": 8,
+          "you": 4.45,
+          "them": -4.45
+        },
+        {
+          "week": 9,
+          "you": 4.63,
+          "them": -2.92
+        },
+        {
+          "week": 10,
+          "you": 5.3,
+          "them": 11.59
+        },
+        {
+          "week": 11,
+          "you": 0.54,
+          "them": -1.1
+        },
+        {
+          "week": 12,
+          "you": 1.21,
+          "them": -1.21
+        },
+        {
+          "week": 13,
+          "you": -6.73,
+          "them": 6.72
+        },
+        {
+          "week": 14,
+          "you": 2.32,
+          "them": -1.51
+        },
+        {
+          "week": 15,
+          "you": 0.72,
+          "them": 0.28
+        },
+        {
+          "week": 16,
+          "you": -2.3,
+          "them": 2.19
+        },
+        {
+          "week": 17,
+          "you": -0.34,
+          "them": 0.79
+        }
+      ],
+      "balanceScore": 5.727,
+      "positionsTraded": [
+        "QB",
+        "RB"
+      ]
+    },
+    {
+      "partnerTeamId": "10",
+      "partnerTeam": "Walking Drafters",
+      "youSend": [
+        {
+          "yahooId": "40121",
+          "name": "Michael Wilson",
+          "position": "WR",
+          "nflTeam": "Ari"
+        },
+        {
+          "yahooId": "31960",
+          "name": "Tony Pollard",
+          "position": "RB",
+          "nflTeam": "Ten"
+        },
+        {
+          "yahooId": "32671",
+          "name": "Joe Burrow",
+          "position": "QB",
+          "nflTeam": "Cin"
+        }
+      ],
+      "youReceive": [
+        {
+          "yahooId": "40059",
+          "name": "Jahmyr Gibbs",
+          "position": "RB",
+          "nflTeam": "Det"
+        },
+        {
+          "yahooId": "33967",
+          "name": "Jameson Williams",
+          "position": "WR",
+          "nflTeam": "Det"
+        },
+        {
+          "yahooId": "40881",
+          "name": "Drake Maye",
+          "position": "QB",
+          "nflTeam": "NE"
+        }
+      ],
+      "packageShape": "3-for-3",
+      "requiresRosterAdjustment": false,
+      "yourGain": 4.95,
+      "theirGain": 3.95,
+      "weeklyGains": [
+        {
+          "week": 6,
+          "you": -10.96,
+          "them": 11.81
+        },
+        {
+          "week": 7,
+          "you": 4.34,
+          "them": -2.96
+        },
+        {
+          "week": 8,
+          "you": -0.37,
+          "them": 0.37
+        },
+        {
+          "week": 9,
+          "you": 7.74,
+          "them": -6.09
+        },
+        {
+          "week": 10,
+          "you": 4.82,
+          "them": -4.82
+        },
+        {
+          "week": 11,
+          "you": -2.75,
+          "them": 3.95
+        },
+        {
+          "week": 12,
+          "you": -1.71,
+          "them": 2.15
+        },
+        {
+          "week": 13,
+          "you": 0.53,
+          "them": -0.53
+        },
+        {
+          "week": 14,
+          "you": 8.25,
+          "them": -7.08
+        },
+        {
+          "week": 15,
+          "you": -2.38,
+          "them": 4.03
+        },
+        {
+          "week": 16,
+          "you": -1.59,
+          "them": 2.15
+        },
+        {
+          "week": 17,
+          "you": -0.97,
+          "them": 0.97
+        }
+      ],
+      "balanceScore": 4.544,
+      "positionsTraded": [
+        "QB",
+        "RB",
+        "WR"
+      ]
+    },
+    {
+      "partnerTeamId": "10",
+      "partnerTeam": "Walking Drafters",
+      "youSend": [
+        {
+          "yahooId": "40878",
+          "name": "Brock Bowers",
+          "position": "TE",
+          "nflTeam": "LV"
+        },
+        {
+          "yahooId": "31960",
+          "name": "Tony Pollard",
+          "position": "RB",
+          "nflTeam": "Ten"
+        }
+      ],
+      "youReceive": [
+        {
+          "yahooId": "40059",
+          "name": "Jahmyr Gibbs",
+          "position": "RB",
+          "nflTeam": "Det"
+        }
+      ],
+      "packageShape": "2-for-1",
+      "requiresRosterAdjustment": true,
+      "yourGain": 2.2,
+      "theirGain": 5.74,
+      "weeklyGains": [
+        {
+          "week": 6,
+          "you": -11.2,
+          "them": 13.45
+        },
+        {
+          "week": 7,
+          "you": 5.4,
+          "them": -1.52
+        },
+        {
+          "week": 8,
+          "you": -7.78,
+          "them": 0.15
+        },
+        {
+          "week": 9,
+          "you": 9.69,
+          "them": -8.21
+        },
+        {
+          "week": 10,
+          "you": 2.65,
+          "them": -1.16
+        },
+        {
+          "week": 11,
+          "you": -2.56,
+          "them": 2.64
+        },
+        {
+          "week": 12,
+          "you": -0.19,
+          "them": 2.21
+        },
+        {
+          "week": 13,
+          "you": 6.81,
+          "them": -6.81
+        },
+        {
+          "week": 14,
+          "you": 1.03,
+          "them": -0.22
+        },
+        {
+          "week": 15,
+          "you": -1.7,
+          "them": 4.06
+        },
+        {
+          "week": 16,
+          "you": 2.74,
+          "them": -1.55
+        },
+        {
+          "week": 17,
+          "you": -2.69,
+          "them": 2.7
+        }
+      ],
+      "balanceScore": 2.889,
+      "positionsTraded": [
+        "RB",
+        "TE"
+      ]
+    },
+    {
+      "partnerTeamId": "14",
+      "partnerTeam": "Bench Warmers",
+      "youSend": [
+        {
+          "yahooId": "40878",
+          "name": "Brock Bowers",
+          "position": "TE",
+          "nflTeam": "LV"
+        },
+        {
+          "yahooId": "31960",
+          "name": "Tony Pollard",
+          "position": "RB",
+          "nflTeam": "Ten"
+        }
+      ],
+      "youReceive": [
+        {
+          "yahooId": "34019",
+          "name": "James Cook III",
+          "position": "RB",
+          "nflTeam": "Buf"
+        },
+        {
+          "yahooId": "27581",
+          "name": "Davante Adams",
+          "position": "WR",
+          "nflTeam": "LAR"
+        }
+      ],
+      "packageShape": "2-for-2",
+      "requiresRosterAdjustment": false,
+      "yourGain": 2.01,
+      "theirGain": 1.85,
+      "weeklyGains": [
+        {
+          "week": 6,
+          "you": 1.85,
+          "them": -1.21
+        },
+        {
+          "week": 7,
+          "you": -4.76,
+          "them": 6.21
+        },
+        {
+          "week": 8,
+          "you": -7.58,
+          "them": -1.78
+        },
+        {
+          "week": 9,
+          "you": 6.29,
+          "them": -4.93
+        },
+        {
+          "week": 10,
+          "you": 5.01,
+          "them": -5.55
+        },
+        {
+          "week": 11,
+          "you": -4.84,
+          "them": 12.66
+        },
+        {
+          "week": 12,
+          "you": -0.76,
+          "them": 1.61
+        },
+        {
+          "week": 13,
+          "you": 6.73,
+          "them": -8.17
+        },
+        {
+          "week": 14,
+          "you": 2.11,
+          "them": -1.4
+        },
+        {
+          "week": 15,
+          "you": -1.3,
+          "them": 1.3
+        },
+        {
+          "week": 16,
+          "you": 1.09,
+          "them": 0.27
+        },
+        {
+          "week": 17,
+          "you": -1.83,
+          "them": 2.84
+        }
+      ],
+      "balanceScore": 2.091,
+      "positionsTraded": [
+        "RB",
+        "TE",
+        "WR"
+      ]
+    }
+  ],
+  "notice": "Hypothetical scenarios based on static October 2026 rosters and future healthy-active projection assumptions. This is a bounded package search, not an exhaustive auction of every team roster; projected injuries, acceptance probability, kicker/defense, and package salary/roster-slot constraints are unmodeled. Unequal-size packages may require subsequent roster cuts/adds to meet Yahoo roster limits. No moves performed."
+}
