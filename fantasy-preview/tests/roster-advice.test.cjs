@@ -72,7 +72,15 @@ const waivers=element('waiverRecommendations').innerHTML;
 for(const id of ['Available QB','Available RB','Available WR','Available TE','Available Kicker','Available Defense']){
  assert.ok(waivers.includes(id),'Missing available '+id);
 }
-assert.match(waivers,/Drop Current Kicker/,'K upgrade has a precise replacement');
+assert.doesNotMatch(waivers,/Drop Current Kicker/,'Do not recommend a speculative healthy-kicker stream');
+const kickerWeek5=future.find(p=>p.yahooId==='k').weeks.find(w=>w.week===5);
+kickerWeek5.state='bye';
+kickerWeek5.points=0;
+context.DaVinciAdvice.renderWaivers();
+assert.match(element('waiverRecommendations').innerHTML,/Drop Current Kicker/,'Cover a kicker bye when a full legal lineup gain is available');
+kickerWeek5.state='assuming_active';
+kickerWeek5.points=4;
+context.DaVinciAdvice.renderWaivers();
 assert.match(waivers,/Drop Current Defense/,'DEF upgrade has a precise replacement');
 assert.ok(!waivers.includes('rankings are not generated'),'No dead-end message');
 const disabled=context.DaVinciAdvice.lineup(starters.map(p=>p.id==='qb'?{...p,status:'IR'}:p),5);
@@ -83,7 +91,7 @@ assert.equal(element('lineupChangeWeek').textContent,'WEEK 6');
 element('waiverHorizon').value='four_weeks';
 context.DaVinciAdvice.renderWaivers();
 assert.ok(element('waiverRecommendations').innerHTML.includes('Available Defense'));
-console.log('Roster-advice checks passed: nine slots, legal backups, injury exclusion, six-position availability, concrete K/DEF add-drop, week switching.');
+console.log('Roster-advice checks passed: nine slots, legal backups, injury exclusion, six-position availability, K bye coverage without speculative streaming, defense drops, week switching.');
 
 
 /* Integration check with both actual league snapshots and K/DEF enrichment. */
