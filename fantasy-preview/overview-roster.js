@@ -37,7 +37,7 @@ function workload(p,w){
  // Baseline opportunity adjusted modestly for opponent; conditional on playing.
  const factor=Number.isFinite(Number(frame.factor))&&frame.factor!=null?
   Math.max(.85,Math.min(1.15,Number(frame.factor))):1;
- const rounded=(key)=>Math.max(0,Math.round(Number(stats[key]||0)*factor));
+ const rounded=(key)=>Math.max(0,Math.round(Number(frame.projectedStats?.[key]??((Number(stats[key])||0)*factor))));
  if(p.position==='RB')return rounded('carries')+' carries · '+rounded('targets')+' targets';
  if(p.position==='WR'||p.position==='TE')return rounded('targets')+' targets · '+rounded('receptions')+' catches';
  if(p.position==='QB')return rounded('passAttempts')+' pass att · '+rounded('carries')+' carries';
