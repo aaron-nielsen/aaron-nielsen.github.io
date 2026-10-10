@@ -612,6 +612,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 <div class="record-card"><div class="record-upper"><div class="eyebrow">SEASON RECORD</div><div class="record-fig mono" id="wl">—</div><div class="record-desc" id="rankDesc">League standings</div></div><div class="record-stats"><div><strong class="mono" id="pointsFor">—</strong><small>POINTS SCORED</small></div><div><strong id="waiverRank" class="mono">—</strong><small>WAIVER PRIORITY</small></div></div></div>
 </div>
 <div class="model-offense-strip" id="modelMatchupSummary" aria-live="polite">Loading Da Vinci offensive lineup estimates…</div>
+<div class="offense-outlook" id="offenseOutlook" aria-label="Future offensive team projections">Calculating future offensive lineup scenarios…</div>
 <section class="panel waiver-panel" aria-label="Best available player recommendations">
  <div class="panel-header"><div><div class="panel-title">Best available players</div><div class="panel-sub">Estimated improvement to your optimal starting lineup</div></div>
  <select id="waiverHorizon" class="select waiver-horizon" aria-label="Projection horizon">
@@ -832,6 +833,23 @@ function renderModelTeamRankings(){
    ' · conditional on participation</p>'+games+'</div></details>';
  }).join('');
 }
+
+function renderOffenseOutlook(){
+ const el=$('#offenseOutlook');
+ if(!el||!futureData?.players?.length)return;
+ const from=Math.max(Number(week.week)+1,6),to=Number(futureData.endWeek);
+ const weeks=Array.from({length:Math.max(0,to-from+1)},(_,i)=>from+i);
+ const games=weeks.map(w=>({week:w,lineup:modelTeamLineup(TEAM_ID,w)}));
+ const four=games.slice(0,4);
+ const sum=rows=>rows.length&&rows.every(x=>x.lineup)?rows.reduce((s,x)=>s+x.lineup.points,0):null;
+ const format=x=>x==null?'—':x.toFixed(1);
+ const futureFlag=games.some(g=>g.lineup?.needsReview);
+ el.innerHTML='<div class="outlook-head"><strong>Your future offensive outlook</strong><small>Optimized seven-player lineups · if active</small></div>'+
+ '<div class="outlook-week-grid">'+four.map(g=>'<div class="outlook-week"><span>WEEK '+g.week+'</span><strong>'+format(g.lineup?.points??null)+'</strong></div>').join('')+'</div>'+
+ '<div class="outlook-totals"><span>Next '+four.length+' weeks <b>'+format(sum(four))+'</b></span><span>ROS · W'+from+'–'+to+' <b>'+format(sum(games))+'</b></span></div>'+
+ '<p class="outlook-note">Offensive points only (QB, 2 RB, 2 WR, TE, flex). K/DEF excluded; byes count as zero for idle players. '+(futureFlag?'Some players have uncertain future participation. ':'')+'Assumes modeled players are available, not a probability-weighted injury forecast. See Projections for all teams.</p>';
+}
+
 function initModelTeamForecasts(){
  if(!futureData?.players?.length)return;
  const first=Number(futureData.startWeek)||Number(week.week),last=Number(futureData.endWeek)||first;
@@ -839,7 +857,7 @@ function initModelTeamForecasts(){
  select.innerHTML=Array.from({length:last-first+1},(_,i)=>'<option value="'+(first+i)+'">Week '+(first+i)+'</option>').join('')+
  '<option value="next4">Next four weeks · W6–9</option><option value="ros">Rest of season · W6–17</option>';
  select.value=String(week.week);select.addEventListener('change',renderModelTeamRankings);
- renderModelMatchup();renderModelTeamRankings();
+ renderModelMatchup();renderModelTeamRankings();renderOffenseOutlook();
 }
 function initOverview(){
  const m=matchup(),you=m.home.id===TEAM_ID?m.home:m.away,them=m.home.id===TEAM_ID?m.away:m.home;
