@@ -47,3 +47,5 @@ body[data-league="nebraska"] #tradeCount{display:none}
  .trade-personal-footer b{font-size:14px}
  .trade-personal-footer span{font-size:11px}
 }
+
+#page-trades #tradeCount[hidden]{display:none!important}
