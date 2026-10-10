@@ -60,6 +60,7 @@ button,input,select{font:inherit}
 .whiskey-panel.active{display:block}
 
 .main-section,.chart-section{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--panel);margin:0 0 18px}
+.top-rating-distribution{margin-top:0;margin-bottom:14px}
 .main-section h2,.chart-section h2{font-size:1.18rem;font-weight:650;margin:0;padding:13px 16px;background:var(--panel2);border-left:4px solid var(--green)}
 .main-section .whiskey-table-wrap{border:0;border-radius:0}
 
@@ -233,6 +234,11 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
     <div class="stat-card"><div class="stat-value" id="stat-ratings">—</div><div class="stat-label">Ratings</div></div>
     <div class="stat-card"><div class="stat-value" id="stat-average">—</div><div class="stat-label">Average / 5.0</div></div>
   </div>
+
+  <section class="chart-section top-rating-distribution" id="top-rating-distribution">
+    <h2>Rating Distribution</h2>
+    <div id="top-rating-distribution-body"></div>
+  </section>
 
   <nav class="nav-row" id="primary-tabs" aria-label="Whiskey views">
     <button class="active" data-tab="main">At a Glance</button>
@@ -1002,7 +1008,6 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
     var styles=styleRows().sort(function(a,b){return b.whiskeys-a.whiskeys||a.name.localeCompare(b.name)});
     document.getElementById("main").innerHTML=
       '<section class="main-section"><h2>Recent Ratings</h2>'+mainRecent()+'</section>'+
-      '<section class="chart-section"><h2>Rating Distribution</h2>'+ratingDistribution()+'</section>'+
       '<section class="main-section"><h2>Top Rated Whiskeys</h2>'+mainTopRated()+'</section>'+
       '<section class="chart-section"><h2>Most Tasted Distilleries</h2>'+distilleryChart(distilleryRows())+'</section>'+
       '<div class="geo-grid">'+
@@ -1382,6 +1387,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
       document.getElementById("stat-whiskeys").textContent=rows.length;
       document.getElementById("stat-ratings").textContent=totalRatings;
       document.getElementById("stat-average").textContent=fmt(avg(scores));
+      document.getElementById("top-rating-distribution-body").innerHTML=ratingDistribution();
 
       document.querySelectorAll("#primary-tabs button").forEach(function(btn){
         btn.onclick=function(){switchPrimary(btn.getAttribute("data-tab"))};
