@@ -1,0 +1,54 @@
+name: Freeze fantasy pregame forecasts
+
+on:
+  schedule:
+    - cron: '0 12 * * 0,4'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fantasy-pregame-archive
+  cancel-in-progress: false
+
+jobs:
+  freeze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Archive fresh forecasts for both leagues
+        shell: bash
+        run: |
+          set -uo pipefail
+          date_utc=$(date -u +%Y-%m-%d)
+          count=0
+          for league in csu nebraska; do
+            if [[ "$league" == csu ]]; then prefix="fantasy-preview/data"; else prefix="fantasy-preview/data/nebraska"; fi
+            week=$(node -p "JSON.parse(require('fs').readFileSync('$prefix/weekly.json','utf8')).week")
+            dest="fantasy-preview/forecast-archive/$league/2026-w$(printf '%02d' "$week")-$date_utc.json"
+            if [[ -e "$dest" ]]; then echo "$league already archived for $date_utc"; continue; fi
+            if node fantasy-preview/scripts/freeze-forecasts.cjs "$prefix/future.json" "$week" "$dest"; then
+              count=$((count+1))
+            else
+              echo "::warning::$league snapshot skipped (stale, missing, or no pregame projections)"
+            fi
+          done
+          echo "Archived $count fresh league snapshots"
+      - name: Commit immutable archive
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add fantasy-preview/forecast-archive/
+          if ! git diff --cached --quiet; then
+            git commit -m "Archive pregame fantasy forecasts"
+            git push
+          else
+            echo "No new eligible snapshots to commit"
+          fi
