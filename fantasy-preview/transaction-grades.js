@@ -10,7 +10,7 @@ const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&
 const asId=x=>String(x||'').split('.t.').pop();
 const key=x=>String(x?.id??x?.yahooId??'');
 const fmt=x=>Number(x).toFixed(1);
-let state=null,results=[];
+let state=null,results=[],historicalRoster=null,loaded=false;
 function own(id){return state.rosters.teams.find(t=>String(t.id)===String(asId(id)));}
 function toPlayer(p){
  const f=state.forecasts.get(key(p));
@@ -36,7 +36,7 @@ function estimate(withRoster,withoutRoster,teamId){
   if(x&&y){after.push(x.score);before.push(y.score);}
  }
  // Only grade scenarios with adequate lineup coverage, not missing QBs/K/DEF.
- if(after.length<Math.max(3,Math.ceil(weeks.length*.75)))return null;
+ if(after.length!==weeks.length)return null;
  const gain=after.reduce((s,n,i)=>s+n-before[i],0);
  return {avg:gain/after.length,ros:gain,weeks:after.length,teamId};
 }
@@ -51,21 +51,27 @@ function grade(value){
  return {grade:'F',label:'Significant downgrade'};
 }
 function side(tx,teamId,acquired,dropped){
- const team=own(teamId);
- const cur=team?.players||[];
- if(!cur.length)return {teamId:asId(teamId),name:team?.name||'Unknown team',value:null,reason:'Team roster unavailable'};
- const after=changeRoster(cur,dropped,acquired);
- const before=changeRoster(cur,acquired,dropped);
- const v=estimate(after,before,team.id);
- return {teamId:String(team.id),name:team.name,value:v,
-  reason:!v?'Full lineup not available for enough weeks':null};
+ const team=own(teamId),tid=String(asId(teamId));
+ // Reverse-chronological replay recovers the best available before/after rosters.
+ // Direct comparison with today's roster for EACH past move double-counts later transactions.
+ const after=historicalRoster?.get(tid);
+ if(!team||!after)return {teamId:tid,name:team?.name||'Unknown team',value:null,reason:'Roster not in snapshot'};
+ const acquiredIds=new Set(acquired.map(key));
+ const changed=[...acquired,...dropped];
+ const complete=acquired.every(p=>after.some(x=>key(x)===key(p)))&&
+  changed.every(p=>state.forecasts.has(key(p)));
+ const before=changeRoster(after,acquired,dropped);
+ historicalRoster.set(tid,before);
+ const v=complete?estimate(after,before,tid):null;
+ return {teamId:tid,name:team.name,value:v,
+  reason:!complete?'Player forecast or transaction roster missing':!v?'Complete optimized lineups unavailable':null};
 }
 function evaluate(tx){
  const isTrade=tx.type==='trade'&&Array.isArray(tx.trade_sides)&&tx.trade_sides.length>=2;
  let sides=[];
- if(isTrade)for(const s of tx.trade_sides){
+ if(isTrade)for(const s of tx.trade_sides)
   sides.push(side(tx,s.team_id,s.acquired||[],s.gave_up||[]));
- }else {
+ else {
   const teamId=tx.team_ids?.[0];
   if(teamId)sides.push(side(tx,teamId,tx.players_added||[],tx.players_dropped||[]));
  }
@@ -107,7 +113,7 @@ function card(tx){
  const relation=tx.sides.length===2&&tx.sides.every(s=>s.value)?
   (tx.sides.every(s=>s.value.avg>=.5)?' · Both improve':' · Not mutually beneficial'):'';
  const actual=tx.actual&&Number.isFinite(tx.actual.actualGain)?
-  ((tx.actual.actualGain>=0?'+':'')+fmt(tx.actual.actualGain)+' actual pts'):'Actual: not yet measured';
+  ((tx.actual.actualGain>=0?'+':'')+fmt(tx.actual.actualGain)+' actual pts'):'Expected today · Actual gain unverified';
  return '<article class="txn-card">'+
   '<div class="txn-top"><span class="txn-type">'+esc(type)+'</span><time>'+esc(tx.date||'Unknown date')+'</time>'+
   '<span class="txn-grade">'+esc(g.grade)+'</span></div>'+
@@ -118,6 +124,15 @@ function card(tx){
 }
 function update(){
  if(!state)return;
+ if(!loaded){
+  loaded=true;
+  historicalRoster=new Map(state.rosters.teams.map(t=>[String(t.id),t.players.map(p=>({...p}))]));
+  const source=(state.transactions?.transactions||[]).filter(t=>t.status==='complete');
+  // Replaying newer moves first preserves the team roster as of each transaction.
+  source.sort((a,b)=>(b.timestamp||0)-(a.timestamp||0)||
+   Number(String(b.transaction_id||'').split('.').pop())-Number(String(a.transaction_id||'').split('.').pop()));
+  results=source.map(evaluate);
+ }
  const team=$('txnTeam')?.value||'all',type=$('txnType')?.value||'all',sort=$('txnSort')?.value||'recent';
  let rows=results.filter(tx=>(team==='all'||tx.sides.some(s=>s.teamId===team))&&(type==='all'||(type==='trade'?tx.isTrade:type==='add'?(tx.type==='add'):tx.type==='drop')));
  const value=x=>x.primary?.value?.avg??-999;
@@ -145,9 +160,10 @@ function init(data){
   coverage.textContent='Yahoo activity · '+dates[0]+' to '+dates[dates.length-1]+
    ' · Model impact from Week '+data.week+' (current rosters)';
  }
- results=source.filter(tx=>tx.status==='complete').map(evaluate);
  for(const id of ['txnTeam','txnType','txnSort'])$(id)?.addEventListener('change',update);
- update();
+ if(!source.length){$('txnStats').textContent='No verified transactions available';return;}
+ // Computing ratings only when the tab is opened prevents homepage lag.
+ $('txnStats').textContent=source.length+' transactions · open this tab to calculate grades';
 }
 root.DaVinciTransactions={init,update};
 })(typeof window!=='undefined'?window:globalThis);
