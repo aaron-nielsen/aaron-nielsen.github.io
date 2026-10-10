@@ -1,0 +1,123 @@
+{
+  "source": "Yahoo historical weekly roster snapshot via connected fantasy provider",
+  "season": 2026,
+  "leagueId": "470.l.1699881",
+  "week": 4,
+  "teams": [
+    {
+      "teamId": "6",
+      "teamName": "Nebraska Bugeaters",
+      "players": [
+        {
+          "playerId": "32671",
+          "name": "Joe Burrow",
+          "position": "QB",
+          "slot": "QB",
+          "actual": 25.72
+        },
+        {
+          "playerId": "40055",
+          "name": "Bijan Robinson",
+          "position": "RB",
+          "slot": "RB",
+          "actual": 27.2
+        },
+        {
+          "playerId": "32705",
+          "name": "D'Andre Swift",
+          "position": "RB",
+          "slot": "RB",
+          "actual": 6.4
+        },
+        {
+          "playerId": "33963",
+          "name": "Drake London",
+          "position": "WR",
+          "slot": "WR",
+          "actual": 12.1
+        },
+        {
+          "playerId": "40121",
+          "name": "Michael Wilson",
+          "position": "WR",
+          "slot": "WR",
+          "actual": 13
+        },
+        {
+          "playerId": "34010",
+          "name": "Trey McBride",
+          "position": "TE",
+          "slot": "TE",
+          "actual": 6.6
+        },
+        {
+          "playerId": "34447",
+          "name": "Jaylen Warren",
+          "position": "RB",
+          "slot": "W/R/T",
+          "actual": 14.1
+        },
+        {
+          "playerId": "40901",
+          "name": "Rome Odunze",
+          "position": "WR",
+          "slot": "BN",
+          "actual": 12.4
+        },
+        {
+          "playerId": "28534",
+          "name": "Stefon Diggs",
+          "position": "WR",
+          "slot": "BN",
+          "actual": 6
+        },
+        {
+          "playerId": "33998",
+          "name": "Wan'Dale Robinson",
+          "position": "WR",
+          "slot": "BN",
+          "actual": 9.5
+        },
+        {
+          "playerId": "42661",
+          "name": "Denzel Boston",
+          "position": "WR",
+          "slot": "BN",
+          "actual": 10.9
+        },
+        {
+          "playerId": "41845",
+          "name": "RJ Harvey",
+          "position": "RB",
+          "slot": "BN",
+          "actual": 14.3
+        },
+        {
+          "playerId": "31056",
+          "name": "Mark Andrews",
+          "position": "TE",
+          "slot": "BN",
+          "actual": 11.2
+        },
+        {
+          "playerId": "41499",
+          "name": "Spencer Shrader",
+          "position": "K",
+          "slot": "K",
+          "actual": 16
+        },
+        {
+          "playerId": "100023",
+          "name": "Steelers",
+          "position": "DEF",
+          "slot": "DEF",
+          "actual": 6
+        }
+      ]
+    }
+  ],
+  "coverage": {
+    "teamsWithPlayers": 1,
+    "teamsExpected": 10
+  }
+}
