@@ -4,7 +4,7 @@
 .trade-player-dropdown{position:relative;min-width:0;border:1px solid #cbb69a;background:#fffdf8;border-radius:7px}
 .trade-player-dropdown>summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 13px;list-style:none;cursor:pointer;font:700 15px/1.25 'Source Sans 3',Arial,sans-serif;color:#48392e}
 .trade-player-dropdown>summary::-webkit-details-marker{display:none}
-.trade-player-dropdown>summary strong{font-size:12px;white-space:nowrap;font-weight:600;color:#765844}
+.trade-player-dropdown>summary strong{font-size:12px;white-space:nowrap;max-width:57%;overflow:hidden;text-overflow:ellipsis;font-weight:600;color:#765844}
 .trade-player-dropdown[open]{box-shadow:0 4px 18px #432b1119}
 .trade-player-dropdown>input{display:block;width:calc(100% - 24px);margin:0 12px 9px;border:1px solid #d9c6af;border-radius:5px;background:white;color:#493b30;padding:9px 11px;font-size:14px}
 .trade-player-options{max-height:240px;overflow-y:auto;padding:0 12px 9px;scrollbar-width:thin}
@@ -49,3 +49,5 @@ body[data-league="nebraska"] #tradeCount{display:none}
 }
 
 #page-trades #tradeCount[hidden]{display:none!important}
+
+#page-trades .trade-preference-footer{justify-content:flex-end;margin-top:5px}
