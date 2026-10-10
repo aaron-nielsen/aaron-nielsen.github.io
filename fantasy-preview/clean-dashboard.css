@@ -602,3 +602,35 @@ body{font:16px/1.48 'Source Sans 3',Arial,sans-serif;color:var(--text);backgroun
  #page-overview .waiver-details strong{font-size:14px}
  #page-overview .waiver-points{font-size:17px}
 }
+
+
+/* Nine-position roster decisions — one compact, mobile-friendly ledger. */
+#page-overview #lineupRecommendations{display:block!important;padding:2px 17px 12px!important}
+#page-overview #waiverRecommendations{padding:3px 19px 16px!important}
+#page-overview .decision-list{display:block}
+#page-overview .decision-section-title{font:750 12px/1.35 'Source Sans 3',Arial,sans-serif;color:#86674a;margin:12px 0 2px}
+#page-overview .decision-section-title:first-child{margin-top:5px}
+#page-overview .decision-row{display:grid;grid-template-columns:45px minmax(0,1fr) minmax(74px,auto);align-items:center;gap:10px;min-height:56px;padding:9px 1px;border-bottom:1px solid #e7d9c7}
+#page-overview .decision-row:last-child{border-bottom:0}
+#page-overview .decision-position{font:750 12px/1.2 'Source Sans 3',Arial,sans-serif;color:#826248}
+#page-overview .decision-main{min-width:0}
+#page-overview .decision-main strong{display:block;font:700 15px/1.25 'Source Sans 3',Arial,sans-serif;color:#45382b;overflow-wrap:anywhere}
+#page-overview .decision-main small{display:block;font:500 12px/1.4 'Source Sans 3',Arial,sans-serif;color:#836f5d;margin-top:2px;overflow-wrap:anywhere}
+#page-overview .decision-row>b{font:750 19px/1.15 'Source Sans 3',Arial,sans-serif;text-align:right;color:#4d6851;font-variant-numeric:tabular-nums;white-space:nowrap}
+#page-overview .decision-row>b small{font-size:11px;font-weight:550;color:#80705f}
+#page-overview .pickup-watch>b{color:#5c4838}
+#page-overview .decision-result{display:flex;align-items:baseline;justify-content:space-between;gap:8px;padding:8px 1px 4px;color:#6d5b49;font-size:13px}
+#page-overview .decision-result strong{color:#4d6851;font-size:18px}
+#page-overview .decision-alert{font-size:12px;padding:9px 0 2px;color:#8c5835}
+#page-overview .decision-empty{padding:12px 2px;color:#786a5b;font-size:13px}
+#page-overview .recommendations-panel,#page-overview .waiver-panel{min-height:0}
+@media(max-width:650px){
+ #page-overview #lineupRecommendations{padding:2px 12px 9px!important}
+ #page-overview #waiverRecommendations{padding:2px 12px 12px!important}
+ #page-overview .decision-row{grid-template-columns:33px minmax(0,1fr) minmax(63px,auto);gap:7px;min-height:51px;padding:8px 1px}
+ #page-overview .decision-main strong{font-size:14px}
+ #page-overview .decision-main small{font-size:11px}
+ #page-overview .decision-row>b{font-size:16px}
+ #page-overview .decision-row>b small{font-size:10px}
+ #page-overview .decision-section-title{margin-top:9px}
+}
