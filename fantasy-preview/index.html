@@ -810,24 +810,21 @@ function renderModelMatchup(){
  const area=$('#modelMatchupSummary'),pair=matchup(),other=pair.home.id===TEAM_ID?pair.away:pair.home;
  const a=modelTeamLineup(TEAM_ID,week.week),b=modelTeamLineup(other.id,week.week);
  if(!a||!b){area.textContent='Complete nine-starter projection unavailable.';return;}
- const diff=a.points-b.points,who=diff>=0?'Your team':'Opponent';
+ const diff=a.points-b.points;
  const splits=lineup=>({
   offense:lineup.ids.filter(p=>p.slot<7).reduce((n,p)=>n+p.points,0),
   k:lineup.ids.find(p=>p.slot===7)?.points??0,
   def:lineup.ids.find(p=>p.slot===8)?.points??0
  });
  const p=splits(a),q=splits(b);
- area.innerHTML='<div class="model-strip-label">DA VINCI MODEL · INCLUDES K + DEF</div>'+
- '<div class="model-compare"><span>'+esc(team(TEAM_ID).name)+' <b>'+a.points.toFixed(1)+'</b></span>'+
- '<span>'+esc(other.name)+' <b>'+b.points.toFixed(1)+'</b></span></div>'+
- '<div class="model-strip-note">'+who+' favored by '+Math.abs(diff).toFixed(1)+' pts'+
- ((a.needsReview+b.needsReview)?' · Check player statuses':'')+
- ' <a href="#our-team-forecasts" id="modelTeamJump">All teams →</a></div>'+
- '<details class="quiet-details model-score-details"><summary>Score breakdown</summary>'+
- '<div class="model-breakout"><span>Offense <b>'+p.offense.toFixed(1)+' / '+q.offense.toFixed(1)+'</b></span>'+
- '<span>K <b>'+p.k.toFixed(1)+' / '+q.k.toFixed(1)+'</b></span>'+
- '<span>DEF <b>'+p.def.toFixed(1)+' / '+q.def.toFixed(1)+'</b></span></div>'+
- '<p>Scores are our estimates, not Yahoo projections. K and defense include opponent-based assumptions and are less certain than the displayed precision suggests.</p></details>';
+ area.innerHTML='<div class="model-short"><strong>DA VINCI MODEL · K + DEF</strong>'+
+  '<span>'+esc(team(TEAM_ID).name)+' <b>'+a.points.toFixed(1)+'</b> · '+esc(other.name)+' <b>'+b.points.toFixed(1)+'</b></span>'+
+  '<em>'+(diff>=0?'You':'Opponent')+' +'+Math.abs(diff).toFixed(1)+'</em>'+
+  '<a href="#our-team-forecasts" id="modelTeamJump">All teams →</a></div>'+
+  '<details class="quiet-details model-score-details"><summary>Score breakdown</summary>'+
+  '<div class="model-breakout"><span>Offense <b>'+p.offense.toFixed(1)+' / '+q.offense.toFixed(1)+'</b></span>'+
+  '<span>K <b>'+p.k.toFixed(1)+' / '+q.k.toFixed(1)+'</b></span>'+
+  '<span>DEF <b>'+p.def.toFixed(1)+' / '+q.def.toFixed(1)+'</b></span></div></details>';
  const jump=$('#modelTeamJump');if(jump)jump.addEventListener('click',e=>{
   e.preventDefault();showPage('projections');
   document.getElementById('our-team-forecasts')?.scrollIntoView?.({behavior:'smooth',block:'start'});
