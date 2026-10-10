@@ -56,24 +56,25 @@ function apply({futureData,weekly,history,context}){
   }
  }
  const logs=new Map((history?.players||[]).map(p=>[String(p.id),p]));
+ const startWeek=Number(futureData?.startWeek)||5;
  let adjusted=0,historical=0,newsApplied=0;
  for(const p of futureData?.players||[]){
   if(!['QB','RB','WR','TE'].includes(p.position))continue;
   const role=trend(logs.get(String(p.yahooId)),p.position);
   const games=p.weeks||[];
   for(const frame of games){
-   if(frame.week<5||frame.state==='bye'||frame.points==null)continue;
+   if(frame.week<startWeek||frame.state==='bye'||frame.points==null)continue;
    const override=news.get(String(p.yahooId)+'@'+frame.week);
    if(!override&&!role)continue;
    if(override&&(String(p.nflTeam||'').toUpperCase()!==override.plan.team||
       p.position!==override.plan.position))continue;
    let m=1,source=null,projectedSnap=null,baselineSnap=null;
    if(override){
-    m=override.target/override.base;projectedSnap=override.target;
+    m=clamp(override.target/override.base,0,2);projectedSnap=override.target;
     baselineSnap=override.base;source=override.plan.notes||'Verified teammate absence scenario';
     newsApplied++;
    }else{
-    const decay=Math.pow(.86,Math.max(0,frame.week-5));
+    const decay=Math.pow(.86,Math.max(0,frame.week-startWeek));
     m=1+(role.multiplier-1)*decay;
     baselineSnap=role.snapShare;
     projectedSnap=role.snapShare*m;
@@ -81,7 +82,7 @@ function apply({futureData,weekly,history,context}){
     historical++;
    }
    // If known inactive, never revive the player via a role model.
-   if(frame.state==='unavailable_reported'&&!override)continue;
+   if(frame.state==='unavailable_reported'&&!(override&&override.target===0))continue;
    const previous=frame.points,active=frame.activePoints;
    const prob=frame.availabilityProbability==null?1:frame.availabilityProbability;
    if(override&&override.target===0) {
