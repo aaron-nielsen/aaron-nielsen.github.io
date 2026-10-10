@@ -160,6 +160,11 @@ function update(){
  }).join(''):'<p class="txn-empty">No transactions match these filters.</p>';
 }
 function init(data){
+ // Each league has its own rosters, forecasts and transaction history.
+ // Rebuild the cached evaluations when switching leagues or refreshing data.
+ loaded=false;
+ results=[];
+ historicalRoster=null;
  state={...data,forecasts:new Map((data.future?.players||[]).map(p=>[String(p.yahooId),p]))};
  state.weeks=Array.from({length:Math.max(0,Number(data.future?.endWeek||17)-Number(data.week)+1)},(_,i)=>Number(data.week)+i);
  const source=data.transactions?.transactions||[];
