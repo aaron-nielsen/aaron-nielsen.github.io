@@ -680,6 +680,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 </div>
 <script src="./special-teams-model.js"></script>
 <script src="./lab-enhancements.js"></script>
+<script src="./availability-sanity.js"></script>
 <script src="./roster-advice.js"></script>
 <script src="./trade-preferences.js"></script>
 <script>
@@ -1335,6 +1336,8 @@ async function get(path){const r=await fetch(DATA_BASE+path+'.json',{cache:'no-s
   [rosters,available,week,model,backtest,weekly,futureData,waivers,leagueSettings,specialContext,specialValidation]=await Promise.all([get('rosters'),get('available'),get('week'),get('projections').catch(()=>null),get('backtest').catch(()=>null),get('weekly').catch(()=>null),get('future').catch(()=>null),get('waivers').catch(()=>null),get('league'),fetch('./data/special-teams-context.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Special-teams context unavailable');return r.json();}),fetch('./data/special-teams-validation.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null)]);
   if(!Array.isArray(rosters.teams)||!Array.isArray(available.players)||!Array.isArray(week.matchups)||!Array.isArray(week.standings)||!team(TEAM_ID)||!matchup())throw Error('League data incomplete or mismatched');
   if(rosters.leagueId!==week.leagueId||available.leagueId!==rosters.leagueId||rosters.leagueId!==(LEAGUE_KEY==='nebraska'?'470.l.1699881':'470.l.258793'))throw Error('League identity mismatch');
+  // Yahoo NA status overrides cached model player/team assumptions (e.g. Joe Mixon).
+  window.DaVinciEligibility?.reconcile({available,futureData,weekly});
   const special=window.DaVinciSpecialTeams?.enrich({context:specialContext,league:leagueSettings,rosters,available,futureData,weekly});
   if(!special||special.def===0||special.k===0)throw Error('K/DST model coverage unavailable');
   modelLineupCache.clear();
