@@ -43,3 +43,25 @@ historical, pregame observations have been collected. Run:
 ```sh
 node fantasy-preview/tests/forecast-accuracy.test.cjs
 ```
+
+## Collection and publication workflow
+
+1. Before games, freeze each league's current forecast snapshot:
+   `node fantasy-preview/scripts/freeze-forecasts.cjs fantasy-preview/data/future.json 5 archive/csu-2026-w05.json`
+   (Use the corresponding Nebraska data path for that league.)
+2. Save Yahoo's **timestamped pregame** player forecasts separately. Do not
+   reconstruct them from later Yahoo projections.
+3. After games, obtain verified actual fantasy points under the league's
+   scoring rules and player kickoff times.
+4. Join the three files:
+   `node fantasy-preview/scripts/join-forecast-results.cjs archive/csu-2026-w05.json actuals.json yahoo-pregame.json observations.json`
+5. Evaluate:
+   `node fantasy-preview/scripts/evaluate-forecasts.cjs observations.json`
+6. Publish only reviewed observations as
+   `fantasy-preview/data/forecast-observations.json` (and the analogous
+   `data/nebraska/` path). The Performance tab then reads those records.
+
+**Current limitation:** The site does not yet have a verified automated
+historical Yahoo projection feed or completed player-week actuals. Snapshot
+export is a command, not an unattended scheduler. Do not advertise automatic
+collection or accuracy results until that integration is running.
