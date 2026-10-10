@@ -634,3 +634,25 @@ body{font:16px/1.48 'Source Sans 3',Arial,sans-serif;color:var(--text);backgroun
  #page-overview .decision-row>b small{font-size:10px}
  #page-overview .decision-section-title{margin-top:9px}
 }
+
+
+/* Starter/backup comparisons: fit a full roster on one mobile screen more easily. */
+#page-overview .roster-mini{padding:3px 15px 11px}
+#page-overview .lineup-column-head{padding:7px 1px;font-size:10px;letter-spacing:.04em}
+#page-overview .lineup-pair{padding:7px 1px;gap:10px}
+#page-overview .lineup-column-person{min-height:42px;display:flex;flex-direction:column;justify-content:center}
+#page-overview .lineup-column-person+.lineup-column-person{padding-left:11px}
+#page-overview .lineup-position{font:800 10px/1.15 'Source Sans 3',Arial,sans-serif;margin:0 0 3px}
+#page-overview .lineup-primary{display:flex;justify-content:space-between;align-items:baseline;gap:6px;min-width:0}
+#page-overview .lineup-primary strong{font:700 14px/1.22 'Source Sans 3',Arial,sans-serif;min-width:0}
+#page-overview .lineup-primary .lineup-pts{font:750 15px/1.1 'Source Sans 3',Arial,sans-serif;color:#63482d;white-space:nowrap;flex:none}
+#page-overview .lineup-column-person small{font-size:11px;line-height:1.3;margin:2px 0 0}
+#page-overview .lineup-column-person.empty{font:500 16px 'Source Sans 3',Arial,sans-serif;color:#b0a395;align-items:flex-start}
+@media(max-width:600px){
+ #page-overview .roster-mini{padding:3px 10px 10px}
+ #page-overview .lineup-pair{padding:6px 1px;gap:7px}
+ #page-overview .lineup-column-person+.lineup-column-person{padding-left:8px}
+ #page-overview .lineup-primary strong{font-size:13px}
+ #page-overview .lineup-primary .lineup-pts{font-size:14px}
+ #page-overview .lineup-column-person small{font-size:10px}
+}
