@@ -60,11 +60,11 @@ function apply({futureData,weekly,history,context}){
  let adjusted=0,historical=0,newsApplied=0;
  for(const p of futureData?.players||[]){
   if(!['QB','RB','WR','TE'].includes(p.position))continue;
-  const role=trend(logs.get(String(p.yahooId)),p.position);
   const games=p.weeks||[];
   for(const frame of games){
    if(frame.week<startWeek||frame.state==='bye'||frame.points==null)continue;
    const override=news.get(String(p.yahooId)+'@'+frame.week);
+   const role=trend(logs.get(String(p.yahooId)),p.position,Number(frame.week));
    if(!override&&!role)continue;
    if(override&&(String(p.nflTeam||'').toUpperCase()!==override.plan.team||
       p.position!==override.plan.position))continue;
