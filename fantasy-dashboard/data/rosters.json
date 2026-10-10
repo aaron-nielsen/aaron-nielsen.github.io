@@ -960,20 +960,20 @@
           "status": null
         },
         {
-          "id": "31868",
-          "key": "470.p.31868",
-          "name": "Deebo Samuel Sr.",
-          "nflTeam": "SF",
-          "position": "WR",
-          "slot": "W/R/T",
-          "status": null
-        },
-        {
           "id": "34095",
           "key": "470.p.34095",
           "name": "Isaiah Likely",
           "nflTeam": "NYG",
           "position": "TE",
+          "slot": "W/R/T",
+          "status": null
+        },
+        {
+          "id": "31868",
+          "key": "470.p.31868",
+          "name": "Deebo Samuel Sr.",
+          "nflTeam": "SF",
+          "position": "WR",
           "slot": "BN",
           "status": null
         },
@@ -1058,7 +1058,8 @@
           "slot": "DEF",
           "status": null
         }
-      ]
+      ],
+      "snapshotAt": "2026-10-10T04:43:49.995Z"
     },
     {
       "id": "8",
@@ -2054,5 +2055,9 @@
         }
       ]
     }
-  ]
+  ],
+  "teamSnapshots": {
+    "7": "2026-10-10T04:43:49.995Z"
+  },
+  "userTeamLastRefreshedAt": "2026-10-10T04:43:49.995Z"
 }
