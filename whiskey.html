@@ -165,6 +165,11 @@ button,input,select{font:inherit}
 .style-tree tr:last-child td{border-bottom:0}
 .style-tree tr:hover td{background:#211815}
 .style-tree-name{display:flex;align-items:center;min-width:0}
+.style-tree tr.style-root td{font-weight:600;background:#1d1612}
+.style-tree tr.style-root:not(:first-child) td{border-top:2px solid #4b3425}
+.style-tree tr.style-root:hover td{background:#241a15}
+.style-tree tr.style-child td:first-child{color:#d9cfc6}
+.style-tree tr.style-child .filter-link{color:#d9cfc6}
 .style-tree-toggle{width:24px;height:24px;display:inline-flex;align-items:center;justify-content:center;flex:0 0 24px;margin-right:5px;border:1px solid #6a4a31;border-radius:5px;background:#251a14;color:#f3ebe3;cursor:pointer;line-height:1;font-weight:700}
 .style-tree-toggle:hover{border-color:var(--green2)}
 .style-tree-spacer{display:inline-block;width:29px;flex:0 0 29px}
@@ -760,7 +765,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
         : '<button class="filter-link substyle-link" data-parent-style="'+esc(rootStyle)+'" data-substyle="'+esc(node.path)+'">'+esc(node.name)+'</button>';
 
       body.push(
-        '<tr>'+
+        '<tr class="'+(node.depth===0?'style-root':'style-child')+'">'+
           '<td><div class="style-tree-name"><span class="style-tree-indent" style="width:'+indent+'px"></span>'+toggle+link+
           (hasChildren?'<span class="style-tree-depth">'+node.childList.length+' sub'+(node.childList.length===1?'style':'styles')+'</span>':'')+
           '</div></td>'+
