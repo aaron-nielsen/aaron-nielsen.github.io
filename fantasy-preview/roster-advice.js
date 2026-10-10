@@ -145,7 +145,7 @@ function renderWaivers(){
   }
  }
  changes.sort((a,b)=>b.gain-a.gain);
- const shown=changes.filter(c=>c.gain/weeks.length>=0.65).slice(0,3);
+ const shown=changes.filter(c=>c.gain/weeks.length>=0.65).slice(0,4);
  const highlights=shown.length?'<div class="decision-section-title">Potential upgrades</div>'+shown.map(c=>{
   const rate=c.gain/weeks.length;
   return '<div class="decision-row pickup-move"><span class="decision-position">'+esc(c.p.position)+'</span>'+
