@@ -1021,26 +1021,32 @@ function initOverview(){
 }
 function renderSpecialWaivers(){
  const area=$('#specialPickupResults');if(!area||!futureData?.players?.length)return;
- const mode=$('#waiverHorizon')?.value||'next_week',start=Math.max(6,Number(week.week)+1);
- const chosen=mode==='next_week'?[start]:mode==='four_weeks'?Array.from({length:4},(_,i)=>start+i):Array.from({length:Math.max(0,17-start+1)},(_,i)=>start+i);
+ const mode=$('#waiverHorizon')?.value||'next_week',start=Math.max(Number(week.week)+1,6),end=Number(futureData.endWeek||17);
+ const chosen=mode==='next_week'?[start]:mode==='four_weeks'?Array.from({length:Math.min(4,end-start+1)},(_,i)=>start+i):Array.from({length:Math.max(0,end-start+1)},(_,i)=>start+i);
  const roster=team(TEAM_ID)?.players||[],pool=futureData.players.filter(p=>['K','DEF'].includes(p.position));
- const blocked=new Set(['IR','IR-R','CEL','SUSP','SUS','NA','N/A','PUP','PUP-R','NFI','NFI-R']);
+ const blocked=new Set(['IR','IR-R','CEL','SUSP','SUS','NA','N/A','PUP','PUP-R','NFI','NFI-R','OUT','O','D']);
  const valid=p=>!blocked.has(String(p.injuryStatus||'').toUpperCase())&&p.rosterSlot!=='IR';
- const worth=(p,w)=>{const g=p.weeks.find(x=>x.week===w);return g?.points==null?0:g.points;};
+ const worth=(p,w)=>{const g=p.weeks?.find(x=>Number(x.week)===w);return Number.isFinite(g?.points)?g.points:0;};
  const lines=[];
  for(const pos of ['K','DEF']){
-  const own=roster.filter(x=>x.position===pos&&x.slot!=='IR').map(x=>pool.find(p=>String(p.yahooId)===String(x.id))).filter(Boolean).filter(valid);
-  const current=chosen.reduce((n,w)=>n+Math.max(0,...own.map(p=>worth(p,w))),0);
+  const own=roster.filter(x=>x.position===pos&&x.slot!=='IR').map(x=>pool.find(p=>String(p.yahooId)===String(x.id))).filter(Boolean);
+  if(!own.length)continue;
+  const eligible=own.filter(valid);
+  if(!eligible.length)continue;
+  const baseline=chosen.reduce((sum,w)=>sum+Math.max(...eligible.map(p=>worth(p,w))),0);
   const options=pool.filter(p=>p.position===pos&&p.ownership==='available'&&valid(p))
-   .map(p=>({p,total:chosen.reduce((n,w)=>n+worth(p,w),0)}))
-   .map(x=>({...x,gain:x.total-current}))
+   .filter(p=>pos!=='K'||(available.players.find(x=>String(x.id)===String(p.yahooId))?.yahooWideRosteredPercent||0)>=5)
+   .map(p=>({p,total:chosen.reduce((sum,w)=>sum+worth(p,w),0)}))
+   .map(x=>({...x,gain:x.total-baseline}))
    .sort((a,b)=>b.gain-a.gain);
-  const good=options.find(x=>x.gain>=chosen.length*.5);
-  if(good)lines.push('<div class="special-pickup-row"><span class="special-pickup-pos">'+pos+'</span><span><strong>'+esc(good.p.name)+'</strong><small>'+esc(good.p.nflTeam)+' · if active</small></span><b>+'+good.gain.toFixed(1)+' <small>pts</small></b></div>');
+  const best=options.find(x=>x.gain>=chosen.length*0.5);
+  if(!best)continue;
+  const drop=own.slice().sort((a,b)=>chosen.reduce((n,w)=>n+worth(a,w),0)-chosen.reduce((n,w)=>n+worth(b,w),0))[0];
+  lines.push('<div class="special-pickup-row"><span class="special-pickup-pos">'+pos+'</span>'+
+   '<span><strong>Add '+esc(best.p.name)+'</strong><small>Replace '+esc(drop.name)+' · '+esc(best.p.nflTeam||'')+'</small></span>'+
+   '<b>+'+best.gain.toFixed(1)+' <small>pts</small></b></div>');
  }
- area.innerHTML=lines.length?'<div class="special-pickup-heading">K / DEF upgrades</div>'+lines.join('')+
- '':
- '';
+ area.innerHTML=lines.length?'<div class="special-pickup-heading">Kicker / defense changes</div>'+lines.join(''):'';
 }
 
 function renderWaivers(){
