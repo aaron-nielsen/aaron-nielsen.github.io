@@ -58,6 +58,7 @@ function side(tx,teamId,acquired,dropped){
  // Direct comparison with today's roster for EACH past move double-counts later transactions.
  const after=historicalRoster?.get(tid);
  if(!team||!after)return {teamId:tid,name:team?.name||'Unknown team',value:null,reason:'Roster not in snapshot'};
+ if(!acquired.length&&!dropped.length)return {teamId:tid,name:team.name,value:null,reason:'No player roster change'};
  const missingAcquired=acquired.filter(p=>!after.some(x=>key(x)===key(p)));
  const missingForecast=[...acquired,...dropped].filter(p=>!state.forecasts.has(key(p)));
  const complete=!missingAcquired.length&&!missingForecast.length;
@@ -162,7 +163,17 @@ function update(){
  if(sort==='worst')rows.sort((a,b)=>compare(a,b,1));
  if(sort==='recent')rows.sort((a,b)=>Number(b.timestamp||0)-Number(a.timestamp||0));
  const rated=rows.filter(x=>value(x)!=null).length;
- $('txnStats').textContent=rows.length+' transactions · '+rated+' projected grades';
+ const missing=rows.length-rated;
+ const reasons=new Map();
+ for(const tx of rows){
+  const selected=team==='all'?tx.primary:tx.sides.find(side=>side.teamId===team);
+  if(selected?.value!=null)continue;
+  const reason=selected?.reason||'No team-side data';
+  reasons.set(reason,(reasons.get(reason)||0)+1);
+ }
+ const breakdown=[...reasons].sort((a,b)=>b[1]-a[1]).map(([reason,n])=>n+' '+reason.toLowerCase()).join(' · ');
+ $('txnStats').textContent=rows.length+' transactions · '+rated+' projected grades'+
+  (missing?' · '+missing+' ungraded'+(breakdown?' ('+breakdown+')':''):'');
  $('transactionCards').innerHTML=rows.length?rows.map(tx=>{
   const selected=team==='all'?tx.primary:tx.sides.find(side=>side.teamId===team);
   return card({...tx,primary:selected||tx.primary});
