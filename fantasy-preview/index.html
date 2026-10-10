@@ -700,6 +700,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
    <label>Order <select class="select" id="txnSort"><option value="recent">Newest first</option><option value="best">Best projected</option><option value="worst">Worst projected</option></select></label>
   </div>
   <div class="txn-summary"><strong id="txnStats">Loading transaction history…</strong><span id="txnCoverage"></span></div>
+  <div id="historicalTrends"></div>
   <div id="transactionCards" class="txn-list"><div class="empty-copy">Evaluating transactions…</div></div>
  </div>
 </section>
@@ -715,6 +716,8 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 <script src="./overview-roster.js"></script>
 <script src="./trade-preferences.js"></script>
 <script src="./transaction-grades.js"></script>
+<script src="./historical-trends.js"></script>
+<script src="./historical-trends-view.js"></script>
 <script src="./forecast-accuracy.js"></script>
 <script src="./model-performance.js"></script>
 <script>
