@@ -634,7 +634,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 </section>
 <section id="page-rosters" class="page" hidden>
 <div class="section-top"><div><div class="eyebrow">14 Teams</div><h2>Rosters</h2><p>Start with Ten Feline Overlords, or switch to any of the other 13 teams.</p></div><select class="select" id="teamChoice" aria-label="Select fantasy team"></select></div>
-<div id="selectedTeam"></div><div class="groups"><div class="panel group-panel" id="startingGroup"></div><div class="right-groups"><div class="panel group-panel" id="benchGroup"></div><div class="panel group-panel" id="irGroup"></div></div></div>
+<div id="selectedTeam"></div><div class="panel roster-compare" id="rosterComparison" aria-label="Starter and eligible backup comparison"></div><div class="roster-secondary"><div class="panel group-panel" id="benchGroup"></div><div class="panel group-panel" id="irGroup"></div></div>
 </section>
 <section id="page-finder" class="page" hidden>
 <div class="section-top"><div><div class="eyebrow">Rostered and available</div><h2>Player Finder</h2><p>Search rostered players and league-available players together.</p></div></div>
@@ -644,7 +644,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 <div class="note"><strong>*Waiver caveat:</strong> Yahoo confirms which players are available to acquire in your league, but the connected data does not distinguish unrestricted free agents from players still on waivers. Check Yahoo for claim eligibility and processing times. Available-player data is a sampled pool (up to 100 per position), not every NFL player.</div>
 </section>
 <section id="page-projections" class="page" hidden>
-<div class="section-top"><div><div class="eyebrow">NFL Week 5 · CSU Stats</div><h2>Weekly player forecasts</h2><p>Schedule, opponent and availability adjustments. Experimental and separate from Yahoo.</p></div></div>
+<div class="section-top"><div><div class="eyebrow">2026 · dated Week 5 model snapshot</div><h2>Weekly player forecasts</h2><p>Schedule, opponent and availability adjustments. Experimental and separate from Yahoo.</p></div></div>
 <div class="projection-split">
 <div class="panel"><div class="panel-header"><div><div class="panel-title">My weekly forecasts</div><div class="panel-sub">Opponent and availability status</div></div><span class="chip">MODEL V0.3</span></div><div class="model-status" id="modelStatus"><div class="eyebrow">EXPERIMENTAL</div><div class="headline">Loading player projections</div></div></div>
 <div class="panel"><div class="panel-header"><div><div class="panel-title">Yahoo team projections</div><div class="panel-sub">Projected final points for all 14 teams, current week</div></div><span class="chip" id="projectionWeek">WEEK 5</span></div><div class="projection-list" id="forecastList"></div></div>
@@ -670,10 +670,10 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
   <div class="panel-header"><div><div class="panel-title">Potential trade partners</div><div class="panel-sub">Model-based scenarios · not proposals made to other managers</div></div><span class="chip">EXPERIMENTAL</span></div>
   <div class="trade-controls"><label for="tradePosition">Trade targets <select id="tradePosition" class="select"><option value="offense_no_qb">Offense (no QB)</option><option value="all">All offense</option><option value="QB">QB</option><option value="RB">RB</option><option value="WR">WR</option><option value="TE">TE</option></select></label><label for="tradePartner">Trading with <select id="tradePartner" class="select"><option value="all">All teams</option></select></label>
   <label for="tradeFromWeek">Evaluate <select id="tradeFromWeek" class="select"><option value="6">Weeks 6–17</option></select></label>
-  <label for="tradePackageFilter">Packages <select id="tradePackageFilter" class="select"><option value="three_each">3-for-3 · preferred</option><option value="balanced">2-for-2 or 3-for-3</option><option value="balanced_all">All screened equal-size deals</option><option value="all">Exploratory · including uneven packages</option></select></label>
+  <label for="tradePackageFilter">Packages <select id="tradePackageFilter" class="select"><option value="three_each">3-for-3 only</option><option value="balanced" selected>2-for-2 or 3-for-3 · screened</option><option value="balanced_all">All screened equal-size deals</option><option value="all">Exploratory · including uneven packages</option></select></label>
   <div id="tradeCount" class="trade-count">Calculating candidates…</div></div>
   <div id="tradeResults" class="trades-grid"><div class="empty-copy">Calculating lineup-adjusted trade ideas…</div></div>
-  <div class="trade-caveat">The default shows <strong>3-for-3 trades</strong> with meaningful projected gains for both teams and unchanged roster sizes. Draft-value screening is provisional. It is a conservative plausibility check, <em>not a verified fair-trade price</em>. The exploratory filter includes flagged, potentially unrealistic scenarios. Figures assume healthy players and optimized QB/RB/WR/TE/flex lineups; K/DEF, injury uncertainty, roster adjustments and manager acceptance are not modeled. Nothing is submitted to Yahoo.</div>
+  <div class="trade-caveat">The default shows <strong>screened 2-for-2 or 3-for-3 scenarios</strong> with projected gains for both teams and unchanged roster sizes. Even a small positive edge is uncertain. Draft-value screening is provisional. It is a conservative plausibility check, <em>not a verified fair-trade price</em>. The exploratory filter includes flagged, potentially unrealistic scenarios. Figures assume healthy players and optimized QB/RB/WR/TE/flex lineups; K/DEF, injury uncertainty, roster adjustments and manager acceptance are not modeled. Nothing is submitted to Yahoo.</div>
 </div></section>
 </main>
 <footer class="footer"><div>DA VINCI FANTASY LAB / CSU STATS · MMXXVI</div><div>READ-ONLY PROTOTYPE · POWERED BY YAHOO LEAGUE DATA</div></footer>
@@ -1014,10 +1014,56 @@ function initRosters(){
 }
 function renderRoster(){
  const t=team(selectedTeam),s=standing(selectedTeam);
- const badge=t.id===TEAM_ID?'YOUR TEAM':'LEAGUE TEAM';
+ const mine=String(t.id)===String(TEAM_ID);
+ const badge=mine?'YOUR TEAM':'LEAGUE TEAM';
  $('#selectedTeam').innerHTML='<div class="team-overview"><div class="big-initial">'+esc(t.name.charAt(0).toUpperCase())+'</div><div><div class="eyebrow">'+badge+'</div><h2>'+esc(t.name)+'</h2><span class="quiet tiny">'+t.players.length+' players on Yahoo roster</span></div><div class="meta"><div><b>'+s.wins+'–'+s.losses+'</b><span>RECORD</span></div><div><b>#'+s.rank+'</b><span>LEAGUE RANK</span></div><div><b>'+number(s.pointsFor)+'</b><span>POINTS FOR</span></div></div></div>';
- const starters=t.players.filter(p=>p.slot!=='BN'&&p.slot!=='IR'),bench=t.players.filter(p=>p.slot==='BN'),ir=t.players.filter(p=>p.slot==='IR');
- group('startingGroup',starters,'Starters');group('benchGroup',bench,'Bench');group('irGroup',ir,'Injured reserve');
+ const order=['QB','RB','RB','WR','WR','TE','W/R/T','K','DEF'];
+ const allowed={QB:['QB'],RB:['RB'],WR:['WR'],TE:['TE'],'W/R/T':['RB','WR','TE'],K:['K'],DEF:['DEF']};
+ const starters=t.players.filter(p=>p.slot!=='BN'&&p.slot!=='IR');
+ const bench=t.players.filter(p=>p.slot==='BN');
+ const ir=t.players.filter(p=>p.slot==='IR');
+ const pending=starters.slice(),ordered=[];
+ for(const slot of order){const i=pending.findIndex(p=>p.slot===slot);if(i>=0)ordered.push(pending.splice(i,1)[0]);}
+ ordered.push(...pending);
+ const unavailable=new Set(['IR','IR-R','O','OUT','CEL','SUSP','SUS','NA','N/A','PUP','PUP-R','NFI','NFI-R']);
+ const reserves=bench.filter(p=>!unavailable.has(String(p.status||'').toUpperCase())&&!String(p.status||'').toUpperCase().startsWith('IR-'));
+ function predicted(p){
+  const v=weeklyProjection(p);
+  return Number.isFinite(v?.weeklyProjectedPoints)?Math.max(0,v.weeklyProjectedPoints):0;
+ }
+ const memo=new Map();
+ function assign(i,mask){
+  if(i===ordered.length)return {score:0,choices:[]};
+  const key=i+'|'+mask;
+  if(memo.has(key))return memo.get(key);
+  const skipped=assign(i+1,mask);
+  let best={score:skipped.score,choices:[null,...skipped.choices]};
+  const valid=allowed[ordered[i].slot]||[ordered[i].position];
+  for(let j=0;j<reserves.length;j++){
+   if(mask&(1<<j)||!valid.includes(reserves[j].position))continue;
+   const next=assign(i+1,mask|(1<<j));
+   const score=1000+Math.min(100,predicted(reserves[j]))+next.score;
+   if(score>best.score)best={score,choices:[reserves[j],...next.choices]};
+  }
+  memo.set(key,best);return best;
+ }
+ const assigned=assign(0,0).choices;
+ function cell(p,slot,backup){
+  if(!p)return '<div class="roster-compare-cell"><span class="roster-compare-empty">No eligible active reserve</span></div>';
+  const projection=weeklyProjection(p);
+  const pts=weeklyDisplay(projection);
+  const ptsNote=p.position==='K'||p.position==='DEF'?'Not modeled':pts;
+  return '<div class="roster-compare-cell">'+(slot?'<span class="roster-compare-slot">'+esc(slot)+'</span>':'')+
+   '<strong>'+esc(p.name)+status(p)+'</strong>'+
+   '<small>'+esc(p.position)+' · '+esc(p.nflTeam||'NFL team unknown')+
+   ' · <span class="roster-compare-score">'+esc(ptsNote)+'</span>'+
+   (backup?' · depth option':'')+'</small></div>';
+ }
+ $('#rosterComparison').innerHTML='<div class="roster-compare-header"><span>CURRENT STARTER</span><span>BEST DISTINCT BACKUP</span></div>'+
+ ordered.map((p,i)=>'<div class="roster-compare-row">'+cell(p,p.slot,false)+cell(assigned[i],null,true)+'</div>').join('')+
+ '<p class="roster-compare-note">Backups are position-eligible and assigned once, prioritizing coverage and then modeled points. Injured, out and suspended players are omitted from immediate cover; questionable and bye-week players require checking. Snapshots are not live lineup changes.</p>';
+ group('benchGroup',bench,'All bench players');
+ group('irGroup',ir,'Injured reserve');
 }
 function allPlayers(){
  const owned=rosters.teams.flatMap(t=>t.players.map(p=>({...p,owned:true,fantasyTeam:t.name,fantasyTeamId:t.id})));
