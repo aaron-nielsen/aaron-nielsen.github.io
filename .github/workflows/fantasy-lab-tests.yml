@@ -25,3 +25,4 @@ jobs:
           node fantasy-preview/tests/special-teams.test.cjs
           node fantasy-preview/tests/roster-advice.test.cjs
           node fantasy-preview/tests/trade-preferences.test.cjs
+          node fantasy-preview/tests/trade-leagues.test.cjs
