@@ -1,0 +1,24 @@
+name: Fantasy Lab model checks
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'fantasy-preview/**'
+      - '.github/workflows/fantasy-lab-tests.yml'
+  pull_request:
+    paths:
+      - 'fantasy-preview/**'
+      - '.github/workflows/fantasy-lab-tests.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  forecasts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate fantasy K/DST models and nine-starter lineups
+        run: node fantasy-preview/tests/special-teams.test.cjs
