@@ -136,6 +136,16 @@ for(const league of [
   assert.ok(lineup.selections.some(x=>x.player.position==='DEF'));
  }
  const html=element('waiverRecommendations').innerHTML;
+ for(const group of html.split('class="available-position"').slice(1)){
+  assert.equal((group.match(/class="decision-row pickup-watch"/g)||[]).length,3,league.name+' requires three at every position');
+ }
+ assert.equal((html.match(/ROS total/g)||[]).length,6);
+ assert.equal((html.match(/Next game<\/span>/g)||[]).length,6);
+ const originalHTML=html;
+ element('waiverHorizon').value='rest_of_season';context.DaVinciAdvice.renderWaivers();
+ assert.equal((element('waiverRecommendations').innerHTML.match(/class="decision-row pickup-watch"/g)||[]).length,18,'ROS ranking retains three per position');
+ element('waiverHorizon').value='next_week';context.DaVinciAdvice.renderWaivers();
+ assert.equal(element('waiverRecommendations').innerHTML,originalHTML,'Horizon switching is repeatable');
  assert.ok(html.includes('Top available by position'),league.name+' missing shortlist');
  assert.ok(!html.includes('Joe Mixon'),league.name+' recommends a Yahoo NA inactive running back');
  for(const name of ['RB','WR','TE','QB','K','DEF']){
@@ -144,3 +154,12 @@ for(const league of [
  assert.ok(!html.includes('not generated for this league'),league.name+' still shows placeholder');
  console.log(league.name+': live snapshot generated a nine-position lineup and complete pickup ranking');
 }
+
+// A bye is skipped for next-game points; ROS is a sum, never a weekly average.
+elements.clear();
+const byeForecast={yahooId:'byeQB',name:'Bye Quarterback',position:'QB',ownership:'available',weeks:[{week:5,state:'bye',points:0},{week:6,state:'assuming_active',points:20},{week:7,state:'assuming_active',points:15}]};
+context.DaVinciAdvice.init({rosters:{teams:[{id:'7',players:[]}]},available:{players:[{id:'byeQB'}]},future:{startWeek:5,endWeek:7,players:[byeForecast]},week:5,teamId:'7'});
+const byeHTML=element('waiverRecommendations').innerHTML;
+assert.match(byeHTML,/W6/);assert.match(byeHTML,/<b>20.0<\/b><b>35.0<\/b>/);
+byeForecast.weeks[2].points=null;context.DaVinciAdvice.renderWaivers();
+assert.match(element('waiverRecommendations').innerHTML,/<b>20.0<\/b><b>—<\/b>/,'Incomplete ROS must be unavailable, not a partial sum');

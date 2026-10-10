@@ -59,3 +59,26 @@ for(const entry of [{folder:'data/',id:'7',label:'CSU Stats'},{folder:'data/nebr
  console.log(entry.label+': '+starters.length+' starters, '+bench.length+' bench, '+IR.length+' IR, future-week selection correct');
 }
 console.log('Homepage structural markup and inline JavaScript syntax verified');
+
+require(path.join(base,'matchup-overview.js'));
+assert.ok(html.includes('./matchup-overview.js'),'Submitted-lineup module loaded');
+assert.ok(!html.includes('Model breakdown'),'Overview model strip removed');
+for(const entry of [{folder:'data/',id:'7'},{folder:'data/nebraska/',id:'6'}]){
+ const data={rosters:read(entry.folder+'rosters.json'),weekly:read(entry.folder+'weekly.json'),future:read(entry.folder+'future.json'),week:5};
+ const actual=globalThis.DaVinciMatchup.submitted(data,entry.id);
+ assert.equal(actual.rows.length,9);
+ const roster=data.rosters.teams.find(t=>t.id===entry.id).players;
+ assert.deepEqual(actual.rows.map(r=>r.player.id).sort(),roster.filter(p=>!['BN','IR'].includes(p.slot)).map(p=>p.id).sort(),'Compare submitted starters, never optimized bench substitutions');
+ if(actual.total!=null)assert.equal(actual.total,actual.rows.reduce((s,r)=>s+r.points,0));
+ const qb=actual.rows[0].player;
+ data.weekly.players=data.weekly.players.filter(p=>String(p.yahooId)!==String(qb.id));
+ data.future.players=data.future.players.filter(p=>String(p.yahooId)!==String(qb.id));
+ assert.equal(globalThis.DaVinciMatchup.submitted(data,entry.id).total,null,'Missing projection must not silently become zero');
+ qb.status='OUT';
+ const out=globalThis.DaVinciMatchup.submitted(data,entry.id).rows[0];
+ assert.equal(out.points,0);assert.equal(out.label,'OUT');
+ qb.status=null;qb.slot='BN';
+ const empty=globalThis.DaVinciMatchup.submitted(data,entry.id);
+ assert.equal(empty.rows[0].player,null);assert.equal(empty.total,null);
+}
+console.log('Both leagues compare submitted starters with explicit missing, OUT and empty-slot behavior.');

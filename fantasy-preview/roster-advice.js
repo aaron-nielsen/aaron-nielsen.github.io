@@ -3,7 +3,7 @@
    Yahoo ownership is read-only, never an automatic transaction. */
 (function (root) {
 'use strict';
-const POSITIONS=['RB','WR','TE','QB','K','DEF'];
+const POSITIONS=['QB','RB','WR','TE','K','DEF'];
 const SLOTS=[['QB'],['RB'],['RB'],['WR'],['WR'],['TE'],['RB','WR','TE'],['K'],['DEF']];
 const SLOT_NAMES=['QB','RB','RB','WR','WR','TE','FLEX','K','DEF'];
 const BENCH='BN';
@@ -113,12 +113,18 @@ function renderWaivers(){
    const merged={...p,status:live?.status||p.injuryStatus||p.status};
    return !inaccessible(merged,weeks[0])&&!OUT.has(status(merged));
   });
- const totals=p=>weeks.reduce((sum,w)=>sum+(points({id:p.yahooId},w)||0),0);
+ const first=Math.max(state.week,Number(state.future.startWeek));
+ const rosWeeks=Array.from({length:Math.max(0,Number(state.future.endWeek)-first+1)},(_,i)=>first+i);
+ const totalFor=(p,range)=>{
+  const values=range.map(w=>points({id:p.yahooId},w));
+  return values.length&&values.every(v=>v!=null)?values.reduce((sum,v)=>sum+v,0):null;
+ };
+ const totals=p=>totalFor(p,weeks);
  const ordered=pool.map(p=>({...p,id:String(p.yahooId),total:totals(p),market:availableMap.get(String(p.yahooId))?.yahooWideRosteredPercent??null}))
-  .filter(p=>weeks.some(w=>points(p,w)!=null))
+  .filter(p=>p.total!=null)
   .sort((a,b)=>b.total-a.total||a.name.localeCompare(b.name));
  const bestByPosition=POSITIONS.map(pos=>{
-  const list=ordered.filter(p=>p.position===pos && (pos!=='K'||p.market==null||p.market>=5));
+  const list=ordered.filter(p=>p.position===pos);
   return {pos,list:list.slice(0,3)};
  });
  const dropChoices=roster.filter(p=>p.slot==='BN'&&!EXCLUDED.has(status(p))&&!OUT.has(status(p)));
@@ -160,18 +166,28 @@ function renderWaivers(){
    '<span class="decision-main"><strong>Add '+esc(c.p.name)+'</strong><small>Drop '+esc(c.drop.name)+'</small></span>'+
    '<b>+'+fmt(rate)+' <small>pts/wk</small></b></div>';
  }).join(''):'';
- const label=weeks.length===1?'Week '+weeks[0]+' projection':'Average points / week';
+ const label=weeks.length===1?'Week '+weeks[0]+' projection':'Total projected points for selected horizon';
+ const value=v=>v==null?'—':fmt(v);
  const watch='<div class="decision-section-title">Top available by position</div>'+
-  bestByPosition.map(({pos,list})=>{
-   const p=list[0];
-   if(!p)return '';
-   const avg=p.total/weeks.length;
-   return '<div class="decision-row pickup-watch"><span class="decision-position">'+pos+'</span>'+
-    '<span class="decision-main"><strong>'+esc(p.name)+'</strong><small>'+esc(p.nflTeam||'')+(status(p)?' · '+esc(status(p)):'')+'</small></span>'+
-    '<b>'+fmt(avg)+' <small>pts'+(weeks.length>1?'/wk':'')+'</small></b></div>';
-  }).join('');
- rootEl.innerHTML=highlights+watch;
- rootEl.setAttribute('aria-label','Roster pickup advice, '+label);
+  '<div class="available-position-grid">'+bestByPosition.map(({pos,list})=>
+   '<section class="available-position" aria-label="Top available '+pos+'"><h3>'+pos+'</h3>'+
+   '<div class="available-columns"><span>Player / next matchup</span><span>Next game</span><span>ROS total</span></div>'+
+   (list.length?list.map(p=>{
+    const frame=p.weeks?.find(g=>Number(g.week)>=first&&g.state!=='bye');
+    const next=frame?points(p,Number(frame.week)):null;
+    const live=availableMap.get(String(p.yahooId));
+    const code=status({...p,status:live?.status||p.injuryStatus||p.status});
+    const matchup=frame?.opponent?(frame.home?'vs ':'@ ')+frame.opponent:'Schedule unavailable';
+    const note=(frame?'W'+frame.week+' · ':'')+matchup+(code?' · '+code:'');
+    return '<div class="decision-row pickup-watch"><span class="decision-position">'+pos+'</span>'+
+     '<span class="decision-main"><strong>'+esc(p.name)+'</strong><small>'+esc(p.nflTeam||'')+' · '+esc(note)+'</small></span>'+
+     '<b>'+value(next)+'</b><b>'+value(totalFor(p,rosWeeks))+'</b></div>';
+   }).join(''):'<div class="decision-empty">No eligible modeled players.</div>')+'</section>'
+  ).join('')+'</div>';
+ const notice='<p class="available-notice">Next game skips byes. ROS is the total for Weeks '+first+'–'+state.future.endWeek+', including the current week and zero for byes. Estimates assume participation except explicit availability adjustments; check injuries and Yahoo waiver status. Missing forecasts show —. K/DEF projections are experimental.</p>';
+ rootEl.innerHTML=highlights+watch+notice+(!allReady?'<p class="available-notice">Pickup gains unavailable: a complete baseline lineup could not be projected.</p>':'');
+ rootEl.setAttribute('aria-label','Roster pickup advice, ranked by '+label);
+
 }
 function init(data){
  state=data;

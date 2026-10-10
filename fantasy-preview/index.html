@@ -704,23 +704,23 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
   <div><small>WAIVERS</small><strong id="waiverRank">—</strong></div>
  </div>
 </div>
-<div class="model-offense-strip" id="modelMatchupSummary" aria-live="polite">Loading Da Vinci model…</div>
-<section class="panel overview-roster-panel" aria-label="My complete fantasy roster">
+<section class="panel matchup-lineup-panel" aria-label="Both managers’ submitted starters"><div id="matchupLineups"></div></section>
+<details class="panel overview-roster-panel" aria-label="My complete fantasy roster"><summary>My roster · bench, injured reserve and future lineups</summary>
  <div class="panel-header lineup-planner-header">
   <div class="panel-title">My roster</div>
   <select class="select lineup-week-select" id="lineupWeek" aria-label="Choose lineup week"><option value="5">Week 5 · Yahoo starters</option></select>
   <button class="sub-link" type="button" data-jump="rosters">League rosters →</button>
  </div>
  <div class="roster-board" id="myLineup"><div class="empty-copy">Loading starters and bench…</div></div>
-</section>
+</details>
 <section class="panel recommendations-panel" aria-label="Roster changes">
 <div class="panel-header"><div><div class="panel-title">Roster changes</div></div><span class="chip" id="lineupChangeWeek">WEEK 5</span></div>
 <div id="lineupRecommendations" class="recommendation-grid"><div class="empty-copy">Finding lineup upgrades…</div></div>
 
 </section>
 <section class="panel waiver-panel" aria-label="Best available player recommendations">
- <div class="panel-header"><div><div class="panel-title">Best available players</div></div>
- <select id="waiverHorizon" class="select waiver-horizon" aria-label="Projection horizon">
+ <div class="panel-header"><div><div class="panel-title">Best available players</div><small>Top three at each position · sort / upgrade horizon</small></div>
+ <select id="waiverHorizon" class="select waiver-horizon" aria-label="Rank available players and evaluate upgrades by">
   <option value="next_week">Week 5</option>
   <option value="four_weeks">Weeks 5–8</option>
   <option value="rest_of_season">Rest of season · Weeks 5–17</option>
@@ -798,6 +798,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 <script src="./return-outlook.js"></script>
 <script src="./playing-time-model.js"></script>
 <script src="./roster-advice.js"></script>
+<script src="./matchup-overview.js"></script>
 <script src="./overview-roster.js"></script>
 <script src="./trade-preferences.js"></script>
 <script src="./transaction-grades.js"></script>
@@ -918,8 +919,8 @@ function modelTeamLineup(teamId,forecastWeek){
 }
 
 function currentTeamForecast(t){
- const line=modelTeamLineup(t.id,week.week);
- return {davinci:Number.isFinite(line?.points)?line.points:null,
+ const line=window.DaVinciMatchup.submitted({rosters,weekly,future:futureData,week:Number(week.week)},t.id);
+ return {davinci:line.total,
   yahoo:Number.isFinite(t.projectedPoints)?t.projectedPoints:null};
 }
 function scoreLabel(value){return Number.isFinite(value)?value.toFixed(1):'—';}
@@ -935,27 +936,10 @@ function matchupTeamCard(t){
   '<div class="match-compact-projection yahoo"><small>Yahoo</small><strong>'+scoreLabel(n.yahoo)+'</strong></div></div>';
 }
 function renderModelMatchup(){
- const area=$('#modelMatchupSummary'),pair=matchup(),other=pair.home.id===TEAM_ID?pair.away:pair.home;
- const a=modelTeamLineup(TEAM_ID,week.week),b=modelTeamLineup(other.id,week.week);
- if(!a||!b){area.textContent='Complete nine-starter projection unavailable.';return;}
- const diff=a.points-b.points;
- const splits=lineup=>({
-  offense:lineup.ids.filter(p=>p.slot<7).reduce((n,p)=>n+p.points,0),
-  k:lineup.ids.find(p=>p.slot===7)?.points??0,
-  def:lineup.ids.find(p=>p.slot===8)?.points??0
- });
- const p=splits(a),q=splits(b);
- area.innerHTML='<div class="model-short"><strong>Model breakdown</strong>'+
-  '<a href="#our-team-forecasts" id="modelTeamJump">Team forecasts →</a></div>'+
-  '<details class="quiet-details model-score-details"><summary>Score breakdown</summary>'+
-  '<div class="model-breakout"><span>Offense <b>'+p.offense.toFixed(1)+' / '+q.offense.toFixed(1)+'</b></span>'+
-  '<span>K <b>'+p.k.toFixed(1)+' / '+q.k.toFixed(1)+'</b></span>'+
-  '<span>DEF <b>'+p.def.toFixed(1)+' / '+q.def.toFixed(1)+'</b></span></div></details>';
- const jump=$('#modelTeamJump');if(jump)jump.addEventListener('click',e=>{
-  e.preventDefault();showPage('projections');
-  document.getElementById('our-team-forecasts')?.scrollIntoView?.({behavior:'smooth',block:'start'});
- });
+ const pair=matchup(),you=pair.home.id===TEAM_ID?pair.home:pair.away,other=pair.home.id===TEAM_ID?pair.away:pair.home;
+ window.DaVinciMatchup.render({rosters,weekly,future:futureData,week:Number(week.week),you,other});
 }
+
 function forecastWeeks(value){
  const start=Math.max(6,Number(week.week));
  if(value==='next4')return [6,7,8,9].filter(w=>w>=start&&w<=futureData.endWeek);
@@ -1030,11 +1014,11 @@ function initOverview(){
  const margin=(a,b,label)=>!Number.isFinite(a)||!Number.isFinite(b)?label+': unavailable':
   Math.abs(a-b)<.05?label+': even':label+': '+(a>b?'you +':'opponent +')+Math.abs(a-b).toFixed(1);
  $('#hero').innerHTML=
-   '<div class="match-compact-heading">WEEK '+esc(week.week)+' <span>· TEAM PREDICTIONS</span></div>'+
+   '<div class="match-compact-heading">WEEK '+esc(week.week)+' <span>· SUBMITTED STARTERS</span></div>'+
    '<div class="match-compact-scores">'+matchupTeamCard(you)+
    '<div class="match-compact-vs" aria-hidden="true">—</div>'+matchupTeamCard(them)+'</div>'+
    '<div class="match-compact-footer">'+margin(yours.davinci,theirs.davinci,'Da Vinci')+' · '+
-    margin(yours.yahoo,theirs.yahoo,'Yahoo')+'</div>';
+    margin(yours.yahoo,theirs.yahoo,'Yahoo')+' · Same submitted lineup</div>';
  const st=standing(TEAM_ID);$('#wl').innerHTML=st?.wins==null?'—':esc(st.wins)+'<span>–</span>'+esc(st.losses);$('#rankDesc').textContent=st?.rank==null?'Yahoo standings unavailable':'#'+st.rank+' / '+rosters.teams.length;
  $('#pointsFor').textContent=number(st?.pointsFor);$('#waiverRank').textContent=st?.waiverPriority==null?'—':'#'+st.waiverPriority;
  // Show all rostered players instead of cherry-picked best backups.
