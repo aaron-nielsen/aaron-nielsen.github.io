@@ -136,7 +136,11 @@ function update(){
  }
  const team=$('txnTeam')?.value||'all',type=$('txnType')?.value||'all',sort=$('txnSort')?.value||'recent';
  let rows=results.filter(tx=>(team==='all'||tx.sides.some(s=>s.teamId===team))&&(type==='all'||(type==='trade'?tx.isTrade:type==='add'?(tx.type==='add'):tx.type==='drop')));
- const value=x=>x.primary?.value?.avg;
+ const value=x=>{
+  // When filtering a manager, rank transactions by THAT manager's impact.
+  const selected=team==='all'?x.primary:x.sides.find(side=>side.teamId===team);
+  return selected?.value?.avg;
+ };
  // Missing grades are unknown, not negative outcomes: always sort them last.
  const compare=(a,b,direction)=>{
   const x=value(a),y=value(b);
@@ -148,9 +152,12 @@ function update(){
  if(sort==='best')rows.sort((a,b)=>compare(a,b,-1));
  if(sort==='worst')rows.sort((a,b)=>compare(a,b,1));
  if(sort==='recent')rows.sort((a,b)=>Number(b.timestamp||0)-Number(a.timestamp||0));
- const rated=rows.filter(x=>x.primary?.value).length;
+ const rated=rows.filter(x=>value(x)!=null).length;
  $('txnStats').textContent=rows.length+' transactions · '+rated+' projected grades';
- $('transactionCards').innerHTML=rows.length?rows.map(card).join(''):'<p class="txn-empty">No transactions match these filters.</p>';
+ $('transactionCards').innerHTML=rows.length?rows.map(tx=>{
+  const selected=team==='all'?tx.primary:tx.sides.find(side=>side.teamId===team);
+  return card({...tx,primary:selected||tx.primary});
+ }).join(''):'<p class="txn-empty">No transactions match these filters.</p>';
 }
 function init(data){
  state={...data,forecasts:new Map((data.future?.players||[]).map(p=>[String(p.yahooId),p]))};
