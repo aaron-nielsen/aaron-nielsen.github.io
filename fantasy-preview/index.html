@@ -622,9 +622,9 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 <section class="panel waiver-panel" aria-label="Best available player recommendations">
  <div class="panel-header"><div><div class="panel-title">Best available players</div></div>
  <select id="waiverHorizon" class="select waiver-horizon" aria-label="Projection horizon">
-  <option value="next_week">Week 6</option>
-  <option value="four_weeks">Weeks 6–9</option>
-  <option value="rest_of_season">Rest of season · Weeks 6–17</option>
+  <option value="next_week">Week 5</option>
+  <option value="four_weeks">Weeks 5–8</option>
+  <option value="rest_of_season">Rest of season · Weeks 5–17</option>
  </select></div>
  <div id="waiverRecommendations" class="waiver-list"><div class="empty-copy">Loading players…</div></div>
  
@@ -915,14 +915,14 @@ function renderPlannedLineup(weekNumber){
  const best=dp.filter(Boolean).reduce((a,b)=>!a||b.count>a.count||
   (b.count===a.count&&b.points>a.points)?b:a,null);
  const person=(p,slot,pts)=>{
-  if(!p)return '<div class="lineup-column-person empty">No backup</div>';
+  if(!p)return '<div class="lineup-column-person empty" aria-label="No eligible backup">—</div>';
   const frame=forecast.get(String(p.id))?.weeks?.find(w=>Number(w.week)===weekNumber);
   const opp=frame?.state==='bye'?'Bye':frame?.opponent?(frame.home?'vs ':'@ ')+frame.opponent:'Schedule unavailable';
   const points=frame?.state==='bye'?'BYE':pts==null?'—':Number(pts).toFixed(1);
   const statusText=p.status?' · '+esc(p.status):'';
   return '<div class="lineup-column-person">'+(slot?'<span class="lineup-position">'+esc(slot)+'</span>':'')+
-   '<strong>'+esc(p.name)+'</strong><small>'+esc(p.position)+' · '+esc(opp)+statusText+'</small>'+
-   '<span class="lineup-pts">'+points+'</span></div>';
+   '<div class="lineup-primary"><strong>'+esc(p.name)+'</strong><span class="lineup-pts">'+points+'</span></div>'+
+   '<small>'+esc(p.position)+' · '+esc(opp)+statusText+'</small></div>';
  };
  root.innerHTML='<div class="planner-summary"><span>Best modeled starters · Week '+weekNumber+'</span>'+
   '<strong>'+estimate.points.toFixed(1)+' pts</strong></div>'+
@@ -990,7 +990,7 @@ function initOverview(){
  }
  const selectedBackups=assign(0,0).choices;
  const lineupPerson=(p,slot)=>{
-   if(!p)return '<div class="lineup-column-person empty"><span>No eligible backup</span></div>';
+   if(!p)return '<div class="lineup-column-person empty" aria-label="No eligible backup">—</div>';
    const w=weeklyProjection(p);
    const future=futureData?.players?.find(x=>String(x.yahooId)===String(p.id));
    const next=(w?.forecastStatus==='bye' && future?.weeks)
@@ -999,9 +999,9 @@ function initOverview(){
    const projectionNote=next?' · W'+next.week+' '+number(next.activePoints)+' if active':'';
    return '<div class="lineup-column-person">'+
     (slot?'<span class="lineup-position">'+esc(slot)+'</span>':'')+
-    '<strong>'+esc(p.name)+status(p)+'</strong>'+
-    '<small>'+esc(p.position)+' · '+esc(weeklyOpponent(w))+esc(projectionNote)+'</small>'+
-    '<span class="lineup-pts">'+esc(weeklyDisplay(w))+'</span></div>';
+    '<div class="lineup-primary"><strong>'+esc(p.name)+status(p)+'</strong>'+
+    '<span class="lineup-pts">'+esc(weeklyDisplay(w))+'</span></div>'+
+    '<small>'+esc(p.position)+' · '+esc(weeklyOpponent(w))+esc(projectionNote)+'</small></div>';
  };
  $('#myLineup').innerHTML='<div class="lineup-column-head"><span>STARTER</span><span>BEST BACKUP</span></div>'+
  ordered.map((p,i)=>'<div class="lineup-pair">'+lineupPerson(p,p.slot)+lineupPerson(selectedBackups[i],'')+'</div>').join('')+
