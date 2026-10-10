@@ -608,12 +608,24 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 <main id="app">
 <section id="page-overview" class="page">
 <div class="section-top"><div><div class="eyebrow" id="overviewLeagueLabel">2026 Fantasy Football</div><h1>Overview</h1></div><div class="quiet tiny" id="sync">Loading Yahoo snapshot…</div></div>
-<div class="homesplit">
-<div class="matchup" id="hero"><div class="loading">Loading this week's matchup…</div></div>
-<div class="record-card"><div class="record-upper"><div class="eyebrow">RECORD</div><div class="record-fig mono" id="wl">—</div><div class="record-desc" id="rankDesc">League standings</div></div><div class="record-stats"><div><strong class="mono" id="pointsFor">—</strong><small>POINTS SCORED</small></div><div><strong id="waiverRank" class="mono">—</strong><small>WAIVER PRIORITY</small></div></div></div>
+<div class="overview-top">
+ <div class="matchup" id="hero"><div class="loading">Loading this week's matchup…</div></div>
+ <div class="overview-metrics" aria-label="My team standings">
+  <div><small>RECORD</small><strong id="wl">—</strong></div>
+  <div><small>RANK</small><strong id="rankDesc">—</strong></div>
+  <div><small>POINTS</small><strong id="pointsFor">—</strong></div>
+  <div><small>WAIVERS</small><strong id="waiverRank">—</strong></div>
+ </div>
 </div>
-<div class="model-offense-strip" id="modelMatchupSummary" aria-live="polite">Loading Da Vinci offensive lineup estimates…</div>
-<div class="offense-outlook" id="offenseOutlook" aria-label="Future nine-starter team projections">Calculating future lineups…</div>
+<div class="model-offense-strip" id="modelMatchupSummary" aria-live="polite">Loading Da Vinci model…</div>
+<section class="panel overview-roster-panel" aria-label="My complete fantasy roster">
+ <div class="panel-header lineup-planner-header">
+  <div class="panel-title">My roster</div>
+  <select class="select lineup-week-select" id="lineupWeek" aria-label="Choose lineup week"><option value="5">Week 5 · Yahoo starters</option></select>
+  <button class="sub-link" type="button" data-jump="rosters">League rosters →</button>
+ </div>
+ <div class="roster-board" id="myLineup"><div class="empty-copy">Loading starters and bench…</div></div>
+</section>
 <section class="panel recommendations-panel" aria-label="Roster changes">
 <div class="panel-header"><div><div class="panel-title">Roster changes</div></div><span class="chip" id="lineupChangeWeek">WEEK 5</span></div>
 <div id="lineupRecommendations" class="recommendation-grid"><div class="empty-copy">Finding lineup upgrades…</div></div>
@@ -629,10 +641,11 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
  <div id="waiverRecommendations" class="waiver-list"><div class="empty-copy">Loading players…</div></div>
  
 </section>
-<div class="columns">
-<div class="panel"><div class="panel-header lineup-planner-header"><div class="panel-title">My lineup</div><select class="select lineup-week-select" id="lineupWeek" aria-label="Choose week for lineup planner"><option value="5">Week 5 · Yahoo starters</option></select><button class="sub-link" type="button" data-jump="rosters">Full roster →</button></div><div class="roster-mini" id="myLineup"></div></div>
-<div class="panel"><div class="panel-header"><div><div class="panel-title">League matchups</div></div><span class="chip" id="boardWeek">WEEK 5</span></div><div class="scoreboard-list" id="leagueBoard"></div></div>
-</div>
+<div class="offense-outlook" id="offenseOutlook" aria-label="Future nine-starter team projections">Calculating future lineups…</div>
+<details class="panel overview-league-board">
+ <summary>League matchups <span class="chip" id="boardWeek">WEEK 5</span></summary>
+ <div class="scoreboard-list" id="leagueBoard"></div>
+</details>
 </section>
 <section id="page-rosters" class="page" hidden>
 <div class="section-top"><div><div class="eyebrow" id="rosterLeagueCount">League rosters</div><h2>Rosters</h2><p id="rosterLeagueIntro" class="visually-hidden">Team roster comparison.</p></div><select class="select" id="teamChoice" aria-label="Select fantasy team"></select></div>
