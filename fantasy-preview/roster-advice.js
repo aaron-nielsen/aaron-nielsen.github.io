@@ -46,7 +46,7 @@ function lineup(players,w){
 }
 function mine(){return state.rosters.teams.find(t=>String(t.id)===String(state.teamId))?.players||[];}
 function horizon(){
- const first=Math.max(state.week+1,Number(state.future.startWeek),6);
+ const first=Math.max(state.week,Number(state.future.startWeek));
  const last=Number(state.future.endWeek)||17;
  const mode=$('waiverHorizon')?.value||'next_week';
  const count=mode==='next_week'?1:mode==='four_weeks'?4:last-first+1;
@@ -125,10 +125,16 @@ function renderWaivers(){
  });
  const dropChoices=roster.filter(p=>p.slot==='BN'&&!EXCLUDED.has(status(p))&&!OUT.has(status(p)));
  const moveCandidates=bestByPosition.flatMap(x=>x.list.slice(0,2));
+ // The kicker forecast is based on the NFL offense's FG/PAT opportunities,
+ // not kicker-specific accuracy. Do not recommend streaming a healthy kicker
+ // for small, unvalidated week-to-week model differences.
+ const needsKicker=roster.filter(p=>p.position==='K'&&p.slot!=='IR')
+  .every(p=>inaccessible(p,weeks[0])||!Number.isFinite(points(p,weeks[0]))||points(p,weeks[0])===0);
  const changes=[];
  if(allReady){
   const baseTotal=baselines.reduce((n,x)=>n+x.score,0);
   for(const candidate of moveCandidates){
+   if(candidate.position==='K'&&!needsKicker)continue;
    const possible=dropChoices.filter(p=>candidate.position!=='K'&&candidate.position!=='DEF');
    if(['K','DEF'].includes(candidate.position))
     possible.push(...roster.filter(p=>p.position===candidate.position&&p.slot!=='IR'));
@@ -145,7 +151,11 @@ function renderWaivers(){
   }
  }
  changes.sort((a,b)=>b.gain-a.gain);
- const shown=changes.filter(c=>c.gain/weeks.length>=0.65).slice(0,4);
+ // Defense streaming needs a more substantial modeled edge than a skill
+ // position; kicker additions are only suggested when the current K cannot
+ // supply points (bye/inactive/empty), not as speculative marginal swaps.
+ const shown=changes.filter(c=>c.gain/weeks.length>=
+  (c.p.position==='DEF'?1.75:c.p.position==='K'?0.8:0.85)).slice(0,4);
  const highlights=shown.length?'<div class="decision-section-title">Potential upgrades</div>'+shown.map(c=>{
   const rate=c.gain/weeks.length;
   return '<div class="decision-row pickup-move"><span class="decision-position">'+esc(c.p.position)+'</span>'+
@@ -167,6 +177,15 @@ function renderWaivers(){
 }
 function init(data){
  state=data;
+ const first=Math.max(state.week,Number(state.future.startWeek));
+ const last=Number(state.future.endWeek)||17;
+ const selector=$('waiverHorizon');
+ if(selector){
+  const modes=[['next_week','Week '+first],
+   ['four_weeks','Weeks '+first+'–'+Math.min(last,first+3)],
+   ['rest_of_season','Rest of season · Weeks '+first+'–'+last]];
+  for(const [value,label] of modes){const option=Array.from(selector.options||[]).find(o=>o.value===value);if(option)option.textContent=label;}
+ }
  byId=new Map(state.future.players.map(p=>[String(p.yahooId),p]));
  renderRecommendations();renderWaivers();
  $('lineupWeek')?.addEventListener('change',renderRecommendations);
