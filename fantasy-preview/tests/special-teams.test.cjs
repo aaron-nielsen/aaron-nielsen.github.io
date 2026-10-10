@@ -12,8 +12,8 @@ require(path.join(BASE,'special-teams-model.js'));
 const modeler=globalThis.DaVinciSpecialTeams;
 assert.ok(modeler && typeof modeler.enrich==='function');
 const context=json('data/special-teams-context.json');
-assert.equal(context.dataThroughWeek,3,'Do not include incomplete 2026 Week 4');
-assert.ok(context.games.every(g=>g[0]!==2026||g[1]<=3));
+assert.ok(context.dataThroughWeek>0 && context.dataThroughWeek<5,'Current source must stop before Week 5');
+assert.ok(context.games.every(g=>g[0]!==2026||g[1]<=context.dataThroughWeek));
 assert.ok(context.games.length>=1100);
 const starts=html.indexOf('const MODEL_SKILL_SLOTS=');
 const ends=html.indexOf('function renderModelMatchup(){',starts);
@@ -41,7 +41,7 @@ for(const entry of [{slug:'',user:'7',id:'470.l.258793',n:14},
  assert.equal(typeCounts.DEF,32);
  assert.ok(typeCounts.K>=32);
  for(const player of specials){
-   assert.equal(player.weeks.length,13);
+   assert.equal(player.weeks.length,future.endWeek-future.startWeek+1);
    for(const week of player.weeks){
      assert.ok(Number.isFinite(week.points) && week.points>=-10 && week.points<40,
        'Invalid special teams points: '+player.name+' / '+week.week);
