@@ -372,3 +372,27 @@ body{font:16px/1.48 'Source Sans 3',Arial,sans-serif;color:var(--text);backgroun
 .trade-ledger .trade-details summary{cursor:pointer;font:700 12px/1.4 'Source Sans 3',Arial,sans-serif;color:#806043}
 .trade-ledger .trade-details p{font:400 12px/1.5 'Source Sans 3',Arial,sans-serif;margin:7px 0 0}
 .trade-ledger .trade-details[open] summary{margin-bottom:6px}
+
+
+/* Concise future offense totals below Yahoo/model matchup summary. */
+.offense-outlook{border:1px solid #dac9b3;border-radius:8px;background:#fffaf2;margin:10px 0 17px;padding:15px 17px}
+.outlook-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.outlook-head strong{font:700 16px/1.3 'Source Sans 3',Arial,sans-serif;color:#46382b}
+.outlook-head small{font-size:12px;color:#7e705f}
+.outlook-week-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin:11px 0 8px;border-top:1px solid #ebe1d4;border-bottom:1px solid #ebe1d4;padding:10px 0}
+.outlook-week{padding:0 13px;min-width:0}
+.outlook-week:first-child{padding-left:0}
+.outlook-week+.outlook-week{border-left:1px solid #e7dac8}
+.outlook-week span{display:block;font:700 11px 'Source Sans 3',Arial,sans-serif;color:#83725e}
+.outlook-week strong{display:block;font:750 23px/1.3 'Source Sans 3',Arial,sans-serif;font-variant-numeric:tabular-nums;color:#554130}
+.outlook-totals{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font:600 13px/1.4 'Source Sans 3',Arial,sans-serif;color:#6e6052}
+.outlook-totals b{font-size:16px;font-variant-numeric:tabular-nums;color:#60452e;padding-left:5px}
+.outlook-note{margin:9px 0 0;font-size:12px;line-height:1.5;color:#807469}
+@media(max-width:650px){
+ .offense-outlook{padding:13px}
+ .outlook-week-grid{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:11px}
+ .outlook-week:nth-child(3){border-left:0;padding-left:0}
+ .outlook-week:nth-child(n+3){border-top:1px solid #e7dac8;padding-top:10px}
+ .outlook-head strong{font-size:15px}
+ .outlook-week strong{font-size:21px}
+}
