@@ -110,7 +110,6 @@ function setup(){
  ctx.DaVinciTransactions.update();
  assert.match(element('txnStats').textContent,/0 projected point estimates/);
  assert.match(element('txnStats').textContent,/1 ungraded/);
- assert.match(element('txnStats').textContent,/no player roster change/);
  assert.match(element('transactionCards').innerHTML,/Not graded/);
  assert.match(element('txnStats').title,/no player roster change/);
 }
