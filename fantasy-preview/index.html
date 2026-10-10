@@ -535,6 +535,31 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 .trade-balance-warning{background:#f1dfc1;border-top:1px solid #d2ad78;padding:11px 14px;font-size:12px;color:#755037}
 .trade-exchange{grid-template-columns:minmax(0,1fr) 24px minmax(0,1fr)}
 @media(max-width:650px){.trade-package-player{font-size:14px}.trade-package-player small{font-size:10px}}
+
+/* Compact model comparison separates offense-only scores from Yahoo's full-team totals. */
+.model-offense-strip{display:flex;flex-wrap:wrap;gap:8px 17px;align-items:center;
+ background:#f7e9d0;color:#4e3321;border:1px solid #d7b891;border-radius:7px;
+ margin:12px 0 0;padding:13px 20px;font-size:14px;line-height:1.4}
+.model-strip-label{color:#84542d;font-size:11px;letter-spacing:.1em;font-weight:800}
+.model-offense-strip b{font-size:15px;font-weight:750}
+.model-strip-separator{color:#b89c79;margin:0 5px}
+.model-strip-note{flex-basis:100%;font-size:12px;color:#745b44}
+.model-league-panel{margin-top:18px}
+.model-league-panel .select{min-width:120px}
+.model-team-head,.model-team-row{display:grid;grid-template-columns:minmax(0,1fr) 108px;gap:12px;align-items:center;padding:10px 20px}
+.model-team-head{font-weight:800;font-size:11px;color:#806345;letter-spacing:.08em;background:#edd6b3}
+.model-team-head span:last-child{text-align:right}
+.model-team-row{border-bottom:1px solid #e0c9a9;font-size:14px;color:#533a29}
+.model-team-row:last-child{border-bottom:0}
+.model-team-row.my-model-team{background:#edd5af}
+.model-team-row>span{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.model-team-row small{min-width:21px;font-size:12px;color:#93795c;text-align:right}
+.model-team-row strong{font-size:14px}
+.model-team-row em{font-size:11px;font-style:normal;color:#8d5d39}
+.model-team-points{font:600 23px 'Cormorant Garamond',Georgia,serif;color:#653c24;text-align:right}
+.model-league-explanation{padding:0 20px 17px;font-size:12px;line-height:1.5;color:#775b42;margin:12px 0 0}
+@media(max-width:700px){.model-offense-strip{padding:12px 13px}.model-offense-strip b{font-size:14px}.model-team-row,.model-team-head{padding:10px 12px}.model-league-panel .panel-header{flex-wrap:wrap}}
+
 </style>
 <link rel="stylesheet" href="./clean-dashboard.css">
 </head><body>
@@ -556,6 +581,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 <div class="matchup" id="hero"><div class="loading">Loading this week's matchup…</div></div>
 <div class="record-card"><div class="record-upper"><div class="eyebrow">SEASON RECORD</div><div class="record-fig mono" id="wl">—</div><div class="record-desc" id="rankDesc">League standings</div></div><div class="record-stats"><div><strong class="mono" id="pointsFor">—</strong><small>POINTS SCORED</small></div><div><strong id="waiverRank" class="mono">—</strong><small>WAIVER PRIORITY</small></div></div></div>
 </div>
+<div class="model-offense-strip" id="modelMatchupSummary" aria-live="polite">Loading Da Vinci offensive lineup estimates…</div>
 <section class="panel waiver-panel" aria-label="Best available player recommendations">
  <div class="panel-header"><div><div class="panel-title">Best available players</div><div class="panel-sub">Estimated improvement to your optimal starting lineup</div></div>
  <select id="waiverHorizon" class="select waiver-horizon" aria-label="Projection horizon">
@@ -593,6 +619,12 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 <div class="panel"><div class="panel-header"><div><div class="panel-title">My weekly forecasts</div><div class="panel-sub">Opponent and availability status</div></div><span class="chip">MODEL V0.3</span></div><div class="model-status" id="modelStatus"><div class="eyebrow">EXPERIMENTAL</div><div class="headline">Loading player projections</div></div></div>
 <div class="panel"><div class="panel-header"><div><div class="panel-title">Yahoo team projections</div><div class="panel-sub">Projected final points for all 14 teams, current week</div></div><span class="chip" id="projectionWeek">WEEK 5</span></div><div class="projection-list" id="forecastList"></div></div>
 </div>
+<section class="panel model-league-panel" aria-label="Our league-wide offensive projections">
+ <div class="panel-header"><div><div class="panel-title">Da Vinci team forecasts</div><div class="panel-sub">Best legal QB / 2 RB / 2 WR / TE / flex lineup · excludes K and DEF</div></div>
+ <select id="teamModelWeek" class="select" aria-label="Select week for team forecasts"><option value="5">Week 5</option></select></div>
+ <div id="modelTeamRankings" aria-live="polite"><div class="empty-copy">Calculating projected offensive lineups…</div></div>
+ <p class="model-league-explanation">Experimental offensive totals—not comparable to Yahoo's full-team scores, which include kicker, defense and additional scoring. Week 5 questionable players are assumed active when needed; later weeks assume players remain available.</p>
+</section>
 <div class="panel all-predictions-panel" style="margin-top:19px">
   <div class="panel-header"><div><div class="panel-title">All player forecasts</div><div class="panel-sub" id="projectionCoverage">Experimental weekly estimates for QB, RB, WR, TE</div></div></div>
   <div class="projection-controls"><select class="select" id="futureWeek" aria-label="Projection week"><option value="5">Week 5</option></select><input type="search" id="projectionSearch" placeholder="Search player or fantasy team" aria-label="Search player projections"><select id="projectionPos" class="select" aria-label="Filter projected position"><option value="all">All positions</option><option value="offense_no_qb">Offense (no QB)</option><option>QB</option><option>RB</option><option>WR</option><option>TE</option></select><select id="projectionOwnership" class="select" aria-label="Filter projected ownership"><option value="all">All players</option><option value="mine">My roster</option><option value="available">Available</option><option value="other">Other teams</option></select></div>
@@ -670,6 +702,91 @@ function row(p){
 }
 function group(id,players,label){$('#'+id).innerHTML='<div class="group-label">'+label+' <span>'+players.length+' PLAYERS</span></div>'+(players.length?players.map(row).join(''):'<div class="empty-copy">No players in this group</div>');}
 function matchup(){return week.matchups.find(m=>m.home.id===TEAM_ID||m.away.id===TEAM_ID);}
+const MODEL_SKILL_SLOTS=[
+ ["QB"],["RB"],["RB"],["WR"],["WR"],["TE"],["RB","WR","TE"]
+];
+let modelLineupCache=new Map();
+function modelTeamLineup(teamId,forecastWeek){
+ const key=String(teamId)+'|'+String(forecastWeek);
+ if(modelLineupCache.has(key))return modelLineupCache.get(key);
+ if(!futureData?.players?.length||!rosters?.teams?.length)return null;
+ const roster=team(teamId);
+ if(!roster)return null;
+ const forecasts=new Map(futureData.players.map(p=>[String(p.yahooId),p]));
+ const reports=new Map((weekly?.players||[]).map(p=>[String(p.yahooId),p]));
+ const dp=Array(128).fill(null);
+ dp[0]={points:0,ids:[],needsReview:0};
+ for(const player of roster.players){
+  if(player.slot==='IR'||!["QB","RB","WR","TE"].includes(player.position))continue;
+  const projected=forecasts.get(String(player.id));
+  const frame=projected?.weeks?.find(x=>Number(x.week)===Number(forecastWeek));
+  if(!frame)continue;
+  let pts=frame.points,uncertain=false;
+  if(pts==null&&Number(forecastWeek)===Number(week.week)){
+    const report=reports.get(String(player.id));
+    if(Number.isFinite(report?.activeGamePoints)){
+      pts=report.activeGamePoints;
+      uncertain=true;
+    }
+  }
+  if(!Number.isFinite(Number(pts))||pts==null)continue;
+  for(let mask=127;mask>=0;mask--){
+   const previous=dp[mask];
+   if(previous===null)continue;
+   for(let slot=0;slot<MODEL_SKILL_SLOTS.length;slot++){
+    const bit=1<<slot;
+    if(mask&bit||!MODEL_SKILL_SLOTS[slot].includes(player.position))continue;
+    const nextMask=mask|bit;
+    const next={points:previous.points+Number(pts),
+      ids:[...previous.ids,String(player.id)],needsReview:previous.needsReview+Number(uncertain)};
+    if(!dp[nextMask]||next.points>dp[nextMask].points)dp[nextMask]=next;
+   }
+  }
+ }
+ const answer=dp[127]||null;
+ modelLineupCache.set(key,answer);
+ return answer;
+}
+function renderModelMatchup(){
+ const area=$('#modelMatchupSummary');
+ if(!futureData?.players?.length){area.textContent='Our model team forecasts are unavailable.';return;}
+ const pairing=matchup();
+ const other=pairing.home.id===TEAM_ID?pairing.away:pairing.home;
+ const yours=modelTeamLineup(TEAM_ID,week.week);
+ const theirs=modelTeamLineup(other.id,week.week);
+ if(!yours||!theirs){area.textContent='Our model cannot complete both seven-player offensive lineups from the available projections.';return;}
+ area.innerHTML='<span class="model-strip-label">OUR MODEL · OFFENSE ONLY</span>'+
+ '<span><b>Your lineup '+yours.points.toFixed(2)+'</b> <span class="model-strip-separator">·</span> '+
+ '<b>'+esc(other.name)+' '+theirs.points.toFixed(2)+'</b></span>'+
+ '<span class="model-strip-note">Best seven eligible skill-position starters; no K/DEF'+
+ ((yours.needsReview+theirs.needsReview)?' · questionable status assumed active':'')+'.</span>';
+}
+function renderModelTeamRankings(){
+ const area=$('#modelTeamRankings');
+ if(!futureData?.players?.length){area.innerHTML='<div class="empty-copy">Independent team projections are unavailable.</div>';return;}
+ const selectedWeek=Number($('#teamModelWeek').value||week.week);
+ const rows=rosters.teams.map(t=>({team:t,projection:modelTeamLineup(t.id,selectedWeek)}))
+   .sort((a,b)=>(b.projection?.points??-1)-(a.projection?.points??-1));
+ area.innerHTML='<div class="model-team-head"><span>TEAM</span><span>OFFENSE PTS</span></div>'+
+ rows.map((r,i)=>{
+  const total=r.projection?r.projection.points.toFixed(2):'—';
+  const warning=r.projection?.needsReview?' · playing-status uncertain':'';
+  return '<div class="model-team-row'+(r.team.id===TEAM_ID?' my-model-team':'')+'">'+
+   '<span><small>'+(i+1)+'.</small><strong>'+esc(r.team.name)+(r.team.id===TEAM_ID?' ★':'')+'</strong>'+
+   (warning?'<em>'+esc(warning)+'</em>':'')+'</span><b class="model-team-points">'+total+'</b></div>';
+ }).join('');
+}
+function initModelTeamForecasts(){
+ if(!futureData?.players?.length)return;
+ const first=Number(futureData.startWeek)||Number(week.week);
+ const last=Number(futureData.endWeek)||first;
+ const selector=$('#teamModelWeek');
+ selector.innerHTML=Array.from({length:last-first+1},(_,i)=>'<option value="'+(first+i)+'">Week '+(first+i)+'</option>').join('');
+ selector.value=String(week.week);
+ selector.addEventListener('change',renderModelTeamRankings);
+ renderModelMatchup();
+ renderModelTeamRankings();
+}
 function initOverview(){
  const m=matchup(),you=m.home.id===TEAM_ID?m.home:m.away,them=m.home.id===TEAM_ID?m.away:m.home;
  const y=you.projectedPoints,t=them.projectedPoints;
@@ -986,7 +1103,7 @@ async function get(path){const r=await fetch('./data/'+path+'.json',{cache:'no-s
   [rosters,available,week,model,backtest,weekly,futureData,waivers]=await Promise.all([get('rosters'),get('available'),get('week'),get('projections').catch(()=>null),get('backtest').catch(()=>null),get('weekly').catch(()=>null),get('future').catch(()=>null),get('waivers').catch(()=>null)]);
   if(!Array.isArray(rosters.teams)||!Array.isArray(available.players)||!Array.isArray(week.matchups)||!Array.isArray(week.standings)||!team(TEAM_ID)||!matchup())throw Error('League data incomplete or mismatched');
   if(rosters.leagueId!==week.leagueId||available.leagueId!==rosters.leagueId)throw Error('League identity mismatch');
-  initOverview();initRosters();initFinder();renderProjection();renderRecommendations();renderWaivers();window.DaVinciLab?.init();
+  initOverview();initRosters();initFinder();renderProjection();renderRecommendations();renderWaivers();initModelTeamForecasts();window.DaVinciLab?.init();
  }catch(e){
   $('#hero').innerHTML='<div class="loading"><strong>Dashboard data could not be loaded.</strong><p>'+esc(e.message)+'</p><p>Check the published JSON files or reload this page.</p></div>';
   $('#sync').textContent='Data load failed';
