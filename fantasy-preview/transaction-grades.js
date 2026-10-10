@@ -89,8 +89,7 @@ function evaluate(tx){
  // Never silently substitute another manager's result for a trade.
  const my=sides.find(s=>s.teamId===String(state.teamId));
  const primary=my||sides[0];
- const actual=state.actuals?.[tx.transaction_id]||null;
- return {...tx,isTrade,sides,primary,actual};
+ return {...tx,isTrade,sides,primary};
 }
 function names(players){
  return (players||[]).map(p=>p.name||state.forecasts.get(key(p))?.name||'Unknown').join(', ')||'—';
@@ -112,8 +111,8 @@ function impact(s){
  if(!s.value)return '<div class="txn-impact unscored"><strong>'+esc(s.name)+'</strong><small>Not graded'+(s.reason?' · '+esc(s.reason):'')+'</small></div>';
  const n=s.value.avg,positive=n>.15,negative=n<-.15;
  return '<div class="txn-impact '+(positive?'positive':negative?'negative':'neutral')+'">'+
-  '<strong>'+esc(s.name)+'</strong><b>'+(n>=0?'+':'')+fmt(n)+' <small>pts/wk</small></b>'+
-  '<span>'+(s.value.ros>=0?'+':'')+fmt(s.value.ros)+' ROS pts</span>'+
+  '<strong>'+esc(s.name)+'</strong><b>'+(n>=0?'+':'')+fmt(n)+' <small>pts/week added</small></b>'+
+  '<span>'+(s.value.ros>=0?'+':'')+fmt(s.value.ros)+' projected points added (ROS)</span>'+
   '<small>'+g.grade+' · '+esc(g.label)+'</small></div>';
 }
 function card(tx){
