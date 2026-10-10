@@ -14,7 +14,14 @@ const fmt=v=>Number(v).toFixed(1);
 const $=id=>document.getElementById(id);
 let state=null, byId=null;
 function status(p){return String(p.status||p.injuryStatus||'').toUpperCase().trim();}
-function inaccessible(p,w){const code=status(p);return p.slot==='IR'||p.rosterSlot==='IR'||EXCLUDED.has(code)||code.startsWith('IR-')||code.startsWith('PUP-')||(w<=state.week&&OUT.has(code));}
+function inaccessible(p,w){
+ const code=status(p);
+ const frame=byId?.get(String(p.id||p.yahooId))?.weeks?.find(g=>Number(g.week)===Number(w));
+ const conditionalReturn=Number(w)>Number(state.week)&&
+  frame?.availabilityProbability!=null&&frame.availabilityProbability>=.55&&frame.state!=='bye';
+ const rosterBlocked=p.slot==='IR'||p.rosterSlot==='IR'||EXCLUDED.has(code)||code.startsWith('IR-')||code.startsWith('PUP-');
+ return (rosterBlocked&&!conditionalReturn)||(w<=state.week&&OUT.has(code));
+}
 function points(p,w){
  const f=byId.get(String(p.id||p.yahooId));
  const frame=f?.weeks?.find(x=>Number(x.week)===w);
