@@ -39,8 +39,10 @@ function estimate(withRoster,withoutRoster,teamId){
  }
  // Only grade scenarios with adequate lineup coverage, not missing QBs/K/DEF.
  if(!weeks.length||after.length!==weeks.length)return null;
- const gain=after.reduce((s,n,i)=>s+n-before[i],0);
- return {avg:gain/after.length,ros:gain,weeks:after.length,teamId};
+ const gains=after.map((n,i)=>n-before[i]);
+ const gain=gains.reduce((sum,n)=>sum+n,0);
+ return {avg:gain/after.length,ros:gain,weeks:after.length,teamId,
+  weekly:gains.map((pointsAdded,i)=>({week:weeks[i],pointsAdded}))};
 }
 function grade(value){
  if(!value)return {grade:'—',label:'Not rateable'};
