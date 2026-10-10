@@ -75,9 +75,10 @@ function evaluate(tx){
   const teamId=tx.team_ids?.[0];
   if(teamId)sides.push(side(tx,teamId,tx.players_added||[],tx.players_dropped||[]));
  }
- const stable=sides.filter(s=>s.value);
- const my=stable.find(s=>s.teamId===String(state.teamId));
- const primary=my||stable[0]||sides[0];
+ // Keep the displayed grade tied to the selected manager, even when ungraded.
+ // Never silently substitute another manager's result for a trade.
+ const my=sides.find(s=>s.teamId===String(state.teamId));
+ const primary=my||sides[0];
  const actual=state.actuals?.[tx.transaction_id]||null;
  return {...tx,isTrade,sides,primary,actual};
 }
@@ -116,7 +117,7 @@ function card(tx){
   ((tx.actual.actualGain>=0?'+':'')+fmt(tx.actual.actualGain)+' actual pts'):'';
  return '<article class="txn-card">'+
   '<div class="txn-top"><span class="txn-type">'+esc(type)+'</span><time>'+esc(tx.date||'Unknown date')+'</time>'+
-  '<span class="txn-grade">'+esc(g.grade)+'</span></div>'+
+  '<span class="txn-grade">'+(p?.value?esc(g.grade):'Not graded')+'</span></div>'+
   '<h3>'+esc(title)+relation+'</h3>'+
   '<div class="txn-moves">'+description(tx)+'</div>'+
   '<div class="txn-impacts">'+tx.sides.map(impact).join('')+'</div>'+
