@@ -5,6 +5,7 @@
 (function(root){
 'use strict';
 const finite=x=>typeof x==='number'&&Number.isFinite(x);
+const validDate=x=>typeof x==='string'&&/(Z|[+-]\\d{2}:\\d{2})$/.test(x)&&Number.isFinite(Date.parse(x));
 function summarize(rows,field){
  const valid=rows.filter(r=>finite(r[field])&&finite(r.actual));
  if(!valid.length)return {n:0,mae:null,bias:null,rmse:null};
@@ -19,9 +20,9 @@ function evaluate(records){
  const seen=new Set();
  for(const r of records||[]){
   if(!r||!r.playerId||!Number.isInteger(r.week)||!r.season||
-     !finite(r.actual)||!finite(r.daVinci)){excluded.invalid++;continue;}
+     !finite(r.actual)||!finite(r.daVinci)||!['QB','RB','WR','TE','K','DEF'].includes(r.position)){excluded.invalid++;continue;}
   const frozen=Date.parse(r.predictedAt),kickoff=Date.parse(r.kickoffAt);
-  if(!Number.isFinite(frozen)||!Number.isFinite(kickoff)||frozen>=kickoff){
+  if(!validDate(r.predictedAt)||!validDate(r.kickoffAt)||frozen>=kickoff){
    excluded.notPregame++;continue;
   }
   const id=[r.season,r.week,r.playerId].join(':');
