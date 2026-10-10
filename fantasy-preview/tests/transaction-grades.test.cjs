@@ -60,6 +60,7 @@ function setup(){
   element('txnSort').value=order;
   ctx.DaVinciTransactions.update();
   const html=element('transactionCards').innerHTML;
+  assert.ok(html.indexOf('Alpha · Add')>=0&&html.indexOf('Beta · Drop')>=0,'Both transactions must render');
   assert.ok(html.indexOf('Alpha · Add')<html.indexOf('Beta · Drop'),order+' must place missing grades last');
   assert.ok(html.includes('Not graded'));
  }
