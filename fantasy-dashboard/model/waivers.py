@@ -19,7 +19,7 @@ ELIGIBLE={
     "WR":[3,4,6],
     "TE":[5,6],
 }
-UNAVAILABLE_CODES={"IR","IR-R","PUP","PUP-R","NFI","NFI-R","CEL","SUSP","SUS","OUT"}
+UNAVAILABLE_CODES={"NA","N/A","IR","IR-R","PUP","PUP-R","NFI","NFI-R","CEL","SUSP","SUS","OUT"}
 
 def lineup_dp(players, values, week):
     """Mask assignment DP, one player per slot, maximum projected starter total.
