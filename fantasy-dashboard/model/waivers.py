@@ -63,8 +63,11 @@ def added_score(dp,position,points):
 def candidates(rosters,available,future,team_id="7",start=6):
     mine=next(t for t in rosters["teams"] if str(t["id"])==str(team_id))
     projected={str(p["yahooId"]):p for p in future["players"]}
+    restricted_rostered={"CEL","SUSP","SUS","IR","IR-R","PUP","PUP-R","NFI","NFI-R","NA"}
     existing=[p for p in mine["players"] if p["position"] in POSITIONS
-              and p["slot"]!="IR" and str(p["id"]) in projected]
+              and p["slot"]!="IR"
+              and str(p.get("status") or "").upper() not in restricted_rostered
+              and str(p["id"]) in projected]
     drops=[p for p in existing if p["slot"]=="BN"]
     if not drops:
         raise ValueError("No bench players to propose as drops")
@@ -160,8 +163,8 @@ def main():
         "availableSnapshotAt":available.get("retrievedAt"),
         "futureModelGeneratedAt":future.get("generatedAt"),
         "rosterConstraints":{"skillSlots":list(SLOTS),
-                             "dropCandidates":"bench rostered QB/RB/WR/TE, one per acquisition",
-                             "excluded":"K and DEF held fixed; players already in Yahoo IR slot unavailable",
+                             "dropCandidates":"bench QB/RB/WR/TE with no active long-term reserve/exempt designation, one per acquisition",
+                             "excluded":"K and DEF held fixed; current IR/exempt/suspended statuses excluded from baseline until cleared",
                              "fullLegalLineup":True},
         "horizons":{
             name:{"weeks":period,"baselineLineupPoints":round(sum(baseline[w] for w in period),2),
@@ -174,7 +177,7 @@ def main():
         "notice":("Lineup impact is cumulative fantasy points over the selected weeks, "
                   "optimizing QB/RB/RB/WR/WR/TE/flex separately each week. "
                   "It assumes all players with scheduled games are available in future weeks, "
-                  "including currently injured or suspended rostered players, so scores are SCENARIOS "
+                  "including short-term injured rostered players, but long-term reserve/exempt designations are held out until cleared; scores are SCENARIOS "
                   "not reliable injury-adjusted expectations. It does not estimate waivers, real "
                   "injury return dates, usage changes, K/DEF or trade fairness. "
                   "Free agent pool sampled from the top 100 at each position."),
