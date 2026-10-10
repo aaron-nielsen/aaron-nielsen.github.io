@@ -273,9 +273,9 @@ function showTrades(){
  const selected=[],teams=new Map();
  for(const p of matches){
    const already=teams.get(p.partnerTeamId)||0;
-   if(already>=2)continue;
+   if(already>=3)continue;
    selected.push(p);teams.set(p.partnerTeamId,already+1);
-   if(selected.length>=8)break;
+   if(selected.length>=6)break;
  }
  const displayNames={
    three_each:'3-for-3 trades',
@@ -283,7 +283,7 @@ function showTrades(){
    balanced_all:'all screened equal-size trades',
    all:'exploratory packages'
  };
- count.textContent=matches.length+' '+(displayNames[packageFilter]||'trade scenarios')+' · '+duration+' weeks';
+ count.textContent=selected.length+' shown of '+matches.length+' '+(displayNames[packageFilter]||'trade scenarios')+' · '+duration+' weeks';
  if(!selected.length){
    area.innerHTML='<div class="no-trades">No deals meet these constraints. Try “2-for-2 or 3-for-3” or a different position. Small projected gains are intentionally hidden.</div>';
    return;
@@ -297,10 +297,12 @@ function showTrades(){
      ? 'Model ROS value above replacement: send '+Math.round(t.valueCheck.sent.excess)+
        ' · receive '+Math.round(t.valueCheck.received.excess)+' pts'
      : 'Projected positional value unavailable';
-   const note='<p class="trade-balance-note compact-trade-value">'+clean(valueText)+'</p>'+
-     (!t.balanced?'<p class="trade-balance-note">Unequal numbers: an additional roster move is required. Exploratory only.</p>':'')+
-     (!t.marketCheck.ok?'<p class="trade-balance-note">Draft-value warning: '+clean(t.marketCheck.reason)+'</p>':'')+
-     (!t.valueCheck.ok?'<p class="trade-balance-note">Position-adjusted ROS value warning: '+clean(t.valueCheck.reason)+'</p>':'');
+   const warnings=(!t.balanced?'<p class="trade-balance-note trade-warning">Roster adjustment required: package sizes differ; any extra add/drop is not included in the projected gains.</p>':'')+
+     (!t.marketCheck.ok?'<p class="trade-balance-note trade-warning">Draft-value warning: '+clean(t.marketCheck.reason)+'</p>':'')+
+     (!t.valueCheck.ok?'<p class="trade-balance-note trade-warning">Positional-value warning: '+clean(t.valueCheck.reason)+'</p>':'');
+   const note=warnings+'<details class="trade-details"><summary>Valuation and assumptions</summary>'+
+      '<p>'+clean(valueText)+'</p>'+
+      '<p>Modeled healthy-play offensive starting-lineup gains, not Yahoo projections, manager acceptance probabilities or guaranteed trades.</p></details>';
    return '<article class="trade-card compact-trade trade-ledger">'+
     '<div class="trade-card-top"><strong class="trade-card-partner">'+clean(t.partnerTeam)+'</strong>'+
     '<span class="trade-package-label">'+clean(t.packageShape)+' · '+both+' players</span></div>'+
