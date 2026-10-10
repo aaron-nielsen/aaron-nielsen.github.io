@@ -134,6 +134,19 @@ button,input,select{font:inherit}
 .substyle-more{padding:0 16px 15px}
 .substyle-more button{background:transparent;color:#eadfd4;border:1px solid #6a4a31;border-radius:999px;padding:6px 11px;cursor:pointer}
 .substyle-more button:hover{border-color:var(--green2)}
+.style-tree{width:100%;border-collapse:collapse}
+.style-tree th,.style-tree td{padding:9px 12px;border-bottom:1px solid #3f2c20;text-align:left;vertical-align:middle}
+.style-tree th{background:#251a14;color:#f5eee7;font-weight:650}
+.style-tree th.num,.style-tree td.num{text-align:center;font-variant-numeric:tabular-nums;width:90px}
+.style-tree tr:last-child td{border-bottom:0}
+.style-tree tr:hover td{background:#211815}
+.style-tree-name{display:flex;align-items:center;min-width:0}
+.style-tree-toggle{width:24px;height:24px;display:inline-flex;align-items:center;justify-content:center;flex:0 0 24px;margin-right:5px;border:1px solid #6a4a31;border-radius:5px;background:#251a14;color:#f3ebe3;cursor:pointer;line-height:1;font-weight:700}
+.style-tree-toggle:hover{border-color:var(--green2)}
+.style-tree-spacer{display:inline-block;width:29px;flex:0 0 29px}
+.style-tree-indent{display:inline-block;flex:0 0 auto}
+.style-tree .filter-link{white-space:normal}
+.style-tree-depth{color:var(--muted);font-size:.76rem;margin-left:7px}
 
 dialog.whiskey-dialog{background:#171310;color:var(--text);border:1px solid #65472f;border-radius:12px;max-width:650px;width:92%}
 dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
@@ -237,7 +250,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
 <script>
 (function(){
   var DATA_URL="/data/whiskey_ratings.json?v="+Date.now();
-  var data=null,rows=[],unratedRows=[],activeTab="main",substyleExpanded=false,topExpanded=false,activeDistillery="";
+  var data=null,rows=[],unratedRows=[],activeTab="main",topExpanded=false,activeDistillery="",styleTreeExpanded={};
   var sortState={
     all:{key:"average",dir:-1},
     "need-more":{key:"average",dir:-1},
@@ -599,6 +612,89 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
     return html+'</tbody></table></div>';
   }
 
+  function styleHierarchy(){
+    var roots={};
+
+    function getNode(container,name,path,depth){
+      if(!container[name]){
+        container[name]={name:name,path:path,depth:depth,items:[],directItems:[],children:{}};
+      }
+      return container[name];
+    }
+
+    rows.forEach(function(r){
+      var root=getNode(roots,r.style,r.style,0);
+      root.items.push(r);
+
+      var parts=(r.substyle||"").split(" / ").map(function(x){return x.trim()}).filter(Boolean);
+      if(!parts.length){
+        root.directItems.push(r);
+        return;
+      }
+
+      var node=root;
+      var pathParts=[];
+      parts.forEach(function(part,i){
+        pathParts.push(part);
+        var full=pathParts.join(" / ");
+        node=getNode(node.children,part,full,i+1);
+        node.items.push(r);
+      });
+      node.directItems.push(r);
+    });
+
+    function finalize(node){
+      node.whiskeys=node.items.length;
+      node.average=avg(node.items.map(function(r){return r.average}));
+      node.childList=Object.keys(node.children).map(function(k){
+        return finalize(node.children[k]);
+      }).sort(function(a,b){
+        return b.whiskeys-a.whiskeys||a.name.localeCompare(b.name);
+      });
+      return node;
+    }
+
+    return Object.keys(roots).map(function(k){return finalize(roots[k])}).sort(function(a,b){
+      return b.whiskeys-a.whiskeys||a.name.localeCompare(b.name);
+    });
+  }
+
+  function styleHierarchyTable(){
+    var roots=styleHierarchy();
+    var body=[];
+
+    function addNode(node){
+      var hasChildren=node.childList.length>0;
+      var key=(node.depth===0?"style:":"substyle:")+node.path;
+      var open=!!styleTreeExpanded[key];
+      var indent=node.depth*22;
+      var toggle=hasChildren
+        ? '<button type="button" class="style-tree-toggle" data-tree-key="'+esc(key)+'" aria-label="'+(open?'Collapse ':'Expand ')+esc(node.name)+'">'+(open?'−':'+')+'</button>'
+        : '<span class="style-tree-spacer"></span>';
+      var link=node.depth===0
+        ? '<button class="filter-link style-link" data-style="'+esc(node.path)+'">'+esc(node.name)+'</button>'
+        : '<button class="filter-link substyle-link" data-substyle="'+esc(node.path)+'">'+esc(node.name)+'</button>';
+
+      body.push(
+        '<tr>'+
+          '<td><div class="style-tree-name"><span class="style-tree-indent" style="width:'+indent+'px"></span>'+toggle+link+
+          (hasChildren?'<span class="style-tree-depth">'+node.childList.length+' sub'+(node.childList.length===1?'style':'styles')+'</span>':'')+
+          '</div></td>'+
+          '<td class="num">'+node.whiskeys+'</td>'+
+          '<td class="num">'+fmt(node.average)+'</td>'+
+        '</tr>'
+      );
+
+      if(open)node.childList.forEach(addNode);
+    }
+
+    roots.forEach(addNode);
+
+    return '<div class="whiskey-table-wrap"><table class="style-tree">'+
+      '<thead><tr><th>Style / Sub-style</th><th class="num">Whiskeys</th><th class="num">Avg</th></tr></thead>'+
+      '<tbody>'+body.join("")+'</tbody></table></div>';
+  }
+
   function barChart(items,labelKey,valueKey){
     var max=Math.max.apply(null,items.map(function(x){return x[valueKey]}));
     return '<div class="chart-body">'+items.map(function(x,i){
@@ -778,7 +874,6 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
   function renderMain(){
     document.getElementById("whiskey-controls").style.display="none";
     var styles=styleRows().sort(function(a,b){return b.whiskeys-a.whiskeys||a.name.localeCompare(b.name)});
-    var substyles=substyleRows();
     document.getElementById("main").innerHTML=
       '<section class="main-section"><h2>Recent Ratings</h2>'+mainRecent()+'</section>'+
       '<section class="chart-section"><h2>Rating Context</h2>'+ratingDistribution()+'</section>'+
@@ -788,8 +883,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
         '<section class="chart-section"><h2>American Whiskeys by State</h2>'+placeChart(placeRows("American"))+'</section>'+
         '<section class="chart-section"><h2>Scotch Single Malts by Region</h2><p class="chart-note">Five official regions; Skye and Orkney are counted with Highland.</p>'+placeChart(placeRows("Scotch"))+'</section>'+
       '</div>'+
-      '<section class="chart-section"><h2>Whiskeys by Style</h2>'+barChart(styles,"name","whiskeys")+'</section>'+
-      '<section class="chart-section"><h2>Whiskeys by Sub-style</h2>'+substyleChart(substyles)+'</section>';
+      '<section class="chart-section"><h2>Whiskeys by Style</h2><p class="chart-note">Expand + to drill into sub-styles; the hierarchy supports additional levels whenever the data has them.</p>'+styleHierarchyTable()+'</section>';
   }
 
   function render(){
@@ -990,14 +1084,16 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
         render();
       };
     });
+    document.querySelectorAll(".style-tree-toggle").forEach(function(btn){
+      btn.onclick=function(){
+        var key=btn.getAttribute("data-tree-key");
+        styleTreeExpanded[key]=!styleTreeExpanded[key];
+        render();
+      };
+    });
     var topToggle=document.getElementById("top-toggle");
     if(topToggle)topToggle.onclick=function(){
       topExpanded=!topExpanded;
-      render();
-    };
-    var subToggle=document.getElementById("substyle-toggle");
-    if(subToggle)subToggle.onclick=function(){
-      substyleExpanded=!substyleExpanded;
       render();
     };
   }
