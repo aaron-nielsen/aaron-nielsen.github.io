@@ -28,3 +28,21 @@ Never publish OAuth tokens or league credentials into GitHub Pages. Owner names 
 ## Run locally
 
 `python -m http.server 8000` from the `fantasy-dashboard/` directory, then open `http://localhost:8000/`. Plain file:// mode will not allow the JSON fetch in some browsers.
+
+
+## October 9 visual redesign and live league snapshots
+
+The published **read-only** preview lives at [Fantasy Fieldhouse](https://aaron-nielsen.github.io/fantasy-preview/), sourced from the `master/fantasy-preview/` directory. The development copy and model code remain on this branch.
+
+The redesign uses four screens:
+
+1. **Overview:** Yahoo Week 5 matchup against Bench Warmers, Yahoo projected final points (108.70 vs 96.06), actual points at snapshot time, 0-4 record, waiver priority, current Yahoo starting lineup, and a 7-matchup league scoreboard.
+2. **Rosters:** Only one team is shown at once (Ten Feline Overlords initially); dropdown switches to the other 13; starters, bench, and IR are grouped.
+3. **Player Finder:** Combined search over the 217 Yahoo-rostered players and 454 league-available players. Includes position and ownership filters. **The connected Yahoo feed does not establish which available players require waivers versus immediate free-agent adds**; avoid asserting that distinction.
+4. **Projections:** Yahoo's **actual provider weekly team forecasts** for all 14 managers. A separate model section clearly says the independent player forecast is unvalidated or not yet generated.
+
+Data files include `data/rosters.json`, `data/league.json`, `data/available.json` (top 100 per position where available, not exhaustive), and `data/week.json` (scoring snapshot, standings and weekly Yahoo team projection). `data/projections.json` is optional, and is not part of the initial published site.
+
+**Refresh limitation:** The public preview is static, not a live Yahoo OAuth application. Week, roster, and availability snapshots require explicit re-imports. The independent model data-builder does not refresh rosters or Yahoo team projections. Do not call Yahoo forecasts outputs of the independent statistical model.
+
+All owner names and OAuth tokens are omitted from published preview files. Fantasy team names, player ownership, and Yahoo projections are publicly visible in the preview.
