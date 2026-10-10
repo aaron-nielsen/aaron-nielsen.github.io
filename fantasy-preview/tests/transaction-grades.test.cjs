@@ -10,7 +10,7 @@ function setup(){
  const elements=new Map();
  const element=id=>{
   if(!elements.has(id))elements.set(id,{
-   value:'all',innerHTML:'',textContent:'',listeners:{},
+   value:id==='txnSearch'?'':'all',innerHTML:'',textContent:'',listeners:{},
    addEventListener(type,fn){this.listeners[type]=fn;},
    setAttribute(name,value){this[name]=value;},setAttribute(){}
   });
@@ -130,7 +130,7 @@ for(const league of [{folder:'data/',teamId:'7',count:53},{folder:'data/nebraska
  const {ctx,element}=setup();
  vm.runInNewContext(src('roster-advice.js'),ctx);
  ctx.DaVinciAdvice.init({rosters,available,future,week:5,teamId:league.teamId});
- ctx.DaVinciTransactions.init({rosters,week:5,future,teamId:league.teamId,transactions,optimize:ctx.DaVinciAdvice.lineup});
+ ctx.DaVinciTransactions.init({rosters,available,week:5,future,teamId:league.teamId,transactions,optimize:ctx.DaVinciAdvice.lineup,partialOptimize:ctx.DaVinciAdvice.partialLineup});
  assert.equal(element('transactionCards').innerHTML,'','Ratings should be lazily evaluated');
  ctx.DaVinciTransactions.update();
  const html=element('transactionCards').innerHTML;
@@ -140,6 +140,10 @@ for(const league of [{folder:'data/',teamId:'7',count:53},{folder:'data/nebraska
   assert.match(html,/Breece Hall/);
   assert.match(html,/Drake London/);
   assert.match(html,/Alec Pierce/);
+  element('txnType').value='trade';ctx.DaVinciTransactions.update();
+  const trade=element('transactionCards').innerHTML;
+  assert.equal((trade.match(/class="txn-impact unscored"/g)||[]).length,0,'Both real trade sides must receive a forecast grade');
+  assert.match(trade,/replacement kickers and defenses/);
  }
  console.log(league.folder+': '+league.count+' verified moves, '+element('txnStats').textContent);
 }

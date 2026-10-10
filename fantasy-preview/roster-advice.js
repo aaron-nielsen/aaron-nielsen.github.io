@@ -29,7 +29,7 @@ function points(p,w){
  if(frame.state==='bye')return 0;
  return frame.points==null||!Number.isFinite(Number(frame.points))?null:Number(frame.points);
 }
-function lineup(players,w){
+function lineup(players,w,allowEmpty=false){
  const dp=Array(512).fill(null);
  dp[0]={score:0,selections:[]};
  for(const p of players){
@@ -49,7 +49,9 @@ function lineup(players,w){
    }
   }
  }
- return dp[511];
+ if(dp[511]||!allowEmpty)return dp[511];
+ const occupied=n=>n.toString(2).replaceAll('0','').length;
+ return dp.map((value,mask)=>({value,mask})).filter(x=>x.value).sort((a,b)=>occupied(b.mask)-occupied(a.mask)||b.value.score-a.value.score)[0]?.value||null;
 }
 function mine(){return state.rosters.teams.find(t=>String(t.id)===String(state.teamId))?.players||[];}
 function horizon(){
@@ -94,7 +96,20 @@ function renderRecommendations(){
  }
  const flagText=statusFlags.length?'<div class="decision-alert">Check status: '+statusFlags.map(p=>esc(p.name)+' ('+esc(status(p))+')').join(', ')+'</div>':'';
  target.innerHTML=(gain!=null && additions.length?'<div class="decision-result">Optimized lineup <strong>+'+fmt(gain)+' pts</strong></div>':'')+
-  '<div class="decision-list">'+summaries.join('')+'</div>'+flagText;
+  '<div class="decision-list">'+summaries.join('')+'</div>'+flagText+nextWeekActions();
+}
+function nextWeekActions(){
+ const w=Number(state.week)+1;if(w>Number(state.future.endWeek))return '';
+ const roster=mine(),notes=[];
+ for(const pos of ['QB','RB','WR','TE','K','DEF']){
+  const needed={QB:1,RB:2,WR:2,TE:1,K:1,DEF:1}[pos];
+  const eligible=roster.filter(p=>p.position===pos&&!inaccessible(p,w)&&points(p,w)!=null&&points(p,w)>0);
+  if(eligible.length>=needed)continue;
+  const pool=state.future.players.filter(p=>p.position===pos&&p.ownership==='available'&&state.available.players.some(a=>String(a.id)===String(p.yahooId))&&!inaccessible(p,w)&&points(p,w)>0).sort((a,b)=>points(b,w)-points(a,w));
+  const name=pool[0]?.name;
+  notes.push('<div class="next-week-action"><strong>'+(pos==='K'?'Add a kicker':pos==='DEF'?'Add a defense':'Find '+pos+' coverage')+'</strong><span>'+esc(name?'Consider '+name:'No eligible modeled pickup found')+'</span></div>');
+ }
+ return notes.length?'<section class="next-week-actions"><h3>Next week · W'+w+'</h3>'+notes.join('')+'</section>':'';
 }
 function renderWaivers(){
  if(!state)return;
@@ -206,5 +221,6 @@ function init(data){
 }
 root.DaVinciAdvice={init,renderRecommendations,renderWaivers,
  /* Accessible for deterministic unit tests outside the browser. */
+ partialLineup:(players,w)=>state?lineup(players,w,true):null,
  lineup:(players,w)=>state?lineup(players,w):null};
 })(typeof window!=='undefined'?window:globalThis);

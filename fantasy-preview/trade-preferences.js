@@ -162,7 +162,9 @@ function render(){
   let options=[];
   try{options=evaluate()}catch(error){target.innerHTML='<div class="trade-personal-loading">Could not calculate these packages.</div>';return;}
   if(job!==nextJob)return;
-  const shown=options.slice(0,6);
+  const shape=$('tradePackageFilter')?.value;
+  if(['one_each','two_each','three_each'].includes(shape)){const n={one_each:1,two_each:2,three_each:3}[shape];options=options.filter(t=>t.send.players.length===n&&t.receive.players.length===n);}
+  const shown=options.slice(0,Number($('tradeLimit')?.value||6));
   if(!shown.length){
    target.innerHTML='<div class="trade-personal-loading">No trades here improve BOTH lineups by at least '+fmt(MIN_ROS_GAIN_PER_WEEK)+' pts/week over the rest of the season. Try another player or manager.</div>';
    return;
@@ -233,6 +235,7 @@ function init(settings){
  $('tradeFromWeek')?.addEventListener('change',()=>{if(active())updated()});
  $('tradePartner')?.addEventListener('change',()=>{refresh();if(active())updated()});
  $('tradePackageFilter')?.addEventListener('change',()=>{if(active())updated()});
+ $('tradeLimit')?.addEventListener('change',()=>{if(active())updated()});
  $('tradePosition')?.addEventListener('change',()=>{if(active())updated()});
  updated();
 }

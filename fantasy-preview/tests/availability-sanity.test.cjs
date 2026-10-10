@@ -28,3 +28,18 @@ for(const folder of ['data/','data/nebraska/']){
  if(beforeValid)assert.equal(JSON.stringify(beforeValid.weeks),previous,'Active free-agent projections remain unchanged');
  console.log(folder+' Joe Mixon + '+excluded+' inactive-player forecasts corrected');
 }
+
+// Current injury reports win over healthy historical forecasts, including after enrichment.
+{
+ const available={players:[{id:'40118',name:"De'Von Achane",status:'IR'},{id:'conner',status:'IR-R'}]};
+ const futureData={startWeek:5,players:[{yahooId:'40118',name:"De'Von Achane",weeks:[{week:5,points:20},{week:6,points:20}]},{yahooId:'conner',name:'James Conner',weeks:[{week:5,points:15},{week:6,points:15}]}]};
+ const weekly={week:5,players:[{yahooId:'40118',weeklyProjectedPoints:20},{yahooId:'conner',weeklyProjectedPoints:15}]};
+ reconcile({available,futureData,weekly});
+ assert.ok(futureData.players[0].weeks.every(w=>w.points===0),'Season-ending injury has no remaining games');
+ assert.equal(futureData.players[1].weeks[0].points,0,'IR player has no current-week projection');
+ assert.equal(futureData.players[1].weeks[1].points,15,'Healthy future scenario is retained without inventing a return date');
+ assert.ok(weekly.players.every(p=>p.weeklyProjectedPoints===0));
+ futureData.players[1].weeks[0].points=19;
+ reconcile({available,futureData,weekly});
+ assert.equal(futureData.players[1].weeks[0].points,0,'Final reconciliation blocks healthy enrichment leaking into current week');
+}

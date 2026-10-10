@@ -260,7 +260,10 @@ function showTrades(){
    const check=premiumTradeCheck(t);
    const valueCheck=tradeValueBalance(t,start,levels);
    const sameSize=t.youSend.length===t.youReceive.length;
-   if(packageFilter==='three_each'&&(t.youSend.length<3||t.youReceive.length<3))return [];
+   if(packageFilter==='one_each'&&t.youSend.length!==1)return [];
+   if(packageFilter==='two_each'&&t.youSend.length!==2)return [];
+   if(packageFilter==='balanced'&&t.youSend.length<2)return [];
+   if(packageFilter==='three_each'&&(t.youSend.length!==3||t.youReceive.length!==3))return [];
    // Any unequal package depends on an unmodeled add/drop; exclude it as unverified.
     if(!sameSize||!check.ok||!valueCheck.ok||t.requiresRosterAdjustment)return [];
    const both=[...t.youSend,...t.youReceive];
@@ -279,9 +282,9 @@ function showTrades(){
  const selected=[],teams=new Map();
  for(const p of matches){
    const already=teams.get(p.partnerTeamId)||0;
-   if(already>=3)continue;
+   if(partner==='all'&&already>=3)continue;
    selected.push(p);teams.set(p.partnerTeamId,already+1);
-   if(selected.length>=6)break;
+   if(selected.length>=Number($el('tradeLimit')?.value||6))break;
  }
  const displayNames={
    three_each:'3-for-3 trades',
@@ -329,6 +332,7 @@ function init(){
   if(tradeSel){tradeSel.innerHTML=Array.from({length:futureData.endWeek-5},(_,i)=>'<option value="'+(6+i)+'">Weeks '+(6+i)+'–'+futureData.endWeek+'</option>').join('');tradeSel.addEventListener('change',showTrades);}
   $el('tradePosition')?.addEventListener('change',showTrades);
   $el('tradePackageFilter')?.addEventListener('change',showTrades);
+  $el('tradeLimit')?.addEventListener('change',showTrades);
   const partner=$el('tradePartner');
   if(partner){partner.innerHTML='<option value="all">All other teams</option>'+rosters.teams.filter(t=>String(t.id)!==String(window.DaVinciLeague?.teamId||'7')).sort((a,b)=>a.name.localeCompare(b.name)).map(t=>'<option value="'+clean(t.id)+'">'+clean(t.name)+'</option>').join('');partner.addEventListener('change',showTrades);}
   renderFutureProjections();renderMine();showTrades();

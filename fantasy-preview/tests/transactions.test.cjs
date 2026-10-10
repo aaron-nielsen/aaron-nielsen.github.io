@@ -20,7 +20,7 @@ for(const {dir,id,label,minimum} of [
  assert.ok(transactions.transactions.length>=minimum);
  const els=new Map();
  const node=id=>{
-  if(!els.has(id))els.set(id,{value:id==='waiverHorizon'?'next_week':id==='lineupWeek'?'5':id==='txnSort'?'recent':id==='txnType'?'all':'all',
+  if(!els.has(id))els.set(id,{value:id==='txnSearch'?'':id==='waiverHorizon'?'next_week':id==='lineupWeek'?'5':id==='txnSort'?'recent':id==='txnType'?'all':'all',
     innerHTML:'',textContent:'',options:[],addEventListener(event,cb){this['on'+event]=cb;},setAttribute(){}});
   return els.get(id);
  };
@@ -37,14 +37,14 @@ for(const {dir,id,label,minimum} of [
  assert.ok(roles.k&&roles.def);
  context.DaVinciAdvice.init({rosters,available,week:5,future,teamId:id});
  const t0=Date.now();
- context.DaVinciTransactions.init({rosters,future,week:5,teamId:id,transactions,optimize:context.DaVinciAdvice.lineup});
+ context.DaVinciTransactions.init({rosters,future,week:5,teamId:id,transactions,optimize:context.DaVinciAdvice.lineup,partialOptimize:context.DaVinciAdvice.partialLineup});
  context.DaVinciTransactions.update();
  const elapsed=Date.now()-t0;
  const html=node('transactionCards').innerHTML;
  assert.equal((html.match(/class="txn-card"/g)||[]).length,transactions.transactions.length);
  assert.doesNotMatch(html,/actual pts/i,'Do not claim actual lineup gains without actuals');
  assert.ok(html.includes('projected points added')||html.includes('Not graded'),'Must show team points added or explicit unavailable');
- assert.ok(node('txnCoverage').textContent.includes('current model/rosters'),'Not claiming at-time projections');
+ assert.ok(node('txnCoverage').title.includes('Current model/rosters'),'Not claiming at-time projections');
  assert.ok(html.includes('pts/week')||html.includes('Not graded'),'Show weekly context alongside total points added');
  assert.ok(elapsed<20000,label+' transaction calculations too slow: '+elapsed+'ms');
  if(label==='CSU Stats')assert.ok(html.includes('Breece Hall')&&html.includes('Drake London'),'Missing completed trade');

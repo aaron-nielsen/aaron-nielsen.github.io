@@ -28,11 +28,15 @@ function changeRoster(roster,remove,add){
  }
  return kept;
 }
-function estimate(withRoster,withoutRoster,teamId){
+function estimate(withRoster,withoutRoster,teamId,allowEmpty=false){
  const weeks=state.weeks;
+ // Trades often leave a temporary streaming vacancy. Give both scenarios
+ // the same current free-agent K/DEF pool rather than assume a season of zeros.
+ const replacements=allowEmpty?(state.available?.players||[]).filter(p=>['K','DEF'].includes(p.position)).map(toPlayer):[];
+ const withPool=changeRoster(withRoster,[],replacements),withoutPool=changeRoster(withoutRoster,[],replacements);
  const after=[],before=[];
  for(const w of weeks){
-  const x=state.optimize(withRoster,w),y=state.optimize(withoutRoster,w);
+  const x=state.optimize(withPool,w)||(allowEmpty?state.partialOptimize?.(withPool,w):null),y=state.optimize(withoutPool,w)||(allowEmpty?state.partialOptimize?.(withoutPool,w):null);
   if(x&&y&&Number.isFinite(x.score)&&Number.isFinite(y.score)){
    after.push(x.score);before.push(y.score);
   }
@@ -74,7 +78,7 @@ function side(tx,teamId,acquired,dropped){
  }
  const before=changeRoster(after,acquired,dropped);
  historicalRoster.set(tid,before);
- const v=complete?estimate(after,before,tid):null;
+ const v=complete?estimate(after,before,tid,tx.type==='trade'):null;
  return {teamId:tid,name:team.name,value:v,
   reason:missingForecast.length?'Missing player forecast':!v?'Incomplete projected starting lineup':null};
 }
@@ -120,18 +124,14 @@ function impact(s){
 function card(tx){
  const p=tx.primary,g=grade(p?.value);
  const type=tx.isTrade?'Trade':tx.type==='add'&&(tx.players_dropped?.length)?'Add / drop':tx.type==='add'?'Add':'Drop';
- const title=tx.isTrade?'Trade between '+tx.sides.map(s=>s.name).join(' and '):
-  (tx.sides[0]?.name||'Manager')+' · '+type;
- const relation=tx.sides.length===2&&tx.sides.every(s=>s.value)?
-  (tx.sides.every(s=>s.value.ros>0)?' · Both gain projected points':' · One or both lose projected points'):'';
- return '<article class="txn-card">'+
-  '<div class="txn-top"><span class="txn-type">'+esc(type)+'</span><time>'+esc(tx.date||'Unknown date')+'</time>'+
-  '<span class="txn-grade">'+(p?.value?esc(g.grade):'Not graded')+'</span></div>'+
-  '<h3>'+esc(title)+relation+'</h3>'+
-  '<div class="txn-moves">'+description(tx)+'</div>'+
-  '<div class="txn-impacts">'+tx.sides.map(impact).join('')+'</div>'+
-  '</article>';
+ return '<article class="txn-card" data-compact="true" aria-label="'+esc((p?.name||'Manager')+' · '+type)+'"><time>'+esc(tx.date||'—')+'</time><span class="txn-type">'+esc(type)+'</span>'+
+ '<div class="txn-ledger-move"><strong>'+esc(tx.sides.map(s=>s.name).join(' ↔ '))+'</strong>'+description(tx)+
+ '<details><summary>Impact details</summary><div class="txn-impacts">'+tx.sides.map(impact).join('')+'</div>'+
+ (tx.isTrade?'<small>Current-model lineup comparison with available replacement kickers and defenses. Other unfilled slots count as zero.</small>':'')+'</details></div>'+
+ '<span class="txn-grade" title="'+esc(p?.reason||g.label)+'">'+(p?.value?esc(g.grade):'—')+'</span>'+
+ '<b class="txn-ledger-value">'+(p?.value?(p.value.ros>=0?'+':'')+fmt(p.value.ros):'—')+'</b></article>';
 }
+
 function update(){
  if(!state)return;
  if(!loaded){
@@ -160,6 +160,11 @@ function update(){
  };
  if(sort==='best')rows.sort((a,b)=>compare(a,b,-1));
  if(sort==='worst')rows.sort((a,b)=>compare(a,b,1));
+ if(sort==='oldest')rows.sort((a,b)=>Number(a.timestamp||0)-Number(b.timestamp||0));
+ if(sort==='team')rows.sort((a,b)=>(a.primary?.name||'').localeCompare(b.primary?.name||''));
+ if(sort==='type')rows.sort((a,b)=>a.type.localeCompare(b.type)||Number(b.timestamp||0)-Number(a.timestamp||0));
+ const query=($('txnSearch')?.value||'').trim().toLowerCase();
+ if(query)rows=rows.filter(tx=>JSON.stringify([tx.sides.map(s=>s.name),tx.players_added,tx.players_dropped,tx.trade_sides]).toLowerCase().includes(query));
  if(sort==='recent')rows.sort((a,b)=>Number(b.timestamp||0)-Number(a.timestamp||0));
  const rated=rows.filter(x=>value(x)!=null).length;
  const missing=rows.length-rated;
@@ -174,7 +179,7 @@ function update(){
  $('txnStats').textContent=rows.length+' transactions · '+rated+' projected point estimates'+
   (missing?' · '+missing+' ungraded':'');
  $('txnStats').title=breakdown||'All visible transactions graded';
- $('transactionCards').innerHTML=rows.length?rows.map(tx=>{
+ $('transactionCards').innerHTML=rows.length?'<div class="txn-ledger-head"><span>Date</span><span>Move</span><span>Manager / players</span><span>Grade</span><span>ROS gain</span></div>'+rows.map(tx=>{
   const selected=team==='all'?tx.primary:tx.sides.find(side=>side.teamId===team);
   return card({...tx,primary:selected||tx.primary});
  }).join(''):'<p class="txn-empty">No transactions match these filters.</p>';
@@ -198,9 +203,11 @@ function init(data){
  const coverage=$('txnCoverage');
  if(coverage&&source.length){
   const dates=source.map(t=>t.date).filter(Boolean).sort();
+  coverage.title='Current model/rosters; projected impact, not actual points';
   coverage.textContent='Yahoo activity · '+dates[0]+' to '+dates[dates.length-1]+
-   ' · Projected team lineup points added from Week '+data.week+' · current model/rosters · not actual points';
+   '';
  }
+ $('txnSearch')?.addEventListener('input',update);
  for(const id of ['txnTeam','txnType','txnSort'])$(id)?.addEventListener('change',update);
  if(!source.length){$('txnStats').textContent='No verified transactions available';return;}
  // Computing ratings only when the tab is opened prevents homepage lag.

@@ -33,7 +33,10 @@ async function render(league){
    if(response.ok)archive=await response.json();
   }catch(_){}
   const frozen=archive?.records?.length;
-  node.innerHTML='<div class="empty-copy"><strong>No verified accuracy results yet.</strong><p>'+
+  let backtest=null;
+  try{const r=await fetch('./data/backtest.json',{cache:'no-store'});if(r.ok)backtest=await r.json();}catch(_){}
+  const historical=league==='nebraska'?'':backtest?.overall?.history_3yr?'<section class="performance-history"><h3>2025 offensive backtest</h3><div class="performance-metrics"><span>Player-weeks <b>'+backtest.overall.history_3yr.nPlayerWeeks+'</b></span><span>Average error <b>'+fmt(backtest.overall.history_3yr.MAE)+'</b></span><span>Bias <b>'+fmt(backtest.overall.history_3yr.bias)+'</b></span></div><p>Historical CSU offense model, not current-model or Yahoo accuracy.</p></section>':'';
+  node.innerHTML=historical+'<div class="empty-copy"><strong>Current-season results pending</strong><p>'+
    (frozen?frozen+' raw Week 5 pregame forecasts have been archived. Waiting for completed games, actual scores, and timestamped Yahoo player forecasts. ':'')+
    'Current projections cannot be used to backfill historical accuracy.</p></div>';
  }
