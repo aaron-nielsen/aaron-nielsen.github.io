@@ -5,7 +5,7 @@
 <title>Da Vinci Fantasy Lab | CSU Stats</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Felipa&family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--base:#0b111d;--deep:#101a28;--card:#182334;--card2:#1c293b;--border:#2e3e50;--text:#f3f1e9;--muted:#a7b4c4;--cream:#e8e9e4;--orange:#f5b867;--teal:#93e2d5;--blue:#80acd4;--pink:#dc9ab3;--shadow:0 16px 50px rgba(0,0,0,.14)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--text);background:radial-gradient(ellipse 850px 530px at 110% -10%,#233551 0%,transparent 75%),radial-gradient(ellipse 850px 440px at -15% 7%,#1b2d3a 0%,transparent 75%),var(--base);font-family:'DM Sans',system-ui,sans-serif;font-size:14px}
@@ -196,45 +196,63 @@ body{
  .finder-surface h2{font-size:29px}
 }
 
+
+/* Distinctive Italian chancery lettering for the masthead only. */
+.brandname{display:flex;align-items:baseline;gap:13px;letter-spacing:0;text-transform:none;white-space:nowrap;line-height:1}
+.brandname .brand-script{font:400 clamp(35px,3.4vw,49px)/1.08 'Felipa','Cormorant Garamond',Georgia,serif;color:#664b30;text-transform:none;letter-spacing:-.025em;white-space:nowrap}
+.brandname .brand-rest{font:600 clamp(23px,2.5vw,33px)/1.0 'Cormorant Garamond',Georgia,serif;color:#304c3d;letter-spacing:-.015em;white-space:nowrap}
+.brandtag{letter-spacing:.11em}
+@media(max-width:670px){
+ .brandname{flex-direction:column;align-items:flex-start;gap:0}
+ .brandname .brand-script{font-size:30px;line-height:1.0}
+ .brandname .brand-rest{font-size:24px;line-height:.98;padding-left:2px}
+ .brandtag{display:none}
+ .brandmark{flex:none}
+}
+@media(max-width:380px){
+ .brandname .brand-script{font-size:27px}
+ .brandname .brand-rest{font-size:21px}
+}
+
 </style>
 </head><body>
 <div class="shell">
-<header class="topbar"><div class="brand"><div class="brandmark" aria-hidden="true"><svg viewBox="0 0 60 60" width="47" height="47" role="presentation" focusable="false"><circle cx="30" cy="30" r="23" fill="none" stroke="currentColor" stroke-width="1.1"/><circle cx="30" cy="30" r="15" fill="none" stroke="currentColor" stroke-width=".8" opacity=".7"/><path d="M30 6v48M6 30h48M12 12l36 36M48 12L12 48" stroke="currentColor" stroke-width=".6" opacity=".7"/><path d="M30 12l6 18-6 18-6-18z" fill="none" stroke="currentColor" stroke-width="1.25"/><circle cx="30" cy="30" r="3" fill="currentColor"/></svg></div><div><div class="brandname">Da Vinci <span>Fantasy Lab</span></div><div class="brandtag">CSU STATS · AN EXPERIMENT IN PREDICTION</div></div></div><div class="top-right"><a class="top-link" href="https://football.fantasysports.yahoo.com/f1/258793" target="_blank" rel="noopener">OPEN YAHOO ↗</a><div class="weekstamp"><b id="weekHead">05</b><small>Week / 2026</small></div></div></header>
+<header class="topbar"><div class="brand"><div class="brandmark" aria-hidden="true"><svg viewBox="0 0 60 60" width="47" height="47" role="presentation" focusable="false"><circle cx="30" cy="30" r="23" fill="none" stroke="currentColor" stroke-width="1.1"/><circle cx="30" cy="30" r="15" fill="none" stroke="currentColor" stroke-width=".8" opacity=".7"/><path d="M30 6v48M6 30h48M12 12l36 36M48 12L12 48" stroke="currentColor" stroke-width=".6" opacity=".7"/><path d="M30 12l6 18-6 18-6-18z" fill="none" stroke="currentColor" stroke-width="1.25"/><circle cx="30" cy="30" r="3" fill="currentColor"/></svg></div><div><div class="brandname"><span class="brand-script">Da Vinci</span><span class="brand-rest">Fantasy Lab</span></div><div class="brandtag">CSU STATS · 2026</div></div></div><div class="top-right"><a class="top-link" href="https://football.fantasysports.yahoo.com/f1/258793" target="_blank" rel="noopener">OPEN YAHOO ↗</a><div class="weekstamp"><b id="weekHead">05</b><small>Week / 2026</small></div></div></header>
 <nav class="nav" aria-label="Dashboard navigation">
 <button class="nav-btn active" type="button" data-page="overview">◈ &nbsp;THE STUDY</button>
 <button class="nav-btn" type="button" data-page="rosters">▤ &nbsp;ROSTERS</button>
 <button class="nav-btn" type="button" data-page="finder">⌕ &nbsp;PLAYER INDEX</button>
 <button class="nav-btn" type="button" data-page="projections">↗ &nbsp;PROJECTIONS</button>
 </nav>
-<div class="codex-rule" aria-hidden="true" style="display:flex;align-items:center;gap:15px;color:#9f855b;margin:-6px 0 21px;opacity:.75"><span style="flex:1;height:1px;background:#b8a98e"></span><span style="font:italic 19px 'Cormorant Garamond',serif;letter-spacing:.08em">Observation · Prediction · Strategy</span><span style="flex:1;height:1px;background:#b8a98e"></span></div>
+<div class="codex-rule" aria-hidden="true" style="display:flex;align-items:center;gap:12px;margin:-9px 0 20px;opacity:.65"><span style="flex:1;height:1px;background:#b8a98e"></span><span style="width:7px;height:7px;transform:rotate(45deg);border:1px solid #967c52"></span><span style="flex:1;height:1px;background:#b8a98e"></span></div>
 <main id="app">
 <section id="page-overview" class="page">
-<div class="section-top"><div><div class="eyebrow">Codex · 2026 season</div><h1>The art of prediction</h1><p>A studied view of your matchup, roster, and the league — drawn from real Yahoo data.</p></div><div class="quiet tiny" id="sync">Loading Yahoo snapshot…</div></div>
+<div class="section-top"><div><div class="eyebrow">CSU Stats · 2026</div><h1>Overview</h1><p>Current matchup, lineup, and league standings.</p></div><div class="quiet tiny" id="sync">Loading Yahoo snapshot…</div></div>
 <div class="homesplit">
 <div class="matchup" id="hero"><div class="loading">Loading this week's matchup…</div></div>
-<div class="record-card"><div class="record-upper"><div class="eyebrow">THE SEASON LEDGER</div><div class="record-fig mono" id="wl">—</div><div class="record-desc" id="rankDesc">League standings</div></div><div class="record-stats"><div><strong class="mono" id="pointsFor">—</strong><small>POINTS SCORED</small></div><div><strong id="waiverRank" class="mono">—</strong><small>WAIVER PRIORITY</small></div></div></div>
+<div class="record-card"><div class="record-upper"><div class="eyebrow">SEASON RECORD</div><div class="record-fig mono" id="wl">—</div><div class="record-desc" id="rankDesc">League standings</div></div><div class="record-stats"><div><strong class="mono" id="pointsFor">—</strong><small>POINTS SCORED</small></div><div><strong id="waiverRank" class="mono">—</strong><small>WAIVER PRIORITY</small></div></div></div>
 </div>
 <div class="columns">
-<div class="panel"><div class="panel-header"><div><div class="panel-title">Your starting lineup</div><div class="panel-sub">Current Yahoo lineup · not an optimized recommendation</div></div><button class="sub-link" type="button" data-jump="rosters">FULL ROSTER ↗</button></div><div class="roster-mini" id="myLineup"></div></div>
-<div class="panel"><div class="panel-header"><div><div class="panel-title">The weekly ledger</div><div class="panel-sub">Current-week Yahoo projected final totals</div></div><span class="chip" id="boardWeek">WEEK 5</span></div><div class="scoreboard-list" id="leagueBoard"></div><div class="board-note">Forecasts can change as games are played. Snapshot, not a live scoreboard.</div></div>
+<div class="panel"><div class="panel-header"><div><div class="panel-title">Your starting lineup</div><div class="panel-sub">Yahoo starting lineup</div></div><button class="sub-link" type="button" data-jump="rosters">FULL ROSTER ↗</button></div><div class="roster-mini" id="myLineup"></div></div>
+<div class="panel"><div class="panel-header"><div><div class="panel-title">League matchups</div><div class="panel-sub">Yahoo projected final scores</div></div><span class="chip" id="boardWeek">WEEK 5</span></div><div class="scoreboard-list" id="leagueBoard"></div><div class="board-note">Forecasts can change as games are played. Snapshot, not a live scoreboard.</div></div>
 </div>
 </section>
 <section id="page-rosters" class="page" hidden>
-<div class="section-top"><div><div class="eyebrow">The collection · 14 teams</div><h2>The rosters</h2><p>Start with Ten Feline Overlords, or switch to any of the other 13 teams.</p></div><select class="select" id="teamChoice" aria-label="Select fantasy team"></select></div>
+<div class="section-top"><div><div class="eyebrow">14 Teams</div><h2>Rosters</h2><p>Start with Ten Feline Overlords, or switch to any of the other 13 teams.</p></div><select class="select" id="teamChoice" aria-label="Select fantasy team"></select></div>
 <div id="selectedTeam"></div><div class="groups"><div class="panel group-panel" id="startingGroup"></div><div class="right-groups"><div class="panel group-panel" id="benchGroup"></div><div class="panel group-panel" id="irGroup"></div></div></div>
 </section>
 <section id="page-finder" class="page" hidden>
-<div class="section-top"><div><div class="eyebrow">Every owner · The open market</div><h2>Player index</h2><p>Search rostered players and league-available players together.</p></div></div>
-<div class="finder-surface"><div class="eyebrow">THE REGISTER OF PLAYERS</div><h2>Find a player, study the options.</h2><div class="finder-controls"><input id="finderQuery" type="search" placeholder="Search player, NFL team, fantasy team, or Yahoo ID…" aria-label="Find fantasy players"><select class="select" id="finderPos" aria-label="Player position"><option value="all">All positions</option><option>QB</option><option>RB</option><option>WR</option><option>TE</option><option>K</option><option value="DEF">DEF</option></select><select class="select" id="finderStatus" aria-label="Ownership status"><option value="all">Everyone</option><option value="available">Available / waivers*</option><option value="rostered">Rostered</option><option value="mine">My players</option></select></div></div>
+<div class="section-top"><div><div class="eyebrow">Rostered and available</div><h2>Player Finder</h2><p>Search rostered players and league-available players together.</p></div></div>
+<div class="finder-surface"><div class="eyebrow">SEARCH</div><h2>All league players</h2><div class="finder-controls"><input id="finderQuery" type="search" placeholder="Search player, NFL team, fantasy team, or Yahoo ID…" aria-label="Find fantasy players"><select class="select" id="finderPos" aria-label="Player position"><option value="all">All positions</option><option>QB</option><option>RB</option><option>WR</option><option>TE</option><option>K</option><option value="DEF">DEF</option></select><select class="select" id="finderStatus" aria-label="Ownership status"><option value="all">Everyone</option><option value="available">Available / waivers*</option><option value="rostered">Rostered</option><option value="mine">My players</option></select></div></div>
 <div class="finder-summary"><span id="finderCount">Loading players…</span><span>League-available players are shown alongside owned players</span></div>
 <div class="finder-results" id="finderResults"></div><button class="showmore" id="morePlayers" type="button" hidden>SHOW MORE PLAYERS ↓</button>
 <div class="note"><strong>*Waiver caveat:</strong> Yahoo confirms which players are available to acquire in your league, but the connected data does not distinguish unrestricted free agents from players still on waivers. Check Yahoo for claim eligibility and processing times. Available-player data is a sampled pool (up to 100 per position), not every NFL player.</div>
 </section>
 <section id="page-projections" class="page" hidden>
-<div class="section-top"><div><div class="eyebrow">Numbers & conjectures</div><h2>The projection ledger</h2><p>Real Yahoo weekly forecasts on the left; our statistical model remains independently labeled.</p></div></div>
+<div class="section-top"><div><div class="eyebrow">Yahoo and model forecasts</div><h2>Projections</h2><p>Real Yahoo weekly forecasts on the left; our statistical model remains independently labeled.</p></div></div>
 <div class="projection-split">
-<div class="panel"><div class="panel-header"><div><div class="panel-title">Yahoo’s projected table</div><div class="panel-sub">Projected final points for all 14 teams, current week</div></div><span class="chip" id="projectionWeek">WEEK 5</span></div><div class="projection-list" id="forecastList"></div></div>
-<div class="panel"><div class="panel-header"><div><div class="panel-title">Our statistical model</div><div class="panel-sub">Independent opportunity and efficiency projections</div></div><div class="model-status" id="modelStatus"><div class="eyebrow">MODEL V0.1</div><div class="headline">Awaiting validation</div><p>The model code exists, but player forecasts should not be shown as if they were validated or run successfully.</p></div></div>
+<div class="panel"><div class="panel-header"><div><div class="panel-title">Yahoo team projections</div><div class="panel-sub">Projected final points for all 14 teams, current week</div></div><span class="chip" id="projectionWeek">WEEK 5</span></div><div class="projection-list" id="forecastList"></div></div>
+<div class="panel"><div class="panel-header"><div><div class="panel-title">Our statistical model</div><div class="panel-sub">Independent statistical model · experimental</div></div><div class="model-status" id="modelStatus"><div class="eyebrow">MODEL V0.1</div><div class="headline">Awaiting validation</div><p>The model code exists, but player forecasts should not be shown as if they were validated or run successfully.</p></div></div>
 </div>
 <div class="note">Yahoo's team forecasts reflect its own projection system. Our independent model will later produce week-specific player estimates, availability-adjusted rest-of-season values, and transaction impact. Those outputs are not represented by Yahoo's team forecasts.</div>
 </section>
