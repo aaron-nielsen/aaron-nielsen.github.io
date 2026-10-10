@@ -695,6 +695,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 <script src="./lab-enhancements.js"></script>
 <script src="./availability-sanity.js"></script>
 <script src="./roster-advice.js"></script>
+<script src="./overview-roster.js"></script>
 <script src="./trade-preferences.js"></script>
 <script>
 'use strict';
@@ -893,62 +894,6 @@ function initModelTeamForecasts(){
  renderModelMatchup();renderModelTeamRankings();renderOffenseOutlook();
 }
 
-/* Future nine-starter lineup optimizer with unique eligible bench cover. */
-function renderPlannedLineup(weekNumber){
- const root=$('#myLineup'),roster=team(TEAM_ID)?.players||[];
- const estimate=modelTeamLineup(TEAM_ID,weekNumber);
- if(!estimate){root.innerHTML='<div class="empty-copy">No complete nine-player lineup can be projected for this week.</div>';return;}
- const slots=['QB','RB','RB','WR','WR','TE','W/R/T','K','DEF'];
- const starters=estimate.ids.slice().sort((a,b)=>a.slot-b.slot);
- const chosen=new Set(starters.map(p=>String(p.id)));
- const forecast=new Map((futureData?.players||[]).map(p=>[String(p.yahooId),p]));
- const unavailable=new Set(['IR','IR-R','CEL','SUSP','SUS','NA','N/A','PUP','PUP-R','NFI','NFI-R']);
- const candidates=roster.filter(p=>!chosen.has(String(p.id))&&p.slot!=='IR'&&
-  ['QB','RB','WR','TE','K','DEF'].includes(p.position)&&
-  !unavailable.has(String(p.status||'').toUpperCase()))
-  .map(p=>({p,frame:forecast.get(String(p.id))?.weeks?.find(w=>Number(w.week)===weekNumber)}))
-  .filter(x=>x.frame?.points!=null&&Number.isFinite(Number(x.frame.points)))
-  .map(x=>({...x,points:Number(x.frame.points)}));
- // Optimize assignment: use each substitute once. Coverage wins ties over points.
- const dp=Array(1<<slots.length).fill(null);
- dp[0]={count:0,points:0,choices:Array(slots.length).fill(null)};
- for(const candidate of candidates){
-  for(let mask=dp.length-1;mask>=0;mask--){
-   const prev=dp[mask];if(!prev)continue;
-   for(let i=0;i<slots.length;i++){
-    const bit=1<<i;
-    if((mask&bit)||!MODEL_SKILL_SLOTS[i].includes(candidate.p.position))continue;
-    const nextMask=mask|bit,existing=dp[nextMask];
-    const proposal={count:prev.count+1,points:prev.points+candidate.points,
-      choices:prev.choices.map((p,j)=>j===i?candidate:p)};
-    if(!existing||proposal.count>existing.count||
-      (proposal.count===existing.count&&proposal.points>existing.points))dp[nextMask]=proposal;
-   }
-  }
- }
- const best=dp.filter(Boolean).reduce((a,b)=>!a||b.count>a.count||
-  (b.count===a.count&&b.points>a.points)?b:a,null);
- const person=(p,slot,pts)=>{
-  if(!p)return '<div class="lineup-column-person empty" aria-label="No eligible backup">—</div>';
-  const frame=forecast.get(String(p.id))?.weeks?.find(w=>Number(w.week)===weekNumber);
-  const opp=frame?.state==='bye'?'Bye':frame?.opponent?(frame.home?'vs ':'@ ')+frame.opponent:'Schedule unavailable';
-  const points=frame?.state==='bye'?'BYE':pts==null?'—':Number(pts).toFixed(1);
-  const statusText=p.status?' · '+esc(p.status):'';
-  return '<div class="lineup-column-person">'+(slot?'<span class="lineup-position">'+esc(slot)+'</span>':'')+
-   '<div class="lineup-primary"><strong>'+esc(p.name)+'</strong><span class="lineup-pts">'+points+'</span></div>'+
-   '<small>'+esc(p.position)+' · '+esc(opp)+statusText+'</small></div>';
- };
- root.innerHTML='<div class="planner-summary"><span>Best modeled starters · Week '+weekNumber+'</span>'+
-  '<strong>'+estimate.points.toFixed(1)+' pts</strong></div>'+
-  '<div class="lineup-column-head"><span>STARTER</span><span>BEST BACKUP</span></div>'+
-  starters.map(p=>{
-   const r=roster.find(x=>String(x.id)===String(p.id));
-   return '<div class="lineup-pair">'+person(r,slots[p.slot],p.points)+
-    person(best?.choices[p.slot]?.p,null,best?.choices[p.slot]?.points)+'</div>';
-  }).join('')+
-  '<details class="quiet-details lineup-planner-help"><summary>About this lineup</summary><p>Optimized from your saved roster for all nine starting slots, including K and DEF. This is not your submitted Yahoo lineup. Estimates assume players participate; check injuries before kickoff.</p></details>';
-}
-
 function initOverview(){
  const m=matchup(),you=m.home.id===TEAM_ID?m.home:m.away,them=m.home.id===TEAM_ID?m.away:m.home;
  const y=you.projectedPoints,t=them.projectedPoints;
@@ -964,74 +909,16 @@ function initOverview(){
    '<div class="match-compact-side"><div class="match-compact-name">'+esc(them.name)+'</div>'+
    '<div class="match-compact-points">'+(Number.isFinite(t)?t.toFixed(2):'—')+'</div></div></div>'+
    '<div class="match-compact-footer">'+esc(summary)+'</div>';
- const st=standing(TEAM_ID);$('#wl').innerHTML=st?.wins==null?'—':esc(st.wins)+'<span>–</span>'+esc(st.losses);$('#rankDesc').textContent=st?.rank==null?'Yahoo standings unavailable':'#'+st.rank+' of '+rosters.teams.length+' in league standings';
+ const st=standing(TEAM_ID);$('#wl').innerHTML=st?.wins==null?'—':esc(st.wins)+'<span>–</span>'+esc(st.losses);$('#rankDesc').textContent=st?.rank==null?'Yahoo standings unavailable':'#'+st.rank+' / '+rosters.teams.length;
  $('#pointsFor').textContent=number(st?.pointsFor);$('#waiverRank').textContent=st?.waiverPriority==null?'—':'#'+st.waiverPriority;
- const lineupRoster=team(TEAM_ID).players;
- const starters=lineupRoster.filter(p=>p.slot!=='BN'&&p.slot!=='IR');
- const bench=lineupRoster.filter(p=>p.slot==='BN');
- const eligible={'QB':['QB'],'RB':['RB'],'WR':['WR'],'TE':['TE'],'W/R/T':['RB','WR','TE'],'K':['K'],'DEF':['DEF']};
- const order=['QB','RB','RB','WR','WR','TE','W/R/T','K','DEF'];
- const ordered=[],rest=[...starters];
- for(const slot of order){const idx=rest.findIndex(p=>p.slot===slot);if(idx>=0)ordered.push(rest.splice(idx,1)[0]);}
- // Assign distinct reserves to starting slots. The same player must never be
- // presented as simultaneous cover for multiple positions.
- const backups=bench
-   .map(p=>({p,w:weeklyProjection(p)}))
-   // A backup is a roster depth option even during their current bye.
-   // Injury/unavailable players remain excluded from immediate cover.
-   .filter(x=>['assuming_active','bye'].includes(x.w?.forecastStatus) &&
-              Number.isFinite(Number(x.w.weeklyProjectedPoints)) &&
-              ['QB','RB','WR','TE','K','DEF'].includes(x.p.position));
- const memo=new Map();
- function assign(index,used){
-   if(index>=ordered.length)return {value:0,choices:[]};
-   const key=index+'|'+used;
-   if(memo.has(key))return memo.get(key);
-   let after=assign(index+1,used);
-   let best={value:after.value,choices:[null,...after.choices]};
-   const pos=eligible[ordered[index].slot]||[ordered[index].position];
-   for(let j=0;j<backups.length;j++){
-     if((used&(1<<j))||!pos.includes(backups[j].p.position))continue;
-     const next=assign(index+1,used|(1<<j));
-     // Coverage is prioritized first, expected points within equal coverage.
-     const value=100+Math.max(0,Number(backups[j].w.weeklyProjectedPoints))+next.value;
-     if(value>best.value){
-       best={value,choices:[backups[j].p,...next.choices]};
-     }
-   }
-   memo.set(key,best);
-   return best;
- }
- const selectedBackups=assign(0,0).choices;
- const lineupPerson=(p,slot)=>{
-   if(!p)return '<div class="lineup-column-person empty" aria-label="No eligible backup">—</div>';
-   const w=weeklyProjection(p);
-   const future=futureData?.players?.find(x=>String(x.yahooId)===String(p.id));
-   const next=(w?.forecastStatus==='bye' && future?.weeks)
-       ? future.weeks.find(g=>Number(g.week)>Number(week.week) && g.opponent)
-       : null;
-   const projectionNote=next?' · W'+next.week+' '+number(next.activePoints)+' if active':'';
-   return '<div class="lineup-column-person">'+
-    (slot?'<span class="lineup-position">'+esc(slot)+'</span>':'')+
-    '<div class="lineup-primary"><strong>'+esc(p.name)+status(p)+'</strong>'+
-    '<span class="lineup-pts">'+esc(weeklyDisplay(w))+'</span></div>'+
-    '<small>'+esc(p.position)+' · '+esc(weeklyOpponent(w))+esc(projectionNote)+'</small></div>';
- };
- $('#myLineup').innerHTML='<div class="lineup-column-head"><span>STARTER</span><span>BEST BACKUP</span></div>'+
- ordered.map((p,i)=>'<div class="lineup-pair">'+lineupPerson(p,p.slot)+lineupPerson(selectedBackups[i],'')+'</div>').join('')+
- '';
- // Week 5 retains the real Yahoo starters; future weeks show optimized forecasts.
- const currentLineupHtml=$('#myLineup').innerHTML;
- const lineupSelect=$('#lineupWeek');
- const first=Number(week.week),last=Number(futureData?.endWeek||17);
- lineupSelect.innerHTML='<option value="'+first+'">Week '+first+' · Yahoo starters</option>'+
-  Array.from({length:Math.max(0,last-first)},(_,i)=>'<option value="'+(first+i+1)+'">Week '+(first+i+1)+' · Optimized</option>').join('');
- lineupSelect.addEventListener('change',()=>{
-  const chosenWeek=Number(lineupSelect.value);
-  if(chosenWeek===first)$('#myLineup').innerHTML=currentLineupHtml;
-  else renderPlannedLineup(chosenWeek);
- });
- $('#leagueBoard').innerHTML=week.matchups.map(m=>'<div class="scoreboard-item'+(m.home.id===TEAM_ID||m.away.id===TEAM_ID?' mine':'')+'"><div class="side">'+esc(m.home.name)+'</div><div class="pts mono">'+number(m.home.projectedPoints)+'</div><div class="dash">–</div><div class="pts mono">'+number(m.away.projectedPoints)+'</div><div class="side right">'+esc(m.away.name)+'</div></div>').join('');
+ // Show all rostered players instead of cherry-picked best backups.
+  const selector=$('#lineupWeek');
+  const first=Number(week.week),last=Number(futureData?.endWeek||17);
+  selector.innerHTML='<option value="'+first+'">Week '+first+' · Yahoo starters</option>'+
+    Array.from({length:Math.max(0,last-first)},(_,i)=>'<option value="'+(first+i+1)+'">Week '+(first+i+1)+' · Optimized</option>').join('');
+  window.DaVinciRosterOverview?.init({rosters,weekly,future:futureData,teamId:TEAM_ID,snapshotWeek:first,optimize:modelTeamLineup});
+  selector.addEventListener('change',()=>window.DaVinciRosterOverview?.render(Number(selector.value)));
+  $('#leagueBoard').innerHTML=week.matchups.map(m=>'<div class="scoreboard-item'+(m.home.id===TEAM_ID||m.away.id===TEAM_ID?' mine':'')+'"><div class="side">'+esc(m.home.name)+'</div><div class="pts mono">'+number(m.home.projectedPoints)+'</div><div class="dash">–</div><div class="pts mono">'+number(m.away.projectedPoints)+'</div><div class="side right">'+esc(m.away.name)+'</div></div>').join('');
  $('#boardWeek').textContent='WEEK '+week.week;$('#projectionWeek').textContent='WEEK '+week.week;
  $('#sync').textContent='Yahoo snapshot · '+new Date(week.retrievedAt).toLocaleString(undefined,{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'});
 }
