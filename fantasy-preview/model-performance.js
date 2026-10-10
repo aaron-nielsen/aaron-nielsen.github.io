@@ -26,7 +26,16 @@ async function render(league){
    '<div style="overflow-x:auto"><table class="table"><thead><tr><th>Position</th><th>n</th><th>Da Vinci MAE</th><th>RMSE</th><th>Bias</th><th>Paired n</th><th>Da Vinci paired MAE</th><th>Yahoo paired MAE</th><th>Da Vinci wins</th></tr></thead><tbody>'+rows+'</tbody></table></div>'+
    '<p class="quiet tiny">Lower MAE is better. Positive bias means overprediction. Yahoo comparisons use only matched player-weeks. Wins exclude ties.</p>';
  }catch(e){
-  node.innerHTML='<div class="empty-copy"><strong>No verified accuracy results yet.</strong><p>Pregame predictions must be saved before kickoff and matched with actual fantasy points afterward. Current projections cannot be used to backfill historical accuracy.</p></div>';
+  let archive=null;
+  try{
+   const folder=league==='nebraska'?'nebraska':'csu';
+   const response=await fetch('./forecast-archive/'+folder+'/2026-w05-2026-10-10.json',{cache:'no-store'});
+   if(response.ok)archive=await response.json();
+  }catch(_){}
+  const frozen=archive?.records?.length;
+  node.innerHTML='<div class="empty-copy"><strong>No verified accuracy results yet.</strong><p>'+
+   (frozen?frozen+' raw Week 5 pregame forecasts have been archived. Waiting for completed games, actual scores, and timestamped Yahoo player forecasts. ':'')+
+   'Current projections cannot be used to backfill historical accuracy.</p></div>';
  }
 }
 root.DaVinciPerformance={render};
