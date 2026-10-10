@@ -36,6 +36,11 @@ try{
  assert.equal(metrics.n,1);
  assert.equal(metrics.byPosition.all.daVinci.mae,2);
  assert.equal(metrics.byPosition.all.yahoo.mae,1);
+ const duplicateYahoo=file('duplicate-yahoo.json',[
+  {season:2026,week:5,playerId:'abc',yahoo:11,predictedAt},
+  {season:2026,week:5,playerId:'abc',yahoo:9,predictedAt}]);
+ p=run('join-forecast-results.cjs',[frozen,actuals,duplicateYahoo,path.join(tmp,'duplicate.json')]);
+ assert.notEqual(p.status,0,'Duplicate Yahoo pregame projections must not silently overwrite');
  const badActuals=file('bad-actuals.json',[{season:2026,week:5,playerId:'abc',actual:10,
   kickoffAt:new Date(Date.parse(predictedAt)-3600000).toISOString()}]);
  const invalidOutput=path.join(tmp,'invalid.json');
