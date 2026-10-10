@@ -285,7 +285,7 @@ body{
 <section id="page-projections" class="page" hidden>
 <div class="section-top"><div><div class="eyebrow">Current-season forecasts</div><h2>Player projections</h2><p>Experimental player estimates and Yahoo’s separate weekly team forecasts.</p></div></div>
 <div class="projection-split">
-<div class="panel"><div class="panel-header"><div><div class="panel-title">My player projections</div><div class="panel-sub">Model points per active game · unvalidated</div></div><span class="chip">MODEL V0.1</span></div><div class="model-status" id="modelStatus"><div class="eyebrow">EXPERIMENTAL</div><div class="headline">Loading player projections</div></div></div>
+<div class="panel"><div class="panel-header"><div><div class="panel-title">My player projections</div><div class="panel-sub">Model points per active game · unvalidated</div></div><span class="chip">MODEL V0.3</span></div><div class="model-status" id="modelStatus"><div class="eyebrow">EXPERIMENTAL</div><div class="headline">Loading player projections</div></div></div>
 <div class="panel"><div class="panel-header"><div><div class="panel-title">Yahoo team projections</div><div class="panel-sub">Projected final points for all 14 teams, current week</div></div><span class="chip" id="projectionWeek">WEEK 5</span></div><div class="projection-list" id="forecastList"></div></div>
 </div>
 <div class="panel all-predictions-panel" style="margin-top:19px">
@@ -410,13 +410,16 @@ function renderProjection(){
 }
 function renderBacktest(){
  const area=$('#backtestResults');
- if(!backtest?.overall?.model?.nPlayerWeeks){
-   area.innerHTML='<div class="empty-copy">Historical evaluation is not available yet.</div>';return;
- }
- const m=backtest.overall.model,b=backtest.overall.last3;
- const change=(100*(b.MAE-m.MAE)/b.MAE).toFixed(1);
- area.innerHTML='<div class="accuracy-grid"><div><small>MODEL MAE</small><strong>'+number(m.MAE)+'</strong></div><div><small>LAST-3 MAE</small><strong>'+number(b.MAE)+'</strong></div><div><small>MODEL ADVANTAGE</small><strong>'+esc(change)+'%</strong></div></div>'+
- '<p class="accuracy-note">'+esc(m.nPlayerWeeks)+' player-weeks · 2025 Weeks '+esc(backtest.holdoutWeeks?.join('–'))+' · conditional on a statistical appearance. Limited modeled scoring categories; this is a diagnostic, not proof of reliable waiver or injury forecasts.</p>';
+ const b=backtest?.overall?.last3;
+ const h=backtest?.overall?.history_2yr;
+ const legacy=backtest?.overall?.model;
+ const m=h||legacy;
+ if(!m||!b){area.innerHTML='<div class="empty-copy">Historical evaluation is not available yet.</div>';return;}
+ const change=100*(b.MAE-m.MAE)/b.MAE;
+ const title=h?'2-SEASON HISTORY MAE':'MODEL MAE';
+ const details=h?'Multiple history windows were tested on 2025. The two-season window had the lowest MAE; one and three seasons performed similarly. Live forecasts use up to four past seasons.':'Older model vs trailing average.';
+ area.innerHTML='<div class="accuracy-grid"><div><small>'+title+'</small><strong>'+number(m.MAE)+'</strong></div><div><small>LAST-3 MAE</small><strong>'+number(b.MAE)+'</strong></div><div><small>ERROR REDUCTION</small><strong>'+change.toFixed(1)+'%</strong></div></div>'+
+ '<p class="accuracy-note">'+esc(m.nPlayerWeeks)+' 2025 player-weeks (Weeks '+esc(backtest.holdoutWeeks?.join('–'))+'). '+esc(details)+' Conditional on appearing in the statistics; excludes unmodeled scoring and missed games. Not a validation of injury-adjusted weekly recommendations.</p>';
 }
 function renderAllProjections(){
  const area=$('#allProjections');
