@@ -844,6 +844,7 @@ function renderModelMatchup(){
  const p=splits(a),q=splits(b);
  area.innerHTML='<div class="model-short"><strong>DA VINCI MODEL · K + DEF</strong>'+
   '<span>'+esc(team(TEAM_ID).name)+' <b>'+a.points.toFixed(1)+'</b> · '+esc(other.name)+' <b>'+b.points.toFixed(1)+'</b></span>'+
+  '<small>Yahoo: '+(Number.isFinite((pair.home.id===TEAM_ID?pair.home:pair.away).projectedPoints)?(pair.home.id===TEAM_ID?pair.home:pair.away).projectedPoints.toFixed(1):'—')+' / '+(Number.isFinite(other.projectedPoints)?other.projectedPoints.toFixed(1):'—')+'</small>'+
   '<em>'+(diff>=0?'You':'Opponent')+' +'+Math.abs(diff).toFixed(1)+'</em>'+
   '<a href="#our-team-forecasts" id="modelTeamJump">All teams →</a></div>'+
   '<details class="quiet-details model-score-details"><summary>Score breakdown</summary>'+
@@ -866,12 +867,15 @@ function renderModelTeamRankings(){
  const weeks=forecastWeeks($('#teamModelWeek').value);
  const multiple=weeks.length>1;
  const slotNames=['QB','RB1','RB2','WR1','WR2','TE','FLEX','K','DEF'];
+ const yahooByTeam=new Map((week.matchups||[]).flatMap(m=>[m.home,m.away]).map(t=>[String(t.id),t.projectedPoints]));
+ const showYahoo=weeks.length===1&&Number(weeks[0])===Number(week.week);
  const rows=rosters.teams.map(t=>{
   const games=weeks.map(w=>({week:w,lineup:modelTeamLineup(t.id,w)}));
   const total=games.every(g=>g.lineup)?games.reduce((s,g)=>s+g.lineup.points,0):null;
   return {team:t,games,total,review:games.reduce((s,g)=>s+(g.lineup?.needsReview||0),0)};
  }).sort((a,b)=>(b.total??-1)-(a.total??-1));
- area.innerHTML='<div class="model-team-head"><span>TEAM</span><span>'+(multiple?'TOTAL MODELED PTS':'MODELED PTS')+'</span></div>'+
+ area.innerHTML='<div class="model-team-head"><span>TEAM</span><span>'+(showYahoo?'DA VINCI / YAHOO':multiple?'TOTAL MODELED PTS':'MODELED PTS')+'</span></div>'+
+ (showYahoo?'<p class="quiet tiny" style="margin:7px 0 10px">Da Vinci optimizes nine eligible starters; Yahoo uses its current submitted lineup. Both include K and DEF.</p>':'')+
  rows.map((r,i)=>{
   const games=r.games.map(g=>{
    if(!g.lineup)return '<p>Week '+g.week+': incomplete lineup</p>';
@@ -883,7 +887,7 @@ function renderModelTeamRankings(){
   return '<details class="model-team-entry'+(r.team.id===TEAM_ID?' my-model-team':'')+'"><summary>'+
    '<span><small>'+(i+1)+'.</small> <strong>'+esc(r.team.name)+(r.team.id===TEAM_ID?' ★':'')+'</strong>'+
    (r.review?'<em> · status review</em>':'')+'</span>'+
-   '<b>'+(r.total==null?'—':r.total.toFixed(2))+' <i>⌄</i></b></summary>'+
+   '<b>'+(r.total==null?'—':r.total.toFixed(2))+(showYahoo?' / '+(Number.isFinite(yahooByTeam.get(String(r.team.id)))?yahooByTeam.get(String(r.team.id)).toFixed(2):'—'):'')+' <i>⌄</i></b></summary>'+
    '<div class="model-team-expanded"><p>'+weeks.length+' modeled week'+(weeks.length===1?'':'s')+
    (multiple&&r.total!=null?' · '+(r.total/weeks.length).toFixed(2)+' pts/week':'')+
    ' · conditional on participation</p>'+games+'</div></details>';
