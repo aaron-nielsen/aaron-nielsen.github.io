@@ -120,8 +120,11 @@ button,input,select{font:inherit}
 .rating-bin{height:100%;display:flex;align-items:flex-end;justify-content:center;min-width:0}
 .rating-bin-bar{width:78%;min-width:2px;border-radius:3px 3px 0 0}
 .rating-axis{display:grid;grid-template-columns:repeat(41,minmax(0,1fr));gap:2px;border-top:1px solid #5b402c;padding:3px 1px 0;margin-top:0}
-.rating-axis span{text-align:center;color:var(--muted);font-size:.68rem;font-variant-numeric:tabular-nums;white-space:nowrap;transform:translateX(-50%);position:relative;left:50%}
-.rating-scale-note{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;color:var(--muted);font-size:.74rem;margin-top:4px}
+.rating-axis span{text-align:center;color:var(--muted);font-size:.68rem;font-variant-numeric:tabular-nums;white-space:nowrap;justify-self:center}
+.rating-scale-note{display:grid;grid-template-columns:repeat(41,minmax(0,1fr));gap:2px;color:var(--muted);font-size:.74rem;margin-top:4px;padding:0 1px;min-height:20px}
+.rating-scale-note span{white-space:nowrap;justify-self:center}
+.rating-scale-note span:first-child{justify-self:start}
+.rating-scale-note span:last-child{justify-self:end}
 .rating-scale-note strong{color:var(--amber2);font-weight:600}
 .chart-note{margin:0;padding:0 16px 3px;color:var(--muted);font-size:.78rem}
 .distillery-chart .bar-row,.distillery-chart .distillery-head{grid-template-columns:minmax(170px,230px) minmax(180px,1fr) 58px 66px 58px;gap:9px}
@@ -220,7 +223,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
   .rating-histogram{gap:1px;height:84px}
   .rating-axis{gap:1px}
   .rating-axis span{font-size:.6rem}
-  .rating-scale-note{font-size:.68rem}
+  .rating-scale-note{font-size:.64rem}
 }
 </style>
 
@@ -991,14 +994,14 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
         }).join("")+
       '</div>'+
       '<div class="rating-scale-note">'+
-        '<span><strong>1.0</strong> Terrible</span>'+
-        '<span><strong>2.0</strong> Poor</span>'+
-        '<span><strong>2.5</strong> Meh</span>'+
-        '<span><strong>3.0</strong> Fine</span>'+
-        '<span><strong>3.5</strong> Good</span>'+
-        '<span><strong>4.0</strong> Very Good</span>'+
-        '<span><strong>4.5</strong> Excellent</span>'+
-        '<span><strong>5.0</strong> Masterpiece</span>'+
+        '<span style="grid-column:1"><strong>1.0</strong> Terrible</span>'+
+        '<span style="grid-column:11"><strong>2.0</strong> Poor</span>'+
+        '<span style="grid-column:16"><strong>2.5</strong> Meh</span>'+
+        '<span style="grid-column:21"><strong>3.0</strong> Fine</span>'+
+        '<span style="grid-column:26"><strong>3.5</strong> Good</span>'+
+        '<span style="grid-column:31"><strong>4.0</strong> Very Good</span>'+
+        '<span style="grid-column:36"><strong>4.5</strong> Excellent</span>'+
+        '<span style="grid-column:41"><strong>5.0</strong> Masterpiece</span>'+
       '</div>'+
     '</div>';
   }
