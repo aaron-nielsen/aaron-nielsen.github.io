@@ -20,6 +20,7 @@ const context={document:{getElementById(id){return id==='myLineup'?root:null;}}}
 vm.runInNewContext(script,context,{filename:'overview-roster.js'});
 const read=p=>JSON.parse(fs.readFileSync(path.join(base,p),'utf8'));
 const slots=['QB','RB','RB','WR','WR','TE','W/R/T','K','DEF'];
+const encodedName=p=>encodedName(p).replaceAll("'",'&#39;').replaceAll('"','&quot;');
 for(const entry of [{folder:'data/',id:'7',label:'CSU Stats'},{folder:'data/nebraska/',id:'6',label:'Nebraska'}]){
  const rosters=read(entry.folder+'rosters.json'),weekly=read(entry.folder+'weekly.json'),future=read(entry.folder+'future.json');
  const team=rosters.teams.find(t=>String(t.id)===entry.id);
@@ -40,14 +41,14 @@ for(const entry of [{folder:'data/',id:'7',label:'CSU Stats'},{folder:'data/nebr
  const current=root.innerHTML;
  assert.match(current,/Starters/);assert.match(current,/Bench/);assert.match(current,/Injured reserve/);
  assert.match(current,/Yahoo lineup/);
- for(const p of bench)assert.ok(current.includes(p.name.replaceAll('&','&amp;')),entry.label+' hides benched '+p.name);
- for(const p of IR)assert.ok(current.includes(p.name.replaceAll('&','&amp;')),entry.label+' hides IR '+p.name);
+ for(const p of bench)assert.ok(current.includes(encodedName(p)),entry.label+' hides benched '+p.name);
+ for(const p of IR)assert.ok(current.includes(encodedName(p)),entry.label+' hides IR '+p.name);
  assert.ok(!current.includes('No eligible backup'),'No empty backup placeholders');
  assert.equal((current.match(/class="roster-board-row/g)||[]).length,roster.length,entry.label+' should render every Yahoo roster player once');
  context.DaVinciRosterOverview.render(6);
  const upcoming=root.innerHTML;
  assert.match(upcoming,/Optimized lineup/);
- assert.ok(upcoming.includes(switchPlayer.name.replaceAll('&','&amp;')),entry.label+' future optimized starter visible');
+ assert.ok(upcoming.includes(encodedName(switchPlayer)),entry.label+' future optimized starter visible');
  assert.equal((upcoming.match(/class="roster-board-row/g)||[]).length,roster.length,entry.label+' week selector lost a player');
  console.log(entry.label+': '+starters.length+' starters, '+bench.length+' bench, '+IR.length+' IR, future-week selection correct');
 }
