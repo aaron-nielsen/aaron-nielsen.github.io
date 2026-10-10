@@ -56,6 +56,6 @@ for(const {dir,id,label,minimum} of [
  node('txnType').value='all';node('txnType').onchange();
  node('txnSort').value='best';node('txnSort').onchange();
  assert.match(node('transactionCards').innerHTML,/txn-card/);
- console.log(label+': '+transactions.transactions.length+' completed moves, impact grader '+elapsed+' ms');
+ console.log(label+': '+transactions.transactions.length+' completed moves, '+node('txnStats').textContent+', impact grader '+elapsed+' ms');
 }
 console.log('Transaction coverage, attribution, trade sides, labeling and filters passed.');
