@@ -147,9 +147,16 @@ button,input,select{font:inherit}
 .substyle-more{padding:0 16px 15px}
 .substyle-more button{background:transparent;color:#eadfd4;border:1px solid #6a4a31;border-radius:999px;padding:6px 11px;cursor:pointer}
 .substyle-more button:hover{border-color:var(--green2)}
+.style-summary-section{margin-top:18px}
 .style-tree{width:100%;border-collapse:collapse}
 .style-tree th,.style-tree td{padding:9px 12px;border-bottom:1px solid #3f2c20;text-align:left;vertical-align:middle}
 .style-tree th{background:#251a14;color:#f5eee7;font-weight:650}
+.style-tree th.style-sortable{cursor:pointer;user-select:none}
+.style-tree th.style-sortable:hover{background:#302019}
+.style-tree th.style-sortable.active-sort{box-shadow:inset 0 -2px 0 var(--green2)}
+.style-tree th.style-sortable::after{content:"";margin-left:5px}
+.style-tree th.style-sortable.active-sort[data-dir="1"]::after{content:"▲";font-size:.62rem;color:var(--amber2)}
+.style-tree th.style-sortable.active-sort[data-dir="-1"]::after{content:"▼";font-size:.62rem;color:var(--amber2)}
 .style-tree th.num,.style-tree td.num{text-align:center;font-variant-numeric:tabular-nums;width:90px}
 .style-tree tr:last-child td{border-bottom:0}
 .style-tree tr:hover td{background:#211815}
@@ -289,7 +296,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
 <script>
 (function(){
   var DATA_URL="/data/whiskey_ratings.json?v="+Date.now();
-  var data=null,rows=[],unratedRows=[],activeTab="main",topExpanded=false,distilleryExpanded=false,activeDistillery="",styleTreeExpanded={},placeTreeExpanded={};
+  var data=null,rows=[],unratedRows=[],activeTab="main",topExpanded=false,distilleryExpanded=false,activeDistillery="",styleTreeExpanded={},placeTreeExpanded={},styleTreeSort={key:"whiskeys",dir:-1};
   var sortState={
     all:{key:"average",dir:-1},
     "need-more":{key:"average",dir:-1},
@@ -693,19 +700,35 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
       node.average=qualified.length?avg(qualified.map(function(r){return r.average})):null;
       node.childList=Object.keys(node.children).map(function(k){
         return finalize(node.children[k]);
-      }).sort(function(a,b){
-        return b.whiskeys-a.whiskeys||a.name.localeCompare(b.name);
       });
       return node;
     }
 
-    return Object.keys(roots).map(function(k){return finalize(roots[k])}).sort(function(a,b){
-      return b.whiskeys-a.whiskeys||a.name.localeCompare(b.name);
+    return Object.keys(roots).map(function(k){return finalize(roots[k])});
+  }
+
+  function sortStyleNodes(nodes){
+    var key=styleTreeSort.key,dir=styleTreeSort.dir;
+    return nodes.slice().sort(function(a,b){
+      var av,bv;
+      if(key==="name"){av=a.name.toLowerCase();bv=b.name.toLowerCase()}
+      else if(key==="average"){av=a.average;bv=b.average}
+      else{av=a.whiskeys;bv=b.whiskeys}
+
+      if(av==null&&bv==null)return a.name.localeCompare(b.name);
+      if(av==null)return 1;
+      if(bv==null)return -1;
+      if(typeof av==="string"){
+        var c=av.localeCompare(bv);
+        return c?dir*c:a.name.localeCompare(b.name);
+      }
+      if(Math.abs(av-bv)>1e-12)return dir*(av-bv);
+      return a.name.localeCompare(b.name);
     });
   }
 
   function styleHierarchyTable(){
-    var roots=styleHierarchy();
+    var roots=sortStyleNodes(styleHierarchy());
     var body=[];
 
     function addNode(node,rootStyle){
@@ -730,13 +753,17 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
         '</tr>'
       );
 
-      if(open)node.childList.forEach(function(child){addNode(child,rootStyle)});
+      if(open)sortStyleNodes(node.childList).forEach(function(child){addNode(child,rootStyle)});
     }
 
     roots.forEach(function(root){addNode(root,root.name)});
 
+    function sth(key,label,cls){
+      var active=styleTreeSort.key===key;
+      return '<th class="style-sortable '+(active?'active-sort ':'')+(cls||'')+'" data-style-sort="'+key+'" data-dir="'+(active?styleTreeSort.dir:'')+'">'+label+'</th>';
+    }
     return '<div class="whiskey-table-wrap"><table class="style-tree">'+
-      '<thead><tr><th>Style / Sub-style</th><th class="num">Whiskeys</th><th class="num">Q Avg</th></tr></thead>'+
+      '<thead><tr>'+sth("name","Style / Sub-style")+sth("whiskeys","Whiskeys","num")+sth("average","Q Avg","num")+'</tr></thead>'+
       '<tbody>'+body.join("")+'</tbody></table></div>';
   }
 
@@ -1037,7 +1064,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
         '<section class="chart-section"><h2>American Whiskeys by State</h2><p class="chart-note">Counts include every whiskey tasted; Q Avg uses only whiskeys with n ≥ 3. Expand state → distillery → bottle.</p>'+placeHierarchyTable("American")+'</section>'+
         '<section class="chart-section"><h2>Scotch Single Malts by Region</h2><p class="chart-note">Five official regions; Skye and Orkney count with Highland. Counts use all tasted; Q Avg uses n ≥ 3 only.</p>'+placeHierarchyTable("Scotch")+'</section>'+
       '</div>'+
-      '<section class="chart-section"><h2>Whiskeys by Style</h2><p class="chart-note">Counts include every whiskey tasted; Q Avg uses only whiskeys with n ≥ 3. Expand + to drill into sub-styles.</p>'+styleHierarchyTable()+'</section>';
+      '<section class="chart-section style-summary-section"><h2>Whiskeys by Style</h2><p class="chart-note">Counts include every whiskey tasted; Q Avg uses only whiskeys with n ≥ 3. Expand + to drill into sub-styles.</p>'+styleHierarchyTable()+'</section>';
   }
 
   function render(){
@@ -1244,6 +1271,17 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
       btn.onclick=function(){
         var key=btn.getAttribute("data-tree-key");
         placeTreeExpanded[key]=!placeTreeExpanded[key];
+        render();
+      };
+    });
+    document.querySelectorAll(".style-sortable").forEach(function(th){
+      th.onclick=function(){
+        var key=th.getAttribute("data-style-sort");
+        if(styleTreeSort.key===key)styleTreeSort.dir*=-1;
+        else{
+          styleTreeSort.key=key;
+          styleTreeSort.dir=key==="name"?1:-1;
+        }
         render();
       };
     });
