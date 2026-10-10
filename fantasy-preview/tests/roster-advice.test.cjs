@@ -68,6 +68,18 @@ assert.ok(selection.selections.some(x=>x.player.id==='def'),'DEF included');
 assert.ok(selection.selections.some(x=>x.player.id==='backwr'),'best bench player starts');
 assert.match(element('lineupRecommendations').innerHTML,/Start Backup Wideout/,'actionable start');
 assert.match(element('lineupRecommendations').innerHTML,/Sit Flex Receiver/,'actionable sit');
+// When the existing starters are optimal, there is no actionable change.
+const originalBackupPoints=values.backwr.slice();
+values.backwr[0]=6;
+future.find(p=>p.yahooId==='backwr').weeks[0].points=6;
+context.DaVinciAdvice.renderRecommendations();
+const noChanges=element('lineupRecommendations').innerHTML;
+assert.match(noChanges,/No changes recommended/);
+assert.doesNotMatch(noChanges,/decision-position">KEEP</);
+assert.doesNotMatch(noChanges,/\+\d+\.\d+ pts/,'No fictional gain when the lineup is already optimal');
+values.backwr.splice(0,values.backwr.length,...originalBackupPoints);
+future.find(p=>p.yahooId==='backwr').weeks[0].points=16;
+context.DaVinciAdvice.renderRecommendations();
 const waivers=element('waiverRecommendations').innerHTML;
 for(const id of ['Available QB','Available RB','Available WR','Available TE','Available Kicker','Available Defense']){
  assert.ok(waivers.includes(id),'Missing available '+id);
