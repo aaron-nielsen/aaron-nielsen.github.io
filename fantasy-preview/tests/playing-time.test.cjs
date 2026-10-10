@@ -47,3 +47,12 @@ console.log('Snap-based playing-time model and injury opportunity redistribution
  assert.ok(player.weeks[1].playingTime,'Use dynamic start week for future projections');
 }
 console.log('Dynamic start week and unavailable-player safeguards passed.');
+
+{
+ const history={games:[{week:4,snapShare:.2,carries:5},{week:5,snapShare:.4,carries:10},{week:9,snapShare:.9,carries:30}]};
+ const early=context.DaVinciPlayingTime.trend(history,'RB',7);
+ const reference=context.DaVinciPlayingTime.trend({games:history.games.slice(0,2)},'RB');
+ assert.equal(early.multiplier,reference.multiplier,'Week 9 observations must not leak into Week 7');
+ assert.equal(early.games,2);
+}
+console.log('Pregame usage-history cutoff checks passed.');
