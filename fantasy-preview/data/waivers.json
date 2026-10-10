@@ -4,10 +4,10 @@
   "season": 2026,
   "leagueId": "470.l.258793",
   "userTeamId": "7",
-  "generatedAt": "2026-10-10T04:48:41.572147+00:00",
+  "generatedAt": "2026-10-10T04:53:51.119896+00:00",
   "rosterSnapshotAt": "2026-10-10T04:43:49.995Z",
   "availableSnapshotAt": "2026-10-10T04:44:23.191Z",
-  "futureModelGeneratedAt": "2026-10-10T04:48:41.450703+00:00",
+  "futureModelGeneratedAt": "2026-10-10T04:53:50.978601+00:00",
   "rosterConstraints": {
     "skillSlots": [
       "QB",
@@ -18,8 +18,8 @@
       "TE",
       "W/R/T"
     ],
-    "dropCandidates": "bench rostered QB/RB/WR/TE, one per acquisition",
-    "excluded": "K and DEF held fixed; players already in Yahoo IR slot unavailable",
+    "dropCandidates": "bench QB/RB/WR/TE with no active long-term reserve/exempt designation, one per acquisition",
+    "excluded": "K and DEF held fixed; current IR/exempt/suspended statuses excluded from baseline until cleared",
     "fullLegalLineup": true
   },
   "horizons": {
@@ -27,7 +27,7 @@
       "weeks": [
         6
       ],
-      "baselineLineupPoints": 102.03,
+      "baselineLineupPoints": 100.87,
       "recommendations": []
     },
     "four_weeks": {
@@ -37,7 +37,7 @@
         8,
         9
       ],
-      "baselineLineupPoints": 402.18,
+      "baselineLineupPoints": 388.51,
       "recommendations": []
     },
     "rest_of_season": {
@@ -55,7 +55,7 @@
         16,
         17
       ],
-      "baselineLineupPoints": 1191.68,
+      "baselineLineupPoints": 1163.96,
       "recommendations": [
         {
           "yahooId": "29344",
@@ -65,13 +65,13 @@
           "status": null,
           "yahooWideRosteredPercent": 3,
           "suggestedDrop": {
-            "yahooId": "34054",
-            "name": "Brian Robinson",
-            "position": "RB"
+            "yahooId": "31868",
+            "name": "Deebo Samuel Sr.",
+            "position": "WR"
           },
           "lineupGain": 0.77,
-          "baselineLineupPoints": 1191.68,
-          "withPickupLineupPoints": 1192.45,
+          "baselineLineupPoints": 1163.96,
+          "withPickupLineupPoints": 1164.73,
           "addedPlayerRawPoints": 91.08,
           "weeklyGain": [
             {
@@ -133,13 +133,13 @@
           "status": null,
           "yahooWideRosteredPercent": 70,
           "suggestedDrop": {
-            "yahooId": "34054",
-            "name": "Brian Robinson",
-            "position": "RB"
+            "yahooId": "31868",
+            "name": "Deebo Samuel Sr.",
+            "position": "WR"
           },
-          "lineupGain": 0.15,
-          "baselineLineupPoints": 1191.68,
-          "withPickupLineupPoints": 1191.83,
+          "lineupGain": 0.14,
+          "baselineLineupPoints": 1163.96,
+          "withPickupLineupPoints": 1164.1,
           "addedPlayerRawPoints": 91.87,
           "weeklyGain": [
             {
@@ -172,7 +172,7 @@
             },
             {
               "week": 13,
-              "gain": 0.0
+              "gain": -0.01
             },
             {
               "week": 14,
@@ -198,8 +198,8 @@
   },
   "coverage": {
     "modeledAvailableCandidates": 162,
-    "dropChoices": 6,
-    "modeledActiveSkillRoster": 13
+    "dropChoices": 5,
+    "modeledActiveSkillRoster": 12
   },
-  "notice": "Lineup impact is cumulative fantasy points over the selected weeks, optimizing QB/RB/RB/WR/WR/TE/flex separately each week. It assumes all players with scheduled games are available in future weeks, including currently injured or suspended rostered players, so scores are SCENARIOS not reliable injury-adjusted expectations. It does not estimate waivers, real injury return dates, usage changes, K/DEF or trade fairness. Free agent pool sampled from the top 100 at each position."
+  "notice": "Lineup impact is cumulative fantasy points over the selected weeks, optimizing QB/RB/RB/WR/WR/TE/flex separately each week. It assumes all players with scheduled games are available in future weeks, including short-term injured rostered players, but long-term reserve/exempt designations are held out until cleared; scores are SCENARIOS not reliable injury-adjusted expectations. It does not estimate waivers, real injury return dates, usage changes, K/DEF or trade fairness. Free agent pool sampled from the top 100 at each position."
 }
