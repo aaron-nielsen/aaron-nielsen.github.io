@@ -33,3 +33,17 @@ for(const prefix of ['data/','data/nebraska/']){
   ', Brian '+baselineRobinson+', Brooks unavailable; Week 6 unchanged');
 }
 console.log('Snap-based playing-time model and injury opportunity redistribution passed.');
+
+{
+ const player={yahooId:'40971',name:'Example',position:'RB',nflTeam:'GB',baselineStats:{carries:10},
+  weeks:[{week:7,points:10,activePoints:10,state:'unavailable_reported'},
+   {week:8,points:10,activePoints:10,state:'assuming_active'}]};
+ const futureData={startWeek:7,players:[player]};
+ const history={players:[{id:'40971',games:[
+  {week:4,snapShare:.2,carries:5},{week:5,snapShare:.4,carries:10}]}]};
+ apply({futureData,history,context:{scenarios:[]}});
+ assert.equal(player.weeks[0].points,10,'Do not modify ruled-out player');
+ assert.equal(player.weeks[0].state,'unavailable_reported','Never revive a ruled-out player');
+ assert.ok(player.weeks[1].playingTime,'Use dynamic start week for future projections');
+}
+console.log('Dynamic start week and unavailable-player safeguards passed.');
