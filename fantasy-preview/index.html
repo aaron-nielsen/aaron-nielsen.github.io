@@ -694,6 +694,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 <script src="./special-teams-model.js"></script>
 <script src="./lab-enhancements.js"></script>
 <script src="./availability-sanity.js"></script>
+<script src="./return-outlook.js"></script>
 <script src="./roster-advice.js"></script>
 <script src="./overview-roster.js"></script>
 <script src="./trade-preferences.js"></script>
@@ -771,16 +772,18 @@ function modelTeamLineup(teamId,forecastWeek){
  const dp=Array(1<<MODEL_SKILL_SLOTS.length).fill(null);
  dp[0]={points:0,ids:[],needsReview:0};
  for(const player of roster.players){
-  if(player.slot==='IR'||!["QB","RB","WR","TE","K","DEF"].includes(player.position))continue;
+  if(!["QB","RB","WR","TE","K","DEF"].includes(player.position))continue;
   const liveStatus=String(player.status||'').toUpperCase();
-  // No actionable offensive forecast while roster status is indefinite/unavailable.
-  // OUT players may be used in later *conditional* scenarios, but are flagged.
-  if(['IR','IR-R','CEL','SUSP','SUS','NA','N/A','PUP','PUP-R','NFI','NFI-R'].includes(liveStatus))continue;
-  if(Number(forecastWeek)===Number(week.week)&&['O','OUT'].includes(liveStatus))continue;
   const projected=forecasts.get(String(player.id));
   const frame=projected?.weeks?.find(x=>Number(x.week)===Number(forecastWeek));
   if(!frame)continue;
-  let pts=frame.points,uncertain=['O','OUT','Q','D','GTD','QUESTIONABLE','DOUBTFUL'].includes(liveStatus);
+  // Explicit, research-reviewed return outlooks may re-enter future scenarios.
+  // Otherwise leave IR/exempt/suspended players out until their status changes.
+  const returnReady=Number(forecastWeek)>Number(week.week)&&
+   frame.availabilityProbability!=null&&frame.availabilityProbability>=.55;
+  if((player.slot==='IR'||['IR','IR-R','CEL','SUSP','SUS','NA','N/A','PUP','PUP-R','NFI','NFI-R'].includes(liveStatus))&&!returnReady)continue;
+  if(Number(forecastWeek)===Number(week.week)&&['O','OUT'].includes(liveStatus))continue;
+  let pts=frame.points,uncertain=returnReady||['O','OUT','Q','D','GTD','QUESTIONABLE','DOUBTFUL'].includes(liveStatus);
   if(pts==null&&Number(forecastWeek)===Number(week.week)){
     const report=reports.get(String(player.id));
     if(Number.isFinite(report?.activeGamePoints)){
@@ -1235,6 +1238,7 @@ async function get(path){const r=await fetch(DATA_BASE+path+'.json',{cache:'no-s
   if(rosters.leagueId!==week.leagueId||available.leagueId!==rosters.leagueId||rosters.leagueId!==(LEAGUE_KEY==='nebraska'?'470.l.1699881':'470.l.258793'))throw Error('League identity mismatch');
   // Yahoo NA status overrides cached model player/team assumptions (e.g. Joe Mixon).
   window.DaVinciEligibility?.reconcile({available,futureData,weekly});
+  window.DaVinciReturns?.apply({futureData,weekly});
   const special=window.DaVinciSpecialTeams?.enrich({context:specialContext,league:leagueSettings,rosters,available,futureData,weekly});
   if(!special||special.def===0||special.k===0)throw Error('K/DST model coverage unavailable');
   modelLineupCache.clear();
