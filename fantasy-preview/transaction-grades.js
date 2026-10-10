@@ -108,7 +108,7 @@ function description(tx){
 }
 function impact(s){
  const g=grade(s.value);
- if(!s.value)return '<div class="txn-impact unscored"><strong>'+esc(s.name)+'</strong><small>Not graded</small></div>';
+ if(!s.value)return '<div class="txn-impact unscored"><strong>'+esc(s.name)+'</strong><small>Not graded'+(s.reason?' · '+esc(s.reason):'')+'</small></div>';
  const n=s.value.avg,positive=n>.15,negative=n<-.15;
  return '<div class="txn-impact '+(positive?'positive':negative?'negative':'neutral')+'">'+
   '<strong>'+esc(s.name)+'</strong><b>'+(n>=0?'+':'')+fmt(n)+' <small>pts/wk</small></b>'+
