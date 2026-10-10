@@ -86,3 +86,87 @@ body{font:16px/1.48 'Source Sans 3',Arial,sans-serif;color:var(--text);backgroun
 .trade-caveat strong{color:#5d4d3d}
 @media(max-width:900px){.trades-grid{grid-template-columns:1fr}.projection-split{grid-template-columns:1fr}}
 @media(max-width:600px){.shell{padding:0 12px 40px}.section-top h1,.section-top h2{font-size:29px}.nav-btn{font-size:12px;padding:10px 12px}.panel-title{font-size:21px}.stat-details summary{grid-template-columns:31px minmax(0,1fr) 49px 54px 11px;gap:6px;padding:10px 8px}.stat-column-head{grid-template-columns:minmax(0,1fr) 65px 60px;gap:8px;padding:10px}.stat-identity strong{font-size:13px}.stat-identity small{font-size:10px}.stat-pts{font-size:14px}.stat-opponent{font-size:11px}.stat-expand{padding:8px}.trade-controls{padding:12px;gap:10px}.trade-controls label{width:100%;justify-content:space-between}.trade-controls select{min-width:0;width:65%}.trade-count{margin:0}.trades-grid{padding:11px}.trade-card{padding:13px}.score-breakdown th,.score-breakdown td{padding:7px 5px}}
+
+/* v2: compact, legible stat ledger and scenario summary.
+   No wide 4-column spreadsheet inside a player expansion. */
+.stat-column-head{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 77px 93px 86px;
+  gap:8px;
+  padding:12px 17px;
+  font-size:11px;
+  letter-spacing:0;
+  text-transform:none;
+  background:#f5eee4;
+}
+.stat-column-head span:not(:first-child){text-align:right}
+.stat-details{background:#fffaf2}
+.stat-details.no-availability{background:#fbf7f2}
+.stat-details summary{
+  display:grid;
+  grid-template-columns:36px minmax(0,1fr) 77px 93px 86px 12px;
+  align-items:center;
+  gap:8px;
+  min-height:66px;
+  padding:11px 15px;
+}
+.stat-identity{min-width:0}
+.stat-identity strong{font-size:15px;line-height:1.2}
+.stat-identity small{font-size:12px;line-height:1.4;color:#746e67;overflow-wrap:anywhere}
+.stat-identity .forecast-flag{font-size:11px;color:#8b674d;font-weight:700}
+.stat-value{font:750 15px/1.2 'Source Sans 3',Arial,sans-serif;text-align:right;color:#403a32;font-variant-numeric:tabular-nums}
+.stat-details.no-availability .stat-value{color:#a3998c}
+.stat-expand{padding:14px 17px 18px 60px;border-top:1px solid #e6ded2}
+.player-horizons{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:18px}
+.player-horizons>div{background:#f4eddf;border:1px solid #e6d8c3;padding:11px;border-radius:6px}
+.player-horizons span{display:block;color:#766657;font-size:12px;font-weight:650}
+.player-horizons strong{display:block;font-size:24px;font-weight:750;color:#3f4638;font-variant-numeric:tabular-nums}
+.player-horizons small{display:block;font-size:10px;color:#827468}
+.stat-compact-heading{display:flex;justify-content:space-between;gap:10px;align-items:baseline;
+ padding:0 0 8px;font-size:13px;font-weight:800;color:#52483d}
+.stat-compact-heading small{font-size:11px;font-weight:500;color:#766b5c}
+.stat-components{border-top:1px solid #e1d4c3}
+.stat-component{display:grid;grid-template-columns:minmax(0,1fr) 103px 65px;gap:12px;
+ align-items:baseline;padding:7px 1px;border-bottom:1px solid #efe6db;font-size:12px;color:#5c5247}
+.stat-component span:nth-child(2),.stat-component strong{text-align:right;font-variant-numeric:tabular-nums}
+.stat-component strong{color:#3d453b;font-size:13px;font-weight:750}
+.stat-component.total{background:#eee5d8;padding:10px 9px;font-weight:750;margin-top:3px;border-radius:4px}
+.detail-message{margin:0 0 11px;font-size:13px;color:#615b52;line-height:1.5}
+.detail-message.caution{color:#865e39;background:#fff2e2;border-left:3px solid #af8254;padding:11px 13px}
+.detail-disclaimer{font-size:11px;color:#786f65;line-height:1.5;margin:12px 0 0}
+@media(max-width:700px){
+ .stat-column-head{grid-template-columns:minmax(0,1fr) 43px 53px 59px;gap:5px;padding:9px 8px;font-size:10px}
+ .stat-details summary{grid-template-columns:29px minmax(0,1fr) 43px 53px 59px 10px;gap:4px;padding:10px 7px;min-height:70px}
+ .stat-identity strong{font-size:13px}
+ .stat-identity small{font-size:10px}
+ .stat-identity .forecast-flag{font-size:10px}
+ .stat-value{font-size:12px}
+ .stat-expand{padding:11px 10px 15px}
+ .player-horizons{gap:5px;margin-bottom:13px}
+ .player-horizons>div{padding:7px 6px}
+ .player-horizons span{font-size:10px;line-height:1.25}
+ .player-horizons strong{font-size:19px}
+ .player-horizons small{font-size:9px}
+ .stat-compact-heading{font-size:12px}
+ .stat-compact-heading small{font-size:10px}
+ .stat-component{grid-template-columns:minmax(0,1fr) 83px 51px;gap:5px;font-size:11px;padding:8px 0}
+ .stat-component strong{font-size:12px}
+}
+
+
+/* Evaluation panel: condensed, readable comparison across positions */
+.validation-wrap{padding:18px 20px 20px}
+.validation-columns{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.validation-columns h3{font:750 16px/1.3 'Source Sans 3',Arial,sans-serif;color:#403a33;margin:0 0 6px}
+.validation-columns p{font-size:13px;line-height:1.55;color:#72675b;margin:5px 0 12px}
+.validation-columns p strong{color:#4c5d47}
+.validation-table{width:100%;border-collapse:collapse;font-size:12px;font-variant-numeric:tabular-nums}
+.validation-table th,.validation-table td{padding:7px 9px;border-bottom:1px solid #e7ded2;text-align:right}
+.validation-table th:first-child{text-align:left}
+.validation-table thead{background:#f5ecde;color:#655c53}
+.validation-table tbody th{color:#4c5042}
+@media(max-width:750px){
+ .validation-columns{grid-template-columns:1fr;gap:16px}
+ .validation-wrap{padding:15px 13px}
+ .validation-table{font-size:12px}
+}
