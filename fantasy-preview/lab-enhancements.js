@@ -115,11 +115,8 @@ function breakdown(p,w){
     '<div class="stat-compact-heading">Selected-week scoring details <small>'+(special?'Opponent/venue adjusted':'Opponent factor '+num(w.factor)+'×')+'</small></div>'+
     '<div class="stat-components">'+compact+'</div>'+
     '<div class="stat-component total"><span>Conditional points</span><span>Model total</span><strong>'+num(total)+'</strong></div>'+
-    '<p class="detail-disclaimer">'+(special?
-     'Matchup: '+clean(opp(w))+'. Roof: '+clean(w.conditions?.roof||'unknown')+
-     (w.conditions?.windMph==null?'. Forecast wind unavailable.':'. Wind: '+clean(w.conditions.windMph)+' mph'+(w.conditions.weatherApplied?' (adjustment applied)':' (no adjustment applied)')+'.')+
-     ' This is a team-opportunity model, not an individually calibrated kicking or turnover forecast. ':'')+'</p>'+
-    '<p class="detail-disclaimer">'+(special?'Expected kicker and D/ST events use recent team data, opponents, venue and league scoring. Rare defensive events and kicking distance/conversion use league priors; actual conditions and personnel may vary. ':'Expected stats may be fractional; several specialty scoring categories remain unmodeled. ')+'Future totals assume participation and are not injury-adjusted expected values.</p>';
+    '';
+
 }
 function renderFutureProjections(){
   if(!futureData?.players?.length)return;
@@ -140,7 +137,7 @@ function renderFutureProjections(){
   });
   const listHtml=list.map(p=>{
     const w=record(p,selectedWeek),a=access(p),h=horizon(p);
-    const stateLabel=!a.usable?'Not active':a.review?'Status: '+a.status:w?.state==='bye'?'Bye':selectedWeek>5?'If active':'Model';
+    const stateLabel=!a.usable?'Not active':a.review?'Status: '+a.status:w?.state==='bye'?'Bye':'';
     const current=!a.usable?'—':w?.state==='bye'?'BYE':display(w,selectedWeek);
     return '<details class="stat-details'+(String(p.fantasyTeamId)===mineId?' my-player':'')+(a.usable?'':' no-availability')+'">'+
       '<summary><span class="mini-position">'+clean(p.position)+'</span>'+
@@ -162,12 +159,12 @@ function renderMine(){
   const mine=futureData.players.filter(p=>String(p.fantasyTeamId)===String(window.DaVinciLeague?.teamId||'7')&&ALL_POSITIONS.has(p.position));
   mine.sort((a,b)=>(activeValue(b,record(b,selectedWeek))??-100)-(activeValue(a,record(a,selectedWeek))??-100));
   const preferred=mine.slice(0,12);
-  $el('modelStatus').innerHTML='<div class="my-week-heading">Week '+selectedWeek+' <span>Experimental</span></div>'+
+  $el('modelStatus').innerHTML='<div class="my-week-heading">Week '+selectedWeek+'</div>'+
     '<div class="compact-projection-list">'+preferred.map(p=>{
       const w=record(p,selectedWeek),h=horizon(p),a=access(p);
       const current=!a.usable?'—':display(w,selectedWeek);
       return '<div class="compact-projection-row"><span class="mini-position">'+clean(p.position)+'</span>'+
-        '<div><strong>'+clean(p.name)+'</strong><small>'+clean(opp(w))+' · 4 games '+summaryPts(h.fourPts)+' · ROS '+summaryPts(h.rosPts)+(a.review?' · check status':'')+'</small></div><span>'+clean(current)+'</span></div>';
+        '<div><strong>'+clean(p.name)+'</strong><small>'+clean(opp(w))+' · 4g '+summaryPts(h.fourPts)+' · ROS '+summaryPts(h.rosPts)+(a.review?' · check status':'')+'</small></div><span>'+clean(current)+'</span></div>';
     }).join('')+'</div>'+
     '';
 }
@@ -307,9 +304,7 @@ function showTrades(){
    const warnings=(!t.balanced?'<p class="trade-balance-note trade-warning">Roster adjustment required: package sizes differ; any extra add/drop is not included in the projected gains.</p>':'')+
      (!t.marketCheck.ok?'<p class="trade-balance-note trade-warning">Draft-value warning: '+clean(t.marketCheck.reason)+'</p>':'')+
      (!t.valueCheck.ok?'<p class="trade-balance-note trade-warning">Positional-value warning: '+clean(t.valueCheck.reason)+'</p>':'');
-   const note=warnings+'<details class="trade-details"><summary>Valuation and assumptions</summary>'+
-      '<p>'+clean(valueText)+'</p>'+
-      '<p>Modeled healthy-play offensive starting-lineup gains, not Yahoo projections, manager acceptance probabilities or guaranteed trades.</p></details>';
+   const note=warnings;
    return '<article class="trade-card compact-trade trade-ledger">'+
     '<div class="trade-card-top"><strong class="trade-card-partner">'+clean(t.partnerTeam)+'</strong>'+
     '<span class="trade-package-label">'+clean(t.packageShape)+' · '+both+' players</span></div>'+
