@@ -119,7 +119,7 @@ function renderFutureProjections(){
   const q=($el('projectionSearch')?.value||'').trim().toLowerCase();
   const pos=$el('projectionPos')?.value||'all';
   const scope=$el('projectionOwnership')?.value||'all';
-  const mineId='7';
+  const mineId=String(window.DaVinciLeague?.teamId||'7');
   const list=futureData.players.filter(p=>{
     if(pos!=='all' && !(pos==='offense_no_qb' ? ['RB','WR','TE'].includes(p.position):p.position===pos))return false;
     if(scope==='mine'&&String(p.fantasyTeamId)!==mineId)return false;
@@ -152,7 +152,7 @@ function renderFutureProjections(){
 }
 function renderMine(){
   if(!futureData?.players?.length)return;
-  const mine=futureData.players.filter(p=>String(p.fantasyTeamId)==='7'&&SKILL.has(p.position));
+  const mine=futureData.players.filter(p=>String(p.fantasyTeamId)===String(window.DaVinciLeague?.teamId||'7')&&SKILL.has(p.position));
   mine.sort((a,b)=>(activeValue(b,record(b,selectedWeek))??-100)-(activeValue(a,record(a,selectedWeek))??-100));
   const preferred=mine.slice(0,9);
   $el('modelStatus').innerHTML='<div class="my-week-heading">Week '+selectedWeek+' <span>Experimental</span></div>'+
@@ -326,11 +326,11 @@ function init(){
   $el('tradePosition')?.addEventListener('change',showTrades);
   $el('tradePackageFilter')?.addEventListener('change',showTrades);
   const partner=$el('tradePartner');
-  if(partner){partner.innerHTML='<option value="all">All other teams</option>'+rosters.teams.filter(t=>String(t.id)!=='7').sort((a,b)=>a.name.localeCompare(b.name)).map(t=>'<option value="'+clean(t.id)+'">'+clean(t.name)+'</option>').join('');partner.addEventListener('change',showTrades);}
+  if(partner){partner.innerHTML='<option value="all">All other teams</option>'+rosters.teams.filter(t=>String(t.id)!==String(window.DaVinciLeague?.teamId||'7')).sort((a,b)=>a.name.localeCompare(b.name)).map(t=>'<option value="'+clean(t.id)+'">'+clean(t.name)+'</option>').join('');partner.addEventListener('change',showTrades);}
   renderFutureProjections();renderMine();showTrades();
   Promise.all([
-    fetch('./data/trades.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Trade dataset unavailable');return r.json();}),
-    fetch('./data/draft.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Draft capital unavailable');return r.json();})
+    fetch((window.DaVinciLeague?.dataBase||'./data/')+'trades.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Trade dataset unavailable');return r.json();}),
+    fetch((window.DaVinciLeague?.dataBase||'./data/')+'draft.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Draft capital unavailable');return r.json();})
   ]).then(([trades,draft])=>{
     if(!Array.isArray(trades.trades) || !Array.isArray(draft.picks) || draft.picks.length<100)
       throw Error('Draft or trade data incomplete');
@@ -338,7 +338,7 @@ function init(){
     showTrades();
   }).catch(()=>{
     $el('tradeCount').textContent='Trade screening unavailable';
-    $el('tradeResults').innerHTML='<div class="empty-copy">Trade recommendations are withheld until league draft capital and forecasts can be verified.</div>';
+    $el('tradeResults').innerHTML='<div class="empty-copy">League-specific trade suggestions are not yet available. No other league’s offers are shown.</div>';
   });
 }
 LAB.init=init;
