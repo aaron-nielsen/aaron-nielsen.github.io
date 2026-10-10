@@ -10,7 +10,13 @@ const fmt=v=>Number(v).toFixed(1);
 const id=p=>String(p.id||p.yahooId);
 let state=null, selectedOut=new Set(),selectedIn=new Set(),nextJob=0, oldFallback=null;
 const status=p=>String(p.status||p.injuryStatus||'').toUpperCase();
-const eligible=p=>POSITIONS.has(p.position)&&p.slot!=='IR'&&!BLOCK.has(status(p))&&!status(p).startsWith('IR-');
+const eligible=p=>{
+ const forecast=state?.futureMap?.get(id(p));
+ const futureReturn=forecast?.returnOutlook&&starts().some(w=>
+  forecast.weeks?.some(g=>Number(g.week)===w&&g.availabilityProbability>=.55&&g.state!=='bye'));
+ return POSITIONS.has(p.position)&&
+  ((p.slot!=='IR'&&!BLOCK.has(status(p))&&!status(p).startsWith('IR-'))||Boolean(futureReturn));
+};
 function playerPts(p,weeks){
  const f=state.futureMap.get(id(p));
  if(!f)return null;
