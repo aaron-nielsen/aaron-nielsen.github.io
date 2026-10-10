@@ -12,7 +12,9 @@ async function render(league){
  const valid=files.filter(Boolean);
  if(!valid.length){el.textContent='No verified historical lineup records available.';return;}
  const teams=root.DaVinciHistorical.analyze(valid);
- const rows=teams.map(t=>'<tr><th scope="row">'+esc(t.teamName)+'</th><td>'+t.weeks+
+ const rows=teams.map(t=>'<tr><th scope="row"><details><summary>'+esc(t.teamName)+'</summary><div class="quiet tiny">'+
+  t.byWeek.map(w=>'Week '+w.week+': '+fmt(w.actualPoints)+' starter pts'+(w.missedPoints==null?' · lineup coverage incomplete':' · '+fmt(w.missedPoints)+' left on bench')).join(' | ')+
+  '</div></details></th><td>'+t.weeks+
   '</td><td>'+fmt(t.actualPoints)+'</td><td>'+t.evaluatedWeeks+'</td><td>'+fmt(t.missedPoints)+'</td></tr>').join('');
  el.innerHTML='<h3>Historical lineup performance</h3><p class="quiet tiny">Actual Yahoo points, Weeks '+valid.map(x=>x.week).join(', ')+
   '. Missed points compare starters with the best legal lineup from players on that week’s roster. This is not transaction impact.</p>'+
