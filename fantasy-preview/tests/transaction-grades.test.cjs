@@ -112,6 +112,7 @@ function setup(){
  assert.match(element('txnStats').textContent,/1 ungraded/);
  assert.match(element('txnStats').textContent,/no player roster change/);
  assert.match(element('transactionCards').innerHTML,/Not graded/);
+ assert.match(element('txnStats').title,/no player roster change/);
 }
 // Real data snapshots: every verified transaction remains visible in CSU and Nebraska.
 require(path.join(base,'special-teams-model.js'));
