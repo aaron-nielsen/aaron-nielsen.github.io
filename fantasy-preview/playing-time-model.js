@@ -21,8 +21,8 @@ const DEFAULTS={
 const round=n=>Math.round(Number(n)*100)/100;
 const clamp=(x,a,b)=>Math.min(b,Math.max(a,x));
 const mean=xs=>xs.reduce((s,x)=>s+x,0)/Math.max(1,xs.length);
-function trend(record,position){
- const games=(record?.games||[]).filter(g=>Number.isFinite(g.snapShare)&&g.snapShare>0).sort((a,b)=>a.week-b.week);
+function trend(record,position,beforeWeek=Infinity){
+ const games=(record?.games||[]).filter(g=>Number.isFinite(g.snapShare)&&g.snapShare>0&&Number(g.week)<beforeWeek).sort((a,b)=>a.week-b.week);
  if(games.length<2)return null;
  const shares=games.map(g=>g.snapShare),avg=mean(shares),latest=games.at(-1).week;
  const weight=g=>Math.pow(.72,latest-g.week);
