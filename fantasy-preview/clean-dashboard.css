@@ -250,3 +250,53 @@ body{font:16px/1.48 'Source Sans 3',Arial,sans-serif;color:var(--text);backgroun
  .trade-ledger .trade-impact-inline strong{font-size:18px}
  .trade-ledger .trade-impact-inline small{font-size:10px}
 }
+
+
+/* Team projection comparison (post-banner, restrained visual system). */
+.model-offense-strip{display:block!important;flex-wrap:initial!important;gap:0!important;background:#fffaf2;border-color:#dcd0c1;border-radius:8px;padding:13px 17px}
+.model-offense-strip .model-strip-label{display:block;font-size:11px;letter-spacing:.065em;font-weight:800;color:#79573e;margin-bottom:8px}
+.model-offense-strip .model-compare{display:flex;flex-wrap:wrap;gap:6px 24px;align-items:baseline;font-size:14px}
+.model-offense-strip .model-compare>span{display:flex;gap:9px;align-items:baseline}
+.model-offense-strip .model-compare b{color:#44654e;font-size:19px;font-weight:750;font-variant-numeric:tabular-nums}
+.model-offense-strip .model-strip-note{font-size:12px;line-height:1.55;color:#75685b;margin-top:5px}
+.model-offense-strip .model-strip-note a{color:#765138}
+.model-league-panel .panel-header{gap:14px;flex-wrap:wrap}
+.model-league-panel #teamModelWeek{min-width:190px;font-size:13px}
+.model-team-entry{background:#fffaf4;border-bottom:1px solid #e6d9c9}
+.model-team-entry.my-model-team{background:#f7efe2}
+.model-team-entry summary{cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) 108px;gap:15px;align-items:center;padding:11px 18px;list-style:none}
+.model-team-entry summary::-webkit-details-marker{display:none}
+.model-team-entry summary strong{font:700 14px 'Source Sans 3',Arial,sans-serif;color:#3c3831}
+.model-team-entry summary small{font-size:12px;color:#99816b}
+.model-team-entry summary em{font-size:11px;font-style:normal;color:#986e4a}
+.model-team-entry summary>b{text-align:right;color:#4a6752;font-variant-numeric:tabular-nums}
+.model-team-entry[open] summary i{display:inline-block;transform:rotate(180deg)}
+.model-team-expanded{padding:10px 18px 18px;background:#fffdf8;border-top:1px solid #e9ded0}
+.model-team-expanded>p{color:#776b5f;font-size:12px;margin:0 0 10px}
+.team-model-week{border-bottom:1px solid #ede4d9;padding:8px 0 11px}
+.team-model-week:last-child{border:0}
+.team-model-week>strong{font-size:12px;color:#745a44}
+.team-model-players{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px 16px;margin-top:7px}
+.team-model-player{display:flex;align-items:baseline;gap:8px;min-width:0;font-size:12px;color:#514b44}
+.team-model-player small{flex:none;width:36px;color:#85786b;font-size:10px;font-weight:800}
+.team-model-player span{overflow-wrap:anywhere}
+.team-model-player b{margin-left:auto;font-variant-numeric:tabular-nums;color:#4d6b52}
+@media(max-width:650px){
+ .model-offense-strip{padding:11px!important}
+ .model-offense-strip .model-compare{font-size:12px}
+ .model-offense-strip .model-compare b{font-size:17px}
+ .model-league-panel #teamModelWeek{width:100%}
+ .model-team-entry summary{grid-template-columns:minmax(0,1fr) 87px;padding:10px}
+ .model-team-entry summary strong{font-size:13px}
+ .model-team-expanded{padding:10px}
+ .team-model-players{grid-template-columns:1fr}
+}
+/* Compact multi-player exchange cards. */
+.trade-ledger .trade-exchange{gap:12px!important}
+.trade-ledger .trade-person-list{gap:5px!important}
+.trade-ledger .trade-person{display:flex!important;flex-direction:row!important;gap:5px 7px!important;align-items:baseline}
+.trade-ledger .trade-person strong{font-size:13px!important;line-height:1.25}
+.trade-ledger .trade-person .trade-pos{display:inline;font-size:10px;border-radius:3px}
+.trade-ledger .trade-impact-inline strong{font-size:17px!important}
+.trade-ledger .trade-impact-inline span,.trade-ledger .trade-impact-inline small{font-size:11px!important}
+.trade-ledger .trade-balance-note{font-size:11px;line-height:1.45}
