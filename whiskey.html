@@ -123,10 +123,10 @@ button,input,select{font:inherit}
 .rating-scale-note{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;color:var(--muted);font-size:.74rem;margin-top:4px}
 .rating-scale-note strong{color:var(--amber2);font-weight:600}
 .chart-note{margin:0;padding:0 16px 3px;color:var(--muted);font-size:.78rem}
-.distillery-chart .bar-row,.distillery-chart .distillery-head{grid-template-columns:minmax(170px,230px) minmax(180px,1fr) 64px 72px;gap:10px}
+.distillery-chart .bar-row,.distillery-chart .distillery-head{grid-template-columns:minmax(170px,230px) minmax(180px,1fr) 58px 66px 58px;gap:9px}
 .distillery-chart .bar-label{white-space:normal;overflow:visible}
 .distillery-chart .distillery-head{display:grid;align-items:end;margin:0 0 4px;color:var(--muted);font-size:.72rem;font-weight:650;text-transform:uppercase;letter-spacing:.04em}
-.distillery-chart .distillery-head span:nth-child(3),.distillery-chart .distillery-head span:nth-child(4){text-align:right}
+.distillery-chart .distillery-head span:nth-child(3),.distillery-chart .distillery-head span:nth-child(4),.distillery-chart .distillery-head span:nth-child(5){text-align:right}
 .distillery-chart .dist-num{text-align:right;color:#e5d8cc;font-variant-numeric:tabular-nums;font-size:.9rem}
 .substyle-chart .bar-row{grid-template-columns:minmax(250px,34%) minmax(140px,1fr) 44px}
 .substyle-chart .bar-label{white-space:normal;overflow:visible;text-overflow:clip;line-height:1.2}
@@ -146,6 +146,19 @@ button,input,select{font:inherit}
 .style-tree-indent{display:inline-block;flex:0 0 auto}
 .style-tree .filter-link{white-space:normal}
 .style-tree-depth{color:var(--muted);font-size:.76rem;margin-left:7px}
+.geo-tree{width:100%;border-collapse:collapse}
+.geo-tree th,.geo-tree td{padding:9px 11px;border-bottom:1px solid #3f2c20;text-align:left;vertical-align:middle}
+.geo-tree th{background:#251a14;color:#f5eee7;font-weight:650}
+.geo-tree th.num,.geo-tree td.num{text-align:center;font-variant-numeric:tabular-nums;width:90px}
+.geo-tree tr:last-child td{border-bottom:0}
+.geo-tree tr:hover td{background:#211815}
+.geo-tree-name{display:flex;align-items:center;min-width:0}
+.geo-tree-toggle{width:24px;height:24px;display:inline-flex;align-items:center;justify-content:center;flex:0 0 24px;margin-right:5px;border:1px solid #6a4a31;border-radius:5px;background:#251a14;color:#f3ebe3;cursor:pointer;line-height:1;font-weight:700}
+.geo-tree-toggle:hover{border-color:var(--green2)}
+.geo-tree-spacer{display:inline-block;width:29px;flex:0 0 29px}
+.geo-tree-indent{display:inline-block;flex:0 0 auto}
+.geo-tree-bottle{color:#efe5db}
+.geo-tree-meta{color:var(--muted);font-size:.74rem;margin-left:7px}
 
 dialog.whiskey-dialog{background:#171310;color:var(--text);border:1px solid #65472f;border-radius:12px;max-width:650px;width:92%}
 dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
@@ -198,7 +211,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
   .whiskey-controls{grid-template-columns:1fr}
   .whiskey-controls .clear-filters{width:100%}
   .bar-row{grid-template-columns:105px 1fr 90px;gap:8px}
-  .distillery-chart .bar-row,.distillery-chart .distillery-head{grid-template-columns:140px minmax(120px,1fr) 50px 58px;gap:6px}
+  .distillery-chart .bar-row,.distillery-chart .distillery-head{grid-template-columns:125px minmax(105px,1fr) 44px 48px 44px;gap:5px}
   .substyle-chart .bar-row{grid-template-columns:minmax(170px,45%) 1fr 34px}
 }
 @media(max-width:460px){
@@ -252,7 +265,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
 <script>
 (function(){
   var DATA_URL="/data/whiskey_ratings.json?v="+Date.now();
-  var data=null,rows=[],unratedRows=[],activeTab="main",topExpanded=false,activeDistillery="",styleTreeExpanded={};
+  var data=null,rows=[],unratedRows=[],activeTab="main",topExpanded=false,distilleryExpanded=false,activeDistillery="",styleTreeExpanded={},placeTreeExpanded={};
   var sortState={
     all:{key:"average",dir:-1},
     "need-more":{key:"average",dir:-1},
@@ -303,7 +316,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
       "Jack Daniel's":"Tennessee","Buffalo Trace":"Kentucky","Maker's Mark":"Kentucky",
       "Woodford Reserve":"Kentucky","Stranahan's":"Colorado","Angel's Envy":"Kentucky",
       "Michter's":"Kentucky","Port Chilkoot":"Alaska","Woody Creek":"Colorado","Jefferson's":"Kentucky","High West":"Utah",
-      "Brown-Forman":"Kentucky","Barton 1792":"Kentucky","Bulleit":"Kentucky",
+      "Brown-Forman":"Kentucky","Barton 1792":"Kentucky","Bulleit":"Indiana","Pinhook":"Kentucky",
       "New Riff":"Kentucky","Kentucky Peerless":"Kentucky","Wilderness Trail":"Kentucky",
       "Bardstown Bourbon Company":"Kentucky","Sagamore Spirit":"Maryland",
       "Jack Daniel's":"Tennessee","George Dickel":"Tennessee","Westland":"Washington","Westward":"Oregon"
@@ -647,7 +660,9 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
 
     function finalize(node){
       node.whiskeys=node.items.length;
-      node.average=avg(node.items.map(function(r){return r.average}));
+      var qualified=node.items.filter(function(r){return r.n>=3});
+      node.qualified=qualified.length;
+      node.average=qualified.length?avg(qualified.map(function(r){return r.average})):null;
       node.childList=Object.keys(node.children).map(function(k){
         return finalize(node.children[k]);
       }).sort(function(a,b){
@@ -683,7 +698,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
           (hasChildren?'<span class="style-tree-depth">'+node.childList.length+' sub'+(node.childList.length===1?'style':'styles')+'</span>':'')+
           '</div></td>'+
           '<td class="num">'+node.whiskeys+'</td>'+
-          '<td class="num">'+fmt(node.average)+'</td>'+
+          '<td class="num">'+(node.average==null?'—':fmt(node.average))+'</td>'+
         '</tr>'
       );
 
@@ -693,7 +708,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
     roots.forEach(function(root){addNode(root,root.name)});
 
     return '<div class="whiskey-table-wrap"><table class="style-tree">'+
-      '<thead><tr><th>Style / Sub-style</th><th class="num">Whiskeys</th><th class="num">Avg</th></tr></thead>'+
+      '<thead><tr><th>Style / Sub-style</th><th class="num">Whiskeys</th><th class="num">Q Avg</th></tr></thead>'+
       '<tbody>'+body.join("")+'</tbody></table></div>';
   }
 
@@ -726,12 +741,14 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
   }
 
   function distilleryName(name){
-    if(/^(Basil Hayden|Booker's|Knob Creek)/.test(name))return "Jim Beam";
+    if(/^(Basil Hayden|Booker's|Knob Creek|Jim Beam)/.test(name))return "Jim Beam";
     if(/^(Bernheim|Elijah Craig|Evan Williams)/.test(name))return "Heaven Hill";
     if(/^(Russell's Reserve|Wild Turkey)/.test(name))return "Wild Turkey";
     if(/^Four Roses/.test(name))return "Four Roses";
     if(/^(Jack Daniel's|Gentleman Jack)/.test(name))return "Jack Daniel's";
     if(/^(Buffalo Trace|Eagle Rare|Blanton's|Sazerac Rye)/.test(name))return "Buffalo Trace";
+    if(/^Bulleit/.test(name))return "Bulleit";
+    if(/^Pinhook/.test(name))return "Pinhook";
     if(/^The Glenlivet|^Glenlivet/.test(name))return "The Glenlivet";
     if(/^Glenmorangie/.test(name))return "Glenmorangie";
     if(/^Balvenie/.test(name))return "The Balvenie";
@@ -762,27 +779,130 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
     rows.forEach(function(r){
       var d=distilleryName(r.name);
       if(!d)return;
-      if(!groups[d])groups[d]={name:d,ratings:0,whiskeys:0};
+      if(!groups[d])groups[d]={name:d,ratings:0,whiskeys:0,qualified:[]};
       groups[d].ratings+=r.n;
       groups[d].whiskeys+=1;
+      if(r.n>=3)groups[d].qualified.push(r.average);
     });
-    return Object.keys(groups).map(function(k){return groups[k]}).sort(function(a,b){
+    return Object.keys(groups).map(function(k){
+      var g=groups[k];
+      g.qAverage=g.qualified.length?avg(g.qualified):null;
+      return g;
+    }).sort(function(a,b){
       return b.ratings-a.ratings||b.whiskeys-a.whiskeys||a.name.localeCompare(b.name);
     });
   }
 
   function distilleryChart(items){
-    var shown=items.slice(0,10);
+    var shown=distilleryExpanded?items:items.slice(0,10);
     var max=Math.max.apply(null,shown.map(function(x){return x.ratings}));
-    var head='<div class="distillery-head"><span></span><span></span><span>Ratings</span><span>Whiskeys</span></div>';
-    var body=shown.map(function(x,i){
+    var head='<div class="distillery-head"><span></span><span></span><span>Tastings</span><span>Whiskeys</span><span>Q Avg</span></div>';
+    var body=shown.map(function(x){
       var w=max?100*x.ratings/max:0;
       return '<div class="bar-row"><div class="bar-label"><button class="filter-link distillery-link" data-distillery="'+esc(x.name)+'">'+esc(x.name)+'</button></div>'+
         '<div class="bar-track"><div class="bar-fill" style="width:'+w.toFixed(1)+'%;background:'+whiskeyGradient(x.ratings,max)+'"></div></div>'+
         '<div class="dist-num">'+x.ratings+'</div>'+
-        '<div class="dist-num">'+x.whiskeys+'</div></div>';
+        '<div class="dist-num">'+x.whiskeys+'</div>'+
+        '<div class="dist-num">'+(x.qAverage==null?'—':fmt(x.qAverage))+'</div></div>';
     }).join('');
-    return '<div class="chart-body distillery-chart">'+head+body+'</div>';
+    var more=items.length>10
+      ? '<div class="substyle-more"><button type="button" id="distillery-toggle">'+
+        (distilleryExpanded?'Show top 10':'Show all '+items.length+' distilleries')+'</button></div>'
+      : '';
+    return '<div class="chart-body distillery-chart">'+head+body+'</div>'+more;
+  }
+
+  function placeHierarchy(region){
+    var placeNames=region==="Scotch"
+      ? ["Speyside","Highland","Islay","Lowland","Campbeltown"]
+      : Array.from(new Set(rows.filter(function(r){return r.region===region&&r.place}).map(function(r){return r.place}))).sort();
+
+    return placeNames.map(function(place){
+      var items=rows.filter(function(r){return r.region===region&&r.place===place});
+      var dGroups={};
+      items.forEach(function(r){
+        var d=distilleryName(r.name)||"Other";
+        (dGroups[d]||(dGroups[d]=[])).push(r);
+      });
+      var distilleries=Object.keys(dGroups).map(function(d){
+        var ds=dGroups[d];
+        var qualified=ds.filter(function(r){return r.n>=3});
+        return {
+          name:d,
+          items:ds.slice().sort(function(a,b){return b.average-a.average||a.name.localeCompare(b.name)}),
+          whiskeys:ds.length,
+          qAverage:qualified.length?avg(qualified.map(function(r){return r.average})):null
+        };
+      }).sort(function(a,b){return b.whiskeys-a.whiskeys||a.name.localeCompare(b.name)});
+      var qItems=items.filter(function(r){return r.n>=3});
+      return {
+        name:place,
+        items:items,
+        distilleries:distilleries,
+        whiskeys:items.length,
+        qAverage:qItems.length?avg(qItems.map(function(r){return r.average})):null
+      };
+    }).sort(function(a,b){
+      if(region==="Scotch")return 0;
+      return b.whiskeys-a.whiskeys||a.name.localeCompare(b.name);
+    });
+  }
+
+  function placeHierarchyTable(region){
+    var places=placeHierarchy(region);
+    var body=[];
+
+    places.forEach(function(place){
+      var placeKey="place:"+region+":"+place.name;
+      var placeOpen=!!placeTreeExpanded[placeKey];
+      var hasDistilleries=place.distilleries.length>0;
+      var placeToggle=hasDistilleries
+        ? '<button type="button" class="geo-tree-toggle" data-tree-key="'+esc(placeKey)+'">'+(placeOpen?'−':'+')+'</button>'
+        : '<span class="geo-tree-spacer"></span>';
+
+      body.push('<tr>'+
+        '<td><div class="geo-tree-name">'+placeToggle+
+          (place.whiskeys?'<button class="filter-link place-link" data-place="'+esc(place.name)+'">'+esc(place.name)+'</button>':'<span>'+esc(place.name)+'</span>')+
+        '</div></td>'+
+        '<td class="num">'+place.whiskeys+'</td>'+
+        '<td class="num">'+(place.qAverage==null?'—':fmt(place.qAverage))+'</td>'+
+      '</tr>');
+
+      if(placeOpen){
+        place.distilleries.forEach(function(d){
+          var dKey=placeKey+":distillery:"+d.name;
+          var dOpen=!!placeTreeExpanded[dKey];
+          var dToggle=d.items.length
+            ? '<button type="button" class="geo-tree-toggle" data-tree-key="'+esc(dKey)+'">'+(dOpen?'−':'+')+'</button>'
+            : '<span class="geo-tree-spacer"></span>';
+
+          body.push('<tr>'+
+            '<td><div class="geo-tree-name"><span class="geo-tree-indent" style="width:22px"></span>'+dToggle+
+              '<button class="filter-link distillery-link" data-distillery="'+esc(d.name)+'">'+esc(d.name)+'</button>'+
+            '</div></td>'+
+            '<td class="num">'+d.whiskeys+'</td>'+
+            '<td class="num">'+(d.qAverage==null?'—':fmt(d.qAverage))+'</td>'+
+          '</tr>');
+
+          if(dOpen){
+            d.items.forEach(function(r){
+              body.push('<tr>'+
+                '<td><div class="geo-tree-name"><span class="geo-tree-indent" style="width:51px"></span><span class="geo-tree-spacer"></span>'+
+                  '<button class="whiskey-name geo-tree-bottle" data-name="'+esc(r.name)+'">'+esc(r.name)+'</button>'+
+                '</div></td>'+
+                '<td class="num"><span class="geo-tree-meta">n='+r.n+'</span></td>'+
+                '<td class="num">'+fmt(r.average)+'</td>'+
+              '</tr>');
+            });
+          }
+        });
+      }
+    });
+
+    return '<div class="whiskey-table-wrap"><table class="geo-tree">'+
+      '<thead><tr><th>'+(region==="Scotch"?'Region / Distillery / Whiskey':'State / Distillery / Whiskey')+
+      '</th><th class="num">Whiskeys</th><th class="num">Q Avg</th></tr></thead>'+
+      '<tbody>'+body.join("")+'</tbody></table></div>';
   }
 
   function placeRows(region){
@@ -886,10 +1006,10 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
       '<section class="main-section"><h2>Top Rated Whiskeys</h2>'+mainTopRated()+'</section>'+
       '<section class="chart-section"><h2>Most Tasted Distilleries</h2>'+distilleryChart(distilleryRows())+'</section>'+
       '<div class="geo-grid">'+
-        '<section class="chart-section"><h2>American Whiskeys by State</h2>'+placeChart(placeRows("American"))+'</section>'+
-        '<section class="chart-section"><h2>Scotch Single Malts by Region</h2><p class="chart-note">Five official regions; Skye and Orkney are counted with Highland.</p>'+placeChart(placeRows("Scotch"))+'</section>'+
+        '<section class="chart-section"><h2>American Whiskeys by State</h2><p class="chart-note">Counts include every whiskey tasted; Q Avg uses only whiskeys with n ≥ 3. Expand state → distillery → bottle.</p>'+placeHierarchyTable("American")+'</section>'+
+        '<section class="chart-section"><h2>Scotch Single Malts by Region</h2><p class="chart-note">Five official regions; Skye and Orkney count with Highland. Counts use all tasted; Q Avg uses n ≥ 3 only.</p>'+placeHierarchyTable("Scotch")+'</section>'+
       '</div>'+
-      '<section class="chart-section"><h2>Whiskeys by Style</h2><p class="chart-note">Expand + to drill into sub-styles; the hierarchy supports additional levels whenever the data has them.</p>'+styleHierarchyTable()+'</section>';
+      '<section class="chart-section"><h2>Whiskeys by Style</h2><p class="chart-note">Counts include every whiskey tasted; Q Avg uses only whiskeys with n ≥ 3. Expand + to drill into sub-styles.</p>'+styleHierarchyTable()+'</section>';
   }
 
   function render(){
@@ -1091,6 +1211,13 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
         render();
       };
     });
+    document.querySelectorAll(".geo-tree-toggle").forEach(function(btn){
+      btn.onclick=function(){
+        var key=btn.getAttribute("data-tree-key");
+        placeTreeExpanded[key]=!placeTreeExpanded[key];
+        render();
+      };
+    });
     document.querySelectorAll(".style-tree-toggle").forEach(function(btn){
       btn.onclick=function(){
         var key=btn.getAttribute("data-tree-key");
@@ -1098,6 +1225,11 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
         render();
       };
     });
+    var distToggle=document.getElementById("distillery-toggle");
+    if(distToggle)distToggle.onclick=function(){
+      distilleryExpanded=!distilleryExpanded;
+      render();
+    };
     var topToggle=document.getElementById("top-toggle");
     if(topToggle)topToggle.onclick=function(){
       topExpanded=!topExpanded;
