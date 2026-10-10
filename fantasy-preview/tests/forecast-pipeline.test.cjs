@@ -36,6 +36,13 @@ try{
  assert.equal(metrics.n,1);
  assert.equal(metrics.byPosition.all.daVinci.mae,2);
  assert.equal(metrics.byPosition.all.yahoo.mae,1);
+ const published=path.join(tmp,'published.json');
+ p=run('publish-observations.cjs',[published,output]);
+ assert.equal(p.status,0,p.stderr);
+ assert.equal(JSON.parse(fs.readFileSync(published)).length,1);
+ const duplicated=path.join(tmp,'duplicates.json');
+ p=run('publish-observations.cjs',[duplicated,output,output]);
+ assert.notEqual(p.status,0,'Do not publish duplicate player-week results');
  const duplicateYahoo=file('duplicate-yahoo.json',[
   {season:2026,week:5,playerId:'abc',yahoo:11,predictedAt},
   {season:2026,week:5,playerId:'abc',yahoo:9,predictedAt}]);
