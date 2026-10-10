@@ -1,11 +1,11 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#0b111d">
-<title>CSU Stats | Fantasy Fieldhouse</title>
+<meta name="theme-color" content="#eae3d5">
+<title>Da Vinci Fantasy Lab | CSU Stats</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--base:#0b111d;--deep:#101a28;--card:#182334;--card2:#1c293b;--border:#2e3e50;--text:#f3f1e9;--muted:#a7b4c4;--cream:#e8e9e4;--orange:#f5b867;--teal:#93e2d5;--blue:#80acd4;--pink:#dc9ab3;--shadow:0 16px 50px rgba(0,0,0,.14)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--text);background:radial-gradient(ellipse 850px 530px at 110% -10%,#233551 0%,transparent 75%),radial-gradient(ellipse 850px 440px at -15% 7%,#1b2d3a 0%,transparent 75%),var(--base);font-family:'DM Sans',system-ui,sans-serif;font-size:14px}
@@ -39,49 +39,207 @@ button,input,select{font:inherit}button{cursor:pointer}a{color:inherit;text-deco
 @media(max-width:900px){.homesplit,.columns,.projection-split{grid-template-columns:1fr}.groups{grid-template-columns:1fr}.record-card{display:grid;grid-template-columns:1fr 1fr}.record-stats{border-top:0;border-left:1px solid var(--border)}.record-stats div{display:flex;flex-direction:column;justify-content:center}.record-fig{font-size:78px}.finder-results{grid-template-columns:1fr}}
 @media(max-width:600px){.shell{padding:0 14px 55px}.topbar{height:80px}.brandmark{height:43px;width:43px;font-size:29px}.brandname{font-size:20px}.brandtag{font-size:9px}.top-link{display:none}.weekstamp{padding:7px 11px}.nav{gap:3px;padding:16px 0 23px}.nav-btn{font-size:10px;padding:10px 13px}.matchup{padding:19px 17px 22px;min-height:0}.matchup-vs{grid-template-columns:minmax(0,1fr) 27px minmax(0,1fr);gap:5px}.team-code{font-size:23px;min-height:49px}.versus{padding-top:36px;font-size:18px}.projected-number{font-size:51px}.record-card{grid-template-columns:1fr}.record-stats{border-top:1px solid var(--border);border-left:0}.record-fig{font-size:65px}.record-upper{padding:21px}.record-stats div{padding:12px 19px}.record-stats strong{font-size:23px}.panel-header{padding:16px}.roster-mini,.scoreboard-list{padding:4px 12px 12px}.section-top{display:block}.section-top .select{margin-top:14px;width:100%}.finder-surface{padding:16px}.finder-controls{grid-template-columns:1fr 1fr}.finder-controls input{grid-column:1/-1}.finder-controls select{width:100%;min-width:0;padding:12px 8px;font-size:11px}.finder-summary{line-height:1.6}.result{padding:12px 10px}.team-overview .meta{margin-left:0;width:100%;justify-content:space-between}.scoreboard-item{grid-template-columns:minmax(0,1fr) 46px 9px 46px minmax(0,1fr);gap:5px;padding:12px 4px}.scoreboard-item .pts{font-size:17px}.scoreboard-item .side{font-size:9px}.match-top{margin-bottom:21px}.scorefoot{font-size:10px}.projection-list{padding:6px 10px 12px}}
 @media(prefers-reduced-motion:no-preference){.page{animation:appear .25s ease}@keyframes appear{from{opacity:.6;transform:translateY(5px)}to{opacity:1;transform:none}}}
+
+/* DA VINCI FANTASY LAB — parchment + walnut visual language, v1 */
+:root{
+ --base:#eae3d5;--deep:#24342f;--card:#faf6ec;--card2:#f1eadc;
+ --border:#d5c7af;--text:#28342e;--muted:#657167;--cream:#fffbf1;
+ --orange:#9e733d;--teal:#526d5a;--blue:#556c75;--pink:#9b706e;
+ --shadow:0 8px 25px rgba(67,49,31,.075);
+}
+body{
+ background:
+ radial-gradient(ellipse 700px 450px at 95% 0%,#d6c6a9aa 0,transparent 72%),
+ repeating-linear-gradient(0deg,transparent 0,transparent 48px,#8e714009 49px,#8e714009 50px),
+ #eae3d5;
+ color:var(--text);font-family:'Source Sans 3',system-ui,sans-serif;
+ font-size:15px;line-height:1.4;
+}
+.shell{max-width:1190px}
+.topbar{height:104px;border-bottom:1px solid #b4a68e;position:relative}
+.topbar:after{content:"";position:absolute;height:1px;bottom:4px;left:0;right:0;background:#c8baa4}
+.brand{gap:17px}
+.brandmark{color:#6b5335;width:56px;height:56px;background:#f4eddf;border:1px solid #ae926b;border-radius:50%;box-shadow:inset 0 0 0 4px #e4d4b877,0 1px 2px #735d3f22;transform:none;display:grid;place-items:center}
+.brandmark svg{width:48px;height:48px}
+.brandname{font:700 clamp(27px,3vw,37px)/.98 'Cormorant Garamond',Georgia,serif;text-transform:none;letter-spacing:-.025em}
+.brandname span{color:#806039}
+.brandtag{font-size:10px;letter-spacing:.13em;color:#717363;margin-top:8px;font-weight:700}
+.top-link{background:transparent;border-color:#bba88d;color:#544d41;border-radius:3px;font-size:10px;letter-spacing:.07em;text-transform:uppercase}
+.top-link:hover{background:#f9f5ed;color:#53412c}
+.weekstamp{border-radius:2px;border:1px solid #7c5c38;background:#2c403b;color:#f4ead6;padding:9px 15px}
+.weekstamp b{font:700 25px/.9 'Cormorant Garamond',serif}
+.weekstamp small{font-size:8px;letter-spacing:.09em}
+.nav{padding:22px 0 28px;gap:12px}
+.nav-btn{font-weight:800;color:#676c61;letter-spacing:.12em;font-size:11px;padding:11px 16px;border:1px solid transparent;border-radius:3px;text-transform:uppercase}
+.nav-btn.active{background:#33463e;border-color:#33463e;color:#f5eddb;box-shadow:none}
+.nav-btn:hover{background:#e5d9c6;color:#3b433e}
+.eyebrow{color:#936f3f;font-size:10px;letter-spacing:.15em}
+.section-top{margin:13px 0 24px}
+.section-top h1,.section-top h2{font:600 clamp(40px,5vw,60px)/.96 'Cormorant Garamond',Georgia,serif;text-transform:none;letter-spacing:-.025em;margin:5px 0}
+.section-top p{color:#6a7169;font-size:14px;line-height:1.5}
+.quiet,.tiny{color:#747568}
+.matchup{border:1px solid #7c6b50;border-radius:8px;background:
+ linear-gradient(114deg,rgba(32,51,44,.95),rgba(59,59,44,.93)),
+ linear-gradient(120deg,#23352d,#514434);
+ color:#f8efde;box-shadow:0 9px 25px #372a1a2a;min-height:333px;isolation:isolate}
+.matchup:before{content:"";position:absolute;inset:13px;border:1px solid #c2ad765b;background:none;mask-image:none;pointer-events:none}
+.matchup:after{content:"";position:absolute;right:-45px;top:3px;width:310px;height:310px;border:1px solid #bdac8166;border-radius:50%;box-shadow:0 0 0 31px #cbb47d12,0 0 0 32px #bdac8144,0 0 0 68px #cbb47d09,0 0 0 69px #bdac812f;pointer-events:none;z-index:0}
+.matchup .eyebrow{color:#e4c997}
+.matchup .chip{border-color:#bda67b;color:#e9d3a9}
+.matchup .chip.sunny{color:#e3c28c}
+.team-code{font:600 clamp(24px,3vw,35px)/1 'Cormorant Garamond',Georgia,serif;text-transform:none;letter-spacing:-.012em}
+.projected-number{font:600 clamp(53px,7vw,84px)/.9 'Cormorant Garamond',Georgia,serif}
+.projected-number.you{color:#e5c487}
+.team-side.right .projected-number{color:#e8e5d7}
+.your-label{color:#c6d6c2}
+.opponent-label{color:#c6bca7}
+.versus{font:italic 600 22px 'Cormorant Garamond',serif;color:#b6a989}
+.point-label,.scorefoot{color:#d1cfbe}
+.lead{color:#ecd09d}
+.oddsbar{background:#9a9b84;height:6px}
+.oddsbar .yours{background:#d2ac76}
+.oddsbar .theirs{background:#96b0a1}
+.record-card{border-radius:8px;background:
+ linear-gradient(130deg,#fbf7ed,#f1e8d8);
+ border:1px solid #cfbda3;color:#26372f;box-shadow:var(--shadow)}
+.record-upper{padding:27px 27px 23px;position:relative;overflow:hidden}
+.record-upper:after{content:"";position:absolute;width:145px;height:145px;border:1px solid #b9a78255;border-radius:50%;right:-24px;top:12px;box-shadow:0 0 0 15px #c6b38c18,0 0 0 16px #b9a78233;pointer-events:none}
+.record-fig{font:600 clamp(71px,8vw,108px)/.9 'Cormorant Garamond',serif;color:#273d32}
+.record-fig span{color:#ba9a68}
+.record-desc{color:#697367}
+.record-stats{border-color:#dacbb1}
+.record-stats div+div{border-color:#dacbb1}
+.record-stats strong{font:600 29px 'Cormorant Garamond',serif;color:#2b3f35}
+.record-stats small{color:#74746b}
+.panel{border-radius:8px;background:#fbf7ef;border-color:#d6c5aa;color:#26352c;box-shadow:var(--shadow)}
+.panel-header{border-bottom:1px solid #d8cab2;padding:19px 22px;background:#f6efe3}
+.panel-title{font:600 28px/1.05 'Cormorant Garamond',Georgia,serif;letter-spacing:-.012em;text-transform:none;color:#293b30}
+.panel-sub{color:#758072;font-size:11px}
+.sub-link{color:#8f6538;font-size:11px;font-weight:800}
+.chip{border-color:#b7a17a;color:#705d40;border-radius:2px;font-size:9px}
+.position{background:#e3e1d5;color:#4a5853;border-radius:3px;border:1px solid #cbc9bc;font-size:10px}
+.position.QB{background:#e0e5e3;color:#365b60;border-color:#bfcfc8}
+.position.RB{background:#e7decb;color:#76583c;border-color:#d7c8aa}
+.position.WR{background:#e1e9df;color:#45684f;border-color:#c2d4bb}
+.position.TE{background:#e8dfe0;color:#74575c;border-color:#d7c3c5}
+.position.K,.position.DEF{background:#e3e3d7;color:#616243;border-color:#d1d0b8}
+.mini-row,.player-line{border-color:#e1d7c7}
+.row-name,.player-info b{color:#243a32}
+.row-detail,.player-info span,.row-slot,.slot-badge{color:#777c72}
+.status{border-color:#b58c68;background:#f1dfca;color:#946443}
+.scoreboard-item{border-color:#e0d7c6}
+.scoreboard-item.mine{background:#e6d4b97a}
+.scoreboard-item .side{color:#354840}
+.scoreboard-item .pts{font:600 23px 'Cormorant Garamond',serif;color:#2e463b}
+.scoreboard-item .dash{color:#a9a08e}
+.board-note{color:#7f8074}
+.select,.finder-controls .select,.finder-controls input{background:#fffdf6;color:#2f3a33;border:1px solid #bfae92;border-radius:4px}
+.select:focus,input:focus,button:focus-visible{outline-color:#97743e}
+.team-overview{border-radius:7px;border-color:#cbbba0;background:linear-gradient(100deg,#f6eee1,#eaddc8);color:#263c32}
+.big-initial{background:#d2bea0;color:#614f36;border-radius:3px;font:600 39px 'Cormorant Garamond',Georgia,serif}
+.team-overview h2{font:600 33px 'Cormorant Garamond',serif;color:#263e32}
+.team-overview .meta b{font:600 30px 'Cormorant Garamond',serif;color:#2e4536}
+.team-overview .meta span{color:#77776b}
+.group-label{color:#435342;font:600 23px 'Cormorant Garamond',serif;text-transform:none}
+.group-label span{color:#7b7d72}
+.right-groups{gap:16px}
+.finder-surface{background:linear-gradient(105deg,#f4ecdf,#faf6ed);border-color:#d2c0a6;border-radius:8px;position:relative;overflow:hidden}
+.finder-surface:after{content:"";position:absolute;top:-70px;right:-36px;width:230px;height:230px;border:1px solid #bea68063;border-radius:50%;box-shadow:0 0 0 33px #baac8b12,0 0 0 34px #bea68048;pointer-events:none}
+.finder-surface h2{font:600 31px 'Cormorant Garamond',Georgia,serif;position:relative;z-index:1}
+.finder-summary{color:#6f756b}
+.result{background:#fcf9f2;border-color:#d9ccb9;border-radius:5px;box-shadow:0 2px 7px #43362007}
+.result .grow strong{color:#273d31}
+.result .grow small{color:#737c73}
+.availability{color:#47775e}
+.availability.rostered{color:#6c7671}
+.availability.mine{color:#99713c}
+.market{color:#878578}
+.showmore{background:#f3eadc;border-color:#bd9e72;color:#765735;border-radius:4px}
+.note{background:#f6efe2;border-color:#d9c7a9;border-radius:5px;color:#5f665e}
+.projection-list{background:#fbf7ee}
+.forecast-row{border-color:#dfd5c2}
+.forecast-row.mine{background:#e5d4b984}
+.forecast-row .rank{font:600 23px 'Cormorant Garamond',serif;color:#837868}
+.forecast-name{color:#34483b;font-size:12px}
+.forecast-track{background:#dfd7c8;height:6px}
+.forecast-fill{background:linear-gradient(90deg,#829c8b,#55795f)}
+.forecast-row.mine .forecast-fill{background:linear-gradient(90deg,#b5996b,#8c673f)}
+.forecast-value{font:600 26px 'Cormorant Garamond',serif;color:#334d3d}
+.model-status .headline{font:600 34px 'Cormorant Garamond',serif;color:#304437}
+.model-status p{color:#6d756c}
+.model-status p strong{color:#906c42!important}
+.empty-copy,.loading{color:#747a70}
+.footer{border-color:#c4b59c;color:#7e796c;letter-spacing:.065em}
+@media(max-width:900px){
+ .record-stats{border-color:#dacbb1}
+ .record-stats div{border-color:#dacbb1}
+}
+@media(max-width:600px){
+ .topbar{height:91px}
+ .brand{gap:10px}
+ .brandmark{width:42px;height:42px}
+ .brandmark svg{width:36px;height:36px}
+ .brandname{font-size:25px;letter-spacing:-.04em}
+ .brandtag{font-size:8px;letter-spacing:.07em}
+ .weekstamp{padding:7px 9px}
+ .nav{gap:3px;padding:16px 0 19px}
+ .nav-btn{font-size:10px;padding:10px 10px;letter-spacing:.04em}
+ .section-top h1,.section-top h2{font-size:43px}
+ .matchup{padding:19px 16px 21px}
+ .matchup:before{inset:8px}
+ .team-code{font-size:24px}
+ .projected-number{font-size:52px}
+ .panel-title{font-size:25px}
+ .record-fig{font-size:77px}
+ .scoreboard-item .pts{font-size:18px}
+ .team-overview h2{font-size:30px}
+ .finder-surface h2{font-size:29px}
+}
+
 </style>
 </head><body>
 <div class="shell">
-<header class="topbar"><div class="brand"><div class="brandmark"><span>F</span></div><div><div class="brandname">FANTASY <span>FIELDHOUSE</span></div><div class="brandtag">CSU STATS · THE LEAGUE LAB</div></div></div><div class="top-right"><a class="top-link" href="https://football.fantasysports.yahoo.com/f1/258793" target="_blank" rel="noopener">OPEN YAHOO ↗</a><div class="weekstamp"><b id="weekHead">05</b><small>Week / 2026</small></div></div></header>
+<header class="topbar"><div class="brand"><div class="brandmark" aria-hidden="true"><svg viewBox="0 0 60 60" width="47" height="47" role="presentation" focusable="false"><circle cx="30" cy="30" r="23" fill="none" stroke="currentColor" stroke-width="1.1"/><circle cx="30" cy="30" r="15" fill="none" stroke="currentColor" stroke-width=".8" opacity=".7"/><path d="M30 6v48M6 30h48M12 12l36 36M48 12L12 48" stroke="currentColor" stroke-width=".6" opacity=".7"/><path d="M30 12l6 18-6 18-6-18z" fill="none" stroke="currentColor" stroke-width="1.25"/><circle cx="30" cy="30" r="3" fill="currentColor"/></svg></div><div><div class="brandname">Da Vinci <span>Fantasy Lab</span></div><div class="brandtag">CSU STATS · AN EXPERIMENT IN PREDICTION</div></div></div><div class="top-right"><a class="top-link" href="https://football.fantasysports.yahoo.com/f1/258793" target="_blank" rel="noopener">OPEN YAHOO ↗</a><div class="weekstamp"><b id="weekHead">05</b><small>Week / 2026</small></div></div></header>
 <nav class="nav" aria-label="Dashboard navigation">
-<button class="nav-btn active" type="button" data-page="overview">◈ &nbsp;OVERVIEW</button>
+<button class="nav-btn active" type="button" data-page="overview">◈ &nbsp;THE STUDY</button>
 <button class="nav-btn" type="button" data-page="rosters">▤ &nbsp;ROSTERS</button>
-<button class="nav-btn" type="button" data-page="finder">⌕ &nbsp;PLAYER FINDER</button>
+<button class="nav-btn" type="button" data-page="finder">⌕ &nbsp;PLAYER INDEX</button>
 <button class="nav-btn" type="button" data-page="projections">↗ &nbsp;PROJECTIONS</button>
 </nav>
+<div class="codex-rule" aria-hidden="true" style="display:flex;align-items:center;gap:15px;color:#9f855b;margin:-6px 0 21px;opacity:.75"><span style="flex:1;height:1px;background:#b8a98e"></span><span style="font:italic 19px 'Cormorant Garamond',serif;letter-spacing:.08em">Scientia · Ars · Ludus</span><span style="flex:1;height:1px;background:#b8a98e"></span></div>
 <main id="app">
 <section id="page-overview" class="page">
-<div class="section-top"><div><div class="eyebrow">2026 Season · League Intelligence</div><h1>The command center</h1><p>Your matchup, your squad, and the week around the league.</p></div><div class="quiet tiny" id="sync">Loading Yahoo snapshot…</div></div>
+<div class="section-top"><div><div class="eyebrow">Codex · 2026 season</div><h1>The art of prediction</h1><p>A studied view of your matchup, roster, and the league — drawn from real Yahoo data.</p></div><div class="quiet tiny" id="sync">Loading Yahoo snapshot…</div></div>
 <div class="homesplit">
 <div class="matchup" id="hero"><div class="loading">Loading this week's matchup…</div></div>
-<div class="record-card"><div class="record-upper"><div class="eyebrow">YOUR SEASON AT A GLANCE</div><div class="record-fig mono" id="wl">—</div><div class="record-desc" id="rankDesc">League standings</div></div><div class="record-stats"><div><strong class="mono" id="pointsFor">—</strong><small>POINTS SCORED</small></div><div><strong id="waiverRank" class="mono">—</strong><small>WAIVER PRIORITY</small></div></div></div>
+<div class="record-card"><div class="record-upper"><div class="eyebrow">THE SEASON LEDGER</div><div class="record-fig mono" id="wl">—</div><div class="record-desc" id="rankDesc">League standings</div></div><div class="record-stats"><div><strong class="mono" id="pointsFor">—</strong><small>POINTS SCORED</small></div><div><strong id="waiverRank" class="mono">—</strong><small>WAIVER PRIORITY</small></div></div></div>
 </div>
 <div class="columns">
-<div class="panel"><div class="panel-header"><div><div class="panel-title">Your starting lineup</div><div class="panel-sub">Current Yahoo lineup · not an optimized recommendation</div></div><button class="sub-link" type="button" data-jump="rosters">FULL ROSTER ↗</button></div><div class="roster-mini" id="myLineup"></div></div>
-<div class="panel"><div class="panel-header"><div><div class="panel-title">Around the league</div><div class="panel-sub">Current-week Yahoo projected final totals</div></div><span class="chip" id="boardWeek">WEEK 5</span></div><div class="scoreboard-list" id="leagueBoard"></div><div class="board-note">Forecasts can change as games are played. Snapshot, not a live scoreboard.</div></div>
+<div class="panel"><div class="panel-header"><div><div class="panel-title">The starting eleven? No, nine.</div><div class="panel-sub">Current Yahoo lineup · not an optimized recommendation</div></div><button class="sub-link" type="button" data-jump="rosters">FULL ROSTER ↗</button></div><div class="roster-mini" id="myLineup"></div></div>
+<div class="panel"><div class="panel-header"><div><div class="panel-title">The weekly ledger</div><div class="panel-sub">Current-week Yahoo projected final totals</div></div><span class="chip" id="boardWeek">WEEK 5</span></div><div class="scoreboard-list" id="leagueBoard"></div><div class="board-note">Forecasts can change as games are played. Snapshot, not a live scoreboard.</div></div>
 </div>
 </section>
 <section id="page-rosters" class="page" hidden>
-<div class="section-top"><div><div class="eyebrow">Team depth charts</div><h2>Roster Room</h2><p>Start with Ten Feline Overlords, or switch to any of the other 13 teams.</p></div><select class="select" id="teamChoice" aria-label="Select fantasy team"></select></div>
+<div class="section-top"><div><div class="eyebrow">The collection · 14 teams</div><h2>The rosters</h2><p>Start with Ten Feline Overlords, or switch to any of the other 13 teams.</p></div><select class="select" id="teamChoice" aria-label="Select fantasy team"></select></div>
 <div id="selectedTeam"></div><div class="groups"><div class="panel group-panel" id="startingGroup"></div><div class="right-groups"><div class="panel group-panel" id="benchGroup"></div><div class="panel group-panel" id="irGroup"></div></div></div>
 </section>
 <section id="page-finder" class="page" hidden>
-<div class="section-top"><div><div class="eyebrow">Every team · Available player pool</div><h2>Player Finder</h2><p>Search rostered players and league-available players together.</p></div></div>
-<div class="finder-surface"><div class="eyebrow">SCOUT THE FIELD</div><h2>Who has your next difference-maker?</h2><div class="finder-controls"><input id="finderQuery" type="search" placeholder="Search player, NFL team, fantasy team, or Yahoo ID…" aria-label="Find fantasy players"><select class="select" id="finderPos" aria-label="Player position"><option value="all">All positions</option><option>QB</option><option>RB</option><option>WR</option><option>TE</option><option>K</option><option value="DEF">DEF</option></select><select class="select" id="finderStatus" aria-label="Ownership status"><option value="all">Everyone</option><option value="available">Available / waivers*</option><option value="rostered">Rostered</option><option value="mine">My players</option></select></div></div>
+<div class="section-top"><div><div class="eyebrow">Every owner · The open market</div><h2>Player index</h2><p>Search rostered players and league-available players together.</p></div></div>
+<div class="finder-surface"><div class="eyebrow">THE REGISTER OF PLAYERS</div><h2>Find a player, study the options.</h2><div class="finder-controls"><input id="finderQuery" type="search" placeholder="Search player, NFL team, fantasy team, or Yahoo ID…" aria-label="Find fantasy players"><select class="select" id="finderPos" aria-label="Player position"><option value="all">All positions</option><option>QB</option><option>RB</option><option>WR</option><option>TE</option><option>K</option><option value="DEF">DEF</option></select><select class="select" id="finderStatus" aria-label="Ownership status"><option value="all">Everyone</option><option value="available">Available / waivers*</option><option value="rostered">Rostered</option><option value="mine">My players</option></select></div></div>
 <div class="finder-summary"><span id="finderCount">Loading players…</span><span>League-available players are shown alongside owned players</span></div>
 <div class="finder-results" id="finderResults"></div><button class="showmore" id="morePlayers" type="button" hidden>SHOW MORE PLAYERS ↓</button>
 <div class="note"><strong>*Waiver caveat:</strong> Yahoo confirms which players are available to acquire in your league, but the connected data does not distinguish unrestricted free agents from players still on waivers. Check Yahoo for claim eligibility and processing times. Available-player data is a sampled pool (up to 100 per position), not every NFL player.</div>
 </section>
 <section id="page-projections" class="page" hidden>
-<div class="section-top"><div><div class="eyebrow">Forecast desk</div><h2>Projection Lab</h2><p>Real Yahoo weekly forecasts on the left; our statistical model remains independently labeled.</p></div></div>
+<div class="section-top"><div><div class="eyebrow">Numbers & conjectures</div><h2>The projection ledger</h2><p>Real Yahoo weekly forecasts on the left; our statistical model remains independently labeled.</p></div></div>
 <div class="projection-split">
-<div class="panel"><div class="panel-header"><div><div class="panel-title">Yahoo forecast power ranking</div><div class="panel-sub">Projected final points for all 14 teams, current week</div></div><span class="chip" id="projectionWeek">WEEK 5</span></div><div class="projection-list" id="forecastList"></div></div>
+<div class="panel"><div class="panel-header"><div><div class="panel-title">Yahoo’s projected table</div><div class="panel-sub">Projected final points for all 14 teams, current week</div></div><span class="chip" id="projectionWeek">WEEK 5</span></div><div class="projection-list" id="forecastList"></div></div>
 <div class="panel"><div class="panel-header"><div><div class="panel-title">Our statistical model</div><div class="panel-sub">Independent opportunity and efficiency projections</div></div><div class="model-status" id="modelStatus"><div class="eyebrow">MODEL V0.1</div><div class="headline">Awaiting validation</div><p>The model code exists, but player forecasts should not be shown as if they were validated or run successfully.</p></div></div>
 </div>
 <div class="note">Yahoo's team forecasts reflect its own projection system. Our independent model will later produce week-specific player estimates, availability-adjusted rest-of-season values, and transaction impact. Those outputs are not represented by Yahoo's team forecasts.</div>
 </section>
 </main>
-<footer class="footer"><div>FANTASY FIELDHOUSE / CSU STATS · 2026</div><div>READ-ONLY PROTOTYPE · POWERED BY YAHOO LEAGUE DATA</div></footer>
+<footer class="footer"><div>DA VINCI FANTASY LAB / CSU STATS · MMXXVI</div><div>READ-ONLY PROTOTYPE · POWERED BY YAHOO LEAGUE DATA</div></footer>
 </div>
 <script>
 'use strict';
