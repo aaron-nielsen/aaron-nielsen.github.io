@@ -596,6 +596,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 <div class="shell">
 
 <div class="renaissance-banner"><img src="./assets/da-vinci-fantasy-lab-approved.webp" alt="Da Vinci Fantasy Lab: Leonardo's portrait alongside ink sketches of normal distributions, statistical plots and football plays" width="1250" height="417" fetchpriority="high"></div>
+<div class="league-switch"><label for="leagueSelector">YAHOO LEAGUE</label><select id="leagueSelector" aria-label="Choose fantasy league"><option value="csu">CSU Stats · Ten Feline Overlords (14 teams)</option><option value="nebraska">Nebraska Bugeaters (10 teams)</option></select><span id="leagueSnapshot" class="league-switch-note">Snapshot-based · no Yahoo changes</span></div>
 <nav class="nav" aria-label="Dashboard navigation">
 <button class="nav-btn active" type="button" data-page="overview">◈ &nbsp;OVERVIEW</button>
 <button class="nav-btn" type="button" data-page="rosters">▤ &nbsp;ROSTERS</button>
@@ -634,7 +635,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 </div>
 </section>
 <section id="page-rosters" class="page" hidden>
-<div class="section-top"><div><div class="eyebrow">14 Teams</div><h2>Rosters</h2><p>Start with Ten Feline Overlords, or switch to any of the other 13 teams.</p></div><select class="select" id="teamChoice" aria-label="Select fantasy team"></select></div>
+<div class="section-top"><div><div class="eyebrow" id="rosterLeagueCount">League rosters</div><h2>Rosters</h2><p id="rosterLeagueIntro">Browse current rosters and compare starters with eligible backups.</p></div><select class="select" id="teamChoice" aria-label="Select fantasy team"></select></div>
 <div id="selectedTeam"></div><div class="panel roster-compare" id="rosterComparison" aria-label="Starter and eligible backup comparison"></div><div class="roster-secondary"><div class="panel group-panel" id="benchGroup"></div><div class="panel group-panel" id="irGroup"></div></div>
 </section>
 <section id="page-finder" class="page" hidden>
@@ -685,8 +686,14 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const number=n=>n==null?'—':Number(n).toFixed(1);
-let rosters=null,available=null,week=null,model=null,backtest=null,weekly=null,futureData=null,waivers=null,selectedTeam='7',finderVisible=36;
-const TEAM_ID='7';
+const LEAGUE_KEY=new URLSearchParams(location.search).get('league')==='nebraska'?'nebraska':'csu';
+const TEAM_ID=LEAGUE_KEY==='nebraska'?'6':'7';
+const DATA_BASE=LEAGUE_KEY==='nebraska'?'./data/nebraska/':'./data/';
+const LEAGUE_NAME=LEAGUE_KEY==='nebraska'?'Nebraska Bugeaters':'CSU Stats';
+window.DaVinciLeague={key:LEAGUE_KEY,teamId:TEAM_ID,dataBase:DATA_BASE,name:LEAGUE_NAME};
+let rosters=null,available=null,week=null,model=null,backtest=null,weekly=null,futureData=null,waivers=null,selectedTeam=TEAM_ID,finderVisible=36;
+const leagueSelector=$('#leagueSelector');leagueSelector.value=LEAGUE_KEY;
+leagueSelector.addEventListener('change',()=>{const url=new URL(location.href);if(leagueSelector.value==='nebraska')url.searchParams.set('league','nebraska');else url.searchParams.delete('league');location.assign(url.toString());});
 function team(id){return rosters.teams.find(t=>t.id===String(id));}
 function standing(id){return week.standings.find(s=>s.teamId===String(id));}
 function position(p){return '<span class="position '+esc(p)+'">'+esc(p)+'</span>';}
@@ -789,7 +796,7 @@ function renderModelMatchup(){
  if(!a||!b){area.textContent='Incomplete independent offensive matchup projection.';return;}
  const diff=a.points-b.points,who=diff>=0?'Your offense':'Opponent offense';
  area.innerHTML='<span class="model-strip-label">DA VINCI MODEL · OFFENSE ONLY</span>'+
- '<span class="model-compare"><span>Ten Feline Overlords <b>'+a.points.toFixed(2)+'</b></span>'+
+ '<span class="model-compare"><span>'+esc(team(TEAM_ID).name)+' <b>'+a.points.toFixed(2)+'</b></span>'+
  '<span>'+esc(other.name)+' <b>'+b.points.toFixed(2)+'</b></span></span>'+
  '<span class="model-strip-note">'+who+' favored by '+Math.abs(diff).toFixed(2)+' points.'+
  ((a.needsReview+b.needsReview)?' Playing status uncertain.':'')+
@@ -874,8 +881,8 @@ function initOverview(){
    '<div class="match-compact-side"><div class="match-compact-name">'+esc(them.name)+'</div>'+
    '<div class="match-compact-points">'+(Number.isFinite(t)?t.toFixed(2):'—')+'</div></div></div>'+
    '<div class="match-compact-footer">'+esc(summary)+'</div>';
- const st=standing(TEAM_ID);$('#wl').innerHTML=esc(st.wins)+'<span>–</span>'+esc(st.losses);$('#rankDesc').textContent='#'+st.rank+' of '+rosters.teams.length+' in league standings';
- $('#pointsFor').textContent=number(st.pointsFor);$('#waiverRank').textContent=st.waiverPriority==null?'—':'#'+st.waiverPriority;
+ const st=standing(TEAM_ID);$('#wl').innerHTML=st?.wins==null?'—':esc(st.wins)+'<span>–</span>'+esc(st.losses);$('#rankDesc').textContent=st?.rank==null?'Yahoo standings unavailable':'#'+st.rank+' of '+rosters.teams.length+' in league standings';
+ $('#pointsFor').textContent=number(st?.pointsFor);$('#waiverRank').textContent=st?.waiverPriority==null?'—':'#'+st.waiverPriority;
  const lineupRoster=team(TEAM_ID).players;
  const starters=lineupRoster.filter(p=>p.slot!=='BN'&&p.slot!=='IR');
  const bench=lineupRoster.filter(p=>p.slot==='BN');
@@ -937,7 +944,7 @@ function initOverview(){
 function renderWaivers(){
  const root=$('#waiverRecommendations');
  if(!waivers?.horizons || !futureData?.players?.length || !available?.players?.length){
-   root.innerHTML='<div class="empty-copy">Horizon recommendations are still being processed.</div>';return;
+   root.innerHTML='<div class="empty-copy">Lineup-adjusted waiver rankings are not generated for this league yet. Browse available players in Player Finder and verify waiver eligibility in Yahoo.</div>';return;
  }
  const key=$('#waiverHorizon').value;
  const selected=waivers.horizons[key];
@@ -1039,7 +1046,7 @@ function renderRoster(){
  const t=team(selectedTeam),s=standing(selectedTeam);
  const mine=String(t.id)===String(TEAM_ID);
  const badge=mine?'YOUR TEAM':'LEAGUE TEAM';
- $('#selectedTeam').innerHTML='<div class="team-overview"><div class="big-initial">'+esc(t.name.charAt(0).toUpperCase())+'</div><div><div class="eyebrow">'+badge+'</div><h2>'+esc(t.name)+'</h2><span class="quiet tiny">'+t.players.length+' players on Yahoo roster</span></div><div class="meta"><div><b>'+s.wins+'–'+s.losses+'</b><span>RECORD</span></div><div><b>#'+s.rank+'</b><span>LEAGUE RANK</span></div><div><b>'+number(s.pointsFor)+'</b><span>POINTS FOR</span></div></div></div>';
+ $('#selectedTeam').innerHTML='<div class="team-overview"><div class="big-initial">'+esc(t.name.charAt(0).toUpperCase())+'</div><div><div class="eyebrow">'+badge+'</div><h2>'+esc(t.name)+'</h2><span class="quiet tiny">'+t.players.length+' players on Yahoo roster</span></div><div class="meta"><div><b>'+(s?.wins==null?'—':s.wins+'–'+s.losses)+'</b><span>RECORD</span></div><div><b>'+(s?.rank==null?'—':'#'+s.rank)+'</b><span>LEAGUE RANK</span></div><div><b>'+number(s?.pointsFor)+'</b><span>POINTS FOR</span></div></div></div>';
  const order=['QB','RB','RB','WR','WR','TE','W/R/T','K','DEF'];
  const allowed={QB:['QB'],RB:['RB'],WR:['WR'],TE:['TE'],'W/R/T':['RB','WR','TE'],K:['K'],DEF:['DEF']};
  const starters=t.players.filter(p=>p.slot!=='BN'&&p.slot!=='IR');
@@ -1215,12 +1222,21 @@ function showPage(page){
 $('#waiverHorizon').addEventListener('change',renderWaivers);
 document.querySelectorAll('.nav-btn').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
 document.querySelectorAll('[data-jump]').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.jump)));
-async function get(path){const r=await fetch('./data/'+path+'.json',{cache:'no-store'});if(!r.ok)throw Error('Data file '+path+' returned HTTP '+r.status);return r.json();}
+async function get(path){const r=await fetch(DATA_BASE+path+'.json',{cache:'no-store'});if(!r.ok)throw Error('Data file '+path+' returned HTTP '+r.status);return r.json();}
 (async()=>{
  try{
   [rosters,available,week,model,backtest,weekly,futureData,waivers]=await Promise.all([get('rosters'),get('available'),get('week'),get('projections').catch(()=>null),get('backtest').catch(()=>null),get('weekly').catch(()=>null),get('future').catch(()=>null),get('waivers').catch(()=>null)]);
   if(!Array.isArray(rosters.teams)||!Array.isArray(available.players)||!Array.isArray(week.matchups)||!Array.isArray(week.standings)||!team(TEAM_ID)||!matchup())throw Error('League data incomplete or mismatched');
-  if(rosters.leagueId!==week.leagueId||available.leagueId!==rosters.leagueId)throw Error('League identity mismatch');
+  if(rosters.leagueId!==week.leagueId||available.leagueId!==rosters.leagueId||rosters.leagueId!==(LEAGUE_KEY==='nebraska'?'470.l.1699881':'470.l.258793'))throw Error('League identity mismatch');
+  $('#rosterLeagueCount').textContent=rosters.teams.length+' TEAMS';
+  $('#rosterLeagueIntro').textContent='Browse '+LEAGUE_NAME+' rosters and compare starters with eligible backups.';
+  $('#leagueSnapshot').textContent=LEAGUE_NAME+' · snapshot '+new Date(week.retrievedAt).toLocaleDateString(undefined,{month:'short',day:'numeric'})+' · not live';
+  const intro=$('#page-overview .section-top p');if(intro)intro.textContent=LEAGUE_NAME+' · matchup, lineup and league standings.';
+  if(LEAGUE_KEY==='nebraska'){
+    const note=document.createElement('p');note.className='model-league-explanation';
+    note.textContent='Nebraska projections reuse the workload model and matchup factors from CSU but apply Nebraska Yahoo scoring; they are not independently validated. Trade and lineup-adjusted waiver advice require a separate rebuild.';
+    const container=document.querySelector('#page-projections .projection-split');container?.parentNode?.insertBefore(note,container);
+  }
   initOverview();initRosters();initFinder();renderProjection();renderRecommendations();renderWaivers();initModelTeamForecasts();window.DaVinciLab?.init();
  }catch(e){
   $('#hero').innerHTML='<div class="loading"><strong>Dashboard data could not be loaded.</strong><p>'+esc(e.message)+'</p><p>Check the published JSON files or reload this page.</p></div>';
