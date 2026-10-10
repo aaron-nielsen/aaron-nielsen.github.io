@@ -172,6 +172,52 @@ function draftPick(p){
  const match=draftData.picks.find(d=>String(d.playerId)===id);
  return match?.pick??null;
 }
+// Compare total modeled remaining production *above a positional replacement
+// baseline*, not only the weekly lineup delta from the proposed exchange.
+// Thresholds approximate depth in this fourteen-team, half-PPR league.
+// This is a trade plausibility screen, not a market-price estimator.
+const REPLACEMENT_RANK = {QB:18,RB:36,WR:42,TE:21};
+function replacementLevels(start){
+ const groups={QB:[],RB:[],WR:[],TE:[]};
+ for(const p of futureData?.players||[]){
+   if(!(p.position in groups))continue;
+   const total=(p.weeks||[]).filter(w=>w.week>=start)
+     .reduce((sum,w)=>sum+(Number(w.points)||0),0);
+   groups[p.position].push(total);
+ }
+ const levels={};
+ for(const pos of Object.keys(groups)){
+   groups[pos].sort((a,b)=>b-a);
+   levels[pos]=groups[pos][Math.min(groups[pos].length-1,REPLACEMENT_RANK[pos]-1)]||0;
+ }
+ return levels;
+}
+function playerRosPoints(p,start){
+ const source=futureById.get(String(p.yahooId));
+ if(!source)return null;
+ return (source.weeks||[]).filter(w=>w.week>=start)
+   .reduce((sum,w)=>sum+(Number(w.points)||0),0);
+}
+function tradeValueBalance(t,start,levels){
+ function packageValue(players){
+   let raw=0,excess=0;
+   for(const p of players){
+     const projected=playerRosPoints(p,start);
+     if(projected==null)return null;
+     raw+=projected;
+     excess+=Math.max(0,projected-(levels[p.position]||0));
+   }
+   return {raw,excess};
+ }
+ const sent=packageValue(t.youSend),received=packageValue(t.youReceive);
+ if(!sent||!received)return {ok:false,reason:'Incomplete remaining-season player projections'};
+ // VOR is a rough positional-scarcity check on *cumulative* modeled ROS points.
+ // An exchange with >30% imbalance requires manual review, even if both
+ // optimizer lineups gain. It is not a proof of fair trade value.
+ const imbalance=Math.abs(sent.excess-received.excess)/Math.max(25,sent.excess,received.excess);
+ return {ok:imbalance<=.30,imbalance,sent,received,
+   reason:imbalance>.30?'Projected positional value differs substantially between the packages':null};
+}
 function premiumTradeCheck(t){
  const firstRound=ps=>ps.filter(p=>{const pick=draftPick(p);return pick!=null&&pick<=14;});
  const outgoing=firstRound(t.youSend), incoming=firstRound(t.youReceive);
@@ -203,12 +249,14 @@ function showTrades(){
  const duration=tradeData.endWeek-start+1;
  const thresholds={three_each:0.40,balanced:0.40,balanced_all:0.20,all:0.15};
  const minWeeklyGain=thresholds[packageFilter]??0.40;
+ const levels=replacementLevels(start);
  const matches=tradeData.trades.flatMap(t=>{
    if(partner!=='all'&&t.partnerTeamId!==partner)return [];
    const check=premiumTradeCheck(t);
+   const valueCheck=tradeValueBalance(t,start,levels);
    const sameSize=t.youSend.length===t.youReceive.length;
    if(packageFilter==='three_each'&&(t.youSend.length<3||t.youReceive.length<3))return [];
-   if(packageFilter!=='all'&&(!sameSize||!check.ok||t.requiresRosterAdjustment))return [];
+   if(packageFilter!=='all'&&(!sameSize||!check.ok||!valueCheck.ok||t.requiresRosterAdjustment))return [];
    const both=[...t.youSend,...t.youReceive];
    if(pos==='offense_no_qb'&&both.some(p=>p.position==='QB'))return [];
    if(pos!=='offense_no_qb'&&pos!=='all'&&!t.youReceive.some(p=>p.position===pos))return [];
@@ -218,7 +266,7 @@ function showTrades(){
    const theirs=games.reduce((s,w)=>s+w.them,0);
    if(my<minWeeklyGain*duration||theirs<minWeeklyGain*duration)return [];
    if(packageFilter==='three_each' && (!stableGain(games,'you')||!stableGain(games,'them')))return [];
-   return [{...t,my,theirs,marketCheck:check,
+   return [{...t,my,theirs,marketCheck:check,valueCheck,
      balanced:!t.requiresRosterAdjustment&&sameSize,
      score:Math.min(my,theirs)+0.12*Math.max(my,theirs)}];
  }).sort((a,b)=>b.score-a.score||b.my-a.my);
@@ -245,8 +293,14 @@ function showTrades(){
  ).join('')+'</ul>';
  area.innerHTML=selected.map(t=>{
    const both=t.youSend.length+t.youReceive.length;
-   const note=(!t.balanced?'<p class="trade-balance-note">Unequal numbers: an additional roster move is required. Exploratory only.</p>':'')+
-     (!t.marketCheck.ok?'<p class="trade-balance-note">Draft-value warning: '+clean(t.marketCheck.reason)+'</p>':'');
+   const valueText=t.valueCheck.sent&&t.valueCheck.received
+     ? 'Model ROS value above replacement: send '+Math.round(t.valueCheck.sent.excess)+
+       ' · receive '+Math.round(t.valueCheck.received.excess)+' pts'
+     : 'Projected positional value unavailable';
+   const note='<p class="trade-balance-note compact-trade-value">'+clean(valueText)+'</p>'+
+     (!t.balanced?'<p class="trade-balance-note">Unequal numbers: an additional roster move is required. Exploratory only.</p>':'')+
+     (!t.marketCheck.ok?'<p class="trade-balance-note">Draft-value warning: '+clean(t.marketCheck.reason)+'</p>':'')+
+     (!t.valueCheck.ok?'<p class="trade-balance-note">Position-adjusted ROS value warning: '+clean(t.valueCheck.reason)+'</p>':'');
    return '<article class="trade-card compact-trade trade-ledger">'+
     '<div class="trade-card-top"><strong class="trade-card-partner">'+clean(t.partnerTeam)+'</strong>'+
     '<span class="trade-package-label">'+clean(t.packageShape)+' · '+both+' players</span></div>'+
