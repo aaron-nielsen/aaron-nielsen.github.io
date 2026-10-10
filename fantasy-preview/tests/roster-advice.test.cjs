@@ -84,3 +84,42 @@ element('waiverHorizon').value='four_weeks';
 context.DaVinciAdvice.renderWaivers();
 assert.ok(element('waiverRecommendations').innerHTML.includes('Available Defense'));
 console.log('Roster-advice checks passed: nine slots, legal backups, injury exclusion, six-position availability, concrete K/DEF add-drop, week switching.');
+
+
+/* Integration check with both actual league snapshots and K/DEF enrichment. */
+const BASE=path.resolve(__dirname,'..');
+const read=p=>JSON.parse(fs.readFileSync(path.join(BASE,p),'utf8'));
+require(path.join(BASE,'special-teams-model.js'));
+const teamContext=read('data/special-teams-context.json');
+for(const league of [
+ {folder:'data/',myId:'7',name:'CSU Stats'},
+ {folder:'data/nebraska/',myId:'6',name:'Nebraska'}
+]){
+ const rosters=read(league.folder+'rosters.json');
+ const available=read(league.folder+'available.json');
+ const future=read(league.folder+'future.json');
+ const weekly=read(league.folder+'weekly.json');
+ const settings=read(league.folder+'league.json');
+ const count=globalThis.DaVinciSpecialTeams.enrich({
+  context:teamContext,league:settings,rosters,available,futureData:future,weekly
+ });
+ assert.ok(count.k>0 && count.def>0);
+ elements.clear();element('lineupWeek').value='5';element('waiverHorizon').value='next_week';
+ context.DaVinciAdvice.init({rosters,available,future,week:5,teamId:league.myId});
+ const team=rosters.teams.find(t=>t.id===league.myId);
+ assert.ok(team);
+ for(const week of [5,6,7,8]){
+  const lineup=context.DaVinciAdvice.lineup(team.players,week);
+  assert.ok(lineup,league.name+' Week '+week+' incomplete lineup');
+  assert.equal(lineup.selections.length,9);
+  assert.ok(lineup.selections.some(x=>x.player.position==='K'));
+  assert.ok(lineup.selections.some(x=>x.player.position==='DEF'));
+ }
+ const html=element('waiverRecommendations').innerHTML;
+ assert.ok(html.includes('Top available by position'),league.name+' missing shortlist');
+ for(const name of ['RB','WR','TE','QB','K','DEF']){
+  assert.ok(html.includes('decision-position">'+name+'</span>'),league.name+' missing '+name+' free agents');
+ }
+ assert.ok(!html.includes('not generated for this league'),league.name+' still shows placeholder');
+ console.log(league.name+': live snapshot generated a nine-position lineup and complete pickup ranking');
+}
