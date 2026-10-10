@@ -109,10 +109,10 @@ function description(tx){
 function impact(s){
  const g=grade(s.value);
  if(!s.value)return '<div class="txn-impact unscored"><strong>'+esc(s.name)+'</strong><small>Not graded'+(s.reason?' · '+esc(s.reason):'')+'</small></div>';
- const n=s.value.avg,positive=n>.15,negative=n<-.15;
+ const n=s.value.avg,total=s.value.ros,positive=total>.15,negative=total<-.15;
  return '<div class="txn-impact '+(positive?'positive':negative?'negative':'neutral')+'">'+
-  '<strong>'+esc(s.name)+'</strong><b>'+(n>=0?'+':'')+fmt(n)+' <small>pts/week added</small></b>'+
-  '<span>'+(s.value.ros>=0?'+':'')+fmt(s.value.ros)+' projected points added (ROS)</span>'+
+  '<strong>'+esc(s.name)+'</strong><b>'+(total>=0?'+':'')+fmt(total)+' <small>projected points added</small></b>'+
+  '<span>'+(n>=0?'+':'')+fmt(n)+' pts/week · '+s.value.weeks+' remaining weeks</span>'+
   '<small>'+g.grade+' · '+esc(g.label)+'</small></div>';
 }
 function card(tx){
@@ -121,9 +121,8 @@ function card(tx){
  const title=tx.isTrade?'Trade between '+tx.sides.map(s=>s.name).join(' and '):
   (tx.sides[0]?.name||'Manager')+' · '+type;
  const relation=tx.sides.length===2&&tx.sides.every(s=>s.value)?
-  (tx.sides.every(s=>s.value.avg>=.5)?' · Both improve':' · Not mutually beneficial'):'';
- const actual=tx.actual&&Number.isFinite(tx.actual.actualGain)?
-  ((tx.actual.actualGain>=0?'+':'')+fmt(tx.actual.actualGain)+' actual pts'):'';
+  (tx.sides.every(s=>s.value.ros>0)?' · Both gain projected points':' · One or both lose projected points'):'';
+ const actual='';
  return '<article class="txn-card">'+
   '<div class="txn-top"><span class="txn-type">'+esc(type)+'</span><time>'+esc(tx.date||'Unknown date')+'</time>'+
   '<span class="txn-grade">'+(p?.value?esc(g.grade):'Not graded')+'</span></div>'+
@@ -148,7 +147,7 @@ function update(){
  const value=x=>{
   // When filtering a manager, rank transactions by THAT manager's impact.
   const selected=team==='all'?x.primary:x.sides.find(side=>side.teamId===team);
-  return selected?.value?.avg;
+  return selected?.value?.ros;
  };
  // Missing grades are unknown, not negative outcomes: always sort them last.
  const compare=(a,b,direction)=>{
@@ -171,7 +170,7 @@ function update(){
   reasons.set(reason,(reasons.get(reason)||0)+1);
  }
  const breakdown=[...reasons].sort((a,b)=>b[1]-a[1]).map(([reason,n])=>n+' '+reason.toLowerCase()).join(' · ');
- $('txnStats').textContent=rows.length+' transactions · '+rated+' projected grades'+
+ $('txnStats').textContent=rows.length+' transactions · '+rated+' projected point estimates'+
   (missing?' · '+missing+' ungraded':'');
  $('txnStats').title=breakdown||'All visible transactions graded';
  $('transactionCards').innerHTML=rows.length?rows.map(tx=>{
