@@ -32,11 +32,11 @@ function render(data){
  const a=submitted(data,data.you.id),b=submitted(data,data.other.id);
  const person=(r,side)=>{
   const identity='<span class="matchup-identity"><strong>'+esc(r.player?.name||'Empty slot')+'</strong><small>'+esc([r.player?.nflTeam,r.opponent,r.player?.status].filter(Boolean).join(' · '))+'</small></span>';
-  const score='<b title="'+(r.points==null?'Projection pending':r.label==='OUT'?'Out':r.label==='BYE'?'Bye week':'Da Vinci projected points')+'">'+esc(r.label)+'</b>';
+  const score='<b title="'+(r.points==null?'Projection pending':r.label==='OUT'?'Out':r.label==='BYE'?'Bye week':'Da Vinci projected points')+'">'+esc(r.label.replace('＊',''))+(r.conditional?'<sup class="forecast-conditional" title="Projected if active">†</sup>':'')+'</b>';
   return '<div class="matchup-player '+side+'">'+(side==='left'?identity+score:score+identity)+'</div>';
  };
  target.innerHTML=a.rows.map((r,i)=>'<div class="matchup-starter-row">'+person(r,'left')+'<span class="matchup-slot">'+(r.slot==='W/R/T'?'FLEX':r.slot)+'</span>'+person(b.rows[i],'right')+'</div>').join('')+
-  '<details class="projection-details"><summary>Projection details</summary><p>＊ means if active, including the team total. Da Vinci and Yahoo totals use each manager’s current starters. OUT and BYE count as zero; — means a projection is missing, including any team total that depends on it. Projections assume participation unless adjusted for availability. K/DEF estimates are experimental.</p></details>';
+  '<details class="projection-details"><summary>Projection details</summary><p>† means if active, including the team total. Da Vinci and Yahoo totals use each manager’s current starters. OUT and BYE count as zero; — means a projection is missing, including any team total that depends on it. Projections assume participation unless adjusted for availability. K/DEF estimates are experimental.</p></details>';
 
 }
 root.DaVinciMatchup={submitted,render};

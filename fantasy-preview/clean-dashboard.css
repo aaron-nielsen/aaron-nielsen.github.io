@@ -1048,3 +1048,17 @@ body{font:16px/1.48 'Source Sans 3',Arial,sans-serif;color:var(--text);backgroun
  .league-pair-scores>span{font-size:12px}
  .league-pair-labels{font-size:9px}
 }
+
+/* Center the featured matchup in a border that follows its content. */
+#page-overview .overview-top #hero{width:100%;max-width:800px;align-self:center;padding:18px 22px 6px!important;box-sizing:border-box}
+.matchup-summary-row{display:grid;grid-template-columns:minmax(0,1fr) 62px 52px 62px minmax(0,1fr);gap:16px;align-items:center;padding:12px 0 22px}
+.matchup-summary-row .league-pair-team{font-size:16px}
+.matchup-summary-row .league-pair-scores b{font-size:25px}
+.forecast-conditional{font-size:10px!important;font-weight:500;color:#9b866f;vertical-align:super;line-height:0;margin-left:2px}
+@media(max-width:650px){
+ #page-overview .overview-top #hero{padding:14px 10px 4px!important}
+ .matchup-summary-row{grid-template-columns:minmax(0,1fr) 40px 32px 40px minmax(0,1fr);gap:4px;padding:10px 0 18px}
+ .matchup-summary-row .league-pair-team{font-size:12px}
+ .matchup-summary-row .league-pair-scores b{font-size:18px}
+ .matchup-summary-row .league-pair-labels{font-size:8px}
+}

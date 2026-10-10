@@ -591,7 +591,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 .model-team-expanded{padding:10px}.team-model-players{grid-template-columns:1fr}}
 
 </style>
-<link rel="stylesheet" href="./clean-dashboard.css?v=20261010e">
+<link rel="stylesheet" href="./clean-dashboard.css?v=20261010f">
 <link rel="stylesheet" href="./trade-preferences.css">
 <style id="team-score-comparison">
 /* Current-week forecasts: labelled scores and mobile-friendly paired columns */
@@ -682,7 +682,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 <div class="shell">
 
 <div class="renaissance-banner"><img src="./assets/da-vinci-fantasy-lab-approved.webp" alt="Da Vinci Fantasy Lab — original parchment portrait, lettering and football analytics drawings" width="1000" height="333" fetchpriority="high" decoding="async"></div>
-<div class="league-switch"><label for="leagueSelector">YAHOO LEAGUE</label><select id="leagueSelector" aria-label="Choose fantasy league"><option value="csu">CSU Stats · Ten Feline Overlords (14 teams)</option><option value="nebraska">Nebraska Bugeaters (10 teams)</option></select><span id="leagueSnapshot" class="league-switch-note">Updated</span></div>
+<div class="league-switch"><select id="leagueSelector" aria-label="Choose fantasy league"><option value="csu">CSU Stats · Ten Feline Overlords (14 teams)</option><option value="nebraska">Nebraska Bugeaters (10 teams)</option></select><span id="leagueSnapshot" class="league-switch-note">Updated</span></div>
 <nav class="nav" aria-label="Dashboard navigation">
 <button class="nav-btn active" type="button" data-page="overview">Overview</button>
 <button class="nav-btn" type="button" data-page="rosters">Rosters</button>
@@ -787,19 +787,19 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 <footer class="footer"><div>DA VINCI FANTASY LAB / CSU STATS · MMXXVI</div><div>READ-ONLY PROTOTYPE · POWERED BY YAHOO LEAGUE DATA</div></footer>
 </div>
 <script src="./special-teams-model.js"></script>
-<script src="./lab-enhancements.js?v=20261010e"></script>
-<script src="./availability-sanity.js?v=20261010e"></script>
+<script src="./lab-enhancements.js?v=20261010f"></script>
+<script src="./availability-sanity.js?v=20261010f"></script>
 <script src="./return-outlook.js"></script>
 <script src="./playing-time-model.js"></script>
-<script src="./roster-advice.js?v=20261010e"></script>
-<script src="./matchup-overview.js?v=20261010e"></script>
+<script src="./roster-advice.js?v=20261010f"></script>
+<script src="./matchup-overview.js?v=20261010f"></script>
 <script src="./overview-roster.js"></script>
-<script src="./trade-preferences.js?v=20261010e"></script>
-<script src="./transaction-grades.js?v=20261010e"></script>
+<script src="./trade-preferences.js?v=20261010f"></script>
+<script src="./transaction-grades.js?v=20261010f"></script>
 <script src="./historical-trends.js"></script>
 <script src="./historical-trends-view.js"></script>
 <script src="./forecast-accuracy.js"></script>
-<script src="./model-performance.js?v=20261010e"></script>
+<script src="./model-performance.js?v=20261010f"></script>
 <script>
 'use strict';
 const $=s=>document.querySelector(s);
@@ -920,14 +920,15 @@ function currentTeamForecast(t){
 function scoreLabel(value){return Number.isFinite(value)?value.toFixed(1):'—';}
 function pairLineupScore(t){
  const n=currentTeamForecast(t);
- return '<div class="compared-line"><small>Da Vinci</small><b>'+scoreLabel(n.davinci)+(n.conditional?'＊':'')+'</b></div>'+
+ return '<div class="compared-line"><small>Da Vinci</small><b>'+scoreLabel(n.davinci)+(n.conditional?'<sup class="forecast-conditional" title="Includes a projection assuming the questionable player is active">†</sup>':'')+'</b></div>'+
   '<div class="compared-line yahoo"><small>Yahoo</small><b>'+scoreLabel(n.yahoo)+'</b></div>';
 }
-function matchupTeamCard(t){
+function matchupTeamCard(t,side){
  const n=currentTeamForecast(t);
- return '<div class="match-compact-side"><div class="match-compact-name">'+esc(t.name)+'</div>'+
-  '<div class="match-compact-projection"><small>Da Vinci</small><strong>'+scoreLabel(n.davinci)+(n.conditional?'＊':'')+'</strong></div>'+
-  '<div class="match-compact-projection yahoo"><small>Yahoo</small><strong>'+scoreLabel(n.yahoo)+'</strong></div></div>';
+ const marker=n.conditional?'<sup class="forecast-conditional" title="Includes a projection assuming the questionable player is active">†</sup>':'';
+ const name='<strong class="league-pair-team '+(side==='right'?'right':'')+'">'+esc(t.name)+'</strong>';
+ const scores='<div class="league-pair-scores"><b>'+scoreLabel(n.davinci)+marker+'</b><span>'+scoreLabel(n.yahoo)+'</span></div>';
+ return side==='right'?scores+name:name+scores;
 }
 function renderModelMatchup(){
  const pair=matchup(),you=pair.home.id===TEAM_ID?pair.home:pair.away,other=pair.home.id===TEAM_ID?pair.away:pair.home;
@@ -1007,8 +1008,8 @@ function initOverview(){
  const yours=currentTeamForecast(you),theirs=currentTeamForecast(them);
  $('#hero').innerHTML=
    '<div class="match-compact-heading">Week '+esc(week.week)+' matchup</div>'+
-   '<div class="match-compact-scores">'+matchupTeamCard(you)+
-   '<div class="match-compact-vs" aria-hidden="true">vs</div>'+matchupTeamCard(them)+'</div>'+
+   '<div class="matchup-summary-row">'+matchupTeamCard(you,'left')+
+   '<div class="league-pair-labels"><span>Da Vinci</span><span>Yahoo</span></div>'+matchupTeamCard(them,'right')+'</div>'+
    '<div id="matchupLineups" aria-label="Weekly starting lineups"></div>';
  const st=standing(TEAM_ID);
  const metrics=[['wl',st?.wins!=null&&st?.losses!=null?st.wins+'–'+st.losses:null],
@@ -1019,7 +1020,7 @@ function initOverview(){
  $('#overviewMetrics').hidden=metrics.every(([,v])=>v==null);
   $('#leagueBoard').innerHTML=week.matchups.map(m=>{
   const home=currentTeamForecast(m.home),away=currentTeamForecast(m.away);
-  const scores=n=>'<div class="league-pair-scores"><b>'+scoreLabel(n.davinci)+(n.conditional?'＊':'')+'</b><span>'+scoreLabel(n.yahoo)+'</span></div>';
+  const scores=n=>'<div class="league-pair-scores"><b>'+scoreLabel(n.davinci)+(n.conditional?'<sup class="forecast-conditional" title="Includes a projection assuming the questionable player is active">†</sup>':'')+'</b><span>'+scoreLabel(n.yahoo)+'</span></div>';
   return '<div class="league-pair'+(m.home.id===TEAM_ID||m.away.id===TEAM_ID?' mine':'')+'">'+
    '<strong class="league-pair-team">'+esc(m.home.name)+'</strong>'+scores(home)+
    '<div class="league-pair-labels"><span>Da Vinci</span><span>Yahoo</span></div>'+scores(away)+
