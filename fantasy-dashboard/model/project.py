@@ -50,7 +50,7 @@ def shrink_rate(cur, old, numerator, denominator, baseline, strength):
     cur_d = sum(num(r, denominator) for r in cur)
     return max(0., (cur_n + strength * player_prior) / (cur_d + strength))
 
-def project_player(rows, position, season=2026):
+def project_player_legacy(rows, position, season=2026):
     """Conditional mean stats. Missing/inactive weeks must not be padded with zero."""
     if position not in SKILL:
         return None
@@ -89,6 +89,110 @@ def project_player(rows, position, season=2026):
         },
     }
 
+
+# Multiseason priors. Recent workload adjusts quickly; ability/efficiency is
+# regularized using several seasons rather than trusting a four-game sample.
+HISTORY_YEARS = 4
+ROLE_ANNUAL_DECAY = 0.36
+EFFICIENCY_ANNUAL_DECAY = 0.72
+
+def historical_role(rows, field, season, years, baseline):
+    """Recency-weighted prior for player opportunity per active game.
+
+    Old seasons matter far less for workload, since coaching/teams/roles change.
+    Missing seasons are not counted as zero-volume games.
+    """
+    weighted, denominator = 0., 0.
+    for lag in range(1, years + 1):
+        season_games = [r for r in rows if int(r["season"]) == season - lag]
+        ordered = sorted(season_games, key=lambda r: int(r["week"]), reverse=True)
+        for i, game in enumerate(ordered):
+            weight = ROLE_ANNUAL_DECAY ** (lag - 1) * 2 ** (-i / 8.)
+            weighted += weight * num(game, field)
+            denominator += weight
+    if not denominator:
+        return baseline
+    credibility = min(1., denominator / 3.)
+    player_mean = weighted / denominator
+    return credibility * player_mean + (1. - credibility) * baseline
+
+def historical_efficiency_rate(cur, history, numerator, denominator, baseline,
+                               strength, season, years):
+    """Bayes-style regularization; historical sample size is capped.
+
+    2026 usage (cur) is full weight, earlier years decay; individual
+    efficiency history has greater persistence than the opportunity forecast.
+    """
+    prior_num, prior_den = 0., 0.
+    for r in history:
+        lag = season - int(r["season"])
+        if 1 <= lag <= years:
+            w = EFFICIENCY_ANNUAL_DECAY ** (lag - 1)
+            prior_num += w * num(r, numerator)
+            prior_den += w * num(r, denominator)
+    # Cap retained historical evidence to reduce stale efficiency dominance.
+    retained = min(prior_den, strength * 2.5)
+    hist_rate = prior_num / prior_den if prior_den else baseline
+    now_num = sum(num(r, numerator) for r in cur)
+    now_den = sum(num(r, denominator) for r in cur)
+    return max(0., (now_num + retained * hist_rate + strength * baseline)
+               / (now_den + retained + strength))
+
+def project_player(rows, position, season=2026, history_years=HISTORY_YEARS):
+    """Forecast an active-game statistical line from current + historical years.
+
+    No forecast should use a current-week game that hasn't been completed.
+    The caller must pass only rows available as of the forecast timestamp.
+    """
+    if position not in SKILL:
+        return None
+    history_years = max(1, min(5, int(history_years)))
+    current = [r for r in rows if int(r["season"]) == season
+               and r.get("season_type", "REG") == "REG"]
+    history = [r for r in rows if 1 <= season - int(r["season"]) <= history_years
+               and r.get("season_type", "REG") == "REG"]
+    if not current and not history:
+        return None
+    opportunity = {}
+    for metric, base in OPPORTUNITY_PRIORS[position].items():
+        prior = historical_role(history, metric, season, history_years, base)
+        recent_mean, effective_games = weighted_mean(current, metric)
+        # 1.4 prior pseudo-games preserves sensitivity to workload changes.
+        opportunity[metric] = max(0., ((recent_mean or 0) * effective_games + prior * 1.4)
+                                  / (effective_games + 1.4))
+    ef = EFFIC_PRIORS[position]
+    def rate(n, d, baseline, strength):
+        return historical_efficiency_rate(
+            current, history, n, d, baseline, strength, season, history_years)
+    py = rate("passing_yards", "attempts", ef["pass_ypa"], 110.) if position == "QB" else 0.
+    ry = rate("rushing_yards", "carries", ef["ypc"], 75.)
+    cr = min(1., rate("receptions", "targets", ef["catch_rate"], 50.))
+    yt = rate("receiving_yards", "targets", ef["rec_ypt"], 70.)
+    ir = rate("interceptions", "attempts", ef["int_rate"], 150.) if position == "QB" else 0.
+    sr = rate("sacks", "attempts", ef["sack_rate"], 100.) if position == "QB" else 0.
+    a, c, t = (opportunity[x] for x in ("attempts", "carries", "targets"))
+    td = TD_PRIORS[position]
+    return {
+        "position": position,
+        "sampleGames2026": len(current) if season == 2026 else 0,
+        "sampleGames2025": len(history) if season == 2026 else len(current),
+        "sampleGamesCurrentSeason": len(current),
+        "sampleGamesHistory": len(history),
+        "historyYearsUsed": history_years,
+        "modelVersion": "opportunity-eb-v0.3",
+        "availability": "not-modeled",
+        "stats": {
+            "passAttempts": round(a, 2), "passYards": round(a * py, 2),
+            "passTD": round(a * td["pass"], 3), "interceptions": round(a * ir, 3),
+            "sacksSuffered": round(a * sr, 3),
+            "carries": round(c, 2), "rushYards": round(c * ry, 2),
+            "rushTD": round(c * td["rush"], 3),
+            "targets": round(t, 2), "receptions": round(t * cr, 2),
+            "receivingYards": round(t * yt, 2),
+            "receivingTD": round(t * td["receive"], 3),
+        }
+    }
+
 def score(stats, yahoo_modifiers):
     """Use Yahoo CSU Stats coefficients for QB/RB/WR/TE modeled stats."""
     coefficients = {
@@ -103,7 +207,7 @@ def project_rostered(rosters, stats_rows, yahoo_to_gsis, modifiers, season=2026)
     by_player = defaultdict(list)
     for r in stats_rows:
         pid = r.get("player_id") or r.get("gsis_id")
-        if pid and r.get("position") in SKILL and str(r.get("season")) in (str(season), str(season - 1)):
+        if pid and r.get("position") in SKILL and season - HISTORY_YEARS <= int(r.get("season") or 0) <= season:
             by_player[pid].append(r)
     players, unmapped, missing_history = [], [], []
     for team in rosters["teams"]:
@@ -158,7 +262,7 @@ def project_pool(rosters, available, stats_rows, yahoo_to_gsis, modifiers, seaso
     by_player = defaultdict(list)
     for r in stats_rows:
         pid = r.get("player_id") or r.get("gsis_id")
-        if pid and r.get("position") in SKILL and str(r.get("season")) in (str(season), str(season - 1)):
+        if pid and r.get("position") in SKILL and season - HISTORY_YEARS <= int(r.get("season") or 0) <= season:
             by_player[pid].append(r)
 
     scored, missing_history = [], []
@@ -187,7 +291,8 @@ def project_pool(rosters, available, stats_rows, yahoo_to_gsis, modifiers, seaso
     rostered_count = sum(p["ownership"] == "rostered" for p in scored)
     available_count = sum(p["ownership"] == "available" for p in scored)
     return {
-        "modelVersion": "opportunity-eb-v0.2", "season": season,
+        "modelVersion": "opportunity-eb-v0.3", "season": season,
+        "historyYears": HISTORY_YEARS,
         "note": ("Conditional points per active game from completed weeks. "
                  "Not weekly predictions; injury, bye, matchup and role changes are not adjusted. "
                  "Name fallbacks are exact and conservative, not probabilistic."),
