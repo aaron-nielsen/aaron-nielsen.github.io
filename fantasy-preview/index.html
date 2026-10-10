@@ -478,16 +478,19 @@ function renderProjection(){
  const max=Math.max(1,...ranking.map(t=>t.projectedPoints||0));
  $('#forecastList').innerHTML=ranking.map((t,i)=>'<div class="forecast-row'+(t.id===TEAM_ID?' mine':'')+'"><div class="rank">'+(i+1)+'</div><div><div class="forecast-name">'+esc(t.name)+(t.id===TEAM_ID?' ★':'')+'</div><div class="forecast-track"><div class="forecast-fill" style="width:'+Math.max(0,Math.min(100,(t.projectedPoints||0)/max*100)).toFixed(1)+'%"></div></div></div><div class="forecast-value">'+number(t.projectedPoints)+'</div></div>').join('');
  renderBacktest();
- if(model&&Array.isArray(model.players)&&model.players.length){
+ if(weekly?.players?.length){
+   const mine=weekly.players.filter(p=>p.fantasyTeamId===TEAM_ID)
+     .sort((a,b)=>(b.weeklyProjectedPoints??-99)-(a.weeklyProjectedPoints??-99));
+   $('#modelStatus').innerHTML='<div class="eyebrow">EXPERIMENTAL · WEEK '+esc(weekly.week)+'</div><div class="headline">Your weekly estimates</div><p>All numeric estimates assume the player is active. Injuries require confirmation on Yahoo.</p>'+
+   mine.map(p=>'<div class="mini-row">'+position(p.position)+'<div><div class="row-name">'+esc(p.name)+(p.injuryStatus?'<span class="status">'+esc(p.injuryStatus)+'</span>':'')+'</div><div class="row-detail">'+esc(weeklyOpponent(p))+' · if active '+number(p.activeGamePoints)+'</div></div><div class="forecast-value">'+esc(weeklyDisplay(p))+'</div></div>').join('')+
+   '<p style="margin-top:15px">Yahoo status snapshot: '+esc(new Date(weekly.rosterSnapshotAt).toLocaleDateString())+'. Refresh before kickoff.</p>';
+   $('#projectionCoverage').textContent=weekly.players.length+' modeled · Week '+weekly.week+' · stats through completed Week '+weekly.statsThroughWeek;
+ }else if(model?.players?.length){
    const mine=model.players.filter(p=>p.fantasyTeamId===TEAM_ID).sort((a,b)=>b.conditionalPointsPerGame-a.conditionalPointsPerGame);
-   $('#modelStatus').innerHTML='<div class="eyebrow">EXPERIMENTAL · UNVALIDATED</div><div class="headline">Estimated points per active game</div><p>Stats through Week '+esc(model.statsThroughWeek||'?')+'. Not injury-, bye-, or opponent-adjusted; rankings should not be used for start/sit decisions.</p>'+
-   mine.map(p=>'<div class="mini-row">'+position(p.position)+'<div><div class="row-name">'+esc(p.name)+(p.injuryStatus?'<span class="status">'+esc(p.injuryStatus)+'</span>':'')+'</div><div class="row-detail">'+esc(p.sampleGames2026)+' games of current-season data</div></div><div class="forecast-value">'+number(p.conditionalPointsPerGame)+'</div></div>').join('')+
-   '<p style="margin-top:17px">'+mine.length+' of your skill-position players have an estimate. Missing IDs or data are not assigned invented scores.</p>';
-   $('#projectionCoverage').textContent=(model.coverage?.rosteredProjected??'?')+' rostered + '+(model.coverage?.availableProjected??0)+' available modeled · stats through completed Week '+esc(model.statsThroughWeek||'?');
- }else{
-   $('#modelStatus').innerHTML='<div class="eyebrow">EXPERIMENTAL MODEL</div><div class="headline">No projection file published yet</div><p>The model is separate from Yahoo forecasts. Player estimates will appear when the completed-week data build is available.</p>';
-   $('#projectionCoverage').textContent='No independent player estimates published yet';
- }
+   $('#modelStatus').innerHTML='<div class="eyebrow">PER-ACTIVE-GAME MODEL</div><div class="headline">Weekly schedule awaiting data</div><p>Neutral, conditional estimates only.</p>'+
+     mine.map(p=>'<div class="mini-row">'+position(p.position)+'<div><div class="row-name">'+esc(p.name)+'</div></div><div class="forecast-value">'+number(p.conditionalPointsPerGame)+'</div></div>').join('');
+   $('#projectionCoverage').textContent='Weekly model pending.';
+ }else{$('#modelStatus').innerHTML='<div class="empty-copy">No current model output.</div>';}
  renderAllProjections();
 }
 function renderBacktest(){
@@ -504,14 +507,20 @@ function renderBacktest(){
  '<p class="accuracy-note">'+esc(m.nPlayerWeeks)+' 2025 player-weeks (Weeks '+esc(backtest.holdoutWeeks?.join('–'))+'). '+esc(details)+' Conditional on appearing in the statistics; excludes unmodeled scoring and missed games. Not a validation of injury-adjusted weekly recommendations.</p>';
 }
 function renderAllProjections(){
- const area=$('#allProjections');
- if(!model||!Array.isArray(model.players)||!model.players.length){
-   area.innerHTML='<div class="empty-copy">No independent projection data yet. Yahoo team projections above remain available.</div>';return;
- }
+ const area=$('#allProjections'),items=weekly?.players||model?.players;
+ if(!items?.length){area.innerHTML='<div class="empty-copy">No projections yet.</div>';return;}
  const q=$('#projectionSearch').value.toLowerCase().trim(),pos=$('#projectionPos').value,scope=$('#projectionOwnership').value;
- const list=model.players.filter(p=>(pos==='all'||p.position===pos)&&(scope==='all'||(scope==='mine'&&p.fantasyTeamId===TEAM_ID)||(scope==='available'&&p.ownership==='available')||(scope==='other'&&p.ownership==='rostered'&&p.fantasyTeamId!==TEAM_ID))&&(!q||[p.name,p.fantasyTeam,p.nflTeam].some(x=>String(x||'').toLowerCase().includes(q)))).sort((a,b)=>b.conditionalPointsPerGame-a.conditionalPointsPerGame);
- area.innerHTML='<div class="projection-table-head"><span>PLAYER</span><span>TEAM</span><span>MODEL PPG</span></div>'+
- (list.length?list.map(p=>'<div class="projection-table-row'+(p.fantasyTeamId===TEAM_ID?' mine':'')+'"><div class="projected-player">'+position(p.position)+'<div><strong>'+esc(p.name)+'</strong><small>'+esc(p.nflTeam||'')+' · '+esc(p.sampleGames2026)+' games sampled'+(p.injuryStatus?' · '+esc(p.injuryStatus):'')+'</small></div></div><div class="prediction-team">'+esc(p.fantasyTeam)+'</div><strong class="prediction-score mono">'+number(p.conditionalPointsPerGame)+'</strong></div>').join(''):'<div class="empty-copy">No players match those filters.</div>');
+ const hasWeekly=!!weekly?.players?.length;
+ const list=items.filter(p=>(pos==='all'||p.position===pos)&&
+ (scope==='all'||(scope==='mine'&&p.fantasyTeamId===TEAM_ID)||(scope==='available'&&p.ownership==='available')||(scope==='other'&&p.ownership==='rostered'&&p.fantasyTeamId!==TEAM_ID))&&
+ (!q||[p.name,p.fantasyTeam,p.nflTeam,p.opponent].some(x=>String(x||'').toLowerCase().includes(q))))
+ .sort((a,b)=>(b.weeklyProjectedPoints??b.conditionalPointsPerGame??-99)-(a.weeklyProjectedPoints??a.conditionalPointsPerGame??-99));
+ area.innerHTML='<div class="projection-table-head"><span>PLAYER</span><span>OPPONENT</span><span>'+(hasWeekly?'WEEK PTS':'IF ACTIVE PPG')+'</span></div>'+
+ (list.length?list.map(p=>{
+ const value=hasWeekly?weeklyDisplay(p):number(p.conditionalPointsPerGame);
+ const opp=hasWeekly?weeklyOpponent(p):'Per active game';
+ return '<div class="projection-table-row'+(p.fantasyTeamId===TEAM_ID?' mine':'')+'"><div class="projected-player">'+position(p.position)+'<div><strong>'+esc(p.name)+'</strong><small>'+esc(p.nflTeam||'')+' · '+esc(p.fantasyTeam)+(hasWeekly?' · active '+number(p.activeGamePoints):'')+'</small></div></div><div class="prediction-team">'+esc(opp)+'</div><strong class="prediction-score mono">'+esc(value)+'</strong></div>';
+ }).join(''):'<div class="empty-copy">No matching players.</div>');
 }
 function showPage(page){
  document.querySelectorAll('.page').forEach(x=>x.hidden=x.id!=='page-'+page);
