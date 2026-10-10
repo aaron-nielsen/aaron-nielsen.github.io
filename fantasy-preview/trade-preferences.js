@@ -202,6 +202,7 @@ function draw(){
 }
 function updated(){
  if(!state)return;
+ const count=$('tradeCount');if(count)count.hidden=active()||state.leagueKey==='nebraska';
  if(active())render();
  else {
   nextJob++;
