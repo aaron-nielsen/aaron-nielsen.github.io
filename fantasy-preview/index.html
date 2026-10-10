@@ -593,6 +593,56 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 </style>
 <link rel="stylesheet" href="./clean-dashboard.css">
 <link rel="stylesheet" href="./trade-preferences.css">
+<style id="team-score-comparison">
+/* Current-week forecasts: labelled scores and mobile-friendly paired columns */
+#page-overview .match-compact-scores{align-items:start}
+#page-overview .match-compact-name{min-height:0;margin-bottom:8px}
+#page-overview .match-compact-projection{display:flex;align-items:baseline;justify-content:space-between;gap:5px;padding:6px 1px;border-top:1px solid #dfc7a4}
+#page-overview .match-compact-projection small{font:700 11px/1.3 'Source Sans 3',Arial,sans-serif;color:#80634b}
+#page-overview .match-compact-projection strong{font:800 clamp(19px,2.6vw,28px)/1.1 'Source Sans 3',Arial,sans-serif;color:#49654f;font-variant-numeric:tabular-nums;white-space:nowrap}
+#page-overview .match-compact-projection.yahoo strong{color:#65462d}
+#page-overview .match-compact-projection.yahoo{padding-bottom:0}
+#page-overview .match-compact-footer{line-height:1.4}
+#page-overview .scoreboard-item.compared{display:grid;grid-template-columns:minmax(0,1fr) 18px minmax(0,1fr);gap:9px;align-items:start;padding:11px 8px}
+#page-overview .compared-team{min-width:0}
+#page-overview .compared-team>strong{display:block;min-height:30px;font-size:12px;line-height:1.2;overflow-wrap:anywhere;margin-bottom:5px}
+#page-overview .compared-team.right>strong{text-align:right}
+#page-overview .compared-line{display:flex;justify-content:space-between;gap:5px;align-items:baseline;font-size:12px;line-height:1.5;font-variant-numeric:tabular-nums}
+#page-overview .compared-line small{font-size:10px;color:#80654b}
+#page-overview .compared-line b{font-size:13px;color:#46614f;white-space:nowrap}
+#page-overview .compared-line.yahoo b{color:#795837}
+#page-overview .compared .dash{padding-top:38px}
+#page-projections .team-compare-head,#page-projections .team-compare-row{display:grid;grid-template-columns:minmax(0,1fr) 75px 75px;align-items:center;column-gap:8px}
+#page-projections .team-compare-head{padding:10px 8px 7px;border-bottom:1px solid #d8c6b2;color:#7e654c;font-size:11px;font-weight:750}
+#page-projections .team-compare-head span:not(:first-child){text-align:right}
+#page-projections .team-compare-row{padding:10px 8px;border-bottom:1px solid #e5d9ca;min-height:48px}
+#page-projections .team-compare-row:last-child{border-bottom:0}
+#page-projections .team-compare-row.mine{background:#f8ecda;border-radius:5px}
+#page-projections .team-compare-name{display:flex;align-items:baseline;gap:8px;min-width:0;font:700 13px/1.35 'Source Sans 3',Arial,sans-serif;overflow-wrap:anywhere}
+#page-projections .team-compare-name small{color:#987b5f;min-width:16px}
+#page-projections .team-compare-value{font:800 17px 'Source Sans 3',Arial,sans-serif;text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;color:#456249}
+#page-projections .team-compare-value.yahoo{color:#795639}
+#page-projections .model-team-head.paired{display:grid;grid-template-columns:minmax(0,1fr) 78px 78px 14px;gap:7px}
+#page-projections .model-team-head.paired span:not(:first-child){text-align:right}
+#page-projections .model-team-entry.paired summary{display:grid;grid-template-columns:minmax(0,1fr) 156px 14px;gap:7px}
+#page-projections .model-team-score-pair{display:grid;grid-template-columns:1fr 1fr;gap:5px;font-size:14px;font-variant-numeric:tabular-nums;text-align:right;align-items:center}
+#page-projections .model-team-score-pair b{color:#46644e;white-space:nowrap}
+#page-projections .model-team-score-pair b.yahoo{color:#795838}
+#page-projections .model-team-entry.paired summary>i{align-self:center;font-size:12px;font-style:normal;color:#8c755f}
+@media(max-width:550px){
+ #page-overview .match-compact-projection small{font-size:10px}
+ #page-overview .match-compact-projection strong{font-size:20px}
+ #page-overview .scoreboard-item.compared{gap:5px}
+ #page-overview .compared-line small{font-size:9px}
+ #page-overview .compared-line b{font-size:12px}
+ #page-projections .team-compare-head,#page-projections .team-compare-row{grid-template-columns:minmax(0,1fr) 66px 66px;gap:5px;padding-left:5px;padding-right:5px}
+ #page-projections .team-compare-name{font-size:12px;gap:5px}
+ #page-projections .team-compare-value{font-size:15px}
+ #page-projections .model-team-head.paired{grid-template-columns:minmax(0,1fr) 65px 65px 12px;gap:4px;padding:9px}
+ #page-projections .model-team-entry.paired summary{grid-template-columns:minmax(0,1fr) 130px 12px;gap:4px;padding:10px}
+ #page-projections .model-team-score-pair{font-size:12px;gap:3px}
+}
+</style>
 </head><body>
 <div class="shell">
 
@@ -663,7 +713,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 <div class="section-top"><div><div class="eyebrow">2026 · dated Week 5 model snapshot</div><h2>Projections</h2></div></div>
 <div class="projection-split">
 <div class="panel"><div class="panel-header"><div><div class="panel-title">My weekly forecasts</div></div></div><div class="model-status" id="modelStatus"><div class="eyebrow">EXPERIMENTAL</div><div class="headline">Loading player projections</div></div></div>
-<div class="panel"><div class="panel-header"><div><div class="panel-title">Yahoo team projections</div><div class="panel-sub" id="yahooForecastLeagueSubtitle">Yahoo projected totals, current week</div></div><span class="chip" id="projectionWeek">WEEK 5</span></div><div class="projection-list" id="forecastList"></div></div>
+<div class="panel"><div class="panel-header"><div><div class="panel-title">Team predictions</div><div class="panel-sub" id="yahooForecastLeagueSubtitle">Da Vinci and Yahoo · current week</div></div><span class="chip" id="projectionWeek">WEEK 5</span></div><div class="projection-list" id="forecastList"></div></div>
 </div>
 <section class="panel model-league-panel" id="our-team-forecasts" aria-label="Our league-wide full-lineup projections">
  <div class="panel-header"><div><div class="panel-title">Da Vinci team forecasts</div></div>
@@ -831,6 +881,24 @@ function modelTeamLineup(teamId,forecastWeek){
  modelLineupCache.set(key,answer);
  return answer;
 }
+
+function currentTeamForecast(t){
+ const line=modelTeamLineup(t.id,week.week);
+ return {davinci:Number.isFinite(line?.points)?line.points:null,
+  yahoo:Number.isFinite(t.projectedPoints)?t.projectedPoints:null};
+}
+function scoreLabel(value){return Number.isFinite(value)?value.toFixed(1):'—';}
+function pairLineupScore(t){
+ const n=currentTeamForecast(t);
+ return '<div class="compared-line"><small>Da Vinci</small><b>'+scoreLabel(n.davinci)+'</b></div>'+
+  '<div class="compared-line yahoo"><small>Yahoo</small><b>'+scoreLabel(n.yahoo)+'</b></div>';
+}
+function matchupTeamCard(t){
+ const n=currentTeamForecast(t);
+ return '<div class="match-compact-side"><div class="match-compact-name">'+esc(t.name)+'</div>'+
+  '<div class="match-compact-projection"><small>Da Vinci</small><strong>'+scoreLabel(n.davinci)+'</strong></div>'+
+  '<div class="match-compact-projection yahoo"><small>Yahoo</small><strong>'+scoreLabel(n.yahoo)+'</strong></div></div>';
+}
 function renderModelMatchup(){
  const area=$('#modelMatchupSummary'),pair=matchup(),other=pair.home.id===TEAM_ID?pair.away:pair.home;
  const a=modelTeamLineup(TEAM_ID,week.week),b=modelTeamLineup(other.id,week.week);
@@ -842,10 +910,8 @@ function renderModelMatchup(){
   def:lineup.ids.find(p=>p.slot===8)?.points??0
  });
  const p=splits(a),q=splits(b);
- area.innerHTML='<div class="model-short"><strong>DA VINCI MODEL · K + DEF</strong>'+
-  '<span>'+esc(team(TEAM_ID).name)+' <b>'+a.points.toFixed(1)+'</b> · '+esc(other.name)+' <b>'+b.points.toFixed(1)+'</b></span>'+
-  '<small>Yahoo: '+(Number.isFinite((pair.home.id===TEAM_ID?pair.home:pair.away).projectedPoints)?(pair.home.id===TEAM_ID?pair.home:pair.away).projectedPoints.toFixed(1):'—')+' / '+(Number.isFinite(other.projectedPoints)?other.projectedPoints.toFixed(1):'—')+'</small>'+
-  '<em>'+(diff>=0?'You':'Opponent')+' +'+Math.abs(diff).toFixed(1)+'</em>'+
+ area.innerHTML='<div class="model-short"><strong>Da Vinci lineup model</strong>'+
+  '<span>Optimized nine starters · includes K + DEF</span>'+
   '<a href="#our-team-forecasts" id="modelTeamJump">All teams →</a></div>'+
   '<details class="quiet-details model-score-details"><summary>Score breakdown</summary>'+
   '<div class="model-breakout"><span>Offense <b>'+p.offense.toFixed(1)+' / '+q.offense.toFixed(1)+'</b></span>'+
@@ -874,7 +940,10 @@ function renderModelTeamRankings(){
   const total=games.every(g=>g.lineup)?games.reduce((s,g)=>s+g.lineup.points,0):null;
   return {team:t,games,total,review:games.reduce((s,g)=>s+(g.lineup?.needsReview||0),0)};
  }).sort((a,b)=>(b.total??-1)-(a.total??-1));
- area.innerHTML='<div class="model-team-head"><span>TEAM</span><span>'+(showYahoo?'DA VINCI / YAHOO':multiple?'TOTAL MODELED PTS':'MODELED PTS')+'</span></div>'+
+ area.innerHTML=showYahoo?
+ '<div class="model-team-head paired"><span>TEAM</span><span>Da Vinci</span><span>Yahoo</span><span></span></div>':
+ '<div class="model-team-head"><span>TEAM</span><span>'+(multiple?'TOTAL MODELED PTS':'MODELED PTS')+'</span></div>';
+ area.innerHTML+=
  (showYahoo?'<p class="quiet tiny" style="margin:7px 0 10px">Da Vinci optimizes nine eligible starters; Yahoo uses its current submitted lineup. Both include K and DEF.</p>':'')+
  rows.map((r,i)=>{
   const games=r.games.map(g=>{
@@ -884,10 +953,11 @@ function renderModelTeamRankings(){
    return '<div class="team-model-week"><strong>Week '+g.week+(multiple?' · '+g.lineup.points.toFixed(2)+' pts':'')+'</strong>'+
     '<div class="team-model-players">'+players+'</div></div>';
   }).join('');
-  return '<details class="model-team-entry'+(r.team.id===TEAM_ID?' my-model-team':'')+'"><summary>'+
+  return '<details class="model-team-entry'+(showYahoo?' paired':'')+(r.team.id===TEAM_ID?' my-model-team':'')+'"><summary>'+
    '<span><small>'+(i+1)+'.</small> <strong>'+esc(r.team.name)+(r.team.id===TEAM_ID?' ★':'')+'</strong>'+
    (r.review?'<em> · status review</em>':'')+'</span>'+
-   '<b>'+(r.total==null?'—':r.total.toFixed(2))+(showYahoo?' / '+(Number.isFinite(yahooByTeam.get(String(r.team.id)))?yahooByTeam.get(String(r.team.id)).toFixed(2):'—'):'')+' <i>⌄</i></b></summary>'+
+   (showYahoo?'<span class="model-team-score-pair"><b>'+scoreLabel(r.total)+'</b><b class="yahoo">'+scoreLabel(yahooByTeam.get(String(r.team.id)))+'</b></span><i>⌄</i>':
+    '<b>'+(r.total==null?'—':r.total.toFixed(2))+' <i>⌄</i></b>')+'</summary>'+
    '<div class="model-team-expanded"><p>'+weeks.length+' modeled week'+(weeks.length===1?'':'s')+
    (multiple&&r.total!=null?' · '+(r.total/weeks.length).toFixed(2)+' pts/week':'')+
    ' · conditional on participation</p>'+games+'</div></details>';
@@ -922,19 +992,15 @@ function initModelTeamForecasts(){
 
 function initOverview(){
  const m=matchup(),you=m.home.id===TEAM_ID?m.home:m.away,them=m.home.id===TEAM_ID?m.away:m.home;
- const y=you.projectedPoints,t=them.projectedPoints;
- const hasForecast=Number.isFinite(y)&&Number.isFinite(t);
- const delta=hasForecast?y-t:null;
- const summary=delta==null?'Projection unavailable':Math.abs(delta)<0.005?'Projected tie':delta>0?'You are favored by '+Math.abs(delta).toFixed(2)+' points':'Opponent favored by '+Math.abs(delta).toFixed(2)+' points';
+ const yours=currentTeamForecast(you),theirs=currentTeamForecast(them);
+ const margin=(a,b,label)=>!Number.isFinite(a)||!Number.isFinite(b)?label+': unavailable':
+  Math.abs(a-b)<.05?label+': even':label+': '+(a>b?'you +':'opponent +')+Math.abs(a-b).toFixed(1);
  $('#hero').innerHTML=
-   '<div class="match-compact-heading">WEEK '+esc(week.week)+' <span>· YAHOO PROJECTED SCORE</span></div>'+
-   '<div class="match-compact-scores">'+
-   '<div class="match-compact-side"><div class="match-compact-name">'+esc(you.name)+'</div>'+
-   '<div class="match-compact-points">'+(Number.isFinite(y)?y.toFixed(2):'—')+'</div></div>'+
-   '<div class="match-compact-vs" aria-hidden="true">—</div>'+
-   '<div class="match-compact-side"><div class="match-compact-name">'+esc(them.name)+'</div>'+
-   '<div class="match-compact-points">'+(Number.isFinite(t)?t.toFixed(2):'—')+'</div></div></div>'+
-   '<div class="match-compact-footer">'+esc(summary)+'</div>';
+   '<div class="match-compact-heading">WEEK '+esc(week.week)+' <span>· TEAM PREDICTIONS</span></div>'+
+   '<div class="match-compact-scores">'+matchupTeamCard(you)+
+   '<div class="match-compact-vs" aria-hidden="true">—</div>'+matchupTeamCard(them)+'</div>'+
+   '<div class="match-compact-footer">'+margin(yours.davinci,theirs.davinci,'Da Vinci')+' · '+
+    margin(yours.yahoo,theirs.yahoo,'Yahoo')+'</div>';
  const st=standing(TEAM_ID);$('#wl').innerHTML=st?.wins==null?'—':esc(st.wins)+'<span>–</span>'+esc(st.losses);$('#rankDesc').textContent=st?.rank==null?'Yahoo standings unavailable':'#'+st.rank+' / '+rosters.teams.length;
  $('#pointsFor').textContent=number(st?.pointsFor);$('#waiverRank').textContent=st?.waiverPriority==null?'—':'#'+st.waiverPriority;
  // Show all rostered players instead of cherry-picked best backups.
@@ -944,7 +1010,11 @@ function initOverview(){
     Array.from({length:Math.max(0,last-first)},(_,i)=>'<option value="'+(first+i+1)+'">Week '+(first+i+1)+' · Optimized</option>').join('');
   window.DaVinciRosterOverview?.init({rosters,weekly,future:futureData,teamId:TEAM_ID,snapshotWeek:first,optimize:modelTeamLineup});
   selector.addEventListener('change',()=>window.DaVinciRosterOverview?.render(Number(selector.value)));
-  $('#leagueBoard').innerHTML=week.matchups.map(m=>'<div class="scoreboard-item'+(m.home.id===TEAM_ID||m.away.id===TEAM_ID?' mine':'')+'"><div class="side">'+esc(m.home.name)+'</div><div class="pts mono">'+number(m.home.projectedPoints)+'</div><div class="dash">–</div><div class="pts mono">'+number(m.away.projectedPoints)+'</div><div class="side right">'+esc(m.away.name)+'</div></div>').join('');
+  $('#leagueBoard').innerHTML=week.matchups.map(m=>
+  '<div class="scoreboard-item compared'+(m.home.id===TEAM_ID||m.away.id===TEAM_ID?' mine':'')+'">'+
+  '<div class="compared-team"><strong>'+esc(m.home.name)+'</strong>'+pairLineupScore(m.home)+'</div>'+
+  '<div class="dash">–</div>'+
+  '<div class="compared-team right"><strong>'+esc(m.away.name)+'</strong>'+pairLineupScore(m.away)+'</div></div>').join('');
  $('#boardWeek').textContent='WEEK '+week.week;$('#projectionWeek').textContent='WEEK '+week.week;
  $('#sync').textContent='Yahoo snapshot · '+new Date(week.retrievedAt).toLocaleString(undefined,{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'});
 }
@@ -1181,9 +1251,13 @@ function renderSpecialValidation(){
  '<details class="quiet-details special-validation-help"><summary>Validation scope</summary><p>2025 rolling test across '+specialValidation.n+' team-games (Weeks 5–17). These are proxy tests of points allowed and red-zone opportunities, not actual Yahoo K/DEF fantasy-point accuracy; turnover, sacks and weather remain unvalidated.</p></details>';
 }
 function renderProjection(){
- const ranking=week.matchups.flatMap(m=>[m.home,m.away]).sort((a,b)=>(b.projectedPoints??-1)-(a.projectedPoints??-1));
- const max=Math.max(1,...ranking.map(t=>t.projectedPoints||0));
- $('#forecastList').innerHTML=ranking.map((t,i)=>'<div class="forecast-row'+(t.id===TEAM_ID?' mine':'')+'"><div class="rank">'+(i+1)+'</div><div><div class="forecast-name">'+esc(t.name)+(t.id===TEAM_ID?' ★':'')+'</div><div class="forecast-track"><div class="forecast-fill" style="width:'+Math.max(0,Math.min(100,(t.projectedPoints||0)/max*100)).toFixed(1)+'%"></div></div></div><div class="forecast-value">'+number(t.projectedPoints)+'</div></div>').join('');
+ const ranking=week.matchups.flatMap(m=>[m.home,m.away]).map(t=>({...t,scores:currentTeamForecast(t)}))
+  .sort((a,b)=>(b.scores.davinci??-Infinity)-(a.scores.davinci??-Infinity));
+ $('#forecastList').innerHTML='<div class="team-compare-head"><span>Team</span><span>Da Vinci</span><span>Yahoo</span></div>'+
+ ranking.map((t,i)=>'<div class="team-compare-row'+(t.id===TEAM_ID?' mine':'')+'">'+
+ '<div class="team-compare-name"><small>'+(i+1)+'.</small><strong>'+esc(t.name)+(t.id===TEAM_ID?' ★':'')+'</strong></div>'+
+ '<strong class="team-compare-value">'+scoreLabel(t.scores.davinci)+'</strong>'+
+ '<strong class="team-compare-value yahoo">'+scoreLabel(t.scores.yahoo)+'</strong></div>').join('');
  renderBacktest();
  if(weekly?.players?.length){
    const mine=weekly.players.filter(p=>p.fantasyTeamId===TEAM_ID)
@@ -1277,7 +1351,7 @@ async function get(path){const r=await fetch(DATA_BASE+path+'.json',{cache:'no-s
   modelLineupCache.clear();
   $('#rosterLeagueCount').textContent=rosters.teams.length+' TEAMS';
   $('#overviewLeagueLabel').textContent=LEAGUE_NAME+' · 2026';
-  $('#yahooForecastLeagueSubtitle').textContent='Yahoo projected totals for all '+rosters.teams.length+' teams';
+  $('#yahooForecastLeagueSubtitle').textContent='Da Vinci and Yahoo · Week '+week.week+' · '+rosters.teams.length+' teams';
   $('#rosterLeagueIntro').textContent='Browse '+LEAGUE_NAME+' rosters and compare starters with eligible backups.';
   $('#leagueSnapshot').textContent='Updated '+new Date(week.retrievedAt).toLocaleDateString(undefined,{month:'short',day:'numeric'});
   document.title='Da Vinci Fantasy Lab | '+LEAGUE_NAME;
