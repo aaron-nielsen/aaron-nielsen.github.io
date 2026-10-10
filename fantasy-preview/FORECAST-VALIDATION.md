@@ -65,3 +65,25 @@ node fantasy-preview/tests/forecast-accuracy.test.cjs
 historical Yahoo projection feed or completed player-week actuals. Snapshot
 export is a command, not an unattended scheduler. Do not advertise automatic
 collection or accuracy results until that integration is running.
+
+## Scheduled archive and verified publication (October 2026)
+
+The GitHub Actions workflow `.github/workflows/fantasy-pregame-archive.yml`
+is configured for **12:00 UTC Thursday and Sunday** and can also be
+triggered manually. It freezes both leagues into distinct, dated files
+under `fantasy-preview/forecast-archive/{csu,nebraska}/` only when
+the source forecast is sufficiently fresh and games are still upcoming.
+A workflow definition is not evidence that Actions is enabled or that
+a scheduled run succeeded; inspect the Actions tab and committed archive
+files to confirm operation.
+
+To publish multiple completed-week observation files after sourcing
+verified actual points and timestamped Yahoo pregame predictions, run:
+
+`node fantasy-preview/scripts/publish-observations.cjs fantasy-preview/data/forecast-observations.json observations/week05.json observations/week06.json`
+
+Use `fantasy-preview/data/nebraska/forecast-observations.json` for Nebraska.
+The publisher refuses invalid, duplicate, or post-kickoff records. Do not
+copy current `future.json` values into historical actuals or pregame Yahoo
+columns. Actual-score ingestion and historical Yahoo forecast capture
+remain external data-source integrations, not completed automated feeds.
