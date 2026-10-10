@@ -310,11 +310,31 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 .weekly-mini{font:700 19px 'Cormorant Garamond',Georgia,serif;color:#7e3f20;min-width:69px;text-align:right}
 @media(max-width:700px){.shell{padding:0 12px 50px}.season-identifier span{font-size:9px}.season-identifier strong{font-size:20px}.topbar{height:55px}.renaissance-banner{margin-top:12px}.nav-btn{font-size:11px}.section-top h1,.section-top h2{font-size:42px}.panel-title{font-size:28px}.row-name,.player-info b{font-size:14px}.weekly-mini{min-width:52px;font-size:17px}.finder-surface h2{font-size:31px}}
 
+
+/* Renaissance lineup suggestions */
+.recommendations-panel{margin-top:18px;background:#f8e8c9}
+.recommendation-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;padding:18px 20px 9px}
+.recommendation{padding:19px 20px;border:1px solid #cba473;background:linear-gradient(135deg,#ffefd0,#efd5a9);border-radius:6px;position:relative}
+.recommendation.primary{border-color:#99542a;box-shadow:inset 3px 0 #945023}
+.recommendation-kicker{font-size:11px;font-weight:800;letter-spacing:.11em;color:#8f502d}
+.recommendation-move{display:grid;grid-template-columns:minmax(0,1fr) 24px minmax(0,1fr);gap:12px;margin:13px 0;align-items:center}
+.recommendation-move>div{min-width:0}
+.recommendation-action{display:block;font-size:10px;font-weight:800;color:#6c6942;letter-spacing:.1em;margin-bottom:4px}
+.recommendation-action.sit{color:#986c57}
+.recommendation-move strong{display:block;font:700 25px/1.05 'Cormorant Garamond',Georgia,serif;color:#54301b;overflow-wrap:anywhere}
+.recommendation-move small{display:block;font-size:12px;color:#805a3c;margin-top:5px}
+.recommendation-arrow{text-align:center;font:600 26px Georgia,serif;color:#997648}
+.recommendation-gain{font:700 28px 'Cormorant Garamond',Georgia,serif;color:#654925;border-top:1px solid #d8b98b;padding-top:8px}
+.recommendation-gain span{font:600 12px 'Source Sans 3',sans-serif;text-transform:uppercase;letter-spacing:.05em}
+.recommendation-note{font-size:12px;line-height:1.5;color:#75573e;margin:3px 20px 17px}
+@media(max-width:800px){.recommendation-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.recommendation-grid{padding:12px;gap:10px}.recommendation{padding:14px}.recommendation-move strong{font-size:23px}.recommendation-note{margin:2px 13px 15px;font-size:12px}}
+
 </style>
 </head><body>
 <div class="shell">
 <header class="topbar"><div class="season-identifier"><strong>CSU STATS</strong><span>FANTASY FOOTBALL · 2026</span></div><div class="top-right"><a class="top-link" href="https://football.fantasysports.yahoo.com/f1/258793" target="_blank" rel="noopener">OPEN YAHOO ↗</a><div class="weekstamp"><b id="weekHead">05</b><small>WEEK / 2026</small></div></div></header>
-<div class="renaissance-banner"><img src="./assets/da-vinci-fantasy-lab.webp" alt="Da Vinci Fantasy Lab: Leonardo's portrait alongside ink sketches of normal distributions, statistical plots and football plays" width="1250" height="417" fetchpriority="high"></div>
+<div class="renaissance-banner"><img src="./assets/da-vinci-fantasy-lab-approved.webp" alt="Da Vinci Fantasy Lab: Leonardo's portrait alongside ink sketches of normal distributions, statistical plots and football plays" width="1250" height="417" fetchpriority="high"></div>
 <nav class="nav" aria-label="Dashboard navigation">
 <button class="nav-btn active" type="button" data-page="overview">◈ &nbsp;OVERVIEW</button>
 <button class="nav-btn" type="button" data-page="rosters">▤ &nbsp;ROSTERS</button>
@@ -329,6 +349,11 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 <div class="matchup" id="hero"><div class="loading">Loading this week's matchup…</div></div>
 <div class="record-card"><div class="record-upper"><div class="eyebrow">SEASON RECORD</div><div class="record-fig mono" id="wl">—</div><div class="record-desc" id="rankDesc">League standings</div></div><div class="record-stats"><div><strong class="mono" id="pointsFor">—</strong><small>POINTS SCORED</small></div><div><strong id="waiverRank" class="mono">—</strong><small>WAIVER PRIORITY</small></div></div></div>
 </div>
+<section class="panel recommendations-panel" aria-label="Suggested lineup changes">
+<div class="panel-header"><div><div class="panel-title">Suggested lineup changes</div><div class="panel-sub">Based on this week's preliminary model · your current roster</div></div><span class="chip">WEEK 5</span></div>
+<div id="lineupRecommendations" class="recommendation-grid"><div class="empty-copy">Calculating lineup options…</div></div>
+<p class="recommendation-note">Advisory only. All projections are experimental and based on the saved Yahoo status snapshot. Confirm player availability before kickoff; no Yahoo lineup changes are made.</p>
+</section>
 <div class="columns">
 <div class="panel"><div class="panel-header"><div><div class="panel-title">Your starting lineup</div><div class="panel-sub">Yahoo starting lineup</div></div><button class="sub-link" type="button" data-jump="rosters">FULL ROSTER ↗</button></div><div class="roster-mini" id="myLineup"></div></div>
 <div class="panel"><div class="panel-header"><div><div class="panel-title">League matchups</div><div class="panel-sub">Yahoo projected final scores</div></div><span class="chip" id="boardWeek">WEEK 5</span></div><div class="scoreboard-list" id="leagueBoard"></div><div class="board-note">Forecasts can change as games are played. Snapshot, not a live scoreboard.</div></div>
@@ -412,6 +437,47 @@ function initOverview(){
  $('#leagueBoard').innerHTML=week.matchups.map(m=>'<div class="scoreboard-item'+(m.home.id===TEAM_ID||m.away.id===TEAM_ID?' mine':'')+'"><div class="side">'+esc(m.home.name)+'</div><div class="pts mono">'+number(m.home.projectedPoints)+'</div><div class="dash">–</div><div class="pts mono">'+number(m.away.projectedPoints)+'</div><div class="side right">'+esc(m.away.name)+'</div></div>').join('');
  $('#weekHead').textContent=String(week.week).padStart(2,'0');$('#boardWeek').textContent='WEEK '+week.week;$('#projectionWeek').textContent='WEEK '+week.week;
  $('#sync').textContent='Yahoo snapshot · '+new Date(week.retrievedAt).toLocaleString(undefined,{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'});
+}
+function renderRecommendations(){
+ const area=$('#lineupRecommendations');
+ if(!weekly?.players?.length){area.innerHTML='<div class="empty-copy">Week-specific player forecasts are not available yet.</div>';return;}
+ const roster=team(TEAM_ID).players;
+ const starters=roster.filter(p=>p.slot!=='BN'&&p.slot!=='IR'&&['QB','RB','WR','TE'].includes(p.position));
+ const bench=roster.filter(p=>p.slot==='BN'&&['QB','RB','WR','TE'].includes(p.position));
+ const slotEligibility={'QB':['QB'],'RB':['RB'],'WR':['WR'],'TE':['TE'],'W/R/T':['RB','WR','TE'],'FLEX':['RB','WR','TE']};
+ const choices=[];
+ for(const starter of starters){
+   const s=weeklyProjection(starter);
+   if(!s||s.weeklyProjectedPoints==null)continue;
+   for(const candidate of bench){
+     if(!slotEligibility[starter.slot]?.includes(candidate.position))continue;
+     const c=weeklyProjection(candidate);
+     if(!c||c.forecastStatus!=='assuming_active'||c.weeklyProjectedPoints==null)continue;
+     const gain=c.weeklyProjectedPoints-s.weeklyProjectedPoints;
+     if(gain>0.25)choices.push({starter,candidate,s,c,gain,slot:starter.slot});
+   }
+ }
+ choices.sort((a,b)=>b.gain-a.gain);
+ const usedStarter=new Set(),usedBench=new Set(),recommended=[];
+ for(const choice of choices){
+   if(usedStarter.has(choice.starter.id)||usedBench.has(choice.candidate.id))continue;
+   usedStarter.add(choice.starter.id);usedBench.add(choice.candidate.id);
+   recommended.push(choice);
+   if(recommended.length===4)break;
+ }
+ if(!recommended.length){
+   area.innerHTML='<div class="empty-copy">No clear, one-for-one lineup improvement among healthy reported bench players. Review injury news before kickoff.</div>';
+   return;
+ }
+ area.innerHTML=recommended.map((r,i)=>{
+   const tier=i===0?'primary':'secondary';
+   return '<article class="recommendation '+tier+'">'+
+     '<div class="recommendation-kicker">SUGGESTED SWAP · '+esc(r.slot)+' SLOT</div>'+
+     '<div class="recommendation-move"><div><span class="recommendation-action">START</span><strong>'+esc(r.candidate.name)+'</strong><small>'+esc(weeklyOpponent(r.c))+' · '+number(r.c.weeklyProjectedPoints)+' pts</small></div>'+
+     '<div class="recommendation-arrow" aria-hidden="true">⇄</div>'+
+     '<div><span class="recommendation-action sit">SIT</span><strong>'+esc(r.starter.name)+'</strong><small>'+esc(weeklyOpponent(r.s))+' · '+number(r.s.weeklyProjectedPoints)+' pts</small></div></div>'+
+     '<div class="recommendation-gain">+'+r.gain.toFixed(2)+' <span>projected points</span></div></article>';
+ }).join('');
 }
 function initRosters(){
  const choice=$('#teamChoice');
@@ -535,7 +601,7 @@ async function get(path){const r=await fetch('./data/'+path+'.json',{cache:'no-s
   [rosters,available,week,model,backtest,weekly]=await Promise.all([get('rosters'),get('available'),get('week'),get('projections').catch(()=>null),get('backtest').catch(()=>null),get('weekly').catch(()=>null)]);
   if(!Array.isArray(rosters.teams)||!Array.isArray(available.players)||!Array.isArray(week.matchups)||!Array.isArray(week.standings)||!team(TEAM_ID)||!matchup())throw Error('League data incomplete or mismatched');
   if(rosters.leagueId!==week.leagueId||available.leagueId!==rosters.leagueId)throw Error('League identity mismatch');
-  initOverview();initRosters();initFinder();renderProjection();
+  initOverview();initRosters();initFinder();renderProjection();renderRecommendations();
  }catch(e){
   $('#hero').innerHTML='<div class="loading"><strong>Dashboard data could not be loaded.</strong><p>'+esc(e.message)+'</p><p>Check the published JSON files or reload this page.</p></div>';
   $('#sync').textContent='Data load failed';
