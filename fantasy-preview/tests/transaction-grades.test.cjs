@@ -65,6 +65,24 @@ function setup(){
   assert.ok(html.includes('Not graded'));
  }
 }
+// Reinitializing for another league must discard the previous league's cached cards.
+{
+ const {ctx,element}=setup();
+ const roster=id=>({teams:[{id,name:'Team '+id,players:[]}]});
+ const transaction=id=>({transactions:[{transaction_id:id,timestamp:1,status:'complete',
+  type:'drop',date:'2026-10-01',team_ids:[id],players_added:[],players_dropped:[]}]});
+ const future={endWeek:5,players:[]};
+ ctx.DaVinciTransactions.init({rosters:roster('7'),future,week:5,teamId:'7',
+  transactions:transaction('7'),optimize:()=>({score:0})});
+ ctx.DaVinciTransactions.update();
+ assert.ok(element('transactionCards').innerHTML.includes('Team 7'));
+ ctx.DaVinciTransactions.init({rosters:roster('6'),future,week:5,teamId:'6',
+  transactions:transaction('6'),optimize:()=>({score:0})});
+ ctx.DaVinciTransactions.update();
+ const html=element('transactionCards').innerHTML;
+ assert.ok(html.includes('Team 6'),'New league transactions must render');
+ assert.ok(!html.includes('Team 7'),'Old league transactions must be discarded');
+}
 // Real data snapshots: every verified transaction remains visible in CSU and Nebraska.
 require(path.join(base,'special-teams-model.js'));
 const context=load('data/special-teams-context.json');
