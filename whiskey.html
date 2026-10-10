@@ -115,14 +115,18 @@ button,input,select{font:inherit}
 .bar-value{text-align:right;color:#e5d8cc;font-variant-numeric:tabular-nums;font-size:.9rem}
 .bar-value .pct-range{color:var(--muted);font-size:.78rem;margin-left:5px}
 .rating-context{padding:11px 16px 12px}
-.rating-context-summary{display:flex;gap:18px;flex-wrap:wrap;color:var(--muted);font-size:.86rem;margin-bottom:5px}
+.rating-context-summary{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:.86rem;margin-bottom:5px}
+.rating-summary-stats{display:flex;gap:18px;flex-wrap:wrap}
 .rating-context-summary strong{color:var(--text);font-weight:650}
-.rating-percentile-key{display:inline-flex;align-items:center;gap:5px}
-.rating-percentile-key i{width:8px;height:8px;border-radius:50%;display:inline-block;margin-left:4px}
-.rating-percentile-key i:first-child{margin-left:0}
-.rating-percentile-key i.low{background:#b84438}
-.rating-percentile-key i.mid{background:#d29332}
-.rating-percentile-key i.high{background:#548f4a}
+.rating-percentile-key{display:flex;align-items:center;justify-content:flex-end;gap:12px;margin-left:auto;white-space:nowrap}
+.rating-percentile-key span{display:inline-flex;align-items:center;gap:5px;font-weight:600}
+.rating-percentile-key i{width:8px;height:8px;border-radius:50%;display:inline-block}
+.rating-percentile-key .high{color:#72a85a}
+.rating-percentile-key .mid{color:#e3b04d}
+.rating-percentile-key .low{color:#c85a4a}
+.rating-percentile-key i.high{background:#72a85a}
+.rating-percentile-key i.mid{background:#e3b04d}
+.rating-percentile-key i.low{background:#c85a4a}
 .rating-histogram{display:grid;grid-template-columns:repeat(41,minmax(0,1fr));gap:2px;height:94px;align-items:end;padding:0 1px}
 .rating-bin{height:100%;display:flex;align-items:flex-end;justify-content:center;min-width:0}
 .rating-bin-bar{width:78%;min-width:2px;border-radius:3px 3px 0 0}
@@ -234,6 +238,9 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
   .bar-row{grid-template-columns:105px 1fr 90px;gap:8px}
   .distillery-chart .bar-row,.distillery-chart .distillery-head{grid-template-columns:125px minmax(105px,1fr) 44px 48px 44px;gap:5px}
   .substyle-chart .bar-row{grid-template-columns:minmax(170px,45%) 1fr 34px}
+}
+@media(max-width:600px){
+  .rating-percentile-key{width:100%;justify-content:flex-end;gap:9px;font-size:.76rem}
 }
 @media(max-width:460px){
   .rating-context{padding-left:10px;padding-right:10px}
@@ -1030,10 +1037,16 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
 
     return '<div class="chart-body rating-context">'+
       '<div class="rating-context-summary">'+
-        '<span><strong>'+total+'</strong> ratings</span>'+
-        '<span>Mean <strong>'+mean.toFixed(2)+'</strong></span>'+
-        '<span>Median <strong>'+median.toFixed(2)+'</strong></span>'+
-        '<span class="rating-percentile-key"><i class="low"></i> bottom 20% <i class="mid"></i> middle 60% <i class="high"></i> top 20%</span>'+
+        '<div class="rating-summary-stats">'+
+          '<span><strong>'+total+'</strong> ratings</span>'+
+          '<span>Mean <strong>'+mean.toFixed(2)+'</strong></span>'+
+          '<span>Median <strong>'+median.toFixed(2)+'</strong></span>'+
+        '</div>'+
+        '<div class="rating-percentile-key">'+
+          '<span class="high"><i class="high"></i> top 20%</span>'+
+          '<span class="mid"><i class="mid"></i> middle 60%</span>'+
+          '<span class="low"><i class="low"></i> bottom 20%</span>'+
+        '</div>'+
       '</div>'+
       '<div class="rating-histogram" aria-label="Distribution of ratings from 1 to 5">'+bins.join("")+'</div>'+
       '<div class="rating-axis">'+
