@@ -125,6 +125,7 @@ for(const league of [
  }
  const html=element('waiverRecommendations').innerHTML;
  assert.ok(html.includes('Top available by position'),league.name+' missing shortlist');
+ assert.ok(!html.includes('Joe Mixon'),league.name+' recommends a Yahoo NA inactive running back');
  for(const name of ['RB','WR','TE','QB','K','DEF']){
   assert.ok(html.includes('decision-position">'+name+'</span>'),league.name+' missing '+name+' free agents');
  }
