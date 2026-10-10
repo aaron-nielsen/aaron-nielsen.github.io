@@ -20,6 +20,7 @@ const context={document:{getElementById(id){return id==='myLineup'?root:null;}}}
 vm.runInNewContext(script,context,{filename:'overview-roster.js'});
 const read=p=>JSON.parse(fs.readFileSync(path.join(base,p),'utf8'));
 const slots=['QB','RB','RB','WR','WR','TE','W/R/T','K','DEF'];
+const order={QB:0,RB:1,WR:2,TE:3,K:4,DEF:5};
 const encodedName=p=>p.name.replaceAll('&','&amp;').replaceAll("'",'&#39;').replaceAll('"','&quot;');
 for(const entry of [{folder:'data/',id:'7',label:'CSU Stats'},{folder:'data/nebraska/',id:'6',label:'Nebraska'}]){
  const rosters=read(entry.folder+'rosters.json'),weekly=read(entry.folder+'weekly.json'),future=read(entry.folder+'future.json');
@@ -41,6 +42,11 @@ for(const entry of [{folder:'data/',id:'7',label:'CSU Stats'},{folder:'data/nebr
  const current=root.innerHTML;
  assert.match(current,/Starters/);assert.match(current,/Bench/);assert.match(current,/Injured reserve/);
  assert.match(current,/Yahoo lineup/);
+ const benchSection=current.split('<strong>Bench</strong>')[1]?.split('roster-ir-heading')[0]||'';
+ const listed=[...benchSection.matchAll(/class="roster-board-position">([A-Z]+)/g)].map(m=>m[1]);
+ assert.equal(listed.length,bench.length,entry.label+' bench positions all shown');
+ assert.deepEqual(listed,listed.slice().sort((a,b)=>order[a]-order[b]),entry.label+' bench should sort QB RB WR TE K DEF');
+ assert.match(current,/carries|targets|pass att/,entry.label+' opportunity estimates missing');
  for(const p of bench)assert.ok(current.includes(encodedName(p)),entry.label+' hides benched '+p.name);
  for(const p of IR)assert.ok(current.includes(encodedName(p)),entry.label+' hides IR '+p.name);
  assert.ok(!current.includes('No eligible backup'),'No empty backup placeholders');
