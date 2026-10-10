@@ -656,3 +656,38 @@ body{font:16px/1.48 'Source Sans 3',Arial,sans-serif;color:var(--text);backgroun
  #page-overview .lineup-primary .lineup-pts{font-size:14px}
  #page-overview .lineup-column-person small{font-size:10px}
 }
+
+/* One compact line per starter/backup, rather than stacked point cards. */
+#page-overview #myLineup .lineup-column-head{padding:7px 1px;font-size:10px}
+#page-overview #myLineup .lineup-pair{padding:7px 1px;min-height:66px;gap:10px}
+#page-overview #myLineup .lineup-column-person:not(.empty){
+ display:grid;grid-template-columns:minmax(0,1fr) auto;
+ grid-template-rows:auto auto auto;align-content:center;column-gap:7px;
+}
+#page-overview #myLineup .lineup-column-person .lineup-position{
+ grid-column:1;grid-row:1;margin:0 0 2px;font-size:10px
+}
+#page-overview #myLineup .lineup-column-person strong{
+ grid-column:1;grid-row:2;font-size:14px;line-height:1.25
+}
+#page-overview #myLineup .lineup-column-person small{
+ grid-column:1;grid-row:3;font-size:11px;margin:2px 0 0
+}
+#page-overview #myLineup .lineup-column-person .lineup-pts{
+ grid-column:2;grid-row:2/span 2;align-self:center;
+ display:inline;text-align:right;white-space:nowrap;
+ font:750 17px/1.15 'Source Sans 3',Arial,sans-serif
+}
+#page-overview #myLineup .lineup-column-person.empty{
+ font-size:0!important;align-items:center;justify-content:flex-start
+}
+#page-overview #myLineup .lineup-column-person.empty:after{
+ content:'—';font:500 17px/1.2 'Source Sans 3',Arial,sans-serif;color:#aea094
+}
+@media(max-width:520px){
+ #page-overview #myLineup .lineup-pair{padding:7px 0;gap:7px}
+ #page-overview #myLineup .lineup-column-person+.lineup-column-person{padding-left:8px}
+ #page-overview #myLineup .lineup-column-person strong{font-size:12px}
+ #page-overview #myLineup .lineup-column-person small{font-size:10px}
+ #page-overview #myLineup .lineup-column-person .lineup-pts{font-size:14px}
+}
