@@ -605,6 +605,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 <button class="nav-btn" type="button" data-page="projections">Projections</button>
 <button class="nav-btn" type="button" data-page="trades">Trades</button>
 <button class="nav-btn" type="button" data-page="transactions">Transactions</button>
+<button class="nav-btn" type="button" data-page="performance">Performance</button>
 </nav>
 <main id="app">
 <section id="page-overview" class="page">
@@ -689,6 +690,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
   <div id="tradeResults" class="trades-grid"><div class="empty-copy">Calculating lineup-adjusted trade ideas…</div></div>
   
 </div></section>
+<section id="page-performance" class="page" hidden><div class="section-top"><h2>Model performance</h2></div><div class="panel" id="accuracyResults">Loading verified results…</div></section>
 <section id="page-transactions" class="page" hidden>
  <div class="section-top"><h2>Transactions</h2></div>
  <div class="panel txn-panel">
@@ -713,6 +715,8 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 <script src="./overview-roster.js"></script>
 <script src="./trade-preferences.js"></script>
 <script src="./transaction-grades.js"></script>
+<script src="./forecast-accuracy.js"></script>
+<script src="./model-performance.js"></script>
 <script>
 'use strict';
 const $=s=>document.querySelector(s);
@@ -1236,11 +1240,12 @@ function renderAllProjections(){
  }).join(''):'<div class="empty-copy">No matching players.</div>');
 }
 function showPage(page){
- if(!['overview','rosters','finder','projections','trades','transactions'].includes(page))return;
+ if(!['overview','rosters','finder','projections','trades','transactions','performance'].includes(page))return;
  if(location.hash!=='#'+page)history.replaceState(null,'','#'+page);
  document.querySelectorAll('.page').forEach(x=>x.hidden=x.id!=='page-'+page);
  document.querySelectorAll('.nav-btn').forEach(x=>{const on=x.dataset.page===page;x.classList.toggle('active',on);x.setAttribute('aria-current',on?'page':'false');});
  if(page==='transactions')window.DaVinciTransactions?.update();
+ if(page==='performance')window.DaVinciPerformance?.render(LEAGUE_KEY);
  window.scrollTo({top:0,behavior:'smooth'});
 }
 $('#waiverHorizon').addEventListener('change',()=>window.DaVinciAdvice?.renderWaivers());
@@ -1281,7 +1286,7 @@ async function get(path){const r=await fetch(DATA_BASE+path+'.json',{cache:'no-s
    window.DaVinciAdvice.init({rosters,available,week:Number(week.week),future:futureData,teamId:TEAM_ID});
    window.DaVinciPersonalTrades?.init({rosters,available,week:Number(week.week),future:futureData,teamId:TEAM_ID,leagueKey:LEAGUE_KEY,optimize:window.DaVinciAdvice.lineup});
    window.DaVinciTransactions?.init({rosters,week:Number(week.week),future:futureData,teamId:TEAM_ID,transactions:transactionsData,optimize:window.DaVinciAdvice.lineup});
-   const pageFromLink=location.hash.slice(1);if(['rosters','finder','projections','trades','transactions'].includes(pageFromLink))showPage(pageFromLink);
+   const pageFromLink=location.hash.slice(1);if(['rosters','finder','projections','trades','transactions','performance'].includes(pageFromLink))showPage(pageFromLink);
  }catch(e){
   $('#hero').innerHTML='<div class="loading"><strong>Dashboard data could not be loaded.</strong><p>'+esc(e.message)+'</p><p>Check the published JSON files or reload this page.</p></div>';
   $('#sync').textContent='Data load failed';
