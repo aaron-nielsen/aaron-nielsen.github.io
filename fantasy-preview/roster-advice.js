@@ -81,14 +81,13 @@ function renderRecommendations(){
  const statusFlags=original.filter(p=>OUT.has(status(p))||status(p)==='Q'||status(p)==='GTD');
  const summaries=[];
  if(additions.length){
-  // Show the entire optimized lineup difference, not misleading pairwise gains.
+  // Compare the two full lineups; a one-to-one player pairing can be wrong
+  // when the optimizer moves starters between WR/RB/TE and FLEX slots.
   for(const a of additions){
-   let removed=removals.find(x=>x.position===a.player.position);
-   if(!removed)removed=removals[0];
-   if(removed)removals.splice(removals.indexOf(removed),1);
-   const compared=removed?points(removed,w):null;
-   const detail=removed?'Sit '+esc(removed.name)+(compared==null?'':' · '+fmt(compared)):'Use '+SLOT_NAMES[a.slot]+' slot';
-   summaries.push('<div class="decision-row"><span class="decision-position">'+esc(SLOT_NAMES[a.slot])+'</span><span class="decision-main"><strong>Start '+esc(a.player.name)+'</strong><small>'+detail+'</small></span></div>');
+   summaries.push('<div class="decision-row"><span class="decision-position">'+esc(SLOT_NAMES[a.slot])+'</span><span class="decision-main"><strong>Start '+esc(a.player.name)+'</strong></span></div>');
+  }
+  for(const p of removals){
+   summaries.push('<div class="decision-row"><span class="decision-position">SIT</span><span class="decision-main"><strong>'+esc(p.name)+'</strong></span></div>');
   }
  }else{
   summaries.push('<div class="decision-row"><span class="decision-position">SET</span><span class="decision-main"><strong>No changes recommended</strong><small>Current starters match the top projected lineup</small></span></div>');
