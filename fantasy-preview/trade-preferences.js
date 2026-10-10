@@ -75,7 +75,7 @@ function getCandidates(){
     for(const receive of inbound[n]){
      const position=$('tradePosition')?.value||'all';
      if(!selectedIn.size&&position!=='all'&&position!=='offense_no_qb'&&!receive.players.some(p=>p.position===position))continue;
-     if(!selectedIn.size&&position==='offense_no_qb'&&receive.players.some(p=>p.position==='QB'))continue;
+     if(!selectedIn.size&&position==='offense_no_qb'&&receive.players.some(p=>!['RB','WR','TE'].includes(p.position)))continue;
      // Compare modeled rest-of-season value before more costly legal-lineup simulation.
      const gap=Math.abs(send.raw-receive.raw)/Math.max(12,send.raw,receive.raw);
      shortlist.push({partner:other,send,receive,gap,shape:n+'-for-'+n,
@@ -88,7 +88,7 @@ function getCandidates(){
   const retained=[], seen=new Set(),byShape={1:0,2:0,3:0};
   for(const item of shortlist){
    const n=item.send.count;
-   if(item.gap>.5||byShape[n]>=3)continue;
+   if(item.gap>.5||byShape[n]>=5)continue;
    const shortKey=item.receive.players.map(x=>x.position).sort().join('-')+'/'+item.send.key;
    if(seen.has(shortKey))continue;
    seen.add(shortKey);byShape[n]++;
@@ -96,7 +96,7 @@ function getCandidates(){
   }
   proposals.push(...retained);
  }
- return proposals.sort((a,b)=>a.gap-b.gap).slice(0,90);
+ return proposals.sort((a,b)=>a.gap-b.gap).slice(0,120);
 }
 function evaluateOffer(c,original,baseline,weeks){
  const your=original;
@@ -156,8 +156,7 @@ function render(){
    target.innerHTML='<div class="trade-personal-loading">No modeled lineup gains for these choices. Try another player or trading partner.</div>';
    return;
   }
-  target.innerHTML=shown.map(resultHTML).join('')+
-    '<p class="trade-personal-footnote">Projected lineup points per week, Weeks '+starts()[0]+'–17. Trades are hypothetical; manager acceptance and injuries are not predicted.</p>';
+  target.innerHTML=shown.map(resultHTML).join('');
  };
  if(typeof requestAnimationFrame==='function')requestAnimationFrame(run);else run();
 }
@@ -174,8 +173,11 @@ function refresh(){
   const query=($('trade'+(type==='send'?'Send':'Receive')+'Search')?.value||'').toLowerCase().trim();
   const filtered=list.filter(p=>!query||[p.name,p.position,p.owner].some(x=>String(x).toLowerCase().includes(query)));
   const holder=$('trade'+(type==='send'?'Send':'Receive')+'Choices');
+  const previousScroll=holder.scrollTop||0;
   holder.innerHTML=filtered.slice(0,200).map(p=>'<label class="trade-player-option"><input type="checkbox" data-id="'+esc(id(p))+'" '+(selected.has(id(p))?'checked':'')+'><span><strong>'+esc(p.name)+'</strong><small>'+esc(p.position)+(type==='receive'?' · '+esc(p.owner):'')+'</small></span></label>').join('')||'<p class="trade-player-empty">No matching players</p>';
-  badge.textContent=selected.size?selected.size+' selected':'Any';
+  holder.scrollTop=previousScroll;
+  const chosenNames=list.filter(p=>selected.has(id(p))).map(p=>p.name);
+  badge.textContent=selected.size?(selected.size+' selected'+(chosenNames.length===1?' · '+chosenNames[0]:'')):'Any';
   box.setAttribute('aria-label',selected.size+' preferred '+type+' players');
  }
 }
@@ -186,7 +188,7 @@ function draw(){
  rootEl.innerHTML='<div class="trade-personal-grid">'+
  '<details class="trade-player-dropdown" id="tradeSendBox"><summary>Players I would trade <strong id="tradeSendSelected">Any</strong></summary><input id="tradeSendSearch" type="search" placeholder="Find my players" aria-label="Search players to trade"><div class="trade-player-options" id="tradeSendChoices"></div></details>'+
  '<details class="trade-player-dropdown" id="tradeReceiveBox"><summary>Players I want <strong id="tradeReceiveSelected">Any</strong></summary><input id="tradeReceiveSearch" type="search" placeholder="Find league targets" aria-label="Search players to receive"><div class="trade-player-options" id="tradeReceiveChoices"></div></details>'+
- '</div><div class="trade-preference-footer"><span>Packages include at least one selected name.</span><button id="tradePreferenceClear" type="button">Clear choices</button></div>';
+ '</div><div class="trade-preference-footer"><button id="tradePreferenceClear" type="button">Clear choices</button></div>';
  for(const [type,set] of [['Send',selectedOut],['Receive',selectedIn]]){
   $('trade'+type+'Search').addEventListener('input',refresh);
   $('trade'+type+'Choices').addEventListener('change',event=>{
