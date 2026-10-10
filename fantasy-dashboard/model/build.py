@@ -49,9 +49,16 @@ def main():
         if not source_rows:
             raise RuntimeError("No player stats available for year " + str(year))
         rows.extend(source_rows)
+    # Snapshot Yahoo's current week and *exclude* it from model inputs:
+    # Thursday/Monday games can enter nflverse while that fantasy week is incomplete.
+    current_week = int(league["currentWeekAtSnapshot"])
+    if current_week < 2:
+        raise RuntimeError("Historical current-week cutoff missing or too early")
+    rows = [r for r in rows if str(r.get("season")) != str(SEASON)
+            or (r.get("season_type") == "REG" and int(r.get("week") or 0) < current_week)]
     current = [r for r in rows if str(r.get("season")) == str(SEASON) and r.get("season_type") == "REG"]
     if not current:
-        raise RuntimeError("No current regular-season player stats")
+        raise RuntimeError("No completed current-season regular-season player stats")
     out = project_rostered(rosters, rows, ids, league["scoringByYahooStatId"], SEASON)
     total_skill = sum(p["position"] in ("QB", "RB", "WR", "TE") for t in rosters["teams"] for p in t["players"])
     if out["coverage"]["projected"] < total_skill * .5:
