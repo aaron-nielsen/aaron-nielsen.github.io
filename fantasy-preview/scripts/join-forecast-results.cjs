@@ -17,13 +17,23 @@ if(!Array.isArray(frozen.records)||!Array.isArray(actuals)||!Array.isArray(yahoo
  throw Error('Expected frozen.records, actuals array, and Yahoo array');
 }
 const id=x=>[x.season,x.week,String(x.playerId)].join(':');
-const byActual=new Map(actuals.map(x=>[id(x),x]));
-const byYahoo=new Map(yahoo.map(x=>[id(x),x]));
+const date=x=>typeof x==='string'&&/(Z|[+-]\\d{2}:\\d{2})$/.test(x)&&Number.isFinite(Date.parse(x));
+const unique=(rows,label)=>{
+ const map=new Map();
+ for(const row of rows){
+  const k=id(row);
+  if(map.has(k))throw Error('Duplicate '+label+' record: '+k);
+  map.set(k,row);
+ }
+ return map;
+};
+const byActual=unique(actuals,'actual');
+const byYahoo=unique(yahoo,'Yahoo');
 const records=frozen.records.flatMap(x=>{
- const a=byActual.get(id(x));if(!a||typeof a.actual!=='number'||!Number.isFinite(a.actual))return [];
+ const a=byActual.get(id(x));if(!a||typeof a.actual!=='number'||!Number.isFinite(a.actual)||!date(a.kickoffAt))return [];
  const y=byYahoo.get(id(x));
  const yahooValid=y&&typeof y.yahoo==='number'&&Number.isFinite(y.yahoo)&&
-  Number.isFinite(Date.parse(y.predictedAt))&&Date.parse(y.predictedAt)<Date.parse(a.kickoffAt);
+  date(y.predictedAt)&&Date.parse(y.predictedAt)<Date.parse(a.kickoffAt);
  return [{...x,kickoffAt:a.kickoffAt,actual:a.actual,
   yahoo:yahooValid?y.yahoo:null}];
 });
