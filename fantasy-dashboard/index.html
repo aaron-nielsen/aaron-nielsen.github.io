@@ -513,6 +513,28 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
  .player-line .weekly-mini{min-width:47px}
 }
 
+
+.lineup-column-head,.lineup-pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.lineup-column-head{color:#836246;font-size:11px;font-weight:800;letter-spacing:.08em;border-bottom:1px solid #dbbf94;padding:9px 1px}
+.lineup-pair{border-bottom:1px solid #dbc5a4;padding:12px 1px;align-items:stretch}
+.lineup-pair:last-of-type{border-bottom:0}
+.lineup-column-person{min-width:0;position:relative;padding-left:2px}
+.lineup-column-person+.lineup-column-person{border-left:1px solid #dec6a2;padding-left:13px}
+.lineup-column-person strong{color:#4a2b19;display:block;font-size:14px;line-height:1.15;overflow-wrap:anywhere}
+.lineup-column-person small{display:block;color:#896a4c;font-size:11px;margin:3px 0}
+.lineup-position{font:700 10px 'Source Sans 3',sans-serif;letter-spacing:.04em;color:#946f4d;display:block;margin-bottom:4px}
+.lineup-pts{font:700 22px 'Cormorant Garamond',serif;color:#6a4227;display:block}
+.lineup-column-person.empty{display:flex;align-items:center;color:#a48b73;font-size:12px}
+.lineup-compare-footnote{font-size:11px;color:#866951;line-height:1.5;margin:13px 0 0}
+@media(max-width:600px){.roster-mini{padding:3px 12px 13px}.lineup-pair{gap:7px}.lineup-column-person strong{font-size:13px}.lineup-column-person+.lineup-column-person{padding-left:9px}}
+
+
+.trade-package-players{display:flex;flex-direction:column;gap:6px;margin-top:7px}
+.trade-package-player{display:block;font:700 17px/1.2 'Source Sans 3',system-ui,sans-serif;color:#52301c}
+.trade-package-player small{font-size:11px;color:#8a654b;font-weight:600;margin-left:5px}
+.trade-balance-warning{background:#f1dfc1;border-top:1px solid #d2ad78;padding:11px 14px;font-size:12px;color:#755037}
+.trade-exchange{grid-template-columns:minmax(0,1fr) 24px minmax(0,1fr)}
+@media(max-width:650px){.trade-package-player{font-size:14px}.trade-package-player small{font-size:10px}}
 </style>
 <link rel="stylesheet" href="./clean-dashboard.css">
 </head><body>
@@ -550,7 +572,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 <p class="recommendation-note">Advisory only. All projections are experimental and based on the saved Yahoo status snapshot. Confirm player availability before kickoff; no Yahoo lineup changes are made.</p>
 </section>
 <div class="columns">
-<div class="panel"><div class="panel-header"><div><div class="panel-title">Your starting lineup</div><div class="panel-sub">Yahoo starting lineup</div></div><button class="sub-link" type="button" data-jump="rosters">FULL ROSTER ↗</button></div><div class="roster-mini" id="myLineup"></div></div>
+<div class="panel"><div class="panel-header"><div><div class="panel-title">Your starting lineup</div><div class="panel-sub">Starter on the left · best eligible bench option on the right</div></div><button class="sub-link" type="button" data-jump="rosters">FULL ROSTER ↗</button></div><div class="roster-mini" id="myLineup"></div></div>
 <div class="panel"><div class="panel-header"><div><div class="panel-title">League matchups</div><div class="panel-sub">Yahoo projected final scores</div></div><span class="chip" id="boardWeek">WEEK 5</span></div><div class="scoreboard-list" id="leagueBoard"></div><div class="board-note">Forecasts can change as games are played. Snapshot, not a live scoreboard.</div></div>
 </div>
 </section>
@@ -560,7 +582,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 </section>
 <section id="page-finder" class="page" hidden>
 <div class="section-top"><div><div class="eyebrow">Rostered and available</div><h2>Player Finder</h2><p>Search rostered players and league-available players together.</p></div></div>
-<div class="finder-surface"><div class="eyebrow">SEARCH</div><h2>All league players</h2><div class="finder-controls"><input id="finderQuery" type="search" placeholder="Search players or teams…" aria-label="Find fantasy players"><select class="select" id="finderPos" aria-label="Player position"><option value="all">All positions</option><option>QB</option><option>RB</option><option>WR</option><option>TE</option><option>K</option><option value="DEF">DEF</option></select><select class="select" id="finderStatus" aria-label="Ownership status"><option value="all">Everyone</option><option value="available">Available / waivers*</option><option value="rostered">Rostered</option><option value="mine">My players</option></select><select class="select" id="finderSort" aria-label="Sort players"><option value="market">Yahoo popularity</option><option value="model">Week projection (if active)</option><option value="name">Player name</option></select></div></div>
+<div class="finder-surface"><div class="eyebrow">SEARCH</div><h2>All league players</h2><div class="finder-controls"><input id="finderQuery" type="search" placeholder="Search players or teams…" aria-label="Find fantasy players"><select class="select" id="finderPos" aria-label="Player position"><option value="all">All positions</option><option value="offense_no_qb">Offense (no QB)</option><option>QB</option><option>RB</option><option>WR</option><option>TE</option><option>K</option><option value="DEF">DEF</option></select><select class="select" id="finderStatus" aria-label="Ownership status"><option value="all">Everyone</option><option value="available">Available / waivers*</option><option value="rostered">Rostered</option><option value="mine">My players</option></select><select class="select" id="finderSort" aria-label="Sort players"><option value="market">Yahoo popularity</option><option value="model">Week projection (if active)</option><option value="name">Player name</option></select></div></div>
 <div class="finder-summary"><span id="finderCount">Loading players…</span><span>League-available players are shown alongside owned players</span></div>
 <div class="finder-results" id="finderResults"></div><button class="showmore" id="morePlayers" type="button" hidden>SHOW MORE PLAYERS ↓</button>
 <div class="note"><strong>*Waiver caveat:</strong> Yahoo confirms which players are available to acquire in your league, but the connected data does not distinguish unrestricted free agents from players still on waivers. Check Yahoo for claim eligibility and processing times. Available-player data is a sampled pool (up to 100 per position), not every NFL player.</div>
@@ -573,7 +595,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 </div>
 <div class="panel all-predictions-panel" style="margin-top:19px">
   <div class="panel-header"><div><div class="panel-title">All player forecasts</div><div class="panel-sub" id="projectionCoverage">Experimental weekly estimates for QB, RB, WR, TE</div></div></div>
-  <div class="projection-controls"><select class="select" id="futureWeek" aria-label="Projection week"><option value="5">Week 5</option></select><input type="search" id="projectionSearch" placeholder="Search player or fantasy team" aria-label="Search player projections"><select id="projectionPos" class="select" aria-label="Filter projected position"><option value="all">All positions</option><option>QB</option><option>RB</option><option>WR</option><option>TE</option></select><select id="projectionOwnership" class="select" aria-label="Filter projected ownership"><option value="all">All players</option><option value="mine">My roster</option><option value="available">Available</option><option value="other">Other teams</option></select></div>
+  <div class="projection-controls"><select class="select" id="futureWeek" aria-label="Projection week"><option value="5">Week 5</option></select><input type="search" id="projectionSearch" placeholder="Search player or fantasy team" aria-label="Search player projections"><select id="projectionPos" class="select" aria-label="Filter projected position"><option value="all">All positions</option><option value="offense_no_qb">Offense (no QB)</option><option>QB</option><option>RB</option><option>WR</option><option>TE</option></select><select id="projectionOwnership" class="select" aria-label="Filter projected ownership"><option value="all">All players</option><option value="mine">My roster</option><option value="available">Available</option><option value="other">Other teams</option></select></div>
   <div id="forecastContext" class="forecast-context">Weekly estimates are experimental; playing time and future injuries are uncertain.</div><div id="allProjections" class="projection-league-list"><div class="empty-copy">Awaiting projection data</div></div>
 </div>
 <div class="panel" style="margin-top:19px"><div class="panel-header"><div><div class="panel-title">Historical accuracy</div><div class="panel-sub">Rolling as-of backtest · 2025 holdout weeks</div></div></div><div id="backtestResults" class="backtest-results"><div class="empty-copy">No historical evaluation file published yet.</div></div></div>
@@ -581,14 +603,14 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 </section>
 <section id="page-trades" class="page" hidden>
 <div class="section-top"><div><div class="eyebrow">Lineup optimization · Weeks 6–17</div><h2>Trade suggestions</h2>
-<p class="trade-summary">Explore mutually beneficial one-for-one player trades. Each candidate is tested against both teams’ highest-scoring legal skill-position lineups: 1 QB, 2 RB, 2 WR, 1 TE, and 1 RB/WR/TE flex.</p></div></div>
+<p class="trade-summary">Evaluate multi-player packages, including 2-for-1, 2-for-2 and 3-for-3 deals. Both teams are compared using optimized legal lineups, rather than raw player totals.</p></div></div>
 <div class="panel">
   <div class="panel-header"><div><div class="panel-title">Potential trade partners</div><div class="panel-sub">Model-based scenarios · not proposals made to other managers</div></div><span class="chip">EXPERIMENTAL</span></div>
-  <div class="trade-controls"><label for="tradePartner">Trading with <select id="tradePartner" class="select"><option value="all">All teams</option></select></label>
+  <div class="trade-controls"><label for="tradePosition">Trade targets <select id="tradePosition" class="select"><option value="offense_no_qb">Offense (no QB)</option><option value="all">All offense</option><option value="QB">QB</option><option value="RB">RB</option><option value="WR">WR</option><option value="TE">TE</option></select></label><label for="tradePartner">Trading with <select id="tradePartner" class="select"><option value="all">All teams</option></select></label>
   <label for="tradeFromWeek">Evaluate <select id="tradeFromWeek" class="select"><option value="6">Weeks 6–17</option></select></label>
   <div id="tradeCount" class="trade-count">Calculating candidates…</div></div>
   <div id="tradeResults" class="trades-grid"><div class="empty-copy">Calculating lineup-adjusted trade ideas…</div></div>
-  <div class="trade-caveat"><strong>How to interpret:</strong> These are hypothetical healthy-player scenarios for future weeks, not availability-adjusted predictions. The simulator uses legal QB/RB/WR/TE/flex allocations on both rosters and ignores K/DEF (unchanged in these one-for-one trades). It excludes players currently in IR slots or marked unavailable from trade candidates, but still assumes future participation by other rostered players. It does not account for trade acceptance, Yahoo trade settings, playoff probabilities, injuries after this snapshot, or unmodeled scoring. No trades or lineup moves are submitted to Yahoo.</div>
+  <div class="trade-caveat"><strong>How to interpret:</strong> These are hypothetical healthy-player scenarios for future weeks, not injury-adjusted predictions. Both sides are evaluated using legal QB/RB/WR/TE/flex lineups. Package trades of up to three players per side are considered; unequal-size deals may require additional roster moves. The search is bounded to a subset of prominent players on each team and excludes K/DEF. It does not forecast trade acceptance, injuries, changing roles, or playoff outcomes. No Yahoo transactions are submitted.</div>
 </div></section>
 </main>
 <footer class="footer"><div>DA VINCI FANTASY LAB / CSU STATS · MMXXVI</div><div>READ-ONLY PROTOTYPE · POWERED BY YAHOO LEAGUE DATA</div></footer>
@@ -664,8 +686,32 @@ function initOverview(){
    '<div class="match-compact-footer">'+esc(summary)+'</div>';
  const st=standing(TEAM_ID);$('#wl').innerHTML=esc(st.wins)+'<span>–</span>'+esc(st.losses);$('#rankDesc').textContent='#'+st.rank+' of '+rosters.teams.length+' in league standings';
  $('#pointsFor').textContent=number(st.pointsFor);$('#waiverRank').textContent=st.waiverPriority==null?'—':'#'+st.waiverPriority;
- const starters=team(TEAM_ID).players.filter(p=>p.slot!=='BN'&&p.slot!=='IR');
- $('#myLineup').innerHTML=starters.map(p=>'<div class="mini-row">'+position(p.position)+'<div><div class="row-name">'+esc(p.name)+status(p)+'</div><div class="row-detail">'+esc(p.nflTeam)+' · '+esc(p.slot)+' · '+esc(weeklyOpponent(playerWeekInfo(p)))+'</div></div><span class="row-slot">'+esc(weeklyDisplay(playerWeekInfo(p)))+'</span></div>').join('');
+ const lineupRoster=team(TEAM_ID).players;
+ const starters=lineupRoster.filter(p=>p.slot!=='BN'&&p.slot!=='IR');
+ const bench=lineupRoster.filter(p=>p.slot==='BN');
+ const eligible={'QB':['QB'],'RB':['RB'],'WR':['WR'],'TE':['TE'],'W/R/T':['RB','WR','TE'],'K':['K'],'DEF':['DEF']};
+ const order=['QB','RB','RB','WR','WR','TE','W/R/T','K','DEF'];
+ const ordered=[],rest=[...starters];
+ for(const slot of order){const idx=rest.findIndex(p=>p.slot===slot);if(idx>=0)ordered.push(rest.splice(idx,1)[0]);}
+ const backupFor=(starter)=>{
+   const options=bench.filter(p=>(eligible[starter.slot]||[starter.position]).includes(p.position))
+    .map(p=>({p,w:weeklyProjection(p)}))
+    .filter(x=>x.w&&x.w.weeklyProjectedPoints!=null&&x.w.forecastStatus==='assuming_active')
+    .sort((a,b)=>b.w.weeklyProjectedPoints-a.w.weeklyProjectedPoints);
+   return options[0]?.p||null;
+ };
+ const lineupPerson=(p,slot)=>{
+   if(!p)return '<div class="lineup-column-person empty"><span>No eligible backup</span></div>';
+   const w=weeklyProjection(p);
+   return '<div class="lineup-column-person">'+
+    (slot?'<span class="lineup-position">'+esc(slot)+'</span>':'')+
+    '<strong>'+esc(p.name)+status(p)+'</strong>'+
+    '<small>'+esc(p.position)+' · '+esc(weeklyOpponent(w))+'</small>'+
+    '<span class="lineup-pts">'+esc(weeklyDisplay(w))+'</span></div>';
+ };
+ $('#myLineup').innerHTML='<div class="lineup-column-head"><span>STARTER</span><span>BEST BACKUP</span></div>'+
+ ordered.map(p=>'<div class="lineup-pair">'+lineupPerson(p,p.slot)+lineupPerson(backupFor(p),'')+'</div>').join('')+
+ '<p class="lineup-compare-footnote">Backups are the best eligible alternative for each slot. The same player can appear more than once. K/DEF projections are not modeled.</p>';
  $('#leagueBoard').innerHTML=week.matchups.map(m=>'<div class="scoreboard-item'+(m.home.id===TEAM_ID||m.away.id===TEAM_ID?' mine':'')+'"><div class="side">'+esc(m.home.name)+'</div><div class="pts mono">'+number(m.home.projectedPoints)+'</div><div class="dash">–</div><div class="pts mono">'+number(m.away.projectedPoints)+'</div><div class="side right">'+esc(m.away.name)+'</div></div>').join('');
  $('#boardWeek').textContent='WEEK '+week.week;$('#projectionWeek').textContent='WEEK '+week.week;
  $('#sync').textContent='Yahoo snapshot · '+new Date(week.retrievedAt).toLocaleString(undefined,{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'});
@@ -790,7 +836,7 @@ function renderFinder(){
        scope=$('#finderStatus').value,sortMode=$('#finderSort').value;
  const byYahoo=new Map((weekly?.players||model?.players||[]).map(p=>[String(p.yahooId),p]));
  const results=players.filter(p=>{
-   if(pos!=='all'&&p.position!==pos)return false;
+   if(pos!=='all'&&(pos==='offense_no_qb'?!['RB','WR','TE'].includes(p.position):p.position!==pos))return false;
    if(scope==='available'&&p.owned)return false;
    if(scope==='rostered'&&!p.owned)return false;
    if(scope==='mine'&&p.fantasyTeamId!==TEAM_ID)return false;
@@ -870,7 +916,7 @@ function renderAllProjections(){
  if(!items?.length){area.innerHTML='<div class="empty-copy">No projections yet.</div>';return;}
  const q=$('#projectionSearch').value.toLowerCase().trim(),pos=$('#projectionPos').value,scope=$('#projectionOwnership').value;
  const hasWeekly=!!weekly?.players?.length;
- const list=items.filter(p=>(pos==='all'||p.position===pos)&&
+ const list=items.filter(p=>(pos==='all'||(pos==='offense_no_qb'?['RB','WR','TE'].includes(p.position):p.position===pos))&&
  (scope==='all'||(scope==='mine'&&p.fantasyTeamId===TEAM_ID)||(scope==='available'&&p.ownership==='available')||(scope==='other'&&p.ownership==='rostered'&&p.fantasyTeamId!==TEAM_ID))&&
  (!q||[p.name,p.fantasyTeam,p.nflTeam,p.opponent].some(x=>String(x||'').toLowerCase().includes(q))))
  .sort((a,b)=>(b.weeklyProjectedPoints??b.conditionalPointsPerGame??-99)-(a.weeklyProjectedPoints??a.conditionalPointsPerGame??-99));
