@@ -36,6 +36,7 @@ jobs:
           node fantasy-preview/tests/forecast-accuracy.test.cjs
           node fantasy-preview/tests/model-performance.test.cjs
           node fantasy-preview/tests/forecast-pipeline.test.cjs
+          node fantasy-preview/tests/archived-forecasts.test.cjs
           node fantasy-preview/tests/transaction-grades.test.cjs
           node fantasy-preview/tests/playing-time.test.cjs
           node fantasy-preview/tests/usage-history.test.cjs
