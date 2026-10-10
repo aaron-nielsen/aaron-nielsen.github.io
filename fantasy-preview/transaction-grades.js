@@ -61,12 +61,19 @@ function side(tx,teamId,acquired,dropped){
  const missingAcquired=acquired.filter(p=>!after.some(x=>key(x)===key(p)));
  const missingForecast=[...acquired,...dropped].filter(p=>!state.forecasts.has(key(p)));
  const complete=!missingAcquired.length&&!missingForecast.length;
+ // If an acquired player is absent from the reconstructed after-roster,
+ // reverse replay is no longer anchored to a verified roster state.
+ // Do not keep inventing earlier roster states for this manager.
+ if(missingAcquired.length){
+  historicalRoster.delete(tid);
+  return {teamId:tid,name:team.name,value:null,
+   reason:'Acquired player absent from reconstructed roster'};
+ }
  const before=changeRoster(after,acquired,dropped);
  historicalRoster.set(tid,before);
  const v=complete?estimate(after,before,tid):null;
  return {teamId:tid,name:team.name,value:v,
-  reason:missingAcquired.length?'Acquired player absent from reconstructed roster':
-   missingForecast.length?'Missing player forecast':!v?'Incomplete projected starting lineup':null};
+  reason:missingForecast.length?'Missing player forecast':!v?'Incomplete projected starting lineup':null};
 }
 function evaluate(tx){
  const isTrade=tx.type==='trade'&&Array.isArray(tx.trade_sides)&&tx.trade_sides.length>=2;
