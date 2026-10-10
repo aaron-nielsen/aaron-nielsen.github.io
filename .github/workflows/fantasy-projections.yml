@@ -10,6 +10,7 @@ on:
       - 'fantasy-dashboard/model/**'
       - 'fantasy-dashboard/tests/**'
       - 'fantasy-dashboard/data/rosters.json'
+      - 'fantasy-dashboard/data/available.json'
       - 'fantasy-dashboard/data/league.json'
 
 permissions:
@@ -32,15 +33,19 @@ jobs:
         run: |
           cd fantasy-dashboard
           python model/build.py
-      - name: Commit model output to this development branch
+      - name: Backtest on 2025 player-weeks
         run: |
-          if git diff --quiet -- fantasy-dashboard/data/projections.json && git ls-files --error-unmatch fantasy-dashboard/data/projections.json >/dev/null 2>&1; then
+          cd fantasy-dashboard
+          python model/backtest.py
+      - name: Commit model and validation output to this development branch
+        run: |
+          if git diff --quiet -- fantasy-dashboard/data/projections.json fantasy-dashboard/data/backtest.json && git ls-files --error-unmatch fantasy-dashboard/data/projections.json >/dev/null 2>&1 && git ls-files --error-unmatch fantasy-dashboard/data/backtest.json >/dev/null 2>&1; then
             echo 'No changes.'
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add fantasy-dashboard/data/projections.json
+          git add fantasy-dashboard/data/projections.json fantasy-dashboard/data/backtest.json
           if ! git diff --cached --quiet; then
             git commit -m 'Update provisional fantasy projections from nflverse'
             git push
