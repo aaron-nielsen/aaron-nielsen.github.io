@@ -33,7 +33,9 @@ function estimate(withRoster,withoutRoster,teamId){
  const after=[],before=[];
  for(const w of weeks){
   const x=state.optimize(withRoster,w),y=state.optimize(withoutRoster,w);
-  if(x&&y){after.push(x.score);before.push(y.score);}
+  if(x&&y&&Number.isFinite(x.score)&&Number.isFinite(y.score)){
+   after.push(x.score);before.push(y.score);
+  }
  }
  // Only grade scenarios with adequate lineup coverage, not missing QBs/K/DEF.
  if(!weeks.length||after.length!==weeks.length)return null;
