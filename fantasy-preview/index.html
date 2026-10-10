@@ -506,10 +506,10 @@ function initOverview(){
    '<div class="match-compact-heading">WEEK '+esc(week.week)+' <span>· YAHOO PROJECTED SCORE</span></div>'+
    '<div class="match-compact-scores">'+
    '<div class="match-compact-side"><div class="match-compact-name">'+esc(you.name)+'</div>'+
-   '<div class="match-compact-points">'+number(y)+'</div></div>'+
+   '<div class="match-compact-points">'+(Number.isFinite(y)?y.toFixed(2):'—')+'</div></div>'+
    '<div class="match-compact-vs" aria-hidden="true">—</div>'+
    '<div class="match-compact-side"><div class="match-compact-name">'+esc(them.name)+'</div>'+
-   '<div class="match-compact-points">'+number(t)+'</div></div></div>'+
+   '<div class="match-compact-points">'+(Number.isFinite(t)?t.toFixed(2):'—')+'</div></div></div>'+
    '<div class="match-compact-footer">'+esc(summary)+'</div>';
  const st=standing(TEAM_ID);$('#wl').innerHTML=esc(st.wins)+'<span>–</span>'+esc(st.losses);$('#rankDesc').textContent='#'+st.rank+' of '+rosters.teams.length+' in league standings';
  $('#pointsFor').textContent=number(st.pointsFor);$('#waiverRank').textContent=st.waiverPriority==null?'—':'#'+st.waiverPriority;
