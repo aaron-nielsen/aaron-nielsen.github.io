@@ -3,9 +3,9 @@
   "modelVersion": "weekly-conditional-v0.1",
   "season": 2026,
   "week": 5,
-  "generatedAt": "2026-10-10T04:44:11.065963+00:00",
+  "generatedAt": "2026-10-10T04:44:44.322134+00:00",
   "rosterSnapshotAt": "2026-10-10T02:53:22.198Z",
-  "availableSnapshotAt": "2026-10-10T03:08:05.001Z",
+  "availableSnapshotAt": "2026-10-10T04:44:23.191Z",
   "statsThroughWeek": 4,
   "sources": [
     "https://raw.githubusercontent.com/nflverse/nfldata/master/data/games.csv",
