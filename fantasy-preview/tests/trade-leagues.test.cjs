@@ -1,0 +1,52 @@
+'use strict';
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
+const ROOT=path.resolve(__dirname,'..');
+const read=p=>JSON.parse(fs.readFileSync(path.join(ROOT,p),'utf8'));
+const file=p=>fs.readFileSync(path.join(ROOT,p),'utf8');
+require(path.join(ROOT,'special-teams-model.js'));
+const contextData=read('data/special-teams-context.json');
+for(const {prefix,teamId,name} of [
+ {prefix:'data/',teamId:'7',name:'CSU Stats'},
+ {prefix:'data/nebraska/',teamId:'6',name:'Nebraska'}
+]){
+ const rosters=read(prefix+'rosters.json'),available=read(prefix+'available.json'),
+  future=read(prefix+'future.json'),weekly=read(prefix+'weekly.json'),league=read(prefix+'league.json');
+ globalThis.DaVinciSpecialTeams.enrich({context:contextData,league,rosters,available,futureData:future,weekly});
+ const elements=new Map();
+ function elem(id){
+  if(!elements.has(id))elements.set(id,{
+   innerHTML:'',textContent:'',hidden:false,
+   value:id==='tradeFromWeek'?'6':id==='tradePackageFilter'?'balanced_all':
+    id==='tradePosition'?'all':id==='tradePartner'?'all':id==='lineupWeek'?'5':'',
+   listeners:{},addEventListener(type,fn){this.listeners[type]=fn;},
+   setAttribute(key,v){this[key]=v;}
+  });
+  return elements.get(id);
+ }
+ const sandbox={document:{getElementById:elem},
+  DaVinciLab:{rankTrades(){elem('tradeResults').innerHTML='Legacy results';}}};
+ vm.runInNewContext(file('roster-advice.js'),sandbox);
+ vm.runInNewContext(file('trade-preferences.js'),sandbox);
+ sandbox.DaVinciAdvice.init({rosters,available,future,week:5,teamId});
+ sandbox.DaVinciPersonalTrades.init({
+  rosters,available,future,week:5,teamId,leagueKey:name==='Nebraska'?'nebraska':'csu',
+  optimize:sandbox.DaVinciAdvice.lineup
+ });
+ assert.match(elem('tradePreferenceBuilder').innerHTML,/Players I want/);
+ const roster=rosters.teams.find(t=>String(t.id)===teamId);
+ const ownCandidate=roster.players.find(p=>p.position==='WR'&&p.slot==='BN'&&!p.status)
+  ||roster.players.find(p=>p.position==='WR'&&p.slot==='WR');
+ assert.ok(ownCandidate,'No outgoing candidate');
+ let started=Date.now();
+ const pick=elem('tradeSendChoices');
+ assert.equal(typeof pick.listeners.change,'function');
+ pick.listeners.change({target:{type:'checkbox',checked:true,dataset:{id:ownCandidate.id}}});
+ const elapsed=Date.now()-started;
+ const html=elem('tradeResults').innerHTML;
+ assert.ok(html.includes('trade-personal-card')||html.includes('No modeled lineup gains'),
+  name+' did not return ranked or honest empty result');
+ assert.equal(sandbox.DaVinciPersonalTrades.active(),true);
+ assert.ok(elapsed<15000,name+' trade response took '+elapsed+' ms');
+ console.log(name+': '+ownCandidate.name+' target evaluated in '+elapsed+' ms, offers='+
+  (html.match(/trade-personal-card/g)||[]).length);
+}
