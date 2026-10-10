@@ -663,8 +663,8 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
   <div class="projection-controls"><select class="select" id="futureWeek" aria-label="Projection week"><option value="5">Week 5</option></select><input type="search" id="projectionSearch" placeholder="Search player or fantasy team" aria-label="Search player projections"><select id="projectionPos" class="select" aria-label="Filter projected position"><option value="all">All positions</option><option value="offense_no_qb">Offense (no QB)</option><option>QB</option><option>RB</option><option>WR</option><option>TE</option><option>K</option><option value="DEF">DEF</option></select><select id="projectionOwnership" class="select" aria-label="Filter projected ownership"><option value="all">All players</option><option value="mine">My roster</option><option value="available">Available</option><option value="other">Other teams</option></select></div>
   <div id="forecastContext" class="forecast-context">Weekly estimates are experimental; playing time and future injuries are uncertain.</div><div id="allProjections" class="projection-league-list"><div class="empty-copy">Awaiting projection data</div></div>
 </div>
-<div class="panel" style="margin-top:19px"><div class="panel-header"><div><div class="panel-title">Historical accuracy</div><div class="panel-sub">Rolling as-of backtest · 2025 holdout weeks</div></div></div><div id="backtestResults" class="backtest-results"><div class="empty-copy">No historical evaluation file published yet.</div></div></div>
-<div class="note"><strong>Week 5 prototype:</strong> Byes and Yahoo-reported out/exempt/IR statuses yield zero; questionable players are marked CHECK rather than assigned an invented probability. Other forecasts assume the player is active. Opponent effects are based on completed 2026 games, heavily shrunk and capped at ±10%. Yahoo injury data is a dated snapshot. K/DEF and some scoring categories remain unmodeled. These forecasts are separate from Yahoo’s team forecasts.</div>
+<div class="panel" style="margin-top:19px"><div class="panel-header"><div><div class="panel-title">Historical accuracy</div><div class="panel-sub">Rolling as-of backtest · 2025 holdout weeks</div></div></div><div id="backtestResults" class="backtest-results"><div class="empty-copy">No historical evaluation file published yet.</div></div><div id="specialValidation" class="special-validation"></div></div>
+<div class="note"><strong>Model limitations:</strong> Offensive projections use historical player workload and opponent factors. K/DST uses complete 2024–25 team-game history plus 2026 Weeks 1–3, projected red-zone opportunities, opponent strength and Yahoo scoring. Future venue roofs are known; game-day wind or precipitation is not automatically forecast when unavailable. Rare turnovers and long kicks depend on league-average assumptions. Player injury availability and remaining specialty scoring events are not fully modeled. These estimates are independent of Yahoo’s full-team projections.</div>
 </section>
 <section id="page-trades" class="page" hidden>
 <div class="section-top"><div><div class="eyebrow">Lineup optimization · Weeks 6–17</div><h2>Trade suggestions</h2>
@@ -693,7 +693,7 @@ const TEAM_ID=LEAGUE_KEY==='nebraska'?'6':'7';
 const DATA_BASE=LEAGUE_KEY==='nebraska'?'./data/nebraska/':'./data/';
 const LEAGUE_NAME=LEAGUE_KEY==='nebraska'?'Nebraska Bugeaters':'CSU Stats';
 window.DaVinciLeague={key:LEAGUE_KEY,teamId:TEAM_ID,dataBase:DATA_BASE,name:LEAGUE_NAME};
-let rosters=null,available=null,week=null,model=null,backtest=null,weekly=null,futureData=null,waivers=null,leagueSettings=null,specialContext=null,selectedTeam=TEAM_ID,finderVisible=36;
+let rosters=null,available=null,week=null,model=null,backtest=null,specialValidation=null,weekly=null,futureData=null,waivers=null,leagueSettings=null,specialContext=null,selectedTeam=TEAM_ID,finderVisible=36;
 const leagueSelector=$('#leagueSelector');leagueSelector.value=LEAGUE_KEY;
 leagueSelector.addEventListener('change',()=>{const url=new URL(location.href);if(leagueSelector.value==='nebraska')url.searchParams.set('league','nebraska');else url.searchParams.delete('league');location.assign(url.toString());});
 function team(id){return rosters.teams.find(t=>t.id===String(id));}
@@ -1181,6 +1181,17 @@ function initFinder(){
  $('#morePlayers').addEventListener('click',()=>{finderVisible+=48;renderFinder();});
  renderFinder();
 }
+function renderSpecialValidation(){
+ const el=$('#specialValidation');if(!el)return;
+ if(!specialValidation?.defensePointsAllowed)return;
+ const d=specialValidation.defensePointsAllowed,k=specialValidation.redZoneFgTrips;
+ el.innerHTML='<h3>Team-level K / D/ST diagnostics</h3>'+
+ '<p>2025 rolling-origin test, '+specialValidation.n+' team-game observations (Weeks 5–17). Lower MAE is better.</p>'+
+ '<div class="special-validation-grid">'+
+ '<div><strong>'+Number(d.maeModel).toFixed(2)+'</strong><small>Points-allowed MAE<br>naïve baseline '+Number(d.maeConstant).toFixed(2)+'</small></div>'+
+ '<div><strong>'+Number(k.maeModel).toFixed(2)+'</strong><small>Red-zone FG trips MAE<br>naïve baseline '+Number(k.maeConstant).toFixed(2)+'</small></div></div>'+
+ '<p class="special-validation-warning">These tests assess defensive scoring environment and kicker opportunities, not actual Yahoo K/DST fantasy-point accuracy. Sack, turnover, distance and weather adjustments require further validation.</p>';
+}
 function renderProjection(){
  const ranking=week.matchups.flatMap(m=>[m.home,m.away]).sort((a,b)=>(b.projectedPoints??-1)-(a.projectedPoints??-1));
  const max=Math.max(1,...ranking.map(t=>t.projectedPoints||0));
@@ -1258,7 +1269,7 @@ document.querySelectorAll('[data-jump]').forEach(b=>b.addEventListener('click',(
 async function get(path){const r=await fetch(DATA_BASE+path+'.json',{cache:'no-store'});if(!r.ok)throw Error('Data file '+path+' returned HTTP '+r.status);return r.json();}
 (async()=>{
  try{
-  [rosters,available,week,model,backtest,weekly,futureData,waivers,leagueSettings,specialContext]=await Promise.all([get('rosters'),get('available'),get('week'),get('projections').catch(()=>null),get('backtest').catch(()=>null),get('weekly').catch(()=>null),get('future').catch(()=>null),get('waivers').catch(()=>null),get('league'),fetch('./data/special-teams-context.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Special-teams context unavailable');return r.json();})]);
+  [rosters,available,week,model,backtest,weekly,futureData,waivers,leagueSettings,specialContext,specialValidation]=await Promise.all([get('rosters'),get('available'),get('week'),get('projections').catch(()=>null),get('backtest').catch(()=>null),get('weekly').catch(()=>null),get('future').catch(()=>null),get('waivers').catch(()=>null),get('league'),fetch('./data/special-teams-context.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Special-teams context unavailable');return r.json();}),fetch('./data/special-teams-validation.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null)]);
   if(!Array.isArray(rosters.teams)||!Array.isArray(available.players)||!Array.isArray(week.matchups)||!Array.isArray(week.standings)||!team(TEAM_ID)||!matchup())throw Error('League data incomplete or mismatched');
   if(rosters.leagueId!==week.leagueId||available.leagueId!==rosters.leagueId||rosters.leagueId!==(LEAGUE_KEY==='nebraska'?'470.l.1699881':'470.l.258793'))throw Error('League identity mismatch');
   const special=window.DaVinciSpecialTeams?.enrich({context:specialContext,league:leagueSettings,rosters,available,futureData,weekly});
@@ -1282,7 +1293,7 @@ async function get(path){const r=await fetch(DATA_BASE+path+'.json',{cache:'no-s
     note.textContent='Nebraska uses its own Yahoo scoring and a transferred offensive workload model; kicker/defense use a separate opponent-adjusted team model. Neither is independently validated yet. Trade and lineup-adjusted waiver advice require a separate rebuild.';
     const container=document.querySelector('#page-projections .projection-split');container?.parentNode?.insertBefore(note,container);
   }
-  initOverview();initRosters();initFinder();renderProjection();renderRecommendations();renderWaivers();renderSpecialWaivers();initModelTeamForecasts();window.DaVinciLab?.init();
+  initOverview();initRosters();initFinder();renderProjection();renderSpecialValidation();renderRecommendations();renderWaivers();renderSpecialWaivers();initModelTeamForecasts();window.DaVinciLab?.init();
  }catch(e){
   $('#hero').innerHTML='<div class="loading"><strong>Dashboard data could not be loaded.</strong><p>'+esc(e.message)+'</p><p>Check the published JSON files or reload this page.</p></div>';
   $('#sync').textContent='Data load failed';
