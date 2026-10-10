@@ -29,6 +29,20 @@ function score(p,w,isReserve){
  if(frame.points==null||!Number.isFinite(Number(frame.points)))return '—';
  return Number(frame.points).toFixed(1);
 }
+function workload(p,w){
+ const player=forecasts.get(String(p.id));
+ const stats=player?.baselineStats;
+ const frame=player?.weeks?.find(g=>Number(g.week)===Number(w));
+ if(!stats||!frame||frame.state==='bye'||frame.state==='unavailable_reported')return '';
+ // Baseline opportunity adjusted modestly for opponent; conditional on playing.
+ const factor=Number.isFinite(Number(frame.factor))&&frame.factor!=null?
+  Math.max(.85,Math.min(1.15,Number(frame.factor))):1;
+ const rounded=(key)=>Math.max(0,Math.round(Number(stats[key]||0)*factor));
+ if(p.position==='RB')return rounded('carries')+' carries · '+rounded('targets')+' targets';
+ if(p.position==='WR'||p.position==='TE')return rounded('targets')+' targets · '+rounded('receptions')+' catches';
+ if(p.position==='QB')return rounded('passAttempts')+' pass att · '+rounded('carries')+' carries';
+ return '';
+}
 function person(p,slot,w,isReserve){
  const v=score(p,w,isReserve);
  const frame=lookup(p,w);
@@ -37,10 +51,12 @@ function person(p,slot,w,isReserve){
  const code=String(p.status||'').trim();
  const scenario=frame?.probability!=null&&w>Number(state.snapshotWeek)?Math.round(frame.probability*100)+'% active · ':'';
  const badge=code?'<span class="roster-board-status">'+esc(code)+'</span>':'';
+ const activity=workload(p,w);
+ const detail=[scenario+matchup,activity].filter(Boolean).join(' · ');
  return '<div class="roster-board-row'+(p.slot==='IR'?' is-ir':'')+'">'+
   '<span class="roster-board-position">'+esc(slot)+'</span>'+
   '<span class="roster-board-player"><strong>'+esc(p.name)+badge+'</strong>'+
-  ((scenario||matchup)?'<small>'+esc(scenario+matchup)+'</small>':'')+'</span>'+
+  (detail?'<small>'+esc(detail)+'</small>':'')+'</span>'+
   '<span class="roster-board-points">'+esc(v)+'</span></div>';
 }
 function render(chosenWeek){
