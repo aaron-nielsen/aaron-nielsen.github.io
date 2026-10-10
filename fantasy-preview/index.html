@@ -600,10 +600,11 @@ function renderWaivers(){
      return sum+Math.max(0,Number(item?.points)||0);
    },0);
    return {...p,raw};
- }).sort((a,b)=>b.raw-a.raw||a.name.localeCompare(b.name)).slice(0,4);
+ }).sort((a,b)=>b.raw-a.raw||a.name.localeCompare(b.name));
+ const positionLeaders=["RB","WR","TE","QB"].map(pos=>candidates.find(p=>p.position===pos)).filter(Boolean);
  const periodLabel=weeks.length===1?'week points':'total points';
- const watch='<div class="waiver-section-label">HIGHEST PROJECTED AVAILABLE PLAYERS</div>'+
-  candidates.map((p,i)=>{
+ const watch='<div class="waiver-section-label">HIGHEST PROJECTED AVAILABLE BY POSITION</div>'+
+  positionLeaders.map((p,i)=>{
     const caution=p.status ? ' · Yahoo status '+esc(p.status) : '';
     return '<div class="waiver-item"><span class="waiver-rank">'+(i+1)+'</span>'+
       '<div class="waiver-details"><strong>'+esc(p.name)+'</strong><span>'+esc(p.position)+' · '+esc(p.nflTeam||'NFL free agent')+caution+'</span><small>Projected production; may not improve your starting lineup</small></div>'+
