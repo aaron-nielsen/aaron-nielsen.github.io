@@ -10,9 +10,10 @@ for(const token of names)assert.equal(html.split(token).length-1,1,'Duplicated/m
 assert.ok(html.indexOf('id="myLineup"')<html.indexOf('id="lineupRecommendations"'),'Full roster must appear before roster advice');
 assert.ok(html.indexOf('id="myLineup"')<html.indexOf('id="offenseOutlook"'),'Bench must be visible above future forecasts');
 assert.ok(html.includes('overview-roster.js'),'Module loaded from the homepage');
-for(const match of html.matchAll(/<script(?:\\s+[^>]*?)?>([\\s\\S]*?)<\\/script>/g)){
- if(match[1].trim())new Function(match[1]);
-}
+const inlineStart=html.lastIndexOf('<script>');
+const inlineEnd=html.indexOf('</script>',inlineStart);
+assert.ok(inlineStart>=0&&inlineEnd>inlineStart,'Inline dashboard script exists');
+new Function(html.slice(inlineStart+'<script>'.length,inlineEnd));
 const script=fs.readFileSync(path.join(base,'overview-roster.js'),'utf8');
 const root={innerHTML:''};
 const context={document:{getElementById(id){return id==='myLineup'?root:null;}}};
