@@ -1192,12 +1192,11 @@ function renderSpecialValidation(){
  const el=$('#specialValidation');if(!el)return;
  if(!specialValidation?.defensePointsAllowed)return;
  const d=specialValidation.defensePointsAllowed,k=specialValidation.redZoneFgTrips;
- el.innerHTML='<h3>Team-level K / D/ST diagnostics</h3>'+
- '<p>2025 rolling-origin test, '+specialValidation.n+' team-game observations (Weeks 5–17). Lower MAE is better.</p>'+
+ el.innerHTML='<h3>K / DEF model test</h3>'+
  '<div class="special-validation-grid">'+
  '<div><strong>'+Number(d.maeModel).toFixed(2)+'</strong><small>Points-allowed MAE<br>naïve baseline '+Number(d.maeConstant).toFixed(2)+'</small></div>'+
  '<div><strong>'+Number(k.maeModel).toFixed(2)+'</strong><small>Red-zone FG trips MAE<br>naïve baseline '+Number(k.maeConstant).toFixed(2)+'</small></div></div>'+
- '<p class="special-validation-warning">These tests assess defensive scoring environment and kicker opportunities, not actual Yahoo K/DST fantasy-point accuracy. Sack, turnover, distance and weather adjustments require further validation.</p>';
+ '<details class="quiet-details special-validation-help"><summary>Validation scope</summary><p>2025 rolling test across '+specialValidation.n+' team-games (Weeks 5–17). These are proxy tests of points allowed and red-zone opportunities, not actual Yahoo K/DEF fantasy-point accuracy; turnover, sacks and weather remain unvalidated.</p></details>';
 }
 function renderProjection(){
  const ranking=week.matchups.flatMap(m=>[m.home,m.away]).sort((a,b)=>(b.projectedPoints??-1)-(a.projectedPoints??-1));
@@ -1288,7 +1287,7 @@ async function get(path){const r=await fetch(DATA_BASE+path+'.json',{cache:'no-s
   $('#rosterLeagueIntro').textContent='Browse '+LEAGUE_NAME+' rosters and compare starters with eligible backups.';
   $('#leagueSnapshot').textContent=LEAGUE_NAME+' · snapshot '+new Date(week.retrievedAt).toLocaleDateString(undefined,{month:'short',day:'numeric'})+' · not live';
   document.title='Da Vinci Fantasy Lab | '+LEAGUE_NAME;
-  const intro=$('#page-overview .section-top p');if(intro)intro.textContent=LEAGUE_NAME+' · matchup, lineup and league standings.';
+
   const eyebrow=$('#page-overview .section-top .eyebrow');if(eyebrow)eyebrow.textContent=LEAGUE_NAME+' · 2026';
   const heading=$('#page-projections .section-top .eyebrow');if(heading)heading.textContent=LEAGUE_NAME+' · Week '+week.week+' model snapshot';
   const footer=$('.footer > div:first-child');if(footer)footer.textContent='DA VINCI FANTASY LAB / '+LEAGUE_NAME.toUpperCase()+' · MMXXVI';
