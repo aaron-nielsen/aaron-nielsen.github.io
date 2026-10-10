@@ -1235,7 +1235,13 @@ async function get(path){const r=await fetch(DATA_BASE+path+'.json',{cache:'no-s
   $('#leagueSnapshot').textContent=LEAGUE_NAME+' · snapshot '+new Date(week.retrievedAt).toLocaleDateString(undefined,{month:'short',day:'numeric'})+' · not live';
   document.title='Da Vinci Fantasy Lab | '+LEAGUE_NAME;
   const intro=$('#page-overview .section-top p');if(intro)intro.textContent=LEAGUE_NAME+' · matchup, lineup and league standings.';
+  const eyebrow=$('#page-overview .section-top .eyebrow');if(eyebrow)eyebrow.textContent=LEAGUE_NAME+' · 2026';
+  const heading=$('#page-projections .section-top .eyebrow');if(heading)heading.textContent=LEAGUE_NAME+' · Week '+week.week+' model snapshot';
+  const footer=$('.footer > div:first-child');if(footer)footer.textContent='DA VINCI FANTASY LAB / '+LEAGUE_NAME.toUpperCase()+' · MMXXVI';
   if(LEAGUE_KEY==='nebraska'){
+    const tradeControls=$('#page-trades .trade-controls');if(tradeControls)tradeControls.hidden=true;
+    const tradeCaveat=$('#page-trades .trade-caveat');if(tradeCaveat)tradeCaveat.hidden=true;
+    const tradeSub=$('#page-trades .panel-sub');if(tradeSub)tradeSub.textContent='Nebraska league-specific trade screening not built yet';
     const note=document.createElement('p');note.className='model-league-explanation';
     note.textContent='Nebraska projections reuse the workload model and matchup factors from CSU but apply Nebraska Yahoo scoring; they are not independently validated. Trade and lineup-adjusted waiver advice require a separate rebuild.';
     const container=document.querySelector('#page-projections .projection-split');container?.parentNode?.insertBefore(note,container);
