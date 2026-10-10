@@ -11,7 +11,7 @@ const run=(script,args)=>spawnSync(process.execPath,[path.join(root,'scripts',sc
 try{
  const source=file('future.json',{season:2026,startWeek:5,endWeek:17,generatedAt:'2026-10-09T15:00:00Z',
   modelVersion:'test',players:[{yahooId:'abc',name:'Runner',position:'RB',
-   weeks:[{week:5,points:12,state:'assuming_active'}]}]});
+   weeks:[{week:5,points:12,state:'assuming_active',date:new Date(Date.now()+86400000).toISOString().slice(0,10)}]}]});
  const frozen=path.join(tmp,'frozen.json');
  let p=run('freeze-forecasts.cjs',[source,'5',frozen]);
  assert.equal(p.status,0,p.stderr);
