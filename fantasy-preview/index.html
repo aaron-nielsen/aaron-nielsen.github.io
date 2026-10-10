@@ -1240,6 +1240,7 @@ function showPage(page){
  if(location.hash!=='#'+page)history.replaceState(null,'','#'+page);
  document.querySelectorAll('.page').forEach(x=>x.hidden=x.id!=='page-'+page);
  document.querySelectorAll('.nav-btn').forEach(x=>{const on=x.dataset.page===page;x.classList.toggle('active',on);x.setAttribute('aria-current',on?'page':'false');});
+ if(page==='transactions')window.DaVinciTransactions?.update();
  window.scrollTo({top:0,behavior:'smooth'});
 }
 $('#waiverHorizon').addEventListener('change',()=>window.DaVinciAdvice?.renderWaivers());
