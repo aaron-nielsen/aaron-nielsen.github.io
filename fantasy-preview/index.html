@@ -695,6 +695,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 <script src="./lab-enhancements.js"></script>
 <script src="./availability-sanity.js"></script>
 <script src="./return-outlook.js"></script>
+<script src="./playing-time-model.js"></script>
 <script src="./roster-advice.js"></script>
 <script src="./overview-roster.js"></script>
 <script src="./trade-preferences.js"></script>
@@ -1239,6 +1240,8 @@ async function get(path){const r=await fetch(DATA_BASE+path+'.json',{cache:'no-s
   // Yahoo NA status overrides cached model player/team assumptions (e.g. Joe Mixon).
   window.DaVinciEligibility?.reconcile({available,futureData,weekly});
   window.DaVinciReturns?.apply({futureData,weekly});
+  // Snap-share and confirmed teammate absences adjust projected carries/targets/points.
+  window.DaVinciPlayingTime?.apply({futureData,weekly});
   const special=window.DaVinciSpecialTeams?.enrich({context:specialContext,league:leagueSettings,rosters,available,futureData,weekly});
   if(!special||special.def===0||special.k===0)throw Error('K/DST model coverage unavailable');
   modelLineupCache.clear();
