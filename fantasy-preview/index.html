@@ -248,10 +248,73 @@ body{
 @media(max-width:800px){.finder-controls{grid-template-columns:repeat(3,minmax(0,1fr))}.finder-controls input{grid-column:1/-1}}
 @media(max-width:600px){.finder-controls{grid-template-columns:1fr 1fr}.finder-controls input{grid-column:1/-1}.finder-controls #finderSort{grid-column:1/-1}.accuracy-grid>div{padding:13px 10px}.accuracy-grid strong{font-size:32px}.accuracy-grid small{font-size:8px}.accuracy-note{padding:14px 16px}}
 
+
+/* Renaissance manuscript colors sampled from the new Da Vinci banner. */
+:root{--base:#e8bf8c;--deep:#422615;--card:#f7e4c3;--card2:#ebcd9e;--border:#c49b68;--text:#442815;--muted:#775c43;--cream:#fff0d4;--orange:#9a4926;--teal:#756940;--blue:#675c4a;--pink:#8c5f48;--shadow:0 8px 22px rgba(70,34,14,.13)}
+body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);color:var(--text);font-size:17px}
+.shell{max-width:1290px;padding:0 24px 64px}
+.topbar{height:60px;border-color:#97653e}
+.topbar:after{background:#cc9a62}
+.season-identifier{display:flex;gap:12px;align-items:baseline;color:#5d3019}
+.season-identifier strong{font:700 23px 'Cormorant Garamond',Georgia,serif}
+.season-identifier span{font-size:12px;font-weight:700;letter-spacing:.1em}
+.weekstamp{background:#55321f;border-color:#864c28;color:#fee9bd}
+.weekstamp b{font-size:28px}
+.renaissance-banner{margin:17px 0 6px;border:2px solid #7a441f;outline:1px solid #c1945c;outline-offset:-7px;background:#e2af73;box-shadow:0 11px 26px rgba(65,33,17,.2);overflow:hidden;border-radius:3px;line-height:0}
+.renaissance-banner img{display:block;width:100%;height:auto;aspect-ratio:3/1;object-fit:cover}
+.nav{padding:14px 0 20px}
+.nav-btn{color:#653d26;font-size:13px}
+.nav-btn.active{background:#63351f;border-color:#63351f;color:#ffecce}
+.nav-btn:hover{background:#eed1a3}
+.section-top h1,.section-top h2{font-size:clamp(42px,5vw,62px);color:#542d19}
+.section-top p{font-size:16px;color:#6f523b}
+.eyebrow{color:#8f421f;font-size:12px}
+.matchup{background:linear-gradient(130deg,#4e2b19,#69432a);border-color:#8e562d;color:#fff0ce}
+.matchup .eyebrow{color:#eac08e}
+.matchup .projected-number.you{color:#ffd99b}
+.matchup .oddsbar .yours{background:#dba25d}
+.matchup .oddsbar .theirs{background:#b78a5b}
+.record-card,.panel{background:#f8e8c9;border-color:#c69e6e;color:#482d1a}
+.record-upper,.panel-header{background:#f0d5a9;border-color:#c69e6e}
+.record-fig,.record-stats strong,.panel-title,.model-status .headline,.team-overview h2{color:#5b311b}
+.panel-title{font-size:31px}
+.panel-sub,.record-desc,.row-detail,.player-info span,.slot-badge{color:#785b43;font-size:13px}
+.record-stats small{font-size:12px}
+.record-stats strong{font-size:34px}
+.mini-row,.player-line,.scoreboard-item{border-color:#dac29d}
+.row-name,.player-info b,.forecast-name,.projected-player strong{font-size:15px;color:#452916}
+.row-detail{font-size:12px}
+.row-slot{color:#784b2b;font-size:13px}
+.position{font-size:12px;min-width:43px;background:#edd6b0!important;color:#603d27!important;border-color:#c5a37a!important}
+.chip{border-color:#b88456;color:#814d27;font-size:11px}
+.sub-link{color:#8b431d;font-size:13px}
+.team-overview,.finder-surface{background:#f1d5a6;border-color:#c09665}
+.result,.projection-table-row{background:#faecd3;border-color:#dfbd8e}
+.result .grow strong{font-size:15px;color:#482c19}
+.result .grow small,.result .market,.projected-player small{font-size:12px;color:#775840}
+.availability,.availability.mine{color:#7d421e;font-size:12px}
+.finder-summary,.tiny{font-size:13px}
+.projection-table-head{background:#e8c694;color:#6c3a21;font-size:12px}
+.projection-table-row.mine,.forecast-row.mine,.scoreboard-item.mine{background:#edcc9d}
+.prediction-team{color:#68482e;font-size:13px}
+.prediction-score,.forecast-value,.scoreboard-item .pts{color:#6d3b20;font-size:27px}
+.forecast-track{background:#ddbb91}
+.forecast-fill{background:linear-gradient(90deg,#ae7d4c,#693920)}
+.accuracy-grid{background:#efcea0}
+.accuracy-grid small{color:#755037;font-size:12px}
+.accuracy-grid strong{color:#65351d}
+.note{background:#f6dfb5;border-color:#d2a876;color:#664730;font-size:13px}
+.footer{border-color:#b88753;color:#785235;font-size:12px}
+.select,.finder-controls .select,.finder-controls input,.projection-controls input{background:#fff3db;border-color:#bd9569;color:#53351e;font-size:15px}
+.finder-surface h2{color:#5f341c;font-size:37px}
+.weekly-mini{font:700 19px 'Cormorant Garamond',Georgia,serif;color:#7e3f20;min-width:69px;text-align:right}
+@media(max-width:700px){.shell{padding:0 12px 50px}.season-identifier span{font-size:9px}.season-identifier strong{font-size:20px}.topbar{height:55px}.renaissance-banner{margin-top:12px}.nav-btn{font-size:11px}.section-top h1,.section-top h2{font-size:42px}.panel-title{font-size:28px}.row-name,.player-info b{font-size:14px}.weekly-mini{min-width:52px;font-size:17px}.finder-surface h2{font-size:31px}}
+
 </style>
 </head><body>
 <div class="shell">
-<header class="topbar"><div class="brand"><div class="brandmark" aria-hidden="true"><svg viewBox="0 0 60 60" width="47" height="47" role="presentation" focusable="false"><circle cx="30" cy="30" r="23" fill="none" stroke="currentColor" stroke-width="1.1"/><circle cx="30" cy="30" r="15" fill="none" stroke="currentColor" stroke-width=".8" opacity=".7"/><path d="M30 6v48M6 30h48M12 12l36 36M48 12L12 48" stroke="currentColor" stroke-width=".6" opacity=".7"/><path d="M30 12l6 18-6 18-6-18z" fill="none" stroke="currentColor" stroke-width="1.25"/><circle cx="30" cy="30" r="3" fill="currentColor"/></svg></div><div><div class="brandname"><span class="brand-script">Da Vinci</span><span class="brand-rest">Fantasy Lab</span></div><div class="brandtag">CSU STATS · 2026</div></div></div><div class="top-right"><a class="top-link" href="https://football.fantasysports.yahoo.com/f1/258793" target="_blank" rel="noopener">OPEN YAHOO ↗</a><div class="weekstamp"><b id="weekHead">05</b><small>Week / 2026</small></div></div></header>
+<header class="topbar"><div class="season-identifier"><strong>CSU STATS</strong><span>FANTASY FOOTBALL · 2026</span></div><div class="top-right"><a class="top-link" href="https://football.fantasysports.yahoo.com/f1/258793" target="_blank" rel="noopener">OPEN YAHOO ↗</a><div class="weekstamp"><b id="weekHead">05</b><small>WEEK / 2026</small></div></div></header>
+<div class="renaissance-banner"><img src="./assets/da-vinci-fantasy-lab.webp" alt="Da Vinci Fantasy Lab: Leonardo's portrait alongside ink sketches of normal distributions, statistical plots and football plays" width="1250" height="417" fetchpriority="high"></div>
 <nav class="nav" aria-label="Dashboard navigation">
 <button class="nav-btn active" type="button" data-page="overview">◈ &nbsp;THE STUDY</button>
 <button class="nav-btn" type="button" data-page="rosters">▤ &nbsp;ROSTERS</button>
