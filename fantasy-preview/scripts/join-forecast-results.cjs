@@ -17,7 +17,7 @@ if(!Array.isArray(frozen.records)||!Array.isArray(actuals)||!Array.isArray(yahoo
  throw Error('Expected frozen.records, actuals array, and Yahoo array');
 }
 const id=x=>[x.season,x.week,String(x.playerId)].join(':');
-const date=x=>typeof x==='string'&&/(Z|[+-]\\d{2}:\\d{2})$/.test(x)&&Number.isFinite(Date.parse(x));
+const date=x=>typeof x==='string'&&/(Z|[+-]\d{2}:\d{2})$/.test(x)&&Number.isFinite(Date.parse(x));
 const unique=(rows,label)=>{
  const map=new Map();
  for(const row of rows){
