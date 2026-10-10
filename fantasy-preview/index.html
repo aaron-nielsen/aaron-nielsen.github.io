@@ -626,7 +626,6 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
   <option value="rest_of_season">Rest of season · Weeks 6–17</option>
  </select></div>
  <div id="waiverRecommendations" class="waiver-list"><div class="empty-copy">Loading players…</div></div>
- <div id="specialPickupResults" class="special-pickup-results" aria-label="Kicker and defensive free agent alternatives"></div>
  
 </section>
 <div class="columns">
@@ -680,6 +679,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 </div>
 <script src="./special-teams-model.js"></script>
 <script src="./lab-enhancements.js"></script>
+<script src="./roster-advice.js"></script>
 <script>
 'use strict';
 const $=s=>document.querySelector(s);
@@ -1324,7 +1324,7 @@ function showPage(page){
  document.querySelectorAll('.nav-btn').forEach(x=>{const on=x.dataset.page===page;x.classList.toggle('active',on);x.setAttribute('aria-current',on?'page':'false');});
  window.scrollTo({top:0,behavior:'smooth'});
 }
-$('#waiverHorizon').addEventListener('change',()=>{renderWaivers();renderSpecialWaivers();});
+$('#waiverHorizon').addEventListener('change',()=>window.DaVinciAdvice?.renderWaivers());
 document.querySelectorAll('.nav-btn').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
 document.querySelectorAll('[data-jump]').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.jump)));
 async function get(path){const r=await fetch(DATA_BASE+path+'.json',{cache:'no-store'});if(!r.ok)throw Error('Data file '+path+' returned HTTP '+r.status);return r.json();}
@@ -1354,7 +1354,9 @@ async function get(path){const r=await fetch(DATA_BASE+path+'.json',{cache:'no-s
     note.textContent='Nebraska uses its own Yahoo scoring and a transferred offensive workload model; kicker/defense use a separate opponent-adjusted team model. Neither is independently validated yet. Trade and lineup-adjusted waiver advice require a separate rebuild.';
     const container=document.querySelector('#page-projections .projection-split');container?.parentNode?.insertBefore(note,container);
   }
-  initOverview();initRosters();initFinder();renderProjection();renderSpecialValidation();renderRecommendations();renderWaivers();renderSpecialWaivers();initModelTeamForecasts();window.DaVinciLab?.init();
+  initOverview();initRosters();initFinder();renderProjection();renderSpecialValidation();initModelTeamForecasts();window.DaVinciLab?.init();
+   if(!window.DaVinciAdvice)throw Error("Roster recommendation module unavailable");
+   window.DaVinciAdvice.init({rosters,available,week:Number(week.week),future:futureData,teamId:TEAM_ID});
    const pageFromLink=location.hash.slice(1);if(['rosters','finder','projections','trades'].includes(pageFromLink))showPage(pageFromLink);
  }catch(e){
   $('#hero').innerHTML='<div class="loading"><strong>Dashboard data could not be loaded.</strong><p>'+esc(e.message)+'</p><p>Check the published JSON files or reload this page.</p></div>';
