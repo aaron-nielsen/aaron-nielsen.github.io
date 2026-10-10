@@ -17,9 +17,8 @@ async function render(league){
   if(!result.n)throw Error('No completed player-weeks with verified pregame forecasts');
   const order=['all','QB','RB','WR','TE','K','DEF'];
   const rows=order.filter(position=>result.byPosition[position]).map(position=>{
-   const v=result.byPosition[position];return
-   '<tr><th scope="row">'+esc(position==='all'?'All positions':position)+'</th>'+
-   '<td>'+v.daVinci.n+'</td><td>'+fmt(v.daVinci.mae)+'</td><td>'+fmt(v.daVinci.bias)+'</td>'+
+   const v=result.byPosition[position];return '<tr><th scope="row">'+esc(position==='all'?'All positions':position)+'</th>'+
+   '<td>'+v.daVinci.n+'</td><td>'+fmt(v.daVinci.mae)+'</td><td>'+fmt(v.daVinci.rmse)+'</td><td>'+fmt(v.daVinci.bias)+'</td>'+
    '<td>'+v.paired.n+'</td><td>'+fmt(v.paired.daVinci.mae)+'</td><td>'+fmt(v.paired.yahoo.mae)+'</td><td>'+(v.winRate==null?'—':(100*v.winRate).toFixed(1)+'%')+'</td></tr>';}).join('');
   const pairedN=result.byPosition.all?.paired.n||0;
   const caveat=pairedN<30?'<p class="quiet tiny">Small comparison sample ('+pairedN+' paired player-weeks). Treat differences as preliminary.</p>':'';
