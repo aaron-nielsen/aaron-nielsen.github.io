@@ -1029,3 +1029,22 @@ body{font:16px/1.48 'Source Sans 3',Arial,sans-serif;color:var(--text);backgroun
 #page-transactions .txn-ledger-move .txn-move strong{display:block;margin-bottom:3px}
 #page-transactions .txn-impacts{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
 @media(max-width:600px){#page-transactions .txn-impacts{grid-template-columns:1fr}}
+
+#page-overview #leagueBoard{display:block;padding:0 16px 10px}
+.league-pair{display:grid;grid-template-columns:minmax(0,1fr) 62px 64px 62px minmax(0,1fr);gap:12px;align-items:center;padding:16px 10px;border-bottom:1px solid #e0d4c3}
+.league-pair:last-child{border-bottom:0}
+.league-pair.mine{background:#f3ead8;border-radius:5px}
+.league-pair-team{font-size:14px;line-height:1.35;text-align:right;overflow-wrap:break-word}
+.league-pair-team.right{text-align:left}
+.league-pair-scores,.league-pair-labels{display:grid;gap:5px;text-align:center;line-height:1.4;font-variant-numeric:tabular-nums}
+.league-pair-scores b{font-size:18px;color:#4d6851}
+.league-pair-scores>span{font-size:14px;color:#8a7058}
+.league-pair-labels{font-size:11px;color:#8a7058}
+@media(max-width:600px){
+ #page-overview #leagueBoard{padding:0 7px 7px}
+ .league-pair{grid-template-columns:minmax(0,1fr) 42px 44px 42px minmax(0,1fr);gap:4px;padding:14px 3px}
+ .league-pair-team{font-size:11px}
+ .league-pair-scores b{font-size:14px}
+ .league-pair-scores>span{font-size:12px}
+ .league-pair-labels{font-size:9px}
+}
