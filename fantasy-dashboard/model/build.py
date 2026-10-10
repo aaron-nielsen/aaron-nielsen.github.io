@@ -9,7 +9,7 @@ import io
 import json
 from pathlib import Path
 from urllib.request import Request, urlopen
-from project import project_pool
+from project import project_pool, HISTORY_YEARS
 from identity import yahoo_crosswalk
 
 BASE = Path(__file__).resolve().parents[1]
@@ -56,7 +56,7 @@ def main():
         raise RuntimeError("League ID mismatch; refusing to update projections")
     ids, ambiguous = yahoo_crosswalk(csv_rows(IDS_URL))
     rows = []
-    for year in (SEASON - 1, SEASON):
+    for year in range(SEASON - HISTORY_YEARS, SEASON + 1):
         source_rows = normalize_weekly_stats(csv_rows(STATS_URL.format(season=year)))
         if not source_rows:
             raise RuntimeError("No player stats available for year " + str(year))
@@ -80,7 +80,8 @@ def main():
         "rosterSnapshotAt": rosters.get("retrievedAt"),
         "availableSnapshotAt": available.get("retrievedAt"),
         "statsThroughWeek": max(int(r["week"]) for r in current),
-        "inputSources": [IDS_URL] + [STATS_URL.format(season=y) for y in (SEASON-1, SEASON)],
+        "historicalSeasons": list(range(SEASON-HISTORY_YEARS, SEASON)),
+        "inputSources": [IDS_URL] + [STATS_URL.format(season=y) for y in range(SEASON-HISTORY_YEARS, SEASON+1)],
         "coverage": {**out["coverage"], "rosteredSkillPlayers": total_skill, "ambiguousCrosswalkIDs": ambiguous},
     })
     dest = BASE / "data/projections.json"
