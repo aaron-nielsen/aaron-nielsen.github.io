@@ -666,7 +666,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 <div class="section-top"><div><div class="eyebrow">Lineup optimization · Weeks 6–17</div><h2>Trade suggestions</h2>
 </div></div>
 <div class="panel">
-  
+  <div id="tradePreferenceBuilder" aria-label="Personal trade targets"></div>
   <div class="trade-controls"><label for="tradePosition">Trade targets <select id="tradePosition" class="select"><option value="offense_no_qb">Offense (no QB)</option><option value="all">All offense</option><option value="QB">QB</option><option value="RB">RB</option><option value="WR">WR</option><option value="TE">TE</option></select></label><label for="tradePartner">Trading with <select id="tradePartner" class="select"><option value="all">All teams</option></select></label>
   <label for="tradeFromWeek">Evaluate <select id="tradeFromWeek" class="select"><option value="6">Weeks 6–17</option></select></label>
   <label for="tradePackageFilter">Packages <select id="tradePackageFilter" class="select"><option value="three_each">3-for-3 only</option><option value="balanced" selected>2-for-2 or 3-for-3 · screened</option><option value="balanced_all">All screened equal-size deals</option><option value="all">Exploratory · including uneven packages</option></select></label>
@@ -680,6 +680,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 <script src="./special-teams-model.js"></script>
 <script src="./lab-enhancements.js"></script>
 <script src="./roster-advice.js"></script>
+<script src="./trade-preferences.js"></script>
 <script>
 'use strict';
 const $=s=>document.querySelector(s);
@@ -1347,16 +1348,15 @@ async function get(path){const r=await fetch(DATA_BASE+path+'.json',{cache:'no-s
   const heading=$('#page-projections .section-top .eyebrow');if(heading)heading.textContent=LEAGUE_NAME+' · Week '+week.week+' model snapshot';
   const footer=$('.footer > div:first-child');if(footer)footer.textContent='DA VINCI FANTASY LAB / '+LEAGUE_NAME.toUpperCase()+' · MMXXVI';
   if(LEAGUE_KEY==='nebraska'){
-    const tradeControls=$('#page-trades .trade-controls');if(tradeControls)tradeControls.hidden=true;
+    document.body.dataset.league='nebraska';
     const tradeCaveat=$('#page-trades .trade-caveat');if(tradeCaveat)tradeCaveat.hidden=true;
     const tradeSub=$('#page-trades .panel-sub');if(tradeSub)tradeSub.textContent='Nebraska league-specific trade screening not built yet';
-    const note=document.createElement('p');note.className='model-league-explanation';
-    note.textContent='Nebraska uses its own Yahoo scoring and a transferred offensive workload model; kicker/defense use a separate opponent-adjusted team model. Neither is independently validated yet. Trade and lineup-adjusted waiver advice require a separate rebuild.';
-    const container=document.querySelector('#page-projections .projection-split');container?.parentNode?.insertBefore(note,container);
+
   }
   initOverview();initRosters();initFinder();renderProjection();renderSpecialValidation();initModelTeamForecasts();window.DaVinciLab?.init();
    if(!window.DaVinciAdvice)throw Error("Roster recommendation module unavailable");
    window.DaVinciAdvice.init({rosters,available,week:Number(week.week),future:futureData,teamId:TEAM_ID});
+   window.DaVinciPersonalTrades?.init({rosters,available,week:Number(week.week),future:futureData,teamId:TEAM_ID,leagueKey:LEAGUE_KEY,optimize:window.DaVinciAdvice.lineup});
    const pageFromLink=location.hash.slice(1);if(['rosters','finder','projections','trades'].includes(pageFromLink))showPage(pageFromLink);
  }catch(e){
   $('#hero').innerHTML='<div class="loading"><strong>Dashboard data could not be loaded.</strong><p>'+esc(e.message)+'</p><p>Check the published JSON files or reload this page.</p></div>';
