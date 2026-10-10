@@ -37,3 +37,4 @@ jobs:
           node fantasy-preview/tests/usage-history.test.cjs
           node fantasy-preview/tests/transactions.test.cjs
           node fantasy-preview/tests/historical-lineups.test.cjs
+          node fantasy-preview/tests/historical-trends.test.cjs
