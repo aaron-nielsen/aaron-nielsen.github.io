@@ -89,7 +89,7 @@
       }
     }
   },
-  "generatedAt": "2026-10-10T03:45:20.098263+00:00",
+  "generatedAt": "2026-10-10T03:45:40.061607+00:00",
   "sources": [
     "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2024.csv",
     "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2025.csv"
