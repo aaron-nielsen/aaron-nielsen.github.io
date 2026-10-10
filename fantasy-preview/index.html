@@ -1247,7 +1247,10 @@ function showPage(page){
  if(location.hash!=='#'+page)history.replaceState(null,'','#'+page);
  document.querySelectorAll('.page').forEach(x=>x.hidden=x.id!=='page-'+page);
  document.querySelectorAll('.nav-btn').forEach(x=>{const on=x.dataset.page===page;x.classList.toggle('active',on);x.setAttribute('aria-current',on?'page':'false');});
- if(page==='transactions')window.DaVinciTransactions?.update();
+ if(page==='transactions'){
+  window.DaVinciTransactions?.update();
+  window.DaVinciHistoricalView?.render(LEAGUE_KEY);
+ }
  if(page==='performance')window.DaVinciPerformance?.render(LEAGUE_KEY);
  window.scrollTo({top:0,behavior:'smooth'});
 }
