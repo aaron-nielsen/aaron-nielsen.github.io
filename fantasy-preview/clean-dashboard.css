@@ -806,3 +806,74 @@ body{font:16px/1.48 'Source Sans 3',Arial,sans-serif;color:var(--text);backgroun
  #page-transactions .txn-card{padding:13px 12px}
  #page-transactions .txn-summary{padding:10px 12px}
 }
+
+
+/* October 2026: authentic Da Vinci parchment masthead. Preserve the original
+   art, crop it to a narrow browser-width ribbon, and attach the supplied
+   bronze/gold ram horn insignia at the hat position. */
+html,body{overflow-x:clip}
+body{background:#f1e7d6}
+.renaissance-banner{
+ box-sizing:border-box;position:relative;left:50%;transform:translateX(-50%);
+ display:block;width:100vw;max-width:none;height:clamp(128px,12vw,166px);
+ margin:0 0 9px!important;overflow:hidden;
+ border:0!important;border-top:2px solid #9a7246!important;
+ border-bottom:2px solid #b38a56!important;border-radius:0!important;
+ outline:none!important;box-shadow:none!important;background:#e9d0a6;
+}
+.renaissance-banner>img:first-child{
+ display:block;width:100%;height:100%!important;max-height:none!important;
+ aspect-ratio:auto!important;object-fit:cover;object-position:center 34%;
+ filter:sepia(.16) saturate(.86); /* no modern bright-green treatment */
+}
+.renaissance-banner .hat-crest{
+ display:block;position:absolute!important;
+ left:18.5%;top:13%;width:clamp(26px,3.5vw,48px);height:auto!important;
+ aspect-ratio:48/30!important;object-fit:contain;z-index:2;
+ filter:sepia(.28) saturate(.84) drop-shadow(0 1px 1px #4b301e90);
+ pointer-events:none;
+}
+.league-switch{margin:5px 0 6px!important}
+.league-switch select{border-color:#c3a37d!important;background:#fbefdb!important;color:#614628!important}
+.nav{margin:0!important;padding:8px 0 13px!important}
+.nav-btn{color:#654627!important}
+.nav-btn.active{background:#865a31!important;color:#fff2d6!important;border-color:#865a31!important}
+.nav-btn:hover:not(.active){background:#eedab9!important}
+#page-overview>.section-top{margin:4px 0 9px!important}
+#page-overview .overview-top{gap:7px}
+#page-overview .overview-top .matchup{
+ background:#f6e6c9!important;border-color:#d6bb95!important;
+ padding:11px 15px!important;
+}
+#page-overview .match-compact-scores{gap:8px!important}
+#page-overview .match-compact-projection{padding:4px 1px!important}
+#page-overview .match-compact-projection strong,
+#page-overview .match-compact-projection.optimized strong{
+ color:#79502e!important;
+}
+#page-overview .match-compact-projection.yahoo strong{color:#62462f!important}
+#page-overview .model-offense-strip{
+ margin:6px 0 8px!important;padding:7px 13px!important;background:#f9efdd!important;
+}
+#page-overview .model-short{gap:6px 12px}
+#page-overview .model-short strong{color:#78512f!important}
+#page-overview .model-short a{color:#80552f!important}
+#page-overview .model-short b,
+#page-overview .compared-line b,
+#page-overview .compared-line.optimized b{color:#805734!important}
+#page-overview .overview-roster-panel{margin:9px 0 11px}
+#page-overview .overview-metrics{background:#fbf2e4!important}
+@media(max-width:700px){
+ .renaissance-banner{height:102px;margin-bottom:5px!important}
+ .renaissance-banner>img:first-child{object-position:center 31%}
+ .renaissance-banner .hat-crest{left:19%;top:11%;width:26px}
+ .league-switch{margin:4px 0!important}
+ .nav{padding:6px 0 10px!important}
+ #page-overview .overview-top .matchup{padding:10px 11px!important}
+ #page-overview .match-compact-scores{gap:4px!important}
+ #page-overview .model-offense-strip{margin:5px 0!important}
+}
+@media(max-width:420px){
+ .renaissance-banner{height:90px}
+ .renaissance-banner .hat-crest{left:19%;top:10%;width:22px}
+}

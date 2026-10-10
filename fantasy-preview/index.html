@@ -646,7 +646,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 </head><body>
 <div class="shell">
 
-<div class="renaissance-banner"><img src="./assets/da-vinci-fantasy-lab-approved.webp" alt="Da Vinci Fantasy Lab: Leonardo's portrait alongside ink sketches of normal distributions, statistical plots and football plays" width="1250" height="417" fetchpriority="high"></div>
+<div class="renaissance-banner"><img src="./assets/da-vinci-fantasy-lab-approved.webp" alt="Da Vinci Fantasy Lab: Leonardo's portrait alongside ink sketches of normal distributions, statistical plots and football plays" width="1250" height="417" fetchpriority="high"><img class="hat-crest" src="./assets/ram-hat-emblem.webp" alt="" aria-hidden="true" width="48" height="30" decoding="async"></div>
 <div class="league-switch"><label for="leagueSelector">YAHOO LEAGUE</label><select id="leagueSelector" aria-label="Choose fantasy league"><option value="csu">CSU Stats · Ten Feline Overlords (14 teams)</option><option value="nebraska">Nebraska Bugeaters (10 teams)</option></select><span id="leagueSnapshot" class="league-switch-note">Updated</span></div>
 <nav class="nav" aria-label="Dashboard navigation">
 <button class="nav-btn active" type="button" data-page="overview">Overview</button>
@@ -910,9 +910,8 @@ function renderModelMatchup(){
   def:lineup.ids.find(p=>p.slot===8)?.points??0
  });
  const p=splits(a),q=splits(b);
- area.innerHTML='<div class="model-short"><strong>Da Vinci lineup model</strong>'+
-  '<span>Optimized nine starters · includes K + DEF</span>'+
-  '<a href="#our-team-forecasts" id="modelTeamJump">All teams →</a></div>'+
+ area.innerHTML='<div class="model-short"><strong>Model breakdown</strong>'+
+  '<a href="#our-team-forecasts" id="modelTeamJump">Team forecasts →</a></div>'+
   '<details class="quiet-details model-score-details"><summary>Score breakdown</summary>'+
   '<div class="model-breakout"><span>Offense <b>'+p.offense.toFixed(1)+' / '+q.offense.toFixed(1)+'</b></span>'+
   '<span>K <b>'+p.k.toFixed(1)+' / '+q.k.toFixed(1)+'</b></span>'+
