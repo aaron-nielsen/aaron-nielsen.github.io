@@ -598,11 +598,11 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 <div class="renaissance-banner"><img src="./assets/da-vinci-fantasy-lab-approved.webp" alt="Da Vinci Fantasy Lab: Leonardo's portrait alongside ink sketches of normal distributions, statistical plots and football plays" width="1250" height="417" fetchpriority="high"></div>
 <div class="league-switch"><label for="leagueSelector">YAHOO LEAGUE</label><select id="leagueSelector" aria-label="Choose fantasy league"><option value="csu">CSU Stats · Ten Feline Overlords (14 teams)</option><option value="nebraska">Nebraska Bugeaters (10 teams)</option></select><span id="leagueSnapshot" class="league-switch-note">Snapshot-based · no Yahoo changes</span></div>
 <nav class="nav" aria-label="Dashboard navigation">
-<button class="nav-btn active" type="button" data-page="overview">◈ &nbsp;OVERVIEW</button>
-<button class="nav-btn" type="button" data-page="rosters">▤ &nbsp;ROSTERS</button>
-<button class="nav-btn" type="button" data-page="finder">⌕ &nbsp;PLAYER FINDER</button>
-<button class="nav-btn" type="button" data-page="projections">↗ &nbsp;PROJECTIONS</button>
-<button class="nav-btn" type="button" data-page="trades">⇄ &nbsp;TRADE SUGGESTIONS</button>
+<button class="nav-btn active" type="button" data-page="overview">Overview</button>
+<button class="nav-btn" type="button" data-page="rosters">Rosters</button>
+<button class="nav-btn" type="button" data-page="finder">Players</button>
+<button class="nav-btn" type="button" data-page="projections">Projections</button>
+<button class="nav-btn" type="button" data-page="trades">Trades</button>
 </nav>
 <div class="codex-rule" aria-hidden="true" style="display:flex;align-items:center;gap:12px;margin:-9px 0 20px;opacity:.65"><span style="flex:1;height:1px;background:#b8a98e"></span><span style="width:7px;height:7px;transform:rotate(45deg);border:1px solid #967c52"></span><span style="flex:1;height:1px;background:#b8a98e"></span></div>
 <main id="app">
@@ -613,7 +613,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 <div class="record-card"><div class="record-upper"><div class="eyebrow">RECORD</div><div class="record-fig mono" id="wl">—</div><div class="record-desc" id="rankDesc">League standings</div></div><div class="record-stats"><div><strong class="mono" id="pointsFor">—</strong><small>POINTS SCORED</small></div><div><strong id="waiverRank" class="mono">—</strong><small>WAIVER PRIORITY</small></div></div></div>
 </div>
 <div class="model-offense-strip" id="modelMatchupSummary" aria-live="polite">Loading Da Vinci offensive lineup estimates…</div>
-<div class="offense-outlook" id="offenseOutlook" aria-label="Future offensive team projections">Calculating future offensive lineup scenarios…</div>
+<div class="offense-outlook" id="offenseOutlook" aria-label="Future nine-starter team projections">Calculating future lineups…</div>
 <section class="panel waiver-panel" aria-label="Best available player recommendations">
  <div class="panel-header"><div><div class="panel-title">Best available players</div></div>
  <select id="waiverHorizon" class="select waiver-horizon" aria-label="Projection horizon">
@@ -631,7 +631,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 
 </section>
 <div class="columns">
-<div class="panel"><div class="panel-header"><div><div class="panel-title">Your starting lineup</div></div><button class="sub-link" type="button" data-jump="rosters">FULL ROSTER ↗</button></div><div class="roster-mini" id="myLineup"></div></div>
+<div class="panel"><div class="panel-header lineup-planner-header"><div class="panel-title">My lineup</div><select class="select lineup-week-select" id="lineupWeek" aria-label="Choose week for lineup planner"><option value="5">Week 5 · Yahoo starters</option></select><button class="sub-link" type="button" data-jump="rosters">Full roster →</button></div><div class="roster-mini" id="myLineup"></div></div>
 <div class="panel"><div class="panel-header"><div><div class="panel-title">League matchups</div></div><span class="chip" id="boardWeek">WEEK 5</span></div><div class="scoreboard-list" id="leagueBoard"></div></div>
 </div>
 <details class="quiet-details overview-method"><summary>About these projections</summary>
@@ -738,7 +738,7 @@ function row(p){
  const info=playerWeekInfo(p);
  const flex=p.slot==='W/R/T'?' · FLEX':'';
  const label=weeklyDisplay(info);
- const note=p.position==='K'||p.position==='DEF'?'Kicker and defense projections not modeled':'Experimental model; check injury status';
+ const note=p.position==='K'||p.position==='DEF'?'Experimental opponent-adjusted special-teams projection':'Experimental model; check injury status';
  return '<div class="player-line">'+position(p.position)+
  '<div class="player-info"><b>'+esc(p.name)+status(p)+'</b><span>'+esc(p.nflTeam||'No NFL club')+' · '+esc(weeklyOpponent(info))+flex+'</span></div>'+
  '<span class="weekly-mini" title="'+esc(note)+'">'+esc(label)+'</span></div>';
@@ -867,7 +867,7 @@ function renderOffenseOutlook(){
  const sum=rows=>rows.length&&rows.every(x=>x.lineup)?rows.reduce((s,x)=>s+x.lineup.points,0):null;
  const format=x=>x==null?'—':x.toFixed(1);
  const futureFlag=games.some(g=>g.lineup?.needsReview);
- el.innerHTML='<div class="outlook-head"><strong>Upcoming weeks</strong><small>If active · 9 starters</small></div>'+
+ el.innerHTML='<div class="outlook-head"><strong>My next four weeks</strong></div>'+
  '<div class="outlook-week-grid">'+four.map(g=>'<div class="outlook-week"><span>WEEK '+g.week+'</span><strong>'+format(g.lineup?.points??null)+'</strong></div>').join('')+'</div>'+
  '<div class="outlook-totals"><span>Next '+four.length+' weeks <b>'+format(sum(four))+'</b></span><span>ROS · W'+from+'–'+to+' <b>'+format(sum(games))+'</b></span></div>'+
  '';
@@ -882,6 +882,63 @@ function initModelTeamForecasts(){
  select.value=String(week.week);select.addEventListener('change',renderModelTeamRankings);
  renderModelMatchup();renderModelTeamRankings();renderOffenseOutlook();
 }
+
+/* Future nine-starter lineup optimizer with unique eligible bench cover. */
+function renderPlannedLineup(weekNumber){
+ const root=$('#myLineup'),roster=team(TEAM_ID)?.players||[];
+ const estimate=modelTeamLineup(TEAM_ID,weekNumber);
+ if(!estimate){root.innerHTML='<div class="empty-copy">No complete nine-player lineup can be projected for this week.</div>';return;}
+ const slots=['QB','RB','RB','WR','WR','TE','W/R/T','K','DEF'];
+ const starters=estimate.ids.slice().sort((a,b)=>a.slot-b.slot);
+ const chosen=new Set(starters.map(p=>String(p.id)));
+ const forecast=new Map((futureData?.players||[]).map(p=>[String(p.yahooId),p]));
+ const unavailable=new Set(['IR','IR-R','CEL','SUSP','SUS','NA','N/A','PUP','PUP-R','NFI','NFI-R']);
+ const candidates=roster.filter(p=>!chosen.has(String(p.id))&&p.slot!=='IR'&&
+  ['QB','RB','WR','TE','K','DEF'].includes(p.position)&&
+  !unavailable.has(String(p.status||'').toUpperCase()))
+  .map(p=>({p,frame:forecast.get(String(p.id))?.weeks?.find(w=>Number(w.week)===weekNumber)}))
+  .filter(x=>x.frame?.points!=null&&Number.isFinite(Number(x.frame.points)))
+  .map(x=>({...x,points:Number(x.frame.points)}));
+ // Optimize assignment: use each substitute once. Coverage wins ties over points.
+ const dp=Array(1<<slots.length).fill(null);
+ dp[0]={count:0,points:0,choices:Array(slots.length).fill(null)};
+ for(const candidate of candidates){
+  for(let mask=dp.length-1;mask>=0;mask--){
+   const prev=dp[mask];if(!prev)continue;
+   for(let i=0;i<slots.length;i++){
+    const bit=1<<i;
+    if((mask&bit)||!MODEL_SKILL_SLOTS[i].includes(candidate.p.position))continue;
+    const nextMask=mask|bit,existing=dp[nextMask];
+    const proposal={count:prev.count+1,points:prev.points+candidate.points,
+      choices:prev.choices.map((p,j)=>j===i?candidate:p)};
+    if(!existing||proposal.count>existing.count||
+      (proposal.count===existing.count&&proposal.points>existing.points))dp[nextMask]=proposal;
+   }
+  }
+ }
+ const best=dp.filter(Boolean).reduce((a,b)=>!a||b.count>a.count||
+  (b.count===a.count&&b.points>a.points)?b:a,null);
+ const person=(p,slot,pts)=>{
+  if(!p)return '<div class="lineup-column-person empty">No backup</div>';
+  const frame=forecast.get(String(p.id))?.weeks?.find(w=>Number(w.week)===weekNumber);
+  const opp=frame?.state==='bye'?'Bye':frame?.opponent?(frame.home?'vs ':'@ ')+frame.opponent:'Schedule unavailable';
+  const points=frame?.state==='bye'?'BYE':pts==null?'—':Number(pts).toFixed(1);
+  const statusText=p.status?' · '+esc(p.status):'';
+  return '<div class="lineup-column-person">'+(slot?'<span class="lineup-position">'+esc(slot)+'</span>':'')+
+   '<strong>'+esc(p.name)+'</strong><small>'+esc(p.position)+' · '+esc(opp)+statusText+'</small>'+
+   '<span class="lineup-pts">'+points+'</span></div>';
+ };
+ root.innerHTML='<div class="planner-summary"><span>Best modeled starters · Week '+weekNumber+'</span>'+
+  '<strong>'+estimate.points.toFixed(1)+' pts</strong></div>'+
+  '<div class="lineup-column-head"><span>STARTER</span><span>BEST BACKUP</span></div>'+
+  starters.map(p=>{
+   const r=roster.find(x=>String(x.id)===String(p.id));
+   return '<div class="lineup-pair">'+person(r,slots[p.slot],p.points)+
+    person(best?.choices[p.slot]?.p,null,best?.choices[p.slot]?.points)+'</div>';
+  }).join('')+
+  '<details class="quiet-details lineup-planner-help"><summary>About this lineup</summary><p>Optimized from your saved roster for all nine starting slots, including K and DEF. This is not your submitted Yahoo lineup. Estimates assume players participate; check injuries before kickoff.</p></details>';
+}
+
 function initOverview(){
  const m=matchup(),you=m.home.id===TEAM_ID?m.home:m.away,them=m.home.id===TEAM_ID?m.away:m.home;
  const y=you.projectedPoints,t=them.projectedPoints;
@@ -953,6 +1010,17 @@ function initOverview(){
  $('#myLineup').innerHTML='<div class="lineup-column-head"><span>STARTER</span><span>BEST BACKUP</span></div>'+
  ordered.map((p,i)=>'<div class="lineup-pair">'+lineupPerson(p,p.slot)+lineupPerson(selectedBackups[i],'')+'</div>').join('')+
  '';
+ // Week 5 retains the real Yahoo starters; future weeks show optimized forecasts.
+ const currentLineupHtml=$('#myLineup').innerHTML;
+ const lineupSelect=$('#lineupWeek');
+ const first=Number(week.week),last=Number(futureData?.endWeek||17);
+ lineupSelect.innerHTML='<option value="'+first+'">Week '+first+' · Yahoo starters</option>'+
+  Array.from({length:Math.max(0,last-first)},(_,i)=>'<option value="'+(first+i+1)+'">Week '+(first+i+1)+' · Optimized</option>').join('');
+ lineupSelect.addEventListener('change',()=>{
+  const chosenWeek=Number(lineupSelect.value);
+  if(chosenWeek===first)$('#myLineup').innerHTML=currentLineupHtml;
+  else renderPlannedLineup(chosenWeek);
+ });
  $('#leagueBoard').innerHTML=week.matchups.map(m=>'<div class="scoreboard-item'+(m.home.id===TEAM_ID||m.away.id===TEAM_ID?' mine':'')+'"><div class="side">'+esc(m.home.name)+'</div><div class="pts mono">'+number(m.home.projectedPoints)+'</div><div class="dash">–</div><div class="pts mono">'+number(m.away.projectedPoints)+'</div><div class="side right">'+esc(m.away.name)+'</div></div>').join('');
  $('#boardWeek').textContent='WEEK '+week.week;$('#projectionWeek').textContent='WEEK '+week.week;
  $('#sync').textContent='Yahoo snapshot · '+new Date(week.retrievedAt).toLocaleString(undefined,{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'});
@@ -1265,6 +1333,8 @@ function renderAllProjections(){
  }).join(''):'<div class="empty-copy">No matching players.</div>');
 }
 function showPage(page){
+ if(!['overview','rosters','finder','projections','trades'].includes(page))return;
+ if(location.hash!=='#'+page)history.replaceState(null,'','#'+page);
  document.querySelectorAll('.page').forEach(x=>x.hidden=x.id!=='page-'+page);
  document.querySelectorAll('.nav-btn').forEach(x=>{const on=x.dataset.page===page;x.classList.toggle('active',on);x.setAttribute('aria-current',on?'page':'false');});
  window.scrollTo({top:0,behavior:'smooth'});
@@ -1285,7 +1355,7 @@ async function get(path){const r=await fetch(DATA_BASE+path+'.json',{cache:'no-s
   $('#overviewLeagueLabel').textContent=LEAGUE_NAME+' · 2026';
   $('#yahooForecastLeagueSubtitle').textContent='Yahoo projected totals for all '+rosters.teams.length+' teams';
   $('#rosterLeagueIntro').textContent='Browse '+LEAGUE_NAME+' rosters and compare starters with eligible backups.';
-  $('#leagueSnapshot').textContent=LEAGUE_NAME+' · snapshot '+new Date(week.retrievedAt).toLocaleDateString(undefined,{month:'short',day:'numeric'})+' · not live';
+  $('#leagueSnapshot').textContent='Updated '+new Date(week.retrievedAt).toLocaleDateString(undefined,{month:'short',day:'numeric'})+' · read-only snapshot';
   document.title='Da Vinci Fantasy Lab | '+LEAGUE_NAME;
 
   const eyebrow=$('#page-overview .section-top .eyebrow');if(eyebrow)eyebrow.textContent=LEAGUE_NAME+' · 2026';
@@ -1300,6 +1370,7 @@ async function get(path){const r=await fetch(DATA_BASE+path+'.json',{cache:'no-s
     const container=document.querySelector('#page-projections .projection-split');container?.parentNode?.insertBefore(note,container);
   }
   initOverview();initRosters();initFinder();renderProjection();renderSpecialValidation();renderRecommendations();renderWaivers();renderSpecialWaivers();initModelTeamForecasts();window.DaVinciLab?.init();
+   const pageFromLink=location.hash.slice(1);if(['rosters','finder','projections','trades'].includes(pageFromLink))showPage(pageFromLink);
  }catch(e){
   $('#hero').innerHTML='<div class="loading"><strong>Dashboard data could not be loaded.</strong><p>'+esc(e.message)+'</p><p>Check the published JSON files or reload this page.</p></div>';
   $('#sync').textContent='Data load failed';
