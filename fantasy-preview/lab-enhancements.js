@@ -6,6 +6,7 @@ const $el = id => document.getElementById(id);
 const clean = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const num = v => v == null || !Number.isFinite(Number(v)) ? '—' : Number(v).toFixed(2);
 const SKILL = new Set(['QB','RB','WR','TE']);
+const ALL_POSITIONS = new Set(['QB','RB','WR','TE','K','DEF']);
 const RESTRICTED = new Set(['IR','IR-R','O','OUT','CEL','SUSP','PUP','PUP-R','NFI']);
 let selectedWeek = 5;
 let futureById = new Map();
@@ -93,13 +94,15 @@ function breakdown(p,w){
   if(!state.usable)return '<p class="detail-message caution"><strong>Not active:</strong> '+clean(p.name)+' has Yahoo designation '+clean(state.status)+'. Historical production is not an actionable forecast. No next-four or ROS points are claimed.</p>';
   if(!w || w.state==='bye')return '<p class="detail-message">No game is scheduled for the selected week.</p>';
   if(w.factor==null)return '<p class="detail-message">Opponent or schedule information is unavailable for this week.</p>';
+  const special=(p.position==='K'||p.position==='DEF')&&Array.isArray(w.components);
   const cats=futureData.scoringCategories;
-  const rows=cats.map(c=>{
+  const rows=special?w.components.map(x=>({name:x.label,stat:x.stat,rate:null,points:x.points,attempts:x.attempts})):
+   cats.map(c=>{
     const value=Number(p.baselineStats?.[c.key]||0)*Number(w.factor||1);
     const rate=Number(c.pointsPerUnit||0);
     return {name:c.label,stat:value,rate,points:value*rate};
-  }).filter(x=>Math.abs(x.stat)>.004||Math.abs(x.points)>.004);
-  const total=rows.reduce((n,x)=>n+x.points,0);
+   }).filter(x=>Math.abs(x.stat)>.004||Math.abs(x.points)>.004);
+  const total=special?Number(w.points):rows.reduce((n,x)=>n+x.points,0);
   const h=horizon(p);
   const caution=state.review?'<p class="detail-message caution">Yahoo status '+clean(state.status)+': playing availability is uncertain; all future totals below assume full participation.</p>':'';
   const cards='<div class="player-horizons">'+
@@ -107,12 +110,12 @@ function breakdown(p,w){
     '<div><span>Next 4 games</span><strong>'+summaryPts(h.fourPts)+'</strong><small>'+h.four.map(v=>'W'+v.week).join(' · ')+'</small></div>'+
     '<div><span>Rest of season</span><strong>'+summaryPts(h.rosPts)+'</strong><small>Weeks '+h.start+'–'+futureData.endWeek+' · bye weeks = 0</small></div>'+
     '</div>';
-  const compact=rows.map(x=>'<div class="stat-component"><span>'+clean(x.name)+'</span><span>'+statValue(x.stat)+' × '+statValue(x.rate)+'</span><strong>'+num(x.points)+'</strong></div>').join('');
+  const compact=rows.map(x=>'<div class="stat-component"><span>'+clean(x.name)+'</span><span>'+(special?(x.attempts==null?statValue(x.stat):statValue(x.stat)+' made / '+statValue(x.attempts)+' attempts'):statValue(x.stat)+' × '+statValue(x.rate))+'</span><strong>'+num(x.points)+'</strong></div>').join('');
   return caution+cards+
-    '<div class="stat-compact-heading">Selected-week scoring details <small>Opponent factor '+num(w.factor)+'×</small></div>'+
+    '<div class="stat-compact-heading">Selected-week scoring details <small>'+(special?'Opponent/venue adjusted':'Opponent factor '+num(w.factor)+'×')+'</small></div>'+
     '<div class="stat-components">'+compact+'</div>'+
     '<div class="stat-component total"><span>Conditional points</span><span>Model total</span><strong>'+num(total)+'</strong></div>'+
-    '<p class="detail-disclaimer">Expected stats may be fractional. Missing fumbles, two-point plays, return scores and special teams. Four-game and ROS numbers are scenarios assuming participation, not injury-adjusted expected points.</p>';
+    '<p class="detail-disclaimer">'+(special?'Expected kicker and D/ST events use recent team data, opponents, venue and league scoring. Rare defensive events and kicking distance/conversion use league priors; actual conditions and personnel may vary. ':'Expected stats may be fractional; several specialty scoring categories remain unmodeled. ')+'Future totals assume participation and are not injury-adjusted expected values.</p>';
 }
 function renderFutureProjections(){
   if(!futureData?.players?.length)return;
@@ -147,14 +150,14 @@ function renderFutureProjections(){
   $el('allProjections').innerHTML=
     '<div class="stat-column-head"><span>Player / matchup</span><span>Week '+selectedWeek+'</span><span>Next 4 games</span><span>ROS</span></div>'+
     (listHtml||'<div class="empty-copy">No matching players.</div>');
-  $el('projectionCoverage').textContent=futureData.coverage.projected+' modeled skill players · stats through completed Week '+futureData.statsThroughWeek;
+  $el('projectionCoverage').textContent=futureData.players.length+' modeled players including K and DEF · team context through Week 4; offensive stats through Week '+futureData.statsThroughWeek;
   $el('forecastContext').textContent='Week '+selectedWeek+' points and future totals assume participation unless marked otherwise. Next four means four scheduled NFL games, skipping byes; ROS begins Week '+Math.max(6,selectedWeek)+'. Players not currently active are not given actionable point totals.';
 }
 function renderMine(){
   if(!futureData?.players?.length)return;
-  const mine=futureData.players.filter(p=>String(p.fantasyTeamId)===String(window.DaVinciLeague?.teamId||'7')&&SKILL.has(p.position));
+  const mine=futureData.players.filter(p=>String(p.fantasyTeamId)===String(window.DaVinciLeague?.teamId||'7')&&ALL_POSITIONS.has(p.position));
   mine.sort((a,b)=>(activeValue(b,record(b,selectedWeek))??-100)-(activeValue(a,record(a,selectedWeek))??-100));
-  const preferred=mine.slice(0,9);
+  const preferred=mine.slice(0,12);
   $el('modelStatus').innerHTML='<div class="my-week-heading">Week '+selectedWeek+' <span>Experimental</span></div>'+
     '<div class="compact-projection-list">'+preferred.map(p=>{
       const w=record(p,selectedWeek),h=horizon(p),a=access(p);
