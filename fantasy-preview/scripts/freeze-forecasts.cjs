@@ -24,9 +24,10 @@ if((Date.parse(predictedAt)-Date.parse(data.generatedAt))/3600000>maxAgeHours)
 if(week<Number(data.startWeek)||week>Number(data.endWeek))throw Error('Requested week outside forecast coverage');
 const records=(data.players||[]).flatMap(p=>{
  const w=(p.weeks||[]).find(x=>Number(x.week)===week);
- if(!w||typeof w.points!=='number'||!Number.isFinite(w.points))return [];
+ if(!w||!w.date||w.date<predictedAt.slice(0,10)||w.state==='bye'||
+    typeof w.points!=='number'||!Number.isFinite(w.points))return [];
  return [{season:data.season,week,playerId:String(p.yahooId),position:p.position,
-  name:p.name,predictedAt,daVinci:w.points,yahoo:null,actual:null,kickoffAt:null,
+  name:p.name,predictedAt,gameDate:w.date,opponent:w.opponent||null,daVinci:w.points,yahoo:null,actual:null,kickoffAt:null,
   forecastState:w.state||null}];
 });
 if(!records.length)throw Error('No valid forecasts for requested week; refusing empty snapshot');
