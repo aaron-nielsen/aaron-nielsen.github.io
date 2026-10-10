@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 1,
+  "modelVersion": "lineup-gain-v0.1",
+  "season": 2026,
+  "leagueId": "470.l.258793",
+  "userTeamId": "7",
+  "generatedAt": "2026-10-10T04:48:41.572147+00:00",
+  "rosterSnapshotAt": "2026-10-10T04:43:49.995Z",
+  "availableSnapshotAt": "2026-10-10T04:44:23.191Z",
+  "futureModelGeneratedAt": "2026-10-10T04:48:41.450703+00:00",
+  "rosterConstraints": {
+    "skillSlots": [
+      "QB",
+      "RB",
+      "RB",
+      "WR",
+      "WR",
+      "TE",
+      "W/R/T"
+    ],
+    "dropCandidates": "bench rostered QB/RB/WR/TE, one per acquisition",
+    "excluded": "K and DEF held fixed; players already in Yahoo IR slot unavailable",
+    "fullLegalLineup": true
+  },
+  "horizons": {
+    "next_week": {
+      "weeks": [
+        6
+      ],
+      "baselineLineupPoints": 102.03,
+      "recommendations": []
+    },
+    "four_weeks": {
+      "weeks": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "baselineLineupPoints": 402.18,
+      "recommendations": []
+    },
+    "rest_of_season": {
+      "weeks": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "baselineLineupPoints": 1191.68,
+      "recommendations": [
+        {
+          "yahooId": "29344",
+          "name": "Tyler Higbee",
+          "position": "TE",
+          "nflTeam": "LAR",
+          "status": null,
+          "yahooWideRosteredPercent": 3,
+          "suggestedDrop": {
+            "yahooId": "34054",
+            "name": "Brian Robinson",
+            "position": "RB"
+          },
+          "lineupGain": 0.77,
+          "baselineLineupPoints": 1191.68,
+          "withPickupLineupPoints": 1192.45,
+          "addedPlayerRawPoints": 91.08,
+          "weeklyGain": [
+            {
+              "week": 6,
+              "gain": 0.0
+            },
+            {
+              "week": 7,
+              "gain": 0.0
+            },
+            {
+              "week": 8,
+              "gain": 0.0
+            },
+            {
+              "week": 9,
+              "gain": 0.0
+            },
+            {
+              "week": 10,
+              "gain": 0.0
+            },
+            {
+              "week": 11,
+              "gain": 0.0
+            },
+            {
+              "week": 12,
+              "gain": 0.0
+            },
+            {
+              "week": 13,
+              "gain": 0.77
+            },
+            {
+              "week": 14,
+              "gain": 0.0
+            },
+            {
+              "week": 15,
+              "gain": 0.0
+            },
+            {
+              "week": 16,
+              "gain": 0.0
+            },
+            {
+              "week": 17,
+              "gain": 0.0
+            }
+          ],
+          "matchMethod": null
+        },
+        {
+          "yahooId": "31010",
+          "name": "Courtland Sutton",
+          "position": "WR",
+          "nflTeam": "Den",
+          "status": null,
+          "yahooWideRosteredPercent": 70,
+          "suggestedDrop": {
+            "yahooId": "34054",
+            "name": "Brian Robinson",
+            "position": "RB"
+          },
+          "lineupGain": 0.15,
+          "baselineLineupPoints": 1191.68,
+          "withPickupLineupPoints": 1191.83,
+          "addedPlayerRawPoints": 91.87,
+          "weeklyGain": [
+            {
+              "week": 6,
+              "gain": 0.0
+            },
+            {
+              "week": 7,
+              "gain": 0.0
+            },
+            {
+              "week": 8,
+              "gain": 0.0
+            },
+            {
+              "week": 9,
+              "gain": 0.0
+            },
+            {
+              "week": 10,
+              "gain": 0.0
+            },
+            {
+              "week": 11,
+              "gain": 0.15
+            },
+            {
+              "week": 12,
+              "gain": 0.0
+            },
+            {
+              "week": 13,
+              "gain": 0.0
+            },
+            {
+              "week": 14,
+              "gain": 0.0
+            },
+            {
+              "week": 15,
+              "gain": 0.0
+            },
+            {
+              "week": 16,
+              "gain": 0.0
+            },
+            {
+              "week": 17,
+              "gain": 0.0
+            }
+          ],
+          "matchMethod": null
+        }
+      ]
+    }
+  },
+  "coverage": {
+    "modeledAvailableCandidates": 162,
+    "dropChoices": 6,
+    "modeledActiveSkillRoster": 13
+  },
+  "notice": "Lineup impact is cumulative fantasy points over the selected weeks, optimizing QB/RB/RB/WR/WR/TE/flex separately each week. It assumes all players with scheduled games are available in future weeks, including currently injured or suspended rostered players, so scores are SCENARIOS not reliable injury-adjusted expectations. It does not estimate waivers, real injury return dates, usage changes, K/DEF or trade fairness. Free agent pool sampled from the top 100 at each position."
+}
