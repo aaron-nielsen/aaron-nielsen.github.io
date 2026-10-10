@@ -146,7 +146,7 @@ for(const league of [
  assert.equal((element('waiverRecommendations').innerHTML.match(/class="decision-row pickup-watch"/g)||[]).length,18,'ROS ranking retains three per position');
  element('waiverHorizon').value='next_week';context.DaVinciAdvice.renderWaivers();
  assert.equal(element('waiverRecommendations').innerHTML,originalHTML,'Horizon switching is repeatable');
- assert.ok(html.includes('Top available by position'),league.name+' missing shortlist');
+ assert.ok(html.includes('class="available-position-grid"'),league.name+' missing shortlist');
  assert.ok(!html.includes('Joe Mixon'),league.name+' recommends a Yahoo NA inactive running back');
  for(const name of ['RB','WR','TE','QB','K','DEF']){
   assert.ok(html.includes('decision-position">'+name+'</span>'),league.name+' missing '+name+' free agents');

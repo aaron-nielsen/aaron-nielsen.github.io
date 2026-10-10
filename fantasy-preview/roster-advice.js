@@ -90,7 +90,7 @@ function renderRecommendations(){
    summaries.push('<div class="decision-row"><span class="decision-position">SIT</span><span class="decision-main"><strong>'+esc(p.name)+'</strong></span></div>');
   }
  }else{
-  summaries.push('<div class="decision-row"><span class="decision-position">SET</span><span class="decision-main"><strong>No changes recommended</strong><small>Current starters match the top projected lineup</small></span></div>');
+  summaries.push('<div class="decision-row lineup-set"><span class="decision-main"><strong>No changes recommended</strong></span></div>');
  }
  const flagText=statusFlags.length?'<div class="decision-alert">Check status: '+statusFlags.map(p=>esc(p.name)+' ('+esc(status(p))+')').join(', ')+'</div>':'';
  target.innerHTML=(gain!=null && additions.length?'<div class="decision-result">Optimized lineup <strong>+'+fmt(gain)+' pts</strong></div>':'')+
@@ -168,7 +168,7 @@ function renderWaivers(){
  }).join(''):'';
  const label=weeks.length===1?'Week '+weeks[0]+' projection':'Total projected points for selected horizon';
  const value=v=>v==null?'—':fmt(v);
- const watch='<div class="decision-section-title">Top available by position</div>'+
+ const watch=''+
   '<div class="available-position-grid">'+bestByPosition.map(({pos,list})=>
    '<section class="available-position" aria-label="Top available '+pos+'"><h3>'+pos+'</h3>'+
    '<div class="available-columns"><span>Player / next matchup</span><span>Next game</span><span>ROS total</span></div>'+
@@ -184,7 +184,7 @@ function renderWaivers(){
      '<b>'+value(next)+'</b><b>'+value(totalFor(p,rosWeeks))+'</b></div>';
    }).join(''):'<div class="decision-empty">No eligible modeled players.</div>')+'</section>'
   ).join('')+'</div>';
- const notice='<p class="available-notice">Next game skips byes. ROS is the total for Weeks '+first+'–'+state.future.endWeek+', including the current week and zero for byes. Estimates assume participation except explicit availability adjustments; check injuries and Yahoo waiver status. Missing forecasts show —. K/DEF projections are experimental.</p>';
+ const notice='<details class="projection-details"><summary>Projection details</summary><p>Next game skips byes. ROS is the total for Weeks '+first+'–'+state.future.endWeek+', including the current week and zero for byes. Estimates assume participation except explicit availability adjustments; check injuries and Yahoo waiver status. Missing forecasts show —. K/DEF projections are experimental.</p></details>';
  rootEl.innerHTML=highlights+watch+notice+(!allReady?'<p class="available-notice">Pickup gains unavailable: a complete baseline lineup could not be projected.</p>':'');
  rootEl.setAttribute('aria-label','Roster pickup advice, ranked by '+label);
 

@@ -82,3 +82,7 @@ for(const entry of [{folder:'data/',id:'7'},{folder:'data/nebraska/',id:'6'}]){
  assert.equal(empty.rows[0].player,null);assert.equal(empty.total,null);
 }
 console.log('Both leagues compare submitted starters with explicit missing, OUT and empty-slot behavior.');
+
+assert.match(html,/clean-dashboard\.css\?v=/,"Changed stylesheet must bypass stale browser caches");
+assert.match(html,/matchup-overview\.js\?v=/,"Changed matchup code must be versioned with the stylesheet");
+assert.doesNotMatch(html,/Yahoo standings unavailable|Same submitted lineup/,"Overview should not display placeholder prose");

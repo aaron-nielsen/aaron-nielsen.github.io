@@ -28,14 +28,14 @@ function submitted(data,teamId){
 function render(data){
  const target=document.getElementById('matchupLineups');if(!target)return;
  const a=submitted(data,data.you.id),b=submitted(data,data.other.id);
- const person=(r,side)=>'<div class="matchup-player '+side+'"><span><strong>'+esc(r.player?.name||'Empty slot')+'</strong><small>'+esc([r.player?.nflTeam,r.opponent,r.player?.status].filter(Boolean).join(' · '))+'</small></span><b>'+esc(r.label)+'</b></div>';
- const total=v=>Number.isFinite(v)?v.toFixed(1):'—';
- target.innerHTML='<div class="matchup-lineup-heading"><strong>'+esc(data.you.name)+'</strong><span>Starters</span><strong>'+esc(data.other.name)+'</strong></div>'+
-  '<div class="matchup-lineup-caption">Player / team / opponent <span>Da Vinci projected points</span></div>'+
-  a.rows.map((r,i)=>'<div class="matchup-starter-row">'+person(r,'left')+'<span class="matchup-slot">'+(r.slot==='W/R/T'?'FLEX':r.slot)+'</span>'+person(b.rows[i],'right')+'</div>').join('')+
-  '<div class="matchup-total"><b>'+total(a.total)+'</b><strong>Da Vinci total</strong><b>'+total(b.total)+'</b></div>'+
-  '<div class="matchup-total yahoo"><b>'+total(data.you.projectedPoints)+'</b><strong>Yahoo total</strong><b>'+total(data.other.projectedPoints)+'</b></div>'+
-  '<p class="matchup-notice">Same submitted starters for both forecasts. OUT / BYE counts as zero; missing estimates leave the total unavailable. Projections assume participation unless adjusted for availability. Check questionable players; K/DEF estimates are experimental.</p>';
+ const person=(r,side)=>{
+  const identity='<span class="matchup-identity"><strong>'+esc(r.player?.name||'Empty slot')+'</strong><small>'+esc([r.player?.nflTeam,r.opponent,r.player?.status].filter(Boolean).join(' · '))+'</small></span>';
+  const score='<b title="'+(r.points==null?'Projection pending':r.label==='OUT'?'Out':r.label==='BYE'?'Bye week':'Da Vinci projected points')+'">'+esc(r.label)+'</b>';
+  return '<div class="matchup-player '+side+'">'+(side==='left'?identity+score:score+identity)+'</div>';
+ };
+ target.innerHTML=a.rows.map((r,i)=>'<div class="matchup-starter-row">'+person(r,'left')+'<span class="matchup-slot">'+(r.slot==='W/R/T'?'FLEX':r.slot)+'</span>'+person(b.rows[i],'right')+'</div>').join('')+
+  '<details class="projection-details"><summary>Projection details</summary><p>Da Vinci and Yahoo totals use each manager’s current starters. OUT and BYE count as zero; — means a projection is missing, including any team total that depends on it. Projections assume participation unless adjusted for availability. K/DEF estimates are experimental.</p></details>';
+
 }
 root.DaVinciMatchup={submitted,render};
 })(typeof window!=='undefined'?window:globalThis);

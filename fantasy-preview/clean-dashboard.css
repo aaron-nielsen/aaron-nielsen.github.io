@@ -920,3 +920,58 @@ body{font:16px/1.48 'Source Sans 3',Arial,sans-serif;color:var(--text);backgroun
  .matchup-total>strong{font-size:10px}
  .matchup-lineup-caption{font-size:10px;gap:10px}
 }
+
+/* A single matchup card, mirrored toward the position column. */
+#page-overview .overview-top{display:flex!important;flex-direction:column!important;gap:10px!important}
+#page-overview .overview-metrics{order:-1;display:flex!important;justify-content:flex-end;gap:22px;background:none!important;border:0!important;min-height:0!important;padding:0 4px!important}
+#page-overview .overview-metrics>div{display:flex!important;flex-direction:row!important;align-items:baseline!important;gap:7px!important;padding:0!important;border:0!important}
+#page-overview .overview-metrics small{font-size:10px!important;letter-spacing:.04em}
+#page-overview .overview-metrics strong{font-size:15px!important}
+#page-overview [hidden]{display:none!important}
+#page-overview .overview-top .matchup{padding:18px 20px 6px!important;background:#fcf8ef!important;border-color:#ddcbb2!important}
+#page-overview .match-compact-heading{text-align:center;font-size:12px;letter-spacing:.06em;margin-bottom:16px;color:#98744f}
+#page-overview .match-compact-scores{max-width:740px;margin:0 auto 16px;grid-template-columns:minmax(0,1fr) 52px minmax(0,1fr)!important;gap:0!important}
+#page-overview .match-compact-name{text-align:center!important;font-size:17px!important;margin-bottom:12px!important}
+#page-overview .match-compact-projection{justify-content:center!important;gap:12px!important;border:0!important;padding:2px 0!important}
+#page-overview .match-compact-projection strong{font-size:30px!important;color:#49634c!important}
+#page-overview .match-compact-projection small{font-size:11px!important;font-weight:600!important}
+#page-overview .match-compact-projection.yahoo strong{font-size:17px!important;color:#8a7055!important;font-weight:600!important}
+#page-overview .match-compact-vs{font-size:11px!important;align-self:center;color:#aa947b}
+#matchupLineups{max-width:740px;margin:0 auto}
+#matchupLineups .matchup-starter-row{grid-template-columns:minmax(0,1fr) 52px minmax(0,1fr);gap:0;padding:12px 0;border-top:1px solid #eadfce;background:transparent}
+#matchupLineups .matchup-player{gap:16px;grid-template-columns:minmax(0,1fr) 52px}
+#matchupLineups .matchup-player.right{grid-template-columns:52px minmax(0,1fr)}
+#matchupLineups .matchup-identity{text-align:right}
+#matchupLineups .right .matchup-identity{text-align:left}
+#matchupLineups .matchup-player b{text-align:center;font-size:18px;color:#49634c}
+#matchupLineups .matchup-player strong{font-size:14px;font-weight:700}
+#matchupLineups .matchup-player small{font-size:11px;color:#95816b}
+#matchupLineups .matchup-slot{font-size:10px;font-weight:700;color:#a28c72}
+.projection-details{padding:12px 0;color:#95816b;font-size:11px}
+.projection-details summary{cursor:pointer;text-align:center;list-style:none}
+.projection-details summary::after{content:' ⌄'}
+.projection-details p{padding:0 14px;font-size:12px;line-height:1.6}
+#waiverRecommendations>.projection-details{border-top:1px solid #eadfce}
+.available-position-grid{gap:16px;padding:0 16px 16px}
+.available-position{border:0;border-radius:0}
+.available-position h3{background:transparent;padding:16px 12px 9px;border-bottom:1px solid #dfc8aa;font-size:13px;color:#98744f}
+#page-overview .waiver-panel .panel-header{padding-bottom:8px}
+#page-overview .waiver-horizon{font-size:12px;min-width:0}
+@media(max-width:650px){
+ #page-overview .overview-metrics{justify-content:center;gap:12px;flex-wrap:wrap}
+ #page-overview .overview-top .matchup{padding:15px 10px 3px!important}
+ #page-overview .match-compact-scores{grid-template-columns:minmax(0,1fr) 32px minmax(0,1fr)!important}
+ #page-overview .match-compact-name{font-size:13px!important}
+ #page-overview .match-compact-projection{gap:6px!important}
+ #page-overview .match-compact-projection strong{font-size:25px!important}
+ #matchupLineups .matchup-starter-row{grid-template-columns:minmax(0,1fr) 32px minmax(0,1fr);padding:10px 0}
+ #matchupLineups .matchup-player{grid-template-columns:minmax(0,1fr) 33px;gap:4px}
+ #matchupLineups .matchup-player.right{grid-template-columns:33px minmax(0,1fr)}
+ #matchupLineups .matchup-player b{font-size:14px}
+ #matchupLineups .matchup-player strong{font-size:12px}
+ #matchupLineups .matchup-player small{font-size:9px;line-height:1.4}
+ #matchupLineups .matchup-slot{font-size:9px}
+}
+
+#page-overview .overview-metrics>div[hidden],#page-overview .overview-metrics[hidden]{display:none!important}
+#lineupRecommendations .lineup-set{display:block}
