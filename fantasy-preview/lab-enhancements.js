@@ -167,43 +167,57 @@ const lookup=(id)=>futureById.get(String(id));
 function showTrades(){
  const area=$el('tradeResults'),count=$el('tradeCount');
  if(!tradeData?.trades){
-   count.textContent='Multi-player trade search loading…';
-   area.innerHTML='<div class="empty-copy">Multi-player trade estimates are being prepared. No one-for-one rankings are substituted.</div>';
+   count.textContent='Loading modeled trades…';
+   area.innerHTML='<div class="empty-copy">Multi-player trade estimates are being prepared.</div>';
    return;
  }
  const start=Number($el('tradeFromWeek')?.value||6);
  const partner=$el('tradePartner')?.value||'all';
  const pos=$el('tradePosition')?.value||'offense_no_qb';
+ const packageFilter=$el('tradePackageFilter')?.value||'balanced';
  const duration=tradeData.endWeek-start+1;
+ const minimumWeeklyGain=packageFilter==='balanced'?0.5:0.15;
  const matches=tradeData.trades.flatMap(t=>{
    if(partner!=='all'&&t.partnerTeamId!==partner)return [];
+   if(packageFilter!=='all'&&t.requiresRosterAdjustment)return [];
    const both=[...t.youSend,...t.youReceive];
-   if(pos==='offense_no_qb'&&both.some(x=>x.position==='QB'))return [];
-   if(pos!=='offense_no_qb'&&pos!=='all'&&!t.youReceive.some(x=>x.position===pos))return [];
+   if(pos==='offense_no_qb'&&both.some(p=>p.position==='QB'))return [];
+   if(pos!=='offense_no_qb'&&pos!=='all'&&!t.youReceive.some(p=>p.position===pos))return [];
    const games=t.weeklyGains.filter(w=>w.week>=start);
-   const my=games.reduce((s,w)=>s+w.you,0),theirs=games.reduce((s,w)=>s+w.them,0);
-   if(my<.15*duration||theirs<.15*duration)return [];
-   return [{...t,my,theirs,score:Math.min(my,theirs)+.12*Math.max(my,theirs)}];
+   if(games.length!==duration)return [];
+   const my=games.reduce((s,w)=>s+w.you,0);
+   const theirs=games.reduce((s,w)=>s+w.them,0);
+   if(my<minimumWeeklyGain*duration||theirs<minimumWeeklyGain*duration)return [];
+   return [{...t,my,theirs,score:Math.min(my,theirs)+0.12*Math.max(my,theirs)}];
  }).sort((a,b)=>b.score-a.score||b.my-a.my);
  const selected=[],teams=new Map();
  for(const p of matches){
-   const n=teams.get(p.partnerTeamId)||0;
-   if(n>=3)continue;
-   selected.push(p);teams.set(p.partnerTeamId,n+1);
-   if(selected.length>=10)break;
+   const countForPartner=teams.get(p.partnerTeamId)||0;
+   if(countForPartner>=2)continue;
+   selected.push(p);teams.set(p.partnerTeamId,countForPartner+1);
+   if(selected.length>=8)break;
  }
- count.textContent=matches.length+' qualifying multi-player packages · '+duration+' projected weeks';
+ const label=packageFilter==='balanced'?'balanced trades with meaningful gains':
+             packageFilter==='balanced_all'?'balanced trades':'multi-player packages';
+ count.textContent=matches.length+' modeled '+label+' · '+duration+' weeks';
  if(!selected.length){
-   area.innerHTML='<div class="no-trades">No modeled multi-player package improves both teams’ starting lineups under these filters. Try another team, position group or evaluation period.</div>';
+   area.innerHTML='<div class="no-trades">No qualifying packages for this combination. Try a different partner or select “All balanced trades” to see smaller modeled gains.</div>';
    return;
  }
- const names=ps=>ps.map(p=>'<span class="trade-package-player">'+clean(p.name)+' <small>'+clean(p.position)+'</small></span>').join('');
+ const names=ps=>'<ul class="trade-person-list">'+ps.map(p=>
+   '<li class="trade-person"><span>'+clean(p.name)+'</span><span class="trade-pos">'+clean(p.position)+'</span></li>'
+ ).join('')+'</ul>';
  area.innerHTML=selected.map((t,i)=>{
-   const note=t.requiresRosterAdjustment?'<div class="trade-balance-warning">Unequal player counts: further roster moves may be required by Yahoo.</div>':'';
-   return '<article class="trade-card"><div class="trade-card-top"><span class="trade-rank">'+String(i+1).padStart(2,'0')+'</span><span class="trade-partner">'+clean(t.packageShape)+' · With '+clean(t.partnerTeam)+'</span></div>'+
-    '<div class="trade-exchange"><div><small>YOU SEND</small><div class="trade-package-players">'+names(t.youSend)+'</div></div><span class="trade-arrow">→</span><div><small>YOU RECEIVE</small><div class="trade-package-players">'+names(t.youReceive)+'</div></div></div>'+
-    '<div class="trade-impact"><div><small>Your lineup</small><strong>+'+num(t.my/duration)+'</strong><span>pts/week · +'+num(t.my)+' total</span></div>'+
-    '<div><small>Their lineup</small><strong>+'+num(t.theirs/duration)+'</strong><span>pts/week · +'+num(t.theirs)+' total</span></div></div>'+note+'</article>';
+   const note=t.requiresRosterAdjustment?'<p class="trade-balance-note">Unequal player counts: Yahoo may require extra roster moves.</p>':'';
+   return '<article class="trade-card compact-trade">'+
+    '<div class="trade-card-top"><div class="trade-card-identity"><span class="trade-rank">'+String(i+1).padStart(2,'0')+'</span><strong>'+clean(t.partnerTeam)+'</strong></div>'+
+    '<span class="trade-package-label">'+clean(t.packageShape)+'</span></div>'+
+    '<div class="trade-exchange"><div class="trade-side"><div class="trade-side-heading">YOU SEND</div>'+names(t.youSend)+'</div>'+
+    '<div class="trade-side"><div class="trade-side-heading">YOU RECEIVE</div>'+names(t.youReceive)+'</div></div>'+
+    '<div class="trade-impact"><div><span>Your lineup</span><strong>+'+num(t.my/duration)+' <small>pts/wk</small></strong>'+
+      '<small>+'+num(t.my)+' over '+duration+' weeks</small></div>'+
+    '<div><span>Their lineup</span><strong>+'+num(t.theirs/duration)+' <small>pts/wk</small></strong>'+
+      '<small>+'+num(t.theirs)+' over '+duration+' weeks</small></div></div>'+note+'</article>';
  }).join('');
 }
 function init(){
@@ -217,6 +231,7 @@ function init(){
   const tradeSel=$el('tradeFromWeek');
   if(tradeSel){tradeSel.innerHTML=Array.from({length:futureData.endWeek-5},(_,i)=>'<option value="'+(6+i)+'">Weeks '+(6+i)+'–'+futureData.endWeek+'</option>').join('');tradeSel.addEventListener('change',showTrades);}
   $el('tradePosition')?.addEventListener('change',showTrades);
+  $el('tradePackageFilter')?.addEventListener('change',showTrades);
   const partner=$el('tradePartner');
   if(partner){partner.innerHTML='<option value="all">All other teams</option>'+rosters.teams.filter(t=>String(t.id)!=='7').sort((a,b)=>a.name.localeCompare(b.name)).map(t=>'<option value="'+clean(t.id)+'">'+clean(t.name)+'</option>').join('');partner.addEventListener('change',showTrades);}
   renderFutureProjections();renderMine();showTrades();
