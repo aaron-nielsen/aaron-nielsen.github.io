@@ -51,7 +51,7 @@ button,input,select{font:inherit}
 .nav-row button:hover{border-color:var(--green2)}
 .nav-row button.active{background:var(--green);border-color:var(--green);color:#0e1710;font-weight:700}
 
-.whiskey-controls{display:grid;grid-template-columns:minmax(220px,2fr) minmax(120px,.75fr) minmax(145px,1fr) minmax(145px,1fr) 74px;gap:8px;margin:0 0 14px;align-items:stretch;width:100%;box-sizing:border-box}
+.whiskey-controls{display:grid;grid-template-columns:minmax(220px,2fr) minmax(120px,.75fr) minmax(145px,1fr) minmax(145px,1fr) minmax(110px,.75fr) 74px;gap:8px;margin:0 0 14px;align-items:stretch;width:100%;box-sizing:border-box}
 .view-note{margin:4px 0 12px;color:var(--muted);font-size:.9rem}
 .whiskey-controls input,.whiskey-controls select{width:100%;min-width:0;box-sizing:border-box;background:#181411;color:var(--text);border:1px solid #5a3f2b;border-radius:9px;padding:9px 11px}
 .whiskey-controls .clear-filters{width:100%;box-sizing:border-box;background:#251a14;color:var(--text);border:1px solid #6a4a31;border-radius:9px;padding:9px 10px;cursor:pointer;white-space:nowrap}
@@ -102,8 +102,7 @@ button,input,select{font:inherit}
 .place-chart .bar-row{grid-template-columns:minmax(100px,150px) 1fr 34px}
 .whiskey-name{color:#f3ebe3;text-decoration:none;cursor:pointer;background:none;border:0;padding:0;font:inherit;text-align:left}
 .whiskey-name:hover{color:var(--green2)}
-.need-more-owned .whiskey-name{font-style:italic}
-.owned-tag{display:inline-block;margin-left:7px;padding:1px 6px;border:1px solid #6a4a31;border-radius:999px;color:var(--amber2);font-size:.68rem;font-style:normal;line-height:1.35;vertical-align:middle;letter-spacing:.02em}
+.owned-glass{display:inline-block;margin-left:6px;font-size:.86rem;line-height:1;vertical-align:middle}
 .filter-link{color:#f3ebe3;text-decoration:none;cursor:pointer;background:none;border:0;padding:0;font:inherit;text-align:left}
 .filter-link:hover{color:var(--green2)}
 
@@ -267,6 +266,11 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
     <select id="region-filter"><option value="">All regions</option></select>
     <select id="style-filter"><option value="">All styles</option></select>
     <select id="substyle-filter"><option value="">All sub-styles</option></select>
+    <select id="owned-filter">
+      <option value="">All bottles</option>
+      <option value="owned">🥃 On hand</option>
+      <option value="not-owned">Not on hand</option>
+    </select>
     <button type="button" class="clear-filters" id="clear-filters">Clear</button>
   </div>
 
@@ -428,10 +432,12 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
     var region=document.getElementById("region-filter").value;
     var style=document.getElementById("style-filter").value;
     var sub=document.getElementById("substyle-filter").value;
+    var owned=document.getElementById("owned-filter").value;
     return source.filter(function(r){
       return (!q||(r.name+" "+r.region+" "+r.style+" "+(r.substyle||"")+" "+(r.distillery||"")+" "+(r.place||"")).toLowerCase().indexOf(q)>=0)&&
         (!region||r.region===region)&&(!style||r.style===style)&&
         (!sub||r.substyle===sub||(r.substyle&&r.substyle.indexOf(sub+" / ")===0))&&
+        (!owned||(owned==="owned"&&r.owned)||(owned==="not-owned"&&!r.owned))&&
         (!activeDistillery||activeTab==="unrated"||distilleryName(r.name)===activeDistillery);
     });
   }
@@ -490,9 +496,9 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
     xs.forEach(function(r){
       var pct=r[pctKey];
       var ownedNeedMore=tab==="need-more"&&r.owned;
-      html+='<tr'+(ownedNeedMore?' class="need-more-owned"':'')+'>'+
+      html+='<tr>'+
         '<td><button class="whiskey-name" data-name="'+esc(r.name)+'">'+esc(r.name)+'</button>'+
-        (ownedNeedMore?'<span class="owned-tag">owned</span>':'')+'</td>'+
+        (ownedNeedMore?'<span class="owned-glass" title="On hand" aria-label="On hand">🥃</span>':'')+'</td>'+
         '<td><button class="filter-link region-link" data-region="'+esc(r.region)+'">'+esc(r.region)+'</button></td>'+
         '<td>'+styleSubstyleCell(r,false)+'</td>'+
         '<td class="num">'+esc(abvLabel(r))+'</td>'+
@@ -1045,7 +1051,6 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
     }else if(activeTab==="need-more"){
       document.getElementById("whiskey-controls").style.display="grid";
       document.getElementById("need-more").innerHTML=
-        '<p class="view-note"><em>Italic</em> + <span class="owned-tag">owned</span> means the bottle is currently on hand.</p>'+
         whiskeyTable(filtered(rows.filter(function(r){return r.n<3})),"need-more");
     }else if(activeTab==="unrated"){
       document.getElementById("whiskey-controls").style.display="grid";
@@ -1415,6 +1420,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
       document.getElementById("region-filter").addEventListener("change",function(){updateStyles();render()});
       document.getElementById("style-filter").addEventListener("change",function(){updateSubstyles();render()});
       document.getElementById("substyle-filter").addEventListener("change",render);
+      document.getElementById("owned-filter").addEventListener("change",render);
       document.getElementById("clear-filters").onclick=function(){
         activeDistillery="";
         document.getElementById("search").value="";
@@ -1423,6 +1429,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
         document.getElementById("style-filter").value="";
         updateSubstyles();
         document.getElementById("substyle-filter").value="";
+        document.getElementById("owned-filter").value="";
         render();
       };
       var dialog=document.getElementById("whiskey-dialog");
