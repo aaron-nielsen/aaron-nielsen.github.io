@@ -122,14 +122,13 @@ function card(tx){
   (tx.sides[0]?.name||'Manager')+' · '+type;
  const relation=tx.sides.length===2&&tx.sides.every(s=>s.value)?
   (tx.sides.every(s=>s.value.ros>0)?' · Both gain projected points':' · One or both lose projected points'):'';
- const actual='';
  return '<article class="txn-card">'+
   '<div class="txn-top"><span class="txn-type">'+esc(type)+'</span><time>'+esc(tx.date||'Unknown date')+'</time>'+
   '<span class="txn-grade">'+(p?.value?esc(g.grade):'Not graded')+'</span></div>'+
   '<h3>'+esc(title)+relation+'</h3>'+
   '<div class="txn-moves">'+description(tx)+'</div>'+
   '<div class="txn-impacts">'+tx.sides.map(impact).join('')+'</div>'+
-  (actual?'<div class="txn-actual">'+esc(actual)+'</div>':'')+'</article>';
+  '</article>';
 }
 function update(){
  if(!state)return;
@@ -198,7 +197,7 @@ function init(data){
  if(coverage&&source.length){
   const dates=source.map(t=>t.date).filter(Boolean).sort();
   coverage.textContent='Yahoo activity · '+dates[0]+' to '+dates[dates.length-1]+
-   ' · Rest-of-season estimate from Week '+data.week+' · current model/rosters';
+   ' · Projected team lineup points added from Week '+data.week+' · current model/rosters · not actual points';
  }
  for(const id of ['txnTeam','txnType','txnSort'])$(id)?.addEventListener('change',update);
  if(!source.length){$('txnStats').textContent='No verified transactions available';return;}
