@@ -111,10 +111,14 @@ function renderWaivers(){
  const roster=mine();
  const baselines=weeks.map(w=>lineup(roster,w));
  const allReady=baselines.every(Boolean);
- const availableIds=new Set(state.available.players.map(p=>String(p.id)));
- const pool=state.future.players.filter(p=>availableIds.has(String(p.yahooId))&&p.ownership==='available'&&POSITIONS.includes(p.position))
-  .filter(p=>!inaccessible(p,weeks[0])&&!OUT.has(status(p)));
  const availableMap=new Map(state.available.players.map(p=>[String(p.id),p]));
+ const pool=state.future.players.filter(p=>availableMap.has(String(p.yahooId))&&p.ownership==='available'&&POSITIONS.includes(p.position))
+  // Available-player statuses from Yahoo take priority over cached projections.
+  .filter(p=>{
+   const live=availableMap.get(String(p.yahooId));
+   const merged={...p,status:live?.status||p.injuryStatus||p.status};
+   return !inaccessible(merged,weeks[0])&&!OUT.has(status(merged));
+  });
  const totals=p=>weeks.reduce((sum,w)=>sum+(points({id:p.yahooId},w)||0),0);
  const ordered=pool.map(p=>({...p,id:String(p.yahooId),total:totals(p),market:availableMap.get(String(p.yahooId))?.yahooWideRosteredPercent??null}))
   .filter(p=>weeks.some(w=>points(p,w)!=null))
