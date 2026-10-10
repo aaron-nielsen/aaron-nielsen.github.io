@@ -98,7 +98,11 @@ function evaluate(tx){
  return {...tx,isTrade,sides,primary};
 }
 function names(players){
- return (players||[]).map(p=>p.name||state.forecasts.get(key(p))?.name||'Unknown').join(', ')||'—';
+ return (players||[]).map(p=>{
+  const forecast=state.forecasts.get(key(p));
+  const name=p.name||forecast?.name||'Unknown',position=p.position||forecast?.position;
+  return name+(position?' ('+position+')':'');
+ }).join(', ')||'—';
 }
 function description(tx){
  if(tx.isTrade)return tx.trade_sides.map(s=>{

@@ -591,7 +591,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 .model-team-expanded{padding:10px}.team-model-players{grid-template-columns:1fr}}
 
 </style>
-<link rel="stylesheet" href="./clean-dashboard.css?v=20261010c">
+<link rel="stylesheet" href="./clean-dashboard.css?v=20261010d">
 <link rel="stylesheet" href="./trade-preferences.css">
 <style id="team-score-comparison">
 /* Current-week forecasts: labelled scores and mobile-friendly paired columns */
@@ -729,14 +729,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 </section>
 <section id="page-rosters" class="page" hidden>
 <div class="section-top"><div><div class="eyebrow" id="rosterLeagueCount">League rosters</div><h2>Rosters</h2><p id="rosterLeagueIntro" class="visually-hidden">Team roster comparison.</p></div><select class="select" id="teamChoice" aria-label="Select fantasy team"></select></div>
-<details class="panel overview-roster-panel" aria-label="My complete fantasy roster"><summary>My roster</summary>
- <div class="panel-header lineup-planner-header">
-  <div class="panel-title">My roster</div>
-  <select class="select lineup-week-select" id="lineupWeek" aria-label="Choose lineup week"><option value="5">Week 5 · Yahoo starters</option></select>
-  <button class="sub-link" type="button" data-jump="rosters">League rosters →</button>
- </div>
- <div class="roster-board" id="myLineup"><div class="empty-copy">Loading starters and bench…</div></div>
-</details>
+
 <div id="selectedTeam"></div><div class="panel roster-compare" id="rosterComparison" aria-label="Starter and eligible backup comparison"></div><div class="roster-secondary"><div class="panel group-panel" id="benchGroup"></div><div class="panel group-panel" id="irGroup"></div></div>
 </section>
 <section id="page-finder" class="page" hidden>
@@ -794,19 +787,19 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 <footer class="footer"><div>DA VINCI FANTASY LAB / CSU STATS · MMXXVI</div><div>READ-ONLY PROTOTYPE · POWERED BY YAHOO LEAGUE DATA</div></footer>
 </div>
 <script src="./special-teams-model.js"></script>
-<script src="./lab-enhancements.js?v=20261010c"></script>
-<script src="./availability-sanity.js?v=20261010c"></script>
+<script src="./lab-enhancements.js?v=20261010d"></script>
+<script src="./availability-sanity.js?v=20261010d"></script>
 <script src="./return-outlook.js"></script>
 <script src="./playing-time-model.js"></script>
-<script src="./roster-advice.js?v=20261010c"></script>
-<script src="./matchup-overview.js?v=20261010c"></script>
+<script src="./roster-advice.js?v=20261010d"></script>
+<script src="./matchup-overview.js?v=20261010d"></script>
 <script src="./overview-roster.js"></script>
-<script src="./trade-preferences.js?v=20261010c"></script>
-<script src="./transaction-grades.js?v=20261010c"></script>
+<script src="./trade-preferences.js?v=20261010d"></script>
+<script src="./transaction-grades.js?v=20261010d"></script>
 <script src="./historical-trends.js"></script>
 <script src="./historical-trends-view.js"></script>
 <script src="./forecast-accuracy.js"></script>
-<script src="./model-performance.js?v=20261010c"></script>
+<script src="./model-performance.js?v=20261010d"></script>
 <script>
 'use strict';
 const $=s=>document.querySelector(s);
@@ -1024,13 +1017,6 @@ function initOverview(){
   ['waiverRank',st?.waiverPriority!=null?'#'+st.waiverPriority:null]];
  for(const [id,value] of metrics){const el=$('#'+id);el.textContent=value??'';el.parentElement.hidden=value==null;}
  $('#overviewMetrics').hidden=metrics.every(([,v])=>v==null);
- // Show all rostered players instead of cherry-picked best backups.
-  const selector=$('#lineupWeek');
-  const first=Number(week.week),last=Number(futureData?.endWeek||17);
-  selector.innerHTML='<option value="'+first+'">Week '+first+' · Yahoo starters</option>'+
-    Array.from({length:Math.max(0,last-first)},(_,i)=>'<option value="'+(first+i+1)+'">Week '+(first+i+1)+' · Optimized</option>').join('');
-  window.DaVinciRosterOverview?.init({rosters,weekly,future:futureData,teamId:TEAM_ID,snapshotWeek:first,optimize:modelTeamLineup});
-  selector.addEventListener('change',()=>window.DaVinciRosterOverview?.render(Number(selector.value)));
   $('#leagueBoard').innerHTML=week.matchups.map(m=>
   '<div class="scoreboard-item compared'+(m.home.id===TEAM_ID||m.away.id===TEAM_ID?' mine':'')+'">'+
   '<div class="compared-team"><strong>'+esc(m.home.name)+'</strong>'+pairLineupScore(m.home)+'</div>'+

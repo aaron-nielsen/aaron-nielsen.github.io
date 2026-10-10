@@ -1021,3 +1021,11 @@ body{font:16px/1.48 'Source Sans 3',Arial,sans-serif;color:var(--text);backgroun
  .txn-ledger-value{grid-column:4;grid-row:1;font-size:14px}
  .trades-grid{grid-template-columns:1fr!important}
 }
+
+/* A transaction ledger uses the entire panel width, including its column heading. */
+#page-transactions .txn-list{display:block}
+#page-transactions .txn-ledger-move{min-width:0}
+#page-transactions .txn-ledger-move .txn-move{display:block;margin:8px 0}
+#page-transactions .txn-ledger-move .txn-move strong{display:block;margin-bottom:3px}
+#page-transactions .txn-impacts{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+@media(max-width:600px){#page-transactions .txn-impacts{grid-template-columns:1fr}}
