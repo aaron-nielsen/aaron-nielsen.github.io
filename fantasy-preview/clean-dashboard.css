@@ -808,22 +808,8 @@ body{font:16px/1.48 'Source Sans 3',Arial,sans-serif;color:var(--text);backgroun
 }
 
 
-/* Compact, full-bleed parchment banner using the approved original drawing.
-   The ram insignia is embedded at fixed SVG coordinates instead of being an
-   additional HTML img; it can never inherit full-width image styling. */
-html,body{overflow-x:clip}
-body{background:#f1e7d6}
-.renaissance-banner{
- box-sizing:border-box;position:relative;left:50%;transform:translateX(-50%);
- display:block;width:100vw;max-width:none;height:clamp(132px,14vw,200px);
- margin:0 0 8px!important;overflow:hidden;
- border:0!important;border-bottom:2px solid #ac854e!important;
- border-radius:0!important;outline:none!important;box-shadow:none!important;
- background:#e9c99b;
-}
-.renaissance-banner>.renaissance-banner-art{
- display:block;width:100%;height:100%;overflow:hidden;
-}
+/* Banner geometry is controlled by the compact-banner-styles rule in index.html.
+   The original 1000:333 drawing is displayed uncropped within the 1000px canvas. */
 .league-switch{margin:5px 0 6px!important}
 .league-switch select{border-color:#c3a37d!important;background:#fbefdb!important;color:#614628!important}
 .nav{margin:0!important;padding:8px 0 13px!important}
@@ -855,21 +841,18 @@ body{background:#f1e7d6}
 #page-overview .overview-roster-panel{margin:9px 0 11px}
 #page-overview .overview-metrics{background:#fbf2e4!important}
 @media(max-width:700px){
- .renaissance-banner{height:102px!important;margin-bottom:5px!important}
+ .renaissance-banner{margin-bottom:7px!important}
  .league-switch{margin:4px 0!important}
  .nav{padding:6px 0 10px!important}
  #page-overview .overview-top .matchup{padding:10px 11px!important}
  #page-overview .match-compact-scores{gap:4px!important}
  #page-overview .model-offense-strip{margin:5px 0!important}
 }
-@media(max-width:420px){
- .renaissance-banner{height:86px!important}
-}
 
-/* Compact October dashboard: narrower Overview; full-viewport banner stays
-   independent of the content width. Put standings beside the matchup when
+
+/* Compact October dashboard: Overview shares the same 1000px content width. Put standings beside the matchup when
    there is enough room, rather than stretching the scores into empty space. */
-#page-overview{width:100%;max-width:1020px;margin-left:auto;margin-right:auto}
+#page-overview{width:100%;max-width:1000px;margin-left:auto;margin-right:auto}
 #page-overview .match-compact-projection{padding:4px 1px!important}
 @media(min-width:1100px){
  #page-overview .overview-top{

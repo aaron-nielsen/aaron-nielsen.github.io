@@ -645,77 +645,43 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 </style>
 
 <style id="compact-banner-styles">
-/* Same original Da Vinci artwork, recomposed in a short parchment ribbon.
-   SVG crops preserve his face and the full original wordmark without a large
-   separate ram image, and the ink is uniformly sepia-brown. */
-html,body{overflow-x:clip}
+/* One unchanged original illustration at its 3:1 proportions.
+   A 1000px content canvas, without full-viewport stretches, masks or crops. */
+:root{--lab-content-width:1000px}
+.shell{
+ box-sizing:border-box!important;
+ width:100%!important;
+ max-width:calc(var(--lab-content-width) + 24px)!important;
+ padding:0 12px 58px!important;
+ margin-left:auto!important;margin-right:auto!important;
+}
 .renaissance-banner{
- width:100vw!important;max-width:none!important;
- height:clamp(148px,13.34vw,200px)!important;min-height:0!important;
- position:relative!important;left:50%!important;transform:translateX(-50%)!important;
- display:block!important;box-sizing:border-box!important;overflow:hidden!important;
- aspect-ratio:auto!important;margin:0 0 8px!important;padding:0!important;
- border:0!important;border-bottom:2px solid #ae8858!important;
- outline:0!important;border-radius:0!important;box-shadow:none!important;
- background:#f0d29b!important
+ position:static!important;left:auto!important;transform:none!important;
+ box-sizing:border-box!important;display:block!important;
+ width:100%!important;max-width:1000px!important;
+ height:auto!important;min-height:0!important;aspect-ratio:auto!important;
+ margin:0 auto 9px!important;padding:0!important;
+ border:0!important;outline:0!important;border-radius:2px!important;
+ box-shadow:none!important;overflow:hidden!important;
+ line-height:0!important;background:#ead0a5!important;
 }
-.renaissance-banner>.renaissance-banner-art{
- display:block!important;width:100%!important;height:100%!important;
- max-width:none!important;overflow:hidden!important
+.renaissance-banner>img{
+ display:block!important;width:100%!important;
+ height:auto!important;max-height:none!important;
+ aspect-ratio:1000/333!important;
+ object-fit:contain!important;object-position:center!important;
+ filter:none!important;
 }
-.renaissance-banner>.banner-mobile{display:none!important}
-@media(max-width:700px){.renaissance-banner{height:clamp(90px,14vw,102px)!important}}
-@media(max-width:540px){
- .renaissance-banner>.banner-desktop{display:none!important}
- .renaissance-banner>.banner-mobile{display:block!important}
+#page-overview{max-width:1000px!important}
+@media(max-width:600px){
+ .shell{padding:0 9px 45px!important}
+ .renaissance-banner{margin-bottom:7px!important}
 }
-@media(max-width:420px){.renaissance-banner{height:86px!important}}
 </style>
 </head><body>
 <div class="shell">
 
-<div class="renaissance-banner">
-<svg class="renaissance-banner-art banner-desktop" xmlns="http://www.w3.org/2000/svg" width="1500" height="200" viewBox="0 0 1500 200" preserveAspectRatio="none" role="img" aria-label="Original Da Vinci Fantasy Lab parchment art, recomposed with Leonardo's complete face, original lettering and football analytics diagrams">
-<defs>
- <clipPath id="faceClip"><rect x="0" y="0" width="264" height="200"/></clipPath>
- <clipPath id="titleClip"><rect x="280" y="0" width="712" height="200"/></clipPath>
- <clipPath id="diagramsClip"><rect x="974" y="0" width="526" height="200"/></clipPath>
- <linearGradient id="faceBlend" gradientUnits="userSpaceOnUse" x1="214" y1="0" x2="264" y2="0"><stop offset="0" stop-color="white"/><stop offset="1" stop-color="black"/></linearGradient>
- <linearGradient id="titleBlend"><stop offset="0" stop-color="black"/><stop offset=".035" stop-color="white"/><stop offset=".965" stop-color="white"/><stop offset="1" stop-color="black"/></linearGradient>
- <linearGradient id="rightBlend"><stop offset="0" stop-color="black"/><stop offset=".065" stop-color="white"/><stop offset="1" stop-color="white"/></linearGradient>
- <mask id="faceMask" maskUnits="userSpaceOnUse" x="0" y="0" width="264" height="200"><rect width="264" height="200" fill="white"/><rect x="214" y="0" width="50" height="200" fill="url(#faceBlend)"/></mask>
- <mask id="titleMask"><rect x="280" y="0" width="712" height="200" fill="url(#titleBlend)"/></mask>
- <mask id="rightMask"><rect x="974" y="0" width="526" height="200" fill="url(#rightBlend)"/></mask>
- <filter id="inkSepia" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0.88 0.1 0 0 0  0.40 0.62 0 0 0  0.22 0.10 0.68 0 0  0 0 0 1 0"/></filter>
-</defs>
-<rect width="1500" height="200" fill="#f0d29b"/>
-<image href="./assets/da-vinci-fantasy-lab-approved.webp" x="0" y="0" width="1500" height="200" preserveAspectRatio="none" opacity=".27"/>
-<rect width="1500" height="200" fill="#f0d29b" opacity=".65"/>
-<g filter="url(#inkSepia)">
- <g clip-path="url(#faceClip)" mask="url(#faceMask)"><image href="./assets/da-vinci-fantasy-lab-approved.webp" width="1500" height="500" transform="translate(0 -8) scale(.63)"/></g>
- <g clip-path="url(#titleClip)" mask="url(#titleMask)"><image href="./assets/da-vinci-fantasy-lab-approved.webp" width="1500" height="500" transform="translate(-83 -102.1) scale(.9265 .71795)"/></g>
- <g clip-path="url(#diagramsClip)" mask="url(#rightMask)"><image href="./assets/da-vinci-fantasy-lab-approved.webp" width="1500" height="500" transform="translate(-233.33 -126.3) scale(1.15556 .785714)"/></g>
-</g>
-<rect y="198" width="1500" height="2" fill="#a77b4e" opacity=".52"/>
-</svg>
-<svg class="renaissance-banner-art banner-mobile" xmlns="http://www.w3.org/2000/svg" width="750" height="200" viewBox="0 0 750 200" preserveAspectRatio="none" role="img" aria-label="Compact Da Vinci Fantasy Lab parchment artwork, showing Leonardo and the complete title">
-<defs>
- <clipPath id="mFace"><rect x="0" y="0" width="225" height="200"/></clipPath>
- <clipPath id="mTitle"><rect x="218" y="0" width="532" height="200"/></clipPath>
- <linearGradient id="mEdge"><stop offset="0" stop-color="black"/><stop offset=".015" stop-color="white"/><stop offset="1" stop-color="white"/></linearGradient>
- <mask id="mFade"><rect x="218" width="532" height="200" fill="url(#mEdge)"/></mask>
- <filter id="mSepia" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0.88 0.1 0 0 0  0.40 0.62 0 0 0  0.22 0.10 0.68 0 0  0 0 0 1 0"/></filter>
-</defs>
-<rect width="750" height="200" fill="#f0d29b"/>
-<image href="./assets/da-vinci-fantasy-lab-approved.webp" x="0" y="0" width="750" height="200" preserveAspectRatio="none" opacity=".12"/>
-<rect width="750" height="200" fill="#f0d29b" opacity=".80"/>
-<g filter="url(#mSepia)">
- <g clip-path="url(#mFace)"><image href="./assets/da-vinci-fantasy-lab-approved.webp" width="1500" height="500" transform="translate(0 -8) scale(.63)"/></g>
- <g clip-path="url(#mTitle)" mask="url(#mFade)"><image href="./assets/da-vinci-fantasy-lab-approved.webp" width="1500" height="500" transform="translate(-56.5 -102.1) scale(.70 .71795)"/></g>
-</g>
-<rect y="198" width="750" height="2" fill="#a77b4e" opacity=".52"/>
-</svg>
-</div>
+<div class="renaissance-banner"><img src="./assets/da-vinci-fantasy-lab-approved.webp" alt="Da Vinci Fantasy Lab — original parchment portrait, lettering and football analytics drawings" width="1000" height="333" fetchpriority="high" decoding="async"></div>
 <div class="league-switch"><label for="leagueSelector">YAHOO LEAGUE</label><select id="leagueSelector" aria-label="Choose fantasy league"><option value="csu">CSU Stats · Ten Feline Overlords (14 teams)</option><option value="nebraska">Nebraska Bugeaters (10 teams)</option></select><span id="leagueSnapshot" class="league-switch-note">Updated</span></div>
 <nav class="nav" aria-label="Dashboard navigation">
 <button class="nav-btn active" type="button" data-page="overview">Overview</button>
