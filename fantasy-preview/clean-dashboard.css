@@ -528,3 +528,38 @@ body{font:16px/1.48 'Source Sans 3',Arial,sans-serif;color:var(--text);backgroun
  .model-score-details .model-breakout{gap:4px 12px}
  .quiet-details.panel-disclosure{padding:7px 12px 9px}
 }
+
+/* October 10: fewer decorative separators; direct navigation and week planner. */
+.codex-rule{display:none!important}
+.league-switch{background:transparent;border:0;border-radius:0;box-shadow:none;margin:7px 0 0;padding:3px 2px;gap:8px 12px}
+.league-switch select{padding:7px 28px 7px 9px;font-size:13px;min-width:230px}
+.league-switch-note{font-size:11px}
+.nav{gap:5px;padding:9px 0 14px}
+.nav-btn{font:700 13px/1.2 'Source Sans 3',Arial,sans-serif;letter-spacing:0!important;text-transform:none!important;padding:9px 12px}
+.page .section-top h1,.page .section-top h2{font:700 clamp(28px,3.2vw,40px)/1.1 'Source Sans 3',Arial,sans-serif!important;letter-spacing:-.025em!important;text-transform:none!important}
+#page-finder .finder-surface>h2{display:none}
+#page-finder .finder-surface{padding-top:15px}
+.lineup-planner-header{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}
+.lineup-planner-header .panel-title{margin-right:auto}
+.lineup-week-select{min-width:170px;max-width:235px;flex:0 1 auto;padding:7px 9px;font-size:13px}
+.lineup-planner-header .sub-link{padding:7px 0;white-space:nowrap}
+.planner-summary{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:9px 1px 12px;border-bottom:1px solid #dbc5a4;font-size:12px;color:#715743}
+.planner-summary strong{font-size:19px;font-variant-numeric:tabular-nums;color:#4b654f;white-space:nowrap}
+.lineup-planner-help{margin-top:6px!important}
+.lineup-pair{padding:9px 1px}
+.lineup-column-person strong{line-height:1.25}
+@media(max-width:650px){
+ .league-switch{padding:1px 0;margin-top:6px}
+ .league-switch label{font-size:10px}
+ .league-switch select{flex:1;min-width:0;width:auto;padding:7px 8px}
+ .league-switch-note{width:100%;font-size:10px}
+ .nav{gap:3px;padding:6px 0 12px}
+ .nav-btn{font-size:12px;padding:8px 9px}
+ .page .section-top h1,.page .section-top h2{font-size:30px!important}
+ .lineup-planner-header{gap:7px 10px}
+ .lineup-planner-header .panel-title{flex:1 0 auto}
+ .lineup-week-select{min-width:150px;max-width:100%;flex:1 1 160px}
+ .lineup-planner-header .sub-link{font-size:12px}
+ .planner-summary strong{font-size:16px}
+ .lineup-pair{padding:8px 1px}
+}
