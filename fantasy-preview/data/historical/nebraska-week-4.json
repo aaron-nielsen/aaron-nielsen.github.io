@@ -1117,11 +1117,14 @@
   ],
   "coverage": {
     "teamsWithPlayers": 10,
-    "teamsExpected": 10
+    "teamsExpected": 10,
+    "leagueStartWeek": 5,
+    "officialMatchup": false
   },
   "missingWeeks": [
     1,
     2,
     3
-  ]
+  ],
+  "context": "Week 4 roster and player scores predate the league's Week 5 schedule start. Not a completed league matchup."
 }
