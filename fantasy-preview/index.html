@@ -316,9 +316,9 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 <header class="topbar"><div class="season-identifier"><strong>CSU STATS</strong><span>FANTASY FOOTBALL · 2026</span></div><div class="top-right"><a class="top-link" href="https://football.fantasysports.yahoo.com/f1/258793" target="_blank" rel="noopener">OPEN YAHOO ↗</a><div class="weekstamp"><b id="weekHead">05</b><small>WEEK / 2026</small></div></div></header>
 <div class="renaissance-banner"><img src="./assets/da-vinci-fantasy-lab.webp" alt="Da Vinci Fantasy Lab: Leonardo's portrait alongside ink sketches of normal distributions, statistical plots and football plays" width="1250" height="417" fetchpriority="high"></div>
 <nav class="nav" aria-label="Dashboard navigation">
-<button class="nav-btn active" type="button" data-page="overview">◈ &nbsp;THE STUDY</button>
+<button class="nav-btn active" type="button" data-page="overview">◈ &nbsp;OVERVIEW</button>
 <button class="nav-btn" type="button" data-page="rosters">▤ &nbsp;ROSTERS</button>
-<button class="nav-btn" type="button" data-page="finder">⌕ &nbsp;PLAYER INDEX</button>
+<button class="nav-btn" type="button" data-page="finder">⌕ &nbsp;PLAYER FINDER</button>
 <button class="nav-btn" type="button" data-page="projections">↗ &nbsp;PROJECTIONS</button>
 </nav>
 <div class="codex-rule" aria-hidden="true" style="display:flex;align-items:center;gap:12px;margin:-9px 0 20px;opacity:.65"><span style="flex:1;height:1px;background:#b8a98e"></span><span style="width:7px;height:7px;transform:rotate(45deg);border:1px solid #967c52"></span><span style="flex:1;height:1px;background:#b8a98e"></span></div>
@@ -340,7 +340,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 </section>
 <section id="page-finder" class="page" hidden>
 <div class="section-top"><div><div class="eyebrow">Rostered and available</div><h2>Player Finder</h2><p>Search rostered players and league-available players together.</p></div></div>
-<div class="finder-surface"><div class="eyebrow">SEARCH</div><h2>All league players</h2><div class="finder-controls"><input id="finderQuery" type="search" placeholder="Search player, NFL team, fantasy team, or Yahoo ID…" aria-label="Find fantasy players"><select class="select" id="finderPos" aria-label="Player position"><option value="all">All positions</option><option>QB</option><option>RB</option><option>WR</option><option>TE</option><option>K</option><option value="DEF">DEF</option></select><select class="select" id="finderStatus" aria-label="Ownership status"><option value="all">Everyone</option><option value="available">Available / waivers*</option><option value="rostered">Rostered</option><option value="mine">My players</option></select><select class="select" id="finderSort" aria-label="Sort players"><option value="market">Yahoo popularity</option><option value="model">Model PPG (if active)</option><option value="name">Player name</option></select></div></div>
+<div class="finder-surface"><div class="eyebrow">SEARCH</div><h2>All league players</h2><div class="finder-controls"><input id="finderQuery" type="search" placeholder="Search player, NFL team, fantasy team, or Yahoo ID…" aria-label="Find fantasy players"><select class="select" id="finderPos" aria-label="Player position"><option value="all">All positions</option><option>QB</option><option>RB</option><option>WR</option><option>TE</option><option>K</option><option value="DEF">DEF</option></select><select class="select" id="finderStatus" aria-label="Ownership status"><option value="all">Everyone</option><option value="available">Available / waivers*</option><option value="rostered">Rostered</option><option value="mine">My players</option></select><select class="select" id="finderSort" aria-label="Sort players"><option value="market">Yahoo popularity</option><option value="model">Week projection (if active)</option><option value="name">Player name</option></select></div></div>
 <div class="finder-summary"><span id="finderCount">Loading players…</span><span>League-available players are shown alongside owned players</span></div>
 <div class="finder-results" id="finderResults"></div><button class="showmore" id="morePlayers" type="button" hidden>SHOW MORE PLAYERS ↓</button>
 <div class="note"><strong>*Waiver caveat:</strong> Yahoo confirms which players are available to acquire in your league, but the connected data does not distinguish unrestricted free agents from players still on waivers. Check Yahoo for claim eligibility and processing times. Available-player data is a sampled pool (up to 100 per position), not every NFL player.</div>
@@ -438,7 +438,7 @@ let players=[];
 function renderFinder(){
  const q=$('#finderQuery').value.toLowerCase().trim(),pos=$('#finderPos').value,
        scope=$('#finderStatus').value,sortMode=$('#finderSort').value;
- const byYahoo=new Map((model?.players||[]).map(p=>[String(p.yahooId),p]));
+ const byYahoo=new Map((weekly?.players||model?.players||[]).map(p=>[String(p.yahooId),p]));
  const results=players.filter(p=>{
    if(pos!=='all'&&p.position!==pos)return false;
    if(scope==='available'&&p.owned)return false;
@@ -448,8 +448,8 @@ function renderFinder(){
  }).sort((a,b)=>{
    if(sortMode==='name')return a.name.localeCompare(b.name);
    if(sortMode==='model'){
-     const av=byYahoo.get(String(a.id))?.conditionalPointsPerGame??-999;
-     const bv=byYahoo.get(String(b.id))?.conditionalPointsPerGame??-999;
+     const av=byYahoo.get(String(a.id))?.weeklyProjectedPoints??byYahoo.get(String(a.id))?.conditionalPointsPerGame??-999;
+     const bv=byYahoo.get(String(b.id))?.weeklyProjectedPoints??byYahoo.get(String(b.id))?.conditionalPointsPerGame??-999;
      return bv-av||a.name.localeCompare(b.name);
    }
    if(a.owned!==b.owned)return a.owned?1:-1;
@@ -459,8 +459,8 @@ function renderFinder(){
  $('#finderCount').textContent=results.length.toLocaleString()+' matching players · '+rosters.teams.reduce((n,t)=>n+t.players.length,0)+' rostered · '+available.players.length+' available sampled';
  $('#finderResults').innerHTML=results.slice(0,finderVisible).map(p=>{
    const pr=byYahoo.get(String(p.id));
-   const modeled=pr?'<div class="market model-pop">Model if active: <strong>'+number(pr.conditionalPointsPerGame)+' PPG</strong></div>':'<div class="market">No model estimate</div>';
-   return '<div class="result">'+position(p.position)+'<div class="grow"><strong>'+esc(p.name)+status(p)+'</strong><small>'+esc(p.nflTeam||'No NFL club')+' · Yahoo #'+esc(p.id)+'</small></div><div><div class="availability '+(p.owned?(p.fantasyTeamId===TEAM_ID?'mine':'rostered'):'')+'">'+(p.owned?esc(p.fantasyTeam):'AVAILABLE')+'</div>'+modeled+(p.owned?'<div class="market">'+esc(p.slot)+'</div>':'<div class="market">Yahoo-wide: '+percent(p.yahooWideRosteredPercent)+'</div>')+'</div></div>';
+   const modeled=pr?'<div class="market model-pop">Week '+esc(weekly?.week||'?')+': <strong>'+esc(weekly?weeklyDisplay(pr):number(pr.conditionalPointsPerGame))+'</strong> · if active '+number(pr.activeGamePoints??pr.conditionalPointsPerGame)+'</div>':'<div class="market">No model estimate</div>';
+   return '<div class="result">'+position(p.position)+'<div class="grow"><strong>'+esc(p.name)+status(p)+'</strong><small>'+esc(p.nflTeam||'No NFL club')+' · '+esc(weeklyOpponent(pr))+' · Yahoo #'+esc(p.id)+'</small></div><div><div class="availability '+(p.owned?(p.fantasyTeamId===TEAM_ID?'mine':'rostered'):'')+'">'+(p.owned?esc(p.fantasyTeam):'AVAILABLE')+'</div>'+modeled+(p.owned?'<div class="market">'+esc(p.slot)+'</div>':'<div class="market">Yahoo-wide: '+percent(p.yahooWideRosteredPercent)+'</div>')+'</div></div>';
  }).join('')||'<div class="empty-copy">No players match that search.</div>';
  $('#morePlayers').hidden=results.length<=finderVisible;
 }
