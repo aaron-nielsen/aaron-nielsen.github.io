@@ -29,6 +29,7 @@ jobs:
           node fantasy-preview/tests/roster-advice.test.cjs
           node fantasy-preview/tests/trade-preferences.test.cjs
           node fantasy-preview/tests/trade-leagues.test.cjs
+          node fantasy-preview/tests/forecast-accuracy.test.cjs
           node fantasy-preview/tests/transaction-grades.test.cjs
           node fantasy-preview/tests/playing-time.test.cjs
           node fantasy-preview/tests/usage-history.test.cjs
