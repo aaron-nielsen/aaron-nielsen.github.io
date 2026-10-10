@@ -20,9 +20,9 @@
   "overall": {
     "model": {
       "nPlayerWeeks": 4139,
-      "MAE": 4.226,
-      "RMSE": 6.026,
-      "bias": -0.067
+      "MAE": 4.223,
+      "RMSE": 6.023,
+      "bias": -0.062
     },
     "last3": {
       "nPlayerWeeks": 4139,
@@ -35,9 +35,9 @@
     "QB": {
       "model": {
         "nPlayerWeeks": 445,
-        "MAE": 8.399,
-        "RMSE": 10.291,
-        "bias": -0.716
+        "MAE": 8.417,
+        "RMSE": 10.293,
+        "bias": -0.756
       },
       "last3": {
         "nPlayerWeeks": 445,
@@ -49,9 +49,9 @@
     "RB": {
       "model": {
         "nPlayerWeeks": 1082,
-        "MAE": 4.198,
-        "RMSE": 6.089,
-        "bias": -0.402
+        "MAE": 4.188,
+        "RMSE": 6.084,
+        "bias": -0.395
       },
       "last3": {
         "nPlayerWeeks": 1082,
@@ -63,9 +63,9 @@
     "TE": {
       "model": {
         "nPlayerWeeks": 886,
-        "MAE": 3.109,
-        "RMSE": 4.533,
-        "bias": -0.076
+        "MAE": 3.104,
+        "RMSE": 4.523,
+        "bias": -0.078
       },
       "last3": {
         "nPlayerWeeks": 886,
@@ -77,9 +77,9 @@
     "WR": {
       "model": {
         "nPlayerWeeks": 1726,
-        "MAE": 3.742,
-        "RMSE": 5.096,
-        "bias": 0.315
+        "MAE": 3.737,
+        "RMSE": 5.097,
+        "bias": 0.335
       },
       "last3": {
         "nPlayerWeeks": 1726,
@@ -89,7 +89,7 @@
       }
     }
   },
-  "generatedAt": "2026-10-10T03:40:44.073341+00:00",
+  "generatedAt": "2026-10-10T03:45:20.098263+00:00",
   "sources": [
     "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2024.csv",
     "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2025.csv"
