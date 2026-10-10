@@ -331,6 +331,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 @media(max-width:600px){.recommendation-grid{padding:12px;gap:10px}.recommendation{padding:14px}.recommendation-move strong{font-size:23px}.recommendation-note{margin:2px 13px 15px;font-size:12px}}
 
 </style>
+<link rel="stylesheet" href="./clean-dashboard.css">
 </head><body>
 <div class="shell">
 <header class="topbar"><div class="season-identifier"><strong>CSU STATS</strong><span>FANTASY FOOTBALL · 2026</span></div><div class="top-right"><a class="top-link" href="https://football.fantasysports.yahoo.com/f1/258793" target="_blank" rel="noopener">OPEN YAHOO ↗</a><div class="weekstamp"><b id="weekHead">05</b><small>WEEK / 2026</small></div></div></header>
@@ -340,6 +341,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 <button class="nav-btn" type="button" data-page="rosters">▤ &nbsp;ROSTERS</button>
 <button class="nav-btn" type="button" data-page="finder">⌕ &nbsp;PLAYER FINDER</button>
 <button class="nav-btn" type="button" data-page="projections">↗ &nbsp;PROJECTIONS</button>
+<button class="nav-btn" type="button" data-page="trades">⇄ &nbsp;TRADE SUGGESTIONS</button>
 </nav>
 <div class="codex-rule" aria-hidden="true" style="display:flex;align-items:center;gap:12px;margin:-9px 0 20px;opacity:.65"><span style="flex:1;height:1px;background:#b8a98e"></span><span style="width:7px;height:7px;transform:rotate(45deg);border:1px solid #967c52"></span><span style="flex:1;height:1px;background:#b8a98e"></span></div>
 <main id="app">
@@ -378,21 +380,33 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 </div>
 <div class="panel all-predictions-panel" style="margin-top:19px">
   <div class="panel-header"><div><div class="panel-title">All player forecasts</div><div class="panel-sub" id="projectionCoverage">Experimental weekly estimates for QB, RB, WR, TE</div></div></div>
-  <div class="projection-controls"><input type="search" id="projectionSearch" placeholder="Search player or fantasy team" aria-label="Search player projections"><select id="projectionPos" class="select" aria-label="Filter projected position"><option value="all">All positions</option><option>QB</option><option>RB</option><option>WR</option><option>TE</option></select><select id="projectionOwnership" class="select" aria-label="Filter projected ownership"><option value="all">All players</option><option value="mine">My roster</option><option value="available">Available</option><option value="other">Other teams</option></select></div>
-  <div id="allProjections" class="projection-league-list"><div class="empty-copy">Awaiting projection data</div></div>
+  <div class="projection-controls"><select class="select" id="futureWeek" aria-label="Projection week"><option value="5">Week 5</option></select><input type="search" id="projectionSearch" placeholder="Search player or fantasy team" aria-label="Search player projections"><select id="projectionPos" class="select" aria-label="Filter projected position"><option value="all">All positions</option><option>QB</option><option>RB</option><option>WR</option><option>TE</option></select><select id="projectionOwnership" class="select" aria-label="Filter projected ownership"><option value="all">All players</option><option value="mine">My roster</option><option value="available">Available</option><option value="other">Other teams</option></select></div>
+  <div id="forecastContext" class="forecast-context">Weekly estimates are experimental; playing time and future injuries are uncertain.</div><div id="allProjections" class="projection-league-list"><div class="empty-copy">Awaiting projection data</div></div>
 </div>
 <div class="panel" style="margin-top:19px"><div class="panel-header"><div><div class="panel-title">Historical accuracy</div><div class="panel-sub">Rolling as-of backtest · 2025 holdout weeks</div></div></div><div id="backtestResults" class="backtest-results"><div class="empty-copy">No historical evaluation file published yet.</div></div></div>
 <div class="note"><strong>Week 5 prototype:</strong> Byes and Yahoo-reported out/exempt/IR statuses yield zero; questionable players are marked CHECK rather than assigned an invented probability. Other forecasts assume the player is active. Opponent effects are based on completed 2026 games, heavily shrunk and capped at ±10%. Yahoo injury data is a dated snapshot. K/DEF and some scoring categories remain unmodeled. These forecasts are separate from Yahoo’s team forecasts.</div>
 </section>
+<section id="page-trades" class="page" hidden>
+<div class="section-top"><div><div class="eyebrow">Lineup optimization · Weeks 6–17</div><h2>Trade suggestions</h2>
+<p class="trade-summary">Explore mutually beneficial one-for-one player trades. Each candidate is tested against both teams’ highest-scoring legal skill-position lineups: 1 QB, 2 RB, 2 WR, 1 TE, and 1 RB/WR/TE flex.</p></div></div>
+<div class="panel">
+  <div class="panel-header"><div><div class="panel-title">Potential trade partners</div><div class="panel-sub">Model-based scenarios · not proposals made to other managers</div></div><span class="chip">EXPERIMENTAL</span></div>
+  <div class="trade-controls"><label for="tradePartner">Trading with <select id="tradePartner" class="select"><option value="all">All teams</option></select></label>
+  <label for="tradeFromWeek">Evaluate <select id="tradeFromWeek" class="select"><option value="6">Weeks 6–17</option></select></label>
+  <div id="tradeCount" class="trade-count">Calculating candidates…</div></div>
+  <div id="tradeResults" class="trades-grid"><div class="empty-copy">Calculating lineup-adjusted trade ideas…</div></div>
+  <div class="trade-caveat"><strong>How to interpret:</strong> These are hypothetical healthy-player scenarios for future weeks, not availability-adjusted predictions. The simulator uses legal QB/RB/WR/TE/flex allocations on both rosters and ignores K/DEF (unchanged in these one-for-one trades). It excludes players currently in IR slots or marked unavailable from trade candidates, but still assumes future participation by other rostered players. It does not account for trade acceptance, Yahoo trade settings, playoff probabilities, injuries after this snapshot, or unmodeled scoring. No trades or lineup moves are submitted to Yahoo.</div>
+</div></section>
 </main>
 <footer class="footer"><div>DA VINCI FANTASY LAB / CSU STATS · MMXXVI</div><div>READ-ONLY PROTOTYPE · POWERED BY YAHOO LEAGUE DATA</div></footer>
 </div>
+<script src="./lab-enhancements.js"></script>
 <script>
 'use strict';
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const number=n=>n==null?'—':Number(n).toFixed(1);
-let rosters=null,available=null,week=null,model=null,backtest=null,weekly=null,selectedTeam='7',finderVisible=36;
+let rosters=null,available=null,week=null,model=null,backtest=null,weekly=null,futureData=null,selectedTeam='7',finderVisible=36;
 const TEAM_ID='7';
 function team(id){return rosters.teams.find(t=>t.id===String(id));}
 function standing(id){return week.standings.find(s=>s.teamId===String(id));}
@@ -573,6 +587,7 @@ function renderBacktest(){
  '<p class="accuracy-note">'+esc(m.nPlayerWeeks)+' 2025 player-weeks (Weeks '+esc(backtest.holdoutWeeks?.join('–'))+'). '+esc(details)+' Conditional on appearing in the statistics; excludes unmodeled scoring and missed games. Not a validation of injury-adjusted weekly recommendations.</p>';
 }
 function renderAllProjections(){
+ if(futureData?.players?.length&&window.DaVinciLab){window.DaVinciLab.renderProjections();return;}
  const area=$('#allProjections'),items=weekly?.players||model?.players;
  if(!items?.length){area.innerHTML='<div class="empty-copy">No projections yet.</div>';return;}
  const q=$('#projectionSearch').value.toLowerCase().trim(),pos=$('#projectionPos').value,scope=$('#projectionOwnership').value;
@@ -598,10 +613,10 @@ document.querySelectorAll('[data-jump]').forEach(b=>b.addEventListener('click',(
 async function get(path){const r=await fetch('./data/'+path+'.json',{cache:'no-store'});if(!r.ok)throw Error('Data file '+path+' returned HTTP '+r.status);return r.json();}
 (async()=>{
  try{
-  [rosters,available,week,model,backtest,weekly]=await Promise.all([get('rosters'),get('available'),get('week'),get('projections').catch(()=>null),get('backtest').catch(()=>null),get('weekly').catch(()=>null)]);
+  [rosters,available,week,model,backtest,weekly,futureData]=await Promise.all([get('rosters'),get('available'),get('week'),get('projections').catch(()=>null),get('backtest').catch(()=>null),get('weekly').catch(()=>null),get('future').catch(()=>null)]);
   if(!Array.isArray(rosters.teams)||!Array.isArray(available.players)||!Array.isArray(week.matchups)||!Array.isArray(week.standings)||!team(TEAM_ID)||!matchup())throw Error('League data incomplete or mismatched');
   if(rosters.leagueId!==week.leagueId||available.leagueId!==rosters.leagueId)throw Error('League identity mismatch');
-  initOverview();initRosters();initFinder();renderProjection();renderRecommendations();
+  initOverview();initRosters();initFinder();renderProjection();renderRecommendations();window.DaVinciLab?.init();
  }catch(e){
   $('#hero').innerHTML='<div class="loading"><strong>Dashboard data could not be loaded.</strong><p>'+esc(e.message)+'</p><p>Check the published JSON files or reload this page.</p></div>';
   $('#sync').textContent='Data load failed';
