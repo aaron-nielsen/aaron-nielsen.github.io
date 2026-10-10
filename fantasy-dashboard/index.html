@@ -330,11 +330,72 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 @media(max-width:800px){.recommendation-grid{grid-template-columns:1fr}}
 @media(max-width:600px){.recommendation-grid{padding:12px;gap:10px}.recommendation{padding:14px}.recommendation-move strong{font-size:23px}.recommendation-note{margin:2px 13px 15px;font-size:12px}}
 
+
+/* Keep the banner as the sole masthead; quiet parchment treatment below. */
+.renaissance-banner{margin-top:0}
+.matchup{
+  min-height:0;
+  padding:22px 25px 20px;
+  background:#f7e7c7;
+  color:#492d1b;
+  border:1px solid #c29b70;
+  box-shadow:0 5px 18px rgba(80,43,19,.08);
+  border-radius:8px;
+}
+.matchup:before,.matchup:after{display:none!important;content:none!important}
+.match-compact-heading{
+  font:700 12px/1.4 'Source Sans 3',system-ui,sans-serif;
+  letter-spacing:.095em;
+  color:#8d572f;
+}
+.match-compact-heading span{font-weight:600;letter-spacing:.04em}
+.match-compact-scores{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 22px minmax(0,1fr);
+  align-items:end;
+  column-gap:15px;
+  padding:21px 0 16px;
+}
+.match-compact-side{min-width:0;text-align:center}
+.match-compact-name{
+  font:650 clamp(17px,2vw,21px)/1.2 'Source Sans 3',system-ui,sans-serif;
+  color:#51311e;
+  overflow-wrap:anywhere;
+  min-height:30px;
+}
+.match-compact-points{
+  font:600 clamp(39px,4.4vw,53px)/1 'Cormorant Garamond',Georgia,serif;
+  font-variant-numeric:tabular-nums;
+  color:#683b20;
+  margin-top:5px;
+}
+.match-compact-vs{
+  color:#b59d7d;
+  text-align:center;
+  align-self:center;
+  font:500 22px 'Cormorant Garamond',serif;
+}
+.match-compact-footer{
+  border-top:1px solid #dec4a2;
+  text-align:center;
+  color:#78553b;
+  padding-top:13px;
+  font:600 14px/1.35 'Source Sans 3',system-ui,sans-serif;
+}
+@media(max-width:600px){
+ .matchup{padding:17px 13px 15px}
+ .match-compact-scores{column-gap:6px;padding:15px 0 13px;grid-template-columns:minmax(0,1fr) 15px minmax(0,1fr)}
+ .match-compact-name{font-size:16px;min-height:42px}
+ .match-compact-points{font-size:40px}
+ .match-compact-vs{font-size:17px}
+ .match-compact-footer{font-size:13px}
+}
+
 </style>
 <link rel="stylesheet" href="./clean-dashboard.css">
 </head><body>
 <div class="shell">
-<header class="topbar"><div class="season-identifier"><strong>CSU STATS</strong><span>FANTASY FOOTBALL · 2026</span></div><div class="top-right"><a class="top-link" href="https://football.fantasysports.yahoo.com/f1/258793" target="_blank" rel="noopener">OPEN YAHOO ↗</a><div class="weekstamp"><b id="weekHead">05</b><small>WEEK / 2026</small></div></div></header>
+
 <div class="renaissance-banner"><img src="./assets/da-vinci-fantasy-lab-approved.webp" alt="Da Vinci Fantasy Lab: Leonardo's portrait alongside ink sketches of normal distributions, statistical plots and football plays" width="1250" height="417" fetchpriority="high"></div>
 <nav class="nav" aria-label="Dashboard navigation">
 <button class="nav-btn active" type="button" data-page="overview">◈ &nbsp;OVERVIEW</button>
@@ -437,19 +498,25 @@ function group(id,players,label){$('#'+id).innerHTML='<div class="group-label">'
 function matchup(){return week.matchups.find(m=>m.home.id===TEAM_ID||m.away.id===TEAM_ID);}
 function initOverview(){
  const m=matchup(),you=m.home.id===TEAM_ID?m.home:m.away,them=m.home.id===TEAM_ID?m.away:m.home;
- const projY=you.projectedPoints,projT=them.projectedPoints,den=(projY||0)+(projT||0);
- const share=den?100*projY/den:50,delta=(projY!=null&&projT!=null)?projY-projT:null;
- const difference=delta==null?'Projection unavailable':(delta>=0?'You are projected ahead by ':'You trail by ')+Math.abs(delta).toFixed(2)+' pts';
- $('#hero').innerHTML='<div class="match-top"><span class="eyebrow">THE WEEKLY MATCHUP</span><span class="chip sunny">YAHOO FORECAST</span></div>'+
- '<div class="matchup-vs"><div class="team-side"><div class="team-code">'+esc(you.name)+'</div><div class="your-label">YOUR TEAM</div><div class="projected-number you mono">'+number(projY)+'</div><div class="point-label">Projected final · '+number(you.points)+' scored</div></div><div class="versus">VS</div>'+
- '<div class="team-side right"><div class="team-code">'+esc(them.name)+'</div><div class="your-label opponent-label">OPPONENT</div><div class="projected-number mono">'+number(projT)+'</div><div class="point-label">Projected final · '+number(them.points)+' scored</div></div></div>'+
- '<div class="oddsbar" role="img" aria-label="Share of combined projected points: your team '+share.toFixed(1)+' percent"><div class="yours" style="width:'+share.toFixed(2)+'%"></div><div class="theirs" style="flex:1"></div></div><div class="scorefoot"><span>WEEK '+esc(week.week)+' · CURRENT SCORE '+number(you.points)+' – '+number(them.points)+'</span><span class="lead">'+esc(difference)+'</span></div>';
+ const y=you.projectedPoints,t=them.projectedPoints;
+ const hasForecast=Number.isFinite(y)&&Number.isFinite(t);
+ const delta=hasForecast?y-t:null;
+ const summary=delta==null?'Projection unavailable':Math.abs(delta)<0.005?'Projected tie':delta>0?'You are favored by '+Math.abs(delta).toFixed(2)+' points':'Opponent favored by '+Math.abs(delta).toFixed(2)+' points';
+ $('#hero').innerHTML=
+   '<div class="match-compact-heading">WEEK '+esc(week.week)+' <span>· YAHOO PROJECTED SCORE</span></div>'+
+   '<div class="match-compact-scores">'+
+   '<div class="match-compact-side"><div class="match-compact-name">'+esc(you.name)+'</div>'+
+   '<div class="match-compact-points">'+(Number.isFinite(y)?y.toFixed(2):'—')+'</div></div>'+
+   '<div class="match-compact-vs" aria-hidden="true">—</div>'+
+   '<div class="match-compact-side"><div class="match-compact-name">'+esc(them.name)+'</div>'+
+   '<div class="match-compact-points">'+(Number.isFinite(t)?t.toFixed(2):'—')+'</div></div></div>'+
+   '<div class="match-compact-footer">'+esc(summary)+'</div>';
  const st=standing(TEAM_ID);$('#wl').innerHTML=esc(st.wins)+'<span>–</span>'+esc(st.losses);$('#rankDesc').textContent='#'+st.rank+' of '+rosters.teams.length+' in league standings';
  $('#pointsFor').textContent=number(st.pointsFor);$('#waiverRank').textContent=st.waiverPriority==null?'—':'#'+st.waiverPriority;
  const starters=team(TEAM_ID).players.filter(p=>p.slot!=='BN'&&p.slot!=='IR');
  $('#myLineup').innerHTML=starters.map(p=>'<div class="mini-row">'+position(p.position)+'<div><div class="row-name">'+esc(p.name)+status(p)+'</div><div class="row-detail">'+esc(p.nflTeam)+' · '+esc(p.slot)+' · '+esc(weeklyOpponent(weeklyProjection(p)))+'</div></div><span class="row-slot">'+esc(weeklyDisplay(weeklyProjection(p)))+'</span></div>').join('');
  $('#leagueBoard').innerHTML=week.matchups.map(m=>'<div class="scoreboard-item'+(m.home.id===TEAM_ID||m.away.id===TEAM_ID?' mine':'')+'"><div class="side">'+esc(m.home.name)+'</div><div class="pts mono">'+number(m.home.projectedPoints)+'</div><div class="dash">–</div><div class="pts mono">'+number(m.away.projectedPoints)+'</div><div class="side right">'+esc(m.away.name)+'</div></div>').join('');
- $('#weekHead').textContent=String(week.week).padStart(2,'0');$('#boardWeek').textContent='WEEK '+week.week;$('#projectionWeek').textContent='WEEK '+week.week;
+ $('#boardWeek').textContent='WEEK '+week.week;$('#projectionWeek').textContent='WEEK '+week.week;
  $('#sync').textContent='Yahoo snapshot · '+new Date(week.retrievedAt).toLocaleString(undefined,{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'});
 }
 function renderRecommendations(){
