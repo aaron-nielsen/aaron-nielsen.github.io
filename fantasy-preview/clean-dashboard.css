@@ -865,3 +865,31 @@ body{background:#f1e7d6}
 @media(max-width:420px){
  .renaissance-banner{height:86px!important}
 }
+
+/* Compact October dashboard: narrower Overview; full-viewport banner stays
+   independent of the content width. Put standings beside the matchup when
+   there is enough room, rather than stretching the scores into empty space. */
+#page-overview{width:100%;max-width:1020px;margin-left:auto;margin-right:auto}
+#page-overview .match-compact-projection{padding:4px 1px!important}
+@media(min-width:1100px){
+ #page-overview .overview-top{
+  grid-template-columns:minmax(0,1fr) 238px!important;
+  align-items:stretch!important;gap:11px!important
+ }
+ #page-overview .overview-metrics{
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  min-height:100%!important
+ }
+ #page-overview .overview-metrics>div{
+  display:flex!important;flex-direction:column!important;
+  align-items:flex-start!important;justify-content:center!important;
+  gap:6px!important;padding:9px 11px!important
+ }
+ #page-overview .overview-metrics>div:nth-child(2){border-right:0!important}
+ #page-overview .overview-metrics>div:nth-child(-n+2){
+  border-bottom:1px solid #e9dfd2!important
+ }
+}
+@media(max-width:1099px){
+ #page-overview .overview-top{grid-template-columns:minmax(0,1fr)!important}
+}
