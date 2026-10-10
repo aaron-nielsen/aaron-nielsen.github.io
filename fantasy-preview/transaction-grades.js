@@ -173,7 +173,8 @@ function update(){
  }
  const breakdown=[...reasons].sort((a,b)=>b[1]-a[1]).map(([reason,n])=>n+' '+reason.toLowerCase()).join(' · ');
  $('txnStats').textContent=rows.length+' transactions · '+rated+' projected grades'+
-  (missing?' · '+missing+' ungraded'+(breakdown?' ('+breakdown+')':''):'');
+  (missing?' · '+missing+' ungraded':'');
+ $('txnStats').title=breakdown||'All visible transactions graded';
  $('transactionCards').innerHTML=rows.length?rows.map(tx=>{
   const selected=team==='all'?tx.primary:tx.sides.find(side=>side.teamId===team);
   return card({...tx,primary:selected||tx.primary});
