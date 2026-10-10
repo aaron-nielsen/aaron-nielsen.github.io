@@ -113,7 +113,7 @@ function card(tx){
  const relation=tx.sides.length===2&&tx.sides.every(s=>s.value)?
   (tx.sides.every(s=>s.value.avg>=.5)?' · Both improve':' · Not mutually beneficial'):'';
  const actual=tx.actual&&Number.isFinite(tx.actual.actualGain)?
-  ((tx.actual.actualGain>=0?'+':'')+fmt(tx.actual.actualGain)+' actual pts'):'Expected today · Actual gain unverified';
+  ((tx.actual.actualGain>=0?'+':'')+fmt(tx.actual.actualGain)+' actual pts'):'Current-model estimate · Actual impact not measured';
  return '<article class="txn-card">'+
   '<div class="txn-top"><span class="txn-type">'+esc(type)+'</span><time>'+esc(tx.date||'Unknown date')+'</time>'+
   '<span class="txn-grade">'+esc(g.grade)+'</span></div>'+
@@ -140,7 +140,7 @@ function update(){
  if(sort==='worst')rows.sort((a,b)=>value(a)-value(b));
  if(sort==='recent')rows.sort((a,b)=>Number(b.timestamp||0)-Number(a.timestamp||0));
  const rated=rows.filter(x=>x.primary?.value).length;
- $('txnStats').textContent=rows.length+' transactions · '+rated+' model-rated';
+ $('txnStats').textContent=rows.length+' transactions · '+rated+' projected grades';
  $('transactionCards').innerHTML=rows.length?rows.map(card).join(''):'<p class="txn-empty">No transactions match these filters.</p>';
 }
 function init(data){
@@ -158,7 +158,7 @@ function init(data){
  if(coverage&&source.length){
   const dates=source.map(t=>t.date).filter(Boolean).sort();
   coverage.textContent='Yahoo activity · '+dates[0]+' to '+dates[dates.length-1]+
-   ' · Model impact from Week '+data.week+' (current rosters)';
+   ' · Rest-of-season estimate from Week '+data.week+' · current model/rosters';
  }
  for(const id of ['txnTeam','txnType','txnSort'])$(id)?.addEventListener('change',update);
  if(!source.length){$('txnStats').textContent='No verified transactions available';return;}
