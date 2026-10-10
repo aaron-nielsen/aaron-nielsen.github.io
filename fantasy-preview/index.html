@@ -1051,56 +1051,40 @@ function renderSpecialWaivers(){
 
 function renderWaivers(){
  const root=$('#waiverRecommendations');
- if(!waivers?.horizons || !futureData?.players?.length || !available?.players?.length){
-   root.innerHTML='<div class="empty-copy">Lineup-adjusted waiver rankings are not generated for this league yet. Browse available players in Player Finder and verify waiver eligibility in Yahoo.</div>';return;
- }
- const key=$('#waiverHorizon').value;
- const selected=waivers.horizons[key];
- if(!selected){root.innerHTML='<div class="empty-copy">No data for this period.</div>';return;}
- const weeks=selected.weeks||[];
- const minimumEdge=weeks.length*0.5;
- const upgrades=(selected.recommendations||[]).filter(p=>p.lineupGain>=minimumEdge).slice(0,4);
- let cards='';
- if(upgrades.length){
-   cards='<div class="waiver-section-label">MODEL-PROJECTED LINEUP IMPROVEMENTS</div>'+
-   upgrades.map((p,i)=>{
-      const drop=p.suggestedDrop?.name||'Unknown';
-      return '<div class="waiver-item"><span class="waiver-rank">'+(i+1)+'</span>'+
-      '<div class="waiver-details"><strong>'+esc(p.name)+'</strong><span>'+esc(p.position)+' · '+esc(p.nflTeam||'No club')+'</span><small>Possible drop: '+esc(drop)+'</small></div>'+
-      '<div class="waiver-points">+'+Number(p.lineupGain).toFixed(1)+'<span>starter pts</span></div></div>';
-   }).join('');
- }else{
-   cards='<p class="waiver-empty-note">No clear projected starting-lineup upgrade over this period. Your current roster already covers these starting slots well.</p>';
- }
+ if(!futureData?.players?.length||!available?.players?.length){root.innerHTML='<div class="empty-copy">Available-player projections are unavailable.</div>';return;}
+ const key=$('#waiverHorizon').value,start=Math.max(Number(week.week)+1,6),end=Number(futureData.endWeek||17);
+ const selected=waivers?.horizons?.[key];
+ const weeks=selected?.weeks||(key==='next_week'?[start]:key==='four_weeks'?Array.from({length:Math.min(4,end-start+1)},(_,i)=>start+i):Array.from({length:Math.max(0,end-start+1)},(_,i)=>start+i));
+ const upgrades=(selected?.recommendations||[]).filter(p=>Number(p.lineupGain)>=weeks.length*0.5).slice(0,3);
+ const cards=upgrades.length?'<div class="waiver-section-label">Suggested pickups</div>'+upgrades.map(p=>
+  '<div class="waiver-item"><span class="waiver-rank">'+esc(p.position)+'</span>'+
+  '<div class="waiver-details"><strong>Add '+esc(p.name)+'</strong><small>Drop '+esc(p.suggestedDrop?.name||'a bench player')+'</small></div>'+
+  '<div class="waiver-points">+'+Number(p.lineupGain).toFixed(1)+'<span>lineup pts</span></div></div>').join(''):'';
  const byId=new Map(futureData.players.map(p=>[String(p.yahooId),p]));
- const excluded=new Set(['NA','N/A','IR','IR-R','PUP','PUP-R','NFI','NFI-R','CEL','SUSP','SUS','OUT']);
+ const excluded=new Set(['NA','N/A','IR','IR-R','PUP','PUP-R','NFI','NFI-R','CEL','SUSP','SUS','OUT','O','D']);
  const candidates=available.players.filter(p=>{
-   if(!['QB','RB','WR','TE'].includes(p.position))return false;
-   const status=String(p.status||'').toUpperCase();
-   if(excluded.has(status)||status.startsWith('IR-')||status.startsWith('PUP-'))return false;
-   if(key==='next_week' && status==='O')return false;
-   return byId.has(String(p.id));
+  if(!['QB','RB','WR','TE','K','DEF'].includes(p.position))return false;
+  const status=String(p.status||'').toUpperCase();
+  if(excluded.has(status)||status.startsWith('IR-')||status.startsWith('PUP-'))return false;
+  return byId.has(String(p.id));
  }).map(p=>{
-   const f=byId.get(String(p.id));
-   const raw=weeks.reduce((sum,w)=>{
-     const item=f.weeks?.find(x=>x.week===w);
-     return sum+Math.max(0,Number(item?.points)||0);
-   },0);
-   return {...p,raw};
+  const f=byId.get(String(p.id));
+  const raw=weeks.reduce((sum,w)=>{
+   const item=f.weeks?.find(x=>Number(x.week)===w);
+   return sum+(Number.isFinite(item?.points)?item.points:0);
+  },0);
+  return {...p,raw};
  }).sort((a,b)=>b.raw-a.raw||a.name.localeCompare(b.name));
- const positionLeaders=["RB","WR","TE","QB"].map(pos=>candidates.find(p=>p.position===pos)).filter(Boolean);
- const periodLabel=weeks.length===1?'week points':'total points';
- const watch='<div class="waiver-section-label">HIGHEST PROJECTED AVAILABLE BY POSITION</div>'+
-  positionLeaders.map((p,i)=>{
-    const caution=p.status ? ' · Yahoo status '+esc(p.status) : '';
-    return '<div class="waiver-item"><span class="waiver-rank">'+(i+1)+'</span>'+
-      '<div class="waiver-details"><strong>'+esc(p.name)+'</strong><span>'+esc(p.position)+' · '+esc(p.nflTeam||'NFL free agent')+caution+'</span><small>Projected production; may not improve your starting lineup</small></div>'+
-      '<div class="waiver-points">'+p.raw.toFixed(1)+'<span>'+periodLabel+'</span></div></div>';
-  }).join('');
- root.innerHTML=cards+watch+
- '<div class="waiver-footnote">Weeks '+weeks[0]+(weeks.length>1?'–'+weeks[weeks.length-1]:'')+
- '. Starter gains come from optimizing a legal QB / 2 RB / 2 WR / TE / flex lineup. Current IR/exempt/suspended players are omitted from the optimized lineup until cleared. Other future forecasts assume availability; verify injury and NFL-team status.</div>';
+ const positionLeaders=['RB','WR','TE','QB','K','DEF'].map(pos=>candidates.find(p=>p.position===pos&&(pos!=='K'||(p.yahooWideRosteredPercent||0)>=5))).filter(Boolean);
+ const periodLabel=weeks.length===1?'week pts':'period pts';
+ const watch='<div class="waiver-section-label">Top available by position</div>'+
+  positionLeaders.map(p=>
+   '<div class="waiver-item"><span class="waiver-rank">'+esc(p.position)+'</span>'+
+   '<div class="waiver-details"><strong>'+esc(p.name)+'</strong><span>'+esc(p.nflTeam||'')+(p.status?' · '+esc(p.status):'')+'</span></div>'+
+   '<div class="waiver-points">'+p.raw.toFixed(1)+'<span>'+periodLabel+'</span></div></div>').join('');
+ root.innerHTML=cards+watch;
 }
+
 function renderRecommendations(){
  const area=$('#lineupRecommendations');
  const weekChip=$('#lineupChangeWeek');if(weekChip)weekChip.textContent='WEEK '+week.week;
