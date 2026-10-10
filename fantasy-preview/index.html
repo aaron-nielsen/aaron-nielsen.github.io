@@ -560,6 +560,36 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 .model-league-explanation{padding:0 20px 17px;font-size:12px;line-height:1.5;color:#775b42;margin:12px 0 0}
 @media(max-width:700px){.model-offense-strip{padding:12px 13px}.model-offense-strip b{font-size:14px}.model-team-row,.model-team-head{padding:10px 12px}.model-league-panel .panel-header{flex-wrap:wrap}}
 
+
+.model-offense-strip{display:block;margin-top:12px;padding:12px 16px}
+.model-offense-strip .model-strip-label{display:block;margin-bottom:6px}
+.model-compare{display:flex;flex-wrap:wrap;gap:7px 25px;align-items:baseline;font-size:14px}
+.model-compare>span{display:flex;gap:9px;align-items:baseline}
+.model-compare b{font-size:18px;color:#4e6652;font-variant-numeric:tabular-nums}
+.model-offense-strip .model-strip-note{display:block;margin-top:4px}
+.model-strip-note a{font-weight:700;color:#805333;text-decoration:underline;text-underline-offset:2px}
+.model-team-entry{background:#fffaf3;border-bottom:1px solid #e5d9ca}
+.model-team-entry.my-model-team{background:#f7efe2}
+.model-team-entry summary{cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) 116px;align-items:center;gap:12px;padding:11px 18px;list-style:none}
+.model-team-entry summary::-webkit-details-marker{display:none}
+.model-team-entry summary strong{font-size:14px;color:#44392e}
+.model-team-entry summary small{font-size:12px;color:#998570}
+.model-team-entry summary em{font-size:11px;font-style:normal;color:#996b39}
+.model-team-entry summary b{text-align:right;color:#476450;font-variant-numeric:tabular-nums}
+.model-team-entry summary i{font-style:normal;font-weight:400;color:#aa9580;margin-left:5px}
+.model-team-entry[open] summary i{display:inline-block;transform:rotate(180deg)}
+.model-team-expanded{padding:8px 18px 16px;background:#fffcf7;border-top:1px solid #e6d9c9}
+.model-team-expanded>p{font-size:12px;color:#786b5d;margin:2px 0 13px}
+.team-model-week{margin-bottom:11px;padding-bottom:9px;border-bottom:1px solid #eee3d5}
+.team-model-week>strong{font-size:12px;color:#74573a}
+.team-model-players{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px 15px;margin-top:8px}
+.team-model-player{font-size:12px;display:flex;align-items:baseline;gap:7px;color:#51483f}
+.team-model-player small{min-width:31px;color:#807162;font-size:10px;font-weight:750}
+.team-model-player b{margin-left:auto;color:#48624d;font-variant-numeric:tabular-nums}
+@media(max-width:650px){.model-offense-strip{padding:11px}.model-compare{font-size:12px}.model-compare b{font-size:16px}
+.model-team-entry summary{padding:10px;grid-template-columns:minmax(0,1fr) 90px}.model-team-entry summary strong{font-size:13px}
+.model-team-expanded{padding:10px}.team-model-players{grid-template-columns:1fr}}
+
 </style>
 <link rel="stylesheet" href="./clean-dashboard.css">
 </head><body>
@@ -619,7 +649,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 <div class="panel"><div class="panel-header"><div><div class="panel-title">My weekly forecasts</div><div class="panel-sub">Opponent and availability status</div></div><span class="chip">MODEL V0.3</span></div><div class="model-status" id="modelStatus"><div class="eyebrow">EXPERIMENTAL</div><div class="headline">Loading player projections</div></div></div>
 <div class="panel"><div class="panel-header"><div><div class="panel-title">Yahoo team projections</div><div class="panel-sub">Projected final points for all 14 teams, current week</div></div><span class="chip" id="projectionWeek">WEEK 5</span></div><div class="projection-list" id="forecastList"></div></div>
 </div>
-<section class="panel model-league-panel" aria-label="Our league-wide offensive projections">
+<section class="panel model-league-panel" id="our-team-forecasts" aria-label="Our league-wide offensive projections">
  <div class="panel-header"><div><div class="panel-title">Da Vinci team forecasts</div><div class="panel-sub">Best legal QB / 2 RB / 2 WR / TE / flex lineup · excludes K and DEF</div></div>
  <select id="teamModelWeek" class="select" aria-label="Select week for team forecasts"><option value="5">Week 5</option></select></div>
  <div id="modelTeamRankings" aria-live="polite"><div class="empty-copy">Calculating projected offensive lineups…</div></div>
@@ -738,7 +768,7 @@ function modelTeamLineup(teamId,forecastWeek){
     if(mask&bit||!MODEL_SKILL_SLOTS[slot].includes(player.position))continue;
     const nextMask=mask|bit;
     const next={points:previous.points+Number(pts),
-      ids:[...previous.ids,String(player.id)],needsReview:previous.needsReview+Number(uncertain)};
+      ids:[...previous.ids,{id:String(player.id),name:player.name,position:player.position,slot,points:Number(pts)}],needsReview:previous.needsReview+Number(uncertain)};
     if(!dp[nextMask]||next.points>dp[nextMask].points)dp[nextMask]=next;
    }
   }
@@ -748,44 +778,63 @@ function modelTeamLineup(teamId,forecastWeek){
  return answer;
 }
 function renderModelMatchup(){
- const area=$('#modelMatchupSummary');
- if(!futureData?.players?.length){area.textContent='Our model team forecasts are unavailable.';return;}
- const pairing=matchup();
- const other=pairing.home.id===TEAM_ID?pairing.away:pairing.home;
- const yours=modelTeamLineup(TEAM_ID,week.week);
- const theirs=modelTeamLineup(other.id,week.week);
- if(!yours||!theirs){area.textContent='Our model cannot complete both seven-player offensive lineups from the available projections.';return;}
- area.innerHTML='<span class="model-strip-label">OUR MODEL · OFFENSE ONLY</span>'+
- '<span><b>Your lineup '+yours.points.toFixed(2)+'</b> <span class="model-strip-separator">·</span> '+
- '<b>'+esc(other.name)+' '+theirs.points.toFixed(2)+'</b></span>'+
- '<span class="model-strip-note">Best seven eligible skill-position starters; no K/DEF'+
- ((yours.needsReview+theirs.needsReview)?' · questionable status assumed active':'')+'.</span>';
+ const area=$('#modelMatchupSummary'),pair=matchup(),other=pair.home.id===TEAM_ID?pair.away:pair.home;
+ const a=modelTeamLineup(TEAM_ID,week.week),b=modelTeamLineup(other.id,week.week);
+ if(!a||!b){area.textContent='Incomplete independent offensive matchup projection.';return;}
+ const diff=a.points-b.points,who=diff>=0?'Your offense':'Opponent offense';
+ area.innerHTML='<span class="model-strip-label">DA VINCI MODEL · OFFENSE ONLY</span>'+
+ '<span class="model-compare"><span>Ten Feline Overlords <b>'+a.points.toFixed(2)+'</b></span>'+
+ '<span>'+esc(other.name)+' <b>'+b.points.toFixed(2)+'</b></span></span>'+
+ '<span class="model-strip-note">'+who+' favored by '+Math.abs(diff).toFixed(2)+' points.'+
+ ((a.needsReview+b.needsReview)?' Playing status uncertain.':'')+
+ ' No kicker or defense. <a href="#our-team-forecasts" id="modelTeamJump">See all team forecasts →</a></span>';
+ const jump=$('#modelTeamJump');if(jump)jump.addEventListener('click',e=>{
+  e.preventDefault();showPage('projections');
+  document.getElementById('our-team-forecasts')?.scrollIntoView?.({behavior:'smooth',block:'start'});
+ });
+}
+function forecastWeeks(value){
+ const start=Math.max(6,Number(week.week));
+ if(value==='next4')return [6,7,8,9].filter(w=>w>=start&&w<=futureData.endWeek);
+ if(value==='ros')return Array.from({length:Math.max(0,futureData.endWeek-start+1)},(_,i)=>start+i);
+ const n=Number(value);return Number.isInteger(n)&&n>=futureData.startWeek&&n<=futureData.endWeek?[n]:[Number(week.week)];
 }
 function renderModelTeamRankings(){
- const area=$('#modelTeamRankings');
- if(!futureData?.players?.length){area.innerHTML='<div class="empty-copy">Independent team projections are unavailable.</div>';return;}
- const selectedWeek=Number($('#teamModelWeek').value||week.week);
- const rows=rosters.teams.map(t=>({team:t,projection:modelTeamLineup(t.id,selectedWeek)}))
-   .sort((a,b)=>(b.projection?.points??-1)-(a.projection?.points??-1));
- area.innerHTML='<div class="model-team-head"><span>TEAM</span><span>OFFENSE PTS</span></div>'+
+ const area=$('#modelTeamRankings');if(!futureData?.players?.length)return;
+ const weeks=forecastWeeks($('#teamModelWeek').value);
+ const multiple=weeks.length>1;
+ const slotNames=['QB','RB1','RB2','WR1','WR2','TE','FLEX'];
+ const rows=rosters.teams.map(t=>{
+  const games=weeks.map(w=>({week:w,lineup:modelTeamLineup(t.id,w)}));
+  const total=games.every(g=>g.lineup)?games.reduce((s,g)=>s+g.lineup.points,0):null;
+  return {team:t,games,total,review:games.reduce((s,g)=>s+(g.lineup?.needsReview||0),0)};
+ }).sort((a,b)=>(b.total??-1)-(a.total??-1));
+ area.innerHTML='<div class="model-team-head"><span>TEAM</span><span>'+(multiple?'TOTAL OFFENSE PTS':'OFFENSE PTS')+'</span></div>'+
  rows.map((r,i)=>{
-  const total=r.projection?r.projection.points.toFixed(2):'—';
-  const warning=r.projection?.needsReview?' · playing-status uncertain':'';
-  return '<div class="model-team-row'+(r.team.id===TEAM_ID?' my-model-team':'')+'">'+
-   '<span><small>'+(i+1)+'.</small><strong>'+esc(r.team.name)+(r.team.id===TEAM_ID?' ★':'')+'</strong>'+
-   (warning?'<em>'+esc(warning)+'</em>':'')+'</span><b class="model-team-points">'+total+'</b></div>';
+  const games=r.games.map(g=>{
+   if(!g.lineup)return '<p>Week '+g.week+': incomplete lineup</p>';
+   const players=g.lineup.ids.slice().sort((a,b)=>a.slot-b.slot).map(p=>
+    '<span class="team-model-player"><small>'+slotNames[p.slot]+'</small><span>'+esc(p.name)+'</span><b>'+p.points.toFixed(1)+'</b></span>').join('');
+   return '<div class="team-model-week"><strong>Week '+g.week+(multiple?' · '+g.lineup.points.toFixed(2)+' pts':'')+'</strong>'+
+    '<div class="team-model-players">'+players+'</div></div>';
+  }).join('');
+  return '<details class="model-team-entry'+(r.team.id===TEAM_ID?' my-model-team':'')+'"><summary>'+
+   '<span><small>'+(i+1)+'.</small> <strong>'+esc(r.team.name)+(r.team.id===TEAM_ID?' ★':'')+'</strong>'+
+   (r.review?'<em> · status review</em>':'')+'</span>'+
+   '<b>'+(r.total==null?'—':r.total.toFixed(2))+' <i>⌄</i></b></summary>'+
+   '<div class="model-team-expanded"><p>'+weeks.length+' modeled week'+(weeks.length===1?'':'s')+
+   (multiple&&r.total!=null?' · '+(r.total/weeks.length).toFixed(2)+' pts/week':'')+
+   ' · conditional on participation</p>'+games+'</div></details>';
  }).join('');
 }
 function initModelTeamForecasts(){
  if(!futureData?.players?.length)return;
- const first=Number(futureData.startWeek)||Number(week.week);
- const last=Number(futureData.endWeek)||first;
- const selector=$('#teamModelWeek');
- selector.innerHTML=Array.from({length:last-first+1},(_,i)=>'<option value="'+(first+i)+'">Week '+(first+i)+'</option>').join('');
- selector.value=String(week.week);
- selector.addEventListener('change',renderModelTeamRankings);
- renderModelMatchup();
- renderModelTeamRankings();
+ const first=Number(futureData.startWeek)||Number(week.week),last=Number(futureData.endWeek)||first;
+ const select=$('#teamModelWeek');
+ select.innerHTML=Array.from({length:last-first+1},(_,i)=>'<option value="'+(first+i)+'">Week '+(first+i)+'</option>').join('')+
+ '<option value="next4">Next four weeks · W6–9</option><option value="ros">Rest of season · W6–17</option>';
+ select.value=String(week.week);select.addEventListener('change',renderModelTeamRankings);
+ renderModelMatchup();renderModelTeamRankings();
 }
 function initOverview(){
  const m=matchup(),you=m.home.id===TEAM_ID?m.home:m.away,them=m.home.id===TEAM_ID?m.away:m.home;
