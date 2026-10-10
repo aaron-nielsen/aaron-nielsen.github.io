@@ -643,10 +643,49 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
  #page-projections .model-team-score-pair{font-size:12px;gap:3px}
 }
 </style>
+
+<style id="compact-banner-styles">
+/* One short edge-to-edge banner. Inline after external CSS to prevent stale
+   image selectors from blowing up the emblem or restoring 3:1 image height. */
+html,body{overflow-x:clip}
+.renaissance-banner{
+ width:100vw!important;max-width:none!important;
+ height:clamp(132px,14vw,200px)!important;min-height:0!important;
+ position:relative!important;left:50%!important;
+ transform:translateX(-50%)!important;
+ display:block!important;overflow:hidden!important;box-sizing:border-box!important;
+ aspect-ratio:auto!important;margin:0 0 8px!important;
+ padding:0!important;border:0!important;border-bottom:2px solid #ac854e!important;
+ outline:0!important;border-radius:0!important;
+ box-shadow:none!important;background:#e9c99b!important;
+}
+.renaissance-banner>.renaissance-banner-art{
+ display:block!important;width:100%!important;height:100%!important;
+ max-width:none!important;overflow:hidden!important;
+}
+@media(max-width:740px){.renaissance-banner{height:102px!important}}
+@media(max-width:420px){.renaissance-banner{height:86px!important}}
+</style>
 </head><body>
 <div class="shell">
 
-<div class="renaissance-banner"><img src="./assets/da-vinci-fantasy-lab-approved.webp" alt="Da Vinci Fantasy Lab: Leonardo's portrait alongside ink sketches of normal distributions, statistical plots and football plays" width="1250" height="417" fetchpriority="high"><img class="hat-crest" src="./assets/ram-hat-emblem.webp" alt="" aria-hidden="true" width="48" height="30" decoding="async"></div>
+<div class="renaissance-banner">
+<svg class="renaissance-banner-art" xmlns="http://www.w3.org/2000/svg" width="1500" height="240" viewBox="0 0 1500 240" preserveAspectRatio="none" role="img" aria-label="Da Vinci Fantasy Lab: Leonardo wearing a subtle CSU ram-horn emblem, surrounded by football and statistics drawings on parchment">
+<defs>
+ <clipPath id="labPortraitCrop"><rect x="5" y="0" width="246" height="240"/></clipPath>
+ <clipPath id="labTitleCrop"><rect x="286" y="5" width="644" height="226"/></clipPath>
+ <clipPath id="labChartsCrop"><rect x="960" y="0" width="540" height="240"/></clipPath>
+ <linearGradient id="labPortraitFade" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#e9c99b" stop-opacity="0"/><stop offset="1" stop-color="#e9c99b" stop-opacity=".8"/></linearGradient>
+ <filter id="labBronzeRam" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0 0 0 0 .75  0 0 0 0 .52  0 0 0 0 .28  0 0 0 1 0"/></filter>
+</defs>
+<rect width="1500" height="240" fill="#e9c99b"/>
+<g clip-path="url(#labPortraitCrop)"><image href="./assets/da-vinci-fantasy-lab-approved.webp" width="1500" height="500" transform="translate(5 0) scale(.6)"/></g>
+<rect x="187" y="0" width="64" height="240" fill="url(#labPortraitFade)"/>
+<g clip-path="url(#labTitleCrop)"><image href="./assets/da-vinci-fantasy-lab-approved.webp" width="1500" height="500" transform="translate(-31.73 -116.37) scale(.83636)"/></g>
+<g clip-path="url(#labChartsCrop)"><image href="./assets/da-vinci-fantasy-lab-approved.webp" width="1500" height="500" transform="translate(-631.6 0) scale(1.42105 .48)"/></g>
+<image href="./assets/ram-hat-emblem.webp" x="120" y="30" width="38" height="38" opacity=".86" filter="url(#labBronzeRam)"/>
+<rect y="238" width="1500" height="2" fill="#947047" opacity=".55"/>
+</svg></div>
 <div class="league-switch"><label for="leagueSelector">YAHOO LEAGUE</label><select id="leagueSelector" aria-label="Choose fantasy league"><option value="csu">CSU Stats · Ten Feline Overlords (14 teams)</option><option value="nebraska">Nebraska Bugeaters (10 teams)</option></select><span id="leagueSnapshot" class="league-switch-note">Updated</span></div>
 <nav class="nav" aria-label="Dashboard navigation">
 <button class="nav-btn active" type="button" data-page="overview">Overview</button>

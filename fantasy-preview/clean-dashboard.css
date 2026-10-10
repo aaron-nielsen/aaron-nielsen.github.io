@@ -808,30 +808,21 @@ body{font:16px/1.48 'Source Sans 3',Arial,sans-serif;color:var(--text);backgroun
 }
 
 
-/* October 2026: authentic Da Vinci parchment masthead. Preserve the original
-   art, crop it to a narrow browser-width ribbon, and attach the supplied
-   bronze/gold ram horn insignia at the hat position. */
+/* Compact, full-bleed parchment banner using the approved original drawing.
+   The ram insignia is embedded at fixed SVG coordinates instead of being an
+   additional HTML img; it can never inherit full-width image styling. */
 html,body{overflow-x:clip}
 body{background:#f1e7d6}
 .renaissance-banner{
  box-sizing:border-box;position:relative;left:50%;transform:translateX(-50%);
- display:block;width:100vw;max-width:none;height:clamp(128px,12vw,166px);
- margin:0 0 9px!important;overflow:hidden;
- border:0!important;border-top:2px solid #9a7246!important;
- border-bottom:2px solid #b38a56!important;border-radius:0!important;
- outline:none!important;box-shadow:none!important;background:#e9d0a6;
+ display:block;width:100vw;max-width:none;height:clamp(132px,14vw,200px);
+ margin:0 0 8px!important;overflow:hidden;
+ border:0!important;border-bottom:2px solid #ac854e!important;
+ border-radius:0!important;outline:none!important;box-shadow:none!important;
+ background:#e9c99b;
 }
-.renaissance-banner>img:first-child{
- display:block;width:100%;height:100%!important;max-height:none!important;
- aspect-ratio:auto!important;object-fit:cover;object-position:center 34%;
- filter:sepia(.16) saturate(.86); /* no modern bright-green treatment */
-}
-.renaissance-banner .hat-crest{
- display:block;position:absolute!important;
- left:18.5%;top:13%;width:clamp(26px,3.5vw,48px);height:auto!important;
- aspect-ratio:48/30!important;object-fit:contain;z-index:2;
- filter:sepia(.28) saturate(.84) drop-shadow(0 1px 1px #4b301e90);
- pointer-events:none;
+.renaissance-banner>.renaissance-banner-art{
+ display:block;width:100%;height:100%;overflow:hidden;
 }
 .league-switch{margin:5px 0 6px!important}
 .league-switch select{border-color:#c3a37d!important;background:#fbefdb!important;color:#614628!important}
@@ -864,9 +855,7 @@ body{background:#f1e7d6}
 #page-overview .overview-roster-panel{margin:9px 0 11px}
 #page-overview .overview-metrics{background:#fbf2e4!important}
 @media(max-width:700px){
- .renaissance-banner{height:102px;margin-bottom:5px!important}
- .renaissance-banner>img:first-child{object-position:center 31%}
- .renaissance-banner .hat-crest{left:19%;top:11%;width:26px}
+ .renaissance-banner{height:102px!important;margin-bottom:5px!important}
  .league-switch{margin:4px 0!important}
  .nav{padding:6px 0 10px!important}
  #page-overview .overview-top .matchup{padding:10px 11px!important}
@@ -874,6 +863,5 @@ body{background:#f1e7d6}
  #page-overview .model-offense-strip{margin:5px 0!important}
 }
 @media(max-width:420px){
- .renaissance-banner{height:90px}
- .renaissance-banner .hat-crest{left:19%;top:10%;width:22px}
+ .renaissance-banner{height:86px!important}
 }
