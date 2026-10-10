@@ -87,7 +87,7 @@ function renderRecommendations(){
    if(removed)removals.splice(removals.indexOf(removed),1);
    const compared=removed?points(removed,w):null;
    const detail=removed?'Sit '+esc(removed.name)+(compared==null?'':' · '+fmt(compared)):'Use '+SLOT_NAMES[a.slot]+' slot';
-   summaries.push('<div class="decision-row"><span class="decision-position">'+esc(SLOT_NAMES[a.slot])+'</span><span class="decision-main"><strong>Start '+esc(a.player.name)+'</strong><small>'+detail+'</small></span><b>'+fmt(a.points)+' pts</b></div>');
+   summaries.push('<div class="decision-row"><span class="decision-position">'+esc(SLOT_NAMES[a.slot])+'</span><span class="decision-main"><strong>Start '+esc(a.player.name)+'</strong><small>'+detail+'</small></span><b>'+((compared!=null&&Number.isFinite(compared))?'+'+fmt(a.points-compared)+' pts':'')+'</b></div>');
   }
  }else{
   summaries.push('<div class="decision-row"><span class="decision-position">SET</span><span class="decision-main"><strong>No changes recommended</strong><small>Current starters match the top projected lineup</small></span></div>');
