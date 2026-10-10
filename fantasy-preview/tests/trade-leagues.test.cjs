@@ -49,4 +49,22 @@ for(const {prefix,teamId,name} of [
  assert.ok(elapsed<15000,name+' trade response took '+elapsed+' ms');
  console.log(name+': '+ownCandidate.name+' target evaluated in '+elapsed+' ms, offers='+
   (html.match(/trade-personal-card/g)||[]).length);
+
+ // A user who only specifies a desired incoming player should also get options.
+ elem('tradePreferenceClear').listeners.click();
+ const targets=rosters.teams.filter(t=>String(t.id)!==teamId).flatMap(t=>t.players)
+  .filter(p=>p.position==='RB'&&!p.status&&p.slot!=='IR');
+ const wanted=targets.find(p=>future.players.some(f=>String(f.yahooId)===String(p.id)));
+ assert.ok(wanted,'No eligible RB targets');
+ const startWant=Date.now();
+ elem('tradeReceiveChoices').listeners.change({target:{type:'checkbox',checked:true,dataset:{id:wanted.id}}});
+ const elapsedWant=Date.now()-startWant;
+ const incomingHTML=elem('tradeResults').innerHTML;
+ assert.ok(incomingHTML.includes('trade-personal-card')||incomingHTML.includes('No modeled lineup gains'),
+  name+' incoming-only preference failed');
+ assert.ok(elapsedWant<15000,name+' inbound targeted trade took '+elapsedWant+' ms');
+ if(incomingHTML.includes('trade-personal-card'))assert.ok(incomingHTML.includes(wanted.name),name+' selected target omitted');
+ console.log(name+': wanted '+wanted.name+' evaluated in '+elapsedWant+' ms, offers='+
+  (incomingHTML.match(/trade-personal-card/g)||[]).length);
+
 }
