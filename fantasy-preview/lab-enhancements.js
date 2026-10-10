@@ -240,6 +240,7 @@ function stableGain(games,key){
  return total-Math.max(...gains)>=0;
 }
 function showTrades(){
+ if(window.DaVinciPersonalTrades?.active())return;
  const area=$el('tradeResults'),count=$el('tradeCount');
  if(!tradeData?.trades || !draftData?.picks){
    count.textContent='Checking trade scenarios…';
@@ -340,7 +341,8 @@ function init(){
     showTrades();
   }).catch(()=>{
     $el('tradeCount').textContent='Trade screening unavailable';
-    $el('tradeResults').innerHTML='<div class="empty-copy">League-specific trade suggestions are not yet available. No other league’s offers are shown.</div>';
+    if(window.DaVinciPersonalTrades?.active())return;
+    $el('tradeResults').innerHTML=window.DaVinciLeague?.key==='nebraska'?'<div class="empty-copy">Choose players above to build a trade.</div>':'<div class="empty-copy">Precomputed trades unavailable. Choose players above to explore new packages.</div>';
   });
 }
 LAB.init=init;
