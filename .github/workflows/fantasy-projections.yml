@@ -37,19 +37,23 @@ jobs:
         run: |
           cd fantasy-dashboard
           python model/future.py
+      - name: Calculate lineup-aware free agent recommendations
+        run: |
+          cd fantasy-dashboard
+          python model/waivers.py
       - name: Backtest on 2025 player-weeks
         run: |
           cd fantasy-dashboard
           python model/backtest.py
       - name: Commit model and validation output to this development branch
         run: |
-          if git diff --quiet -- fantasy-dashboard/data/projections.json fantasy-dashboard/data/backtest.json fantasy-dashboard/data/weekly.json fantasy-dashboard/data/future.json && git ls-files --error-unmatch fantasy-dashboard/data/projections.json >/dev/null 2>&1 && git ls-files --error-unmatch fantasy-dashboard/data/backtest.json >/dev/null 2>&1; then
+          if git diff --quiet -- fantasy-dashboard/data/projections.json fantasy-dashboard/data/backtest.json fantasy-dashboard/data/weekly.json fantasy-dashboard/data/future.json fantasy-dashboard/data/waivers.json && git ls-files --error-unmatch fantasy-dashboard/data/projections.json >/dev/null 2>&1 && git ls-files --error-unmatch fantasy-dashboard/data/backtest.json >/dev/null 2>&1; then
             echo 'No changes.'
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add fantasy-dashboard/data/projections.json fantasy-dashboard/data/backtest.json fantasy-dashboard/data/weekly.json fantasy-dashboard/data/future.json
+          git add fantasy-dashboard/data/projections.json fantasy-dashboard/data/backtest.json fantasy-dashboard/data/weekly.json fantasy-dashboard/data/future.json fantasy-dashboard/data/waivers.json
           if ! git diff --cached --quiet; then
             git commit -m 'Update provisional fantasy projections from nflverse'
             git push
