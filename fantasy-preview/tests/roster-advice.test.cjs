@@ -67,7 +67,7 @@ assert.ok(selection.selections.some(x=>x.player.id==='k'),'K included');
 assert.ok(selection.selections.some(x=>x.player.id==='def'),'DEF included');
 assert.ok(selection.selections.some(x=>x.player.id==='backwr'),'best bench player starts');
 assert.match(element('lineupRecommendations').innerHTML,/Start Backup Wideout/,'actionable start');
-assert.match(element('lineupRecommendations').innerHTML,/Sit Flex Receiver/,'actionable sit');
+assert.match(element('lineupRecommendations').innerHTML,/decision-position">SIT<\/span>.*Flex Receiver/,'actionable sit');
 // When the existing starters are optimal, there is no actionable change.
 const originalBackupPoints=values.backwr.slice();
 values.backwr[0]=6;
