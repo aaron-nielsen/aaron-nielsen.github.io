@@ -43,10 +43,15 @@ for(const {prefix,teamId,name} of [
  pick.listeners.change({target:{type:'checkbox',checked:true,dataset:{id:ownCandidate.id}}});
  const elapsed=Date.now()-started;
  const html=elem('tradeResults').innerHTML;
- assert.ok(html.includes('trade-personal-card')||html.includes('No modeled lineup gains'),
+ assert.ok(html.includes('trade-personal-card')||html.includes('No trades here improve BOTH'),
   name+' did not return ranked or honest empty result');
  assert.equal(sandbox.DaVinciPersonalTrades.active(),true);
  assert.ok(elapsed<15000,name+' trade response took '+elapsed+' ms');
+ if(html.includes('trade-personal-card')){
+  assert.doesNotMatch(html,/Their lineup −|Their lineup -/,name+' negative ROS offer is forbidden');
+  assert.match(html,/Theirs \+/,name+' must display the other manager\'s positive gain');
+  assert.match(html,/ROS/,name+' must show rest-of-season total gain');
+ }
  console.log(name+': '+ownCandidate.name+' target evaluated in '+elapsed+' ms, offers='+
   (html.match(/trade-personal-card/g)||[]).length);
 
@@ -60,7 +65,7 @@ for(const {prefix,teamId,name} of [
  elem('tradeReceiveChoices').listeners.change({target:{type:'checkbox',checked:true,dataset:{id:wanted.id}}});
  const elapsedWant=Date.now()-startWant;
  const incomingHTML=elem('tradeResults').innerHTML;
- assert.ok(incomingHTML.includes('trade-personal-card')||incomingHTML.includes('No modeled lineup gains'),
+ assert.ok(incomingHTML.includes('trade-personal-card')||incomingHTML.includes('No trades here improve BOTH'),
   name+' incoming-only preference failed');
  assert.ok(elapsedWant<15000,name+' inbound targeted trade took '+elapsedWant+' ms');
  if(incomingHTML.includes('trade-personal-card'))assert.ok(incomingHTML.includes(wanted.name),name+' selected target omitted');
