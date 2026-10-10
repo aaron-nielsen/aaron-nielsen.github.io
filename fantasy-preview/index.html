@@ -94,7 +94,7 @@ function team(id){return rosters.teams.find(t=>t.id===String(id));}
 function standing(id){return week.standings.find(s=>s.teamId===String(id));}
 function position(p){return '<span class="position '+esc(p)+'">'+esc(p)+'</span>';}
 function status(p){return p.status?'<span class="status">'+esc(p.status)+'</span>':'';}
-function percent(v){return Number.isFinite(Number(v))?Math.round(Number(v))+'%':'—';}
+function percent(v){return v==null||v===''||!Number.isFinite(Number(v))?'—':Math.round(Number(v))+'%';}
 function row(p){return '<div class="player-line">'+position(p.position)+'<div class="player-info"><b>'+esc(p.name)+status(p)+'</b><span>'+esc(p.nflTeam||'NFL free agent')+'</span></div><span class="slot-badge">'+esc(p.slot)+'</span></div>';}
 function group(id,players,label){$('#'+id).innerHTML='<div class="group-label">'+label+' <span>'+players.length+' PLAYERS</span></div>'+(players.length?players.map(row).join(''):'<div class="empty-copy">No players in this group</div>');}
 function matchup(){return week.matchups.find(m=>m.home.id===TEAM_ID||m.away.id===TEAM_ID);}
