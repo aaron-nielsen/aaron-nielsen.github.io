@@ -462,3 +462,15 @@ body{font:16px/1.48 'Source Sans 3',Arial,sans-serif;color:var(--text);backgroun
 .special-pickup-row b small{display:inline;font-size:11px}
 .special-pickup-foot{font-size:11px;line-height:1.5;color:#857565;margin:8px 0 2px}
 @media(max-width:600px){.special-pickup-results{margin:7px 12px 11px}.model-breakout{font-size:12px}.special-pickup-row{grid-template-columns:30px minmax(0,1fr) 85px;gap:7px}}
+
+
+/* Separate skill-player backtest from preliminary kicker/DST proxy validation. */
+.special-validation{margin:0 17px 17px;padding:15px 17px;background:#faf3e9;border:1px solid #e3d5c2;border-radius:7px}
+.special-validation h3{font:700 16px/1.35 'Source Sans 3',Arial,sans-serif;margin:0 0 4px;color:#4e3e30}
+.special-validation p{font-size:12px;color:#75695d;line-height:1.5;margin:0 0 9px}
+.special-validation-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.special-validation-grid>div{padding:8px 0}
+.special-validation-grid strong{display:block;font:750 25px 'Source Sans 3',Arial,sans-serif;color:#5c4834;font-variant-numeric:tabular-nums}
+.special-validation-grid small{display:block;font-size:12px;line-height:1.5;color:#786b5d}
+.special-validation .special-validation-warning{border-top:1px solid #e3d4c1;padding-top:9px;margin:4px 0 0}
+@media(max-width:600px){.special-validation{margin:0 10px 12px;padding:11px}.special-validation-grid{gap:10px}.special-validation-grid strong{font-size:21px}}
