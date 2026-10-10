@@ -41,7 +41,7 @@ function setup(){
  ctx.DaVinciTransactions.update();
  const cards=element('transactionCards').innerHTML;
  assert.equal((cards.match(/class="txn-card"/g)||[]).length,2);
- assert.equal((cards.match(/\+10\.0 <small>pts\/wk<\/small>/g)||[]).length,2,
+ assert.equal((cards.match(/\+40\.0 <small>projected points added<\/small>/g)||[]).length,2,
   'Both moves should each raise projected starter value by 10; older move uses B vs A.');
 }
 // Ungraded moves sort last in both directions and remain ungraded for the selected manager.
@@ -108,7 +108,7 @@ function setup(){
   optimize:()=>({score:0})
  });
  ctx.DaVinciTransactions.update();
- assert.match(element('txnStats').textContent,/0 projected grades/);
+ assert.match(element('txnStats').textContent,/0 projected point estimates/);
  assert.match(element('txnStats').textContent,/1 ungraded/);
  assert.match(element('txnStats').textContent,/no player roster change/);
  assert.match(element('transactionCards').innerHTML,/Not graded/);
