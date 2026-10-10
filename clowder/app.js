@@ -19,6 +19,28 @@ function clowderFacts(){
  $('clowder-facts').innerHTML=facts.map(([value,label])=>`<span><b>${value}</b>${label}</span>`).join('')+`<span class="origins"><strong>Where they’re from</strong><br>5 Texas · 2 Kentucky · 2 Colorado · 1 Nebraska</span>`;
 }
 clowderFacts();
+
+function nextBirthdays(now=new Date()){
+ const parts=new Intl.DateTimeFormat('en-US',{timeZone:'America/Denver',year:'numeric',month:'numeric',day:'numeric'}).formatToParts(now);
+ const part=type=>Number(parts.find(p=>p.type===type).value);
+ const year=part('year'),today=Date.UTC(year,part('month')-1,part('day'));
+ const upcoming=cats.map(c=>{
+  const [bornYear,month,day]=c.born.split('-').map(Number);
+  let birthdayYear=year,when=Date.UTC(year,month-1,day);
+  if(when<today){birthdayYear++;when=Date.UTC(birthdayYear,month-1,day)}
+  return {cat:c,when,turns:birthdayYear-bornYear};
+ });
+ const soonest=Math.min(...upcoming.map(b=>b.when)),next=upcoming.filter(b=>b.when===soonest);
+ const days=Math.round((soonest-today)/86400000);
+ const names=next.map(b=>b.cat.name).join(' & ');
+ const ages=[...new Set(next.map(b=>b.turns))];
+ const birthday=new Date(soonest).toLocaleDateString('en-US',{month:'long',day:'numeric',timeZone:'UTC'});
+ const turning=ages.length===1?`${names} ${next.length===1?'turns':'turn'} ${ages[0]}`:next.map(b=>`${b.cat.name} turns ${b.turns}`).join(' & ');
+ $('next-birthday').textContent=`${days===0?'Birthday'+(next.length===1?'':'s')+' today!':'Next birthday'+(next.length===1?'':'s')+':'} ${turning} · ${birthday}${days===0?'':' · in '+days+' day'+(days===1?'':'s')}`;
+}
+nextBirthdays();
+setInterval(nextBirthdays,60000);
+
 function latest(c){return weights.filter(r=>r[c.id]!==undefined).at(-1)}
 function cards(){ $('cat-grid').innerHTML=cats.map(c=>{let r=latest(c);return `<button class="cat-card" data-cat="${c.id}" aria-label="Meet ${c.name}"><div class="portrait"><img src="${c.photo}" alt="${c.name}, ${c.coat.toLowerCase()} cat" loading="lazy"><span class="card-plus" aria-hidden="true">+</span></div><h3>${c.name}</h3><p>${c.formal}</p><div class="card-meta"><span>${age(c.born)} old</span><span>${r[c.id].toFixed(1)} lb</span></div></button>`}).join('');document.querySelectorAll('[data-cat]').forEach(b=>b.onclick=()=>profile(b.dataset.cat));}
 function profile(id){
