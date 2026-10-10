@@ -25,8 +25,9 @@ for(const folder of ['data/','data/nebraska/']){
  assert.ok(lloyd.projectedStats.carries>8,'Lloyd carry volume must respond to Brooks absence');
  assert.equal(brooks.points,0,'Confirmed-out Brooks should have zero projection');
  assert.ok(robinson.projectedStats.carries>0,'Other players receive independent usage trends');
- assert.ok(robustEquals(futureData.players.find(p=>p.name==='Chris Brooks').weeks.find(g=>g.week===6).points,originalBrooks.find(g=>g.week===6).points),
-  'One-week confirmed absence must not leak into Week 6');
+ const brooksWeek6=futureData.players.find(p=>p.name==='Chris Brooks').weeks.find(g=>g.week===6);
+ assert.ok(brooksWeek6.points>0&&brooksWeek6.playingTime.label==='Recent snap and opportunity history',
+  'Week 6 may use normal playing-time trends, but not the Week 5 Brooks injury override');
  assert.ok(futureData.players.find(p=>p.name==='Brian Robinson').weeks.find(g=>g.week===17).playingTime.adjustment<=1.02,
   'Recent-week trend should decay into long-range baseline');
  console.log(folder+' recency-weighted workload model adjusted '+result.historical+' player-weeks, Lloyd Week 5='+lloyd.points+', Brian='+robinson.points);
