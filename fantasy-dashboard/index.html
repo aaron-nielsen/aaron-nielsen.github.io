@@ -899,16 +899,32 @@ function renderProjection(){
 }
 function renderBacktest(){
  const area=$('#backtestResults');
- const b=backtest?.overall?.last3;
- const h=backtest?.overall?.history_2yr;
- const legacy=backtest?.overall?.model;
- const m=h||legacy;
- if(!m||!b){area.innerHTML='<div class="empty-copy">Historical evaluation is not available yet.</div>';return;}
- const change=100*(b.MAE-m.MAE)/b.MAE;
- const title=h?'2-SEASON HISTORY MAE':'MODEL MAE';
- const details=h?'Multiple history windows were tested on 2025. The two-season window had the lowest MAE; one and three seasons performed similarly. Live forecasts use up to four past seasons.':'Older model vs trailing average.';
- area.innerHTML='<div class="accuracy-grid"><div><small>'+title+'</small><strong>'+number(m.MAE)+'</strong></div><div><small>LAST-3 MAE</small><strong>'+number(b.MAE)+'</strong></div><div><small>ERROR REDUCTION</small><strong>'+change.toFixed(1)+'%</strong></div></div>'+
- '<p class="accuracy-note">'+esc(m.nPlayerWeeks)+' 2025 player-weeks (Weeks '+esc(backtest.holdoutWeeks?.join('–'))+'). '+esc(details)+' Conditional on appearing in the statistics; excludes unmodeled scoring and missed games. Not a validation of injury-adjusted weekly recommendations.</p>';
+ const prior=backtest?.overall?.last3;
+ const modelStats=backtest?.overall?.history_2yr;
+ if(!prior||!modelStats){area.innerHTML='<div class="empty-copy">Historical accuracy data not yet available.</div>';return;}
+ const pct=100*(prior.MAE-modelStats.MAE)/prior.MAE;
+ const posRows=['QB','RB','WR','TE'].map(pos=>{
+   const m=backtest.byPosition?.[pos]?.history_2yr;
+   const b=backtest.byPosition?.[pos]?.last3;
+   if(!m||!b)return '';
+   return '<tr><th>'+pos+'</th><td>'+Number(m.MAE).toFixed(2)+'</td><td>'+Number(b.MAE).toFixed(2)+'</td><td>'+m.nPlayerWeeks.toLocaleString()+'</td></tr>';
+ }).join('');
+ area.innerHTML='<div class="accuracy-grid">'+
+    '<div><small>MODEL MAE</small><strong>'+Number(modelStats.MAE).toFixed(2)+'</strong></div>'+
+    '<div><small>LAST-3 MAE</small><strong>'+Number(prior.MAE).toFixed(2)+'</strong></div>'+
+    '<div><small>MAE IMPROVEMENT</small><strong>'+pct.toFixed(1)+'%</strong></div></div>'+
+    '<div class="validation-wrap"><div class="validation-columns">'+
+    '<div><h3>2025 historical test</h3><p>'+Number(modelStats.nPlayerWeeks).toLocaleString()+
+       ' player-games, forecast using only earlier games. Lower MAE and RMSE are better. '+
+       'Model RMSE: '+Number(modelStats.RMSE).toFixed(2)+'; previous-three RMSE: '+Number(prior.RMSE).toFixed(2)+'.</p>'+
+       '<table class="validation-table"><thead><tr><th>Position</th><th>Model MAE</th><th>Last 3 MAE</th><th>Games</th></tr></thead>'+
+       '<tbody>'+posRows+'</tbody></table></div>'+
+    '<div><h3>What is still untested?</h3>'+
+       '<p>This evaluation includes only players who recorded a game-stat row, and only modeled scoring categories. '+
+       'It does not test inactive players, bye weeks, full Yahoo scoring, or the current four-year configuration independently.</p>'+
+       '<p><strong>Next evaluation:</strong> Freeze each pregame forecast, score all rostered and available players afterward '+
+       '(including zeros for inactives), compare with Yahoo and a simple baseline, and track both error and actual points gained from lineup decisions.</p>'+
+    '</div></div></div>';
 }
 function renderAllProjections(){
  if(futureData?.players?.length&&window.DaVinciLab){window.DaVinciLab.renderProjections();return;}
