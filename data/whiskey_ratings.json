@@ -302,8 +302,8 @@
     },
     {
       "name": "Canadian Club 1858",
-      "style": "Blended",
-      "substyle": "",
+      "style": "Canadian Whisky",
+      "substyle": "Blended",
       "ratings": [
         {
           "score": 2.6,
@@ -322,8 +322,8 @@
     },
     {
       "name": "Crown Royal",
-      "style": "Blended",
-      "substyle": "",
+      "style": "Canadian Whisky",
+      "substyle": "Blended",
       "ratings": [
         {
           "score": 2.7,
@@ -1964,7 +1964,7 @@
     {
       "name": "Pendleton Original Canadian Whisky",
       "style": "Canadian Whisky",
-      "substyle": "",
+      "substyle": "Blended",
       "ratings": [
         {
           "score": 3.1,
@@ -4034,8 +4034,8 @@
     {
       "name": "Black Velvet Canadian Whisky",
       "region": "Canadian",
-      "style": "Blended",
-      "substyle": "",
+      "style": "Canadian Whisky",
+      "substyle": "Blended",
       "distillery": "Black Velvet",
       "estimated_price_usd": 14,
       "recommendation_group": "Mass-market priority",
@@ -6542,8 +6542,8 @@
     {
       "name": "Crown Royal Black",
       "region": "Canadian",
-      "style": "Blended",
-      "substyle": "",
+      "style": "Canadian Whisky",
+      "substyle": "Blended",
       "distillery": "Crown Royal",
       "estimated_price_usd": 35,
       "place": "Canada",
@@ -6553,8 +6553,8 @@
     {
       "name": "Crown Royal XO",
       "region": "Canadian",
-      "style": "Blended",
-      "substyle": "",
+      "style": "Canadian Whisky",
+      "substyle": "Blended",
       "distillery": "Crown Royal",
       "estimated_price_usd": 50,
       "place": "Canada",
@@ -6564,8 +6564,8 @@
     {
       "name": "Crown Royal Reserve",
       "region": "Canadian",
-      "style": "Blended",
-      "substyle": "",
+      "style": "Canadian Whisky",
+      "substyle": "Blended",
       "distillery": "Crown Royal",
       "estimated_price_usd": 45,
       "place": "Canada",
@@ -6586,8 +6586,8 @@
     {
       "name": "Canadian Club 12 Year Classic",
       "region": "Canadian",
-      "style": "Blended",
-      "substyle": "",
+      "style": "Canadian Whisky",
+      "substyle": "Blended",
       "distillery": "Canadian Club",
       "estimated_price_usd": 30,
       "place": "Canada",
@@ -6597,8 +6597,8 @@
     {
       "name": "Canadian Club 20 Year",
       "region": "Canadian",
-      "style": "Blended",
-      "substyle": "",
+      "style": "Canadian Whisky",
+      "substyle": "Blended",
       "distillery": "Canadian Club",
       "estimated_price_usd": 80,
       "place": "Canada",
@@ -8231,8 +8231,8 @@
     {
       "name": "Canadian Mist",
       "region": "Canadian",
-      "style": "Blended",
-      "substyle": "",
+      "style": "Canadian Whisky",
+      "substyle": "Blended",
       "distillery": "Canadian Mist",
       "estimated_price_usd": 15,
       "recommendation_group": "Low-brow",
