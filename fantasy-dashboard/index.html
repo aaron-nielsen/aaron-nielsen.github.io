@@ -424,6 +424,95 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 .waiver-section-label:not(:first-child){border-top:1px solid #dac19f;margin-top:6px}
 .waiver-empty-note{color:#76563c;padding:15px 4px 19px;margin:0;line-height:1.5;font-size:14px}
 
+
+/* The Player Finder is a ledger, not individual full-width cards. */
+.finder-controls{
+ display:grid;
+ grid-template-columns:repeat(3,minmax(0,1fr));
+ gap:10px;
+}
+.finder-controls input{
+ grid-column:1/-1;
+ min-width:0;
+ width:100%;
+}
+.finder-controls .select{width:100%;min-width:0;max-width:none;}
+.finder-results{
+ display:block;
+ border:1px solid #d6bb94;
+ border-radius:7px;
+ background:#fff9ef;
+ overflow:hidden;
+ box-shadow:0 3px 10px rgba(80,48,19,.05);
+}
+.finder-ledger-head,
+.finder-ledger-row{
+ display:grid;
+ grid-template-columns:46px minmax(0,1fr) 85px;
+ align-items:center;
+ column-gap:15px;
+}
+.finder-ledger-head{
+ grid-template-columns:minmax(0,1fr) 85px;
+ padding:12px 19px;
+ background:#ebd3ae;
+ color:#755337;
+ letter-spacing:.05em;
+ font-size:11px;
+ font-weight:750;
+}
+.finder-ledger-head span:last-child{text-align:right}
+.finder-ledger-row{
+ padding:13px 19px;
+ border-bottom:1px solid #e5d5bc;
+ min-height:76px;
+}
+.finder-ledger-row:last-child{border-bottom:0}
+.finder-ledger-row:nth-child(odd){background:#fdf4e6}
+.finder-ledger-row.mine{background:#f3e2c8}
+.finder-ledger-detail{min-width:0}
+.finder-ledger-detail strong{
+ display:block;
+ font-size:16px;
+ line-height:1.25;
+ color:#4b3021;
+}
+.finder-ledger-detail>span{
+ display:block;
+ color:#76614e;
+ font-size:13px;
+ line-height:1.3;
+ margin-top:3px;
+}
+.finder-ledger-detail small{
+ display:block;
+ color:#7c6b57;
+ font-size:12px;
+ line-height:1.3;
+ margin-top:3px;
+}
+.finder-ledger-detail small.free-label{color:#59704f;font-weight:750}
+.finder-ledger-points{
+ font:700 25px/1.05 'Cormorant Garamond',Georgia,serif;
+ font-variant-numeric:tabular-nums;
+ text-align:right;
+ color:#5b3924;
+ white-space:nowrap;
+}
+.player-line{gap:13px}
+.player-line .weekly-mini{margin-left:auto;min-width:65px;text-align:right}
+@media(max-width:650px){
+ .finder-controls{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .finder-controls input{grid-column:1/-1}
+ .finder-controls #finderSort{grid-column:1/-1}
+ .finder-ledger-head{grid-template-columns:minmax(0,1fr) 66px;padding:11px 12px}
+ .finder-ledger-row{grid-template-columns:36px minmax(0,1fr) 65px;gap:9px;padding:12px 11px;min-height:72px}
+ .finder-ledger-detail strong{font-size:15px}
+ .finder-ledger-detail>span,.finder-ledger-detail small{font-size:12px}
+ .finder-ledger-points{font-size:22px}
+ .player-line .weekly-mini{min-width:47px}
+}
+
 </style>
 <link rel="stylesheet" href="./clean-dashboard.css">
 </head><body>
@@ -471,7 +560,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 </section>
 <section id="page-finder" class="page" hidden>
 <div class="section-top"><div><div class="eyebrow">Rostered and available</div><h2>Player Finder</h2><p>Search rostered players and league-available players together.</p></div></div>
-<div class="finder-surface"><div class="eyebrow">SEARCH</div><h2>All league players</h2><div class="finder-controls"><input id="finderQuery" type="search" placeholder="Search player, NFL team, fantasy team, or Yahoo ID…" aria-label="Find fantasy players"><select class="select" id="finderPos" aria-label="Player position"><option value="all">All positions</option><option>QB</option><option>RB</option><option>WR</option><option>TE</option><option>K</option><option value="DEF">DEF</option></select><select class="select" id="finderStatus" aria-label="Ownership status"><option value="all">Everyone</option><option value="available">Available / waivers*</option><option value="rostered">Rostered</option><option value="mine">My players</option></select><select class="select" id="finderSort" aria-label="Sort players"><option value="market">Yahoo popularity</option><option value="model">Week projection (if active)</option><option value="name">Player name</option></select></div></div>
+<div class="finder-surface"><div class="eyebrow">SEARCH</div><h2>All league players</h2><div class="finder-controls"><input id="finderQuery" type="search" placeholder="Search players or teams…" aria-label="Find fantasy players"><select class="select" id="finderPos" aria-label="Player position"><option value="all">All positions</option><option>QB</option><option>RB</option><option>WR</option><option>TE</option><option>K</option><option value="DEF">DEF</option></select><select class="select" id="finderStatus" aria-label="Ownership status"><option value="all">Everyone</option><option value="available">Available / waivers*</option><option value="rostered">Rostered</option><option value="mine">My players</option></select><select class="select" id="finderSort" aria-label="Sort players"><option value="market">Yahoo popularity</option><option value="model">Week projection (if active)</option><option value="name">Player name</option></select></div></div>
 <div class="finder-summary"><span id="finderCount">Loading players…</span><span>League-available players are shown alongside owned players</span></div>
 <div class="finder-results" id="finderResults"></div><button class="showmore" id="morePlayers" type="button" hidden>SHOW MORE PLAYERS ↓</button>
 <div class="note"><strong>*Waiver caveat:</strong> Yahoo confirms which players are available to acquire in your league, but the connected data does not distinguish unrestricted free agents from players still on waivers. Check Yahoo for claim eligibility and processing times. Available-player data is a sampled pool (up to 100 per position), not every NFL player.</div>
@@ -517,25 +606,44 @@ function standing(id){return week.standings.find(s=>s.teamId===String(id));}
 function position(p){return '<span class="position '+esc(p)+'">'+esc(p)+'</span>';}
 function status(p){return p.status?'<span class="status">'+esc(p.status)+'</span>':'';}
 function percent(v){return v==null||v===''||!Number.isFinite(Number(v))?'—':Math.round(Number(v))+'%';}
-function weeklyProjection(p){return weekly?.players?.find(w=>String(w.yahooId)===String(p.id))||null;}
+function weeklyProjection(p){
+ return weekly?.players?.find(w=>String(w.yahooId)===String(p.id))||null;
+}
+function nflWeekGame(nflTeam){
+ const code=String(nflTeam||'').toUpperCase();
+ if(!code||!weekly?.players?.length)return null;
+ const list=weekly.players;
+ const direct=list.find(p=>String(p.nflTeam||'').toUpperCase()===code && p.opponent);
+ if(direct)return {opponent:direct.opponent,location:direct.location,forecastStatus:'schedule_only'};
+ const bye=list.find(p=>String(p.nflTeam||'').toUpperCase()===code && p.forecastStatus==='bye');
+ if(bye)return {opponent:null,location:null,forecastStatus:'bye'};
+ const inverse=list.find(p=>String(p.opponent||'').toUpperCase()===code && p.nflTeam);
+ if(inverse)return {opponent:inverse.nflTeam,location:inverse.location==='home'?'away':'home',forecastStatus:'schedule_only'};
+ return null;
+}
+function playerWeekInfo(p){
+ return weeklyProjection(p)||nflWeekGame(p.nflTeam);
+}
 function weeklyDisplay(p){
- if(!p)return '—';
+ if(!p || p.forecastStatus==='schedule_only'||p.forecastStatus==='schedule_unavailable')return '—';
  if(p.forecastStatus==='bye')return 'BYE';
  if(p.forecastStatus==='unavailable_reported')return 'OUT';
  if(p.weeklyProjectedPoints==null)return 'CHECK';
  return number(p.weeklyProjectedPoints);
 }
 function weeklyOpponent(p){
- if(!p)return 'Opponent unknown';
+ if(!p)return 'Schedule unavailable';
  if(p.forecastStatus==='bye')return 'Bye week';
- return p.opponent?(p.location==='home'?'vs ':'@ ')+p.opponent:'Schedule unknown';
+ return p.opponent?(p.location==='home'?'vs ':'@ ')+p.opponent:'Schedule unavailable';
 }
 function row(p){
- const w=weeklyProjection(p);
+ const info=playerWeekInfo(p);
+ const flex=p.slot==='W/R/T'?' · FLEX':'';
+ const label=weeklyDisplay(info);
+ const note=p.position==='K'||p.position==='DEF'?'Kicker and defense projections not modeled':'Experimental model; check injury status';
  return '<div class="player-line">'+position(p.position)+
- '<div class="player-info"><b>'+esc(p.name)+status(p)+'</b><span>'+esc(p.nflTeam||'NFL free agent')+' · '+esc(weeklyOpponent(w))+'</span></div>'+
- '<span class="weekly-mini" title="Experimental weekly points; check injury status">'+esc(weeklyDisplay(w))+'</span>'+
- '<span class="slot-badge">'+esc(p.slot)+'</span></div>';
+ '<div class="player-info"><b>'+esc(p.name)+status(p)+'</b><span>'+esc(p.nflTeam||'No NFL club')+' · '+esc(weeklyOpponent(info))+flex+'</span></div>'+
+ '<span class="weekly-mini" title="'+esc(note)+'">'+esc(label)+'</span></div>';
 }
 function group(id,players,label){$('#'+id).innerHTML='<div class="group-label">'+label+' <span>'+players.length+' PLAYERS</span></div>'+(players.length?players.map(row).join(''):'<div class="empty-copy">No players in this group</div>');}
 function matchup(){return week.matchups.find(m=>m.home.id===TEAM_ID||m.away.id===TEAM_ID);}
@@ -557,7 +665,7 @@ function initOverview(){
  const st=standing(TEAM_ID);$('#wl').innerHTML=esc(st.wins)+'<span>–</span>'+esc(st.losses);$('#rankDesc').textContent='#'+st.rank+' of '+rosters.teams.length+' in league standings';
  $('#pointsFor').textContent=number(st.pointsFor);$('#waiverRank').textContent=st.waiverPriority==null?'—':'#'+st.waiverPriority;
  const starters=team(TEAM_ID).players.filter(p=>p.slot!=='BN'&&p.slot!=='IR');
- $('#myLineup').innerHTML=starters.map(p=>'<div class="mini-row">'+position(p.position)+'<div><div class="row-name">'+esc(p.name)+status(p)+'</div><div class="row-detail">'+esc(p.nflTeam)+' · '+esc(p.slot)+' · '+esc(weeklyOpponent(weeklyProjection(p)))+'</div></div><span class="row-slot">'+esc(weeklyDisplay(weeklyProjection(p)))+'</span></div>').join('');
+ $('#myLineup').innerHTML=starters.map(p=>'<div class="mini-row">'+position(p.position)+'<div><div class="row-name">'+esc(p.name)+status(p)+'</div><div class="row-detail">'+esc(p.nflTeam)+' · '+esc(p.slot)+' · '+esc(weeklyOpponent(playerWeekInfo(p)))+'</div></div><span class="row-slot">'+esc(weeklyDisplay(playerWeekInfo(p)))+'</span></div>').join('');
  $('#leagueBoard').innerHTML=week.matchups.map(m=>'<div class="scoreboard-item'+(m.home.id===TEAM_ID||m.away.id===TEAM_ID?' mine':'')+'"><div class="side">'+esc(m.home.name)+'</div><div class="pts mono">'+number(m.home.projectedPoints)+'</div><div class="dash">–</div><div class="pts mono">'+number(m.away.projectedPoints)+'</div><div class="side right">'+esc(m.away.name)+'</div></div>').join('');
  $('#boardWeek').textContent='WEEK '+week.week;$('#projectionWeek').textContent='WEEK '+week.week;
  $('#sync').textContent='Yahoo snapshot · '+new Date(week.retrievedAt).toLocaleString(undefined,{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'});
@@ -699,11 +807,19 @@ function renderFinder(){
    return a.name.localeCompare(b.name);
  });
  $('#finderCount').textContent=results.length.toLocaleString()+' matching players · '+rosters.teams.reduce((n,t)=>n+t.players.length,0)+' rostered · '+available.players.length+' available sampled';
- $('#finderResults').innerHTML=results.slice(0,finderVisible).map(p=>{
+ const rows=results.slice(0,finderVisible).map(p=>{
    const pr=byYahoo.get(String(p.id));
-   const modeled=pr?'<div class="market model-pop">Week '+esc(weekly?.week||'?')+': <strong>'+esc(weekly?weeklyDisplay(pr):number(pr.conditionalPointsPerGame))+'</strong> · if active '+number(pr.activeGamePoints??pr.conditionalPointsPerGame)+'</div>':'<div class="market">No model estimate</div>';
-   return '<div class="result">'+position(p.position)+'<div class="grow"><strong>'+esc(p.name)+status(p)+'</strong><small>'+esc(p.nflTeam||'No NFL club')+' · '+esc(weeklyOpponent(pr))+' · Yahoo #'+esc(p.id)+'</small></div><div><div class="availability '+(p.owned?(p.fantasyTeamId===TEAM_ID?'mine':'rostered'):'')+'">'+(p.owned?esc(p.fantasyTeam):'AVAILABLE')+'</div>'+modeled+(p.owned?'<div class="market">'+esc(p.slot)+'</div>':'<div class="market">Yahoo-wide: '+percent(p.yahooWideRosteredPercent)+'</div>')+'</div></div>';
- }).join('')||'<div class="empty-copy">No players match that search.</div>';
+   const game=playerWeekInfo(p);
+   const point=pr?(weekly?weeklyDisplay(pr):number(pr.conditionalPointsPerGame)):'—';
+   const owner=p.owned?p.fantasyTeam:'Available';
+   const market=!p.owned&&p.yahooWideRosteredPercent!=null?' · '+percent(p.yahooWideRosteredPercent)+' Yahoo-wide':'';
+   return '<div class="finder-ledger-row'+(p.fantasyTeamId===TEAM_ID?' mine':'')+'">'+position(p.position)+
+     '<div class="finder-ledger-detail"><strong>'+esc(p.name)+status(p)+'</strong>'+
+     '<span>'+esc(p.nflTeam||'No NFL club')+' · '+esc(weeklyOpponent(game))+'</span>'+
+     '<small class="'+(p.owned?'':'free-label')+'">'+esc(owner)+market+'</small></div>'+
+     '<div class="finder-ledger-points" title="Experimental Week '+esc(weekly?.week||'?')+' model points; not a Yahoo forecast">'+esc(point)+'</div></div>';
+ }).join('');
+ $('#finderResults').innerHTML=results.length?'<div class="finder-ledger-head"><span>PLAYER · TEAM / AVAILABILITY</span><span>WEEK '+esc(weekly?.week||'?')+' PTS*</span></div>'+rows:'<div class="empty-copy">No players match that search.</div>';
  $('#morePlayers').hidden=results.length<=finderVisible;
 }
 $('#projectionSearch').addEventListener('input',renderAllProjections);
