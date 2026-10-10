@@ -112,16 +112,15 @@ button,input,select{font:inherit}
 .distribution-chart .bar-fill.empty{min-width:0}
 .bar-value{text-align:right;color:#e5d8cc;font-variant-numeric:tabular-nums;font-size:.9rem}
 .bar-value .pct-range{color:var(--muted);font-size:.78rem;margin-left:5px}
-.rating-context{padding:13px 16px 14px}
-.rating-context-summary{display:flex;gap:18px;flex-wrap:wrap;color:var(--muted);font-size:.86rem;margin-bottom:8px}
+.rating-context{padding:11px 16px 12px}
+.rating-context-summary{display:flex;gap:18px;flex-wrap:wrap;color:var(--muted);font-size:.86rem;margin-bottom:5px}
 .rating-context-summary strong{color:var(--text);font-weight:650}
-.rating-histogram{display:grid;grid-template-columns:repeat(41,minmax(0,1fr));gap:2px;height:128px;align-items:end;border-bottom:1px solid #5b402c;padding:0 1px}
-.rating-bin{height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:stretch;min-width:0;position:relative}
-.rating-bin-barbox{height:96px;display:flex;align-items:flex-end;justify-content:center}
+.rating-histogram{display:grid;grid-template-columns:repeat(41,minmax(0,1fr));gap:2px;height:94px;align-items:end;padding:0 1px}
+.rating-bin{height:100%;display:flex;align-items:flex-end;justify-content:center;min-width:0}
 .rating-bin-bar{width:78%;min-width:2px;border-radius:3px 3px 0 0}
-.rating-bin-label{height:24px;padding-top:5px;text-align:center;color:var(--muted);font-size:.68rem;font-variant-numeric:tabular-nums;white-space:nowrap;overflow:visible}
-.rating-bin-label.blank{color:transparent}
-.rating-scale-note{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;color:var(--muted);font-size:.74rem;margin-top:8px}
+.rating-axis{display:grid;grid-template-columns:repeat(41,minmax(0,1fr));gap:2px;border-top:1px solid #5b402c;padding:3px 1px 0;margin-top:0}
+.rating-axis span{text-align:center;color:var(--muted);font-size:.68rem;font-variant-numeric:tabular-nums;white-space:nowrap;transform:translateX(-50%);position:relative;left:50%}
+.rating-scale-note{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;color:var(--muted);font-size:.74rem;margin-top:4px}
 .rating-scale-note strong{color:var(--amber2);font-weight:600}
 .chart-note{margin:0;padding:0 16px 3px;color:var(--muted);font-size:.78rem}
 .distillery-chart .bar-row,.distillery-chart .distillery-head{grid-template-columns:minmax(170px,230px) minmax(180px,1fr) 64px 72px;gap:10px}
@@ -173,6 +172,9 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
 .category-summary-table tr:last-child td{border-bottom:0}
 .category-summary-table th{background:#251a14;color:#f5eee7;font-weight:650;white-space:nowrap}
 .category-summary-table td.num,.category-summary-table th.num{text-align:center;font-variant-numeric:tabular-nums}
+.dialog-filter-row{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin:2px 0 10px;color:var(--muted);font-size:.86rem}
+.dialog-filter-row select{background:#181411;color:var(--text);border:1px solid #5a3f2b;border-radius:8px;padding:6px 9px;min-width:170px}
+dialog.whiskey-dialog.group-dialog{max-width:880px}
 
 @media(max-width:800px){
   .stats-row{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -201,9 +203,9 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
 }
 @media(max-width:460px){
   .rating-context{padding-left:10px;padding-right:10px}
-  .rating-histogram{gap:1px;height:112px}
-  .rating-bin-barbox{height:82px}
-  .rating-bin-label{font-size:.6rem}
+  .rating-histogram{gap:1px;height:84px}
+  .rating-axis{gap:1px}
+  .rating-axis span{font-size:.6rem}
   .rating-scale-note{font-size:.68rem}
 }
 </style>
@@ -298,13 +300,13 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
   function distilleryState(distillery){
     var states={
       "Jim Beam":"Kentucky","Heaven Hill":"Kentucky","Wild Turkey":"Kentucky","Four Roses":"Kentucky",
-      "Jack Daniel":"Tennessee","Buffalo Trace":"Kentucky","Maker's Mark":"Kentucky",
+      "Jack Daniel's":"Tennessee","Buffalo Trace":"Kentucky","Maker's Mark":"Kentucky",
       "Woodford Reserve":"Kentucky","Stranahan's":"Colorado","Angel's Envy":"Kentucky",
       "Michter's":"Kentucky","Port Chilkoot":"Alaska","Woody Creek":"Colorado","Jefferson's":"Kentucky","High West":"Utah",
       "Brown-Forman":"Kentucky","Barton 1792":"Kentucky","Bulleit":"Kentucky",
       "New Riff":"Kentucky","Kentucky Peerless":"Kentucky","Wilderness Trail":"Kentucky",
       "Bardstown Bourbon Company":"Kentucky","Sagamore Spirit":"Maryland",
-      "Jack Daniel":"Tennessee","George Dickel":"Tennessee","Westland":"Washington","Westward":"Oregon"
+      "Jack Daniel's":"Tennessee","George Dickel":"Tennessee","Westland":"Washington","Westward":"Oregon"
     };
     return states[distillery]||"";
   }
@@ -663,7 +665,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
     var roots=styleHierarchy();
     var body=[];
 
-    function addNode(node){
+    function addNode(node,rootStyle){
       var hasChildren=node.childList.length>0;
       var key=(node.depth===0?"style:":"substyle:")+node.path;
       var open=!!styleTreeExpanded[key];
@@ -673,7 +675,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
         : '<span class="style-tree-spacer"></span>';
       var link=node.depth===0
         ? '<button class="filter-link style-link" data-style="'+esc(node.path)+'">'+esc(node.name)+'</button>'
-        : '<button class="filter-link substyle-link" data-substyle="'+esc(node.path)+'">'+esc(node.name)+'</button>';
+        : '<button class="filter-link substyle-link" data-parent-style="'+esc(rootStyle)+'" data-substyle="'+esc(node.path)+'">'+esc(node.name)+'</button>';
 
       body.push(
         '<tr>'+
@@ -685,10 +687,10 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
         '</tr>'
       );
 
-      if(open)node.childList.forEach(addNode);
+      if(open)node.childList.forEach(function(child){addNode(child,rootStyle)});
     }
 
-    roots.forEach(addNode);
+    roots.forEach(function(root){addNode(root,root.name)});
 
     return '<div class="whiskey-table-wrap"><table class="style-tree">'+
       '<thead><tr><th>Style / Sub-style</th><th class="num">Whiskeys</th><th class="num">Avg</th></tr></thead>'+
@@ -728,7 +730,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
     if(/^(Bernheim|Elijah Craig|Evan Williams)/.test(name))return "Heaven Hill";
     if(/^(Russell's Reserve|Wild Turkey)/.test(name))return "Wild Turkey";
     if(/^Four Roses/.test(name))return "Four Roses";
-    if(/^(Jack Daniel's|Gentleman Jack)/.test(name))return "Jack Daniel";
+    if(/^(Jack Daniel's|Gentleman Jack)/.test(name))return "Jack Daniel's";
     if(/^(Buffalo Trace|Eagle Rare|Blanton's|Sazerac Rye)/.test(name))return "Buffalo Trace";
     if(/^The Glenlivet|^Glenlivet/.test(name))return "The Glenlivet";
     if(/^Glenmorangie/.test(name))return "Glenmorangie";
@@ -845,8 +847,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
       var tip=(score/10).toFixed(1)+' · n='+count+(pct==null?'':' · '+pct+'th %ile');
       bins.push(
         '<div class="rating-bin" title="'+esc(tip)+'">'+
-          '<div class="rating-bin-barbox"><div class="rating-bin-bar" style="height:'+h.toFixed(1)+'%;background:'+ratingGradient(score,10,50)+'"></div></div>'+
-          '<div class="rating-bin-label'+(label?'':' blank')+'">'+(label||'·')+'</div>'+
+          '<div class="rating-bin-bar" style="height:'+h.toFixed(1)+'%;background:'+ratingGradient(score,10,50)+'"></div>'+
         '</div>'
       );
     }
@@ -858,6 +859,11 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
         '<span>Median <strong>'+median.toFixed(2)+'</strong></span>'+
       '</div>'+
       '<div class="rating-histogram" aria-label="Distribution of ratings from 1 to 5">'+bins.join("")+'</div>'+
+      '<div class="rating-axis">'+
+        [10,15,20,25,30,35,40,45,50].map(function(score){
+          return '<span style="grid-column:'+(score-9)+'">'+(score/10).toFixed(1)+'</span>';
+        }).join("")+
+      '</div>'+
       '<div class="rating-scale-note">'+
         '<span><strong>1.0</strong> Terrible</span>'+
         '<span><strong>2.0</strong> Poor</span>'+
@@ -876,7 +882,7 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
     var styles=styleRows().sort(function(a,b){return b.whiskeys-a.whiskeys||a.name.localeCompare(b.name)});
     document.getElementById("main").innerHTML=
       '<section class="main-section"><h2>Recent Ratings</h2>'+mainRecent()+'</section>'+
-      '<section class="chart-section"><h2>Rating Context</h2>'+ratingDistribution()+'</section>'+
+      '<section class="chart-section"><h2>Rating Distribution</h2>'+ratingDistribution()+'</section>'+
       '<section class="main-section"><h2>Top Rated Whiskeys</h2>'+mainTopRated()+'</section>'+
       '<section class="chart-section"><h2>Most Tasted Distilleries</h2>'+distilleryChart(distilleryRows())+'</section>'+
       '<div class="geo-grid">'+
@@ -1031,7 +1037,8 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
     document.querySelectorAll(".substyle-link").forEach(function(btn){
       btn.onclick=function(){
         var value=btn.getAttribute("data-substyle");
-        if(activeTab==="main")showGroupDetail("substyle",value);
+        var parentStyle=btn.getAttribute("data-parent-style")||"";
+        if(activeTab==="main")showGroupDetail("substyle",value,parentStyle);
         else drillSubstyle(value);
       };
     });
@@ -1098,11 +1105,15 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
     };
   }
 
-  function showGroupDetail(kind,value){
+  function showGroupDetail(kind,value,parentStyle){
+    parentStyle=parentStyle||"";
     var matches=rows.filter(function(r){
       if(kind==="region")return r.region===value;
       if(kind==="style")return r.style===value;
-      if(kind==="substyle")return r.substyle===value||(r.substyle&&r.substyle.indexOf(value+" / ")===0);
+      if(kind==="substyle"){
+        var subMatch=r.substyle===value||(r.substyle&&r.substyle.indexOf(value+" / ")===0);
+        return subMatch&&(!parentStyle||r.style===parentStyle);
+      }
       if(kind==="distillery")return distilleryName(r.name)===value;
       if(kind==="place")return r.place===value;
       return false;
@@ -1122,9 +1133,16 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
       place:"Place"
     }[kind]||"Category";
 
+    var isPlace=kind==="place";
+    var distilleries=isPlace
+      ? Array.from(new Set(matches.map(function(r){return distilleryName(r.name)||"Other"}))).sort()
+      : [];
+
     var body=matches.map(function(r){
-      return '<tr>'+
+      var d=distilleryName(r.name)||"Other";
+      return '<tr'+(isPlace?' data-distillery="'+esc(d)+'"':'')+'>'+
         '<td><button class="whiskey-name dialog-whiskey-name" data-name="'+esc(r.name)+'">'+esc(r.name)+'</button></td>'+
+        (isPlace?'<td>'+esc(d)+'</td>':'')+
         '<td class="num">'+fmt(r.average)+'</td>'+
         '<td class="num">'+r.n+'</td>'+
         '<td class="num">'+esc(abvLabel(r))+'</td>'+
@@ -1132,23 +1150,49 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
         '</tr>';
     }).join("");
 
+    var heading=kind==="substyle"&&parentStyle
+      ? esc(parentStyle)+' <span class="style-sep">›</span> '+esc(value)
+      : esc(value);
+
+    var filterHtml=isPlace&&distilleries.length>1
+      ? '<div class="dialog-filter-row"><label for="dialog-distillery-filter">Distillery</label>'+
+        '<select id="dialog-distillery-filter"><option value="">All distilleries</option>'+
+        distilleries.map(function(d){return '<option value="'+esc(d)+'">'+esc(d)+'</option>'}).join("")+
+        '</select></div>'
+      : '';
+
     document.getElementById("dialog-content").innerHTML=
-      '<h2>'+esc(value)+'</h2>'+
+      '<h2>'+heading+'</h2>'+
       '<p class="dialog-summary">'+esc(kindLabel)+' · '+matches.length+' whiskey'+(matches.length===1?'':'s')+
       ' · '+totalRatings+' rating'+(totalRatings===1?'':'s')+
       ' · '+fmt(avg(scores))+' avg</p>'+
+      filterHtml+
       '<div class="dialog-table-wrap"><table class="category-summary-table">'+
-      '<thead><tr><th>Whiskey</th><th class="num">Avg</th><th class="num">n</th><th class="num">ABV</th><th>Style – Sub-style</th></tr></thead>'+
+      '<thead><tr><th>Whiskey</th>'+(isPlace?'<th>Distillery</th>':'')+
+      '<th class="num">Avg</th><th class="num">n</th><th class="num">ABV</th><th>Style – Sub-style</th></tr></thead>'+
       '<tbody>'+body+'</tbody></table></div>';
 
     document.querySelectorAll("#dialog-content .dialog-whiskey-name").forEach(function(btn){
       btn.onclick=function(){showDetail(btn.getAttribute("data-name"))};
     });
+
+    var filter=document.getElementById("dialog-distillery-filter");
+    if(filter){
+      filter.onchange=function(){
+        var selected=filter.value;
+        document.querySelectorAll("#dialog-content .category-summary-table tbody tr").forEach(function(tr){
+          tr.style.display=(!selected||tr.getAttribute("data-distillery")===selected)?"":"none";
+        });
+      };
+    }
+
     var dialog=document.getElementById("whiskey-dialog");
+    dialog.classList.add("group-dialog");
     if(!dialog.open)dialog.showModal();
   }
 
   function showDetail(name){
+    document.getElementById("whiskey-dialog").classList.remove("group-dialog");
     var r=rows.find(function(x){return x.name===name});
     if(!r)return;
 
