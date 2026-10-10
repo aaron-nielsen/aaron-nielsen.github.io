@@ -11,11 +11,13 @@ from pathlib import Path
 from urllib.request import Request, urlopen
 from project import project_pool, HISTORY_YEARS
 from identity import yahoo_crosswalk
+from weekly import annotate_week
 
 BASE = Path(__file__).resolve().parents[1]
 SEASON = 2026
 STATS_URL = "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_{season}.csv"
 IDS_URL = "https://raw.githubusercontent.com/dynastyprocess/data/master/files/db_playerids.csv"
+SCHEDULE_URL = "https://raw.githubusercontent.com/nflverse/nfldata/master/data/games.csv"
 
 def csv_rows(url):
     with urlopen(Request(url, headers={"User-Agent": "CSU-Stats-Fantasy-Dashboard/0.1"}), timeout=90) as response:
@@ -84,6 +86,34 @@ def main():
         "inputSources": [IDS_URL] + [STATS_URL.format(season=y) for y in range(SEASON-HISTORY_YEARS, SEASON+1)],
         "coverage": {**out["coverage"], "rosteredSkillPlayers": total_skill, "ambiguousCrosswalkIDs": ambiguous},
     })
+    # A schedule-aware layer kept distinct from the neutral per-active-game
+    # forecasts. Never assume injury probabilities from Yahoo status codes.
+    schedule = csv_rows(SCHEDULE_URL)
+    enriched = annotate_week(
+        out["players"], schedule, schedule, rows, SEASON, current_week,
+        league["scoringByYahooStatId"],
+        asof=rosters.get("retrievedAt"),
+    )
+    weekly = {
+        "schemaVersion":1,
+        "modelVersion":"weekly-conditional-v0.1",
+        "season":SEASON,"week":current_week,
+        "generatedAt":datetime.now(timezone.utc).isoformat(),
+        "rosterSnapshotAt":rosters.get("retrievedAt"),
+        "availableSnapshotAt":available.get("retrievedAt"),
+        "statsThroughWeek":out["statsThroughWeek"],
+        "sources":[SCHEDULE_URL]+out["inputSources"],
+        "note":"Experimental. Healthy = assuming active, not verified active; injuries and roster status are snapshot-only. Questionable/IR-slot unknown => no confident weekly expectation. Opponent adjustments are shrunk and capped at 10%.",
+        "players":enriched,
+        "coverage":{
+            "projected":len(enriched),
+            "byes":sum(p["forecastStatus"]=="bye" for p in enriched),
+            "reportedUnavailable":sum(p["forecastStatus"]=="unavailable_reported" for p in enriched),
+            "needsReview":sum(p["forecastStatus"]=="needs_availability_confirmation" for p in enriched),
+            "assumingActive":sum(p["forecastStatus"]=="assuming_active" for p in enriched)
+        }
+    }
+    (BASE/"data/weekly.json").write_text(json.dumps(weekly,indent=2)+"\n")
     dest = BASE / "data/projections.json"
     dest.write_text(json.dumps(out, indent=2) + "\n")
     print(f"Projected {out['coverage']['rosteredProjected']}/{total_skill} rostered and {out['coverage']['availableProjected']}/{out['coverage']['availableSkillPlayersSampled']} sampled available skill players; stats through week {out['statsThroughWeek']}")
