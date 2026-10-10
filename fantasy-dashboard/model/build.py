@@ -24,6 +24,30 @@ def csv_rows(url):
         raise RuntimeError("Empty data source: " + url)
     return list(csv.DictReader(io.StringIO(payload.decode("utf-8-sig"))))
 
+def normalize_weekly_stats(rows):
+    """Reconcile current nflverse release columns with their legacy equivalents.
+
+    New stats_player CSV: team / passing_interceptions / sacks_suffered.
+    Older loaders: recent_team / interceptions / sacks.
+    Fail closed if these important QB columns are absent.
+    """
+    if not rows:
+        return rows
+    columns = set(rows[0].keys())
+    for alternatives in [("recent_team", "team"),
+                         ("interceptions", "passing_interceptions"),
+                         ("sacks", "sacks_suffered")]:
+        if not (columns & set(alternatives)):
+            raise RuntimeError("Missing expected player-stats columns: " + "/".join(alternatives))
+    for row in rows:
+        if not row.get("recent_team"):
+            row["recent_team"] = row.get("team") or ""
+        if row.get("interceptions") in (None, ""):
+            row["interceptions"] = row.get("passing_interceptions") or "0"
+        if row.get("sacks") in (None, ""):
+            row["sacks"] = row.get("sacks_suffered") or "0"
+    return rows
+
 def main():
     rosters = json.loads((BASE / "data/rosters.json").read_text())
     available = json.loads((BASE / "data/available.json").read_text())
@@ -33,7 +57,7 @@ def main():
     ids, ambiguous = yahoo_crosswalk(csv_rows(IDS_URL))
     rows = []
     for year in (SEASON - 1, SEASON):
-        source_rows = csv_rows(STATS_URL.format(season=year))
+        source_rows = normalize_weekly_stats(csv_rows(STATS_URL.format(season=year)))
         if not source_rows:
             raise RuntimeError("No player stats available for year " + str(year))
         rows.extend(source_rows)
