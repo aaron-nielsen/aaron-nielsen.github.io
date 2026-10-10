@@ -1,0 +1,88 @@
+/* Da Vinci Fantasy Lab: keep the antique manuscript in the art, not the data UI. */
+:root{--base:#efe6d7;--card:#fffaf2;--card2:#f7efe2;--text:#322e29;--muted:#746d63;--border:#d9ccbb;--orange:#885632;--teal:#426551;--shadow:0 4px 15px rgba(48,35,23,.06)}
+body{font:16px/1.48 'Source Sans 3',Arial,sans-serif;color:var(--text);background:#efe6d7}
+.shell{max-width:1250px}
+.topbar{border-color:#cab9a5}.season-identifier{color:#5e5145}.weekstamp{background:#593d2a;color:white}
+.renaissance-banner{box-shadow:0 4px 16px #56372517;border-color:#ae855d}
+.nav{gap:7px;flex-wrap:wrap;margin:0;padding:16px 0 24px}
+.nav-btn{font-size:13px;letter-spacing:0;border-radius:6px;padding:10px 15px;color:#655548}
+.nav-btn:hover{background:#e5d7c4}.nav-btn.active{background:#5e4230;color:#fffaf1;border:1px solid #5e4230}
+.codex-rule{display:none!important}
+.eyebrow{font-family:'Source Sans 3',sans-serif;font-size:11px;font-weight:750;letter-spacing:.07em;color:#8a633c}
+.section-top{margin:8px 0 18px}.section-top h1,.section-top h2{font:750 clamp(28px,3.3vw,38px)/1.15 'Source Sans 3',sans-serif;letter-spacing:-.025em;color:#44382d;text-transform:none}
+.section-top p{font-size:15px;color:#746d63;max-width:750px;margin:6px 0 0}
+.panel,.record-card{background:#fffaf2;color:#362f29;border:1px solid #d9ccbb;border-radius:10px;box-shadow:var(--shadow)}
+.panel-header,.record-upper{background:#f7efe2;border-color:#ddd1c0;padding:16px 20px}
+.panel-title,.model-status .headline,.finder-surface h2{font:700 23px/1.2 'Source Sans 3',sans-serif;letter-spacing:-.02em;color:#493a2f;text-transform:none}
+.panel-sub,.record-desc{font-size:13px;color:#756d63}
+.chip{border-color:#cfbda7;color:#6f5038;border-radius:6px}
+.note{font-size:13px;background:#f7eee1;border-color:#ddcfbd;color:#675d52}
+.mini-row,.player-line,.scoreboard-item{border-color:#ebe0d0}
+.row-name,.player-info b,.forecast-name,.result .grow strong,.projected-player strong{font:700 15px/1.25 'Source Sans 3',sans-serif;color:#36302a}
+.row-detail,.player-info span,.slot-badge,.row-slot,.result .grow small{font-size:12px;color:#756d63}
+.position{font:750 11px 'Source Sans 3',sans-serif!important;border-radius:5px!important;background:#efe5d4!important;color:#5b4b3a!important;border-color:#d8c9b3!important}
+.forecast-value,.prediction-score,.scoreboard-item .pts{font:750 18px 'Source Sans 3',sans-serif;color:#42382f}
+.result,.projection-table-row{background:#fffaf2;border-color:#e4d6c4}
+.projection-table-row.mine,.scoreboard-item.mine{background:#f9f0e1}
+.projection-table-head{background:#f3e9db;color:#655d53}
+.finder-surface{background:#f8f0e4;border:1px solid #d8cab8;border-radius:10px}
+.finder-surface:after,.record-upper:after{opacity:.28}
+.select,.finder-controls .select,.finder-controls input,.projection-controls input{font:500 14px 'Source Sans 3',sans-serif;background:#fffdf9;border:1px solid #cbbca9;border-radius:6px;color:#403830}
+.team-overview{background:#f8efe2;border:1px solid #dbccbb}
+.team-overview h2{font:750 25px 'Source Sans 3',sans-serif}
+.group-label{font:700 20px 'Source Sans 3',sans-serif}
+.model-status{padding:16px 18px}.model-status p{font-size:13px;line-height:1.55}
+.accuracy-grid{background:#f7f0e5}.accuracy-grid strong{font-family:'Source Sans 3',sans-serif;font-size:27px;color:#4c654f}
+.scoreboard-item .side{font-size:12px}
+.recommendation{background:#fffaf3;border:1px solid #dbccb6}.recommendation.primary{border-left:3px solid #a07b50}
+.recommendation-move strong{font:700 17px 'Source Sans 3',sans-serif}.recommendation-gain{font:750 21px 'Source Sans 3',sans-serif;color:#4d6a53}
+.recommendation-gain span{font-size:11px}.recommendation-kicker{font-size:10px}.recommendation-arrow{font-size:18px}
+.weekly-mini{font:700 14px 'Source Sans 3',sans-serif;color:#795a3b}
+.projection-controls{gap:9px;flex-wrap:wrap}.projection-controls input{min-width:170px}
+#futureWeek{width:auto;max-width:150px;min-width:120px;background:#ede6d7;font-weight:750}
+.forecast-context{color:#665d53;font-size:13px;padding:12px 18px;border:1px solid #e3d7c8;border-radius:7px;background:#f7f0e6;margin:10px 0 14px}
+.forecast-context strong{color:#66513d}
+.stat-column-head{display:grid;grid-template-columns:minmax(0,1fr) 85px 86px;gap:14px;background:#f3eadd;border-bottom:1px solid #e6dacc;padding:13px 18px;color:#70675d;font-size:11px;font-weight:750;text-transform:uppercase;letter-spacing:.04em}
+.stat-column-head span:nth-child(2),.stat-column-head span:nth-child(3){text-align:right}
+.stat-details{background:#fffaf2;border-bottom:1px solid #e8ded1}.stat-details[open]{background:#fffdf9}.stat-details.my-player{background:#f9f2e6}
+.stat-details summary{display:grid;grid-template-columns:41px minmax(0,1fr) 86px 82px 13px;gap:13px;align-items:center;padding:12px 15px;cursor:pointer;list-style:none;min-height:64px}
+.stat-details summary::-webkit-details-marker{display:none}.stat-details summary:hover{background:#f2eadf}
+.mini-position{font:750 10px 'Source Sans 3',sans-serif;padding:6px 2px;border:1px solid #d6c8b5;border-radius:5px;background:#f1e7d8;text-align:center;color:#635342}
+.stat-identity strong{font-size:14px;display:block;font-weight:750;color:#40382f}
+.stat-identity small{display:block;margin-top:4px;font-size:11px;color:#7c7165}
+.stat-opponent{text-align:right;font-size:12px;color:#726457}
+.stat-pts{text-align:right;font:750 16px 'Source Sans 3',sans-serif;color:#464033}
+.expand-chevron{text-align:right;font-size:18px;color:#ac9379;transition:transform .1s ease}.stat-details[open] .expand-chevron{transform:rotate(180deg)}
+.flag{font:650 10px 'Source Sans 3',sans-serif;color:#6a635d;margin-left:6px}.flag.inactive{color:#984a3a}.flag.review{color:#9d6e26}.flag.bye{color:#836b59}
+.stat-expand{padding:3px 18px 16px 69px;border-top:1px solid #e9ddd0}
+.detail-note{font-size:12px;color:#71665b;line-height:1.5;margin:12px 0}
+.score-breakdown-wrap{overflow-x:auto}.score-breakdown{border-collapse:collapse;width:100%;max-width:770px;font-variant-numeric:tabular-nums;font-size:12px}
+.score-breakdown th{text-align:right;background:#f0e6d8;color:#65594f;font-weight:750}
+.score-breakdown th:first-child,.score-breakdown td:first-child{text-align:left}
+.score-breakdown td{text-align:right;border-bottom:1px solid #ece2d7}
+.score-breakdown th,.score-breakdown td{padding:8px 10px}.score-breakdown tfoot td{font-weight:800;background:#f1e8dd}
+.my-week-heading{display:flex;justify-content:space-between;gap:8px;font-size:15px;font-weight:800;color:#514235;padding-bottom:10px;border-bottom:1px solid #e5dbcd}
+.my-week-heading span{font-size:10px;text-transform:uppercase;color:#a07450;letter-spacing:.08em}
+.compact-projection-row{display:grid;grid-template-columns:34px 1fr 50px;gap:11px;align-items:center;padding:10px 0;border-bottom:1px solid #ece4d9}
+.compact-projection-row strong{display:block;font-size:13px}.compact-projection-row small{display:block;font-size:11px;color:#7b7166}
+.compact-projection-row>span:last-child{font-weight:750;text-align:right;font-size:14px}
+.micro-note{font-size:12px;color:#827366}
+.trade-summary{color:#6c6054;font-size:14px;max-width:900px;line-height:1.55}
+.trade-controls{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:16px 20px;border-bottom:1px solid #e9dfd2;background:#f8f2e9}
+.trade-controls label{display:flex;align-items:center;gap:8px;color:#64574b;font-size:13px;font-weight:750}
+.trade-controls select{min-width:175px}.trade-count{margin-left:auto;font-size:12px;color:#827367}
+.trades-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;padding:16px}
+.trade-card{border:1px solid #dfd2c0;background:#fffcf6;border-radius:9px;padding:16px}
+.trade-card-top{display:flex;align-items:center;justify-content:space-between;gap:15px;border-bottom:1px solid #eae1d5;padding-bottom:11px}
+.trade-rank{font-size:14px;font-weight:800;color:#886b50}.trade-partner{font-size:12px;font-weight:700;color:#736153}
+.trade-exchange{display:grid;grid-template-columns:minmax(0,1fr) 18px minmax(0,1fr);gap:12px;align-items:center;padding:15px 0}
+.trade-exchange>div{min-width:0}.trade-exchange small,.trade-impact small{display:block;font-size:10px;color:#917764;letter-spacing:.06em;font-weight:750}
+.trade-exchange strong{display:block;font-size:16px;font-weight:800;line-height:1.22;color:#46382d;overflow-wrap:anywhere;margin:5px 0}
+.trade-exchange span:not(.trade-arrow){font-size:12px;color:#87756a}.trade-arrow{text-align:center;color:#a5815a;font-size:21px}
+.trade-impact{display:grid;grid-template-columns:1fr 1fr;background:#f1eee6;border-radius:6px;gap:8px;padding:12px}
+.trade-impact strong{display:block;font-size:20px;font-weight:800;color:#486b54}.trade-impact span{font-size:11px;color:#72695f}
+.no-trades{padding:26px 20px;color:#6b5d50;font-size:14px}
+.trade-caveat{font-size:13px;color:#706458;line-height:1.55;padding:0 18px 18px}
+.trade-caveat strong{color:#5d4d3d}
+@media(max-width:900px){.trades-grid{grid-template-columns:1fr}.projection-split{grid-template-columns:1fr}}
+@media(max-width:600px){.shell{padding:0 12px 40px}.section-top h1,.section-top h2{font-size:29px}.nav-btn{font-size:12px;padding:10px 12px}.panel-title{font-size:21px}.stat-details summary{grid-template-columns:31px minmax(0,1fr) 49px 54px 11px;gap:6px;padding:10px 8px}.stat-column-head{grid-template-columns:minmax(0,1fr) 65px 60px;gap:8px;padding:10px}.stat-identity strong{font-size:13px}.stat-identity small{font-size:10px}.stat-pts{font-size:14px}.stat-opponent{font-size:11px}.stat-expand{padding:8px}.trade-controls{padding:12px;gap:10px}.trade-controls label{width:100%;justify-content:space-between}.trade-controls select{min-width:0;width:65%}.trade-count{margin:0}.trades-grid{padding:11px}.trade-card{padding:13px}.score-breakdown th,.score-breakdown td{padding:7px 5px}}
