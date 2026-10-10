@@ -154,7 +154,7 @@ function renderFutureProjections(){
   $el('allProjections').innerHTML=
     '<div class="stat-column-head"><span>Player / matchup</span><span>Week '+selectedWeek+'</span><span>Next 4 games</span><span>ROS</span></div>'+
     (listHtml||'<div class="empty-copy">No matching players.</div>');
-  $el('projectionCoverage').textContent=futureData.players.length+' modeled players including K and DEF · team context through Week 4; offensive stats through Week '+futureData.statsThroughWeek;
+  $el('projectionCoverage').textContent=futureData.players.length+' modeled players including K and DEF · complete team context through Week 3; offensive stats through Week '+futureData.statsThroughWeek;
   $el('forecastContext').textContent='Week '+selectedWeek+' points and future totals assume participation unless marked otherwise. Next four means four scheduled NFL games, skipping byes; ROS begins Week '+Math.max(6,selectedWeek)+'. Players not currently active are not given actionable point totals.';
 }
 function renderMine(){
