@@ -1,0 +1,97 @@
+{
+  "year": 2025,
+  "holdoutWeeks": [
+    5,
+    17
+  ],
+  "method": "Rolling as-of weekly forecast; train on 2024 + 2025 weeks before forecast week.",
+  "target": "Modeled CSU Stats scoring categories only (excluding fumbles, 2PT and other unmodeled stats).",
+  "model": "opportunity-eb-v0.2",
+  "benchmark": "Last three active games' fantasy points from the same nine scoring categories.",
+  "caveats": [
+    "Forecast is conditional on the player recording a stat row that week. Missed games/injury availability are excluded.",
+    "Do not interpret these results as a validated weekly lineup or rest-of-season model.",
+    "Hyperparameters were not tuned on a separate training dataset.",
+    "Duplicate player/week rows are excluded after keeping one observation; multi-team game totals may be incomplete.",
+    "Week 5+ historical validation intentionally excludes 2026 and uses 2025 as holdout."
+  ],
+  "duplicatePlayerWeeksSkipped": 0,
+  "totalPlayerWeeks": 4139,
+  "overall": {
+    "model": {
+      "nPlayerWeeks": 4139,
+      "MAE": 4.226,
+      "RMSE": 6.026,
+      "bias": -0.067
+    },
+    "last3": {
+      "nPlayerWeeks": 4139,
+      "MAE": 4.517,
+      "RMSE": 6.633,
+      "bias": 0.056
+    }
+  },
+  "byPosition": {
+    "QB": {
+      "model": {
+        "nPlayerWeeks": 445,
+        "MAE": 8.399,
+        "RMSE": 10.291,
+        "bias": -0.716
+      },
+      "last3": {
+        "nPlayerWeeks": 445,
+        "MAE": 8.83,
+        "RMSE": 11.271,
+        "bias": 0.291
+      }
+    },
+    "RB": {
+      "model": {
+        "nPlayerWeeks": 1082,
+        "MAE": 4.198,
+        "RMSE": 6.089,
+        "bias": -0.402
+      },
+      "last3": {
+        "nPlayerWeeks": 1082,
+        "MAE": 4.515,
+        "RMSE": 6.664,
+        "bias": 0.05
+      }
+    },
+    "TE": {
+      "model": {
+        "nPlayerWeeks": 886,
+        "MAE": 3.109,
+        "RMSE": 4.533,
+        "bias": -0.076
+      },
+      "last3": {
+        "nPlayerWeeks": 886,
+        "MAE": 3.459,
+        "RMSE": 5.129,
+        "bias": -0.066
+      }
+    },
+    "WR": {
+      "model": {
+        "nPlayerWeeks": 1726,
+        "MAE": 3.742,
+        "RMSE": 5.096,
+        "bias": 0.315
+      },
+      "last3": {
+        "nPlayerWeeks": 1726,
+        "MAE": 3.95,
+        "RMSE": 5.605,
+        "bias": 0.062
+      }
+    }
+  },
+  "generatedAt": "2026-10-10T03:40:44.073341+00:00",
+  "sources": [
+    "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2024.csv",
+    "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2025.csv"
+  ]
+}
