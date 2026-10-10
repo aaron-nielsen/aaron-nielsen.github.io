@@ -1,24 +1,22 @@
-"""Rolling-origin backtest: 2025 holdout weeks 5–17 vs 2024 player history.
+"""Compare 1-, 2-, 3-year historical shrinkage windows and legacy model.
 
-No future-week leakage: before forecasting week w, 2025 rows must have week < w.
-Compare our shrinkage model to each player's last three active-game points,
-computed on the same modeled Yahoo scoring categories as the actual target.
-Uses stdlib only, and outputs model/backtest.json.
+2025 holdout weeks 5–17; 2022–2024 historical seasons, current 2025
+games strictly before the forecast week. All candidate models evaluated on
+the exact same player-weeks, conditional on recording a stat row.
 """
 from collections import defaultdict
 from datetime import datetime, timezone
 import json
 import math
-from pathlib import Path
 
 from build import BASE, STATS_URL, csv_rows, normalize_weekly_stats
-from project import SKILL, project_player, score
+from project import SKILL, project_player, project_player_legacy, score
 
 VALIDATION_YEAR = 2025
-START_WEEK, END_WEEK = 5, 17
+HOLDOUT_START, HOLDOUT_END = 5, 17
+WINDOWS = (1, 2, 3)
 
 def observed_stats(row):
-    """Same nine categories the preliminary model predicts, not Yahoo's full actual score."""
     return {
         "passYards": float(row.get("passing_yards") or 0),
         "passTD": float(row.get("passing_tds") or 0),
@@ -28,108 +26,125 @@ def observed_stats(row):
         "rushTD": float(row.get("rushing_tds") or 0),
         "receptions": float(row.get("receptions") or 0),
         "receivingYards": float(row.get("receiving_yards") or 0),
-        "receivingTD": float(row.get("receiving_tds") or 0),
+        "receivingTD": float(row.get("receiving_tds") or 0)
     }
 
 def metrics(errors):
     if not errors:
         return None
-    n=len(errors)
+    count = len(errors)
     return {
-        "nPlayerWeeks":n,
-        "MAE":round(sum(abs(v) for v in errors)/n,3),
-        "RMSE":round(math.sqrt(sum(v*v for v in errors)/n),3),
-        "bias":round(sum(errors)/n,3),
+        "nPlayerWeeks": count,
+        "MAE": round(sum(abs(x) for x in errors) / count, 3),
+        "RMSE": round(math.sqrt(sum(x*x for x in errors) / count), 3),
+        "bias": round(sum(errors) / count, 3),
     }
 
 def backtest(history, modifiers):
-    """Rows from 2024 and 2025; evaluate only player-weeks in 2025, w>=5."""
-    by_id=defaultdict(list)
-    for row in history:
-        if row.get("position") not in SKILL or row.get("season_type") != "REG":
-            continue
-        pid=row.get("player_id")
-        if pid and int(row.get("season") or 0) in (VALIDATION_YEAR-1, VALIDATION_YEAR):
-            by_id[pid].append(row)
-
-    all_errors=defaultdict(lambda:{"model":[],"baseline":[]})
-    skipped_duplicate_weeks=0
-    total_examples=0
-    for games in by_id.values():
-        games.sort(key=lambda g:(int(g["season"]),int(g["week"])))
-        position=games[-1].get("position")
-        # Verify unique player-week observations to avoid double-counting traded players.
-        seen=set()
-        clean=[]
-        for row in games:
-            key=(str(row["season"]),str(row["week"]))
-            if key in seen:
-                skipped_duplicate_weeks+=1
+    by_player = defaultdict(list)
+    for game in history:
+        if (game.get("position") in SKILL and game.get("season_type") == "REG"
+            and game.get("player_id") and 2022 <= int(game.get("season") or 0) <= 2025):
+            by_player[game["player_id"]].append(game)
+    names = ["last3", "legacy"] + [f"history_{n}yr" for n in WINDOWS]
+    errors = defaultdict(lambda: defaultdict(list))
+    seen_total = 0
+    duplicate = 0
+    for games in by_player.values():
+        games.sort(key=lambda r: (int(r["season"]), int(r["week"])))
+        clean, seen = [], set()
+        for game in games:
+            identity = (int(game["season"]), int(game["week"]))
+            if identity in seen:
+                duplicate += 1
                 continue
-            seen.add(key)
-            clean.append(row)
+            seen.add(identity)
+            clean.append(game)
         for actual in clean:
             if int(actual["season"]) != VALIDATION_YEAR:
                 continue
-            week=int(actual["week"])
-            if week<START_WEEK or week>END_WEEK:
+            week = int(actual["week"])
+            if not (HOLDOUT_START <= week <= HOLDOUT_END):
                 continue
-            prior=[r for r in clean if int(r["season"])<VALIDATION_YEAR
-                   or int(r["week"])<week]
-            prior=[r for r in prior if r.get("position")==position]
-            if len(prior)<2:  # same coverage for baseline and model
+            position = actual["position"]
+            preceding = [g for g in clean
+                         if g.get("position") == position
+                         and (int(g["season"]) < VALIDATION_YEAR
+                              or int(g["week"]) < week)]
+            if len(preceding) < 2:
                 continue
-            prediction=project_player(prior,position,season=VALIDATION_YEAR)
-            if not prediction:
+            old = project_player_legacy(preceding, position, season=VALIDATION_YEAR)
+            if old is None:
+                # Fair, identical-sample comparison to the 2024/2025 model.
                 continue
-            previous=prior[-3:]
-            model_pts=score(prediction["stats"],modifiers)
-            base_pts=sum(score(observed_stats(r),modifiers) for r in previous)/len(previous)
-            actual_pts=score(observed_stats(actual),modifiers)
-            total_examples+=1
-            all_errors[position]["model"].append(model_pts-actual_pts)
-            all_errors[position]["baseline"].append(base_pts-actual_pts)
-
-    output={}
-    for pos in sorted(SKILL):
-        e=all_errors[pos]
-        output[pos]={"model":metrics(e["model"]),"last3":metrics(e["baseline"])}
-    overall_model=[e for v in all_errors.values() for e in v["model"]]
-    overall_baseline=[e for v in all_errors.values() for e in v["baseline"]]
+            future = score(observed_stats(actual), modifiers)
+            last3 = preceding[-3:]
+            predictions = {
+                "last3": sum(score(observed_stats(g), modifiers) for g in last3) / len(last3),
+                "legacy": score(old["stats"], modifiers),
+            }
+            for length in WINDOWS:
+                projection = project_player(
+                    preceding, position, season=VALIDATION_YEAR, history_years=length)
+                if projection is None:
+                    raise RuntimeError("Missing multi-year prediction on evaluated player-week")
+                predictions[f"history_{length}yr"] = score(projection["stats"], modifiers)
+            for name in names:
+                errors[position][name].append(predictions[name] - future)
+            seen_total += 1
+    by_pos = {pos: {name: metrics(errors[pos][name]) for name in names}
+              for pos in sorted(SKILL)}
+    overall = {
+        name: metrics([v for pos in SKILL for v in errors[pos][name]])
+        for name in names
+    }
+    ranked = sorted(
+        ({"name": name, "MAE": overall[name]["MAE"], "RMSE": overall[name]["RMSE"]}
+         for name in names if overall[name]),
+        key=lambda item: (item["MAE"], item["RMSE"])
+    )
     return {
         "year": VALIDATION_YEAR,
-        "holdoutWeeks":[START_WEEK,END_WEEK],
-        "method":"Rolling as-of weekly forecast; train on 2024 + 2025 weeks before forecast week.",
-        "target":"Modeled CSU Stats scoring categories only (excluding fumbles, 2PT and other unmodeled stats).",
-        "model":"opportunity-eb-v0.2",
-        "benchmark":"Last three active games' fantasy points from the same nine scoring categories.",
-        "caveats":[
-            "Forecast is conditional on the player recording a stat row that week. Missed games/injury availability are excluded.",
-            "Do not interpret these results as a validated weekly lineup or rest-of-season model.",
-            "Hyperparameters were not tuned on a separate training dataset.",
-            "Duplicate player/week rows are excluded after keeping one observation; multi-team game totals may be incomplete.",
-            "Week 5+ historical validation intentionally excludes 2026 and uses 2025 as holdout."
+        "holdoutWeeks": [HOLDOUT_START, HOLDOUT_END],
+        "historicalSeasons": [2022, 2023, 2024],
+        "model": "opportunity-eb-v0.3",
+        "candidateHistoryYears": list(WINDOWS),
+        "benchmark": "Mean of previous three active games' points on modeled scoring categories.",
+        "target": "Yahoo CSU Stats modeled QB/RB/WR/TE categories (not all Yahoo scoring events).",
+        "comparison": "All methods evaluated on the same 2025 player-weeks; forecasts use no later-week stats.",
+        "overall": overall,
+        "byPosition": by_pos,
+        "rankedByMAE": ranked,
+        "totalPlayerWeeks": seen_total,
+        "duplicatePlayerWeeksSkipped": duplicate,
+        "caveats": [
+            "Evaluates only players with statistical game rows; misses and inactives are not forecast.",
+            "Unmodeled points for fumbles, 2-point attempts, return scores and other events omitted.",
+            "Comparing history-window choices on one holdout year is exploratory, NOT independent hyperparameter validation.",
+            "Historical data for 2022–2024 is used only when predicting 2025; no 2026 information leaks into evaluation.",
+            "The live 2026 model uses four prior seasons; 2025 comparisons have only three historical seasons."
         ],
-        "duplicatePlayerWeeksSkipped":skipped_duplicate_weeks,
-        "totalPlayerWeeks":total_examples,
-        "overall":{"model":metrics(overall_model),"last3":metrics(overall_baseline)},
-        "byPosition":output,
     }
 
 def main():
-    league=json.loads((BASE/"data/league.json").read_text())
-    modifiers=league["scoringByYahooStatId"]
-    stats=[]
-    for year in (VALIDATION_YEAR-1,VALIDATION_YEAR):
-        stats.extend(normalize_weekly_stats(csv_rows(STATS_URL.format(season=year))))
-    output=backtest(stats,modifiers)
-    if output["totalPlayerWeeks"]<1000:
-        raise RuntimeError("Not enough holdout player-weeks for validation: "+str(output["totalPlayerWeeks"]))
-    output["generatedAt"]=datetime.now(timezone.utc).isoformat()
-    output["sources"]=[STATS_URL.format(season=year) for year in (VALIDATION_YEAR-1,VALIDATION_YEAR)]
-    destination=BASE/"data/backtest.json"
-    destination.write_text(json.dumps(output,indent=2)+"\n")
-    print("BACKTEST RESULTS",json.dumps({k:output[k] for k in ("overall","byPosition","totalPlayerWeeks")},sort_keys=True))
+    league = json.loads((BASE / "data/league.json").read_text())
+    all_rows = []
+    for year in range(2022, 2026):
+        rows = normalize_weekly_stats(csv_rows(STATS_URL.format(season=year)))
+        if not rows:
+            raise RuntimeError(f"Missing player stats for {year}")
+        all_rows.extend(rows)
+    result = backtest(all_rows, league["scoringByYahooStatId"])
+    if result["totalPlayerWeeks"] < 1000:
+        raise RuntimeError("Too few validation player-weeks")
+    result["generatedAt"] = datetime.now(timezone.utc).isoformat()
+    result["sources"] = [STATS_URL.format(season=y) for y in range(2022, 2026)]
+    (BASE / "data/backtest.json").write_text(json.dumps(result, indent=2)+"\n")
+    print("HISTORICAL BACKTEST", json.dumps({
+        "overall": result["overall"],
+        "rankedByMAE": result["rankedByMAE"],
+        "playerWeeks": result["totalPlayerWeeks"]
+    }, sort_keys=True))
 
-if __name__=="__main__":
+if __name__ == "__main__":
     main()
