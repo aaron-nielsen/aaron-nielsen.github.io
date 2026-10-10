@@ -42,6 +42,28 @@ class ProjectTests(unittest.TestCase):
                                {"100":"00-abc"},RULES)
         self.assertEqual(out["coverage"]["projected"],1)
         self.assertEqual(out["players"][0]["fantasyTeamId"],"7")
+    def test_historical_efficiency_persists_beyond_previous_season(self):
+        current = [row(2026, w, pos="QB", attempts=32,
+                       passing_yards=220, sacks=2, interceptions=1) for w in (1,2,3)]
+        old_good = [row(2022, w, pos="QB", attempts=35,
+                        passing_yards=350, sacks=1, interceptions=0) for w in range(1, 9)]
+        old_poor = [dict(r, passing_yards=120) for r in old_good]
+        one_good = project_player(current+old_good, "QB", history_years=1)
+        one_poor = project_player(current+old_poor, "QB", history_years=1)
+        self.assertEqual(one_good["stats"]["passYards"], one_poor["stats"]["passYards"])
+        four_good = project_player(current+old_good, "QB", history_years=4)
+        four_poor = project_player(current+old_poor, "QB", history_years=4)
+        self.assertGreater(four_good["stats"]["passYards"], four_poor["stats"]["passYards"])
+        self.assertEqual(four_good["sampleGamesHistory"], 8)
+
+    def test_current_role_outweighs_distant_role(self):
+        years_ago = [row(2022, w, carries=2, rushing_yards=7)
+                     for w in range(1, 14)]
+        recent = [row(2026, w, carries=23, rushing_yards=103)
+                  for w in range(1, 6)]
+        p = project_player(years_ago+recent, "RB", history_years=4)
+        self.assertGreater(p["stats"]["carries"], 16)
+
     def test_empty_player_has_no_prediction(self):
         self.assertIsNone(project_player([],"WR"))
 
