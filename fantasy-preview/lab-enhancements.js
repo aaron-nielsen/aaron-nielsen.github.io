@@ -115,6 +115,10 @@ function breakdown(p,w){
     '<div class="stat-compact-heading">Selected-week scoring details <small>'+(special?'Opponent/venue adjusted':'Opponent factor '+num(w.factor)+'×')+'</small></div>'+
     '<div class="stat-components">'+compact+'</div>'+
     '<div class="stat-component total"><span>Conditional points</span><span>Model total</span><strong>'+num(total)+'</strong></div>'+
+    '<p class="detail-disclaimer">'+(special?
+     'Matchup: '+clean(opp(w))+'. Roof: '+clean(w.conditions?.roof||'unknown')+
+     (w.conditions?.windMph==null?'. Forecast wind unavailable.':'. Wind: '+clean(w.conditions.windMph)+' mph'+(w.conditions.weatherApplied?' (adjustment applied)':' (no adjustment applied)')+'.')+
+     ' This is a team-opportunity model, not an individually calibrated kicking or turnover forecast. ':'')+'</p>'+
     '<p class="detail-disclaimer">'+(special?'Expected kicker and D/ST events use recent team data, opponents, venue and league scoring. Rare defensive events and kicking distance/conversion use league priors; actual conditions and personnel may vary. ':'Expected stats may be fractional; several specialty scoring categories remain unmodeled. ')+'Future totals assume participation and are not injury-adjusted expected values.</p>';
 }
 function renderFutureProjections(){
