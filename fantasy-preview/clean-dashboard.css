@@ -809,7 +809,7 @@ body{font:16px/1.48 'Source Sans 3',Arial,sans-serif;color:var(--text);backgroun
 
 
 /* Banner geometry is controlled by the compact-banner-styles rule in index.html.
-   The original 1000:333 drawing is displayed uncropped within the 1000px canvas. */
+   The original 1000:333 drawing is displayed uncropped within the 800px canvas. */
 .league-switch{margin:5px 0 6px!important}
 .league-switch select{border-color:#c3a37d!important;background:#fbefdb!important;color:#614628!important}
 .nav{margin:0!important;padding:8px 0 13px!important}
@@ -850,9 +850,9 @@ body{font:16px/1.48 'Source Sans 3',Arial,sans-serif;color:var(--text);backgroun
 }
 
 
-/* Compact October dashboard: Overview shares the same 1000px content width. Put standings beside the matchup when
+/* Compact October dashboard: Overview shares the same 800px content width. Put standings beside the matchup when
    there is enough room, rather than stretching the scores into empty space. */
-#page-overview{width:100%;max-width:1000px;margin-left:auto;margin-right:auto}
+#page-overview{width:100%;max-width:800px;margin-left:auto;margin-right:auto}
 #page-overview .match-compact-projection{padding:4px 1px!important}
 @media(min-width:1100px){
  #page-overview .overview-top{

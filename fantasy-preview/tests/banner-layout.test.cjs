@@ -17,13 +17,13 @@ assert.match(banner,/width="1000" height="333"/,'Reference size is exactly 1000 
 assert.equal((banner.match(/<img\b/g)||[]).length,1,'Avoid stacked giant-logo regressions');
 assert.doesNotMatch(banner,/<svg\b|ram-hat-emblem|clipPath|mask=/i,'No recomposition or overlay');
 const style=html.slice(html.indexOf('<style id="compact-banner-styles">'),html.indexOf('</style>',html.indexOf('<style id="compact-banner-styles">'))+8);
-assert.match(style,/--lab-content-width:1000px/);
-assert.match(style,/max-width:1000px!important/);
+assert.match(style,/--lab-content-width:800px/);
+assert.match(style,/max-width:800px!important/);
 assert.match(style,/aspect-ratio:1000\/333!important/);
 assert.match(style,/object-fit:contain!important/);
 assert.match(style,/height:auto!important/);
 assert.match(style,/position:static!important/);
 assert.doesNotMatch(style,/width:100vw|height:86px|height:102px|object-fit:cover|filter:sepia/);
-assert.match(css,/#page-overview\{width:100%;max-width:1000px/);
+assert.match(css,/#page-overview\{width:100%;max-width:800px/);
 const i=html.lastIndexOf('<script>');new Function(html.slice(i+8,html.indexOf('</script>',i)));
-console.log('Original 1000×333 proportional banner, 1000px content width and single-image header passed.');
+console.log('Original 1000×333 proportional banner, 800px content width and single-image header passed.');
