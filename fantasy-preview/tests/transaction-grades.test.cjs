@@ -44,6 +44,26 @@ function setup(){
  assert.equal((cards.match(/\+10\.0 <small>pts\/wk<\/small>/g)||[]).length,2,
   'Both moves should each raise projected starter value by 10; older move uses B vs A.');
 }
+// Ungraded moves sort last in both directions and remain ungraded for the selected manager.
+{
+ const {ctx,element}=setup();
+ const mk=id=>({id,name:id,position:'RB',slot:'BN'});
+ const rosters={teams:[{id:'7',name:'Alpha',players:[mk('B')]},{id:'8',name:'Beta',players:[mk('Z')]}]};
+ const future={endWeek:5,players:['A','B'].map((id,i)=>({yahooId:id,name:id,position:'RB',weeks:[{week:5,points:(i+1)*10}]}))};
+ const tx={transactions:[
+  {transaction_id:'2',timestamp:2,date:'2026-10-02',status:'complete',type:'add',team_ids:['7'],players_added:[mk('B')],players_dropped:[mk('A')]},
+  {transaction_id:'1',timestamp:1,date:'2026-10-01',status:'complete',type:'drop',team_ids:['8'],players_added:[],players_dropped:[mk('Z')]}
+ ]};
+ ctx.DaVinciTransactions.init({rosters,future,week:5,teamId:'7',transactions:tx,
+  optimize:players=>({score:Math.max(0,...players.map(p=>future.players.find(f=>f.yahooId===p.id)?.weeks[0].points||0))})});
+ for(const order of ['best','worst']){
+  element('txnSort').value=order;
+  ctx.DaVinciTransactions.update();
+  const html=element('transactionCards').innerHTML;
+  assert.ok(html.indexOf('Alpha · Add')<html.indexOf('Beta · Drop'),order+' must place missing grades last');
+  assert.ok(html.includes('Not graded'));
+ }
+}
 // Real data snapshots: every verified transaction remains visible in CSU and Nebraska.
 require(path.join(base,'special-teams-model.js'));
 const context=load('data/special-teams-context.json');
