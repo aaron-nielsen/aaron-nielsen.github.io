@@ -70,8 +70,8 @@ def project_player(rows, position, season=2026):
     ypc = shrink_rate(cur, old, "rushing_yards", "carries", rates["ypc"], 75.)
     catch = shrink_rate(cur, old, "receptions", "targets", rates["catch_rate"], 50.)
     rec_ypt = shrink_rate(cur, old, "receiving_yards", "targets", rates["rec_ypt"], 70.)
-    int_rate = shrink_rate(cur, old, "passing_interceptions", "attempts", rates["int_rate"], 150.) if position == "QB" else 0.
-    sack_rate = shrink_rate(cur, old, "sacks_suffered", "attempts", rates["sack_rate"], 100.) if position == "QB" else 0.
+    int_rate = shrink_rate(cur, old, "interceptions", "attempts", rates["int_rate"], 150.) if position == "QB" else 0.
+    sack_rate = shrink_rate(cur, old, "sacks", "attempts", rates["sack_rate"], 100.) if position == "QB" else 0.
     a, c, t = opp["attempts"], opp["carries"], opp["targets"]
     td = TD_PRIORS[position]
     return {
@@ -130,4 +130,77 @@ def project_rostered(rosters, stats_rows, yahoo_to_gsis, modifiers, season=2026)
         "players": sorted(players, key=lambda p: -p["conditionalPointsPerGame"]),
         "coverage": {"projected": len(players), "unmappedYahooIds": unmapped,
                      "withoutWeeklyHistory": missing_history},
+    }
+
+
+def project_pool(rosters, available, stats_rows, yahoo_to_gsis, modifiers, season=2026):
+    """Project rostered AND league-available skill-position players.
+
+    Report incomplete coverage honestly. Crosswalk and conservative fallback
+    provenance are retained so uncertain identities are auditable.
+    """
+    from identity import resolve_players
+
+    owned = []
+    for t in rosters["teams"]:
+        for p in t["players"]:
+            if p["position"] in SKILL:
+                owned.append(dict(p, fantasyTeamId=t["id"],
+                                  fantasyTeam=t["name"], owned=True))
+    owned_ids = {str(p["id"]) for p in owned}
+    available_skill = [dict(p, fantasyTeamId=None, fantasyTeam="Available",
+                            slot=None, status=None, owned=False)
+                       for p in available["players"]
+                       if p["position"] in SKILL and str(p["id"]) not in owned_ids]
+    all_players = owned + available_skill
+    matches, unmapped, collisions = resolve_players(
+        all_players, stats_rows, yahoo_to_gsis, season=season)
+    by_player = defaultdict(list)
+    for r in stats_rows:
+        pid = r.get("player_id") or r.get("gsis_id")
+        if pid and r.get("position") in SKILL and str(r.get("season")) in (str(season), str(season - 1)):
+            by_player[pid].append(r)
+
+    scored, missing_history = [], []
+    methods = defaultdict(int)
+    for p in all_players:
+        key = str(p["id"])
+        resolved = matches.get(key)
+        if resolved is None:
+            continue
+        gsis_id = resolved["gsisId"]
+        pred = project_player(by_player.get(gsis_id, []), p["position"], season)
+        if pred is None:
+            missing_history.append({"yahooId": key, "name": p["name"], "gsisId": gsis_id})
+            continue
+        methods[resolved["method"]] += 1
+        pred.update({
+            "yahooId": key, "gsisId": gsis_id, "matchMethod": resolved["method"],
+            "name": p["name"], "nflTeam": p.get("nflTeam"),
+            "fantasyTeamId": p["fantasyTeamId"], "fantasyTeam": p["fantasyTeam"],
+            "ownership": "rostered" if p["owned"] else "available",
+            "rosterSlot": p.get("slot"), "injuryStatus": p.get("status"),
+            "conditionalPointsPerGame": score(pred["stats"], modifiers),
+        })
+        scored.append(pred)
+
+    rostered_count = sum(p["ownership"] == "rostered" for p in scored)
+    available_count = sum(p["ownership"] == "available" for p in scored)
+    return {
+        "modelVersion": "opportunity-eb-v0.2", "season": season,
+        "note": ("Conditional points per active game from completed weeks. "
+                 "Not weekly predictions; injury, bye, matchup and role changes are not adjusted. "
+                 "Name fallbacks are exact and conservative, not probabilistic."),
+        "players": sorted(scored, key=lambda p: -p["conditionalPointsPerGame"]),
+        "coverage": {
+            "projected": len(scored),
+            "rosteredSkillPlayers": len(owned),
+            "availableSkillPlayersSampled": len(available_skill),
+            "rosteredProjected": rostered_count,
+            "availableProjected": available_count,
+            "unmappedYahooIds": unmapped,
+            "withoutWeeklyHistory": missing_history,
+            "identityCollisions": collisions,
+            "matchMethods": dict(methods),
+        }
     }
