@@ -37,9 +37,9 @@ const other=[
  make('their-def','Their DEF','DEF','DEF',partner),make('their-target','Target Running Back','RB','BN',partner)
 ];
 const pts={
- 'my-qb':12,'my-rb1':9,'my-rb2':9,'my-wr1':15,'my-wr2':15,'my-te':10,
- 'my-flex':12,'my-k':8,'my-def':7,'my-trade':11,
- 'their-qb':13,'their-rb1':16,'their-rb2':15,'their-wr1':15,'their-wr2':13,
+ 'my-qb':12,'my-rb1':9,'my-rb2':9,'my-wr1':32,'my-wr2':30,'my-te':10,
+ 'my-flex':29,'my-k':8,'my-def':7,'my-trade':26,
+ 'their-qb':13,'their-rb1':16,'their-rb2':15,'their-wr1':15,'their-wr2':8,
  'their-te':10,'their-flex':6,'their-k':7,'their-def':6,'their-target':16
 };
 const rosters={teams:[{id:owner,name:'My team',players:own},{id:partner,name:'Trade partner',players:other}]};
