@@ -798,21 +798,25 @@ function modelTeamLineup(teamId,forecastWeek){
 function renderModelMatchup(){
  const area=$('#modelMatchupSummary'),pair=matchup(),other=pair.home.id===TEAM_ID?pair.away:pair.home;
  const a=modelTeamLineup(TEAM_ID,week.week),b=modelTeamLineup(other.id,week.week);
- if(!a||!b){area.textContent='A complete nine-starter comparison is not available for this dated snapshot.';return;}
+ if(!a||!b){area.textContent='Complete nine-starter projection unavailable.';return;}
  const diff=a.points-b.points,who=diff>=0?'Your team':'Opponent';
  const splits=lineup=>({
-   offense:lineup.ids.filter(p=>p.slot<7).reduce((n,p)=>n+p.points,0),
-   k:lineup.ids.find(p=>p.slot===7)?.points??0,
-   def:lineup.ids.find(p=>p.slot===8)?.points??0
+  offense:lineup.ids.filter(p=>p.slot<7).reduce((n,p)=>n+p.points,0),
+  k:lineup.ids.find(p=>p.slot===7)?.points??0,
+  def:lineup.ids.find(p=>p.slot===8)?.points??0
  });
  const p=splits(a),q=splits(b);
- area.innerHTML='<span class="model-strip-label">DA VINCI · NINE-STARTER PROJECTED SCORE</span>'+
- '<span class="model-compare"><span>'+esc(team(TEAM_ID).name)+' <b>'+a.points.toFixed(2)+'</b></span>'+
- '<span>'+esc(other.name)+' <b>'+b.points.toFixed(2)+'</b></span></span>'+
- '<span class="model-breakout">Offense '+p.offense.toFixed(1)+' / '+q.offense.toFixed(1)+' · K '+p.k.toFixed(1)+' / '+q.k.toFixed(1)+' · DEF '+p.def.toFixed(1)+' / '+q.def.toFixed(1)+'</span>'+
- '<span class="model-strip-note">'+who+' favored by '+Math.abs(diff).toFixed(2)+' points.'+
- ((a.needsReview+b.needsReview)?' Status review needed.':'')+
- ' K/DST estimates use team history, opponent and league scoring; smaller-scoring categories remain approximate. <a href="#our-team-forecasts" id="modelTeamJump">All team projections →</a></span>';
+ area.innerHTML='<div class="model-strip-label">DA VINCI MODEL · INCLUDES K + DEF</div>'+
+ '<div class="model-compare"><span>'+esc(team(TEAM_ID).name)+' <b>'+a.points.toFixed(1)+'</b></span>'+
+ '<span>'+esc(other.name)+' <b>'+b.points.toFixed(1)+'</b></span></div>'+
+ '<div class="model-strip-note">'+who+' favored by '+Math.abs(diff).toFixed(1)+' pts'+
+ ((a.needsReview+b.needsReview)?' · Check player statuses':'')+
+ ' <a href="#our-team-forecasts" id="modelTeamJump">All teams →</a></div>'+
+ '<details class="quiet-details model-score-details"><summary>Score breakdown</summary>'+
+ '<div class="model-breakout"><span>Offense <b>'+p.offense.toFixed(1)+' / '+q.offense.toFixed(1)+'</b></span>'+
+ '<span>K <b>'+p.k.toFixed(1)+' / '+q.k.toFixed(1)+'</b></span>'+
+ '<span>DEF <b>'+p.def.toFixed(1)+' / '+q.def.toFixed(1)+'</b></span></div>'+
+ '<p>Scores are our estimates, not Yahoo projections. K and defense include opponent-based assumptions and are less certain than the displayed precision suggests.</p></details>';
  const jump=$('#modelTeamJump');if(jump)jump.addEventListener('click',e=>{
   e.preventDefault();showPage('projections');
   document.getElementById('our-team-forecasts')?.scrollIntoView?.({behavior:'smooth',block:'start'});
@@ -863,10 +867,10 @@ function renderOffenseOutlook(){
  const sum=rows=>rows.length&&rows.every(x=>x.lineup)?rows.reduce((s,x)=>s+x.lineup.points,0):null;
  const format=x=>x==null?'—':x.toFixed(1);
  const futureFlag=games.some(g=>g.lineup?.needsReview);
- el.innerHTML='<div class="outlook-head"><strong>Your future nine-starter outlook</strong><small>Optimized nine-starter lineups · if active</small></div>'+
+ el.innerHTML='<div class="outlook-head"><strong>Upcoming weeks</strong><small>If active · 9 starters</small></div>'+
  '<div class="outlook-week-grid">'+four.map(g=>'<div class="outlook-week"><span>WEEK '+g.week+'</span><strong>'+format(g.lineup?.points??null)+'</strong></div>').join('')+'</div>'+
  '<div class="outlook-totals"><span>Next '+four.length+' weeks <b>'+format(sum(four))+'</b></span><span>ROS · W'+from+'–'+to+' <b>'+format(sum(games))+'</b></span></div>'+
- '<p class="outlook-note">Includes seven offensive starters, kicker and team defense. Byes count as zero for idle players. '+(futureFlag?'Some players have uncertain future participation. ':'')+'Assumes modeled players are available, not a probability-weighted injury forecast. See Projections for all teams.</p>';
+ '';
 }
 
 function initModelTeamForecasts(){
@@ -948,7 +952,7 @@ function initOverview(){
  };
  $('#myLineup').innerHTML='<div class="lineup-column-head"><span>STARTER</span><span>BEST BACKUP</span></div>'+
  ordered.map((p,i)=>'<div class="lineup-pair">'+lineupPerson(p,p.slot)+lineupPerson(selectedBackups[i],'')+'</div>').join('')+
- '<p class="lineup-compare-footnote">Distinct backup options for each position. BYE means unavailable this week, but still valuable roster depth. Injured/inactive players are excluded from immediate cover.</p>';
+ '';
  $('#leagueBoard').innerHTML=week.matchups.map(m=>'<div class="scoreboard-item'+(m.home.id===TEAM_ID||m.away.id===TEAM_ID?' mine':'')+'"><div class="side">'+esc(m.home.name)+'</div><div class="pts mono">'+number(m.home.projectedPoints)+'</div><div class="dash">–</div><div class="pts mono">'+number(m.away.projectedPoints)+'</div><div class="side right">'+esc(m.away.name)+'</div></div>').join('');
  $('#boardWeek').textContent='WEEK '+week.week;$('#projectionWeek').textContent='WEEK '+week.week;
  $('#sync').textContent='Yahoo snapshot · '+new Date(week.retrievedAt).toLocaleString(undefined,{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'});
@@ -972,9 +976,9 @@ function renderSpecialWaivers(){
   const good=options.find(x=>x.gain>=chosen.length*.5);
   if(good)lines.push('<div class="special-pickup-row"><span class="special-pickup-pos">'+pos+'</span><span><strong>'+esc(good.p.name)+'</strong><small>'+esc(good.p.nflTeam)+' · if active</small></span><b>+'+good.gain.toFixed(1)+' <small>pts</small></b></div>');
  }
- area.innerHTML=lines.length?'<div class="special-pickup-heading">Kicker &amp; defense alternatives <span>Modeled uplift, same period</span></div>'+lines.join('')+
- '<p class="special-pickup-foot">Compared with your highest-scoring eligible K/DEF each week. Team history + opponent model; excludes additional roster cuts and player-status uncertainty. Check Yahoo availability.</p>':
- '<p class="special-pickup-foot">No K/DEF additions exceed +0.5 modeled points per week over the selected horizon. Estimates are preliminary.</p>';
+ area.innerHTML=lines.length?'<div class="special-pickup-heading">K / DEF upgrades</div>'+lines.join('')+
+ '':
+ '';
 }
 
 function renderWaivers(){
