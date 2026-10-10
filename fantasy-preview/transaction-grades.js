@@ -36,7 +36,7 @@ function estimate(withRoster,withoutRoster,teamId){
   if(x&&y){after.push(x.score);before.push(y.score);}
  }
  // Only grade scenarios with adequate lineup coverage, not missing QBs/K/DEF.
- if(after.length!==weeks.length)return null;
+ if(!weeks.length||after.length!==weeks.length)return null;
  const gain=after.reduce((s,n,i)=>s+n-before[i],0);
  return {avg:gain/after.length,ros:gain,weeks:after.length,teamId};
 }
@@ -56,15 +56,15 @@ function side(tx,teamId,acquired,dropped){
  // Direct comparison with today's roster for EACH past move double-counts later transactions.
  const after=historicalRoster?.get(tid);
  if(!team||!after)return {teamId:tid,name:team?.name||'Unknown team',value:null,reason:'Roster not in snapshot'};
- const acquiredIds=new Set(acquired.map(key));
- const changed=[...acquired,...dropped];
- const complete=acquired.every(p=>after.some(x=>key(x)===key(p)))&&
-  changed.every(p=>state.forecasts.has(key(p)));
+ const missingAcquired=acquired.filter(p=>!after.some(x=>key(x)===key(p)));
+ const missingForecast=[...acquired,...dropped].filter(p=>!state.forecasts.has(key(p)));
+ const complete=!missingAcquired.length&&!missingForecast.length;
  const before=changeRoster(after,acquired,dropped);
  historicalRoster.set(tid,before);
  const v=complete?estimate(after,before,tid):null;
  return {teamId:tid,name:team.name,value:v,
-  reason:!complete?'Player forecast or transaction roster missing':!v?'Complete optimized lineups unavailable':null};
+  reason:missingAcquired.length?'Acquired player absent from reconstructed roster':
+   missingForecast.length?'Missing player forecast':!v?'Incomplete projected starting lineup':null};
 }
 function evaluate(tx){
  const isTrade=tx.type==='trade'&&Array.isArray(tx.trade_sides)&&tx.trade_sides.length>=2;
