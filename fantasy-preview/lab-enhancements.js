@@ -169,7 +169,7 @@ function renderMine(){
       return '<div class="compact-projection-row"><span class="mini-position">'+clean(p.position)+'</span>'+
         '<div><strong>'+clean(p.name)+'</strong><small>'+clean(opp(w))+' · 4 games '+summaryPts(h.fourPts)+' · ROS '+summaryPts(h.rosPts)+(a.review?' · check status':'')+'</small></div><span>'+clean(current)+'</span></div>';
     }).join('')+'</div>'+
-    '<p class="micro-note">Four-game and ROS figures are healthy-play scenarios, not injury-adjusted expectations. Expand a player below for the scoring calculation.</p>';
+    '';
 }
 const lookup=(id)=>futureById.get(String(id));
 
