@@ -98,7 +98,7 @@ function description(tx){
 }
 function impact(s){
  const g=grade(s.value);
- if(!s.value)return '<div class="txn-impact unscored"><strong>'+esc(s.name)+'</strong><b>—</b><small>'+esc(s.reason||'Insufficient data')+'</small></div>';
+ if(!s.value)return '<div class="txn-impact unscored"><strong>'+esc(s.name)+'</strong><small>Not graded</small></div>';
  const n=s.value.avg,positive=n>.15,negative=n<-.15;
  return '<div class="txn-impact '+(positive?'positive':negative?'negative':'neutral')+'">'+
   '<strong>'+esc(s.name)+'</strong><b>'+(n>=0?'+':'')+fmt(n)+' <small>pts/wk</small></b>'+
@@ -113,14 +113,14 @@ function card(tx){
  const relation=tx.sides.length===2&&tx.sides.every(s=>s.value)?
   (tx.sides.every(s=>s.value.avg>=.5)?' · Both improve':' · Not mutually beneficial'):'';
  const actual=tx.actual&&Number.isFinite(tx.actual.actualGain)?
-  ((tx.actual.actualGain>=0?'+':'')+fmt(tx.actual.actualGain)+' actual pts'):'Current-model estimate · Actual impact not measured';
+  ((tx.actual.actualGain>=0?'+':'')+fmt(tx.actual.actualGain)+' actual pts'):'';
  return '<article class="txn-card">'+
   '<div class="txn-top"><span class="txn-type">'+esc(type)+'</span><time>'+esc(tx.date||'Unknown date')+'</time>'+
   '<span class="txn-grade">'+esc(g.grade)+'</span></div>'+
   '<h3>'+esc(title)+relation+'</h3>'+
   '<div class="txn-moves">'+description(tx)+'</div>'+
   '<div class="txn-impacts">'+tx.sides.map(impact).join('')+'</div>'+
-  '<div class="txn-actual">'+esc(actual)+'</div></article>';
+  (actual?'<div class="txn-actual">'+esc(actual)+'</div>':'')+'</article>';
 }
 function update(){
  if(!state)return;
@@ -135,9 +135,17 @@ function update(){
  }
  const team=$('txnTeam')?.value||'all',type=$('txnType')?.value||'all',sort=$('txnSort')?.value||'recent';
  let rows=results.filter(tx=>(team==='all'||tx.sides.some(s=>s.teamId===team))&&(type==='all'||(type==='trade'?tx.isTrade:type==='add'?(tx.type==='add'):tx.type==='drop')));
- const value=x=>x.primary?.value?.avg??-999;
- if(sort==='best')rows.sort((a,b)=>value(b)-value(a));
- if(sort==='worst')rows.sort((a,b)=>value(a)-value(b));
+ const value=x=>x.primary?.value?.avg;
+ // Missing grades are unknown, not negative outcomes: always sort them last.
+ const compare=(a,b,direction)=>{
+  const x=value(a),y=value(b);
+  if(x==null&&y==null)return Number(b.timestamp||0)-Number(a.timestamp||0);
+  if(x==null)return 1;
+  if(y==null)return -1;
+  return direction*(x-y)||Number(b.timestamp||0)-Number(a.timestamp||0);
+ };
+ if(sort==='best')rows.sort((a,b)=>compare(a,b,-1));
+ if(sort==='worst')rows.sort((a,b)=>compare(a,b,1));
  if(sort==='recent')rows.sort((a,b)=>Number(b.timestamp||0)-Number(a.timestamp||0));
  const rated=rows.filter(x=>x.primary?.value).length;
  $('txnStats').textContent=rows.length+' transactions · '+rated+' projected grades';
