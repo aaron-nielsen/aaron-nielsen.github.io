@@ -51,3 +51,9 @@ body[data-league="nebraska"] #tradeCount{display:none}
 #page-trades #tradeCount[hidden]{display:none!important}
 
 #page-trades .trade-preference-footer{justify-content:flex-end;margin-top:5px}
+
+#page-trades .trade-filter-panel{border-bottom:1px solid #e4d5c3}
+#page-trades .trade-filter-panel>summary{cursor:pointer;padding:9px 17px;font:700 12px/1.4 'Source Sans 3',Arial,sans-serif;color:#795e46;list-style:revert}
+#page-trades .trade-filter-panel[open]>summary{border-bottom:1px solid #eee1ce}
+#page-trades .trade-filter-panel .trade-controls{padding-top:10px}
+@media(max-width:650px){#page-trades .trade-filter-panel>summary{padding:9px 13px}}
