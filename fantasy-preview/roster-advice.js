@@ -90,20 +90,7 @@ function renderRecommendations(){
    summaries.push('<div class="decision-row"><span class="decision-position">'+esc(SLOT_NAMES[a.slot])+'</span><span class="decision-main"><strong>Start '+esc(a.player.name)+'</strong><small>'+detail+'</small></span><b>'+fmt(a.points)+' pts</b></div>');
   }
  }else{
-  const reserves=roster.filter(p=>p.slot==='BN'&&!inaccessible(p,w)).map(p=>({p,points:points(p,w)})).filter(x=>x.points!=null).sort((a,b)=>b.points-a.points);
-  let nearest=null;
-  for(const backup of reserves){
-   const eligible=original.filter(p=>SLOTS.some((slots,i)=>slots.includes(backup.p.position)&&slots.includes(p.position)&&SLOT_NAMES[i]!=='FLEX') || ['RB','WR','TE'].includes(p.position)&&['RB','WR','TE'].includes(backup.p.position));
-   for(const p of eligible){
-    const v=points(p,w);
-    if(v!=null&&v>=backup.points){
-     const margin=v-backup.points;
-     if(!nearest||margin<nearest.margin)nearest={starter:p,backup,margin};
-    }
-   }
-  }
-  if(nearest)summaries.push('<div class="decision-row"><span class="decision-position">KEEP</span><span class="decision-main"><strong>'+esc(nearest.starter.name)+'</strong><small>Over '+esc(nearest.backup.p.name)+'</small></span><b>+'+fmt(nearest.margin)+' pts</b></div>');
-  else summaries.push('<div class="decision-row"><span class="decision-position">SET</span><span class="decision-main"><strong>Current starters are the top modeled lineup</strong></span></div>');
+  summaries.push('<div class="decision-row"><span class="decision-position">SET</span><span class="decision-main"><strong>No changes recommended</strong><small>Current starters match the top projected lineup</small></span></div>');
  }
  const flagText=statusFlags.length?'<div class="decision-alert">Check status: '+statusFlags.map(p=>esc(p.name)+' ('+esc(status(p))+')').join(', ')+'</div>':'';
  target.innerHTML=(gain!=null && additions.length?'<div class="decision-result">Optimized lineup <strong>+'+fmt(gain)+' pts</strong></div>':'')+
