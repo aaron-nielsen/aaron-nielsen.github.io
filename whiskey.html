@@ -102,6 +102,8 @@ button,input,select{font:inherit}
 .place-chart .bar-row{grid-template-columns:minmax(100px,150px) 1fr 34px}
 .whiskey-name{color:#f3ebe3;text-decoration:none;cursor:pointer;background:none;border:0;padding:0;font:inherit;text-align:left}
 .whiskey-name:hover{color:var(--green2)}
+.need-more-owned .whiskey-name{font-style:italic}
+.owned-tag{display:inline-block;margin-left:7px;padding:1px 6px;border:1px solid #6a4a31;border-radius:999px;color:var(--amber2);font-size:.68rem;font-style:normal;line-height:1.35;vertical-align:middle;letter-spacing:.02em}
 .filter-link{color:#f3ebe3;text-decoration:none;cursor:pointer;background:none;border:0;padding:0;font:inherit;text-align:left}
 .filter-link:hover{color:var(--green2)}
 
@@ -487,8 +489,10 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
       '</tr></thead><tbody>';
     xs.forEach(function(r){
       var pct=r[pctKey];
-      html+='<tr>'+
-        '<td><button class="whiskey-name" data-name="'+esc(r.name)+'">'+esc(r.name)+'</button></td>'+
+      var ownedNeedMore=tab==="need-more"&&r.owned;
+      html+='<tr'+(ownedNeedMore?' class="need-more-owned"':'')+'>'+
+        '<td><button class="whiskey-name" data-name="'+esc(r.name)+'">'+esc(r.name)+'</button>'+
+        (ownedNeedMore?'<span class="owned-tag">owned</span>':'')+'</td>'+
         '<td><button class="filter-link region-link" data-region="'+esc(r.region)+'">'+esc(r.region)+'</button></td>'+
         '<td>'+styleSubstyleCell(r,false)+'</td>'+
         '<td class="num">'+esc(abvLabel(r))+'</td>'+
@@ -1040,7 +1044,9 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
         whiskeyTable(filtered(rows),"all");
     }else if(activeTab==="need-more"){
       document.getElementById("whiskey-controls").style.display="grid";
-      document.getElementById("need-more").innerHTML=whiskeyTable(filtered(rows.filter(function(r){return r.n<3})),"need-more");
+      document.getElementById("need-more").innerHTML=
+        '<p class="view-note"><em>Italic</em> + <span class="owned-tag">owned</span> means the bottle is currently on hand.</p>'+
+        whiskeyTable(filtered(rows.filter(function(r){return r.n<3})),"need-more");
     }else if(activeTab==="unrated"){
       document.getElementById("whiskey-controls").style.display="grid";
       document.getElementById("unrated").innerHTML=unratedTable(filtered(unratedRows));
