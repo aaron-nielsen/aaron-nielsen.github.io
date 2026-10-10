@@ -252,7 +252,7 @@ function showTrades(){
  const pos=$el('tradePosition')?.value||'offense_no_qb';
  const packageFilter=$el('tradePackageFilter')?.value||'three_each';
  const duration=tradeData.endWeek-start+1;
- const thresholds={three_each:0.40,balanced:0.40,balanced_all:0.20,all:0.15};
+ const thresholds={three_each:0.50,balanced:0.50,balanced_all:0.50,all:0.50};
  const minWeeklyGain=thresholds[packageFilter]??0.40;
  const levels=replacementLevels(start);
  const matches=tradeData.trades.flatMap(t=>{
@@ -261,7 +261,8 @@ function showTrades(){
    const valueCheck=tradeValueBalance(t,start,levels);
    const sameSize=t.youSend.length===t.youReceive.length;
    if(packageFilter==='three_each'&&(t.youSend.length<3||t.youReceive.length<3))return [];
-   if(packageFilter!=='all'&&(!sameSize||!check.ok||!valueCheck.ok||t.requiresRosterAdjustment))return [];
+   // Any unequal package depends on an unmodeled add/drop; exclude it as unverified.
+    if(!sameSize||!check.ok||!valueCheck.ok||t.requiresRosterAdjustment)return [];
    const both=[...t.youSend,...t.youReceive];
    if(pos==='offense_no_qb'&&both.some(p=>p.position==='QB'))return [];
    if(pos!=='offense_no_qb'&&pos!=='all'&&!t.youReceive.some(p=>p.position===pos))return [];
@@ -286,7 +287,7 @@ function showTrades(){
    three_each:'3-for-3 trades',
    balanced:'equal-size trades',
    balanced_all:'all screened equal-size trades',
-   all:'exploratory packages'
+   all:'screened equal-size packages'
  };
  count.textContent=selected.length+' shown of '+matches.length+' '+(displayNames[packageFilter]||'trade scenarios')+' · '+duration+' weeks';
  if(!selected.length){
