@@ -691,3 +691,70 @@ body{font:16px/1.48 'Source Sans 3',Arial,sans-serif;color:var(--text);backgroun
  #page-overview #myLineup .lineup-column-person small{font-size:10px}
  #page-overview #myLineup .lineup-column-person .lineup-pts{font-size:14px}
 }
+
+
+/* Overview: surface a complete roster before secondary forecasts. */
+#page-overview>.section-top{display:flex;align-items:center;gap:12px;justify-content:space-between;margin:8px 0 12px}
+#page-overview>.section-top h1{font:750 27px/1.15 'Source Sans 3',Arial,sans-serif!important;letter-spacing:-.02em!important}
+#page-overview>.section-top .eyebrow{display:none}
+#page-overview>.section-top #sync{font-size:11px}
+#page-overview .overview-top{display:grid;grid-template-columns:minmax(0,1fr);gap:9px}
+#page-overview .overview-top .matchup{background:#f7e8c6!important;border:1px solid #d2bd9e!important;box-shadow:none!important;padding:12px 16px!important;color:#4b3728!important}
+#page-overview .match-compact-heading{font-size:11px!important;margin:0}
+#page-overview .match-compact-scores{padding:5px 0 3px!important}
+#page-overview .match-compact-name{font:650 14px/1.2 'Source Sans 3',Arial,sans-serif!important;color:#4b3728!important}
+#page-overview .match-compact-points{font:750 clamp(24px,3vw,34px)/1.1 'Source Sans 3',Arial,sans-serif!important;color:#503a29!important}
+#page-overview .match-compact-vs{font-size:16px}
+#page-overview .match-compact-footer{font-size:12px!important;padding-top:5px!important;color:#6b5844!important}
+#page-overview .overview-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border:1px solid #dfd2bf;background:#fdf9f2;border-radius:7px;overflow:hidden}
+#page-overview .overview-metrics>div{min-width:0;padding:9px 13px;border-right:1px solid #e9dfd2;display:flex;align-items:baseline;gap:8px}
+#page-overview .overview-metrics>div:last-child{border-right:0}
+#page-overview .overview-metrics small{font:750 10px/1.2 'Source Sans 3',Arial,sans-serif;color:#84705d;letter-spacing:.03em;white-space:nowrap}
+#page-overview .overview-metrics strong{font:750 17px/1.1 'Source Sans 3',Arial,sans-serif;color:#49392c;min-width:0}
+#page-overview .overview-metrics strong span{font:inherit}
+#page-overview .model-offense-strip{padding:9px 13px!important;margin:9px 0 12px!important}
+#page-overview .model-short{display:flex;align-items:baseline;flex-wrap:wrap;gap:6px 16px}
+#page-overview .model-short>strong{font:750 12px/1.3 'Source Sans 3',Arial,sans-serif;color:#6c503b;white-space:nowrap}
+#page-overview .model-short>span{font:500 13px/1.4 'Source Sans 3',Arial,sans-serif;color:#534535}
+#page-overview .model-short b{font-weight:800;color:#406148}
+#page-overview .model-short em{font:750 12px/1.3 'Source Sans 3',Arial,sans-serif;color:#42644a;font-style:normal}
+#page-overview .model-short a{margin-left:auto;font-size:12px;text-decoration:underline;color:#7f5942}
+#page-overview .model-score-details{margin-top:4px!important}
+#page-overview .model-score-details summary{font-size:11px!important}
+#page-overview .overview-roster-panel{margin:10px 0 13px;overflow:hidden}
+#page-overview .overview-roster-panel .panel-header{gap:9px;padding:10px 14px!important}
+#page-overview .overview-roster-panel .panel-title{font-size:19px!important}
+#page-overview .roster-board{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;padding:0}
+#page-overview .roster-board-section{min-width:0;padding:9px 14px 12px}
+#page-overview .roster-board-section+.roster-board-section{border-left:1px solid #e0d2c0}
+#page-overview .roster-board-heading{display:flex;align-items:baseline;justify-content:space-between;gap:9px;color:#503e30;border-bottom:1px solid #d9c6ab;padding:1px 0 8px}
+#page-overview .roster-board-heading strong{font:750 14px/1.2 'Source Sans 3',Arial,sans-serif}
+#page-overview .roster-board-heading small{font:550 11px/1.3 'Source Sans 3',Arial,sans-serif;color:#8b7763}
+#page-overview .roster-board-row{display:grid;grid-template-columns:43px minmax(0,1fr) auto;align-items:center;gap:8px;min-height:44px;border-bottom:1px solid #eee4d7;padding:5px 0}
+#page-overview .roster-board-row:last-child{border-bottom:0}
+#page-overview .roster-board-position{font:750 11px/1.3 'Source Sans 3',Arial,sans-serif;color:#84664f}
+#page-overview .roster-board-player{min-width:0}
+#page-overview .roster-board-player strong{display:flex;align-items:baseline;flex-wrap:wrap;gap:5px;font:700 14px/1.3 'Source Sans 3',Arial,sans-serif;color:#43382e;overflow-wrap:anywhere}
+#page-overview .roster-board-player small{display:block;margin-top:1px;font:450 11px/1.3 'Source Sans 3',Arial,sans-serif;color:#8e7862}
+#page-overview .roster-board-points{text-align:right;white-space:nowrap;font:750 15px/1.15 'Source Sans 3',Arial,sans-serif;font-variant-numeric:tabular-nums;color:#5a4634}
+#page-overview .roster-board-status{font:750 10px/1 'Source Sans 3',Arial,sans-serif;color:#9c633e;border-radius:3px;background:#f4e8d7;padding:2px 4px}
+#page-overview .roster-ir-heading{font:700 11px/1.3 'Source Sans 3',Arial,sans-serif;color:#977b5d;padding:10px 0 3px;margin-top:5px;border-top:1px solid #e1d3c2}
+#page-overview .roster-board-row.is-ir{opacity:.72}
+#page-overview .roster-board-empty{padding:15px 0;font-size:12px;color:#846f5d}
+#page-overview .overview-league-board{margin:14px 0}
+#page-overview .overview-league-board>summary{display:flex;align-items:center;justify-content:space-between;cursor:pointer;list-style:none;padding:12px 15px;font:700 14px/1.4 'Source Sans 3',Arial,sans-serif;color:#4b3b2d}
+#page-overview .overview-league-board>summary::-webkit-details-marker{display:none}
+#page-overview .overview-league-board[open]>summary{border-bottom:1px solid #e5d7c6}
+@media(max-width:650px){
+ #page-overview>.section-top{flex-wrap:wrap;gap:3px 9px}
+ #page-overview>.section-top h1{font-size:24px!important}
+ #page-overview .overview-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}
+ #page-overview .overview-metrics>div:nth-child(2){border-right:0}
+ #page-overview .overview-metrics>div:nth-child(-n+2){border-bottom:1px solid #e9dfd2}
+ #page-overview .roster-board{grid-template-columns:1fr}
+ #page-overview .roster-board-section+.roster-board-section{border-left:0;border-top:1px solid #ded0bb}
+ #page-overview .roster-board-section{padding:9px 12px 12px}
+ #page-overview .roster-board-row{min-height:42px;grid-template-columns:42px minmax(0,1fr) auto}
+ #page-overview .roster-board-player strong{font-size:14px}
+ #page-overview .model-short a{margin-left:0}
+}
