@@ -10,6 +10,7 @@ const RESTRICTED = new Set(['IR','IR-R','O','OUT','CEL','SUSP','PUP','PUP-R','NF
 let selectedWeek = 5;
 let futureById = new Map();
 let selectedTradeFrom = 6;
+let tradeData = null;
 function record(p, week) { return p?.weeks?.find(w => Number(w.week) === Number(week)); }
 function display(w, futureWeek) {
   if (!w) return '—';
@@ -69,7 +70,7 @@ function renderFutureProjections(){
   const scope=$el('projectionOwnership')?.value||'all';
   const mineId='7';
   const list=futureData.players.filter(p=>{
-    if(pos!=='all'&&p.position!==pos)return false;
+    if(pos!=='all'&&(pos==='offense_no_qb'?!['RB','WR','TE'].includes(p.position):p.position!==pos))return false;
     if(scope==='mine'&&String(p.fantasyTeamId)!==mineId)return false;
     if(scope==='available'&&p.ownership!=='available')return false;
     if(scope==='other'&&(p.ownership!=='rostered'||String(p.fantasyTeamId)===mineId))return false;
@@ -100,50 +101,46 @@ function renderMine(){
 }
 const lookup=(id)=>futureById.get(String(id));
 function showTrades(){
-  const area=$el('tradeResults');
-  if(!futureData?.players?.length){area.innerHTML='<p>Future projections are not ready.</p>';return;}
-  const from=Math.max(6,Number($el('tradeFromWeek')?.value||6));
-  const partner=$el('tradePartner')?.value||'all';
-  const rawTeams=rosters.teams;
-  const byTeam=new Map(rawTeams.map(t=>[String(t.id),t.players.map(p=>lookup(p.id)).filter(Boolean)]));
-  const mine=byTeam.get('7')||[];
-  const W=Array.from({length:futureData.endWeek-from+1},(_,i)=>from+i);
-  const evaluate=(players)=>W.reduce((t,w)=>t+eligibleLineup(players,w).total,0);
-  const myBaseline=evaluate(mine);
-  const startTeam=rawTeams.find(t=>String(t.id)==='7');
-  const excludeTrade=p=>p.rosterSlot==='IR'||RESTRICTED.has(String(p.injuryStatus||'').toUpperCase());
-  const mineOffers=mine.filter(p=>SKILL.has(p.position)&&!excludeTrade(p));
-  let proposals=[];
-  for(const t of rawTeams){
-    if(String(t.id)==='7'||(partner!=='all'&&String(t.id)!==partner))continue;
-    const others=byTeam.get(String(t.id))||[];
-    const otherBaseline=evaluate(others);
-    for(const offer of mineOffers){
-      for(const acquire of others){
-        if(!SKILL.has(acquire.position)||excludeTrade(acquire))continue;
-        const nextMine=mine.filter(p=>p.yahooId!==offer.yahooId).concat(acquire);
-        const nextOther=others.filter(p=>p.yahooId!==acquire.yahooId).concat(offer);
-        const gainMine=evaluate(nextMine)-myBaseline;
-        if(gainMine < .15*W.length)continue;
-        const gainOther=evaluate(nextOther)-otherBaseline;
-        if(gainOther < .15*W.length)continue;
-        proposals.push({offer,acquire,team:t.name,gainMine,gainOther,
-                        weeks:W.length,score:Math.min(gainMine,gainOther)+.12*Math.max(gainMine,gainOther)});
-      }
-    }
-  }
-  proposals.sort((a,b)=>b.score-a.score||b.gainMine-a.gainMine);
-  // Diversify counterpart and proposed targets; don't show many variants of identical trade.
-  const chosen=[],used=new Set();
-  for(const proposal of proposals){
-    const k=proposal.offer.yahooId+':'+proposal.acquire.yahooId;
-    if(used.has(k))continue;
-    used.add(k);chosen.push(proposal);
-    if(chosen.length>=8)break;
-  }
-  $el('tradeCount').textContent=proposals.length+' mutually positive 1-for-1 candidates across '+W.length+' projected weeks';
-  if(!chosen.length){area.innerHTML='<div class="no-trades">No one-for-one trades increased both teams’ optimized lineup totals by at least 0.15 points per week under the current model and filters. Larger packages might still work.</div>';return;}
-  area.innerHTML=chosen.map((t,i)=>'<article class="trade-card"><div class="trade-card-top"><span class="trade-rank">'+(i+1).toString().padStart(2,'0')+'</span><span class="trade-partner">With '+clean(t.team)+'</span></div><div class="trade-exchange"><div><small>YOU SEND</small><strong>'+clean(t.offer.name)+'</strong><span>'+clean(t.offer.position)+' · '+clean(t.offer.nflTeam)+'</span></div><span class="trade-arrow">→</span><div><small>YOU RECEIVE</small><strong>'+clean(t.acquire.name)+'</strong><span>'+clean(t.acquire.position)+' · '+clean(t.acquire.nflTeam)+'</span></div></div><div class="trade-impact"><div><small>Your lineup</small><strong>+'+num(t.gainMine/W.length)+'</strong><span>pts/week · +'+num(t.gainMine)+' total</span></div><div><small>Their lineup</small><strong>+'+num(t.gainOther/W.length)+'</strong><span>pts/week · +'+num(t.gainOther)+' total</span></div></div></article>').join('');
+ const area=$el('tradeResults'),count=$el('tradeCount');
+ if(!tradeData?.trades){
+   count.textContent='Multi-player trade search loading…';
+   area.innerHTML='<div class="empty-copy">Multi-player trade estimates are being prepared. No one-for-one rankings are substituted.</div>';
+   return;
+ }
+ const start=Number($el('tradeFromWeek')?.value||6);
+ const partner=$el('tradePartner')?.value||'all';
+ const pos=$el('tradePosition')?.value||'offense_no_qb';
+ const duration=tradeData.endWeek-start+1;
+ const matches=tradeData.trades.flatMap(t=>{
+   if(partner!=='all'&&t.partnerTeamId!==partner)return [];
+   const both=[...t.youSend,...t.youReceive];
+   if(pos==='offense_no_qb'&&both.some(x=>x.position==='QB'))return [];
+   if(pos!=='offense_no_qb'&&pos!=='all'&&!t.youReceive.some(x=>x.position===pos))return [];
+   const games=t.weeklyGains.filter(w=>w.week>=start);
+   const my=games.reduce((s,w)=>s+w.you,0),theirs=games.reduce((s,w)=>s+w.them,0);
+   if(my<.15*duration||theirs<.15*duration)return [];
+   return [{...t,my,theirs,score:Math.min(my,theirs)+.12*Math.max(my,theirs)}];
+ }).sort((a,b)=>b.score-a.score||b.my-a.my);
+ const selected=[],teams=new Map();
+ for(const p of matches){
+   const n=teams.get(p.partnerTeamId)||0;
+   if(n>=3)continue;
+   selected.push(p);teams.set(p.partnerTeamId,n+1);
+   if(selected.length>=10)break;
+ }
+ count.textContent=matches.length+' qualifying multi-player packages · '+duration+' projected weeks';
+ if(!selected.length){
+   area.innerHTML='<div class="no-trades">No modeled multi-player package improves both teams’ starting lineups under these filters. Try another team, position group or evaluation period.</div>';
+   return;
+ }
+ const names=ps=>ps.map(p=>'<span class="trade-package-player">'+clean(p.name)+' <small>'+clean(p.position)+'</small></span>').join('');
+ area.innerHTML=selected.map((t,i)=>{
+   const note=t.requiresRosterAdjustment?'<div class="trade-balance-warning">Unequal player counts: further roster moves may be required by Yahoo.</div>':'';
+   return '<article class="trade-card"><div class="trade-card-top"><span class="trade-rank">'+String(i+1).padStart(2,'0')+'</span><span class="trade-partner">'+clean(t.packageShape)+' · With '+clean(t.partnerTeam)+'</span></div>'+
+    '<div class="trade-exchange"><div><small>YOU SEND</small><div class="trade-package-players">'+names(t.youSend)+'</div></div><span class="trade-arrow">→</span><div><small>YOU RECEIVE</small><div class="trade-package-players">'+names(t.youReceive)+'</div></div></div>'+
+    '<div class="trade-impact"><div><small>Your lineup</small><strong>+'+num(t.my/duration)+'</strong><span>pts/week · +'+num(t.my)+' total</span></div>'+
+    '<div><small>Their lineup</small><strong>+'+num(t.theirs/duration)+'</strong><span>pts/week · +'+num(t.theirs)+' total</span></div></div>'+note+'</article>';
+ }).join('');
 }
 function init(){
   if(!futureData||!futureData.players?.length){
@@ -155,9 +152,21 @@ function init(){
   if(weekSel){weekSel.innerHTML=Array.from({length:futureData.endWeek-futureData.startWeek+1},(_,i)=>'<option value="'+(futureData.startWeek+i)+'">Week '+(futureData.startWeek+i)+'</option>').join('');weekSel.value=String(futureData.startWeek);weekSel.addEventListener('change',()=>{selectedWeek=Number(weekSel.value);renderFutureProjections();renderMine();});}
   const tradeSel=$el('tradeFromWeek');
   if(tradeSel){tradeSel.innerHTML=Array.from({length:futureData.endWeek-5},(_,i)=>'<option value="'+(6+i)+'">Weeks '+(6+i)+'–'+futureData.endWeek+'</option>').join('');tradeSel.addEventListener('change',showTrades);}
+  $el('tradePosition')?.addEventListener('change',showTrades);
   const partner=$el('tradePartner');
   if(partner){partner.innerHTML='<option value="all">All other teams</option>'+rosters.teams.filter(t=>String(t.id)!=='7').sort((a,b)=>a.name.localeCompare(b.name)).map(t=>'<option value="'+clean(t.id)+'">'+clean(t.name)+'</option>').join('');partner.addEventListener('change',showTrades);}
   renderFutureProjections();renderMine();showTrades();
+  fetch('./data/trades.json',{cache:'no-store'}).then(r=>{
+    if(!r.ok)throw Error('Trade dataset unavailable');
+    return r.json();
+  }).then(payload=>{
+    if(!Array.isArray(payload.trades))throw Error('Trade dataset incomplete');
+    tradeData=payload;
+    showTrades();
+  }).catch(()=>{
+    $el('tradeCount').textContent='Trade package search not yet available';
+    $el('tradeResults').innerHTML='<div class="empty-copy">Multi-player trade rankings are being generated. No speculative results are shown.</div>';
+  });
 }
 LAB.init=init;
 LAB.renderProjections=renderFutureProjections;
