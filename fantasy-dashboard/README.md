@@ -14,9 +14,14 @@ Snapshot UTC: 2026-10-10T02:53:22.198Z.
 
 The current data is a snapshot, not a live API integration. Refresh by reading the 14 team rosters from the connected Yahoo/Flaim service and replacing `data/rosters.json`. Do not confuse this league with the separate 10-team Yahoo league.
 
-## Next stage
+## Projection model now included (draft)
 
-Build a projection engine and normalized player-week projection file, then waiver and trade optimizers. Add a secure scheduled Yahoo ingestion mechanism if unattended refresh is required.
+- `model/project.py` implements opportunity-based EWMA plus empirical-Bayes shrinkage and applies this league's saved Yahoo stat scoring.
+- `model/build.py` pulls publicly available nflverse weekly player statistics plus the Yahoo-to-GSIS player ID crosswalk, and writes `data/projections.json` if matching coverage passes safety checks.
+- `model/README.md` explains the assumptions, omissions, data sources, and validation plan.
+- `tests/test_project.py` has synthetic sanity checks. Run: `python -m unittest discover -s tests -v`.
+
+The app now has a **Projections** tab which explicitly indicates the data has not been generated yet. No invented rankings are displayed. These are provisional *conditional-on-active-game* points, not availability-adjusted ROS or weekly schedule projections; they exclude K and DEF. The league's roster snapshot is still manually refreshed. Next, backtest the model, reconcile missing Yahoo IDs, add the 2026 stats feed and fixture/availability logic, and implement transaction optimization.
 
 Never publish OAuth tokens or league credentials into GitHub Pages. Owner names are intentionally omitted.
 
