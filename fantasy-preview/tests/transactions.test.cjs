@@ -42,9 +42,9 @@ for(const {dir,id,label,minimum} of [
  const elapsed=Date.now()-t0;
  const html=node('transactionCards').innerHTML;
  assert.equal((html.match(/class="txn-card"/g)||[]).length,transactions.transactions.length);
- assert.match(html,/Actual gain unverified/);
+ assert.match(html,/Actual impact not measured/);
  assert.ok(html.includes('ROS pts')||html.includes('Not rateable'),'Must show forecast impact or explicit unavailable');
- assert.ok(node('txnCoverage').textContent.includes('current rosters'),'Not claiming at-time projections');
+ assert.ok(node('txnCoverage').textContent.includes('current model/rosters'),'Not claiming at-time projections');
  assert.ok(elapsed<20000,label+' transaction calculations too slow: '+elapsed+'ms');
  if(label==='CSU Stats')assert.ok(html.includes('Breece Hall')&&html.includes('Drake London'),'Missing completed trade');
  node('txnTeam').value=id;node('txnTeam').onchange();
