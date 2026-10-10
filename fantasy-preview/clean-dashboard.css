@@ -170,3 +170,50 @@ body{font:16px/1.48 'Source Sans 3',Arial,sans-serif;color:var(--text);backgroun
  .validation-wrap{padding:15px 13px}
  .validation-table{font-size:12px}
 }
+
+
+/* Trade page: compact packages, no oversized empty panels. */
+.trades-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:14px;align-items:start}
+.trade-card.compact-trade{
+ padding:15px 16px 13px;
+ border:1px solid #ded3c5;
+ background:#fffdf8;
+ border-radius:8px;
+ box-shadow:0 2px 9px rgba(55,41,28,.035);
+ min-width:0;
+}
+.compact-trade .trade-card-top{display:flex;gap:12px;align-items:center;padding-bottom:10px;border-bottom:1px solid #e9e2d7}
+.trade-card-identity{display:flex;align-items:center;gap:10px;min-width:0}
+.trade-card-identity strong{font-size:16px;line-height:1.25;font-weight:750;color:#453c34;overflow-wrap:anywhere}
+.compact-trade .trade-rank{font-size:12px;font-weight:750;color:#94765d;flex:none}
+.trade-package-label{font-size:11px;font-weight:700;white-space:nowrap;border:1px solid #e1d1ba;border-radius:4px;padding:5px 7px;color:#795d43;background:#f7f0e7}
+.compact-trade .trade-exchange{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;align-items:start;padding:12px 0 13px}
+.trade-side{min-width:0}
+.trade-side-heading{font-size:10px;font-weight:800;letter-spacing:.08em;color:#86715c;margin-bottom:7px}
+.trade-person-list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:5px}
+.trade-person{display:flex;align-items:baseline;flex-wrap:wrap;gap:3px 7px;line-height:1.28}
+.trade-person>span:first-child{font-size:13px;font-weight:700;color:#4d443b;overflow-wrap:anywhere}
+.trade-person .trade-pos{font-size:10px;color:#887566;font-weight:750;white-space:nowrap}
+.compact-trade .trade-impact{padding:10px 12px;background:#f5f0e8;border:0;border-radius:5px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.compact-trade .trade-impact>div{display:flex;flex-direction:column;min-width:0}
+.compact-trade .trade-impact>div+div{border-left:1px solid #e2d7c8;padding-left:12px}
+.compact-trade .trade-impact span{font-size:11px;color:#71665c}
+.compact-trade .trade-impact strong{font-size:20px;font-weight:750;color:#476551;font-variant-numeric:tabular-nums;line-height:1.35}
+.compact-trade .trade-impact strong small{font-size:10px;font-weight:650;color:#746b60;display:inline}
+.compact-trade .trade-impact>div>small{font-size:11px;font-weight:500;color:#776d62;letter-spacing:0;line-height:1.35}
+.trade-balance-note{font-size:11px;color:#826a50;border-top:1px solid #ede2d3;margin:9px 0 0;padding-top:9px}
+.trade-controls select{min-width:145px}
+.trade-controls label{font-size:12px}
+.trade-count{flex-basis:100%;margin:0;padding-top:3px}
+@media(max-width:920px){.trades-grid{grid-template-columns:1fr}}
+@media(max-width:600px){
+ .trades-grid{padding:10px;gap:10px}
+ .trade-card.compact-trade{padding:13px}
+ .compact-trade .trade-exchange{grid-template-columns:1fr 1fr;gap:10px}
+ .trade-person>span:first-child{font-size:13px}
+ .trade-card-identity strong{font-size:14px}
+ .compact-trade .trade-impact strong{font-size:18px}
+ .compact-trade .trade-impact{padding:9px}
+ .trade-controls label{gap:6px;flex-wrap:wrap}
+ .trade-controls select{min-width:0;width:100%}
+}
