@@ -364,3 +364,11 @@ body{font:16px/1.48 'Source Sans 3',Arial,sans-serif;color:var(--text);backgroun
  .roster-compare-cell small{font-size:11px}
  .roster-secondary{grid-template-columns:1fr}
 }
+
+
+/* Trade assumptions remain accessible without crowding each result. */
+.trade-ledger .trade-warning{padding:7px 10px;background:#fcf1e3;border:1px solid #dfc9aa;border-radius:5px;color:#745035}
+.trade-ledger .trade-details{border-top:1px solid #ede4d8;margin-top:10px;padding-top:8px;color:#6e6155}
+.trade-ledger .trade-details summary{cursor:pointer;font:700 12px/1.4 'Source Sans 3',Arial,sans-serif;color:#806043}
+.trade-ledger .trade-details p{font:400 12px/1.5 'Source Sans 3',Arial,sans-serif;margin:7px 0 0}
+.trade-ledger .trade-details[open] summary{margin-bottom:6px}
