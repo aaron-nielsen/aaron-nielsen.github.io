@@ -1,0 +1,49 @@
+/* Research-driven return availability for explicitly verified roster cases.
+ * Sources (checked 2026-10-10):
+ * Alec Pierce: https://www.reuters.com/sports/colts-place-wr-alec-pierce-ir-elevate-wr-anthony-gould--flm-2026-09-26/
+ * Josh Jacobs: https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/josh-jacobs-remains-on-commissioners-exempt-list-while-nfl-reviews-his-case
+ * Probabilities BELOW are scenario estimates, not team or league announcements.
+ * Do not generalize a four-week IR clock to an unverified injury.
+ */
+(function(root){
+'use strict';
+const paths={
+ '34008':{name:'Alec Pierce',reason:'Heel injury · injured reserve',earliest:7,
+  probability:{5:0,6:0,7:.35,8:.55,9:.70,10:.80,11:.85,12:.88,13:.90,14:.90,15:.92,16:.92,17:.92}},
+ '31856':{name:'Josh Jacobs',reason:'Commissioner Exempt List · NFL decision pending',earliest:null,
+  probability:{5:0,6:0,7:.05,8:.10,9:.18,10:.27,11:.37,12:.48,13:.60,14:.70,15:.77,16:.82,17:.86}}
+};
+const round=n=>Math.round(n*100)/100;
+function apply({futureData,weekly}){
+ let changed=0;
+ for(const p of futureData?.players||[]){
+  const info=paths[String(p.yahooId)];
+  if(!info||p.name!==info.name)continue;
+  p.returnOutlook={reason:info.reason,earliestWeek:info.earliest,method:'news-informed scenario',asOf:'2026-10-10'};
+  for(const frame of p.weeks||[]){
+   const prob=info.probability[Number(frame.week)];
+   if(prob===undefined)continue;
+   const conditional=frame.activePoints??frame.points;
+   frame.conditionalPoints=Number.isFinite(Number(conditional))?Number(conditional):null;
+   frame.availabilityProbability=prob;
+   if(frame.state==='bye')continue;
+   frame.points=frame.conditionalPoints===null?null:round(frame.conditionalPoints*prob);
+   frame.state=prob===0?'unavailable_reported':'return_uncertain';
+  }
+  changed++;
+ }
+ // Keep the current-week score and future scenarios in agreement.
+ for(const p of weekly?.players||[]){
+  const info=paths[String(p.yahooId)];
+  if(!info||p.name!==info.name)continue;
+  const prob=info.probability[Number(weekly.week)]??0;
+  p.availabilityProbability=prob;
+  if(prob===0){p.weeklyProjectedPoints=0;p.forecastStatus='unavailable_reported';}
+ }
+ return {changed};
+}
+root.DaVinciReturns={apply,paths,ready:(forecast,w,threshold=.55)=>{
+ const frame=forecast?.weeks?.find(g=>Number(g.week)===Number(w));
+ return frame?.availabilityProbability!=null&&frame.availabilityProbability>=threshold&&frame.state!=='bye';
+}};
+})(typeof window!=='undefined'?window:globalThis);
