@@ -20,7 +20,7 @@ const context={document:{getElementById(id){return id==='myLineup'?root:null;}}}
 vm.runInNewContext(script,context,{filename:'overview-roster.js'});
 const read=p=>JSON.parse(fs.readFileSync(path.join(base,p),'utf8'));
 const slots=['QB','RB','RB','WR','WR','TE','W/R/T','K','DEF'];
-const encodedName=p=>encodedName(p).replaceAll("'",'&#39;').replaceAll('"','&quot;');
+const encodedName=p=>p.name.replaceAll('&','&amp;').replaceAll("'",'&#39;').replaceAll('"','&quot;');
 for(const entry of [{folder:'data/',id:'7',label:'CSU Stats'},{folder:'data/nebraska/',id:'6',label:'Nebraska'}]){
  const rosters=read(entry.folder+'rosters.json'),weekly=read(entry.folder+'weekly.json'),future=read(entry.folder+'future.json');
  const team=rosters.teams.find(t=>String(t.id)===entry.id);
