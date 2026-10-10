@@ -83,6 +83,20 @@ function setup(){
  assert.ok(html.includes('Team 6'),'New league transactions must render');
  assert.ok(!html.includes('Team 7'),'Old league transactions must be discarded');
 }
+// Non-finite lineup results must never become graded transaction impacts.
+{
+ const {ctx,element}=setup();
+ const mk=id=>({id,name:id,position:'RB',slot:'BN'});
+ const future={endWeek:5,players:['A','B'].map(id=>({yahooId:id,name:id,position:'RB'}))};
+ ctx.DaVinciTransactions.init({rosters:{teams:[{id:'7',name:'Finite Check',players:[mk('B')]}]},
+  future,week:5,teamId:'7',transactions:{transactions:[{
+   transaction_id:'finite',timestamp:1,date:'2026-10-01',status:'complete',
+   type:'add',team_ids:['7'],players_added:[mk('B')],players_dropped:[mk('A')]
+  }]},optimize:()=>({score:NaN})});
+ ctx.DaVinciTransactions.update();
+ assert.ok(element('transactionCards').innerHTML.includes('Not graded'));
+ assert.ok(!element('transactionCards').innerHTML.includes('NaN'));
+}
 // Real data snapshots: every verified transaction remains visible in CSU and Nebraska.
 require(path.join(base,'special-teams-model.js'));
 const context=load('data/special-teams-context.json');
