@@ -4,93 +4,222 @@
     5,
     17
   ],
-  "method": "Rolling as-of weekly forecast; train on 2024 + 2025 weeks before forecast week.",
-  "target": "Modeled CSU Stats scoring categories only (excluding fumbles, 2PT and other unmodeled stats).",
-  "model": "opportunity-eb-v0.2",
-  "benchmark": "Last three active games' fantasy points from the same nine scoring categories.",
-  "caveats": [
-    "Forecast is conditional on the player recording a stat row that week. Missed games/injury availability are excluded.",
-    "Do not interpret these results as a validated weekly lineup or rest-of-season model.",
-    "Hyperparameters were not tuned on a separate training dataset.",
-    "Duplicate player/week rows are excluded after keeping one observation; multi-team game totals may be incomplete.",
-    "Week 5+ historical validation intentionally excludes 2026 and uses 2025 as holdout."
+  "historicalSeasons": [
+    2022,
+    2023,
+    2024
   ],
-  "duplicatePlayerWeeksSkipped": 0,
-  "totalPlayerWeeks": 4139,
+  "model": "opportunity-eb-v0.3",
+  "candidateHistoryYears": [
+    1,
+    2,
+    3
+  ],
+  "benchmark": "Mean of previous three active games' points on modeled scoring categories.",
+  "target": "Yahoo CSU Stats modeled QB/RB/WR/TE categories (not all Yahoo scoring events).",
+  "comparison": "All methods evaluated on the same 2025 player-weeks; forecasts use no later-week stats.",
   "overall": {
-    "model": {
-      "nPlayerWeeks": 4139,
-      "MAE": 4.223,
-      "RMSE": 6.023,
-      "bias": -0.062
-    },
     "last3": {
-      "nPlayerWeeks": 4139,
-      "MAE": 4.517,
-      "RMSE": 6.633,
-      "bias": 0.056
+      "nPlayerWeeks": 4165,
+      "MAE": 4.5,
+      "RMSE": 6.614,
+      "bias": 0.061
+    },
+    "legacy": {
+      "nPlayerWeeks": 4165,
+      "MAE": 4.221,
+      "RMSE": 6.016,
+      "bias": -0.051
+    },
+    "history_1yr": {
+      "nPlayerWeeks": 4165,
+      "MAE": 4.217,
+      "RMSE": 6.014,
+      "bias": -0.046
+    },
+    "history_2yr": {
+      "nPlayerWeeks": 4165,
+      "MAE": 4.215,
+      "RMSE": 6.018,
+      "bias": -0.052
+    },
+    "history_3yr": {
+      "nPlayerWeeks": 4165,
+      "MAE": 4.217,
+      "RMSE": 6.019,
+      "bias": -0.039
     }
   },
   "byPosition": {
     "QB": {
-      "model": {
-        "nPlayerWeeks": 445,
-        "MAE": 8.417,
-        "RMSE": 10.293,
-        "bias": -0.756
-      },
       "last3": {
-        "nPlayerWeeks": 445,
-        "MAE": 8.83,
-        "RMSE": 11.271,
-        "bias": 0.291
+        "nPlayerWeeks": 448,
+        "MAE": 8.801,
+        "RMSE": 11.237,
+        "bias": 0.318
+      },
+      "legacy": {
+        "nPlayerWeeks": 448,
+        "MAE": 8.387,
+        "RMSE": 10.273,
+        "bias": -0.667
+      },
+      "history_1yr": {
+        "nPlayerWeeks": 448,
+        "MAE": 8.408,
+        "RMSE": 10.278,
+        "bias": -0.703
+      },
+      "history_2yr": {
+        "nPlayerWeeks": 448,
+        "MAE": 8.456,
+        "RMSE": 10.304,
+        "bias": -0.676
+      },
+      "history_3yr": {
+        "nPlayerWeeks": 448,
+        "MAE": 8.455,
+        "RMSE": 10.304,
+        "bias": -0.635
       }
     },
     "RB": {
-      "model": {
-        "nPlayerWeeks": 1082,
-        "MAE": 4.188,
-        "RMSE": 6.084,
-        "bias": -0.395
-      },
       "last3": {
-        "nPlayerWeeks": 1082,
-        "MAE": 4.515,
-        "RMSE": 6.664,
-        "bias": 0.05
+        "nPlayerWeeks": 1089,
+        "MAE": 4.499,
+        "RMSE": 6.646,
+        "bias": 0.061
+      },
+      "legacy": {
+        "nPlayerWeeks": 1089,
+        "MAE": 4.188,
+        "RMSE": 6.074,
+        "bias": -0.383
+      },
+      "history_1yr": {
+        "nPlayerWeeks": 1089,
+        "MAE": 4.178,
+        "RMSE": 6.068,
+        "bias": -0.376
+      },
+      "history_2yr": {
+        "nPlayerWeeks": 1089,
+        "MAE": 4.161,
+        "RMSE": 6.067,
+        "bias": -0.392
+      },
+      "history_3yr": {
+        "nPlayerWeeks": 1089,
+        "MAE": 4.164,
+        "RMSE": 6.069,
+        "bias": -0.381
       }
     },
     "TE": {
-      "model": {
-        "nPlayerWeeks": 886,
-        "MAE": 3.104,
-        "RMSE": 4.523,
-        "bias": -0.078
-      },
       "last3": {
-        "nPlayerWeeks": 886,
-        "MAE": 3.459,
-        "RMSE": 5.129,
-        "bias": -0.066
+        "nPlayerWeeks": 893,
+        "MAE": 3.44,
+        "RMSE": 5.109,
+        "bias": -0.071
+      },
+      "legacy": {
+        "nPlayerWeeks": 893,
+        "MAE": 3.112,
+        "RMSE": 4.536,
+        "bias": -0.074
+      },
+      "history_1yr": {
+        "nPlayerWeeks": 893,
+        "MAE": 3.107,
+        "RMSE": 4.525,
+        "bias": -0.077
+      },
+      "history_2yr": {
+        "nPlayerWeeks": 893,
+        "MAE": 3.103,
+        "RMSE": 4.517,
+        "bias": -0.06
+      },
+      "history_3yr": {
+        "nPlayerWeeks": 893,
+        "MAE": 3.102,
+        "RMSE": 4.515,
+        "bias": -0.057
       }
     },
     "WR": {
-      "model": {
-        "nPlayerWeeks": 1726,
-        "MAE": 3.737,
-        "RMSE": 5.097,
-        "bias": 0.335
-      },
       "last3": {
-        "nPlayerWeeks": 1726,
-        "MAE": 3.95,
-        "RMSE": 5.605,
+        "nPlayerWeeks": 1735,
+        "MAE": 3.936,
+        "RMSE": 5.591,
         "bias": 0.062
+      },
+      "legacy": {
+        "nPlayerWeeks": 1735,
+        "MAE": 3.737,
+        "RMSE": 5.088,
+        "bias": 0.327
+      },
+      "history_1yr": {
+        "nPlayerWeeks": 1735,
+        "MAE": 3.732,
+        "RMSE": 5.088,
+        "bias": 0.347
+      },
+      "history_2yr": {
+        "nPlayerWeeks": 1735,
+        "MAE": 3.726,
+        "RMSE": 5.091,
+        "bias": 0.327
+      },
+      "history_3yr": {
+        "nPlayerWeeks": 1735,
+        "MAE": 3.73,
+        "RMSE": 5.092,
+        "bias": 0.338
       }
     }
   },
-  "generatedAt": "2026-10-10T03:45:40.061607+00:00",
+  "rankedByMAE": [
+    {
+      "name": "history_2yr",
+      "MAE": 4.215,
+      "RMSE": 6.018
+    },
+    {
+      "name": "history_1yr",
+      "MAE": 4.217,
+      "RMSE": 6.014
+    },
+    {
+      "name": "history_3yr",
+      "MAE": 4.217,
+      "RMSE": 6.019
+    },
+    {
+      "name": "legacy",
+      "MAE": 4.221,
+      "RMSE": 6.016
+    },
+    {
+      "name": "last3",
+      "MAE": 4.5,
+      "RMSE": 6.614
+    }
+  ],
+  "totalPlayerWeeks": 4165,
+  "duplicatePlayerWeeksSkipped": 0,
+  "caveats": [
+    "Evaluates only players with statistical game rows; misses and inactives are not forecast.",
+    "Unmodeled points for fumbles, 2-point attempts, return scores and other events omitted.",
+    "Comparing history-window choices on one holdout year is exploratory, NOT independent hyperparameter validation.",
+    "Historical data for 2022\u20132024 is used only when predicting 2025; no 2026 information leaks into evaluation.",
+    "The live 2026 model uses four prior seasons; 2025 comparisons have only three historical seasons."
+  ],
+  "generatedAt": "2026-10-10T03:46:12.472517+00:00",
   "sources": [
+    "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2022.csv",
+    "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2023.csv",
     "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2024.csv",
     "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2025.csv"
   ]
