@@ -1,68 +1,193 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#171c29"><title>CSU Stats Fantasy Dashboard</title>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b111d">
+<title>CSU Stats | Fantasy Fieldhouse</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{color-scheme:dark;--bg:#0f1420;--panel:#1b2231;--panel2:#222b3c;--ink:#f1efe9;--muted:#acb4c4;--line:#354054;--accent:#ffbf69;--cyan:#78d5cb}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.4}
-main{max-width:1260px;margin:0 auto;padding:26px 20px 80px}.mast{background:linear-gradient(135deg,#243145,#151d2e);border:1px solid #42516b;border-radius:20px;padding:24px;margin-bottom:20px}
-.eyebrow{color:var(--accent);font-size:.75rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}h1{font-size:clamp(1.8rem,5vw,2.85rem);line-height:1.1;margin:10px 0}p{margin:8px 0;color:var(--muted)}
-.topline{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;flex-wrap:wrap}.stamp{font-size:.78rem;color:var(--muted);margin-top:6px}
-.statline{display:flex;gap:18px;flex-wrap:wrap;margin-top:24px}.metric{padding-right:18px;border-right:1px solid var(--line)}.metric:last-child{border:0}.metric strong{display:block;font-size:1.55rem}.metric span{color:var(--muted);font-size:.79rem}
-.tabs{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:18px}.tab{background:var(--panel);color:var(--muted);border:1px solid var(--line);border-radius:10px;padding:11px 16px;font-size:.93rem;font-weight:700;cursor:pointer}.tab.active{background:#574026;border-color:var(--accent);color:#fff}
-.toolbar{background:var(--panel);padding:16px;border:1px solid var(--line);border-radius:14px;display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:18px}
-input,select{border:1px solid #57647b;background:#101828;color:var(--ink);padding:11px 12px;border-radius:8px;font:inherit;min-width:0}input{flex:2;min-width:210px}select{flex:1;min-width:150px}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.team{background:var(--panel);border:1px solid var(--line);border-radius:15px;overflow:hidden}.team.mine{border-color:var(--accent)}.team-head{padding:16px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--panel2)}.team-head h2{font-size:1.06rem;margin:0}.team-head small{color:var(--muted)}
-.pill{padding:3px 8px;font-weight:750;font-size:.7rem;border-radius:100px;background:#3b3543;color:#fcd49c;white-space:nowrap}
-.player-groups{padding:2px 16px 16px}.group-title{font-size:.67rem;color:var(--muted);text-transform:uppercase;font-weight:800;letter-spacing:.11em;margin:15px 0 6px;border-bottom:1px solid var(--line);padding-bottom:5px}
-.player{display:grid;grid-template-columns:44px 1fr auto;gap:10px;align-items:center;padding:6px 0;font-size:.87rem}.pos{background:#323b4f;color:#d6dee9;border-radius:5px;padding:4px;font-size:.7rem;text-align:center;font-weight:800}.name{font-weight:600}.sub{font-size:.72rem;color:var(--muted);margin-top:2px}.slot{font-size:.72rem;color:var(--muted);text-align:right}.injury{color:#ffd18b;font-weight:750;margin-left:6px}.empty{padding:30px;text-align:center;color:var(--muted)}
-.finder{background:var(--panel);border-radius:15px;border:1px solid var(--line);overflow:hidden}.result{padding:14px 17px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:64px minmax(0,1fr) minmax(125px,1fr);gap:12px;align-items:center}.result:last-child{border:0}.result strong{display:block}.result small{color:var(--muted)}
-.note{font-size:.8rem;color:var(--muted);padding-top:12px}.hidden{display:none!important}
-@media(max-width:800px){.grid{grid-template-columns:1fr}main{padding:15px 12px 60px}.result{grid-template-columns:45px minmax(0,1fr);gap:10px}.result .ownership{grid-column:2}.toolbar input{flex-basis:100%}.mast{padding:20px}}
-</style></head>
-<body><main>
-<header class="mast"><div class="topline"><div><div class="eyebrow">Fantasy football · Yahoo · 2026</div><h1>CSU Stats <span style="color:var(--accent)">League Map</span></h1><p>A searchable, league-wide roster snapshot. Built to become a projection and transaction dashboard.</p></div><div class="stamp" id="stamp">Loading league snapshot…</div></div><div class="statline"><div class="metric"><strong id="teamsCount">—</strong><span>Teams</span></div><div class="metric"><strong id="playersCount">—</strong><span>Rostered players</span></div><div class="metric"><strong id="irCount">—</strong><span>Players in IR slots</span></div></div></header>
-<nav class="tabs" aria-label="Dashboard views"><button type="button" class="tab active" data-tab="rosters">Team rosters</button><button type="button" class="tab" data-tab="find">Player finder</button><button type="button" class="tab" data-tab="available">Available players</button><button type="button" class="tab" data-tab="projections">Projections</button></nav>
-<div class="toolbar"><input id="search" type="search" placeholder="Search player, NFL club, or fantasy team" aria-label="Search players and teams"><select id="position" aria-label="Filter by position"><option value="">All positions</option><option>QB</option><option>RB</option><option>WR</option><option>TE</option><option>K</option><option>DEF</option></select><select id="slot" aria-label="Filter by roster slot"><option value="">All roster slots</option><option value="starter">Starters</option><option value="BN">Bench</option><option value="IR">Injured reserve</option></select></div>
-<section id="rosters" class="grid" aria-live="polite"></section><section id="find" class="finder hidden" aria-live="polite"></section><section id="available" class="finder hidden" aria-live="polite"><div class="empty">Loading available players…</div></section><section id="projections" class="finder hidden" aria-live="polite"><div class="empty">Projection feed has not been generated yet. The new projection engine is in <code>model/</code>.</div></section>
-<div class="note">Read-only snapshot. Team/slot/injury labels reflect Yahoo at the capture time; they are not predictions. Unrostered players and trade values are not yet included. Team-owner names are intentionally excluded.</div>
-</main><script>
+:root{--base:#0b111d;--deep:#101a28;--card:#182334;--card2:#1c293b;--border:#2e3e50;--text:#f3f1e9;--muted:#a7b4c4;--cream:#e8e9e4;--orange:#f5b867;--teal:#93e2d5;--blue:#80acd4;--pink:#dc9ab3;--shadow:0 16px 50px rgba(0,0,0,.14)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--text);background:radial-gradient(ellipse 850px 530px at 110% -10%,#233551 0%,transparent 75%),radial-gradient(ellipse 850px 440px at -15% 7%,#1b2d3a 0%,transparent 75%),var(--base);font-family:'DM Sans',system-ui,sans-serif;font-size:14px}
+button,input,select{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}a:hover{color:var(--orange)}
+.shell{max-width:1260px;padding:0 30px 80px;margin:auto}
+.topbar{height:91px;display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid rgba(255,255,255,.11)}
+.brand{display:flex;align-items:center;gap:13px}.brandmark{width:48px;height:48px;border:1px solid #bb9157;transform:rotate(-7deg);background:linear-gradient(140deg,#f4c27c,#e28b51);border-radius:12px;display:grid;place-items:center;color:#14202e;font:900 32px 'Barlow Condensed',sans-serif;box-shadow:0 5px 22px #edb37022}
+.brandmark span{transform:rotate(7deg)}.brandname{font:800 23px/1 'Barlow Condensed',sans-serif;letter-spacing:.045em;text-transform:uppercase}.brandname span{color:var(--orange)}.brandtag{font-size:10px;color:var(--muted);letter-spacing:.19em;text-transform:uppercase;margin-top:5px}
+.top-right{display:flex;align-items:center;gap:11px}.top-link{border:1px solid #4b5c70;border-radius:100px;color:#c9d7e6;padding:10px 15px;font-size:12px;font-weight:700}.weekstamp{background:var(--orange);color:#112031;border-radius:9px;padding:7px 15px;text-align:center}.weekstamp b{font:800 24px/.94 'Barlow Condensed',sans-serif;display:block}.weekstamp small{font-size:9px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.nav{display:flex;gap:8px;padding:22px 0 26px;overflow-x:auto;scrollbar-width:none}.nav::-webkit-scrollbar{display:none}.nav-btn{border:1px solid transparent;background:transparent;color:#9aaabc;border-radius:8px;padding:11px 17px;white-space:nowrap;font-weight:800;font-size:12px;letter-spacing:.035em}.nav-btn.active{background:#293243;border-color:#4d4f51;color:var(--cream);box-shadow:inset 0 -2px var(--orange)}.nav-btn:hover{color:var(--text);background:#1e2c3a}
+.page[hidden]{display:none!important}
+.eyebrow{font-size:11px;color:var(--orange);letter-spacing:.20em;text-transform:uppercase;font-weight:800}.section-top{display:flex;align-items:end;justify-content:space-between;gap:18px;margin:12px 0 20px}.section-top h1,.section-top h2{font:800 clamp(28px,4vw,42px)/1 'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.02em;margin:7px 0 2px}.section-top p{margin:7px 0 0;color:var(--muted);line-height:1.5}.quiet{color:var(--muted)}.tiny{font-size:11px}.mono{font-variant-numeric:tabular-nums}
+.homesplit{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(270px,.9fr);gap:18px}
+.matchup{position:relative;overflow:hidden;padding:26px 29px 24px;border-radius:18px;background:linear-gradient(125deg,#29354a 0%,#172638 66%,#142131 100%);border:1px solid #455161;box-shadow:var(--shadow);min-height:360px}
+.matchup:before{content:"";position:absolute;inset:0;background-image:radial-gradient(#acc0cd2e 1px,transparent 1px);background-size:19px 19px;mask-image:linear-gradient(to left,#000,transparent 80%);pointer-events:none}
+.matchup:after{content:"05";position:absolute;right:-20px;top:-40px;font:900 270px/1 'Barlow Condensed',sans-serif;color:#dce4ee08;pointer-events:none}
+.matchup>*{position:relative;z-index:1}.match-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:25px}.chip{border:1px solid #53677b;color:#c6d0df;border-radius:30px;padding:7px 11px;font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase}.chip.sunny{border-color:#aa875c;color:#f2c689}
+.matchup-vs{display:grid;grid-template-columns:minmax(0,1fr) 44px minmax(0,1fr);align-items:start;gap:11px}.versus{padding-top:44px;text-align:center;color:#647b90;font:800 24px 'Barlow Condensed',sans-serif}.team-side{min-width:0}.team-side.right{text-align:right}.team-code{font:800 clamp(20px,2.5vw,30px)/1.06 'Barlow Condensed',sans-serif;letter-spacing:.01em;min-height:56px;text-transform:uppercase;max-width:240px}.team-side.right .team-code{margin-left:auto}.your-label{color:var(--teal);font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin:6px 0 12px}.opponent-label{color:#97aec6}
+.projected-number{font:800 clamp(44px,6vw,80px)/.85 'Barlow Condensed',sans-serif;letter-spacing:-.01em}.team-side.right .projected-number{color:#d1dbe4}.projected-number.you{color:var(--orange)}.point-label{font-size:11px;color:#b0bdca;margin-top:12px}.oddsbar{display:flex;overflow:hidden;height:9px;border-radius:50px;background:#53697b;margin-top:29px}.oddsbar .yours{background:linear-gradient(90deg,#d98d4b,#f5bd70)}.oddsbar .theirs{background:#85a4b3}.scorefoot{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:15px;flex-wrap:wrap;color:#b4c4d2;font-size:11px}.scorefoot strong{color:var(--cream)}.lead{color:var(--teal);font-weight:800}
+.record-card{border-radius:18px;background:linear-gradient(170deg,#243349,#192434);border:1px solid #405063;overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow)}.record-upper{padding:24px 25px 20px;flex:1}.record-fig{font:900 clamp(65px,8vw,108px)/1 'Barlow Condensed',sans-serif;letter-spacing:-.03em;margin:19px 0 0}.record-fig span{color:#869aae}.record-desc{color:var(--muted);font-size:12px}.record-stats{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--border)}.record-stats div{padding:15px 19px}.record-stats div+div{border-left:1px solid var(--border)}.record-stats strong{font:800 26px 'Barlow Condensed',sans-serif;display:block}.record-stats small{font-size:10px;color:var(--muted);letter-spacing:.04em}
+.columns{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(320px,.9fr);gap:18px;margin-top:18px}.panel{background:linear-gradient(170deg,#1a2737,#142130);border-radius:16px;border:1px solid var(--border);overflow:hidden;box-shadow:var(--shadow)}
+.panel-header{padding:21px 23px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid #2c3949}.panel-title{font:800 23px/1 'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.035em}.panel-sub{font-size:11px;color:var(--muted);margin-top:5px}.sub-link{font-size:11px;font-weight:800;color:var(--orange);border:0;background:transparent;padding:9px}
+.roster-mini,.scoreboard-list{padding:4px 20px 14px}.mini-row{display:flex;align-items:center;gap:11px;padding:10px 2px;border-bottom:1px solid #2b3848}.mini-row:last-child{border:0}.position{border-radius:6px;background:#34465c;color:#bfd9fa;min-width:43px;padding:6px 4px;text-align:center;letter-spacing:.01em;font-size:10px;font-weight:800;display:inline-grid;place-items:center}.position.RB{background:#3b3c40;color:#f8cd84}.position.WR{background:#2a4d4c;color:#9fe7d9}.position.TE{background:#48384b;color:#e9b8da}.position.QB{background:#334564;color:#b9d5fd}.position.K,.position.DEF{background:#45463d;color:#e9e5b2}.position.small{min-width:37px}
+.row-name{font-size:12px;font-weight:800}.row-detail{color:#9eb0c0;font-size:10px;margin-top:3px}.row-slot{font:800 10px 'DM Sans',sans-serif;color:#aabaca;margin-left:auto}.status{font-size:9px;color:#ffc99d;border:1px solid #b18350;border-radius:4px;padding:2px 5px;font-weight:800;margin-left:6px}.scoreboard-item{display:grid;grid-template-columns:minmax(0,1fr) 64px 16px 64px minmax(0,1fr);align-items:center;gap:8px;padding:13px 9px;border-bottom:1px solid #2c3c4f}.scoreboard-item:last-child{border:0}.scoreboard-item.mine{background:#e8b46610;border-radius:7px}.scoreboard-item .side{font-size:11px;font-weight:700;min-width:0}.scoreboard-item .side.right{text-align:right}.scoreboard-item .pts{font:700 20px 'Barlow Condensed',sans-serif;text-align:center;white-space:nowrap}.scoreboard-item .dash{color:#5f7180;text-align:center;font-weight:800;font-size:10px}.board-note{font-size:10px;color:var(--muted);padding:0 23px 17px}
+.select{border:1px solid #526176;border-radius:9px;padding:12px 14px;background:#243448;color:var(--text);min-width:0;max-width:100%}.select:focus,input:focus,button:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+.team-overview{display:flex;align-items:center;gap:14px;background:linear-gradient(95deg,#243649,#1d2938);border:1px solid #4a5a6c;border-radius:14px;padding:20px;margin-bottom:17px;flex-wrap:wrap}.big-initial{width:62px;height:62px;border-radius:14px;display:grid;place-items:center;background:#384151;color:var(--orange);font:900 36px 'Barlow Condensed',sans-serif}.team-overview h2{margin:2px 0 5px;font:800 29px/1 'Barlow Condensed',sans-serif}.team-overview .meta{margin-left:auto;display:flex;gap:22px}.team-overview .meta b{font:800 27px 'Barlow Condensed';display:block}.team-overview .meta span{font-size:10px;color:var(--muted)}
+.groups{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:17px}.group-panel{padding-bottom:10px}.group-label{padding:15px 19px 9px;display:flex;align-items:center;justify-content:space-between;color:#d7dde5;text-transform:uppercase;font:800 18px 'Barlow Condensed',sans-serif;letter-spacing:.04em}.group-label span{font:600 10px 'DM Sans',sans-serif;letter-spacing:0;color:var(--muted)}.player-line{display:flex;gap:12px;align-items:center;padding:11px 18px;border-top:1px solid #293847}.player-info{min-width:0;flex:1}.player-info b{font-size:12px;display:block}.player-info span{color:var(--muted);font-size:10px}.slot-badge{color:#91a9be;font-size:10px;font-weight:800;white-space:nowrap}
+.right-groups{display:flex;flex-direction:column;gap:17px}.empty-copy{padding:30px;color:var(--muted);text-align:center;font-size:12px}
+.finder-surface{background:linear-gradient(150deg,#1b2b3e,#152333);border-radius:15px;padding:22px;border:1px solid var(--border);margin-bottom:17px}.finder-surface h2{font:800 27px 'Barlow Condensed';margin:2px 0 14px}.finder-controls{display:grid;grid-template-columns:minmax(0,2fr) minmax(125px,.65fr) minmax(160px,.8fr);gap:11px}.finder-controls input{background:#0f1a28;border:1px solid #536376;border-radius:9px;color:var(--text);padding:14px 15px;width:100%;outline-offset:3px}.finder-controls .select{background:#0f1a28}.finder-summary{display:flex;justify-content:space-between;gap:10px;align-items:center;margin:0 0 14px;color:var(--muted);font-size:11px}.finder-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.result{display:flex;align-items:center;gap:13px;padding:14px 16px;background:linear-gradient(130deg,#202f42,#1a2635);border:1px solid #304256;border-radius:10px;min-width:0}.result .grow{min-width:0;flex:1}.result .grow strong{font-size:12px;display:block}.result .grow small{font-size:10px;color:var(--muted);display:block;margin-top:5px}.availability{color:var(--teal);font-size:10px;font-weight:800;text-align:right;white-space:nowrap}.availability.rostered{color:#b3bcd0}.availability.mine{color:var(--orange)}.market{color:#8b9dac;font-size:9px;margin-top:4px;text-align:right}.showmore{display:block;margin:21px auto 0;padding:12px 23px;color:var(--orange);border:1px solid #b78850;background:#342b25;border-radius:9px;font-size:11px;font-weight:800}.note{background:#d8b06c0e;border:1px solid #906d472e;border-radius:10px;color:#c8c4be;padding:13px 16px;font-size:11px;line-height:1.6;margin-top:16px}
+.projection-list{padding:6px 18px 18px}.forecast-row{display:grid;grid-template-columns:26px minmax(0,1fr) 70px;gap:12px;padding:10px 6px;align-items:center;border-bottom:1px solid var(--border)}.forecast-row:last-child{border:0}.forecast-row.mine{background:#deb56914;border-radius:7px}.forecast-row .rank{font:800 18px 'Barlow Condensed';color:#7f93a7;text-align:right}.forecast-name{font-size:11px;font-weight:800;margin-bottom:7px}.forecast-track{height:6px;background:#2a3b4e;border-radius:9px;overflow:hidden}.forecast-fill{height:100%;background:linear-gradient(90deg,#658b9a,#8fd7cb);border-radius:9px}.forecast-row.mine .forecast-fill{background:linear-gradient(90deg,#c98a49,#f7c87c)}.forecast-value{font:800 21px 'Barlow Condensed';text-align:right}.projection-split{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:18px}.model-status{padding:30px}.model-status .headline{font:800 27px 'Barlow Condensed';margin:7px 0}.model-status p{color:var(--muted);font-size:12px;line-height:1.8}.subsection-title{font:800 20px 'Barlow Condensed';margin:15px 0 10px}.footer{border-top:1px solid #36475b;margin-top:40px;padding-top:18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;color:#74899b;font-size:10px}.loading{padding:30px;color:var(--muted)}
+@media(max-width:900px){.homesplit,.columns,.projection-split{grid-template-columns:1fr}.groups{grid-template-columns:1fr}.record-card{display:grid;grid-template-columns:1fr 1fr}.record-stats{border-top:0;border-left:1px solid var(--border)}.record-stats div{display:flex;flex-direction:column;justify-content:center}.record-fig{font-size:78px}.finder-results{grid-template-columns:1fr}}
+@media(max-width:600px){.shell{padding:0 14px 55px}.topbar{height:80px}.brandmark{height:43px;width:43px;font-size:29px}.brandname{font-size:20px}.brandtag{font-size:9px}.top-link{display:none}.weekstamp{padding:7px 11px}.nav{gap:3px;padding:16px 0 23px}.nav-btn{font-size:10px;padding:10px 13px}.matchup{padding:19px 17px 22px;min-height:0}.matchup-vs{grid-template-columns:minmax(0,1fr) 27px minmax(0,1fr);gap:5px}.team-code{font-size:23px;min-height:49px}.versus{padding-top:36px;font-size:18px}.projected-number{font-size:51px}.record-card{grid-template-columns:1fr}.record-stats{border-top:1px solid var(--border);border-left:0}.record-fig{font-size:65px}.record-upper{padding:21px}.record-stats div{padding:12px 19px}.record-stats strong{font-size:23px}.panel-header{padding:16px}.roster-mini,.scoreboard-list{padding:4px 12px 12px}.section-top{display:block}.section-top .select{margin-top:14px;width:100%}.finder-surface{padding:16px}.finder-controls{grid-template-columns:1fr 1fr}.finder-controls input{grid-column:1/-1}.finder-controls select{width:100%;min-width:0;padding:12px 8px;font-size:11px}.finder-summary{line-height:1.6}.result{padding:12px 10px}.team-overview .meta{margin-left:0;width:100%;justify-content:space-between}.scoreboard-item{grid-template-columns:minmax(0,1fr) 46px 9px 46px minmax(0,1fr);gap:5px;padding:12px 4px}.scoreboard-item .pts{font-size:17px}.scoreboard-item .side{font-size:9px}.match-top{margin-bottom:21px}.scorefoot{font-size:10px}.projection-list{padding:6px 10px 12px}}
+@media(prefers-reduced-motion:no-preference){.page{animation:appear .25s ease}@keyframes appear{from{opacity:.6;transform:translateY(5px)}to{opacity:1;transform:none}}}
+</style>
+</head><body>
+<div class="shell">
+<header class="topbar"><div class="brand"><div class="brandmark"><span>F</span></div><div><div class="brandname">FANTASY <span>FIELDHOUSE</span></div><div class="brandtag">CSU STATS · THE LEAGUE LAB</div></div></div><div class="top-right"><a class="top-link" href="https://football.fantasysports.yahoo.com/f1/258793" target="_blank" rel="noopener">OPEN YAHOO ↗</a><div class="weekstamp"><b id="weekHead">05</b><small>Week / 2026</small></div></div></header>
+<nav class="nav" aria-label="Dashboard navigation">
+<button class="nav-btn active" type="button" data-page="overview">◈ &nbsp;OVERVIEW</button>
+<button class="nav-btn" type="button" data-page="rosters">▤ &nbsp;ROSTERS</button>
+<button class="nav-btn" type="button" data-page="finder">⌕ &nbsp;PLAYER FINDER</button>
+<button class="nav-btn" type="button" data-page="projections">↗ &nbsp;PROJECTIONS</button>
+</nav>
+<main id="app">
+<section id="page-overview" class="page">
+<div class="section-top"><div><div class="eyebrow">2026 Season · League Intelligence</div><h1>The command center</h1><p>Your matchup, your squad, and the week around the league.</p></div><div class="quiet tiny" id="sync">Loading Yahoo snapshot…</div></div>
+<div class="homesplit">
+<div class="matchup" id="hero"><div class="loading">Loading this week's matchup…</div></div>
+<div class="record-card"><div class="record-upper"><div class="eyebrow">YOUR SEASON AT A GLANCE</div><div class="record-fig mono" id="wl">—</div><div class="record-desc" id="rankDesc">League standings</div></div><div class="record-stats"><div><strong class="mono" id="pointsFor">—</strong><small>POINTS SCORED</small></div><div><strong id="waiverRank" class="mono">—</strong><small>WAIVER PRIORITY</small></div></div></div>
+</div>
+<div class="columns">
+<div class="panel"><div class="panel-header"><div><div class="panel-title">Your starting lineup</div><div class="panel-sub">Current Yahoo lineup · not an optimized recommendation</div></div><button class="sub-link" type="button" data-jump="rosters">FULL ROSTER ↗</button></div><div class="roster-mini" id="myLineup"></div></div>
+<div class="panel"><div class="panel-header"><div><div class="panel-title">Around the league</div><div class="panel-sub">Current-week Yahoo projected final totals</div></div><span class="chip" id="boardWeek">WEEK 5</span></div><div class="scoreboard-list" id="leagueBoard"></div><div class="board-note">Forecasts can change as games are played. Snapshot, not a live scoreboard.</div></div>
+</div>
+</section>
+<section id="page-rosters" class="page" hidden>
+<div class="section-top"><div><div class="eyebrow">Team depth charts</div><h2>Roster Room</h2><p>Start with Ten Feline Overlords, or switch to any of the other 13 teams.</p></div><select class="select" id="teamChoice" aria-label="Select fantasy team"></select></div>
+<div id="selectedTeam"></div><div class="groups"><div class="panel group-panel" id="startingGroup"></div><div class="right-groups"><div class="panel group-panel" id="benchGroup"></div><div class="panel group-panel" id="irGroup"></div></div></div>
+</section>
+<section id="page-finder" class="page" hidden>
+<div class="section-top"><div><div class="eyebrow">Every team · Available player pool</div><h2>Player Finder</h2><p>Search rostered players and league-available players together.</p></div></div>
+<div class="finder-surface"><div class="eyebrow">SCOUT THE FIELD</div><h2>Who has your next difference-maker?</h2><div class="finder-controls"><input id="finderQuery" type="search" placeholder="Search player, NFL team, fantasy team, or Yahoo ID…" aria-label="Find fantasy players"><select class="select" id="finderPos" aria-label="Player position"><option value="all">All positions</option><option>QB</option><option>RB</option><option>WR</option><option>TE</option><option>K</option><option value="DEF">DEF</option></select><select class="select" id="finderStatus" aria-label="Ownership status"><option value="all">Everyone</option><option value="available">Available / waivers*</option><option value="rostered">Rostered</option><option value="mine">My players</option></select></div></div>
+<div class="finder-summary"><span id="finderCount">Loading players…</span><span>League-available players are shown alongside owned players</span></div>
+<div class="finder-results" id="finderResults"></div><button class="showmore" id="morePlayers" type="button" hidden>SHOW MORE PLAYERS ↓</button>
+<div class="note"><strong>*Waiver caveat:</strong> Yahoo confirms which players are available to acquire in your league, but the connected data does not distinguish unrestricted free agents from players still on waivers. Check Yahoo for claim eligibility and processing times. Available-player data is a sampled pool (up to 100 per position), not every NFL player.</div>
+</section>
+<section id="page-projections" class="page" hidden>
+<div class="section-top"><div><div class="eyebrow">Forecast desk</div><h2>Projection Lab</h2><p>Real Yahoo weekly forecasts on the left; our statistical model remains independently labeled.</p></div></div>
+<div class="projection-split">
+<div class="panel"><div class="panel-header"><div><div class="panel-title">Yahoo forecast power ranking</div><div class="panel-sub">Projected final points for all 14 teams, current week</div></div><span class="chip" id="projectionWeek">WEEK 5</span></div><div class="projection-list" id="forecastList"></div></div>
+<div class="panel"><div class="panel-header"><div><div class="panel-title">Our statistical model</div><div class="panel-sub">Independent opportunity and efficiency projections</div></div><div class="model-status" id="modelStatus"><div class="eyebrow">MODEL V0.1</div><div class="headline">Awaiting validation</div><p>The model code exists, but player forecasts should not be shown as if they were validated or run successfully.</p></div></div>
+</div>
+<div class="note">Yahoo's team forecasts reflect its own projection system. Our independent model will later produce week-specific player estimates, availability-adjusted rest-of-season values, and transaction impact. Those outputs are not represented by Yahoo's team forecasts.</div>
+</section>
+</main>
+<footer class="footer"><div>FANTASY FIELDHOUSE / CSU STATS · 2026</div><div>READ-ONLY PROTOTYPE · POWERED BY YAHOO LEAGUE DATA</div></footer>
+</div>
+<script>
+'use strict';
 const $=s=>document.querySelector(s);
-let data=null,projections=null,available=null,tab="rosters";
-function esc(x){return String(x??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
-const group=p=>p.slot==="IR"?"IR":p.slot==="BN"?"Bench":"Starters";
-function playerRow(p){return '<div class="player"><span class="pos">'+esc(p.position)+'</span><div><div class="name">'+esc(p.name)+(p.status?'<span class="injury">'+esc(p.status)+'</span>':'')+'</div><div class="sub">'+esc(p.nflTeam||"FA")+' · Yahoo '+esc(p.id)+'</div></div><span class="slot">'+esc(p.slot)+'</span></div>';}
-function render(){
- if(!data)return;
- const q=$("#search").value.trim().toLowerCase(),position=$("#position").value,slot=$("#slot").value;
- const filtered=data.teams.map(t=>({...t,visible:t.players.filter(p=>(!position||p.position===position)&&(!slot||(slot==="starter"?!["BN","IR"].includes(p.slot):p.slot===slot))&&(!q||[p.name,p.nflTeam,t.name,p.id].some(v=>String(v||"").toLowerCase().includes(q))))})).filter(t=>t.visible.length);
- $("#rosters").innerHTML=filtered.length?filtered.map(t=>{
-  const sections=["Starters","Bench","IR"].map(g=>{const pp=t.visible.filter(p=>group(p)===g);return pp.length?'<div class="group-title">'+g+' · '+pp.length+'</div>'+pp.map(playerRow).join(""):"";}).join("");
-  return '<article class="team '+(t.id==="7"?"mine":"")+'"><div class="team-head"><h2>'+esc(t.name)+'</h2>'+(t.id==="7"?'<span class="pill">YOUR TEAM</span>':'<small>'+t.players.length+' players</small>')+'</div><div class="player-groups">'+sections+'</div></article>';
- }).join(""):'<div class="empty">No matching rostered players.</div>';
- const hits=filtered.flatMap(t=>t.visible.map(p=>({...p,fantasyTeam:t.name,isMine:t.id==="7"}))).sort((a,b)=>a.name.localeCompare(b.name));
- $("#find").innerHTML=hits.length?hits.map(p=>'<div class="result"><span class="pos">'+esc(p.position)+'</span><div><strong>'+esc(p.name)+(p.status?'<span class="injury">'+esc(p.status)+'</span>':'')+'</strong><small>'+esc(p.nflTeam||"FA")+' · Yahoo '+esc(p.id)+'</small></div><div class="ownership"><strong>'+esc(p.fantasyTeam)+'</strong><small>'+esc(p.slot)+(p.isMine?" · Your roster":"")+'</small></div></div>').join(""):'<div class="empty">No matching players.</div>';
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const number=n=>n==null?'—':Number(n).toFixed(1);
+let rosters=null,available=null,week=null,model=null,selectedTeam='7',finderVisible=36;
+const TEAM_ID='7';
+function team(id){return rosters.teams.find(t=>t.id===String(id));}
+function standing(id){return week.standings.find(s=>s.teamId===String(id));}
+function position(p){return '<span class="position '+esc(p)+'">'+esc(p)+'</span>';}
+function status(p){return p.status?'<span class="status">'+esc(p.status)+'</span>':'';}
+function percent(v){return Number.isFinite(Number(v))?Math.round(Number(v))+'%':'—';}
+function row(p){return '<div class="player-line">'+position(p.position)+'<div class="player-info"><b>'+esc(p.name)+status(p)+'</b><span>'+esc(p.nflTeam||'NFL free agent')+'</span></div><span class="slot-badge">'+esc(p.slot)+'</span></div>';}
+function group(id,players,label){$('#'+id).innerHTML='<div class="group-label">'+label+' <span>'+players.length+' PLAYERS</span></div>'+(players.length?players.map(row).join(''):'<div class="empty-copy">No players in this group</div>');}
+function matchup(){return week.matchups.find(m=>m.home.id===TEAM_ID||m.away.id===TEAM_ID);}
+function initOverview(){
+ const m=matchup(),you=m.home.id===TEAM_ID?m.home:m.away,them=m.home.id===TEAM_ID?m.away:m.home;
+ const projY=you.projectedPoints,projT=them.projectedPoints,den=(projY||0)+(projT||0);
+ const share=den?100*projY/den:50,delta=(projY!=null&&projT!=null)?projY-projT:null;
+ const difference=delta==null?'Projection unavailable':(delta>=0?'You are projected ahead by ':'You trail by ')+Math.abs(delta).toFixed(2)+' pts';
+ $('#hero').innerHTML='<div class="match-top"><span class="eyebrow">THE WEEKLY MATCHUP</span><span class="chip sunny">YAHOO FORECAST</span></div>'+
+ '<div class="matchup-vs"><div class="team-side"><div class="team-code">'+esc(you.name)+'</div><div class="your-label">YOUR TEAM</div><div class="projected-number you mono">'+number(projY)+'</div><div class="point-label">Projected final · '+number(you.points)+' scored</div></div><div class="versus">VS</div>'+
+ '<div class="team-side right"><div class="team-code">'+esc(them.name)+'</div><div class="your-label opponent-label">OPPONENT</div><div class="projected-number mono">'+number(projT)+'</div><div class="point-label">Projected final · '+number(them.points)+' scored</div></div></div>'+
+ '<div class="oddsbar" role="img" aria-label="Share of combined projected points: your team '+share.toFixed(1)+' percent"><div class="yours" style="width:'+share.toFixed(2)+'%"></div><div class="theirs" style="flex:1"></div></div><div class="scorefoot"><span>WEEK '+esc(week.week)+' · CURRENT SCORE '+number(you.points)+' – '+number(them.points)+'</span><span class="lead">'+esc(difference)+'</span></div>';
+ const st=standing(TEAM_ID);$('#wl').innerHTML=esc(st.wins)+'<span>–</span>'+esc(st.losses);$('#rankDesc').textContent='#'+st.rank+' of '+rosters.teams.length+' in league standings';
+ $('#pointsFor').textContent=number(st.pointsFor);$('#waiverRank').textContent=st.waiverPriority==null?'—':'#'+st.waiverPriority;
+ const starters=team(TEAM_ID).players.filter(p=>p.slot!=='BN'&&p.slot!=='IR');
+ $('#myLineup').innerHTML=starters.map(p=>'<div class="mini-row">'+position(p.position)+'<div><div class="row-name">'+esc(p.name)+status(p)+'</div><div class="row-detail">'+esc(p.nflTeam)+' · '+esc(p.slot)+'</div></div><span class="row-slot">STARTER</span></div>').join('');
+ $('#leagueBoard').innerHTML=week.matchups.map(m=>'<div class="scoreboard-item'+(m.home.id===TEAM_ID||m.away.id===TEAM_ID?' mine':'')+'"><div class="side">'+esc(m.home.name)+'</div><div class="pts mono">'+number(m.home.projectedPoints)+'</div><div class="dash">–</div><div class="pts mono">'+number(m.away.projectedPoints)+'</div><div class="side right">'+esc(m.away.name)+'</div></div>').join('');
+ $('#weekHead').textContent=String(week.week).padStart(2,'0');$('#boardWeek').textContent='WEEK '+week.week;$('#projectionWeek').textContent='WEEK '+week.week;
+ $('#sync').textContent='Yahoo snapshot · '+new Date(week.retrievedAt).toLocaleString(undefined,{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'});
 }
-function renderAvailable(){
- const area=$("#available");
- if(!available){area.innerHTML='<div class="empty">Available-player data is not loaded.</div>';return;}
- const q=$("#search").value.trim().toLowerCase(),position=$("#position").value,slot=$("#slot").value;
- const filtered=available.players.filter(p=>(!position||p.position===position)&&(!q||[p.name,p.nflTeam,p.position,p.id].some(v=>String(v||"").toLowerCase().includes(q)))).sort((a,b)=>(b.yahooWideRosteredPercent??-1)-(a.yahooWideRosteredPercent??-1)||a.name.localeCompare(b.name));
- const intro='<div style="padding:16px;border-bottom:1px solid var(--line)"><strong>Available in CSU Stats · '+available.players.length+' players sampled</strong><div class="sub">Top 100 per position (where available); sorted by Yahoo-wide rostered percentage, NOT model value or waiver priority. Availability is a snapshot, not a guarantee of immediate pickup.</div></div>';
- if(slot){area.innerHTML=intro+'<div class="empty">Clear the roster-slot filter to see available players; unrostered players do not have roster slots.</div>';return;}
- area.innerHTML=intro+(filtered.length?filtered.map(p=>'<div class="result" style="grid-template-columns:44px minmax(0,1fr) auto"><span class="pos">'+esc(p.position)+'</span><div><strong>'+esc(p.name)+'</strong><small>'+esc(p.nflTeam||"No NFL team")+' · Yahoo '+esc(p.id)+'</small></div><div style="text-align:right"><strong>'+ (p.yahooWideRosteredPercent==null?'—':Number(p.yahooWideRosteredPercent).toFixed(0)+'%') +'</strong><small>Yahoo-wide</small></div></div>').join(""):'<div class="empty">No available players match the filters.</div>');
+function initRosters(){
+ const choice=$('#teamChoice');
+ const others=rosters.teams.filter(t=>t.id!==TEAM_ID).sort((a,b)=>a.name.localeCompare(b.name));
+ choice.innerHTML='<option value="'+TEAM_ID+'">★ My team · '+esc(team(TEAM_ID).name)+'</option>'+others.map(t=>'<option value="'+esc(t.id)+'">'+esc(t.name)+'</option>').join('');
+ choice.value=selectedTeam;
+ choice.addEventListener('change',()=>{selectedTeam=choice.value;renderRoster();});
+ renderRoster();
 }
-function renderProjections(){
- const area=$("#projections");
- if(!projections){
-   area.innerHTML='<div class="empty">Projection numbers are not published yet. The model must first ingest 2026 nflverse data and pass validation checks. No rankings are being fabricated.</div>'; return;
+function renderRoster(){
+ const t=team(selectedTeam),s=standing(selectedTeam);
+ const badge=t.id===TEAM_ID?'YOUR TEAM':'LEAGUE TEAM';
+ $('#selectedTeam').innerHTML='<div class="team-overview"><div class="big-initial">'+esc(t.name.charAt(0).toUpperCase())+'</div><div><div class="eyebrow">'+badge+'</div><h2>'+esc(t.name)+'</h2><span class="quiet tiny">'+t.players.length+' players on Yahoo roster</span></div><div class="meta"><div><b>'+s.wins+'–'+s.losses+'</b><span>RECORD</span></div><div><b>#'+s.rank+'</b><span>LEAGUE RANK</span></div><div><b>'+number(s.pointsFor)+'</b><span>POINTS FOR</span></div></div></div>';
+ const starters=t.players.filter(p=>p.slot!=='BN'&&p.slot!=='IR'),bench=t.players.filter(p=>p.slot==='BN'),ir=t.players.filter(p=>p.slot==='IR');
+ group('startingGroup',starters,'Starters');group('benchGroup',bench,'Bench');group('irGroup',ir,'Injured reserve');
+}
+function allPlayers(){
+ const owned=rosters.teams.flatMap(t=>t.players.map(p=>({...p,owned:true,fantasyTeam:t.name,fantasyTeamId:t.id})));
+ const seen=new Set(owned.map(p=>p.id));
+ const open=available.players.filter(p=>!seen.has(p.id)).map(p=>({...p,owned:false,fantasyTeam:'Available in CSU Stats',fantasyTeamId:null}));
+ return owned.concat(open);
+}
+let players=[];
+function renderFinder(){
+ const q=$('#finderQuery').value.toLowerCase().trim(),pos=$('#finderPos').value,scope=$('#finderStatus').value;
+ const results=players.filter(p=>{
+   if(pos!=='all'&&p.position!==pos)return false;
+   if(scope==='available'&&p.owned)return false;
+   if(scope==='rostered'&&!p.owned)return false;
+   if(scope==='mine'&&p.fantasyTeamId!==TEAM_ID)return false;
+   return !q||[p.name,p.nflTeam,p.fantasyTeam,p.id].some(v=>String(v||'').toLowerCase().includes(q));
+ }).sort((a,b)=>{
+   if(a.owned!==b.owned)return a.owned?1:-1;
+   if(!a.owned)return (b.yahooWideRosteredPercent??-1)-(a.yahooWideRosteredPercent??-1)||a.name.localeCompare(b.name);
+   return a.name.localeCompare(b.name);
+ });
+ $('#finderCount').textContent=results.length.toLocaleString()+' matching players · '+rosters.teams.reduce((n,t)=>n+t.players.length,0)+' rostered · '+available.players.length+' available sampled';
+ $('#finderResults').innerHTML=results.slice(0,finderVisible).map(p=>'<div class="result">'+position(p.position)+'<div class="grow"><strong>'+esc(p.name)+status(p)+'</strong><small>'+esc(p.nflTeam||'No NFL club')+' · Yahoo #'+esc(p.id)+'</small></div><div><div class="availability '+(p.owned?(p.fantasyTeamId===TEAM_ID?'mine':'rostered'):'')+'">'+(p.owned?esc(p.fantasyTeam):'AVAILABLE')+'</div>'+(p.owned?'<div class="market">'+esc(p.slot)+'</div>':'<div class="market">Yahoo-wide rostered: '+percent(p.yahooWideRosteredPercent)+'</div>')+'</div></div>').join('')||'<div class="empty-copy">No players match that search.</div>';
+ $('#morePlayers').hidden=results.length<=finderVisible;
+}
+function initFinder(){
+ players=allPlayers();
+ for(const id of ['finderQuery','finderPos','finderStatus'])$('#'+id).addEventListener(id==='finderQuery'?'input':'change',()=>{finderVisible=36;renderFinder();});
+ $('#morePlayers').addEventListener('click',()=>{finderVisible+=48;renderFinder();});
+ renderFinder();
+}
+function renderProjection(){
+ const ranking=week.matchups.flatMap(m=>[m.home,m.away]).sort((a,b)=>(b.projectedPoints??-1)-(a.projectedPoints??-1));
+ const max=Math.max(1,...ranking.map(t=>t.projectedPoints||0));
+ $('#forecastList').innerHTML=ranking.map((t,i)=>'<div class="forecast-row'+(t.id===TEAM_ID?' mine':'')+'"><div class="rank">'+(i+1)+'</div><div><div class="forecast-name">'+esc(t.name)+(t.id===TEAM_ID?' ★':'')+'</div><div class="forecast-track"><div class="forecast-fill" style="width:'+Math.max(0,Math.min(100,(t.projectedPoints||0)/max*100)).toFixed(1)+'%"></div></div></div><div class="forecast-value">'+number(t.projectedPoints)+'</div></div>').join('');
+ if(model&&Array.isArray(model.players)&&model.players.length){
+   const list=model.players.slice().sort((a,b)=>b.conditionalPointsPerGame-a.conditionalPointsPerGame).slice(0,10);
+   $('#modelStatus').innerHTML='<div class="eyebrow">EXPERIMENTAL · UNVALIDATED</div><div class="headline">Per-active-game player estimates</div><p>2026 data through Week '+esc(model.statsThroughWeek||'?')+'. These are not injury-adjusted or week-specific predictions, and must not be used for automatic roster decisions yet.</p>'+list.map(p=>'<div class="mini-row">'+position(p.position)+'<div><div class="row-name">'+esc(p.name)+'</div><div class="row-detail">'+esc(p.fantasyTeam)+'</div></div><div class="forecast-value">'+number(p.conditionalPointsPerGame)+'</div></div>').join('');
+ }else{
+   $('#modelStatus').innerHTML='<div class="eyebrow">OPPORTUNITY × EFFICIENCY · VERSION 0.1</div><div class="headline">Model under construction</div><p>Our model forecasts targets, carries and passes, then applies shrunk efficiency estimates and your league scoring. The code is available, but live player forecasts have not passed validation.</p><p><strong style="color:var(--orange)">Next:</strong> run data ingestion and historical backtesting; then add week-level availability, opponent effects and lineup optimization.</p>';
  }
- const q=$("#search").value.trim().toLowerCase(),position=$("#position").value,slot=$("#slot").value;
- const filtered=projections.players.filter(p=>(!position||p.position===position)&&(!slot||(slot==="starter"?!["BN","IR"].includes(p.rosterSlot):p.rosterSlot===slot))&&(!q||[p.name,p.nflTeam,p.fantasyTeam,p.yahooId].some(v=>String(v||"").toLowerCase().includes(q)))).sort((a,b)=>b.conditionalPointsPerGame-a.conditionalPointsPerGame);
- const caption='<div style="padding:16px;border-bottom:1px solid var(--line)"><strong>Per-active-game projections · provisional model</strong><div class="sub">2026 stats through Week '+esc(projections.statsThroughWeek||"?")+' · not injury, schedule, or bye-adjusted · excludes K / DEF</div></div>';
- area.innerHTML=caption+(filtered.length?filtered.map(p=>'<div class="result" style="grid-template-columns:44px minmax(0,1fr) 95px"><span class="pos">'+esc(p.position)+'</span><div><strong>'+esc(p.name)+(p.injuryStatus?'<span class="injury">'+esc(p.injuryStatus)+'</span>':'')+'</strong><small>'+esc(p.fantasyTeam)+' · '+esc(p.nflTeam)+' · '+esc(p.sampleGames2026)+' games sampled</small><div class="sub">Carries '+esc(p.stats.carries)+' · Targets '+esc(p.stats.targets)+' · Pass att '+esc(p.stats.passAttempts)+'</div></div><div style="text-align:right"><strong style="color:var(--accent)">'+Number(p.conditionalPointsPerGame).toFixed(1)+'</strong><small>Pts / game</small></div></div>').join(""):'<div class="empty">No matching projected players.</div>');
 }
-for(const b of document.querySelectorAll("[data-tab]"))b.addEventListener("click",()=>{tab=b.dataset.tab;for(const x of document.querySelectorAll("[data-tab]"))x.classList.toggle("active",x.dataset.tab===tab);$("#rosters").classList.toggle("hidden",tab!=="rosters");$("#find").classList.toggle("hidden",tab!=="find");$("#available").classList.toggle("hidden",tab!=="available");$("#projections").classList.toggle("hidden",tab!=="projections");});
-for(const id of ["search","position","slot"])$("#"+id).addEventListener(id==="search"?"input":"change",()=>{render();renderAvailable();renderProjections();});
-fetch("./data/rosters.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("HTTP "+r.status);return r.json()}).then(d=>{data=d;data.teams.sort((a,b)=>(a.id==="7"?-1:0)-(b.id==="7"?-1:0)||a.name.localeCompare(b.name));$("#teamsCount").textContent=data.teams.length;$("#playersCount").textContent=data.teams.reduce((s,t)=>s+t.players.length,0);$("#irCount").textContent=data.teams.reduce((s,t)=>s+t.players.filter(p=>p.slot==="IR").length,0);$("#stamp").textContent="Snapshot: "+new Date(data.retrievedAt).toLocaleString(undefined,{dateStyle:"medium",timeStyle:"short"});render();}).catch(e=>{$("#stamp").textContent="Unable to load roster data";$("#rosters").innerHTML='<div class="empty">Serve this directory over HTTP to load data/rosters.json. '+esc(e.message)+'</div>';});
-fetch("./data/projections.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("Not yet published");return r.json();}).then(d=>{if(Array.isArray(d.players))projections=d;renderProjections();}).catch(()=>{renderProjections();});
-fetch("./data/available.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("Unavailable");return r.json()}).then(d=>{if(Array.isArray(d.players))available=d;renderAvailable()}).catch(()=>renderAvailable());
+function showPage(page){
+ document.querySelectorAll('.page').forEach(x=>x.hidden=x.id!=='page-'+page);
+ document.querySelectorAll('.nav-btn').forEach(x=>{const on=x.dataset.page===page;x.classList.toggle('active',on);x.setAttribute('aria-current',on?'page':'false');});
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+document.querySelectorAll('.nav-btn').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
+document.querySelectorAll('[data-jump]').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.jump)));
+async function get(path){const r=await fetch('./data/'+path+'.json',{cache:'no-store'});if(!r.ok)throw Error('Data file '+path+' returned HTTP '+r.status);return r.json();}
+(async()=>{
+ try{
+  [rosters,available,week,model]=await Promise.all([get('rosters'),get('available'),get('week'),get('projections').catch(()=>null)]);
+  if(!Array.isArray(rosters.teams)||!Array.isArray(available.players)||!Array.isArray(week.matchups)||!Array.isArray(week.standings)||!team(TEAM_ID)||!matchup())throw Error('League data incomplete or mismatched');
+  if(rosters.leagueId!==week.leagueId||available.leagueId!==rosters.leagueId)throw Error('League identity mismatch');
+  initOverview();initRosters();initFinder();renderProjection();
+ }catch(e){
+  $('#hero').innerHTML='<div class="loading"><strong>Dashboard data could not be loaded.</strong><p>'+esc(e.message)+'</p><p>Check the published JSON files or reload this page.</p></div>';
+  $('#sync').textContent='Data load failed';
+ }
+})();
 </script></body></html>
