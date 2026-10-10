@@ -45,19 +45,21 @@ function kicker(team,opp,game,scoring,model){
  const pats=lim(avg(model.get(team,"rzTd"),model.get(opp,"tdAllowed"))*.965,.5,4.3);
  // Historical long-range attempts are unavailable; these are intentionally
  // league-level bucket priors rather than player-specific kicking accuracy.
- const shares=[.04,.12,.22,.37,.25],conversion=[.98,.97,.94,.84,.69],mid=[17,25,35,45,54],fgIds=[19,20,21,22,23],missIds=[24,25,26,27,30];
+ const shares=[.04,.12,.22,.37,.25],conversion=[.98,.97,.94,.84,.69],mid=[17,25,35,45,54],fgIds=[19,20,21,22,23],missIds=[24,25,26,27,28];
  const outdoor=!/closed|dome|retractable.*closed/i.test(String(game.roof||"outdoors"));
  const wind=game.wind;
  const windPenalty=outdoor&&wind!==null&&wind!==undefined&&Number(wind)>=15?lim((Number(wind)-12)*.006,0,.09):0;
  const items=[];let pts=0,fgm=0,misses=0;
  for(let i=0;i<5;i++){
   const attempts=kickAttempts*shares[i],made=attempts*lim(conversion[i]-windPenalty,0,1),miss=attempts-made;
-  const makeRate=rules[String(fgIds[i])]!==undefined?val(rules[String(fgIds[i])]):val(rules["84"])*mid[i];
+  const makeRate=val(rules[String(fgIds[i])])+val(rules["84"])*mid[i];
   const penalty=val(rules[String(missIds[i])]);
   const gained=made*makeRate+miss*penalty;pts+=gained;fgm+=made;misses+=miss;
   items.push({label:"FG "+["0–19","20–29","30–39","40–49","50+"][i]+" yd",stat:round(made),attempts:round(attempts),points:round(gained)});
  }
  const xp=val(rules["29"])*pats;pts+=xp;items.push({label:"PAT made",stat:round(pats),points:round(xp)});
+ const xpMiss=(pats/.965)*.035;const missXP=val(rules["30"])*xpMiss;pts+=missXP;
+ if(missXP)items.push({label:"PAT missed",stat:round(xpMiss),points:round(missXP)});
  return {points:round(pts),components:items,stats:{fgAttempts:round(kickAttempts),fgMade:round(fgm),fgMisses:round(misses),patMade:round(pats)},method:"Team RZ FG/PAT opportunity + opponent drives; league distance/make-rate priors",conditions:{roof:game.roof||"unknown",windMph:wind,weatherApplied:windPenalty>0}};
 }
 function defense(team,opp,game,scoring,model,opponentQB){
