@@ -474,3 +474,57 @@ body{font:16px/1.48 'Source Sans 3',Arial,sans-serif;color:var(--text);backgroun
 .special-validation-grid small{display:block;font-size:12px;line-height:1.5;color:#786b5d}
 .special-validation .special-validation-warning{border-top:1px solid #e3d4c1;padding-top:9px;margin:4px 0 0}
 @media(max-width:600px){.special-validation{margin:0 10px 12px;padding:11px}.special-validation-grid{gap:10px}.special-validation-grid strong{font-size:21px}}
+
+
+/* Focused editorial cleanup: October 2026 */
+/* Headings do the work; timestamp remains in the league picker. */
+.page .section-top{margin-bottom:13px!important;padding-bottom:0!important;gap:10px}
+.page .section-top .eyebrow{display:none!important}
+#sync{display:none!important}
+.page .section-top h1,.page .section-top h2{margin-top:0!important;margin-bottom:0!important}
+.visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+#page-overview .homesplit{gap:12px}
+#page-overview .panel-header,#page-projections .panel-header,#page-trades .panel-header{padding:12px 16px!important;min-height:0}
+#page-overview .panel-title,#page-projections .panel-title,#page-trades .panel-title{font:700 18px/1.3 'Source Sans 3',Arial,sans-serif!important;color:#493a2e}
+#page-projections .projection-split{gap:12px}
+#page-overview .model-offense-strip{padding:12px 15px!important;margin-top:10px}
+#page-overview .model-offense-strip .model-strip-label{margin-bottom:6px}
+#page-overview .model-offense-strip .model-compare{gap:7px 20px;line-height:1.35}
+#page-overview .model-offense-strip .model-compare>span{flex-wrap:wrap;gap:4px 8px}
+#page-overview .model-offense-strip .model-strip-note{display:block;font-size:13px;line-height:1.45;margin-top:7px}
+#page-overview .offense-outlook{padding:12px 15px;margin:10px 0 13px}
+#page-overview .outlook-week-grid{margin:9px 0 6px;padding:8px 0}
+#page-overview .waiver-panel,#page-overview .recommendations-panel{margin-top:12px;margin-bottom:12px}
+#page-overview .special-pickup-results{margin-top:3px}
+#page-overview .special-pickup-results:empty{display:none}
+#page-overview .special-pickup-heading{font-size:13px;margin-top:5px}
+#page-overview .special-pickup-row{padding:7px 0}
+#page-finder .finder-summary{padding-top:8px;padding-bottom:8px}
+#page-rosters .roster-compare{margin-top:10px}
+/* Plain, collapsible notes replace full paragraphs competing with the numbers. */
+.quiet-details{margin:10px 0;padding:0;font:400 13px/1.55 'Source Sans 3',Arial,sans-serif;color:#756656}
+.quiet-details summary{cursor:pointer;width:max-content;max-width:100%;font:650 13px/1.4 'Source Sans 3',Arial,sans-serif;color:#7a6048;padding:6px 2px;list-style:revert}
+.quiet-details summary:hover{text-decoration:underline}
+.quiet-details[open]{padding-bottom:5px}
+.quiet-details p{margin:7px 0 6px;color:#67594c;font-size:13px;line-height:1.6;max-width:85ch}
+.quiet-details.panel-disclosure{padding:7px 15px 9px;margin:0;border-top:1px solid #e7daca}
+.quiet-details.overview-method{margin-top:8px}
+.model-score-details{border-top:1px solid #e5d9c6;margin-top:10px;padding-top:1px}
+.model-score-details .model-breakout{display:flex;gap:12px 18px;flex-wrap:wrap;color:#665547}
+.model-score-details .model-breakout span{white-space:nowrap}
+.model-score-details .model-breakout b{font-weight:700;color:#5d4836}
+#page-trades .trade-controls{border-top:0}
+#page-trades .trade-count{font-size:13px}
+#page-projections .forecast-context{margin-top:0}
+#page-projections .special-validation p.special-validation-warning{font-size:13px}
+@media(max-width:650px){
+ .page .section-top{margin-bottom:10px!important}
+ #page-overview .model-offense-strip{padding:11px 12px!important}
+ #page-overview .outlook-head strong{font-size:16px}
+ #page-overview .outlook-totals b{font-size:15px}
+ #page-overview .special-pickup-results{margin:4px 12px 9px}
+ #page-overview .waiver-panel .panel-header{gap:8px}
+ #page-overview .model-offense-strip .model-compare{gap:5px 13px;font-size:13px}
+ .model-score-details .model-breakout{gap:4px 12px}
+ .quiet-details.panel-disclosure{padding:7px 12px 9px}
+}
