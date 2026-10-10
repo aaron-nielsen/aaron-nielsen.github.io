@@ -5,7 +5,7 @@
 (function(root){
 'use strict';
 const finite=x=>typeof x==='number'&&Number.isFinite(x);
-const validDate=x=>typeof x==='string'&&/(Z|[+-]\\d{2}:\\d{2})$/.test(x)&&Number.isFinite(Date.parse(x));
+const validDate=x=>typeof x==='string'&&/(Z|[+-]\d{2}:\d{2})$/.test(x)&&Number.isFinite(Date.parse(x));
 function summarize(rows,field){
  const valid=rows.filter(r=>finite(r[field])&&finite(r.actual));
  if(!valid.length)return {n:0,mae:null,bias:null,rmse:null};
