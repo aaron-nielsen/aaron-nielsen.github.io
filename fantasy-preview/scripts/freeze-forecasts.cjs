@@ -13,6 +13,11 @@ if(!source||!Number.isInteger(week)||!output){
 if(fs.existsSync(output)){console.error('Refusing to overwrite frozen snapshot: '+output);process.exit(2);}
 const data=JSON.parse(fs.readFileSync(source,'utf8'));
 const predictedAt=new Date().toISOString();
+if(!Number.isInteger(data.season)||!Array.isArray(data.players)||!Number.isFinite(Date.parse(data.generatedAt))){
+ throw Error('Invalid source forecast metadata; refusing to freeze');
+}
+if(Date.parse(data.generatedAt)>Date.parse(predictedAt))throw Error('Source forecast timestamp is in the future');
+if(week<Number(data.startWeek)||week>Number(data.endWeek))throw Error('Requested week outside forecast coverage');
 const records=(data.players||[]).flatMap(p=>{
  const w=(p.weeks||[]).find(x=>Number(x.week)===week);
  if(!w||typeof w.points!=='number'||!Number.isFinite(w.points))return [];
@@ -20,6 +25,7 @@ const records=(data.players||[]).flatMap(p=>{
   name:p.name,predictedAt,daVinci:w.points,yahoo:null,actual:null,kickoffAt:null,
   forecastState:w.state||null}];
 });
+if(!records.length)throw Error('No valid forecasts for requested week; refusing empty snapshot');
 fs.mkdirSync(path.dirname(output),{recursive:true});
 fs.writeFileSync(output,JSON.stringify({generatedAt:predictedAt,sourceGeneratedAt:data.generatedAt,
  modelVersion:data.modelVersion,season:data.season,week,records},null,2)+'\n',{flag:'wx'});
