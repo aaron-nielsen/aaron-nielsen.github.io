@@ -19,7 +19,9 @@ async function render(league){
    '<tr><th scope="row">'+esc(position==='all'?'All positions':position)+'</th>'+
    '<td>'+v.daVinci.n+'</td><td>'+fmt(v.daVinci.mae)+'</td><td>'+fmt(v.daVinci.bias)+'</td>'+
    '<td>'+v.paired.n+'</td><td>'+fmt(v.paired.daVinci.mae)+'</td><td>'+fmt(v.paired.yahoo.mae)+'</td><td>'+(v.winRate==null?'—':(100*v.winRate).toFixed(1)+'%')+'</td></tr>').join('');
-  node.innerHTML='<p>'+result.n+' verified player-weeks · '+result.excluded.notPregame+' post-kickoff records excluded</p>'+
+  const pairedN=result.byPosition.all?.paired.n||0;
+  const caveat=pairedN<30?'<p class="quiet tiny">Small comparison sample ('+pairedN+' paired player-weeks). Treat differences as preliminary.</p>':'';
+  node.innerHTML='<p>'+result.n+' verified player-weeks · '+result.excluded.notPregame+' post-kickoff records excluded</p>'+caveat+
    '<div style="overflow-x:auto"><table class="table"><thead><tr><th>Position</th><th>n</th><th>Da Vinci MAE</th><th>Bias</th><th>Paired n</th><th>Da Vinci paired MAE</th><th>Yahoo paired MAE</th><th>Da Vinci wins</th></tr></thead><tbody>'+rows+'</tbody></table></div>'+
    '<p class="quiet tiny">Lower MAE is better. Positive bias means overprediction. Yahoo comparisons use only matched player-weeks. Wins exclude ties.</p>';
  }catch(e){
