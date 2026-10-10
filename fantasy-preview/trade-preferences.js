@@ -7,6 +7,7 @@ const BLOCK=new Set(['IR','IR-R','NA','N/A','PUP','PUP-R','NFI','NFI-R','CEL','S
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const $=id=>document.getElementById(id);
 const fmt=v=>Number(v).toFixed(1);
+const MIN_ROS_GAIN_PER_WEEK=.5; // For EACH fantasy manager, not just the requester.
 const id=p=>String(p.id||p.yahooId);
 let state=null, selectedOut=new Set(),selectedIn=new Set(),nextJob=0, oldFallback=null;
 const status=p=>String(p.status||p.injuryStatus||'').toUpperCase();
@@ -131,20 +132,25 @@ function evaluate(){
   peers:new Map(state.rosters.teams.filter(t=>otherIds.has(t.id)).map(t=>[t.id,weeks.map(w=>state.optimize(t.players,w))]))
  };
  if(baseline.you.some(x=>!x))return [];
+ // A proposed trade must make BOTH nine-position projected lineups better
+ // over the entire selected remainder of the season. Small noisy gains do not count.
  return candidates.map(c=>evaluateOffer(c,mine.players,baseline,weeks)).filter(Boolean)
- .filter(t=>t.avgYou>0.15)
+ .filter(t=>t.avgYou>=MIN_ROS_GAIN_PER_WEEK&&t.avgThem>=MIN_ROS_GAIN_PER_WEEK)
  .sort((a,b)=>{
-  const as=a.avgYou+Math.min(1.5,a.avgThem)*1.25-(a.avgThem<0?Math.abs(a.avgThem)*1.4:0)-a.gap*2;
-  const bs=b.avgYou+Math.min(1.5,b.avgThem)*1.25-(b.avgThem<0?Math.abs(b.avgThem)*1.4:0)-b.gap*2;
+  // Prioritize balance: maximizing the smaller team's benefit is a better
+  // starting point for a mutually acceptable offer than maximizing just ours.
+  const as=Math.min(a.avgYou,a.avgThem)*3+(a.avgYou+a.avgThem)*.20-a.gap*1.2;
+  const bs=Math.min(b.avgYou,b.avgThem)*3+(b.avgYou+b.avgThem)*.20-b.gap*1.2;
   return bs-as;
  });
 }
 function resultHTML(t){
  const formatList=p=>p.map(x=>'<span>'+esc(x.name)+' <small>'+esc(x.position)+'</small></span>').join('');
- const viability=t.avgThem>=0?'Both teams gain':'Their lineup −'+fmt(Math.abs(t.avgThem))+'/wk';
+ const totalWeeks=starts().length;
  return '<article class="trade-personal-card"><div class="trade-personal-head"><strong>'+esc(t.partner.name)+'</strong><span>'+t.shape+'</span></div>'+
  '<div class="trade-personal-sides"><div><small>SEND</small>'+formatList(t.send.players)+'</div><div><small>RECEIVE</small>'+formatList(t.receive.players)+'</div></div>'+
- '<div class="trade-personal-footer"><b>Your gain +'+fmt(t.avgYou)+' pts/wk</b><span>'+esc(viability)+'</span></div></article>';
+ '<div class="trade-personal-footer"><b>Your gain +'+fmt(t.avgYou)+' pts/wk <small>+'+fmt(t.gainYou)+' ROS</small></b>'+
+ '<span>Both teams gain · Theirs +'+fmt(t.avgThem)+' pts/wk <small>(+'+fmt(t.gainThem)+' ROS)</small></span></div></article>';
 }
 function render(){
  const target=$('tradeResults');if(!target||!state)return;
@@ -156,10 +162,9 @@ function render(){
   let options=[];
   try{options=evaluate()}catch(error){target.innerHTML='<div class="trade-personal-loading">Could not calculate these packages.</div>';return;}
   if(job!==nextJob)return;
-  const strong=options.filter(o=>o.avgThem>=0).slice(0,6);
-  const shown=strong.length?strong:options.slice(0,5);
+  const shown=options.slice(0,6);
   if(!shown.length){
-   target.innerHTML='<div class="trade-personal-loading">No modeled lineup gains for these choices. Try another player or trading partner.</div>';
+   target.innerHTML='<div class="trade-personal-loading">No trades here improve BOTH lineups by at least '+fmt(MIN_ROS_GAIN_PER_WEEK)+' pts/week over the rest of the season. Try another player or manager.</div>';
    return;
   }
   target.innerHTML=shown.map(resultHTML).join('');
