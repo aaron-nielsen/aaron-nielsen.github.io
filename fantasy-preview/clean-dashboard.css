@@ -410,3 +410,40 @@ body{font:16px/1.48 'Source Sans 3',Arial,sans-serif;color:var(--text);backgroun
  .league-switch select{width:100%;min-width:0;font-size:14px}
  .league-switch-note{margin-left:0;font-size:11px}
 }
+
+/* Compact upper dashboard cards / league-specific disabled controls */
+#page-trades .trade-controls[hidden],#page-trades .trade-caveat[hidden]{display:none!important}
+.homesplit{gap:12px}
+.matchup{min-height:0!important;padding:15px 19px!important}
+.match-compact-scores{padding:10px 0 9px!important;align-items:center}
+.match-compact-name{min-height:0!important;font-size:clamp(15px,1.7vw,19px)}
+.match-compact-points{font-size:clamp(32px,3.6vw,44px)!important;margin-top:2px!important}
+.match-compact-footer{padding-top:8px!important;font-size:13px}
+.record-card{min-height:0!important}
+.record-upper{padding:14px 18px!important}
+.record-upper:after{display:none!important}
+.record-fig{font-size:clamp(40px,5vw,60px)!important;line-height:1!important;margin:5px 0 1px!important}
+.record-desc{font-size:12px}
+.record-stats div{padding:10px 13px!important}
+.record-stats strong{font-size:clamp(20px,2.4vw,29px)!important}
+.record-stats small{font-size:10px}
+@media(min-width:901px){
+ .record-card{display:flex!important;flex-direction:column}
+ .record-upper{flex:1}
+ .record-stats{border-left:0!important;border-top:1px solid #dacbb1!important}
+}
+@media(min-width:601px) and (max-width:900px){
+ .record-card{display:grid!important;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}
+ .record-stats{border-top:0!important;border-left:1px solid #dacbb1!important}
+}
+@media(max-width:600px){
+ .matchup{padding:12px 12px!important}
+ .match-compact-scores{padding:8px 0!important}
+ .match-compact-name{font-size:15px!important;min-height:0!important}
+ .match-compact-points{font-size:36px!important}
+ .record-card{display:block!important}
+ .record-upper{padding:12px 14px!important}
+ .record-stats{border-left:0!important;border-top:1px solid #dacbb1!important}
+ .record-fig{font-size:46px!important}
+ .record-stats div{padding:8px 11px!important}
+}
