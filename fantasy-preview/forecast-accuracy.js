@@ -33,7 +33,9 @@ function evaluate(records){
  const byPosition={};
  for(const [position,rows] of Object.entries(groups)){
   const paired=rows.filter(r=>finite(r.yahoo));
-  byPosition[position]={daVinci:summarize(rows,'daVinci'),
+  const wins=paired.filter(r=>Math.abs(r.daVinci-r.actual)<Math.abs(r.yahoo-r.actual)).length;
+  const ties=paired.filter(r=>Math.abs(r.daVinci-r.actual)===Math.abs(r.yahoo-r.actual)).length;
+  byPosition[position]={winRate:paired.length?wins/paired.length:null,wins,ties,daVinci:summarize(rows,'daVinci'),
    yahoo:summarize(rows,'yahoo'),
    paired:{n:paired.length,daVinci:summarize(paired,'daVinci'),
     yahoo:summarize(paired,'yahoo')}};
