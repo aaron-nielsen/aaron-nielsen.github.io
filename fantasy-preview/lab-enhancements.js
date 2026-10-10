@@ -85,7 +85,7 @@ function horizon(p){
           rosPts:tally(future),
           games:played.length};
 }
-const statValue=v=>Number(v).toFixed(1).replace(/\.0$/,'');
+const statValue=v=>{const a=Math.abs(Number(v));const precision=a>0&&a<0.1?3:a<1?2:1;return Number(v).toFixed(precision).replace(/\.?0+$/,'');};
 function summaryPts(value){return value==null?'—':num(value);}
 function breakdown(p,w){
   const state=access(p);
