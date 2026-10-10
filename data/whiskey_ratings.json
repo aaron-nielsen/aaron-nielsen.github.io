@@ -1960,6 +1960,28 @@
         "shelf_price_usd": 38.99,
         "paid_price_usd": 35.09
       }
+    },
+    {
+      "name": "Pendleton Original Canadian Whisky",
+      "style": "Canadian Whisky",
+      "substyle": "",
+      "ratings": [
+        {
+          "score": 3.1,
+          "date": "2026-10-09"
+        }
+      ],
+      "region": "Canadian",
+      "abv": 40,
+      "owned": true,
+      "owned_bottle_name": "Pendleton Original Canadian Whisky",
+      "local_purchase": {
+        "date": "2026-10-03",
+        "store": "Mulberry Max Wine & Spirits",
+        "volume_ml": 375,
+        "shelf_price_usd": 13.99,
+        "paid_price_usd": 12.59
+      }
     }
   ],
   "unrated_suggestions": [
@@ -8217,25 +8239,6 @@
       "priority": 578
     },
     {
-      "name": "Pendleton Original Canadian Whisky",
-      "region": "Canadian",
-      "style": "Canadian Whisky",
-      "substyle": "",
-      "distillery": "Pendleton",
-      "estimated_price_usd": 28,
-      "place": "Canada",
-      "recommendation_group": "Purchased",
-      "abv": 40,
-      "local_purchase": {
-        "date": "2026-10-03",
-        "store": "Mulberry Max Wine & Spirits",
-        "volume_ml": 375,
-        "shelf_price_usd": 13.99,
-        "paid_price_usd": 12.59
-      },
-      "priority": 579
-    },
-    {
       "name": "Kentucky Deluxe Blended Whiskey",
       "region": "American",
       "style": "Blended Whiskey",
@@ -8252,7 +8255,7 @@
         "shelf_price_usd": 4.99,
         "paid_price_usd": 4.49
       },
-      "priority": 580
+      "priority": 579
     },
     {
       "name": "Leopold Bros Michigan Cherry Whiskey",
@@ -8263,7 +8266,7 @@
       "estimated_price_usd": 37,
       "place": "Colorado",
       "recommendation_group": "Owned",
-      "priority": 581,
+      "priority": 580,
       "abv": 40,
       "owned": true,
       "owned_bottle_name": "Leopold Brothers Michigan Cherry"
