@@ -1097,11 +1097,12 @@ function renderWaivers(){
 }
 function renderRecommendations(){
  const area=$('#lineupRecommendations');
+ const weekChip=$('#lineupChangeWeek');if(weekChip)weekChip.textContent='WEEK '+week.week;
  if(!weekly?.players?.length){area.innerHTML='<div class="empty-copy">Week-specific player forecasts are not available yet.</div>';return;}
  const roster=team(TEAM_ID).players;
- const starters=roster.filter(p=>p.slot!=='BN'&&p.slot!=='IR'&&['QB','RB','WR','TE'].includes(p.position));
- const bench=roster.filter(p=>p.slot==='BN'&&['QB','RB','WR','TE'].includes(p.position));
- const slotEligibility={'QB':['QB'],'RB':['RB'],'WR':['WR'],'TE':['TE'],'W/R/T':['RB','WR','TE'],'FLEX':['RB','WR','TE']};
+ const starters=roster.filter(p=>p.slot!=='BN'&&p.slot!=='IR'&&['QB','RB','WR','TE','K','DEF'].includes(p.position));
+ const bench=roster.filter(p=>p.slot==='BN'&&['QB','RB','WR','TE','K','DEF'].includes(p.position));
+ const slotEligibility={'QB':['QB'],'RB':['RB'],'WR':['WR'],'TE':['TE'],'W/R/T':['RB','WR','TE'],'FLEX':['RB','WR','TE'],'K':['K'],'DEF':['DEF']};
  const choices=[];
  for(const starter of starters){
    const s=weeklyProjection(starter);
@@ -1123,17 +1124,17 @@ function renderRecommendations(){
    if(recommended.length===4)break;
  }
  if(!recommended.length){
-   area.innerHTML='<div class="empty-copy">No clear, one-for-one lineup improvement among healthy reported bench players. Review injury news before kickoff.</div>';
+   area.innerHTML='<div class="empty-copy">Current starters lead your eligible bench options.</div>';
    return;
  }
  area.innerHTML=recommended.map((r,i)=>{
    const tier=i===0?'primary':'secondary';
    return '<article class="recommendation '+tier+'">'+
-     '<div class="recommendation-kicker">SUGGESTED SWAP · '+esc(r.slot)+' SLOT</div>'+
+     '<div class="recommendation-kicker">'+esc(r.slot)+' <span>+'+r.gain.toFixed(1)+' pts</span></div>'+
      '<div class="recommendation-move"><div><span class="recommendation-action">START</span><strong>'+esc(r.candidate.name)+'</strong><small>'+esc(weeklyOpponent(r.c))+' · '+number(r.c.weeklyProjectedPoints)+' pts</small></div>'+
-     '<div class="recommendation-arrow" aria-hidden="true">⇄</div>'+
+     '<div class="recommendation-arrow" aria-hidden="true">→</div>'+
      '<div><span class="recommendation-action sit">SIT</span><strong>'+esc(r.starter.name)+'</strong><small>'+esc(weeklyOpponent(r.s))+' · '+number(r.s.weeklyProjectedPoints)+' pts</small></div></div>'+
-     '<div class="recommendation-gain">+'+r.gain.toFixed(2)+' <span>projected points</span></div></article>';
+     '</article>';
  }).join('');
 }
 function initRosters(){
@@ -1189,7 +1190,7 @@ function renderRoster(){
    '<strong>'+esc(p.name)+status(p)+'</strong>'+
    '<small>'+esc(p.position)+' · '+esc(p.nflTeam||'NFL team unknown')+
    ' · <span class="roster-compare-score">'+esc(ptsNote)+'</span>'+
-   (backup?' · depth option':'')+'</small></div>';
+   '</small></div>';
  }
  $('#rosterComparison').innerHTML='<div class="roster-compare-header"><span>CURRENT STARTER</span><span>BEST DISTINCT BACKUP</span></div>'+
  ordered.map((p,i)=>'<div class="roster-compare-row">'+cell(p,p.slot,false)+cell(assigned[i],null,true)+'</div>').join('')+
@@ -1349,7 +1350,7 @@ async function get(path){const r=await fetch(DATA_BASE+path+'.json',{cache:'no-s
   $('#overviewLeagueLabel').textContent=LEAGUE_NAME+' · 2026';
   $('#yahooForecastLeagueSubtitle').textContent='Yahoo projected totals for all '+rosters.teams.length+' teams';
   $('#rosterLeagueIntro').textContent='Browse '+LEAGUE_NAME+' rosters and compare starters with eligible backups.';
-  $('#leagueSnapshot').textContent='Updated '+new Date(week.retrievedAt).toLocaleDateString(undefined,{month:'short',day:'numeric'})+' · read-only snapshot';
+  $('#leagueSnapshot').textContent='Updated '+new Date(week.retrievedAt).toLocaleDateString(undefined,{month:'short',day:'numeric'});
   document.title='Da Vinci Fantasy Lab | '+LEAGUE_NAME;
 
   const eyebrow=$('#page-overview .section-top .eyebrow');if(eyebrow)eyebrow.textContent=LEAGUE_NAME+' · 2026';
