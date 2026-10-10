@@ -23,4 +23,8 @@ for(const week of [1,2,3,4]){
  assert.equal(j.coverage.teamsWithPlayers,14);
  assert.ok(model.analyze([j]).length===14);
 }
-console.log('Historical lineup actual-points, best lineup, and league-wide coverage checks passed');
+const neb=JSON.parse(fs.readFileSync(path.join(base,'data/historical/nebraska-week-4.json'),'utf8'));
+assert.equal(neb.teams.length,10);
+assert.equal(neb.coverage.teamsWithPlayers,10);
+assert.equal(model.analyze([neb]).length,10);
+console.log('Historical lineup actual-points, best lineup, CSU and Nebraska coverage checks passed');
