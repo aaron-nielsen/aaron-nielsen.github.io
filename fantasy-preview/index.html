@@ -698,7 +698,9 @@ function initOverview(){
  // presented as simultaneous cover for multiple positions.
  const backups=bench
    .map(p=>({p,w:weeklyProjection(p)}))
-   .filter(x=>x.w?.forecastStatus==='assuming_active' &&
+   // A backup is a roster depth option even during their current bye.
+   // Injury/unavailable players remain excluded from immediate cover.
+   .filter(x=>['assuming_active','bye'].includes(x.w?.forecastStatus) &&
               Number.isFinite(Number(x.w.weeklyProjectedPoints)) &&
               ['QB','RB','WR','TE','K','DEF'].includes(x.p.position));
  const memo=new Map();
@@ -725,15 +727,20 @@ function initOverview(){
  const lineupPerson=(p,slot)=>{
    if(!p)return '<div class="lineup-column-person empty"><span>No eligible backup</span></div>';
    const w=weeklyProjection(p);
+   const future=futureData?.players?.find(x=>String(x.yahooId)===String(p.id));
+   const next=(w?.forecastStatus==='bye' && future?.weeks)
+       ? future.weeks.find(g=>Number(g.week)>Number(week.week) && g.opponent)
+       : null;
+   const projectionNote=next?' · W'+next.week+' '+number(next.activePoints)+' if active':'';
    return '<div class="lineup-column-person">'+
     (slot?'<span class="lineup-position">'+esc(slot)+'</span>':'')+
     '<strong>'+esc(p.name)+status(p)+'</strong>'+
-    '<small>'+esc(p.position)+' · '+esc(weeklyOpponent(w))+'</small>'+
+    '<small>'+esc(p.position)+' · '+esc(weeklyOpponent(w))+esc(projectionNote)+'</small>'+
     '<span class="lineup-pts">'+esc(weeklyDisplay(w))+'</span></div>';
  };
  $('#myLineup').innerHTML='<div class="lineup-column-head"><span>STARTER</span><span>BEST BACKUP</span></div>'+
  ordered.map((p,i)=>'<div class="lineup-pair">'+lineupPerson(p,p.slot)+lineupPerson(selectedBackups[i],'')+'</div>').join('')+
- '<p class="lineup-compare-footnote">Best eligible reserves, assigned without duplicates. Unavailable players are excluded; K/DEF forecasts are not modeled.</p>';
+ '<p class="lineup-compare-footnote">Distinct backup options for each position. BYE means unavailable this week, but still valuable roster depth. Injured/inactive players are excluded from immediate cover.</p>';
  $('#leagueBoard').innerHTML=week.matchups.map(m=>'<div class="scoreboard-item'+(m.home.id===TEAM_ID||m.away.id===TEAM_ID?' mine':'')+'"><div class="side">'+esc(m.home.name)+'</div><div class="pts mono">'+number(m.home.projectedPoints)+'</div><div class="dash">–</div><div class="pts mono">'+number(m.away.projectedPoints)+'</div><div class="side right">'+esc(m.away.name)+'</div></div>').join('');
  $('#boardWeek').textContent='WEEK '+week.week;$('#projectionWeek').textContent='WEEK '+week.week;
  $('#sync').textContent='Yahoo snapshot · '+new Date(week.retrievedAt).toLocaleString(undefined,{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'});
