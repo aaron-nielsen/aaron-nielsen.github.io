@@ -257,11 +257,51 @@ function refresh(){
   box.setAttribute('aria-label',selected.size+' preferred '+type+' players');
  }
 }
+
+/* Featured user-requested trade: two alternative execution windows. */
+function gradeTrade(avg){
+ if(!Number.isFinite(avg))return '—';
+ return avg>=3?'A+':avg>=1.8?'A':avg>=.8?'B':avg>=-.15?'C':avg>=-1?'D':'F';
+}
+function featuredTrade(){
+ const el=$('featuredTrade');if(!el||!state)return;
+ if(state.leagueKey!=='csu'){el.hidden=true;return;}
+ const mine=state.rosters.teams.find(t=>String(t.id)===String(state.teamId));
+ const partner=state.rosters.teams.find(t=>String(t.id)==='1');
+ const send=['32671','31868','40971','100012'].map(pid=>mine?.players.find(p=>id(p)===pid));
+ const receive=['41793','32676'].map(pid=>partner?.players.find(p=>id(p)===pid));
+ const heading='<header class="featured-trade-heading"><strong>Saved 4-for-2 proposal</strong><span>Blitzmaster · Not submitted</span></header>';
+ if(String(mine?.id)!=='7'||!partner||[...send,...receive].some(x=>!x)){
+  el.innerHTML='<section class="featured-trade-card">'+heading+'<p>Proposal unavailable: one or more players are no longer on the required rosters.</p></section>';return;
+ }
+ const offer={partner,send:{players:send},receive:{players:receive},shape:'4-for-2'};
+ const fmtList=xs=>xs.map(p=>'<span>'+esc(p.name)+' <small>'+esc(p.position)+'</small></span>').join('');
+ const exchange='<div class="featured-trade-sides"><div><small>YOU SEND</small>'+fmtList(send)+'</div><div><small>YOU RECEIVE</small>'+fmtList(receive)+'</div></div>';
+ const eachWindow=(start,title)=>{
+  const weeks=Array.from({length:Math.max(0,Number(state.future.endWeek)-start+1)},(_,i)=>start+i);
+  if(!weeks.length)return '<div class="featured-trade-window"><strong>'+title+'</strong><p>No remaining games to forecast.</p></div>';
+  const you=weeks.map(w=>state.optimize(mine.players,w)),them=weeks.map(w=>state.optimize(partner.players,w));
+  if([...you,...them].some(x=>!x))return '<div class="featured-trade-window"><strong>'+title+'</strong><p>Incomplete legal-lineup forecast; not graded.</p></div>';
+  const t=evaluateOffer(offer,mine.players,{you,peers:new Map([[partner.id,them]])},weeks);
+  if(!t)return '<div class="featured-trade-window"><strong>'+title+'</strong><p>Unable to balance rosters with available pickups/drops; not graded.</p></div>';
+  const signed=x=>(x>=0?'+':'')+fmt(x);
+  const assessment=t.avgYou>=MIN_ROS_GAIN_PER_WEEK&&t.avgThem>=MIN_ROS_GAIN_PER_WEEK?'Both teams gain':'Not mutually beneficial';
+  return '<div class="featured-trade-window"><div class="featured-trade-window-heading"><strong>'+title+'</strong><small>Weeks '+start+'–'+weeks.at(-1)+'</small><em>'+assessment+'</em></div>'+
+   '<div class="featured-trade-grades"><div><small>Ten Feline Overlords</small><strong>'+gradeTrade(t.avgYou)+'</strong><span>'+signed(t.gainYou)+' ROS pts</span><small>'+signed(t.avgYou)+' pts/wk</small></div>'+
+   '<div><small>Blitzmaster</small><strong>'+gradeTrade(t.avgThem)+'</strong><span>'+signed(t.gainThem)+' ROS pts</span><small>'+signed(t.avgThem)+' pts/wk</small></div></div>'+
+   '<details><summary>Roster assumptions and projected starters</summary><p>After additions and drops: You '+fmt(t.beforeYou)+' → '+fmt(t.afterYou)+' points; Blitzmaster '+fmt(t.beforeThem)+' → '+fmt(t.afterThem)+' points.</p>'+
+   '<p>You: '+esc(t.adjustments.you.join('; ')||'No adjustments')+'. Blitzmaster: '+esc(t.adjustments.them.join('; ')||'No adjustments')+'.</p></details></div>';
+ };
+ el.innerHTML='<section class="featured-trade-card">'+heading+exchange+
+  '<div class="featured-trade-windows">'+eachWindow(6,'After Week 5')+eachWindow(7,'After Week 6')+'</div>'+
+  '<p class="featured-trade-disclaimer">Grades follow the Transactions tab scale based on predicted points gained per week, not player reputation. Each team is evaluated with an optimal legal nine-player lineup and any necessary available-player adds or drops. These are projections, not Yahoo trade evaluations.</p></section>';
+}
+
 function draw(){
  if(!state)return;
  const rootEl=$('tradePreferenceBuilder');
  if(!rootEl)return;
- rootEl.innerHTML='<div class="trade-personal-grid">'+
+ rootEl.innerHTML='<div id="featuredTrade"></div><div class="trade-personal-grid">'+
  '<details class="trade-player-dropdown" id="tradeSendBox"><summary>Players I would trade <strong id="tradeSendSelected">Any</strong></summary><input id="tradeSendSearch" type="search" placeholder="Find my players" aria-label="Search players to trade"><div class="trade-player-options" id="tradeSendChoices"></div></details>'+
  '<details class="trade-player-dropdown" id="tradeReceiveBox"><summary>Players I want <strong id="tradeReceiveSelected">Any</strong></summary><input id="tradeReceiveSearch" type="search" placeholder="Find league targets" aria-label="Search players to receive"><div class="trade-player-options" id="tradeReceiveChoices"></div></details>'+
  '</div><div class="trade-preference-footer"><button id="tradePreferenceClear" type="button">Clear choices</button></div>';
@@ -277,6 +317,7 @@ function draw(){
   selectedOut.clear();selectedIn.clear();refresh();updated();
  });
  refresh();
+ featuredTrade();
 }
 function updated(){
  if(!state)return;
