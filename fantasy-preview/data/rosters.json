@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "retrievedAt": "2026-10-11T05:51:52.211Z",
+  "retrievedAt": "2026-10-11T17:50:58.720Z",
   "leagueId": "470.l.258793",
   "teams": [
     {
@@ -69,7 +69,7 @@
           "nflTeam": "Min",
           "position": "WR",
           "slot": "W/R/T",
-          "status": "Q"
+          "status": null
         },
         {
           "id": "32676",
@@ -153,7 +153,7 @@
           "status": null
         }
       ],
-      "snapshotAt": "2026-10-11T05:51:52.211Z"
+      "snapshotAt": "2026-10-11T17:50:58.720Z"
     },
     {
       "id": "2",
@@ -990,7 +990,7 @@
           "nflTeam": "Min",
           "position": "WR",
           "slot": "BN",
-          "status": "Q"
+          "status": "O"
         },
         {
           "id": "34054",
@@ -1065,7 +1065,7 @@
           "status": null
         }
       ],
-      "snapshotAt": "2026-10-11T05:51:52.211Z"
+      "snapshotAt": "2026-10-11T17:50:58.720Z"
     },
     {
       "id": "8",
@@ -2095,7 +2095,7 @@
       "21": "9",
       "22": "5",
       "23": "Z",
-      "snapshotAt": "2026-10-11T05:51:52.211Z",
+      "snapshotAt": "2026-10-11T17:50:58.720Z",
       "players": [
         {
           "id": "32671",
@@ -2176,7 +2176,7 @@
           "nflTeam": "Min",
           "position": "WR",
           "slot": "BN",
-          "status": "Q"
+          "status": "O"
         },
         {
           "id": "34054",
@@ -2253,5 +2253,5 @@
       ]
     }
   },
-  "userTeamLastRefreshedAt": "2026-10-11T05:51:52.211Z"
+  "userTeamLastRefreshedAt": "2026-10-11T17:50:58.720Z"
 }
