@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "retrievedAt": "2026-10-10T02:53:22.198Z",
+  "retrievedAt": "2026-10-11T05:51:52.211Z",
   "leagueId": "470.l.258793",
   "teams": [
     {
@@ -152,7 +152,8 @@
           "slot": "BN",
           "status": null
         }
-      ]
+      ],
+      "snapshotAt": "2026-10-11T05:51:52.211Z"
     },
     {
       "id": "2",
@@ -256,7 +257,7 @@
           "nflTeam": "Pit",
           "position": "WR",
           "slot": "BN",
-          "status": "O"
+          "status": "IR"
         },
         {
           "id": "32231",
@@ -294,7 +295,8 @@
           "slot": "DEF",
           "status": null
         }
-      ]
+      ],
+      "snapshotAt": "2026-10-11T05:51:52.211Z"
     },
     {
       "id": "3",
@@ -454,7 +456,8 @@
           "slot": "BN",
           "status": null
         }
-      ]
+      ],
+      "snapshotAt": "2026-10-11T05:51:52.211Z"
     },
     {
       "id": "4",
@@ -596,7 +599,8 @@
           "slot": "DEF",
           "status": null
         }
-      ]
+      ],
+      "snapshotAt": "2026-10-11T05:51:52.211Z"
     },
     {
       "id": "5",
@@ -747,7 +751,8 @@
           "slot": "BN",
           "status": null
         }
-      ]
+      ],
+      "snapshotAt": "2026-10-11T05:51:52.211Z"
     },
     {
       "id": "6",
@@ -898,7 +903,8 @@
           "slot": "DEF",
           "status": null
         }
-      ]
+      ],
+      "snapshotAt": "2026-10-11T05:51:52.211Z"
     },
     {
       "id": "7",
@@ -1019,7 +1025,7 @@
           "name": "Breece Hall",
           "nflTeam": "NYJ",
           "position": "RB",
-          "slot": "BN",
+          "slot": "IR",
           "status": "O"
         },
         {
@@ -1030,15 +1036,6 @@
           "position": "WR",
           "slot": "IR",
           "status": "IR"
-        },
-        {
-          "id": "40097",
-          "key": "470.p.40097",
-          "name": "Tank Dell",
-          "nflTeam": "Hou",
-          "position": "WR",
-          "slot": "IR",
-          "status": "IR-R"
         },
         {
           "id": "33537",
@@ -1057,9 +1054,18 @@
           "position": "DEF",
           "slot": "DEF",
           "status": null
+        },
+        {
+          "id": "100012",
+          "key": "470.p.100012",
+          "name": "Chiefs",
+          "nflTeam": "KC",
+          "position": "DEF",
+          "slot": "BN",
+          "status": null
         }
       ],
-      "snapshotAt": "2026-10-10T04:43:49.995Z"
+      "snapshotAt": "2026-10-11T05:51:52.211Z"
     },
     {
       "id": "8",
@@ -1201,7 +1207,8 @@
           "slot": "BN",
           "status": null
         }
-      ]
+      ],
+      "snapshotAt": "2026-10-11T05:51:52.211Z"
     },
     {
       "id": "9",
@@ -1343,7 +1350,8 @@
           "slot": "DEF",
           "status": null
         }
-      ]
+      ],
+      "snapshotAt": "2026-10-11T05:51:52.211Z"
     },
     {
       "id": "10",
@@ -1485,7 +1493,8 @@
           "slot": "DEF",
           "status": null
         }
-      ]
+      ],
+      "snapshotAt": "2026-10-11T05:51:52.211Z"
     },
     {
       "id": "11",
@@ -1627,7 +1636,8 @@
           "slot": "DEF",
           "status": null
         }
-      ]
+      ],
+      "snapshotAt": "2026-10-11T05:51:52.211Z"
     },
     {
       "id": "12",
@@ -1778,7 +1788,8 @@
           "slot": "DEF",
           "status": null
         }
-      ]
+      ],
+      "snapshotAt": "2026-10-11T05:51:52.211Z"
     },
     {
       "id": "13",
@@ -1864,7 +1875,7 @@
           "nflTeam": "Ari",
           "position": "WR",
           "slot": "BN",
-          "status": null
+          "status": "O"
         },
         {
           "id": "42730",
@@ -1920,7 +1931,8 @@
           "slot": "BN",
           "status": null
         }
-      ]
+      ],
+      "snapshotAt": "2026-10-11T05:51:52.211Z"
     },
     {
       "id": "14",
@@ -2053,11 +2065,193 @@
           "slot": "DEF",
           "status": null
         }
-      ]
+      ],
+      "snapshotAt": "2026-10-11T05:51:52.211Z"
     }
   ],
   "teamSnapshots": {
-    "7": "2026-10-10T04:43:49.995Z"
+    "7": {
+      "0": "2",
+      "1": "0",
+      "2": "2",
+      "3": "6",
+      "4": "-",
+      "5": "1",
+      "6": "0",
+      "7": "-",
+      "8": "1",
+      "9": "0",
+      "10": "T",
+      "11": "0",
+      "12": "4",
+      "13": ":",
+      "14": "4",
+      "15": "3",
+      "16": ":",
+      "17": "4",
+      "18": "9",
+      "19": ".",
+      "20": "9",
+      "21": "9",
+      "22": "5",
+      "23": "Z",
+      "snapshotAt": "2026-10-11T05:51:52.211Z",
+      "players": [
+        {
+          "id": "32671",
+          "key": "470.p.32671",
+          "name": "Joe Burrow",
+          "nflTeam": "Cin",
+          "position": "QB",
+          "slot": "QB",
+          "status": null
+        },
+        {
+          "id": "31960",
+          "key": "470.p.31960",
+          "name": "Tony Pollard",
+          "nflTeam": "Ten",
+          "position": "RB",
+          "slot": "RB",
+          "status": null
+        },
+        {
+          "id": "40971",
+          "key": "470.p.40971",
+          "name": "MarShawn Lloyd",
+          "nflTeam": "GB",
+          "position": "RB",
+          "slot": "RB",
+          "status": null
+        },
+        {
+          "id": "40168",
+          "key": "470.p.40168",
+          "name": "Puka Nacua",
+          "nflTeam": "LAR",
+          "position": "WR",
+          "slot": "WR",
+          "status": null
+        },
+        {
+          "id": "40121",
+          "key": "470.p.40121",
+          "name": "Michael Wilson",
+          "nflTeam": "Ari",
+          "position": "WR",
+          "slot": "WR",
+          "status": null
+        },
+        {
+          "id": "40878",
+          "key": "470.p.40878",
+          "name": "Brock Bowers",
+          "nflTeam": "LV",
+          "position": "TE",
+          "slot": "TE",
+          "status": null
+        },
+        {
+          "id": "34095",
+          "key": "470.p.34095",
+          "name": "Isaiah Likely",
+          "nflTeam": "NYG",
+          "position": "TE",
+          "slot": "W/R/T",
+          "status": null
+        },
+        {
+          "id": "31868",
+          "key": "470.p.31868",
+          "name": "Deebo Samuel Sr.",
+          "nflTeam": "SF",
+          "position": "WR",
+          "slot": "BN",
+          "status": null
+        },
+        {
+          "id": "40042",
+          "key": "470.p.40042",
+          "name": "Jordan Addison",
+          "nflTeam": "Min",
+          "position": "WR",
+          "slot": "BN",
+          "status": "Q"
+        },
+        {
+          "id": "34054",
+          "key": "470.p.34054",
+          "name": "Brian Robinson",
+          "nflTeam": "Atl",
+          "position": "RB",
+          "slot": "BN",
+          "status": null
+        },
+        {
+          "id": "40029",
+          "key": "470.p.40029",
+          "name": "Bryce Young",
+          "nflTeam": "Car",
+          "position": "QB",
+          "slot": "BN",
+          "status": null
+        },
+        {
+          "id": "31856",
+          "key": "470.p.31856",
+          "name": "Josh Jacobs",
+          "nflTeam": "GB",
+          "position": "RB",
+          "slot": "BN",
+          "status": "CEL"
+        },
+        {
+          "id": "33991",
+          "key": "470.p.33991",
+          "name": "Breece Hall",
+          "nflTeam": "NYJ",
+          "position": "RB",
+          "slot": "IR",
+          "status": "O"
+        },
+        {
+          "id": "34008",
+          "key": "470.p.34008",
+          "name": "Alec Pierce",
+          "nflTeam": "Ind",
+          "position": "WR",
+          "slot": "IR",
+          "status": "IR"
+        },
+        {
+          "id": "33537",
+          "key": "470.p.33537",
+          "name": "Evan McPherson",
+          "nflTeam": "Cin",
+          "position": "K",
+          "slot": "K",
+          "status": null
+        },
+        {
+          "id": "100020",
+          "key": "470.p.100020",
+          "name": "Jets",
+          "nflTeam": "NYJ",
+          "position": "DEF",
+          "slot": "DEF",
+          "status": null
+        },
+        {
+          "id": "100012",
+          "key": "470.p.100012",
+          "name": "Chiefs",
+          "nflTeam": "KC",
+          "position": "DEF",
+          "slot": "BN",
+          "status": null
+        }
+      ]
+    }
   },
-  "userTeamLastRefreshedAt": "2026-10-10T04:43:49.995Z"
+  "userTeamLastRefreshedAt": "2026-10-11T05:51:52.211Z"
 }
