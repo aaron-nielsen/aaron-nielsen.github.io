@@ -591,7 +591,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 .model-team-expanded{padding:10px}.team-model-players{grid-template-columns:1fr}}
 
 </style>
-<link rel="stylesheet" href="./clean-dashboard.css?v=20261010k">
+<link rel="stylesheet" href="./clean-dashboard.css?v=20261010l">
 <link rel="stylesheet" href="./trade-preferences.css">
 <style id="team-score-comparison">
 /* Current-week forecasts: labelled scores and mobile-friendly paired columns */
@@ -702,7 +702,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
   <div id="projectedRecord" aria-label="Projected overall record"></div>
   <div id="projectedRemaining" aria-label="Projected remaining record"></div>
   <div><small>RANK</small><strong id="rankDesc">—</strong></div>
-  <div><small>POINTS</small><strong id="pointsFor">—</strong></div>
+  <div><small>POINTS </small> <strong id="pointsFor">—</strong></div>
  </div>
 </div>
 
@@ -788,19 +788,19 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 <footer class="footer"><div>DA VINCI FANTASY LAB / CSU STATS · MMXXVI</div><div>READ-ONLY PROTOTYPE · POWERED BY YAHOO LEAGUE DATA</div></footer>
 </div>
 <script src="./special-teams-model.js"></script>
-<script src="./lab-enhancements.js?v=20261010k"></script>
-<script src="./availability-sanity.js?v=20261010k"></script>
+<script src="./lab-enhancements.js?v=20261010l"></script>
+<script src="./availability-sanity.js?v=20261010l"></script>
 <script src="./return-outlook.js"></script>
 <script src="./playing-time-model.js"></script>
-<script src="./roster-advice.js?v=20261010k"></script>
-<script src="./matchup-overview.js?v=20261010k"></script>
+<script src="./roster-advice.js?v=20261010l"></script>
+<script src="./matchup-overview.js?v=20261010l"></script>
 <script src="./overview-roster.js"></script>
-<script src="./trade-preferences.js?v=20261010k"></script>
-<script src="./transaction-grades.js?v=20261010k"></script>
+<script src="./trade-preferences.js?v=20261010l"></script>
+<script src="./transaction-grades.js?v=20261010l"></script>
 <script src="./historical-trends.js"></script>
 <script src="./historical-trends-view.js"></script>
 <script src="./forecast-accuracy.js"></script>
-<script src="./model-performance.js?v=20261010k"></script>
+<script src="./model-performance.js?v=20261010l"></script>
 <script>
 'use strict';
 const $=s=>document.querySelector(s);
@@ -1047,7 +1047,7 @@ function initOverview(){
  const st=standing(TEAM_ID);
  const metrics=[['wl',st?.wins!=null&&st?.losses!=null?st.wins+'–'+st.losses:null],
   ['rankDesc',st?.rank!=null?'#'+st.rank+' / '+rosters.teams.length:null],
-  ['pointsFor',st?.pointsFor!=null?number(st.pointsFor)+(week.standings.every(t=>t.pointsFor!=null)?' · #'+(1+week.standings.filter(t=>Number(t.pointsFor)>Number(st.pointsFor)).length):''):null]];
+  ['pointsFor',st?.pointsFor!=null?number(st.pointsFor)+(week.standings.every(t=>t.pointsFor!=null)?' (#'+(1+week.standings.filter(t=>Number(t.pointsFor)>Number(st.pointsFor)).length)+')':''):null]];
  for(const [id,value] of metrics){const el=$('#'+id);el.textContent=value??'';el.parentElement.hidden=value==null;}
  $('#overviewMetrics').hidden=metrics.every(([,v])=>v==null);
   $('#leagueBoard').innerHTML=week.matchups.map(m=>{
