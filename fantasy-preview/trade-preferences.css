@@ -100,3 +100,15 @@ body[data-league="nebraska"] #tradeCount{display:none}
  .featured-trade-sides{padding:12px}
  .featured-trade-window{padding:12px}
 }
+
+
+/* Several independently graded saved offers. */
+#featuredTrade{display:grid;gap:13px}
+#featuredTrade[hidden]{display:none}
+.featured-trade-suite-heading{display:flex;align-items:baseline;justify-content:space-between;gap:10px;padding:0 1px}
+.featured-trade-suite-heading strong{font-size:16px;font-weight:750;color:#483b30}
+.featured-trade-suite-heading span{font-size:12px;color:#826f5c}
+#featuredTrade .featured-trade-card{margin:0;min-width:0}
+#featuredTrade>.featured-trade-disclaimer{padding:0 2px;border:0;background:none}
+.featured-trade-notice{padding:12px 15px;margin:0;color:#816f5b;font-size:13px}
+@media(max-width:690px){.featured-trade-suite-heading strong{font-size:15px}.featured-trade-heading strong{overflow-wrap:anywhere}}
