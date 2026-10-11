@@ -112,3 +112,12 @@ body[data-league="nebraska"] #tradeCount{display:none}
 #featuredTrade>.featured-trade-disclaimer{padding:0 2px;border:0;background:none}
 .featured-trade-notice{padding:12px 15px;margin:0;color:#816f5b;font-size:13px}
 @media(max-width:690px){.featured-trade-suite-heading strong{font-size:15px}.featured-trade-heading strong{overflow-wrap:anywhere}}
+
+
+/* Hypothetical return-and-trade comparison. */
+.featured-trade-ghost-boost{
+  margin:12px 0 3px;padding:10px 12px;
+  font-size:12px;line-height:1.5;color:#765d44;
+  border:1px dashed #bda889;border-radius:7px;background:#faf4e9;
+}
+.featured-trade-ghost-boost strong{font-weight:750}
