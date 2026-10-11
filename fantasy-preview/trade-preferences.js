@@ -327,6 +327,62 @@ function featuredEvaluate(offer,own,weeks,beforeYou,beforeThem){
   adjustments:{you:mine.notes,them:partner.notes}};
 }
 
+
+/* An optimistic, NON-TRANSACTIONAL scenario: two players already on the
+   manager's IR return to the active roster using the two openings created
+   by the four-for-two exchange. Never clone or acquire those players.
+   Forecast overrides are scoped to this one calculation and restored. */
+function featuredGhostEvaluate(offer,own,weeks,baselineYou,baselineThem){
+ const returnIds=['33991','34008'],returnSet=new Set(returnIds);
+ const returnees=returnIds.map(pid=>own.find(p=>id(p)===pid));
+ if(returnees.some(p=>!p)||returnees.some(p=>!['IR','BN','RB','WR'].includes(p.slot)))return null;
+ const sendIds=new Set(offer.send.players.map(id));
+ if(returnIds.some(pid=>sendIds.has(pid)))return null;
+ const youAfter=own.filter(p=>!sendIds.has(id(p)))
+  .concat(offer.receive.players.map(p=>({...p,slot:'BN'})))
+  .map(p=>returnSet.has(id(p))?{...p,slot:'BN',status:null}:p);
+ // These are already owned. Do not also fill the freed slots with free agents.
+ const previousActive=own.filter(p=>p.slot!=='IR').length;
+ const nowActive=youAfter.filter(p=>p.slot!=='IR').length;
+ if(nowActive>previousActive||nowActive<9)return null;
+ const saved=[];
+ let youTotal=0;
+ try{
+  for(const pid of returnIds){
+   const forecast=state.futureMap.get(pid);
+   if(!forecast)return null;
+   for(const frame of forecast.weeks||[]){
+    if(!weeks.includes(Number(frame.week))||frame.state==='bye')continue;
+    const healthy=Number(frame.conditionalPoints??frame.activePoints??frame.points);
+    if(!Number.isFinite(healthy))return null;
+    saved.push({frame,points:frame.points,availabilityProbability:frame.availabilityProbability,state:frame.state});
+    frame.points=healthy;
+    frame.availabilityProbability=1;
+    frame.state='hypothetical_return';
+   }
+  }
+  for(let i=0;i<weeks.length;i++){
+   const lineup=state.optimize(youAfter,weeks[i]);
+   if(!lineup||!baselineYou[i])return null;
+   youTotal+=lineup.score-baselineYou[i].score;
+  }
+ }finally{
+  for(const x of saved){
+   x.frame.points=x.points;
+   x.frame.availabilityProbability=x.availabilityProbability;
+   x.frame.state=x.state;
+  }
+ }
+ // Partner's roster and pickups are identical to the standard four-for-two.
+ const standard=featuredEvaluate(offer,own,weeks,baselineYou,baselineThem);
+ if(!standard)return null;
+ return {...standard,gainYou:youTotal,avgYou:youTotal/weeks.length,
+  afterYou:standard.beforeYou+youTotal,
+  returnBoost:youTotal-standard.gainYou,standardGainYou:standard.gainYou,
+  adjustments:{you:['Activate Breece Hall (RB) from IR','Activate Alec Pierce (WR) from IR; no free-agent additions'],them:standard.adjustments.them},
+  hypothetical:true};
+}
+
 function featuredTrade(){
  const el=$('featuredTrade');if(!el||!state)return;
  if(state.leagueKey!=='csu'){el.hidden=true;return;}
@@ -335,6 +391,7 @@ function featuredTrade(){
  const partner=state.rosters.teams.find(t=>String(t.id)==='1');
  const proposals=[
   {label:'Burrow + Deebo + Lloyd + Chiefs → McMillan + Herbert',out:['32671','31868','40971','100012'],in:['41793','32676']},
+  {label:'Same 4-for-2 + Hall & Pierce return (hypothetical)',out:['32671','31868','40971','100012'],in:['41793','32676'],ghost:true},
   {label:'Burrow → McMillan',out:['32671'],in:['41793']},
   {label:'Burrow + Deebo → McMillan',out:['32671','31868'],in:['41793']}
  ];
@@ -354,7 +411,7 @@ function featuredTrade(){
   const send=spec.out.map(pid=>mine?.players.find(p=>id(p)===pid));
   const receive=spec.in.map(pid=>partner?.players.find(p=>id(p)===pid));
   const shape=spec.out.length+'-for-'+spec.in.length;
-  const heading='<header class="featured-trade-heading"><strong>'+esc(spec.label)+'</strong><span>'+shape+' · Blitzmaster</span></header>';
+  const heading='<header class="featured-trade-heading"><strong>'+esc(spec.label)+'</strong><span>'+shape+' · Blitzmaster'+(spec.ghost?' · Simulation':'')+'</span></header>';
   if(String(mine?.id)!=='7'||!partner||[...send,...receive].some(x=>!x))
    return '<section class="featured-trade-card">'+heading+'<p class="featured-trade-notice">Cannot grade using current rosters: at least one player is no longer on the specified team.</p></section>';
   const offer={partner,send:{players:send},receive:{players:receive},shape};
@@ -362,13 +419,14 @@ function featuredTrade(){
   const eachWindow=({start,label})=>{
    const base=lineupBaseline(start),weeks=base.weeks;
    if(!base.valid)return '<div class="featured-trade-window"><strong>'+label+'</strong><p>Complete legal-lineup forecasts unavailable.</p></div>';
-   const t=featuredEvaluate(offer,mine.players,weeks,base.yours,base.theirs);
+   const t=(spec.ghost?featuredGhostEvaluate:featuredEvaluate)(offer,mine.players,weeks,base.yours,base.theirs);
    if(!t)return '<div class="featured-trade-window"><strong>'+label+'</strong><p>Cannot balance rosters with available pickups/drops. No grade.</p></div>';
    const assessment=t.avgYou>=MIN_ROS_GAIN_PER_WEEK&&t.avgThem>=MIN_ROS_GAIN_PER_WEEK?'Both teams gain':'Not mutually beneficial';
+   const boost=t.hypothetical?'<p class="featured-trade-ghost-boost"><strong>Return scenario value:</strong> '+signed(t.returnBoost)+' pts compared with the normal 4-for-2 and its assumed waiver pickups. Your combined total is not the trade-only gain.</p>':'';
    return '<div class="featured-trade-window"><div class="featured-trade-window-heading"><strong>'+label+'</strong><small>Weeks '+start+'–'+weeks.at(-1)+'</small><em>'+assessment+'</em></div>'+
-    '<div class="featured-trade-grades"><div><small>Ten Feline Overlords</small><strong>'+gradeTrade(t.avgYou)+'</strong><span>'+signed(t.gainYou)+' ROS pts</span><small>'+signed(t.avgYou)+' pts/wk</small></div>'+
+    '<div class="featured-trade-grades"><div><small>'+(spec.ghost?'You · combined scenario':'Ten Feline Overlords')+'</small><strong>'+gradeTrade(t.avgYou)+'</strong><span>'+signed(t.gainYou)+' ROS pts</span><small>'+signed(t.avgYou)+' pts/wk</small></div>'+
     '<div><small>Blitzmaster</small><strong>'+gradeTrade(t.avgThem)+'</strong><span>'+signed(t.gainThem)+' ROS pts</span><small>'+signed(t.avgThem)+' pts/wk</small></div></div>'+
-    '<details><summary>Roster assumptions and projected starters</summary><p>After roster moves: You '+fmt(t.beforeYou)+' → '+fmt(t.afterYou)+' points; Blitzmaster '+fmt(t.beforeThem)+' → '+fmt(t.afterThem)+' points.</p>'+
+    boost+'<details><summary>Roster assumptions and projected starters</summary><p>After roster moves: You '+fmt(t.beforeYou)+' → '+fmt(t.afterYou)+' points; Blitzmaster '+fmt(t.beforeThem)+' → '+fmt(t.afterThem)+' points.</p>'+
     '<p>You: '+esc(t.adjustments.you.join('; ')||'No adjustments')+'. Blitzmaster: '+esc(t.adjustments.them.join('; ')||'No adjustments')+'.</p></details></div>';
   };
   return '<section class="featured-trade-card">'+heading+exchange+
@@ -377,7 +435,7 @@ function featuredTrade(){
  if(!mine||!partner){el.innerHTML='<p class="featured-trade-notice">Current CSU league rosters are unavailable.</p>';return;}
  el.innerHTML='<div class="featured-trade-suite-heading"><strong>Saved trade proposals</strong><span>Not submitted</span></div>'+
   proposals.map(card).join('')+
-  '<p class="featured-trade-disclaimer">Grades use the Transactions tab point-gain-per-week scale. Each scenario starts from the same current Yahoo roster; proposals are alternatives, not cumulative trades. Full legal nine-player lineups and necessary adds/drops are modeled. These are Da Vinci projections, not Yahoo trade evaluations.</p>';
+  '<p class="featured-trade-disclaimer">Grades use the Transactions tab projected-points-per-week scale. The Hall/Pierce simulation assumes BOTH already-owned players are healthy and activated from the first evaluated week, even if medically unavailable. Its grade includes their hypothetical return value, not just the trade. No duplicate players or additional waiver pickups are credited in that scenario. Each offer is an alternative from the current Yahoo roster, not a completed transaction or Yahoo trade evaluation.</p>';
 }
 
 function draw(){
