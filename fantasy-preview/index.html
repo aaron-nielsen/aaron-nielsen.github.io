@@ -591,7 +591,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 .model-team-expanded{padding:10px}.team-model-players{grid-template-columns:1fr}}
 
 </style>
-<link rel="stylesheet" href="./clean-dashboard.css?v=20261010l">
+<link rel="stylesheet" href="./clean-dashboard.css?v=20261010q">
 <link rel="stylesheet" href="./trade-preferences.css">
 <style id="team-score-comparison">
 /* Current-week forecasts: labelled scores and mobile-friendly paired columns */
@@ -697,12 +697,15 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 <div class="section-top"><div><div class="eyebrow" id="overviewLeagueLabel">2026 Fantasy Football</div><h1>Overview</h1></div><div class="quiet tiny" id="sync">Loading Yahoo snapshot…</div></div>
 <div class="overview-top">
  <div class="matchup" id="hero"><div class="loading">Loading this week's matchup…</div></div>
+ <div class="overview-team-header team-overview"><div class="overview-team-identity" id="overviewTeamIdentity"></div>
  <div class="overview-metrics" aria-label="My team standings" id="overviewMetrics">
-  <div><small>RECORD</small><strong id="wl">—</strong></div>
-  <div id="projectedRecord" aria-label="Projected overall record"></div>
+  <div><small>RECORD:</small><strong id="wl">—</strong></div>
+  <div><small>POINTS</small> <strong id="pointsFor">—</strong></div>
   <div id="projectedRemaining" aria-label="Projected remaining record"></div>
-  <div><small>RANK</small><strong id="rankDesc">—</strong></div>
-  <div><small>POINTS </small> <strong id="pointsFor">—</strong></div>
+  <div id="remainingPoints" aria-label="Projected remaining points"></div>
+  <div id="projectedRecord" aria-label="Projected overall record"></div>
+  <div id="overallPoints" aria-label="Projected overall points"></div>
+ </div>
  </div>
 </div>
 
@@ -731,7 +734,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 <section id="page-rosters" class="page" hidden>
 <div class="section-top"><div><div class="eyebrow" id="rosterLeagueCount">League rosters</div><h2>Rosters</h2><p id="rosterLeagueIntro" class="visually-hidden">Team roster comparison.</p></div><select class="select" id="teamChoice" aria-label="Select fantasy team"></select></div>
 
-<div id="selectedTeam"></div><div class="panel roster-compare" id="rosterComparison" aria-label="Starter and eligible backup comparison"></div><div class="roster-secondary"><div class="panel group-panel" id="benchGroup"></div><div class="panel group-panel" id="irGroup"></div></div>
+<div class="panel roster-compare" id="rosterComparison" aria-label="Starter and eligible backup comparison"></div><div class="roster-secondary"><div class="panel group-panel" id="benchGroup"></div><div class="panel group-panel" id="irGroup"></div></div>
 </section>
 <section id="page-finder" class="page" hidden>
 <div class="section-top"><div><h2>Player Finder</h2></div></div>
@@ -766,6 +769,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
   <section class="trade-filter-panel"><div class="trade-controls"><label for="tradePosition">Trade targets <select id="tradePosition" class="select"><option value="offense_no_qb">Offense (no QB)</option><option value="all">All offense</option><option value="QB">QB</option><option value="RB">RB</option><option value="WR">WR</option><option value="TE">TE</option></select></label><label for="tradePartner">Trading with <select id="tradePartner" class="select"><option value="all">All teams</option></select></label>
   <label for="tradeFromWeek">Evaluate <select id="tradeFromWeek" class="select"><option value="6">Weeks 6–17</option></select></label>
   <label for="tradePackageFilter">Packages <select id="tradePackageFilter" class="select"><option value="one_each">1-for-1 only</option><option value="two_each">2-for-2 only</option><option value="three_each">3-for-3 only</option><option value="balanced">2-for-2 or 3-for-3</option><option value="balanced_all">1-for-1, 2-for-2, 3-for-3</option><option value="all" selected>All packages · 1–3 each</option><option value="unequal">Unequal packages · 1–3 each</option><option value="1_for_2">1-for-2 only</option><option value="1_for_3">1-for-3 only</option><option value="2_for_1">2-for-1 only</option><option value="2_for_3">2-for-3 only</option><option value="3_for_1">3-for-1 only</option><option value="3_for_2">3-for-2 only</option></select></label>
+  <label>Find <select id="tradeGoal" class="select"><option value="balanced">Da Vinci · both teams gain</option><option value="edge">Yahoo fair to partner · Da Vinci advantage</option></select></label>
   <label>Show <select id="tradeLimit" class="select"><option>6</option><option>12</option><option>24</option></select></label><div id="tradeCount" class="trade-count">Calculating candidates…</div></div></section>
   <div id="tradeResults" class="trades-grid"><div class="empty-copy">Calculating lineup-adjusted trade ideas…</div></div>
   
@@ -788,19 +792,19 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 <footer class="footer"><div>DA VINCI FANTASY LAB / CSU STATS · MMXXVI</div><div>READ-ONLY PROTOTYPE · POWERED BY YAHOO LEAGUE DATA</div></footer>
 </div>
 <script src="./special-teams-model.js"></script>
-<script src="./lab-enhancements.js?v=20261010l"></script>
-<script src="./availability-sanity.js?v=20261010l"></script>
+<script src="./lab-enhancements.js?v=20261010q"></script>
+<script src="./availability-sanity.js?v=20261010q"></script>
 <script src="./return-outlook.js"></script>
 <script src="./playing-time-model.js"></script>
-<script src="./roster-advice.js?v=20261010l"></script>
-<script src="./matchup-overview.js?v=20261010l"></script>
+<script src="./roster-advice.js?v=20261010q"></script>
+<script src="./matchup-overview.js?v=20261010q"></script>
 <script src="./overview-roster.js"></script>
-<script src="./trade-preferences.js?v=20261010l"></script>
-<script src="./transaction-grades.js?v=20261010l"></script>
+<script src="./trade-preferences.js?v=20261010q"></script>
+<script src="./transaction-grades.js?v=20261010q"></script>
 <script src="./historical-trends.js"></script>
 <script src="./historical-trends-view.js"></script>
 <script src="./forecast-accuracy.js"></script>
-<script src="./model-performance.js?v=20261010l"></script>
+<script src="./model-performance.js?v=20261010q"></script>
 <script>
 'use strict';
 const $=s=>document.querySelector(s);
@@ -1023,31 +1027,48 @@ function renderFeaturedMatchup(selected){
 function renderProjectedRecord(){
  const node=$('#projectedRecord');if(!node)return;
  const all=[{week:Number(week.week),matchups:week.matchups},...(matchupSchedule?.weeks||[])];
- let wins=0,losses=0,ties=0,missing=0,last=Number(week.week);
- for(const round of all){
-  const m=round.matchups.find(m=>String(m.home.id)===String(TEAM_ID)||String(m.away.id)===String(TEAM_ID));
-  if(!m)continue;last=Math.max(last,round.week);
-  const forecast=t=>round.week===Number(week.week)?currentTeamForecast(t).davinci:modelTeamLineup(t.id,round.week)?.points;
-  const home=forecast(m.home),away=forecast(m.away);
-  if(home==null||away==null){missing++;continue;}
-  const own=String(m.home.id)===String(TEAM_ID)?home:away,opponent=String(m.home.id)===String(TEAM_ID)?away:home;
-  if(Math.abs(own-opponent)<.05)ties++;else if(own>opponent)wins++;else losses++;
- }
- const st=standing(TEAM_ID),complete=st?.wins!=null&&st?.losses!=null&&!missing;
+ const records=rosters.teams.map(team=>{
+  let wins=0,losses=0,ties=0,missing=0,points=0,last=Number(week.week);
+  for(const round of all){
+   const m=round.matchups.find(m=>String(m.home.id)===String(team.id)||String(m.away.id)===String(team.id));
+   if(!m)continue;last=Math.max(last,round.week);
+   const forecast=t=>round.week===Number(week.week)?currentTeamForecast(t).davinci:modelTeamLineup(t.id,round.week)?.points;
+   const home=forecast(m.home),away=forecast(m.away);
+   if(home==null||away==null){missing++;continue;}
+   const own=String(m.home.id)===String(team.id)?home:away,opponent=String(m.home.id)===String(team.id)?away:home;
+   points+=own;if(Math.abs(own-opponent)<.05)ties++;else if(own>opponent)wins++;else losses++;
+  }
+  const st=standing(team.id),complete=st?.wins!=null&&st?.losses!=null&&!missing;
+  return {id:String(team.id),wins,losses,ties,missing,points,last,complete,pointsComplete:complete&&st?.pointsFor!=null,
+   overallWins:wins+Number(st?.wins||0),overallLosses:losses+Number(st?.losses||0),overallTies:ties+Number(st?.ties||0),overallPoints:points+Number(st?.pointsFor||0)};
+ });
+ const own=records.find(r=>r.id===String(TEAM_ID));if(!own)return;
  const tally=(w,l,t)=>w+'–'+l+(t?'–'+t:'');
- node.title='Weeks '+week.week+'–'+last+(missing?' · '+missing+' unprojected games':'')+'. Based on current rosters and scheduled opponents.';
- node.innerHTML='<small>PROJ. OVERALL</small><strong>'+(complete?tally(wins+st.wins,losses+st.losses,ties+Number(st.ties||0)):'—')+'</strong>';
- const remaining=$('#projectedRemaining');
- remaining.title=node.title;
- remaining.innerHTML='<small>PROJ. REMAINING</small><strong>'+(!missing?tally(wins,losses,ties):'—')+'</strong>';
+ const pointRank=overall=>{
+  if(records.some(r=>overall?!r.pointsComplete:r.missing))return '';
+  const value=r=>overall?r.overallPoints:r.points;
+  return ' (#'+(1+records.filter(r=>value(r)>value(own)).length)+'/'+records.length+')';
+ };
+ const rank=overall=>{
+  if(records.some(r=>overall?!r.pointsComplete:r.missing))return '';
+  const value=r=>overall?r.overallWins+r.overallTies*.5:r.wins+r.ties*.5;
+  const points=r=>overall?r.overallPoints:r.points;
+  return ' (#'+(1+records.filter(r=>value(r)>value(own)||(value(r)===value(own)&&points(r)>points(own))).length)+'/'+records.length+')';
+ };
+ node.title='Weeks '+week.week+'–'+own.last+(own.missing?' · '+own.missing+' unprojected games':'')+'. Projected standings use wins and projected points as the tiebreaker.';
+ node.innerHTML='<small>PROJECTED OVERALL:</small><strong>'+(own.complete?tally(own.overallWins,own.overallLosses,own.overallTies)+rank(true):'—')+'</strong>';
+ const remaining=$('#projectedRemaining');remaining.title=node.title;
+ remaining.innerHTML='<small>REMAINING RECORD:</small><strong>'+(!own.missing?tally(own.wins,own.losses,own.ties)+rank(false):'—')+'</strong>';
+ $('#remainingPoints').innerHTML='<small>REMAINING POINTS:</small><strong>'+(!own.missing?own.points.toFixed(1)+pointRank(false):'—')+'</strong>';
+ $('#overallPoints').innerHTML='<small>PROJECTED OVERALL POINTS:</small><strong>'+(own.pointsComplete?own.overallPoints.toFixed(1)+pointRank(true):'—')+'</strong>';
 }
 function initOverview(){
  renderFeaturedMatchup(week.week);
  renderProjectedRecord();
  const st=standing(TEAM_ID);
- const metrics=[['wl',st?.wins!=null&&st?.losses!=null?st.wins+'–'+st.losses:null],
-  ['rankDesc',st?.rank!=null?'#'+st.rank+' / '+rosters.teams.length:null],
-  ['pointsFor',st?.pointsFor!=null?number(st.pointsFor)+(week.standings.every(t=>t.pointsFor!=null)?' (#'+(1+week.standings.filter(t=>Number(t.pointsFor)>Number(st.pointsFor)).length)+')':''):null]];
+ $('#overviewTeamIdentity').innerHTML='<h2>'+esc(team(TEAM_ID).name)+'</h2>';
+ const metrics=[['wl',st?.wins!=null&&st?.losses!=null?st.wins+'–'+st.losses+(st.rank!=null?' (#'+st.rank+'/'+rosters.teams.length+')':''):null],
+  ['pointsFor',st?.pointsFor!=null?number(st.pointsFor)+(week.standings.every(t=>t.pointsFor!=null)?' (#'+(1+week.standings.filter(t=>Number(t.pointsFor)>Number(st.pointsFor)).length)+'/'+rosters.teams.length+')':''):null]];
  for(const [id,value] of metrics){const el=$('#'+id);el.textContent=value??'';el.parentElement.hidden=value==null;}
  $('#overviewMetrics').hidden=metrics.every(([,v])=>v==null);
   $('#leagueBoard').innerHTML=week.matchups.map(m=>{
@@ -1179,9 +1200,6 @@ function initRosters(){
 }
 function renderRoster(){
  const t=team(selectedTeam),s=standing(selectedTeam);
- const mine=String(t.id)===String(TEAM_ID);
- const badge=mine?'YOUR TEAM':'LEAGUE TEAM';
- $('#selectedTeam').innerHTML='<div class="team-overview"><div class="big-initial">'+esc(t.name.charAt(0).toUpperCase())+'</div><div><div class="eyebrow">'+badge+'</div><h2>'+esc(t.name)+'</h2><span class="quiet tiny">'+t.players.length+' players on Yahoo roster</span></div><div class="meta"><div><b>'+(s?.wins==null?'—':s.wins+'–'+s.losses)+'</b><span>RECORD</span></div><div><b>'+(s?.rank==null?'—':'#'+s.rank)+'</b><span>LEAGUE RANK</span></div><div><b>'+number(s?.pointsFor)+'</b><span>POINTS FOR</span></div></div></div>';
  const order=['QB','RB','RB','WR','WR','TE','W/R/T','K','DEF'];
  const allowed={QB:['QB'],RB:['RB'],WR:['WR'],TE:['TE'],'W/R/T':['RB','WR','TE'],K:['K'],DEF:['DEF']};
  const starters=t.players.filter(p=>p.slot!=='BN'&&p.slot!=='IR');
@@ -1208,12 +1226,11 @@ function renderRoster(){
   const pts=weeklyDisplay(projection);
   const ptsNote=pts;
   return '<div class="roster-compare-cell">'+(slot?'<span class="roster-compare-slot">'+esc(slot)+'</span>':'')+
-   '<strong>'+esc(p.name)+status(p)+'</strong>'+
+   '<div class="roster-player-heading"><strong>'+esc(p.name)+status(p)+'</strong><b class="roster-compare-score" title="Da Vinci Week '+week.week+' projected points">'+esc(ptsNote)+'</b></div>'+
    '<small>'+esc(p.position)+(backup&&['W/R/T','FLEX'].includes(p.slot)?' · Currently FLEX':'')+' · '+esc(p.nflTeam||'NFL team unknown')+
-   ' · <span class="roster-compare-score">'+esc(ptsNote)+'</span>'+
    '</small></div>';
  }
- $('#rosterComparison').innerHTML='<div class="roster-compare-header"><span>CURRENT STARTER</span><span>BEST BACKUP</span></div>'+
+ $('#rosterComparison').innerHTML='<div class="roster-compare-header"><span>CURRENT STARTER · W'+week.week+' PROJECTION</span><span>BEST BACKUP · W'+week.week+' PROJECTION</span></div>'+
  ordered.map((p,i)=>'<div class="roster-compare-row">'+cell(p,p.slot,false)+cell(assigned[i],null,true)+'</div>').join('')+
  '';
  group('benchGroup',bench,'All bench players');
@@ -1423,7 +1440,7 @@ async function get(path){const r=await fetch(DATA_BASE+path+'.json',{cache:'no-s
   initOverview();initRosters();initFinder();renderProjection();renderSpecialValidation();initModelTeamForecasts();window.DaVinciLab?.init();
    if(!window.DaVinciAdvice)throw Error("Roster recommendation module unavailable");
    window.DaVinciAdvice.init({rosters,available,week:Number(week.week),future:futureData,teamId:TEAM_ID});
-   window.DaVinciPersonalTrades?.init({rosters,available,week:Number(week.week),future:futureData,teamId:TEAM_ID,leagueKey:LEAGUE_KEY,optimize:window.DaVinciAdvice.lineup});
+   window.DaVinciPersonalTrades?.init({rosters,available,week:Number(week.week),future:futureData,teamId:TEAM_ID,leagueKey:LEAGUE_KEY,yahooFuture:await get('yahoo-projections').catch(()=>null),yahooEvaluations:await get('yahoo-trade-evaluations').catch(()=>null),optimize:window.DaVinciAdvice.lineup});
    window.DaVinciTransactions?.init({rosters,available,week:Number(week.week),future:futureData,teamId:TEAM_ID,transactions:transactionsData,optimize:window.DaVinciAdvice.lineup,partialOptimize:window.DaVinciAdvice.partialLineup});
    const pageFromLink=location.hash.slice(1);if(['rosters','finder','projections','trades','transactions','performance'].includes(pageFromLink))showPage(pageFromLink);
  }catch(e){

@@ -108,7 +108,8 @@ function getCandidates(){
   }
   proposals.push(...retained);
  }
- return proposals.sort((a,b)=>a.gap-b.gap).slice(0,120);
+ const counts={};
+ return proposals.sort((a,b)=>a.gap-b.gap).filter(c=>{counts[c.shape]=(counts[c.shape]||0)+1;return counts[c.shape]<=20;}).slice(0,180);
 }
 // Balance roster capacity before measuring any unequal offer; expose these assumptions.
 function repairRoster(players,original,protectedIds,weeks){
@@ -145,7 +146,39 @@ function evaluateOffer(c,original,baseline,weeks){
   gainYou+=you.score-baseline.you[i].score;
   gainThem+=them.score-baseline.peers.get(c.partner.id)[i].score;
  }
- return {...c,adjustments:{you:yours.notes,them:theirsFixed.notes},gainYou,gainThem,avgYou:gainYou/weeks.length,avgThem:gainThem/weeks.length};
+ const yahoo=yahooEvaluation(c,weeks,yours.players,theirsFixed.players);
+ return {...c,yahoo,adjustments:{you:yours.notes,them:theirsFixed.notes},gainYou,gainThem,avgYou:gainYou/weeks.length,avgThem:gainThem/weeks.length};
+}
+function yahooEvaluation(c,weeks,yours,theirs){
+ const same=(a,b)=>a.map(String).sort().join('.')===b.map(String).sort().join('.');
+ const observed=state.yahooEvaluations?.evaluations?.find(e=>String(e.teamId)===String(state.teamId)&&String(e.partnerId)===String(c.partner.id)&&e.startWeek===weeks[0]&&e.endWeek===weeks.at(-1)&&same(e.send,c.send.players.map(id))&&same(e.receive,c.receive.players.map(id)));
+ if(observed)return {gainYou:observed.gainYou,gainThem:observed.gainThem,source:state.yahooEvaluations.source};
+ if(!state.yahooFuture?.players)return null;
+ const frames=new Map(state.yahooFuture.players.map(p=>[String(p.yahooId),p]));
+ const slots=[['QB'],['RB'],['RB'],['WR'],['WR'],['TE'],['RB','WR','TE'],['K'],['DEF']];
+ function score(players,w){
+  const dp=Array(512).fill(null);dp[0]=0;
+  for(const p of players.filter(eligible)){
+   const frame=frames.get(id(p))?.weeks?.find(g=>Number(g.week)===w);
+   // Unknown Yahoo values must never be replaced with Da Vinci or actual points.
+   if(frame?.points==null||!Number.isFinite(Number(frame.points)))return null;
+   const value=Number(frame.points);
+   for(let mask=511;mask>=0;mask--){if(dp[mask]==null)continue;
+    for(let i=0;i<9;i++)if(!(mask&(1<<i))&&slots[i].includes(p.position)){
+     const next=mask|(1<<i);dp[next]=Math.max(dp[next]??-Infinity,dp[mask]+value);
+    }
+   }
+  }
+  return dp[511];
+ }
+ let gainYou=0,gainThem=0;
+ const mine=state.rosters.teams.find(t=>String(t.id)===String(state.teamId));
+ for(const w of weeks){
+  const totals=[score(mine.players,w),score(c.partner.players,w),score(yours,w),score(theirs,w)];
+  if(totals.some(v=>v==null))return null;
+  gainYou+=totals[2]-totals[0];gainThem+=totals[3]-totals[1];
+ }
+ return {gainYou,gainThem,source:state.yahooFuture.source||'Yahoo player projections'};
 }
 function evaluate(){
  const weeks=starts(),mine=state.rosters.teams.find(t=>String(t.id)===String(state.teamId));
@@ -161,10 +194,11 @@ function evaluate(){
  // A proposed trade must make BOTH nine-position projected lineups better
  // over the entire selected remainder of the season. Small noisy gains do not count.
  return candidates.map(c=>evaluateOffer(c,mine.players,baseline,weeks)).filter(Boolean)
- .filter(t=>t.avgYou>=MIN_ROS_GAIN_PER_WEEK&&t.avgThem>=MIN_ROS_GAIN_PER_WEEK)
+ .filter(t=>$('tradeGoal')?.value==='edge'?t.avgYou>=MIN_ROS_GAIN_PER_WEEK&&t.yahoo?.gainThem>=0:t.avgYou>=MIN_ROS_GAIN_PER_WEEK&&t.avgThem>=MIN_ROS_GAIN_PER_WEEK)
  .sort((a,b)=>{
   // Prioritize balance: maximizing the smaller team's benefit is a better
   // starting point for a mutually acceptable offer than maximizing just ours.
+  if($('tradeGoal')?.value==='edge')return b.gainYou-a.gainYou;
   const as=Math.min(a.avgYou,a.avgThem)*3+(a.avgYou+a.avgThem)*.20-a.gap*1.2;
   const bs=Math.min(b.avgYou,b.avgThem)*3+(b.avgYou+b.avgThem)*.20-b.gap*1.2;
   return bs-as;
@@ -176,7 +210,7 @@ function resultHTML(t){
  return '<article class="trade-personal-card"><div class="trade-personal-head"><strong>'+esc(t.partner.name)+'</strong><span>'+t.shape+'</span></div>'+
  '<div class="trade-personal-sides"><div><small>SEND</small>'+formatList(t.send.players)+'</div><div><small>RECEIVE</small>'+formatList(t.receive.players)+'</div></div>'+
  '<div class="trade-personal-footer"><b>Your gain +'+fmt(t.avgYou)+' pts/wk <small>+'+fmt(t.gainYou)+' ROS</small></b>'+
- '<span>Both teams gain · Theirs +'+fmt(t.avgThem)+' pts/wk <small>(+'+fmt(t.gainThem)+' ROS)</small></span></div>'+((t.adjustments.you.length||t.adjustments.them.length)?'<details><summary>Roster moves assumed</summary><p>'+esc(['You: '+t.adjustments.you.join('; '),t.partner.name+': '+t.adjustments.them.join('; ')].join(' · '))+'</p></details>':'')+'</article>';
+ '<span>'+(t.avgThem>=0?'Both teams gain · Theirs +':'Da Vinci · Theirs ')+fmt(t.avgThem)+' pts/wk <small>(+'+fmt(t.gainThem)+' ROS)</small></span></div>'+(t.yahoo?'<div class="trade-yahoo-comparison" title="'+esc(t.yahoo.source)+'">Yahoo ROS · You '+(t.yahoo.gainYou>=0?'+':'')+fmt(t.yahoo.gainYou)+' · Theirs '+(t.yahoo.gainThem>=0?'+':'')+fmt(t.yahoo.gainThem)+'</div>':'')+((t.adjustments.you.length||t.adjustments.them.length)?'<details><summary>Roster moves assumed</summary><p>'+esc(['You: '+t.adjustments.you.join('; '),t.partner.name+': '+t.adjustments.them.join('; ')].join(' · '))+'</p></details>':'')+'</article>';
 }
 function render(){
  const target=$('tradeResults');if(!target||!state)return;
@@ -192,6 +226,7 @@ function render(){
   if(['one_each','two_each','three_each'].includes(shape)){const n={one_each:1,two_each:2,three_each:3}[shape];options=options.filter(t=>t.send.players.length===n&&t.receive.players.length===n);}
   const shown=options.slice(0,Number($('tradeLimit')?.value||6));
   if(!shown.length){
+   if($('tradeGoal')?.value==='edge'){target.innerHTML='<div class="trade-personal-loading">No Yahoo-verified matches. Flaim currently supplies team totals, but not the player projections needed to screen new trades.</div>';return;}
    target.innerHTML='<div class="trade-personal-loading">No trades here improve BOTH lineups by at least '+fmt(MIN_ROS_GAIN_PER_WEEK)+' pts/week over the rest of the season. Try another player or manager.</div>';
    return;
   }
@@ -199,7 +234,7 @@ function render(){
  };
  if(typeof requestAnimationFrame==='function')requestAnimationFrame(run);else run();
 }
-function active(){const mode=$('tradePackageFilter')?.value||'';return selectedOut.size>0||selectedIn.size>0||mode==='all'||mode==='unequal'||mode.includes('_for_');}
+function active(){const mode=$('tradePackageFilter')?.value||'';return selectedOut.size>0||selectedIn.size>0||mode==='all'||mode==='unequal'||mode.includes('_for_')||Boolean($('tradeGoal')?.value);}
 function refresh(){
  for(const [type,selected] of [['send',selectedOut],['receive',selectedIn]]){
   const box=$('trade'+(type==='send'?'Send':'Receive')+'Box');
@@ -262,6 +297,7 @@ function init(settings){
  $('tradePartner')?.addEventListener('change',()=>{refresh();if(active())updated()});
  $('tradePackageFilter')?.addEventListener('change',()=>{if(active())updated()});
  $('tradeLimit')?.addEventListener('change',()=>{if(active())updated()});
+ $('tradeGoal')?.addEventListener('change',updated);
  $('tradePosition')?.addEventListener('change',()=>{if(active())updated()});
  updated();
 }

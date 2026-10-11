@@ -1070,3 +1070,23 @@ body{font:16px/1.48 'Source Sans 3',Arial,sans-serif;color:var(--text);backgroun
 @media(max-width:600px){.featured-matchup-heading{gap:12px}.featured-matchup-heading h2{font-size:19px}}
 
 #page-overview .overview-metrics{flex-wrap:wrap!important;justify-content:center!important;gap:12px 22px!important}
+
+#page-overview .overview-team-header{order:-1;border-radius:8px;padding:16px 18px;display:block;box-sizing:border-box}
+.overview-team-identity{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.overview-team-identity h2{margin:0;font-size:24px}
+.overview-team-identity .big-initial{width:40px;height:40px;min-width:40px;font-size:23px;display:grid;place-items:center;border-radius:7px;background:#ead9bc;color:#80552e}
+#page-overview .overview-team-header .overview-metrics{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px!important;padding:0!important}
+#page-overview .overview-team-header .overview-metrics>div{flex-direction:column!important;align-items:flex-start!important;gap:6px!important}
+#page-overview .overview-team-header .overview-metrics strong{font-size:17px!important;white-space:nowrap}
+#page-overview .overview-team-header .overview-metrics small{font-size:10px!important}
+@media(max-width:560px){#page-overview .overview-team-header .overview-metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px!important}.overview-team-identity h2{font-size:21px}}
+
+#page-overview .overview-team-header .overview-metrics{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:16px 28px!important}
+#page-overview .overview-team-header .overview-metrics>div{padding-bottom:10px!important;border-bottom:1px solid #e5d6c2!important}
+#page-overview .overview-team-header .overview-metrics>div:nth-last-child(-n+2){border-bottom:0!important;padding-bottom:0!important}
+.roster-player-heading{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.roster-player-heading .roster-compare-score{font-size:23px;color:#536c50;white-space:nowrap;font-variant-numeric:tabular-nums}
+#page-rosters .weekly-mini{font-size:21px;color:#536c50;font-weight:750}
+.trade-yahoo-comparison{font-size:12px;color:#75654f;margin-top:10px}
+
+.roster-compare-cell:first-child{padding-right:16px}

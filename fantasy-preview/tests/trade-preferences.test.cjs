@@ -93,3 +93,25 @@ for(const shape of ['1_for_3','3_for_2','2_for_1']){
 const repaired=context.DaVinciPersonalTrades.repairRoster(own.concat(other[9]),own,new Set([other[9].id]),[6,7]);
 assert.equal(repaired.players.length,own.length);assert.ok(repaired.players.some(p=>p.id===other[9].id));assert.match(repaired.notes.join(),/Drop/);
 assert.equal(context.DaVinciPersonalTrades.repairRoster(own.slice(0,-1),own,new Set(),[6,7]),null,'Missing free agents cannot invent roster repair');
+
+vm.runInNewContext(read('trade-preferences.js').replace('root.DaVinciPersonalTrades={init,active,render};','root.DaVinciPersonalTrades={init,active,render,yahooEvaluation};'),context);
+getElementById('tradePackageFilter').value='balanced_all';
+const offer={partner:rosters.teams[1],send:{players:[own[9]]},receive:{players:[other[9]]}};
+const yourAfter=own.slice(0,-1).concat(other[9]),theirAfter=other.slice(0,-1).concat(own[9]);
+context.DaVinciPersonalTrades.init({rosters,available,future,teamId:owner,optimize:context.DaVinciAdvice.lineup});
+assert.equal(context.DaVinciPersonalTrades.yahooEvaluation(offer,[6,7],yourAfter,theirAfter),null,'Missing Yahoo projections never borrow Da Vinci values');
+const yahooFuture=JSON.parse(JSON.stringify(future));yahooFuture.source='Yahoo test fixture';
+context.DaVinciPersonalTrades.init({rosters,available,future,yahooFuture,teamId:owner,optimize:context.DaVinciAdvice.lineup});
+const y=context.DaVinciPersonalTrades.yahooEvaluation(offer,[6,7],yourAfter,theirAfter);
+assert.equal(y.gainYou,14);assert.equal(y.gainThem,20); // A 26-point WR replaces the 16-point FLEX in two weeks.
+yahooFuture.players[0].weeks[1].points=null;
+assert.equal(context.DaVinciPersonalTrades.yahooEvaluation(offer,[6,7],yourAfter,theirAfter),null,'Incomplete Yahoo coverage stays unknown');
+const yahooEvaluations={source:'Yahoo screenshot',evaluations:[{teamId:owner,partnerId:partner,send:[own[9].id],receive:[other[9].id],startWeek:6,endWeek:7,gainYou:42.81,gainThem:-34.69}]};
+context.DaVinciPersonalTrades.init({rosters,available,future,yahooEvaluations,teamId:owner,optimize:context.DaVinciAdvice.lineup});
+assert.equal(context.DaVinciPersonalTrades.yahooEvaluation(offer,[6,7],yourAfter,theirAfter).gainThem,-34.69);
+assert.equal(context.DaVinciPersonalTrades.yahooEvaluation(offer,[7],yourAfter,theirAfter),null,'A saved Yahoo evaluation cannot be used for a different horizon');
+
+getElementById('tradeGoal').value='edge';
+context.DaVinciPersonalTrades.render();
+assert.doesNotMatch(getElementById('tradeResults').innerHTML,/trade-personal-card/,'Negative Yahoo partner gain cannot qualify as a Yahoo-fair coup');
+assert.match(getElementById('tradeResults').innerHTML,/No Yahoo-verified matches/);

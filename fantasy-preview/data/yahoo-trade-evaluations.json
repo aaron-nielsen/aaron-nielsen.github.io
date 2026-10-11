@@ -1,0 +1,22 @@
+{
+  "source": "User-provided Yahoo Evaluate Trade screenshot, October 10, 2026",
+  "leagueId": "470.l.258793",
+  "evaluations": [
+    {
+      "teamId": "7",
+      "partnerId": "14",
+      "send": [
+        "31960",
+        "34095"
+      ],
+      "receive": [
+        "34019"
+      ],
+      "startWeek": 6,
+      "endWeek": 17,
+      "gainYou": 42.81,
+      "gainThem": -34.69,
+      "kind": "Yahoo optimized-lineup evaluation"
+    }
+  ]
+}
