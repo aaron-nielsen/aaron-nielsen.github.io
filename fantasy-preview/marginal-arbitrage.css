@@ -1,0 +1,33 @@
+/* Two-way marginal values and trade-arbitrage lists. */
+#marginalLab{margin-top:20px;border-top:1px solid #e3d4c3;padding:20px 0 3px}
+#marginalLab[hidden]{display:none}
+.marginal-section-heading,.marginal-title{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.marginal-section-heading h3{font:750 22px/1.25 'Source Sans 3',Arial,sans-serif;margin:0;color:#44372d}
+.marginal-section-heading button{border:1px solid #d1bba3;border-radius:7px;background:#fff8ec;color:#715337;padding:7px 11px;font:700 12px 'Source Sans 3',Arial,sans-serif;cursor:pointer}
+.marginal-description,.marginal-explain{font:400 13px/1.55 'Source Sans 3',Arial,sans-serif;color:#7a6655;margin:9px 0 14px;max-width:780px}
+.marginal-explain{margin:4px 0 10px}
+.marginal-controls{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:9px}
+.marginal-controls label{font:700 12px/1.4 'Source Sans 3',Arial,sans-serif;color:#695340;display:flex;flex-direction:column;gap:4px;min-width:0}
+.marginal-controls select,.marginal-controls input{box-sizing:border-box;width:100%;min-width:0;border:1px solid #d5c4b1;border-radius:6px;background:#fffbf4;padding:8px;font:500 13px 'Source Sans 3',Arial,sans-serif;color:#45382d}
+.marginal-controls .marginal-search{grid-column:span 2}
+.marginal-status{font:600 12px/1.4 'Source Sans 3',Arial,sans-serif;color:#8c7259;margin:11px 0 14px}
+.marginal-list,#marginalDeals{margin:16px 0}
+.marginal-title{margin-bottom:8px}
+.marginal-title strong{font-size:17px;font-weight:750;color:#48392b}
+.marginal-title span{font-size:12px;color:#7e6b59;text-align:right}
+.marginal-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid #e3d6c5;border-radius:8px;background:#fffdf9}
+.marginal-table{width:100%;min-width:560px;border-collapse:collapse;font:500 13px/1.4 'Source Sans 3',Arial,sans-serif}
+.marginal-table th{background:#f6eee3;color:#715a45;font:750 11px/1.2 'Source Sans 3',Arial,sans-serif;text-align:left;white-space:nowrap;padding:10px 9px;border-bottom:1px solid #dfcfbb;cursor:pointer}
+#marginalDeals .marginal-table th{cursor:default}
+.marginal-table td{padding:9px;border-bottom:1px solid #eee4d6;vertical-align:top;color:#584535}
+.marginal-table tbody tr:last-child td{border-bottom:0}
+.marginal-table tr:nth-child(even) td{background:#fdf9f3}
+.marginal-table td strong{font-weight:750;color:#443529}
+.marginal-table td small{display:block;color:#98806a;font-size:11px}
+.marginal-table .marginal-num{white-space:nowrap;text-align:right;font-variant-numeric:tabular-nums;font-weight:750}
+.marginal-table th:nth-child(n+3){text-align:right}
+.marginal-blank{padding:12px;color:#856e59}
+.marginal-method{font:400 12px/1.5 'Source Sans 3',Arial,sans-serif;color:#87715c;padding:10px 0;border-top:1px solid #e8dac8}
+.marginal-method summary{font-weight:700;cursor:pointer}
+.marginal-method p{max-width:850px;margin:7px 0}
+@media(max-width:720px){.marginal-controls{grid-template-columns:repeat(2,minmax(0,1fr))}.marginal-controls .marginal-search{grid-column:span 2}.marginal-section-heading h3{font-size:19px}.marginal-title strong{font-size:15px}.marginal-table{font-size:12px}}
