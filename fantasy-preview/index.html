@@ -594,6 +594,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 </style>
 <link rel="stylesheet" href="./clean-dashboard.css?v=20261010v">
 <link rel="stylesheet" href="./trade-preferences.css?v=20261011y">
+<link rel="stylesheet" href="./marginal-arbitrage.css?v=20261011a">
 <style id="team-score-comparison">
 /* Current-week forecasts: labelled scores and mobile-friendly paired columns */
 #page-overview .match-compact-scores{align-items:start}
@@ -777,6 +778,24 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
   <label>Find <select id="tradeGoal" class="select"><option value="balanced">Da Vinci · both teams gain</option><option value="edge">Yahoo fair to partner · Da Vinci advantage</option></select></label>
   <label>Show <select id="tradeLimit" class="select"><option>6</option><option>12</option><option>24</option></select></label><div id="tradeCount" class="trade-count">Calculating candidates…</div></div></section>
   <div id="tradeResults" class="trades-grid"><div class="empty-copy">Calculating lineup-adjusted trade ideas…</div></div>
+
+   <section id="marginalLab" class="marginal-lab" aria-label="League-wide marginal values" hidden>
+    <div class="marginal-section-heading"><h3>Marginal values & trade arbitrage</h3><button id="marginalRecalculate" type="button">Recalculate</button></div>
+    <p class="marginal-description">Compare the points a player costs their current team with the points they'd add to someone else's optimal lineup. A positive gap identifies a potential opportunity—not an acceptable trade by itself.</p>
+    <div class="marginal-controls">
+     <label>Period <select id="marginalHorizon" class="select"><option value="6">Weeks 6–17</option><option value="7">Weeks 7–17</option><option value="8">Weeks 8–11</option><option value="15">Playoffs · Weeks 15–17</option></select></label>
+     <label>Manager <select id="marginalTeam" class="select"><option value="all">All other teams</option></select></label>
+     <label>Position <select id="marginalPosition" class="select"><option value="all">All positions</option><option>QB</option><option>RB</option><option>WR</option><option>TE</option><option>K</option><option>DEF</option></select></label>
+     <label>Show <select id="marginalLimit" class="select"><option value="25">Top 25</option><option value="50">Top 50</option><option value="all">Every player</option></select></label>
+     <label class="marginal-search">Find <input id="marginalSearch" type="search" placeholder="Player or manager"></label>
+    </div>
+    <p id="marginalStatus" class="marginal-status">Preparing player values…</p>
+    <div id="marginalDeals"></div><div id="marginalRows"></div>
+    <details class="marginal-method"><summary>How the analysis works</summary>
+     <p><strong>Owner loss:</strong> lineup-point loss if the player leaves, allowing one available replacement at that position. <strong>Buyer gain:</strong> lineup-point improvement from adding him, with a low-marginal drop if at the 15-player active-roster limit. Both are what-if estimates, not literal trades.</p>
+     <p><strong>Value gap:</strong> buyer gain minus owner loss. Your players are evaluated separately against every other roster. A complete trade cannot be priced by adding isolated values: the 1-for-1 candidates use both complete before-and-after optimized lineups. Injury-return assumptions, waiver availability and the dated model materially affect the results.</p>
+    </details>
+   </section>
   
 </div></section>
 <section id="page-performance" class="page" hidden><div class="section-top"><h2>Model performance</h2></div><div class="panel" id="accuracyResults">Loading verified results…</div></section>
@@ -805,6 +824,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 <script src="./matchup-overview.js?v=20261010v"></script>
 <script src="./overview-roster.js"></script>
 <script src="./trade-preferences.js?v=20261011z"></script>
+<script src="./marginal-arbitrage.js?v=20261011a"></script>
 <script src="./transaction-grades.js?v=20261010v"></script>
 <script src="./historical-trends.js"></script>
 <script src="./historical-trends-view.js"></script>
@@ -1474,6 +1494,7 @@ async function get(path){const r=await fetch(DATA_BASE+path+'.json',{cache:'no-s
    window.DaVinciAdvice.init({rosters,available,week:Number(week.week),future:futureData,teamId:TEAM_ID});
    window.DaVinciPersonalTrades?.init({rosters,available,week:Number(week.week),future:futureData,teamId:TEAM_ID,leagueKey:LEAGUE_KEY,yahooFuture:await get('yahoo-projections').catch(()=>null),yahooEvaluations:await get('yahoo-trade-evaluations').catch(()=>null),optimize:window.DaVinciAdvice.lineup});
    window.DaVinciTransactions?.init({rosters,available,week:Number(week.week),future:futureData,teamId:TEAM_ID,transactions:transactionsData,optimize:window.DaVinciAdvice.lineup,partialOptimize:window.DaVinciAdvice.partialLineup});
+   window.DaVinciMarginal?.init({rosters,available,future:futureData,teamId:TEAM_ID,leagueKey:LEAGUE_KEY,optimize:window.DaVinciAdvice.lineup});
    const pageFromLink=location.hash.slice(1);if(['rosters','finder','projections','standings','trades','transactions','performance'].includes(pageFromLink))showPage(pageFromLink);
  }catch(e){
   $('#hero').innerHTML='<div class="loading"><strong>Dashboard data could not be loaded.</strong><p>'+esc(e.message)+'</p><p>Check the published JSON files or reload this page.</p></div>';
