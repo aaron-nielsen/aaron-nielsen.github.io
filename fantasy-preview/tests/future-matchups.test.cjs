@@ -12,9 +12,12 @@ for(const folder of ['data/','data/nebraska/']){
  for(const round of schedule.weeks){const seen=new Set();for(const m of round.matchups)for(const side of [m.home,m.away]){assert.ok(ids.has(side.id));assert.ok(!seen.has(side.id),'One pairing per team per week');seen.add(side.id);}}
 }
 const html=fs.readFileSync(path.join(root,'index.html'),'utf8');const recordCode=html.slice(html.indexOf('function renderProjectedRecord()'),html.indexOf('function initOverview()'));
-const target={innerHTML:''},team=id=>({id,name:'Team '+id});
+const target={innerHTML:''},remaining={innerHTML:''},team=id=>({id,name:'Team '+id});
 const games=[{home:team('7'),away:team('8')}];
-const record={week:{week:5,matchups:games},matchupSchedule:{weeks:[{week:6,matchups:games},{week:7,matchups:games},{week:8,matchups:games},{week:9,matchups:[]}]},TEAM_ID:'7',$:()=>target,standing:()=>({wins:1,losses:3,ties:0}),currentTeamForecast:t=>({davinci:t.id==='7'?100:90}),modelTeamLineup:(id,w)=>({points:w===6?(id==='7'?80:90):w===7?(id==='7'?110:90):100})};
+const record={week:{week:5,matchups:games},matchupSchedule:{weeks:[{week:6,matchups:games},{week:7,matchups:games},{week:8,matchups:games},{week:9,matchups:[]}]},TEAM_ID:'7',$:id=>id==='#projectedRemaining'?remaining:target,standing:()=>({wins:1,losses:3,ties:0}),currentTeamForecast:t=>({davinci:t.id==='7'?100:90}),modelTeamLineup:(id,w)=>({points:w===6?(id==='7'?80:90):w===7?(id==='7'?110:90):100})};
 vm.runInNewContext(recordCode+'renderProjectedRecord();',record);assert.match(target.innerHTML,/3–4–1/,'Historical record plus two projected wins, one loss and a tie');assert.match(target.title,/Weeks 5–8/,'Unscheduled playoff games are excluded');
-record.modelTeamLineup=()=>null;vm.runInNewContext(recordCode+'renderProjectedRecord();',record);assert.match(target.innerHTML,/REMAINING W–L/);assert.match(target.title,/3 unprojected/,'Missing lineup forecasts remain unknown');
+record.modelTeamLineup=()=>null;vm.runInNewContext(recordCode+'renderProjectedRecord();',record);assert.match(target.innerHTML,/PROJ. OVERALL/);assert.match(remaining.innerHTML,/—/);assert.match(target.title,/3 unprojected/,'Missing lineup forecasts remain unknown');
 console.log('Future pairing, optimized lineup, bye, projected record and missing-data checks passed.');
+
+assert.match(remaining.innerHTML,/PROJ. REMAINING/);
+assert.doesNotMatch(html,/id="waiverRank"/);
