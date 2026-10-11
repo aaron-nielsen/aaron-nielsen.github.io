@@ -5,7 +5,7 @@ const path=require('node:path');
 const vm=require('node:vm');
 const base=path.resolve(__dirname,'..');
 const html=fs.readFileSync(path.join(base,'index.html'),'utf8');
-const names=['id="lineupRecommendations"','id="waiverRecommendations"','id="offenseOutlook"','id="leagueBoard"'];
+const names=['id="lineupRecommendations"','id="waiverRecommendations"','id="leagueBoard"'];
 for(const token of names)assert.equal(html.split(token).length-1,1,'Duplicated/missing '+token);
 assert.ok(!html.includes('overview-roster-panel'),'Duplicate My roster disclosure is removed');
 assert.ok(html.includes('overview-roster.js'),'Module loaded from the homepage');

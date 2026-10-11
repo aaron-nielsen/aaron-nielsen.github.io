@@ -591,7 +591,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 .model-team-expanded{padding:10px}.team-model-players{grid-template-columns:1fr}}
 
 </style>
-<link rel="stylesheet" href="./clean-dashboard.css?v=20261010r">
+<link rel="stylesheet" href="./clean-dashboard.css?v=20261010s">
 <link rel="stylesheet" href="./trade-preferences.css">
 <style id="team-score-comparison">
 /* Current-week forecasts: labelled scores and mobile-friendly paired columns */
@@ -725,11 +725,10 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
  <div id="waiverRecommendations" class="waiver-list"><div class="empty-copy">Loading players…</div></div>
  
 </section>
-<div class="offense-outlook" id="offenseOutlook" aria-label="Future nine-starter team projections">Calculating future lineups…</div>
-<details class="panel overview-league-board">
- <summary>League matchups <span class="chip" id="boardWeek">WEEK 5</span></summary>
+<section class="panel overview-league-board" aria-label="League matchups">
+ <div class="panel-header"><div class="panel-title">League matchups</div><span class="chip" id="boardWeek">WEEK 5</span></div>
  <div class="scoreboard-list" id="leagueBoard"></div>
-</details>
+</section>
 </section>
 <section id="page-rosters" class="page" hidden>
 <div class="section-top"><div><div class="eyebrow" id="rosterLeagueCount">League rosters</div><h2>Rosters</h2><p id="rosterLeagueIntro" class="visually-hidden">Team roster comparison.</p></div><select class="select" id="teamChoice" aria-label="Select fantasy team"></select></div>
@@ -792,19 +791,19 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 <footer class="footer"><div>DA VINCI FANTASY LAB / CSU STATS · MMXXVI</div><div>READ-ONLY PROTOTYPE · POWERED BY YAHOO LEAGUE DATA</div></footer>
 </div>
 <script src="./special-teams-model.js"></script>
-<script src="./lab-enhancements.js?v=20261010r"></script>
-<script src="./availability-sanity.js?v=20261010r"></script>
+<script src="./lab-enhancements.js?v=20261010s"></script>
+<script src="./availability-sanity.js?v=20261010s"></script>
 <script src="./return-outlook.js"></script>
 <script src="./playing-time-model.js"></script>
-<script src="./roster-advice.js?v=20261010r"></script>
-<script src="./matchup-overview.js?v=20261010r"></script>
+<script src="./roster-advice.js?v=20261010s"></script>
+<script src="./matchup-overview.js?v=20261010s"></script>
 <script src="./overview-roster.js"></script>
-<script src="./trade-preferences.js?v=20261010r"></script>
-<script src="./transaction-grades.js?v=20261010r"></script>
+<script src="./trade-preferences.js?v=20261010s"></script>
+<script src="./transaction-grades.js?v=20261010s"></script>
 <script src="./historical-trends.js"></script>
 <script src="./historical-trends-view.js"></script>
 <script src="./forecast-accuracy.js"></script>
-<script src="./model-performance.js?v=20261010r"></script>
+<script src="./model-performance.js?v=20261010s"></script>
 <script>
 'use strict';
 const $=s=>document.querySelector(s);
