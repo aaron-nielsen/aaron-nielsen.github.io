@@ -1974,6 +1974,11 @@
         {
           "score": 3.7,
           "date": null
+        },
+        {
+          "score": 3.6,
+          "date": "2026-10-10",
+          "order": 4
         }
       ],
       "region": "American",
@@ -2226,6 +2231,11 @@
         {
           "score": 3.5,
           "date": "2026-10-09"
+        },
+        {
+          "score": 3.7,
+          "date": "2026-10-10",
+          "order": 3
         }
       ],
       "region": "American",
