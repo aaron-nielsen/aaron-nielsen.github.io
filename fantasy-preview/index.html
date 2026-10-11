@@ -591,7 +591,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 .model-team-expanded{padding:10px}.team-model-players{grid-template-columns:1fr}}
 
 </style>
-<link rel="stylesheet" href="./clean-dashboard.css?v=20261010s">
+<link rel="stylesheet" href="./clean-dashboard.css?v=20261010t">
 <link rel="stylesheet" href="./trade-preferences.css">
 <style id="team-score-comparison">
 /* Current-week forecasts: labelled scores and mobile-friendly paired columns */
@@ -726,7 +726,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
  
 </section>
 <section class="panel overview-league-board" aria-label="League matchups">
- <div class="panel-header"><div class="panel-title">League matchups</div><span class="chip" id="boardWeek">WEEK 5</span></div>
+ <div class="panel-header"><div class="panel-title">League matchups</div><select class="select" id="leagueMatchupWeek" aria-label="League matchup week"></select></div>
  <div class="scoreboard-list" id="leagueBoard"></div>
 </section>
 </section>
@@ -791,19 +791,19 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 <footer class="footer"><div>DA VINCI FANTASY LAB / CSU STATS · MMXXVI</div><div>READ-ONLY PROTOTYPE · POWERED BY YAHOO LEAGUE DATA</div></footer>
 </div>
 <script src="./special-teams-model.js"></script>
-<script src="./lab-enhancements.js?v=20261010s"></script>
-<script src="./availability-sanity.js?v=20261010s"></script>
+<script src="./lab-enhancements.js?v=20261010t"></script>
+<script src="./availability-sanity.js?v=20261010t"></script>
 <script src="./return-outlook.js"></script>
 <script src="./playing-time-model.js"></script>
-<script src="./roster-advice.js?v=20261010s"></script>
-<script src="./matchup-overview.js?v=20261010s"></script>
+<script src="./roster-advice.js?v=20261010t"></script>
+<script src="./matchup-overview.js?v=20261010t"></script>
 <script src="./overview-roster.js"></script>
-<script src="./trade-preferences.js?v=20261010s"></script>
-<script src="./transaction-grades.js?v=20261010s"></script>
+<script src="./trade-preferences.js?v=20261010t"></script>
+<script src="./transaction-grades.js?v=20261010t"></script>
 <script src="./historical-trends.js"></script>
 <script src="./historical-trends-view.js"></script>
 <script src="./forecast-accuracy.js"></script>
-<script src="./model-performance.js?v=20261010s"></script>
+<script src="./model-performance.js?v=20261010t"></script>
 <script>
 'use strict';
 const $=s=>document.querySelector(s);
@@ -1061,6 +1061,16 @@ function renderProjectedRecord(){
  $('#remainingPoints').innerHTML='<small>REMAINING POINTS:</small><strong>'+(!own.missing?own.points.toFixed(1)+pointRank(false):'—')+'</strong>';
  $('#overallPoints').innerHTML='<small>PROJECTED OVERALL POINTS:</small><strong>'+(own.pointsComplete?own.overallPoints.toFixed(1)+pointRank(true):'—')+'</strong>';
 }
+function renderLeagueMatchups(selectedWeek){
+ const future=selectedWeek>Number(week.week);
+ const games=future?matchupSchedule?.weeks?.find(r=>Number(r.week)===selectedWeek)?.matchups||[]:week.matchups;
+ const forecast=t=>future?{davinci:modelTeamLineup(t.id,selectedWeek)?.points,yahoo:null}:currentTeamForecast(t);
+ const scores=n=>'<div class="league-pair-scores"><b>'+scoreLabel(n.davinci)+(n.conditional?'<sup class="forecast-conditional" title="Assumes the questionable player is active">†</sup>':'')+'</b>'+(!future?'<span>'+scoreLabel(n.yahoo)+'</span>':'')+'</div>';
+ $('#leagueBoard').innerHTML=games.map(m=>'<div class="league-pair'+(String(m.home.id)===String(TEAM_ID)||String(m.away.id)===String(TEAM_ID)?' mine':'')+'">'+
+  '<strong class="league-pair-team">'+esc(m.home.name)+'</strong>'+scores(forecast(m.home))+
+  '<div class="league-pair-labels"><span>Da Vinci</span>'+(!future?'<span>Yahoo</span>':'')+'</div>'+scores(forecast(m.away))+
+  '<strong class="league-pair-team right">'+esc(m.away.name)+'</strong></div>').join('')||'<div class="empty-copy">Matchups not scheduled yet.</div>';
+}
 function initOverview(){
  renderFeaturedMatchup(week.week);
  renderProjectedRecord();
@@ -1070,15 +1080,12 @@ function initOverview(){
   ['pointsFor',st?.pointsFor!=null?number(st.pointsFor)+(week.standings.every(t=>t.pointsFor!=null)?' ('+(1+week.standings.filter(t=>Number(t.pointsFor)>Number(st.pointsFor)).length)+'/'+rosters.teams.length+')':''):null]];
  for(const [id,value] of metrics){const el=$('#'+id);el.textContent=value??'';el.parentElement.hidden=value==null;}
  $('#overviewMetrics').hidden=metrics.every(([,v])=>v==null);
-  $('#leagueBoard').innerHTML=week.matchups.map(m=>{
-  const home=currentTeamForecast(m.home),away=currentTeamForecast(m.away);
-  const scores=n=>'<div class="league-pair-scores"><b>'+scoreLabel(n.davinci)+(n.conditional?'<sup class="forecast-conditional" title="Includes a projection assuming the questionable player is active">†</sup>':'')+'</b><span>'+scoreLabel(n.yahoo)+'</span></div>';
-  return '<div class="league-pair'+(m.home.id===TEAM_ID||m.away.id===TEAM_ID?' mine':'')+'">'+
-   '<strong class="league-pair-team">'+esc(m.home.name)+'</strong>'+scores(home)+
-   '<div class="league-pair-labels"><span>Da Vinci</span><span>Yahoo</span></div>'+scores(away)+
-   '<strong class="league-pair-team right">'+esc(m.away.name)+'</strong></div>';
- }).join('');
- $('#boardWeek').textContent='WEEK '+week.week;$('#projectionWeek').textContent='WEEK '+week.week;
+ const selector=$('#leagueMatchupWeek');
+ const rounds=[Number(week.week),...(matchupSchedule?.weeks||[]).filter(r=>r.matchups?.length).map(r=>Number(r.week))];
+ selector.innerHTML=[...new Set(rounds)].sort((a,b)=>a-b).map(w=>'<option value="'+w+'">Week '+w+'</option>').join('');
+ selector.value=String(week.week);selector.addEventListener('change',e=>renderLeagueMatchups(Number(e.target.value)));
+ renderLeagueMatchups(Number(week.week));
+ $('#projectionWeek').textContent='WEEK '+week.week;
  $('#sync').textContent='Yahoo snapshot · '+new Date(week.retrievedAt).toLocaleString(undefined,{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'});
 }
 function renderSpecialWaivers(){

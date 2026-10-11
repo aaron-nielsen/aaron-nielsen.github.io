@@ -23,3 +23,9 @@ assert.match(remaining.innerHTML,/REMAINING RECORD:/);
 assert.doesNotMatch(html,/id="waiverRank"/);
 
 assert.doesNotMatch(html,/id="selectedTeam"/);
+const boardCode=html.slice(html.indexOf('function renderLeagueMatchups('),html.indexOf('function initOverview()'));
+const board={innerHTML:''};
+const boardContext={week:{week:5,matchups:games},TEAM_ID:'7',matchupSchedule:{weeks:[{week:6,matchups:[{home:team('7'),away:team('9')}]}]},$:()=>board,esc:String,scoreLabel:x=>x==null?'—':String(x),currentTeamForecast:()=>({davinci:100,yahoo:90}),modelTeamLineup:id=>id==='7'?{points:110}:null};
+vm.runInNewContext(boardCode+'renderLeagueMatchups(6);',boardContext);
+assert.match(board.innerHTML,/Team 9/,'Future league round uses its own opponents');assert.doesNotMatch(board.innerHTML,/Team 8|Yahoo/,'Future rounds do not reuse current opponents or Yahoo projections');assert.match(board.innerHTML,/—/,'Missing future forecasts stay unknown');
+vm.runInNewContext(boardCode+'renderLeagueMatchups(5);',boardContext);assert.match(board.innerHTML,/Yahoo/);assert.match(board.innerHTML,/Team 8/);
