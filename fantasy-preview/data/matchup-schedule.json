@@ -1,0 +1,694 @@
+{
+  "leagueId": "470.l.258793",
+  "retrievedAt": "2026-10-11T00:00:34.296Z",
+  "source": "Yahoo schedule via Flaim",
+  "weeks": [
+    {
+      "week": 6,
+      "matchups": [
+        {
+          "home": {
+            "id": "1",
+            "name": "Blitzmaster"
+          },
+          "away": {
+            "id": "13",
+            "name": "NO PARKING"
+          }
+        },
+        {
+          "home": {
+            "id": "2",
+            "name": "Stochastically Bounded Ends"
+          },
+          "away": {
+            "id": "11",
+            "name": "Stiff Arm Beth"
+          }
+        },
+        {
+          "home": {
+            "id": "3",
+            "name": "Lone Wolf Stacy"
+          },
+          "away": {
+            "id": "7",
+            "name": "Ten Feline Overlords"
+          }
+        },
+        {
+          "home": {
+            "id": "4",
+            "name": "the football understander"
+          },
+          "away": {
+            "id": "8",
+            "name": "Playmaker Adam"
+          }
+        },
+        {
+          "home": {
+            "id": "5",
+            "name": "I’m confused"
+          },
+          "away": {
+            "id": "12",
+            "name": "Juicy Juke Brody"
+          }
+        },
+        {
+          "home": {
+            "id": "6",
+            "name": "Hard Count Kai"
+          },
+          "away": {
+            "id": "14",
+            "name": "Bench Warmers"
+          }
+        },
+        {
+          "home": {
+            "id": "9",
+            "name": "Screen Pass Eva"
+          },
+          "away": {
+            "id": "10",
+            "name": "Walking Drafters"
+          }
+        }
+      ]
+    },
+    {
+      "week": 7,
+      "matchups": [
+        {
+          "home": {
+            "id": "1",
+            "name": "Blitzmaster"
+          },
+          "away": {
+            "id": "8",
+            "name": "Playmaker Adam"
+          }
+        },
+        {
+          "home": {
+            "id": "2",
+            "name": "Stochastically Bounded Ends"
+          },
+          "away": {
+            "id": "4",
+            "name": "the football understander"
+          }
+        },
+        {
+          "home": {
+            "id": "3",
+            "name": "Lone Wolf Stacy"
+          },
+          "away": {
+            "id": "9",
+            "name": "Screen Pass Eva"
+          }
+        },
+        {
+          "home": {
+            "id": "5",
+            "name": "I’m confused"
+          },
+          "away": {
+            "id": "10",
+            "name": "Walking Drafters"
+          }
+        },
+        {
+          "home": {
+            "id": "6",
+            "name": "Hard Count Kai"
+          },
+          "away": {
+            "id": "7",
+            "name": "Ten Feline Overlords"
+          }
+        },
+        {
+          "home": {
+            "id": "11",
+            "name": "Stiff Arm Beth"
+          },
+          "away": {
+            "id": "12",
+            "name": "Juicy Juke Brody"
+          }
+        },
+        {
+          "home": {
+            "id": "13",
+            "name": "NO PARKING"
+          },
+          "away": {
+            "id": "14",
+            "name": "Bench Warmers"
+          }
+        }
+      ]
+    },
+    {
+      "week": 8,
+      "matchups": [
+        {
+          "home": {
+            "id": "1",
+            "name": "Blitzmaster"
+          },
+          "away": {
+            "id": "2",
+            "name": "Stochastically Bounded Ends"
+          }
+        },
+        {
+          "home": {
+            "id": "3",
+            "name": "Lone Wolf Stacy"
+          },
+          "away": {
+            "id": "6",
+            "name": "Hard Count Kai"
+          }
+        },
+        {
+          "home": {
+            "id": "4",
+            "name": "the football understander"
+          },
+          "away": {
+            "id": "12",
+            "name": "Juicy Juke Brody"
+          }
+        },
+        {
+          "home": {
+            "id": "5",
+            "name": "I’m confused"
+          },
+          "away": {
+            "id": "9",
+            "name": "Screen Pass Eva"
+          }
+        },
+        {
+          "home": {
+            "id": "7",
+            "name": "Ten Feline Overlords"
+          },
+          "away": {
+            "id": "13",
+            "name": "NO PARKING"
+          }
+        },
+        {
+          "home": {
+            "id": "8",
+            "name": "Playmaker Adam"
+          },
+          "away": {
+            "id": "14",
+            "name": "Bench Warmers"
+          }
+        },
+        {
+          "home": {
+            "id": "10",
+            "name": "Walking Drafters"
+          },
+          "away": {
+            "id": "11",
+            "name": "Stiff Arm Beth"
+          }
+        }
+      ]
+    },
+    {
+      "week": 9,
+      "matchups": [
+        {
+          "home": {
+            "id": "1",
+            "name": "Blitzmaster"
+          },
+          "away": {
+            "id": "12",
+            "name": "Juicy Juke Brody"
+          }
+        },
+        {
+          "home": {
+            "id": "2",
+            "name": "Stochastically Bounded Ends"
+          },
+          "away": {
+            "id": "14",
+            "name": "Bench Warmers"
+          }
+        },
+        {
+          "home": {
+            "id": "3",
+            "name": "Lone Wolf Stacy"
+          },
+          "away": {
+            "id": "5",
+            "name": "I’m confused"
+          }
+        },
+        {
+          "home": {
+            "id": "4",
+            "name": "the football understander"
+          },
+          "away": {
+            "id": "10",
+            "name": "Walking Drafters"
+          }
+        },
+        {
+          "home": {
+            "id": "6",
+            "name": "Hard Count Kai"
+          },
+          "away": {
+            "id": "13",
+            "name": "NO PARKING"
+          }
+        },
+        {
+          "home": {
+            "id": "7",
+            "name": "Ten Feline Overlords"
+          },
+          "away": {
+            "id": "8",
+            "name": "Playmaker Adam"
+          }
+        },
+        {
+          "home": {
+            "id": "9",
+            "name": "Screen Pass Eva"
+          },
+          "away": {
+            "id": "11",
+            "name": "Stiff Arm Beth"
+          }
+        }
+      ]
+    },
+    {
+      "week": 10,
+      "matchups": [
+        {
+          "home": {
+            "id": "1",
+            "name": "Blitzmaster"
+          },
+          "away": {
+            "id": "10",
+            "name": "Walking Drafters"
+          }
+        },
+        {
+          "home": {
+            "id": "2",
+            "name": "Stochastically Bounded Ends"
+          },
+          "away": {
+            "id": "7",
+            "name": "Ten Feline Overlords"
+          }
+        },
+        {
+          "home": {
+            "id": "3",
+            "name": "Lone Wolf Stacy"
+          },
+          "away": {
+            "id": "13",
+            "name": "NO PARKING"
+          }
+        },
+        {
+          "home": {
+            "id": "4",
+            "name": "the football understander"
+          },
+          "away": {
+            "id": "9",
+            "name": "Screen Pass Eva"
+          }
+        },
+        {
+          "home": {
+            "id": "5",
+            "name": "I’m confused"
+          },
+          "away": {
+            "id": "11",
+            "name": "Stiff Arm Beth"
+          }
+        },
+        {
+          "home": {
+            "id": "6",
+            "name": "Hard Count Kai"
+          },
+          "away": {
+            "id": "8",
+            "name": "Playmaker Adam"
+          }
+        },
+        {
+          "home": {
+            "id": "12",
+            "name": "Juicy Juke Brody"
+          },
+          "away": {
+            "id": "14",
+            "name": "Bench Warmers"
+          }
+        }
+      ]
+    },
+    {
+      "week": 11,
+      "matchups": [
+        {
+          "home": {
+            "id": "1",
+            "name": "Blitzmaster"
+          },
+          "away": {
+            "id": "9",
+            "name": "Screen Pass Eva"
+          }
+        },
+        {
+          "home": {
+            "id": "2",
+            "name": "Stochastically Bounded Ends"
+          },
+          "away": {
+            "id": "6",
+            "name": "Hard Count Kai"
+          }
+        },
+        {
+          "home": {
+            "id": "3",
+            "name": "Lone Wolf Stacy"
+          },
+          "away": {
+            "id": "11",
+            "name": "Stiff Arm Beth"
+          }
+        },
+        {
+          "home": {
+            "id": "4",
+            "name": "the football understander"
+          },
+          "away": {
+            "id": "5",
+            "name": "I’m confused"
+          }
+        },
+        {
+          "home": {
+            "id": "7",
+            "name": "Ten Feline Overlords"
+          },
+          "away": {
+            "id": "12",
+            "name": "Juicy Juke Brody"
+          }
+        },
+        {
+          "home": {
+            "id": "8",
+            "name": "Playmaker Adam"
+          },
+          "away": {
+            "id": "13",
+            "name": "NO PARKING"
+          }
+        },
+        {
+          "home": {
+            "id": "10",
+            "name": "Walking Drafters"
+          },
+          "away": {
+            "id": "14",
+            "name": "Bench Warmers"
+          }
+        }
+      ]
+    },
+    {
+      "week": 12,
+      "matchups": [
+        {
+          "home": {
+            "id": "1",
+            "name": "Blitzmaster"
+          },
+          "away": {
+            "id": "5",
+            "name": "I’m confused"
+          }
+        },
+        {
+          "home": {
+            "id": "2",
+            "name": "Stochastically Bounded Ends"
+          },
+          "away": {
+            "id": "13",
+            "name": "NO PARKING"
+          }
+        },
+        {
+          "home": {
+            "id": "3",
+            "name": "Lone Wolf Stacy"
+          },
+          "away": {
+            "id": "8",
+            "name": "Playmaker Adam"
+          }
+        },
+        {
+          "home": {
+            "id": "4",
+            "name": "the football understander"
+          },
+          "away": {
+            "id": "11",
+            "name": "Stiff Arm Beth"
+          }
+        },
+        {
+          "home": {
+            "id": "6",
+            "name": "Hard Count Kai"
+          },
+          "away": {
+            "id": "12",
+            "name": "Juicy Juke Brody"
+          }
+        },
+        {
+          "home": {
+            "id": "7",
+            "name": "Ten Feline Overlords"
+          },
+          "away": {
+            "id": "10",
+            "name": "Walking Drafters"
+          }
+        },
+        {
+          "home": {
+            "id": "9",
+            "name": "Screen Pass Eva"
+          },
+          "away": {
+            "id": "14",
+            "name": "Bench Warmers"
+          }
+        }
+      ]
+    },
+    {
+      "week": 13,
+      "matchups": [
+        {
+          "home": {
+            "id": "1",
+            "name": "Blitzmaster"
+          },
+          "away": {
+            "id": "11",
+            "name": "Stiff Arm Beth"
+          }
+        },
+        {
+          "home": {
+            "id": "2",
+            "name": "Stochastically Bounded Ends"
+          },
+          "away": {
+            "id": "8",
+            "name": "Playmaker Adam"
+          }
+        },
+        {
+          "home": {
+            "id": "3",
+            "name": "Lone Wolf Stacy"
+          },
+          "away": {
+            "id": "4",
+            "name": "the football understander"
+          }
+        },
+        {
+          "home": {
+            "id": "5",
+            "name": "I’m confused"
+          },
+          "away": {
+            "id": "14",
+            "name": "Bench Warmers"
+          }
+        },
+        {
+          "home": {
+            "id": "6",
+            "name": "Hard Count Kai"
+          },
+          "away": {
+            "id": "10",
+            "name": "Walking Drafters"
+          }
+        },
+        {
+          "home": {
+            "id": "7",
+            "name": "Ten Feline Overlords"
+          },
+          "away": {
+            "id": "9",
+            "name": "Screen Pass Eva"
+          }
+        },
+        {
+          "home": {
+            "id": "12",
+            "name": "Juicy Juke Brody"
+          },
+          "away": {
+            "id": "13",
+            "name": "NO PARKING"
+          }
+        }
+      ]
+    },
+    {
+      "week": 14,
+      "matchups": [
+        {
+          "home": {
+            "id": "1",
+            "name": "Blitzmaster"
+          },
+          "away": {
+            "id": "4",
+            "name": "the football understander"
+          }
+        },
+        {
+          "home": {
+            "id": "2",
+            "name": "Stochastically Bounded Ends"
+          },
+          "away": {
+            "id": "3",
+            "name": "Lone Wolf Stacy"
+          }
+        },
+        {
+          "home": {
+            "id": "5",
+            "name": "I’m confused"
+          },
+          "away": {
+            "id": "7",
+            "name": "Ten Feline Overlords"
+          }
+        },
+        {
+          "home": {
+            "id": "6",
+            "name": "Hard Count Kai"
+          },
+          "away": {
+            "id": "9",
+            "name": "Screen Pass Eva"
+          }
+        },
+        {
+          "home": {
+            "id": "8",
+            "name": "Playmaker Adam"
+          },
+          "away": {
+            "id": "12",
+            "name": "Juicy Juke Brody"
+          }
+        },
+        {
+          "home": {
+            "id": "10",
+            "name": "Walking Drafters"
+          },
+          "away": {
+            "id": "13",
+            "name": "NO PARKING"
+          }
+        },
+        {
+          "home": {
+            "id": "11",
+            "name": "Stiff Arm Beth"
+          },
+          "away": {
+            "id": "14",
+            "name": "Bench Warmers"
+          }
+        }
+      ]
+    },
+    {
+      "week": 15,
+      "matchups": []
+    },
+    {
+      "week": 16,
+      "matchups": []
+    },
+    {
+      "week": 17,
+      "matchups": []
+    }
+  ]
+}

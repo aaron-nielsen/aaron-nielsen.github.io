@@ -1,0 +1,565 @@
+{
+  "leagueId": "470.l.1699881",
+  "retrievedAt": "2026-10-11T00:00:35.920Z",
+  "source": "Yahoo schedule via Flaim",
+  "weeks": [
+    {
+      "week": 6,
+      "matchups": [
+        {
+          "home": {
+            "id": "1",
+            "name": "4th Qtr cory"
+          },
+          "away": {
+            "id": "7",
+            "name": "Friday Night Z"
+          }
+        },
+        {
+          "home": {
+            "id": "2",
+            "name": "Gridiron Juliean"
+          },
+          "away": {
+            "id": "6",
+            "name": "Nebraska Bugeaters"
+          }
+        },
+        {
+          "home": {
+            "id": "3",
+            "name": "New York Teams"
+          },
+          "away": {
+            "id": "5",
+            "name": "2-Point Ali"
+          }
+        },
+        {
+          "home": {
+            "id": "4",
+            "name": "Halftime Perrin"
+          },
+          "away": {
+            "id": "10",
+            "name": "Trenches Brody"
+          }
+        },
+        {
+          "home": {
+            "id": "8",
+            "name": "Locked In Hunter"
+          },
+          "away": {
+            "id": "9",
+            "name": "3rd & Long anton"
+          }
+        }
+      ]
+    },
+    {
+      "week": 7,
+      "matchups": [
+        {
+          "home": {
+            "id": "1",
+            "name": "4th Qtr cory"
+          },
+          "away": {
+            "id": "8",
+            "name": "Locked In Hunter"
+          }
+        },
+        {
+          "home": {
+            "id": "2",
+            "name": "Gridiron Juliean"
+          },
+          "away": {
+            "id": "7",
+            "name": "Friday Night Z"
+          }
+        },
+        {
+          "home": {
+            "id": "3",
+            "name": "New York Teams"
+          },
+          "away": {
+            "id": "6",
+            "name": "Nebraska Bugeaters"
+          }
+        },
+        {
+          "home": {
+            "id": "4",
+            "name": "Halftime Perrin"
+          },
+          "away": {
+            "id": "5",
+            "name": "2-Point Ali"
+          }
+        },
+        {
+          "home": {
+            "id": "9",
+            "name": "3rd & Long anton"
+          },
+          "away": {
+            "id": "10",
+            "name": "Trenches Brody"
+          }
+        }
+      ]
+    },
+    {
+      "week": 8,
+      "matchups": [
+        {
+          "home": {
+            "id": "1",
+            "name": "4th Qtr cory"
+          },
+          "away": {
+            "id": "9",
+            "name": "3rd & Long anton"
+          }
+        },
+        {
+          "home": {
+            "id": "2",
+            "name": "Gridiron Juliean"
+          },
+          "away": {
+            "id": "8",
+            "name": "Locked In Hunter"
+          }
+        },
+        {
+          "home": {
+            "id": "3",
+            "name": "New York Teams"
+          },
+          "away": {
+            "id": "7",
+            "name": "Friday Night Z"
+          }
+        },
+        {
+          "home": {
+            "id": "4",
+            "name": "Halftime Perrin"
+          },
+          "away": {
+            "id": "6",
+            "name": "Nebraska Bugeaters"
+          }
+        },
+        {
+          "home": {
+            "id": "5",
+            "name": "2-Point Ali"
+          },
+          "away": {
+            "id": "10",
+            "name": "Trenches Brody"
+          }
+        }
+      ]
+    },
+    {
+      "week": 9,
+      "matchups": [
+        {
+          "home": {
+            "id": "1",
+            "name": "4th Qtr cory"
+          },
+          "away": {
+            "id": "10",
+            "name": "Trenches Brody"
+          }
+        },
+        {
+          "home": {
+            "id": "2",
+            "name": "Gridiron Juliean"
+          },
+          "away": {
+            "id": "9",
+            "name": "3rd & Long anton"
+          }
+        },
+        {
+          "home": {
+            "id": "3",
+            "name": "New York Teams"
+          },
+          "away": {
+            "id": "8",
+            "name": "Locked In Hunter"
+          }
+        },
+        {
+          "home": {
+            "id": "4",
+            "name": "Halftime Perrin"
+          },
+          "away": {
+            "id": "7",
+            "name": "Friday Night Z"
+          }
+        },
+        {
+          "home": {
+            "id": "5",
+            "name": "2-Point Ali"
+          },
+          "away": {
+            "id": "6",
+            "name": "Nebraska Bugeaters"
+          }
+        }
+      ]
+    },
+    {
+      "week": 10,
+      "matchups": [
+        {
+          "home": {
+            "id": "1",
+            "name": "4th Qtr cory"
+          },
+          "away": {
+            "id": "2",
+            "name": "Gridiron Juliean"
+          }
+        },
+        {
+          "home": {
+            "id": "3",
+            "name": "New York Teams"
+          },
+          "away": {
+            "id": "9",
+            "name": "3rd & Long anton"
+          }
+        },
+        {
+          "home": {
+            "id": "4",
+            "name": "Halftime Perrin"
+          },
+          "away": {
+            "id": "8",
+            "name": "Locked In Hunter"
+          }
+        },
+        {
+          "home": {
+            "id": "5",
+            "name": "2-Point Ali"
+          },
+          "away": {
+            "id": "7",
+            "name": "Friday Night Z"
+          }
+        },
+        {
+          "home": {
+            "id": "6",
+            "name": "Nebraska Bugeaters"
+          },
+          "away": {
+            "id": "10",
+            "name": "Trenches Brody"
+          }
+        }
+      ]
+    },
+    {
+      "week": 11,
+      "matchups": [
+        {
+          "home": {
+            "id": "1",
+            "name": "4th Qtr cory"
+          },
+          "away": {
+            "id": "3",
+            "name": "New York Teams"
+          }
+        },
+        {
+          "home": {
+            "id": "2",
+            "name": "Gridiron Juliean"
+          },
+          "away": {
+            "id": "10",
+            "name": "Trenches Brody"
+          }
+        },
+        {
+          "home": {
+            "id": "4",
+            "name": "Halftime Perrin"
+          },
+          "away": {
+            "id": "9",
+            "name": "3rd & Long anton"
+          }
+        },
+        {
+          "home": {
+            "id": "5",
+            "name": "2-Point Ali"
+          },
+          "away": {
+            "id": "8",
+            "name": "Locked In Hunter"
+          }
+        },
+        {
+          "home": {
+            "id": "6",
+            "name": "Nebraska Bugeaters"
+          },
+          "away": {
+            "id": "7",
+            "name": "Friday Night Z"
+          }
+        }
+      ]
+    },
+    {
+      "week": 12,
+      "matchups": [
+        {
+          "home": {
+            "id": "1",
+            "name": "4th Qtr cory"
+          },
+          "away": {
+            "id": "4",
+            "name": "Halftime Perrin"
+          }
+        },
+        {
+          "home": {
+            "id": "2",
+            "name": "Gridiron Juliean"
+          },
+          "away": {
+            "id": "3",
+            "name": "New York Teams"
+          }
+        },
+        {
+          "home": {
+            "id": "5",
+            "name": "2-Point Ali"
+          },
+          "away": {
+            "id": "9",
+            "name": "3rd & Long anton"
+          }
+        },
+        {
+          "home": {
+            "id": "6",
+            "name": "Nebraska Bugeaters"
+          },
+          "away": {
+            "id": "8",
+            "name": "Locked In Hunter"
+          }
+        },
+        {
+          "home": {
+            "id": "7",
+            "name": "Friday Night Z"
+          },
+          "away": {
+            "id": "10",
+            "name": "Trenches Brody"
+          }
+        }
+      ]
+    },
+    {
+      "week": 13,
+      "matchups": [
+        {
+          "home": {
+            "id": "1",
+            "name": "4th Qtr cory"
+          },
+          "away": {
+            "id": "5",
+            "name": "2-Point Ali"
+          }
+        },
+        {
+          "home": {
+            "id": "2",
+            "name": "Gridiron Juliean"
+          },
+          "away": {
+            "id": "4",
+            "name": "Halftime Perrin"
+          }
+        },
+        {
+          "home": {
+            "id": "3",
+            "name": "New York Teams"
+          },
+          "away": {
+            "id": "10",
+            "name": "Trenches Brody"
+          }
+        },
+        {
+          "home": {
+            "id": "6",
+            "name": "Nebraska Bugeaters"
+          },
+          "away": {
+            "id": "9",
+            "name": "3rd & Long anton"
+          }
+        },
+        {
+          "home": {
+            "id": "7",
+            "name": "Friday Night Z"
+          },
+          "away": {
+            "id": "8",
+            "name": "Locked In Hunter"
+          }
+        }
+      ]
+    },
+    {
+      "week": 14,
+      "matchups": [
+        {
+          "home": {
+            "id": "1",
+            "name": "4th Qtr cory"
+          },
+          "away": {
+            "id": "6",
+            "name": "Nebraska Bugeaters"
+          }
+        },
+        {
+          "home": {
+            "id": "2",
+            "name": "Gridiron Juliean"
+          },
+          "away": {
+            "id": "5",
+            "name": "2-Point Ali"
+          }
+        },
+        {
+          "home": {
+            "id": "3",
+            "name": "New York Teams"
+          },
+          "away": {
+            "id": "4",
+            "name": "Halftime Perrin"
+          }
+        },
+        {
+          "home": {
+            "id": "7",
+            "name": "Friday Night Z"
+          },
+          "away": {
+            "id": "9",
+            "name": "3rd & Long anton"
+          }
+        },
+        {
+          "home": {
+            "id": "8",
+            "name": "Locked In Hunter"
+          },
+          "away": {
+            "id": "10",
+            "name": "Trenches Brody"
+          }
+        }
+      ]
+    },
+    {
+      "week": 15,
+      "matchups": [
+        {
+          "home": {
+            "id": "1",
+            "name": "4th Qtr cory"
+          },
+          "away": {
+            "id": "7",
+            "name": "Friday Night Z"
+          }
+        },
+        {
+          "home": {
+            "id": "2",
+            "name": "Gridiron Juliean"
+          },
+          "away": {
+            "id": "6",
+            "name": "Nebraska Bugeaters"
+          }
+        },
+        {
+          "home": {
+            "id": "3",
+            "name": "New York Teams"
+          },
+          "away": {
+            "id": "5",
+            "name": "2-Point Ali"
+          }
+        },
+        {
+          "home": {
+            "id": "4",
+            "name": "Halftime Perrin"
+          },
+          "away": {
+            "id": "10",
+            "name": "Trenches Brody"
+          }
+        },
+        {
+          "home": {
+            "id": "8",
+            "name": "Locked In Hunter"
+          },
+          "away": {
+            "id": "9",
+            "name": "3rd & Long anton"
+          }
+        }
+      ]
+    },
+    {
+      "week": 16,
+      "matchups": []
+    },
+    {
+      "week": 17,
+      "matchups": []
+    }
+  ]
+}
