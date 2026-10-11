@@ -263,6 +263,70 @@ function gradeTrade(avg){
  if(!Number.isFinite(avg))return '—';
  return avg>=3?'A+':avg>=1.8?'A':avg>=.8?'B':avg>=-.15?'C':avg>=-1?'D':'F';
 }
+
+/* For a fixed unequal offer, fill vacancies by REAL lineup marginal gain,
+   not raw QB totals; trim the partner's least useful expendable assets. */
+function featuredRosterFix(players,original,protectedIds,weeks){
+ const notes=[];let roster=players.slice();
+ const total=group=>{
+  let sum=0;
+  for(const week of weeks){
+   const lineup=state.optimize(group,week);
+   if(!lineup)return null;
+   sum+=lineup.score;
+  }
+  return sum;
+ };
+ while(roster.length>original.length){
+  const choices=roster.filter(p=>!protectedIds.has(id(p))).map(p=>{
+   const next=roster.filter(x=>id(x)!==id(p)),points=total(next);
+   return points===null?null:{p,next,points,raw:playerPts(p,weeks)??0};
+  }).filter(Boolean).sort((a,b)=>b.points-a.points||a.raw-b.raw);
+  if(!choices.length)return null;
+  roster=choices[0].next;
+  notes.push('Drop '+choices[0].p.name+' ('+choices[0].p.position+')');
+ }
+ while(roster.length<original.length){
+  const owned=new Set(state.rosters.teams.flatMap(t=>t.players.map(id)).concat(roster.map(id)));
+  const count=pos=>roster.filter(p=>p.position===pos&&p.slot!=='IR').length;
+  const grouped={};
+  for(const p of possible(state.available?.players||[])){
+   if(owned.has(id(p))||!p.nflTeam||['FA','NA','N/A','FREE','UNK'].includes(String(p.nflTeam).toUpperCase()))continue;
+   if(p.position==='QB'&&count('QB')>=2)continue;
+   if(['K','DEF'].includes(p.position)&&count(p.position)>=1)continue;
+   (grouped[p.position]??=[]).push(p);
+  }
+  const shortlist=Object.values(grouped).flatMap(items=>items.sort((a,b)=>playerPts(b,weeks)-playerPts(a,weeks)).slice(0,10));
+  const before=total(roster);
+  const possibleAdds=shortlist.map(p=>{
+   const next=roster.concat({...p,slot:'BN'}),points=total(next);
+   return points===null?null:{p,next,gain:points-(before??0),raw:playerPts(p,weeks)??0};
+  }).filter(Boolean).sort((a,b)=>b.gain-a.gain||b.raw-a.raw);
+  if(!possibleAdds.length)return null;
+  const chosen=possibleAdds[0];
+  roster=chosen.next;
+  notes.push('Add '+chosen.p.name+' ('+chosen.p.position+')');
+ }
+ return {players:roster,notes};
+}
+function featuredEvaluate(offer,own,weeks,beforeYou,beforeThem){
+ const send=new Set(offer.send.players.map(id)),receive=new Set(offer.receive.players.map(id));
+ const mine=featuredRosterFix(own.filter(p=>!send.has(id(p))).concat(offer.receive.players.map(p=>({...p,slot:'BN'}))),own,receive,weeks);
+ const partner=featuredRosterFix(offer.partner.players.filter(p=>!receive.has(id(p))).concat(offer.send.players.map(p=>({...p,slot:'BN'}))),offer.partner.players,send,weeks);
+ if(!mine||!partner)return null;
+ let gainYou=0,gainThem=0;
+ for(let i=0;i<weeks.length;i++){
+  const a=state.optimize(mine.players,weeks[i]),b=state.optimize(partner.players,weeks[i]);
+  if(!a||!b||!beforeYou[i]||!beforeThem[i])return null;
+  gainYou+=a.score-beforeYou[i].score;
+  gainThem+=b.score-beforeThem[i].score;
+ }
+ const beforeY=beforeYou.reduce((a,r)=>a+r.score,0),beforeT=beforeThem.reduce((a,r)=>a+r.score,0);
+ return {gainYou,gainThem,avgYou:gainYou/weeks.length,avgThem:gainThem/weeks.length,
+  beforeYou:beforeY,beforeThem:beforeT,afterYou:beforeY+gainYou,afterThem:beforeT+gainThem,
+  adjustments:{you:mine.notes,them:partner.notes}};
+}
+
 function featuredTrade(){
  const el=$('featuredTrade');if(!el||!state)return;
  if(state.leagueKey!=='csu'){el.hidden=true;return;}
@@ -282,7 +346,7 @@ function featuredTrade(){
   if(!weeks.length)return '<div class="featured-trade-window"><strong>'+title+'</strong><p>No remaining games to forecast.</p></div>';
   const you=weeks.map(w=>state.optimize(mine.players,w)),them=weeks.map(w=>state.optimize(partner.players,w));
   if([...you,...them].some(x=>!x))return '<div class="featured-trade-window"><strong>'+title+'</strong><p>Incomplete legal-lineup forecast; not graded.</p></div>';
-  const t=evaluateOffer(offer,mine.players,{you,peers:new Map([[partner.id,them]])},weeks);
+  const t=featuredEvaluate(offer,mine.players,weeks,you,them);
   if(!t)return '<div class="featured-trade-window"><strong>'+title+'</strong><p>Unable to balance rosters with available pickups/drops; not graded.</p></div>';
   const signed=x=>(x>=0?'+':'')+fmt(x);
   const assessment=t.avgYou>=MIN_ROS_GAIN_PER_WEEK&&t.avgThem>=MIN_ROS_GAIN_PER_WEEK?'Both teams gain':'Not mutually beneficial';
