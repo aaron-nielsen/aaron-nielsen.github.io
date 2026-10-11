@@ -390,10 +390,12 @@ function featuredTrade(){
  const mine=state.rosters.teams.find(t=>String(t.id)===String(state.teamId));
  const partner=state.rosters.teams.find(t=>String(t.id)==='1');
  const proposals=[
-  {label:'Burrow + Deebo + Lloyd + Chiefs → McMillan + Herbert',out:['32671','31868','40971','100012'],in:['41793','32676']},
-  {label:'Same 4-for-2 + Hall & Pierce return (hypothetical)',out:['32671','31868','40971','100012'],in:['41793','32676'],ghost:true},
+  {label:'Burrow + Addison + Lloyd + Chiefs → McMillan + Herbert',out:['32671','40042','40971','100012'],in:['41793','32676'],preferred:true},
+  {label:'Same Addison 4-for-2 + Hall & Pierce return (hypothetical)',out:['32671','40042','40971','100012'],in:['41793','32676'],ghost:true},
+  {label:'Burrow + Deebo + Lloyd + Chiefs → McMillan + Herbert (comparison)',out:['32671','31868','40971','100012'],in:['41793','32676']},
   {label:'Burrow → McMillan',out:['32671'],in:['41793']},
-  {label:'Burrow + Deebo → McMillan',out:['32671','31868'],in:['41793']}
+  {label:'Burrow + Addison → McMillan',out:['32671','40042'],in:['41793']},
+  {label:'Burrow + Deebo → McMillan (comparison)',out:['32671','31868'],in:['41793']}
  ];
  const windows=[{start:6,label:'After Week 5'},{start:7,label:'After Week 6'}];
  const signed=x=>(x>=0?'+':'')+fmt(x);
@@ -416,6 +418,7 @@ function featuredTrade(){
    return '<section class="featured-trade-card">'+heading+'<p class="featured-trade-notice">Cannot grade using current rosters: at least one player is no longer on the specified team.</p></section>';
   const offer={partner,send:{players:send},receive:{players:receive},shape};
   const exchange='<div class="featured-trade-sides"><div><small>YOU SEND</small>'+fmtList(send)+'</div><div><small>YOU RECEIVE</small>'+fmtList(receive)+'</div></div>';
+  const injuryNote=spec.out.includes('40042')&&String(mine.players.find(p=>id(p)==='40042')?.status||'').toUpperCase()==='O'?'<p class="featured-trade-notice">Addison is currently listed Out; after-Week-5/6 simulations assume he resumes normal availability following Minnesota\'s Week 6 bye. Rest-of-season forecasts are conditional, not a return guarantee.</p>':'';
   const eachWindow=({start,label})=>{
    const base=lineupBaseline(start),weeks=base.weeks;
    if(!base.valid)return '<div class="featured-trade-window"><strong>'+label+'</strong><p>Complete legal-lineup forecasts unavailable.</p></div>';
@@ -429,13 +432,13 @@ function featuredTrade(){
     boost+'<details><summary>Roster assumptions and projected starters</summary><p>After roster moves: You '+fmt(t.beforeYou)+' → '+fmt(t.afterYou)+' points; Blitzmaster '+fmt(t.beforeThem)+' → '+fmt(t.afterThem)+' points.</p>'+
     '<p>You: '+esc(t.adjustments.you.join('; ')||'No adjustments')+'. Blitzmaster: '+esc(t.adjustments.them.join('; ')||'No adjustments')+'.</p></details></div>';
   };
-  return '<section class="featured-trade-card">'+heading+exchange+
+  return '<section class="featured-trade-card">'+heading+exchange+injuryNote+
    '<div class="featured-trade-windows">'+windows.map(eachWindow).join('')+'</div></section>';
  }
  if(!mine||!partner){el.innerHTML='<p class="featured-trade-notice">Current CSU league rosters are unavailable.</p>';return;}
  el.innerHTML='<div class="featured-trade-suite-heading"><strong>Saved trade proposals</strong><span>Not submitted</span></div>'+
   proposals.map(card).join('')+
-  '<p class="featured-trade-disclaimer">Grades use the Transactions tab projected-points-per-week scale. The Hall/Pierce simulation assumes BOTH already-owned players are healthy and activated from the first evaluated week, even if medically unavailable. Its grade includes their hypothetical return value, not just the trade. No duplicate players or additional waiver pickups are credited in that scenario. Each offer is an alternative from the current Yahoo roster, not a completed transaction or Yahoo trade evaluation.</p>';
+  '<p class="featured-trade-disclaimer">Grades use the Transactions tab projected-points-per-week scale. The Addison variant is the preferred proposal, and Deebo versions remain for comparison. The Hall/Pierce simulation assumes BOTH already-owned players are healthy and activated from the first evaluated week, even if medically unavailable. Its grade includes their hypothetical return value, not just the trade. No duplicate players or additional waiver pickups are credited in that scenario. Each offer is an alternative from the current Yahoo roster, not a completed transaction or Yahoo trade evaluation.</p>';
 }
 
 function draw(){
