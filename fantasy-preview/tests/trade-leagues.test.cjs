@@ -49,7 +49,7 @@ for(const {prefix,teamId,name} of [
  assert.ok(elapsed<15000,name+' trade response took '+elapsed+' ms');
  if(html.includes('trade-personal-card')){
   assert.doesNotMatch(html,/Their lineup −|Their lineup -/,name+' negative ROS offer is forbidden');
-  assert.match(html,/Theirs \+/,name+' must display the other manager\'s positive gain');
+  assert.match(html,/trade-team-summary.*trade-gain">\+/,name+' must display the other manager\'s positive gain');
   assert.match(html,/ROS/,name+' must show rest-of-season total gain');
  }
  console.log(name+': '+ownCandidate.name+' target evaluated in '+elapsed+' ms, offers='+

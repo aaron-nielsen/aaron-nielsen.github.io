@@ -146,8 +146,9 @@ function evaluateOffer(c,original,baseline,weeks){
   gainYou+=you.score-baseline.you[i].score;
   gainThem+=them.score-baseline.peers.get(c.partner.id)[i].score;
  }
+ const beforeYou=baseline.you.reduce((sum,r)=>sum+r.score,0),beforeThem=baseline.peers.get(c.partner.id).reduce((sum,r)=>sum+r.score,0);
  const yahoo=yahooEvaluation(c,weeks,yours.players,theirsFixed.players);
- return {...c,yahoo,adjustments:{you:yours.notes,them:theirsFixed.notes},gainYou,gainThem,avgYou:gainYou/weeks.length,avgThem:gainThem/weeks.length};
+ return {...c,yahoo,beforeYou,beforeThem,afterYou:beforeYou+gainYou,afterThem:beforeThem+gainThem,adjustments:{you:yours.notes,them:theirsFixed.notes},gainYou,gainThem,avgYou:gainYou/weeks.length,avgThem:gainThem/weeks.length};
 }
 function yahooEvaluation(c,weeks,yours,theirs){
  const same=(a,b)=>a.map(String).sort().join('.')===b.map(String).sort().join('.');
@@ -205,12 +206,13 @@ function evaluate(){
  });
 }
 function resultHTML(t){
- const formatList=p=>p.map(x=>'<span>'+esc(x.name)+' <small>'+esc(x.position)+'</small></span>').join('');
- const totalWeeks=starts().length;
+ const weeks=starts();
+ const formatList=players=>players.map(p=>'<span class="trade-player-row"><span>'+esc(p.name)+' <small>('+esc(p.position)+')</small></span><b>'+((playerPts(p,weeks)==null)?'—':fmt(playerPts(p,weeks)))+'</b></span>').join('');
+ const summary=(name,before,after,gain,avg)=>'<div class="trade-team-summary"><strong>'+esc(name)+'</strong><span>Lineup ROS <b>'+fmt(before)+' → '+fmt(after)+'</b></span><b class="trade-gain">'+(gain>=0?'+':'')+fmt(gain)+' pts · '+(avg>=0?'+':'')+fmt(avg)+' /wk</b></div>';
+ const mine=state.rosters.teams.find(team=>String(team.id)===String(state.teamId));
  return '<article class="trade-personal-card"><div class="trade-personal-head"><strong>'+esc(t.partner.name)+'</strong><span>'+t.shape+'</span></div>'+
- '<div class="trade-personal-sides"><div><small>SEND</small>'+formatList(t.send.players)+'</div><div><small>RECEIVE</small>'+formatList(t.receive.players)+'</div></div>'+
- '<div class="trade-personal-footer"><b>Your gain +'+fmt(t.avgYou)+' pts/wk <small>+'+fmt(t.gainYou)+' ROS</small></b>'+
- '<span>'+(t.avgThem>=0?'Both teams gain · Theirs +':'Da Vinci · Theirs ')+fmt(t.avgThem)+' pts/wk <small>(+'+fmt(t.gainThem)+' ROS)</small></span></div>'+(t.yahoo?'<div class="trade-yahoo-comparison" title="'+esc(t.yahoo.source)+'">Yahoo ROS · You '+(t.yahoo.gainYou>=0?'+':'')+fmt(t.yahoo.gainYou)+' · Theirs '+(t.yahoo.gainThem>=0?'+':'')+fmt(t.yahoo.gainThem)+'</div>':'')+((t.adjustments.you.length||t.adjustments.them.length)?'<details><summary>Roster moves assumed</summary><p>'+esc(['You: '+t.adjustments.you.join('; '),t.partner.name+': '+t.adjustments.them.join('; ')].join(' · '))+'</p></details>':'')+'</article>';
+ '<div class="trade-personal-sides"><div><div class="trade-list-label"><small>YOU SEND</small><small>ROS PTS</small></div>'+formatList(t.send.players)+summary(mine?.name||'Your team',t.beforeYou,t.afterYou,t.gainYou,t.avgYou)+'</div><div><div class="trade-list-label"><small>YOU RECEIVE</small><small>ROS PTS</small></div>'+formatList(t.receive.players)+summary(t.partner.name,t.beforeThem,t.afterThem,t.gainThem,t.avgThem)+'</div></div>'
+ +(t.yahoo?'<div class="trade-yahoo-comparison" title="'+esc(t.yahoo.source)+'">Yahoo ROS · You '+(t.yahoo.gainYou>=0?'+':'')+fmt(t.yahoo.gainYou)+' · Theirs '+(t.yahoo.gainThem>=0?'+':'')+fmt(t.yahoo.gainThem)+'</div>':'')+((t.adjustments.you.length||t.adjustments.them.length)?'<details><summary>Roster moves assumed</summary><p>'+esc(['You: '+t.adjustments.you.join('; '),t.partner.name+': '+t.adjustments.them.join('; ')].join(' · '))+'</p></details>':'')+'</article>';
 }
 function render(){
  const target=$('tradeResults');if(!target||!state)return;

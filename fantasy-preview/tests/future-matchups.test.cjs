@@ -11,7 +11,7 @@ for(const folder of ['data/','data/nebraska/']){
  const schedule=read(folder+'matchup-schedule.json'),rosters=read(folder+'rosters.json');const ids=new Set(rosters.teams.map(t=>String(t.id)));
  for(const round of schedule.weeks){const seen=new Set();for(const m of round.matchups)for(const side of [m.home,m.away]){assert.ok(ids.has(side.id));assert.ok(!seen.has(side.id),'One pairing per team per week');seen.add(side.id);}}
 }
-const html=fs.readFileSync(path.join(root,'index.html'),'utf8');const recordCode=html.slice(html.indexOf('function renderProjectedRecord()'),html.indexOf('function initOverview()'));
+const html=fs.readFileSync(path.join(root,'index.html'),'utf8');const recordCode=html.slice(html.indexOf('function getProjectedStandings()'),html.indexOf('function initOverview()'));
 const target={innerHTML:''},remaining={innerHTML:''},remainingPoints={innerHTML:''},overallPoints={innerHTML:''},team=id=>({id,name:'Team '+id});
 const games=[{home:team('7'),away:team('8')}];
 const record={rosters:{teams:[{id:'7'},{id:'8'}]},week:{week:5,matchups:games},matchupSchedule:{weeks:[{week:6,matchups:games},{week:7,matchups:games},{week:8,matchups:games},{week:9,matchups:[]}]},TEAM_ID:'7',$:id=>({'#projectedRemaining':remaining,'#remainingPoints':remainingPoints,'#overallPoints':overallPoints}[id]||target),standing:()=>({wins:1,losses:3,ties:0}),currentTeamForecast:t=>({davinci:t.id==='7'?100:90}),modelTeamLineup:(id,w)=>({points:w===6?(id==='7'?80:90):w===7?(id==='7'?110:90):100})};

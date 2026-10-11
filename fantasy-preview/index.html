@@ -590,9 +590,10 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 .model-team-entry summary{padding:10px;grid-template-columns:minmax(0,1fr) 90px}.model-team-entry summary strong{font-size:13px}
 .model-team-expanded{padding:10px}.team-model-players{grid-template-columns:1fr}}
 
+.standings-table{width:100%;border-collapse:collapse;font-size:14px}.standings-table th{text-align:left;color:var(--muted);font-size:11px;padding:15px 12px;border-bottom:1px solid var(--border)}.standings-table td{padding:13px 12px;border-bottom:1px solid var(--border)}.standings-table td:first-child{width:45px;color:var(--muted)}.standings-table td:nth-child(n+3),.standings-table th:nth-child(n+3){text-align:right;white-space:nowrap}.standings-table .playoff-position{font-weight:800}.standings-table .your-team{background:#f6e7cc}.standings-legend{padding:14px 12px;font-size:12px;color:var(--muted)}
 </style>
-<link rel="stylesheet" href="./clean-dashboard.css?v=20261010t">
-<link rel="stylesheet" href="./trade-preferences.css">
+<link rel="stylesheet" href="./clean-dashboard.css?v=20261010v">
+<link rel="stylesheet" href="./trade-preferences.css?v=20261010v">
 <style id="team-score-comparison">
 /* Current-week forecasts: labelled scores and mobile-friendly paired columns */
 #page-overview .match-compact-scores{align-items:start}
@@ -688,6 +689,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 <button class="nav-btn" type="button" data-page="rosters">Rosters</button>
 <button class="nav-btn" type="button" data-page="finder">Players</button>
 <button class="nav-btn" type="button" data-page="projections">Projections</button>
+<button class="nav-btn" type="button" data-page="standings">Standings</button>
 <button class="nav-btn" type="button" data-page="trades">Trades</button>
 <button class="nav-btn" type="button" data-page="transactions">Transactions</button>
 <button class="nav-btn" type="button" data-page="performance">Performance</button>
@@ -760,6 +762,10 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 <div class="panel" style="margin-top:19px"><div class="panel-header"><div><div class="panel-title">Historical accuracy</div></div></div><div id="backtestResults" class="backtest-results"><div class="empty-copy">No historical evaluation file published yet.</div></div><div id="specialValidation" class="special-validation"></div></div>
 <details class="quiet-details"><summary>Model methods</summary><p>Historical workloads and team results are adjusted for opponent, venue and league scoring. K/DEF fantasy-point validation remains pending; later-week totals assume participation.</p></details>
 </section>
+<section id="page-standings" class="page" hidden>
+<div class="section-top"><h2>Standings</h2><select id="standingsView" class="select" aria-label="Standings view"><option value="current">Current</option><option value="projected">Projected</option></select></div>
+<div class="panel standings-panel"><table class="standings-table"><thead><tr><th>Rank</th><th>Team</th><th>Record</th><th>Points</th></tr></thead><tbody id="standingsRows"></tbody></table><div id="standingsLegend" class="standings-legend"></div></div>
+</section>
 <section id="page-trades" class="page" hidden>
 <div class="section-top"><div><div class="eyebrow">Lineup optimization · Weeks 6–17</div><h2>Trade suggestions</h2>
 </div></div>
@@ -791,19 +797,19 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 <footer class="footer"><div>DA VINCI FANTASY LAB / CSU STATS · MMXXVI</div><div>READ-ONLY PROTOTYPE · POWERED BY YAHOO LEAGUE DATA</div></footer>
 </div>
 <script src="./special-teams-model.js"></script>
-<script src="./lab-enhancements.js?v=20261010t"></script>
-<script src="./availability-sanity.js?v=20261010t"></script>
+<script src="./lab-enhancements.js?v=20261010v"></script>
+<script src="./availability-sanity.js?v=20261010v"></script>
 <script src="./return-outlook.js"></script>
 <script src="./playing-time-model.js"></script>
-<script src="./roster-advice.js?v=20261010t"></script>
-<script src="./matchup-overview.js?v=20261010t"></script>
+<script src="./roster-advice.js?v=20261010v"></script>
+<script src="./matchup-overview.js?v=20261010v"></script>
 <script src="./overview-roster.js"></script>
-<script src="./trade-preferences.js?v=20261010t"></script>
-<script src="./transaction-grades.js?v=20261010t"></script>
+<script src="./trade-preferences.js?v=20261010v"></script>
+<script src="./transaction-grades.js?v=20261010v"></script>
 <script src="./historical-trends.js"></script>
 <script src="./historical-trends-view.js"></script>
 <script src="./forecast-accuracy.js"></script>
-<script src="./model-performance.js?v=20261010t"></script>
+<script src="./model-performance.js?v=20261010v"></script>
 <script>
 'use strict';
 const $=s=>document.querySelector(s);
@@ -1023,8 +1029,7 @@ function renderFeaturedMatchup(selected){
  window.DaVinciMatchup.render(data);
  $('#matchupWeek').addEventListener('change',e=>renderFeaturedMatchup(e.target.value));
 }
-function renderProjectedRecord(){
- const node=$('#projectedRecord');if(!node)return;
+function getProjectedStandings(){
  const all=[{week:Number(week.week),matchups:week.matchups},...(matchupSchedule?.weeks||[])];
  const records=rosters.teams.map(team=>{
   let wins=0,losses=0,ties=0,missing=0,points=0,last=Number(week.week);
@@ -1041,6 +1046,11 @@ function renderProjectedRecord(){
   return {id:String(team.id),wins,losses,ties,missing,points,last,complete,pointsComplete:complete&&st?.pointsFor!=null,
    overallWins:wins+Number(st?.wins||0),overallLosses:losses+Number(st?.losses||0),overallTies:ties+Number(st?.ties||0),overallPoints:points+Number(st?.pointsFor||0)};
  });
+ return records;
+}
+function renderProjectedRecord(){
+ const node=$('#projectedRecord');if(!node)return;
+ const records=getProjectedStandings();
  const own=records.find(r=>r.id===String(TEAM_ID));if(!own)return;
  const tally=(w,l,t)=>w+'–'+l+(t?'–'+t:'');
  const pointRank=overall=>{
@@ -1060,6 +1070,22 @@ function renderProjectedRecord(){
  remaining.innerHTML='<small>REMAINING RECORD:</small><strong>'+(!own.missing?tally(own.wins,own.losses,own.ties)+rank(false):'—')+'</strong>';
  $('#remainingPoints').innerHTML='<small>REMAINING POINTS:</small><strong>'+(!own.missing?own.points.toFixed(1)+pointRank(false):'—')+'</strong>';
  $('#overallPoints').innerHTML='<small>PROJECTED OVERALL POINTS:</small><strong>'+(own.pointsComplete?own.overallPoints.toFixed(1)+pointRank(true):'—')+'</strong>';
+}
+function renderStandings(){
+ const projected=$('#standingsView').value==='projected';
+ const forecasts=projected?getProjectedStandings():[];
+ const rows=rosters.teams.map(team=>{
+  const st=standing(team.id),f=forecasts.find(r=>r.id===String(team.id));
+  return {id:String(team.id),name:team.name,wins:projected?(f?.complete?f.overallWins:null):st?.wins,losses:projected?(f?.complete?f.overallLosses:null):st?.losses,ties:projected?f?.overallTies:st?.ties,points:projected?(f?.pointsComplete?f.overallPoints:null):st?.pointsFor,rank:projected?null:st?.rank};
+ });
+ if(projected){
+  const ready=rows.every(r=>r.wins!=null&&r.points!=null);
+  if(ready)for(const r of rows)r.rank=1+rows.filter(other=>Number(other.wins)+Number(other.ties||0)*.5>Number(r.wins)+Number(r.ties||0)*.5||(Number(other.wins)+Number(other.ties||0)*.5===Number(r.wins)+Number(r.ties||0)*.5&&Number(other.points)>Number(r.points))).length;
+ }
+ rows.sort((a,b)=>(Number(a.rank)||Infinity)-(Number(b.rank)||Infinity)||a.name.localeCompare(b.name));
+ const cutoff=Number(leagueSettings?.playoffTeams)||0;
+ $('#standingsRows').innerHTML=rows.map(r=>'<tr class="'+(cutoff&&Number(r.rank)>0&&Number(r.rank)<=cutoff?'playoff-position ':'')+(r.id===String(TEAM_ID)?'your-team':'')+'"><td>'+(r.rank||'—')+'</td><td>'+esc(r.name)+'</td><td>'+(r.wins==null?'—':r.wins+'–'+r.losses+(Number(r.ties)?'–'+r.ties:''))+'</td><td>'+(r.points==null?'—':Number(r.points).toFixed(1))+'</td></tr>').join('');
+ $('#standingsLegend').textContent=cutoff?'Bold teams are in playoff position · '+cutoff+' spots'+(projected?' · Da Vinci projections':''):'Playoff cutoff unavailable'+(projected?' · Da Vinci projections':'');
 }
 function renderLeagueMatchups(selectedWeek){
  const future=selectedWeek>Number(week.week);
@@ -1397,7 +1423,7 @@ function renderAllProjections(){
  }).join(''):'<div class="empty-copy">No matching players.</div>');
 }
 function showPage(page){
- if(!['overview','rosters','finder','projections','trades','transactions','performance'].includes(page))return;
+ if(!['overview','rosters','finder','projections','standings','trades','transactions','performance'].includes(page))return;
  if(location.hash!=='#'+page)history.replaceState(null,'','#'+page);
  document.querySelectorAll('.page').forEach(x=>x.hidden=x.id!=='page-'+page);
  document.querySelectorAll('.nav-btn').forEach(x=>{const on=x.dataset.page===page;x.classList.toggle('active',on);x.setAttribute('aria-current',on?'page':'false');});
@@ -1443,12 +1469,12 @@ async function get(path){const r=await fetch(DATA_BASE+path+'.json',{cache:'no-s
 
   }
   matchupSchedule=await get('matchup-schedule').catch(()=>null);
-  initOverview();initRosters();initFinder();renderProjection();renderSpecialValidation();initModelTeamForecasts();window.DaVinciLab?.init();
+  initOverview();renderStandings();$('#standingsView').addEventListener('change',renderStandings);initRosters();initFinder();renderProjection();renderSpecialValidation();initModelTeamForecasts();window.DaVinciLab?.init();
    if(!window.DaVinciAdvice)throw Error("Roster recommendation module unavailable");
    window.DaVinciAdvice.init({rosters,available,week:Number(week.week),future:futureData,teamId:TEAM_ID});
    window.DaVinciPersonalTrades?.init({rosters,available,week:Number(week.week),future:futureData,teamId:TEAM_ID,leagueKey:LEAGUE_KEY,yahooFuture:await get('yahoo-projections').catch(()=>null),yahooEvaluations:await get('yahoo-trade-evaluations').catch(()=>null),optimize:window.DaVinciAdvice.lineup});
    window.DaVinciTransactions?.init({rosters,available,week:Number(week.week),future:futureData,teamId:TEAM_ID,transactions:transactionsData,optimize:window.DaVinciAdvice.lineup,partialOptimize:window.DaVinciAdvice.partialLineup});
-   const pageFromLink=location.hash.slice(1);if(['rosters','finder','projections','trades','transactions','performance'].includes(pageFromLink))showPage(pageFromLink);
+   const pageFromLink=location.hash.slice(1);if(['rosters','finder','projections','standings','trades','transactions','performance'].includes(pageFromLink))showPage(pageFromLink);
  }catch(e){
   $('#hero').innerHTML='<div class="loading"><strong>Dashboard data could not be loaded.</strong><p>'+esc(e.message)+'</p><p>Check the published JSON files or reload this page.</p></div>';
   $('#sync').textContent='Data load failed';
