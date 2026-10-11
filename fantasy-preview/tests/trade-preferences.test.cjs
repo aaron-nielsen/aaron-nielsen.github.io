@@ -78,3 +78,18 @@ getElementById('tradePreferenceClear').listeners.click();
 assert.equal(context.DaVinciPersonalTrades.active(),false);
 assert.match(getElementById('tradeResults').innerHTML,/Legacy suggestions/);
 console.log('Trade preferences passed: selectable outbound/inbound players, personalized 1-for-1, mutually beneficial lineup gains, clear and reset.');
+// Expose internal helpers only inside this test's isolated evaluation.
+vm.runInNewContext(read('trade-preferences.js').replace('root.DaVinciPersonalTrades={init,active,render};','root.DaVinciPersonalTrades={init,active,render,getCandidates,repairRoster};'),context);
+context.DaVinciPersonalTrades.init({rosters,available,future,teamId:owner,leagueKey:'csu',optimize:context.DaVinciAdvice.lineup});
+getElementById('tradePackageFilter').value='all';
+const candidates=context.DaVinciPersonalTrades.getCandidates();
+assert.ok(candidates.some(c=>c.send.count!==c.receive.count),'Unequal offers enter the screening pipeline');
+assert.ok(candidates.every(c=>c.send.count<=3&&c.receive.count<=3),'No four-player packages');
+for(const shape of ['1_for_3','3_for_2','2_for_1']){
+ getElementById('tradePackageFilter').value=shape;
+ const list=context.DaVinciPersonalTrades.getCandidates();
+ assert.ok(list.length>0);assert.ok(list.every(c=>c.send.count+'_for_'+c.receive.count===shape));
+}
+const repaired=context.DaVinciPersonalTrades.repairRoster(own.concat(other[9]),own,new Set([other[9].id]),[6,7]);
+assert.equal(repaired.players.length,own.length);assert.ok(repaired.players.some(p=>p.id===other[9].id));assert.match(repaired.notes.join(),/Drop/);
+assert.equal(context.DaVinciPersonalTrades.repairRoster(own.slice(0,-1),own,new Set(),[6,7]),null,'Missing free agents cannot invent roster repair');

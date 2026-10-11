@@ -591,7 +591,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 .model-team-expanded{padding:10px}.team-model-players{grid-template-columns:1fr}}
 
 </style>
-<link rel="stylesheet" href="./clean-dashboard.css?v=20261010h">
+<link rel="stylesheet" href="./clean-dashboard.css?v=20261010j">
 <link rel="stylesheet" href="./trade-preferences.css">
 <style id="team-score-comparison">
 /* Current-week forecasts: labelled scores and mobile-friendly paired columns */
@@ -695,11 +695,11 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 <main id="app">
 <section id="page-overview" class="page">
 <div class="section-top"><div><div class="eyebrow" id="overviewLeagueLabel">2026 Fantasy Football</div><h1>Overview</h1></div><div class="quiet tiny" id="sync">Loading Yahoo snapshot…</div></div>
-<div class="projected-record" id="projectedRecord" aria-label="Projected season record"></div>
 <div class="overview-top">
  <div class="matchup" id="hero"><div class="loading">Loading this week's matchup…</div></div>
  <div class="overview-metrics" aria-label="My team standings" id="overviewMetrics">
   <div><small>RECORD</small><strong id="wl">—</strong></div>
+  <div id="projectedRecord" aria-label="Projected season record"></div>
   <div><small>RANK</small><strong id="rankDesc">—</strong></div>
   <div><small>POINTS</small><strong id="pointsFor">—</strong></div>
   <div><small>WAIVERS</small><strong id="waiverRank">—</strong></div>
@@ -765,7 +765,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
   <div id="tradePreferenceBuilder" aria-label="Personal trade targets"></div>
   <section class="trade-filter-panel"><div class="trade-controls"><label for="tradePosition">Trade targets <select id="tradePosition" class="select"><option value="offense_no_qb">Offense (no QB)</option><option value="all">All offense</option><option value="QB">QB</option><option value="RB">RB</option><option value="WR">WR</option><option value="TE">TE</option></select></label><label for="tradePartner">Trading with <select id="tradePartner" class="select"><option value="all">All teams</option></select></label>
   <label for="tradeFromWeek">Evaluate <select id="tradeFromWeek" class="select"><option value="6">Weeks 6–17</option></select></label>
-  <label for="tradePackageFilter">Packages <select id="tradePackageFilter" class="select"><option value="one_each">1-for-1 only</option><option value="two_each">2-for-2 only</option><option value="three_each">3-for-3 only</option><option value="balanced">2-for-2 or 3-for-3</option><option value="balanced_all" selected>1-for-1, 2-for-2, 3-for-3</option><option value="all">All screened, equal-size packages</option></select></label>
+  <label for="tradePackageFilter">Packages <select id="tradePackageFilter" class="select"><option value="one_each">1-for-1 only</option><option value="two_each">2-for-2 only</option><option value="three_each">3-for-3 only</option><option value="balanced">2-for-2 or 3-for-3</option><option value="balanced_all">1-for-1, 2-for-2, 3-for-3</option><option value="all" selected>All packages · 1–3 each</option><option value="unequal">Unequal packages · 1–3 each</option><option value="1_for_2">1-for-2 only</option><option value="1_for_3">1-for-3 only</option><option value="2_for_1">2-for-1 only</option><option value="2_for_3">2-for-3 only</option><option value="3_for_1">3-for-1 only</option><option value="3_for_2">3-for-2 only</option></select></label>
   <label>Show <select id="tradeLimit" class="select"><option>6</option><option>12</option><option>24</option></select></label><div id="tradeCount" class="trade-count">Calculating candidates…</div></div></section>
   <div id="tradeResults" class="trades-grid"><div class="empty-copy">Calculating lineup-adjusted trade ideas…</div></div>
   
@@ -788,19 +788,19 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 <footer class="footer"><div>DA VINCI FANTASY LAB / CSU STATS · MMXXVI</div><div>READ-ONLY PROTOTYPE · POWERED BY YAHOO LEAGUE DATA</div></footer>
 </div>
 <script src="./special-teams-model.js"></script>
-<script src="./lab-enhancements.js?v=20261010h"></script>
-<script src="./availability-sanity.js?v=20261010h"></script>
+<script src="./lab-enhancements.js?v=20261010j"></script>
+<script src="./availability-sanity.js?v=20261010j"></script>
 <script src="./return-outlook.js"></script>
 <script src="./playing-time-model.js"></script>
-<script src="./roster-advice.js?v=20261010h"></script>
-<script src="./matchup-overview.js?v=20261010h"></script>
+<script src="./roster-advice.js?v=20261010j"></script>
+<script src="./matchup-overview.js?v=20261010j"></script>
 <script src="./overview-roster.js"></script>
-<script src="./trade-preferences.js?v=20261010h"></script>
-<script src="./transaction-grades.js?v=20261010h"></script>
+<script src="./trade-preferences.js?v=20261010j"></script>
+<script src="./transaction-grades.js?v=20261010j"></script>
 <script src="./historical-trends.js"></script>
 <script src="./historical-trends-view.js"></script>
 <script src="./forecast-accuracy.js"></script>
-<script src="./model-performance.js?v=20261010h"></script>
+<script src="./model-performance.js?v=20261010j"></script>
 <script>
 'use strict';
 const $=s=>document.querySelector(s);
@@ -1035,7 +1035,8 @@ function renderProjectedRecord(){
  }
  const st=standing(TEAM_ID),complete=st?.wins!=null&&st?.losses!=null&&!missing;
  const tally=(w,l,t)=>w+'–'+l+(t?'–'+t:'');
- node.innerHTML='<strong>'+(complete?'Projected record':'Projected remaining games')+'</strong><b>'+tally(wins+(complete?st.wins:0),losses+(complete?st.losses:0),ties+(complete?Number(st.ties||0):0))+'</b><span>Weeks '+week.week+'–'+last+(missing?' · '+missing+' unprojected':'')+'</span><details><summary>Projection details</summary><p>One projected result per scheduled matchup, using submitted starters this week and optimized current rosters afterward. No assumed pickups or future roster changes. Unscheduled playoff opponents are excluded.</p></details>';
+ node.title='Weeks '+week.week+'–'+last+(missing?' · '+missing+' unprojected games':'')+'. Based on current rosters and scheduled opponents.';
+ node.innerHTML='<small>'+(complete?'PROJECTED':'REMAINING W–L')+'</small><strong>'+tally(wins+(complete?st.wins:0),losses+(complete?st.losses:0),ties+(complete?Number(st.ties||0):0))+'</strong>';
 }
 function initOverview(){
  renderFeaturedMatchup(week.week);

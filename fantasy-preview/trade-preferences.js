@@ -78,32 +78,56 @@ function getCandidates(){
   const mode=$('tradePackageFilter')?.value||'balanced';
   const sizes=mode==='three_each'?[3]:mode==='balanced'?[2,3]:[1,2,3];
   for(const n of sizes){
+   for(const r of sizes){
+    if(mode!=='all'&&mode!=='unequal'&&!mode.includes('_for_')&&n!==r)continue;
+    if(mode==='unequal'&&n===r)continue;
+    if(mode.includes('_for_')&&mode!==n+'_for_'+r)continue;
    for(const send of outgoing[n]){
-    for(const receive of inbound[n]){
+    for(const receive of inbound[r]){
      const position=$('tradePosition')?.value||'all';
      if(!selectedIn.size&&position!=='all'&&position!=='offense_no_qb'&&!receive.players.some(p=>p.position===position))continue;
      if(!selectedIn.size&&position==='offense_no_qb'&&receive.players.some(p=>!['RB','WR','TE'].includes(p.position)))continue;
      // Compare modeled rest-of-season value before more costly legal-lineup simulation.
      const gap=Math.abs(send.raw-receive.raw)/Math.max(12,send.raw,receive.raw);
-     shortlist.push({partner:other,send,receive,gap,shape:n+'-for-'+n,
+     shortlist.push({partner:other,send,receive,gap,shape:n+'-for-'+r,
       balance:Math.abs(send.raw-receive.raw),key:other.id+'/'+send.key+'/'+receive.key});
     }
    }
   }
+  }
   shortlist.sort((a,b)=>a.gap-b.gap||a.balance-b.balance);
   // Retain variety of packages and targets rather than only near-identical deals.
-  const retained=[], seen=new Set(),byShape={1:0,2:0,3:0};
+  const retained=[], seen=new Set(),byShape={};
   for(const item of shortlist){
-   const n=item.send.count;
-   if(item.gap>.5||byShape[n]>=5)continue;
-   const shortKey=item.receive.players.map(x=>x.position).sort().join('-')+'/'+item.send.key;
+   const n=item.shape;
+   if(item.gap>.5||(byShape[n]||0)>=5)continue;
+   const shortKey=item.shape+'/'+item.receive.players.map(x=>x.position).sort().join('-')+'/'+item.send.key;
    if(seen.has(shortKey))continue;
-   seen.add(shortKey);byShape[n]++;
+   seen.add(shortKey);byShape[n]=(byShape[n]||0)+1;
    retained.push(item);
   }
   proposals.push(...retained);
  }
  return proposals.sort((a,b)=>a.gap-b.gap).slice(0,120);
+}
+// Balance roster capacity before measuring any unequal offer; expose these assumptions.
+function repairRoster(players,original,protectedIds,weeks){
+ const notes=[];let roster=players.slice();
+ const value=p=>playerPts(p,weeks)??-1;
+ while(roster.length>original.length){
+  const choices=roster.filter(p=>!protectedIds.has(id(p))).sort((a,b)=>value(a)-value(b));
+  const drop=choices.find(p=>weeks.every(w=>state.optimize(roster.filter(x=>id(x)!==id(p)),w)));
+  if(!drop)return null;
+  roster=roster.filter(p=>id(p)!==id(drop));notes.push('Drop '+drop.name+' ('+drop.position+')');
+ }
+ while(roster.length<original.length){
+  const owned=new Set(state.rosters.teams.flatMap(t=>t.players.map(id)).concat(roster.map(id)));
+  const pool=possible(state.available?.players||[]).filter(p=>!owned.has(id(p))).sort((a,b)=>value(b)-value(a));
+  const add=pool.find(p=>weeks.every(w=>state.optimize(roster.concat({...p,slot:'BN'}),w)))||pool[0];
+  if(!add)return null;
+  roster.push({...add,slot:'BN'});notes.push('Add '+add.name+' ('+add.position+')');
+ }
+ return {players:roster,notes};
 }
 function evaluateOffer(c,original,baseline,weeks){
  const your=original;
@@ -111,15 +135,17 @@ function evaluateOffer(c,original,baseline,weeks){
  const sending=new Set(c.send.players.map(id)),receiving=new Set(c.receive.players.map(id));
  const yourAfter=your.filter(p=>!sending.has(id(p))).concat(c.receive.players.map(p=>({...p,slot:'BN'})));
  const theirAfter=theirs.filter(p=>!receiving.has(id(p))).concat(c.send.players.map(p=>({...p,slot:'BN'})));
+ const yours=repairRoster(yourAfter,your,receiving,weeks),theirsFixed=repairRoster(theirAfter,theirs,sending,weeks);
+ if(!yours||!theirsFixed)return null;
  let gainYou=0,gainThem=0;
  for(let i=0;i<weeks.length;i++){
-  const you=state.optimize(yourAfter,weeks[i]);
-  const them=state.optimize(theirAfter,weeks[i]);
+  const you=state.optimize(yours.players,weeks[i]);
+  const them=state.optimize(theirsFixed.players,weeks[i]);
   if(!you||!them||!baseline.you[i]||!baseline.peers.get(c.partner.id)?.[i])return null;
   gainYou+=you.score-baseline.you[i].score;
   gainThem+=them.score-baseline.peers.get(c.partner.id)[i].score;
  }
- return {...c,gainYou,gainThem,avgYou:gainYou/weeks.length,avgThem:gainThem/weeks.length};
+ return {...c,adjustments:{you:yours.notes,them:theirsFixed.notes},gainYou,gainThem,avgYou:gainYou/weeks.length,avgThem:gainThem/weeks.length};
 }
 function evaluate(){
  const weeks=starts(),mine=state.rosters.teams.find(t=>String(t.id)===String(state.teamId));
@@ -150,7 +176,7 @@ function resultHTML(t){
  return '<article class="trade-personal-card"><div class="trade-personal-head"><strong>'+esc(t.partner.name)+'</strong><span>'+t.shape+'</span></div>'+
  '<div class="trade-personal-sides"><div><small>SEND</small>'+formatList(t.send.players)+'</div><div><small>RECEIVE</small>'+formatList(t.receive.players)+'</div></div>'+
  '<div class="trade-personal-footer"><b>Your gain +'+fmt(t.avgYou)+' pts/wk <small>+'+fmt(t.gainYou)+' ROS</small></b>'+
- '<span>Both teams gain · Theirs +'+fmt(t.avgThem)+' pts/wk <small>(+'+fmt(t.gainThem)+' ROS)</small></span></div></article>';
+ '<span>Both teams gain · Theirs +'+fmt(t.avgThem)+' pts/wk <small>(+'+fmt(t.gainThem)+' ROS)</small></span></div>'+((t.adjustments.you.length||t.adjustments.them.length)?'<details><summary>Roster moves assumed</summary><p>'+esc(['You: '+t.adjustments.you.join('; '),t.partner.name+': '+t.adjustments.them.join('; ')].join(' · '))+'</p></details>':'')+'</article>';
 }
 function render(){
  const target=$('tradeResults');if(!target||!state)return;
@@ -173,7 +199,7 @@ function render(){
  };
  if(typeof requestAnimationFrame==='function')requestAnimationFrame(run);else run();
 }
-function active(){return selectedOut.size>0||selectedIn.size>0;}
+function active(){const mode=$('tradePackageFilter')?.value||'';return selectedOut.size>0||selectedIn.size>0||mode==='all'||mode==='unequal'||mode.includes('_for_');}
 function refresh(){
  for(const [type,selected] of [['send',selectedOut],['receive',selectedIn]]){
   const box=$('trade'+(type==='send'?'Send':'Receive')+'Box');
