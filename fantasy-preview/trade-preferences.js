@@ -330,35 +330,54 @@ function featuredEvaluate(offer,own,weeks,beforeYou,beforeThem){
 function featuredTrade(){
  const el=$('featuredTrade');if(!el||!state)return;
  if(state.leagueKey!=='csu'){el.hidden=true;return;}
+ el.hidden=false;
  const mine=state.rosters.teams.find(t=>String(t.id)===String(state.teamId));
  const partner=state.rosters.teams.find(t=>String(t.id)==='1');
- const send=['32671','31868','40971','100012'].map(pid=>mine?.players.find(p=>id(p)===pid));
- const receive=['41793','32676'].map(pid=>partner?.players.find(p=>id(p)===pid));
- const heading='<header class="featured-trade-heading"><strong>Saved 4-for-2 proposal</strong><span>Blitzmaster · Not submitted</span></header>';
- if(String(mine?.id)!=='7'||!partner||[...send,...receive].some(x=>!x)){
-  el.innerHTML='<section class="featured-trade-card">'+heading+'<p>Proposal unavailable: one or more players are no longer on the required rosters.</p></section>';return;
- }
- const offer={partner,send:{players:send},receive:{players:receive},shape:'4-for-2'};
+ const proposals=[
+  {label:'Burrow + Deebo + Lloyd + Chiefs → McMillan + Herbert',out:['32671','31868','40971','100012'],in:['41793','32676']},
+  {label:'Burrow → McMillan',out:['32671'],in:['41793']},
+  {label:'Burrow + Deebo → McMillan',out:['32671','31868'],in:['41793']}
+ ];
+ const windows=[{start:6,label:'After Week 5'},{start:7,label:'After Week 6'}];
+ const signed=x=>(x>=0?'+':'')+fmt(x);
  const fmtList=xs=>xs.map(p=>'<span>'+esc(p.name)+' <small>'+esc(p.position)+'</small></span>').join('');
- const exchange='<div class="featured-trade-sides"><div><small>YOU SEND</small>'+fmtList(send)+'</div><div><small>YOU RECEIVE</small>'+fmtList(receive)+'</div></div>';
- const eachWindow=(start,title)=>{
+ const baseline=new Map();
+ function lineupBaseline(start){
+  if(baseline.has(start))return baseline.get(start);
   const weeks=Array.from({length:Math.max(0,Number(state.future.endWeek)-start+1)},(_,i)=>start+i);
-  if(!weeks.length)return '<div class="featured-trade-window"><strong>'+title+'</strong><p>No remaining games to forecast.</p></div>';
-  const you=weeks.map(w=>state.optimize(mine.players,w)),them=weeks.map(w=>state.optimize(partner.players,w));
-  if([...you,...them].some(x=>!x))return '<div class="featured-trade-window"><strong>'+title+'</strong><p>Incomplete legal-lineup forecast; not graded.</p></div>';
-  const t=featuredEvaluate(offer,mine.players,weeks,you,them);
-  if(!t)return '<div class="featured-trade-window"><strong>'+title+'</strong><p>Unable to balance rosters with available pickups/drops; not graded.</p></div>';
-  const signed=x=>(x>=0?'+':'')+fmt(x);
-  const assessment=t.avgYou>=MIN_ROS_GAIN_PER_WEEK&&t.avgThem>=MIN_ROS_GAIN_PER_WEEK?'Both teams gain':'Not mutually beneficial';
-  return '<div class="featured-trade-window"><div class="featured-trade-window-heading"><strong>'+title+'</strong><small>Weeks '+start+'–'+weeks.at(-1)+'</small><em>'+assessment+'</em></div>'+
-   '<div class="featured-trade-grades"><div><small>Ten Feline Overlords</small><strong>'+gradeTrade(t.avgYou)+'</strong><span>'+signed(t.gainYou)+' ROS pts</span><small>'+signed(t.avgYou)+' pts/wk</small></div>'+
-   '<div><small>Blitzmaster</small><strong>'+gradeTrade(t.avgThem)+'</strong><span>'+signed(t.gainThem)+' ROS pts</span><small>'+signed(t.avgThem)+' pts/wk</small></div></div>'+
-   '<details><summary>Roster assumptions and projected starters</summary><p>After additions and drops: You '+fmt(t.beforeYou)+' → '+fmt(t.afterYou)+' points; Blitzmaster '+fmt(t.beforeThem)+' → '+fmt(t.afterThem)+' points.</p>'+
-   '<p>You: '+esc(t.adjustments.you.join('; ')||'No adjustments')+'. Blitzmaster: '+esc(t.adjustments.them.join('; ')||'No adjustments')+'.</p></details></div>';
- };
- el.innerHTML='<section class="featured-trade-card">'+heading+exchange+
-  '<div class="featured-trade-windows">'+eachWindow(6,'After Week 5')+eachWindow(7,'After Week 6')+'</div>'+
-  '<p class="featured-trade-disclaimer">Grades follow the Transactions tab scale based on predicted points gained per week, not player reputation. Each team is evaluated with an optimal legal nine-player lineup and any necessary available-player adds or drops. These are projections, not Yahoo trade evaluations.</p></section>';
+  const yours=weeks.map(w=>state.optimize(mine.players,w));
+  const theirs=weeks.map(w=>state.optimize(partner.players,w));
+  const value={weeks,yours,theirs,valid:weeks.length>0&&[...yours,...theirs].every(Boolean)};
+  baseline.set(start,value);return value;
+ }
+ function card(spec){
+  const send=spec.out.map(pid=>mine?.players.find(p=>id(p)===pid));
+  const receive=spec.in.map(pid=>partner?.players.find(p=>id(p)===pid));
+  const shape=spec.out.length+'-for-'+spec.in.length;
+  const heading='<header class="featured-trade-heading"><strong>'+esc(spec.label)+'</strong><span>'+shape+' · Blitzmaster</span></header>';
+  if(String(mine?.id)!=='7'||!partner||[...send,...receive].some(x=>!x))
+   return '<section class="featured-trade-card">'+heading+'<p class="featured-trade-notice">Cannot grade using current rosters: at least one player is no longer on the specified team.</p></section>';
+  const offer={partner,send:{players:send},receive:{players:receive},shape};
+  const exchange='<div class="featured-trade-sides"><div><small>YOU SEND</small>'+fmtList(send)+'</div><div><small>YOU RECEIVE</small>'+fmtList(receive)+'</div></div>';
+  const eachWindow=({start,label})=>{
+   const base=lineupBaseline(start),weeks=base.weeks;
+   if(!base.valid)return '<div class="featured-trade-window"><strong>'+label+'</strong><p>Complete legal-lineup forecasts unavailable.</p></div>';
+   const t=featuredEvaluate(offer,mine.players,weeks,base.yours,base.theirs);
+   if(!t)return '<div class="featured-trade-window"><strong>'+label+'</strong><p>Cannot balance rosters with available pickups/drops. No grade.</p></div>';
+   const assessment=t.avgYou>=MIN_ROS_GAIN_PER_WEEK&&t.avgThem>=MIN_ROS_GAIN_PER_WEEK?'Both teams gain':'Not mutually beneficial';
+   return '<div class="featured-trade-window"><div class="featured-trade-window-heading"><strong>'+label+'</strong><small>Weeks '+start+'–'+weeks.at(-1)+'</small><em>'+assessment+'</em></div>'+
+    '<div class="featured-trade-grades"><div><small>Ten Feline Overlords</small><strong>'+gradeTrade(t.avgYou)+'</strong><span>'+signed(t.gainYou)+' ROS pts</span><small>'+signed(t.avgYou)+' pts/wk</small></div>'+
+    '<div><small>Blitzmaster</small><strong>'+gradeTrade(t.avgThem)+'</strong><span>'+signed(t.gainThem)+' ROS pts</span><small>'+signed(t.avgThem)+' pts/wk</small></div></div>'+
+    '<details><summary>Roster assumptions and projected starters</summary><p>After roster moves: You '+fmt(t.beforeYou)+' → '+fmt(t.afterYou)+' points; Blitzmaster '+fmt(t.beforeThem)+' → '+fmt(t.afterThem)+' points.</p>'+
+    '<p>You: '+esc(t.adjustments.you.join('; ')||'No adjustments')+'. Blitzmaster: '+esc(t.adjustments.them.join('; ')||'No adjustments')+'.</p></details></div>';
+  };
+  return '<section class="featured-trade-card">'+heading+exchange+
+   '<div class="featured-trade-windows">'+windows.map(eachWindow).join('')+'</div></section>';
+ }
+ if(!mine||!partner){el.innerHTML='<p class="featured-trade-notice">Current CSU league rosters are unavailable.</p>';return;}
+ el.innerHTML='<div class="featured-trade-suite-heading"><strong>Saved trade proposals</strong><span>Not submitted</span></div>'+
+  proposals.map(card).join('')+
+  '<p class="featured-trade-disclaimer">Grades use the Transactions tab point-gain-per-week scale. Each scenario starts from the same current Yahoo roster; proposals are alternatives, not cumulative trades. Full legal nine-player lineups and necessary adds/drops are modeled. These are Da Vinci projections, not Yahoo trade evaluations.</p>';
 }
 
 function draw(){
