@@ -103,11 +103,14 @@ function cacheContext(range){
   if(addition.has(key))return addition.get(key);
   const start=teamBase.get(String(team.id));
   const active=team.players.filter(x=>x.slot!=='IR').length;
-  const scenarios=active>=15?dropCandidates(team).map(x=>({players:team.players.filter(q=>byId(q)!==byId(x.p)),dropped:x.p.name})):
+  // Injured-reserve acquisitions must remain on IR: merely changing teams
+  // cannot make Hall, Pierce or another inactive player instantly healthy.
+  const incomingIR=p.slot==='IR';
+  const scenarios=!incomingIR&&active>=15?dropCandidates(team).map(x=>({players:team.players.filter(q=>byId(q)!==byId(x.p)),dropped:x.p.name})):
      [{players:team.players,dropped:null}];
   let best=null,dropped=null;
   for(const scenario of scenarios){
-   const potential=score(scenario.players.concat({...p,slot:'BN'}),range);
+   const potential=score(scenario.players.concat({...p,slot:incomingIR?'IR':'BN'}),range);
    if(potential!==null&&(best===null||potential>best)){best=potential;dropped=scenario.dropped;}
   }
   const result=best===null||start===null?null:{gain:Math.max(0,best-start),raw:best-start,dropped};
