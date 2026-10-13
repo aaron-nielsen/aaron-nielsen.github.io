@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "retrievedAt": "2026-10-10T02:53:22.198Z",
+  "retrievedAt": "2026-10-13T20:04:37.921Z",
   "source": "Flaim Fantasy / Yahoo Fantasy",
   "platform": "yahoo",
   "sport": "football",
@@ -9,7 +9,7 @@
   "leagueName": "CSU Stats",
   "teamCount": 14,
   "userTeamId": "7",
-  "currentWeekAtSnapshot": 5,
+  "currentWeekAtSnapshot": 6,
   "startingSlots": [
     "QB",
     "RB",
@@ -63,5 +63,5 @@
     "84": 0.1
   },
   "playoffTeams": 8,
-  "playoffTeamsSource": "Yahoo current standings playoff seeds 1\u20138, retrieved October 10, 2026"
+  "playoffTeamsSource": "Yahoo current standings playoff seeds 1–8, retrieved October 10, 2026"
 }

@@ -28,7 +28,7 @@ for(const prefix of ['data/','data/nebraska/']){
  assert.ok(frame(lloyd,5).playingTime.projectedSnapShare>.5);
  assert.ok(frame(johnson,5).playingTime.projectedSnapShare>.23);
  const weeklyLloyd=weekly.players.find(x=>x.name==='MarShawn Lloyd');
- assert.equal(weeklyLloyd.weeklyProjectedPoints,frame(lloyd,5).points);
+ assert.equal(weeklyLloyd.weeklyProjectedPoints,frame(lloyd,Number(weekly.week)).points);
  console.log(prefix+' Week 5 Lloyd '+originalLloyd+' -> '+frame(lloyd,5).points+
   ', Brian '+baselineRobinson+', Brooks unavailable; Week 6 unchanged');
 }

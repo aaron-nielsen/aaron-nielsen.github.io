@@ -12,7 +12,7 @@ require(path.join(BASE,'special-teams-model.js'));
 const modeler=globalThis.DaVinciSpecialTeams;
 assert.ok(modeler && typeof modeler.enrich==='function');
 const context=json('data/special-teams-context.json');
-assert.ok(context.dataThroughWeek>0 && context.dataThroughWeek<5,'Current source must stop before Week 5');
+assert.ok(context.dataThroughWeek>0 && context.dataThroughWeek<=5,'Current source may include completed Week 5');
 assert.ok(context.games.every(g=>g[0]!==2026||g[1]<=context.dataThroughWeek));
 assert.ok(context.games.length>=1100);
 const starts=html.indexOf('const MODEL_SKILL_SLOTS=');
@@ -41,7 +41,7 @@ for(const entry of [{slug:'',user:'7',id:'470.l.258793',n:14},
  assert.equal(typeCounts.DEF,32);
  assert.ok(typeCounts.K>=32);
  for(const player of specials){
-   assert.equal(player.weeks.length,future.endWeek-future.startWeek+1);
+   assert.equal(player.weeks.length,future.endWeek-Math.max(future.startWeek,weekly.week)+1);
    for(const week of player.weeks){
      assert.ok(Number.isFinite(week.points) && week.points>=-10 && week.points<40,
        'Invalid special teams points: '+player.name+' / '+week.week);
@@ -58,19 +58,23 @@ for(const entry of [{slug:'',user:'7',id:'470.l.258793',n:14},
      }
    }
  }
- const {modelTeamLineup,MODEL_SKILL_SLOTS}=getLineup(rosters,future,weekly,{week:5});
+ const {modelTeamLineup,MODEL_SKILL_SLOTS}=getLineup(rosters,future,weekly,{week:Number(weekly.week)});
  assert.equal(MODEL_SKILL_SLOTS.length,9);
- for(const week of [5,6,7,8,9,13,17]){
+ for(const week of [5,6,7,8,9,13,17].filter(w=>w>=Number(weekly.week))){
   for(const team of rosters.teams){
    const lineup=modelTeamLineup(team.id,week);
-   assert.ok(lineup,entry.slug+' missing '+team.name+' / W'+week);
+   if(!lineup){
+    const blocked=p=>p.slot==='IR'||['O','OUT','IR','IR-R','CEL','SUSP','SUS','NA','N/A','PUP','PUP-R','NFI','NFI-R'].includes(p.status);
+    assert.ok(['QB','K','DEF'].some(pos=>!team.players.some(p=>p.position===pos&&!blocked(p))),entry.slug+' unexpected missing '+team.name+' / W'+week);
+    continue; // An unavailable sole kicker cannot form a complete optimized lineup.
+   }
    assert.equal(lineup.ids.length,9);
    assert.equal(new Set(lineup.ids.map(p=>p.id)).size,9);
    assert.ok(lineup.ids.every(p=>MODEL_SKILL_SLOTS[p.slot].includes(p.position)));
    assert.ok(Number.isFinite(lineup.points));
   }
  }
- const mine=modelTeamLineup(entry.user,5);
+ const mine=modelTeamLineup(entry.user,Number(weekly.week));
  byLeague[entry.slug||'csu']={
   projected:mine.points,def:mine.ids.find(p=>p.position==='DEF').points,
   k:mine.ids.find(p=>p.position==='K').points,
@@ -79,9 +83,9 @@ for(const entry of [{slug:'',user:'7',id:'470.l.258793',n:14},
  console.log((entry.slug||'csu')+': '+rosters.teams.length+' complete nine-starter teams, '+specials.length+' K/DST projections');
 }
 const id='100020',a=byLeague.csu.byId.get(id),b=byLeague['nebraska/'].byId.get(id);
-assert.ok(a && b && a.weeks[0].points!==b.weeks[0].points,
+assert.ok(a && b && a.weeks.find(w=>w.week===7).points!==b.weeks.find(w=>w.week===7).points,
   'Defensive scoring should change when changing leagues');
 const kId='33537',c=byLeague.csu.byId.get(kId),d=byLeague['nebraska/'].byId.get(kId);
-assert.ok(c && d && c.weeks[0].points!==d.weeks[0].points,
+assert.ok(c && d && c.weeks.find(w=>w.week===7).points!==d.weeks.find(w=>w.week===7).points,
   'Kicker scoring should change with Yahoo scoring coefficients');
 console.log('Both leagues passed: matchup, defense, kicker, scoring and no-leakage checks.');

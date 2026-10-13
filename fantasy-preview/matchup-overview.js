@@ -6,7 +6,7 @@ const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&
 function submitted(data,teamId){
  const waiting=(data.rosters.teams.find(t=>String(t.id)===String(teamId))?.players||[]).filter(p=>!['BN','IR'].includes(p.slot)).slice();
  const forecasts=new Map((data.future?.players||[]).map(p=>[String(p.yahooId),p]));
- const reports=new Map((data.weekly?.players||[]).map(p=>[String(p.yahooId),p]));
+ const reports=new Map((Number(data.weekly?.week)===Number(data.week)?data.weekly?.players||[]:[]).map(p=>[String(p.yahooId),p]));
  const rows=slots.map(slot=>{
   const i=waiting.findIndex(p=>p.slot===slot||(slot==='W/R/T'&&p.slot==='FLEX'));
   const p=i<0?null:waiting.splice(i,1)[0];
@@ -15,7 +15,8 @@ function submitted(data,teamId){
   const frame=forecasts.get(String(p.id))?.weeks?.find(w=>Number(w.week)===Number(data.week));
   const state=report?.forecastStatus??frame?.state;
   let raw=report?report.weeklyProjectedPoints:frame?.points;
-  const conditional=raw==null&&['Q','QUESTIONABLE','GTD'].includes(String(p.status||'').toUpperCase())&&(report?.activeGamePoints??frame?.activePoints)!=null;
+  const uncertain=['Q','QUESTIONABLE','GTD'].includes(String(p.status||report?.injuryStatus||forecasts.get(String(p.id))?.injuryStatus||'').toUpperCase())||state==='needs_availability_confirmation';
+  const conditional=raw==null&&uncertain&&(report?.activeGamePoints??frame?.activePoints)!=null;
   if(conditional)raw=report?.activeGamePoints??frame?.activePoints;
   const code=String(p.status||'').toUpperCase();
   const out=['O','OUT','IR','IR-R','PUP','PUP-R','NFI','NA','N/A','SUSP','SUS','CEL'].includes(code)||state==='unavailable_reported';
@@ -50,7 +51,7 @@ function render(data){
  const build=future?projected:submitted;
  const a=build(data,data.you.id),b=build(data,data.other.id);
  const person=(r,side)=>{
-  const identity='<span class="matchup-identity"><strong>'+esc(r.player?.name||'Empty slot')+'</strong><small>'+esc([r.player?.nflTeam,r.opponent,r.player?.status].filter(Boolean).join(' · '))+'</small></span>';
+  const identity='<span class="matchup-identity"><strong>'+(r.player?(root.DaVinciPlayerDetail?.link(r.player)||esc(r.player.name)):'Empty slot')+'</strong><small>'+esc([r.player?.nflTeam,r.opponent,r.player?.status].filter(Boolean).join(' · '))+'</small></span>';
   const score='<b title="'+(r.points==null?'Projection pending':r.label==='OUT'?'Out':r.label==='BYE'?'Bye week':'Da Vinci projected points')+'">'+esc(r.label.replace('＊',''))+(r.conditional?'<sup class="forecast-conditional" title="Projected if active">†</sup>':'')+'</b>';
   return '<div class="matchup-player '+side+'">'+(side==='left'?identity+score:score+identity)+'</div>';
  };

@@ -121,3 +121,14 @@ body[data-league="nebraska"] #tradeCount{display:none}
   border:1px dashed #bda889;border-radius:7px;background:#faf4e9;
 }
 .featured-trade-ghost-boost strong{font-weight:750}
+.trade-partner-fits{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:8px;margin-top:14px}
+.trade-partner-fits>strong{grid-column:1/-1;color:#4a3a2d}
+.trade-partner-fits button{display:flex;flex-direction:column;gap:5px;text-align:left;border:1px solid #ded3c6;border-radius:8px;background:#fffaf4;padding:10px 12px;cursor:pointer;color:#4a3a2d}
+.trade-partner-fits button:hover{border-color:#9b774b;background:#f4eadc}
+.trade-partner-fits button small{font-size:12px;color:#746451}
+.trade-marginal-heading,.trade-player-row.trade-marginal-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:baseline}
+.trade-player-value{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums;font-size:14px}.trade-player-value>.trade-marginal{font-weight:600}
+.trade-arbitrage-totals{border-top:1px solid #e4d6c5;padding-top:10px;display:grid;gap:6px;font-size:13px}.trade-arbitrage-totals>div{display:flex;justify-content:space-between;gap:10px}.trade-arbitrage-totals>div+div{font-size:12px;color:#847466}
+.trade-marginal-heading{font-size:10px;color:#8a765f;margin-bottom:5px}.trade-marginal-heading>span:not(:first-child),.trade-marginal{text-align:right;white-space:nowrap}
+.trade-marginal.positive{color:#37634a}.trade-marginal.negative{color:#a24832}.trade-marginal.neutral{color:#887763}
+@media(max-width:600px){.trade-personal-sides:has(.trade-marginal-row){grid-template-columns:1fr}.trade-personal-sides:has(.trade-marginal-row)>div+div{border-left:0;padding-left:0;border-top:1px solid #e4d6c5;padding-top:12px}}

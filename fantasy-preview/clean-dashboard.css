@@ -1090,3 +1090,27 @@ body{font:16px/1.48 'Source Sans 3',Arial,sans-serif;color:var(--text);backgroun
 .trade-yahoo-comparison{font-size:12px;color:#75654f;margin-top:10px}
 
 .roster-compare-cell:first-child{padding-right:16px}
+
+/* Overview hierarchy: season outlook, matchup, decisions, optional detail. */
+#page-overview .overview-team-header{padding:18px 22px!important;margin:0!important;background:#fcf8ef!important}
+#page-overview .overview-team-header .overview-metrics{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:16px 22px!important}
+#page-overview .overview-team-header .overview-metrics>div{border:0!important;padding:0!important}
+#page-overview .overview-team-header .overview-metrics strong{font-size:22px!important}
+#page-overview .overview-team-header .overview-metrics small{font-size:12px!important;text-transform:none!important;letter-spacing:0!important}
+.metric-pending{font-size:11px;color:#8a6c48}
+.overview-disclosure,.matchup-lineup-details>summary,.waiver-watch-details>summary{padding:14px 18px;font-weight:650;font-size:14px;cursor:pointer;color:#65513d}
+.matchup-lineup-details>summary{text-align:center;padding:12px 0;border-top:1px solid #e9dfd2}
+.matchup-lineup-details[open]>summary{margin-bottom:8px}
+#page-overview .planning-shortcut{margin:16px 0;padding:14px 18px;background:#f7efe2}
+#page-overview .planning-shortcut>div{flex:1;min-width:0}
+#page-overview .planning-shortcut strong{font-size:15px;display:block}
+#page-overview .planning-shortcut span{font-size:12px;display:block;margin-top:4px}
+#page-overview .recommendation-grid{padding:12px 18px;display:block}
+#page-overview .recommendations-panel,#page-overview .waiver-panel{margin-top:16px}
+#page-overview .panel-header{padding:14px 18px}
+#page-overview .panel-title{font-size:20px}
+.trade-result-summary{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin:12px 0}
+.trade-result-summary>details{font-size:12px;max-width:70%;color:#78634f}
+.trade-result-summary>details>summary{cursor:pointer;text-align:right}
+.trade-result-summary>details[open]{flex:1}
+@media(max-width:560px){#page-overview .overview-team-header .overview-metrics{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:14px!important}#page-overview .overview-team-header{padding:16px!important}.trade-result-summary{align-items:start}.trade-result-summary>details{max-width:60%}}

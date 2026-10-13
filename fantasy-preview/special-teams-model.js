@@ -86,10 +86,12 @@ function defense(team,opp,game,scoring,model,opponentQB){
  return {points:round(total),components,stats:{pointsAllowed:round(expectedPts),sacks:round(sacks),interceptions:round(picks),fumbleRecoveries:round(fumbles),defensiveTD:round(td)},method:"Shrunk team points allowed + opponent offense + QB sacks/INT; rare-event priors",conditions:{roof:game.roof||"unknown",windMph:game.wind,weatherApplied:false}};
 }
 function enrich({context,league,rosters,available,futureData,weekly}){
- if(context.version!==1||context.dataThroughWeek>=futureData.startWeek)throw Error("Special-teams data must exclude target week");
+ if(context.version!==1)throw Error("Special-teams context unavailable");
+ const targetWeek=Number(league.currentWeekAtSnapshot)||Number(weekly?.week)||futureData.startWeek;
+ const trainingContext={...context,games:context.games.filter(g=>g[0]!==2026||Number(g[1])<targetWeek)};
  const expectedLeague=String(league.leagueId);
  if(expectedLeague!==String(rosters.leagueId)||!league.scoringByYahooStatId)throw Error("Special-teams league scoring mismatch");
- const rules=league.scoringByYahooStatId,model=train(context),scores=new Map();
+ const rules=league.scoringByYahooStatId,model=train(trainingContext),scores=new Map();
  const qbs=new Map();
  for(const p of futureData.players.filter(p=>p.position==="QB")){
   const injury=String(p.injuryStatus||"").toUpperCase();
@@ -124,7 +126,7 @@ function enrich({context,league,rosters,available,futureData,weekly}){
  futureData.players.push(...newPlayers);
  if(weekly?.players)weekly.players.push(...newWeekly);
  futureData.coverage={...futureData.coverage,modeledSpecialTeams:newPlayers.length};
- return {count:newPlayers.length,def:newPlayers.filter(p=>p.position==="DEF").length,k:newPlayers.filter(p=>p.position==="K").length,trainingGames:context.games.length};
+ return {count:newPlayers.length,def:newPlayers.filter(p=>p.position==="DEF").length,k:newPlayers.filter(p=>p.position==="K").length,trainingGames:trainingContext.games.length};
 }
 root.DaVinciSpecialTeams={enrich};
 })(typeof window!=="undefined"?window:globalThis);

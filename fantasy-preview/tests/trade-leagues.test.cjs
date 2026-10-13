@@ -26,6 +26,7 @@ for(const {prefix,teamId,name} of [
  const sandbox={document:{getElementById:elem},
   DaVinciLab:{rankTrades(){elem('tradeResults').innerHTML='Legacy results';}}};
  vm.runInNewContext(file('roster-advice.js'),sandbox);
+ vm.runInNewContext(file('yahoo-values.js'),sandbox);
  vm.runInNewContext(file('trade-preferences.js'),sandbox);
  sandbox.DaVinciAdvice.init({rosters,available,future,week:5,teamId});
  sandbox.DaVinciPersonalTrades.init({

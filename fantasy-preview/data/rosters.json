@@ -1,12 +1,13 @@
 {
   "schemaVersion": 1,
-  "retrievedAt": "2026-10-11T17:50:58.720Z",
+  "retrievedAt": "2026-10-13T20:04:37.921Z",
   "leagueId": "470.l.258793",
   "teams": [
     {
       "id": "1",
       "key": "470.l.258793.t.1",
       "name": "Blitzmaster",
+      "owner": "Matthew Koslovsky",
       "players": [
         {
           "id": "29325",
@@ -123,7 +124,7 @@
           "nflTeam": "Chi",
           "position": "RB",
           "slot": "IR",
-          "status": "O"
+          "status": "Q"
         },
         {
           "id": "41499",
@@ -152,13 +153,13 @@
           "slot": "BN",
           "status": null
         }
-      ],
-      "snapshotAt": "2026-10-11T17:50:58.720Z"
+      ]
     },
     {
       "id": "2",
       "key": "470.l.258793.t.2",
       "name": "Stochastically Bounded Ends",
+      "owner": "Andee",
       "players": [
         {
           "id": "29235",
@@ -215,31 +216,22 @@
           "status": null
         },
         {
-          "id": "41969",
-          "key": "470.p.41969",
-          "name": "Ollie Gordon II",
-          "nflTeam": "Mia",
-          "position": "RB",
-          "slot": "W/R/T",
-          "status": null
-        },
-        {
           "id": "42010",
           "key": "470.p.42010",
           "name": "Jacory Croskey-Merritt",
           "nflTeam": "Was",
           "position": "RB",
-          "slot": "BN",
+          "slot": "W/R/T",
           "status": null
         },
         {
-          "id": "31002",
-          "key": "470.p.31002",
-          "name": "Lamar Jackson",
-          "nflTeam": "Bal",
-          "position": "QB",
+          "id": "41969",
+          "key": "470.p.41969",
+          "name": "Ollie Gordon II",
+          "nflTeam": "Mia",
+          "position": "RB",
           "slot": "BN",
-          "status": "O"
+          "status": null
         },
         {
           "id": "33538",
@@ -249,15 +241,6 @@
           "position": "RB",
           "slot": "BN",
           "status": null
-        },
-        {
-          "id": "32704",
-          "key": "470.p.32704",
-          "name": "Michael Pittman Jr.",
-          "nflTeam": "Pit",
-          "position": "WR",
-          "slot": "BN",
-          "status": "IR"
         },
         {
           "id": "32231",
@@ -278,6 +261,24 @@
           "status": null
         },
         {
+          "id": "31002",
+          "key": "470.p.31002",
+          "name": "Lamar Jackson",
+          "nflTeam": "Bal",
+          "position": "QB",
+          "slot": "IR",
+          "status": "Q"
+        },
+        {
+          "id": "32704",
+          "key": "470.p.32704",
+          "name": "Michael Pittman Jr.",
+          "nflTeam": "Pit",
+          "position": "WR",
+          "slot": "IR",
+          "status": "IR"
+        },
+        {
           "id": "28227",
           "key": "470.p.28227",
           "name": "Cairo Santos",
@@ -295,13 +296,13 @@
           "slot": "DEF",
           "status": null
         }
-      ],
-      "snapshotAt": "2026-10-11T05:51:52.211Z"
+      ]
     },
     {
       "id": "3",
       "key": "470.l.258793.t.3",
       "name": "Lone Wolf Stacy",
+      "owner": "Stacy",
       "players": [
         {
           "id": "41825",
@@ -322,10 +323,10 @@
           "status": null
         },
         {
-          "id": "41002",
-          "key": "470.p.41002",
-          "name": "Will Shipley",
-          "nflTeam": "Phi",
+          "id": "33996",
+          "key": "470.p.33996",
+          "name": "Kenneth Walker III",
+          "nflTeam": "KC",
           "position": "RB",
           "slot": "RB",
           "status": null
@@ -337,13 +338,13 @@
           "nflTeam": "Ten",
           "position": "WR",
           "slot": "WR",
-          "status": "Q"
+          "status": null
         },
         {
-          "id": "40952",
-          "key": "470.p.40952",
-          "name": "Roman Wilson",
-          "nflTeam": "Pit",
+          "id": "33963",
+          "key": "470.p.33963",
+          "name": "Drake London",
+          "nflTeam": "Atl",
           "position": "WR",
           "slot": "WR",
           "status": null
@@ -358,22 +359,31 @@
           "status": null
         },
         {
-          "id": "33963",
-          "key": "470.p.33963",
-          "name": "Drake London",
-          "nflTeam": "Atl",
-          "position": "WR",
-          "slot": "W/R/T",
-          "status": null
-        },
-        {
           "id": "41804",
           "key": "470.p.41804",
           "name": "Emeka Egbuka",
           "nflTeam": "TB",
           "position": "WR",
-          "slot": "BN",
+          "slot": "W/R/T",
           "status": null
+        },
+        {
+          "id": "40952",
+          "key": "470.p.40952",
+          "name": "Roman Wilson",
+          "nflTeam": "Pit",
+          "position": "WR",
+          "slot": "BN",
+          "status": "O"
+        },
+        {
+          "id": "41002",
+          "key": "470.p.41002",
+          "name": "Will Shipley",
+          "nflTeam": "Phi",
+          "position": "RB",
+          "slot": "BN",
+          "status": "D"
         },
         {
           "id": "30423",
@@ -390,15 +400,6 @@
           "name": "Darren Waller",
           "nflTeam": "Car",
           "position": "TE",
-          "slot": "BN",
-          "status": null
-        },
-        {
-          "id": "33996",
-          "key": "470.p.33996",
-          "name": "Kenneth Walker III",
-          "nflTeam": "KC",
-          "position": "RB",
           "slot": "BN",
           "status": null
         },
@@ -456,13 +457,13 @@
           "slot": "BN",
           "status": null
         }
-      ],
-      "snapshotAt": "2026-10-11T05:51:52.211Z"
+      ]
     },
     {
       "id": "4",
       "key": "470.l.258793.t.4",
       "name": "the football understander",
+      "owner": "brayden",
       "players": [
         {
           "id": "34218",
@@ -480,7 +481,7 @@
           "nflTeam": "LV",
           "position": "RB",
           "slot": "RB",
-          "status": "Q"
+          "status": null
         },
         {
           "id": "41922",
@@ -492,22 +493,22 @@
           "status": null
         },
         {
-          "id": "33393",
-          "key": "470.p.33393",
-          "name": "Ja'Marr Chase",
-          "nflTeam": "Cin",
+          "id": "40084",
+          "key": "470.p.40084",
+          "name": "Rashee Rice",
+          "nflTeam": "KC",
           "position": "WR",
           "slot": "WR",
           "status": "Q"
         },
         {
-          "id": "40051",
-          "key": "470.p.40051",
-          "name": "Quentin Johnston",
-          "nflTeam": "LAC",
+          "id": "30197",
+          "key": "470.p.30197",
+          "name": "Chris Godwin Jr.",
+          "nflTeam": "TB",
           "position": "WR",
           "slot": "WR",
-          "status": "O"
+          "status": null
         },
         {
           "id": "30259",
@@ -528,10 +529,28 @@
           "status": null
         },
         {
-          "id": "40084",
-          "key": "470.p.40084",
-          "name": "Rashee Rice",
-          "nflTeam": "KC",
+          "id": "41840",
+          "key": "470.p.41840",
+          "name": "Tre' Harris",
+          "nflTeam": "LAC",
+          "position": "WR",
+          "slot": "BN",
+          "status": "D"
+        },
+        {
+          "id": "33393",
+          "key": "470.p.33393",
+          "name": "Ja'Marr Chase",
+          "nflTeam": "Cin",
+          "position": "WR",
+          "slot": "BN",
+          "status": null
+        },
+        {
+          "id": "40051",
+          "key": "470.p.40051",
+          "name": "Quentin Johnston",
+          "nflTeam": "LAC",
           "position": "WR",
           "slot": "BN",
           "status": "Q"
@@ -546,15 +565,6 @@
           "status": null
         },
         {
-          "id": "30197",
-          "key": "470.p.30197",
-          "name": "Chris Godwin Jr.",
-          "nflTeam": "TB",
-          "position": "WR",
-          "slot": "BN",
-          "status": null
-        },
-        {
           "id": "40075",
           "key": "470.p.40075",
           "name": "Zach Charbonnet",
@@ -564,22 +574,13 @@
           "status": "PUP-R"
         },
         {
-          "id": "40095",
-          "key": "470.p.40095",
-          "name": "Tank Bigsby",
-          "nflTeam": "Phi",
-          "position": "RB",
-          "slot": "BN",
-          "status": "IR"
-        },
-        {
           "id": "30180",
           "key": "470.p.30180",
           "name": "Alvin Kamara",
           "nflTeam": "NO",
           "position": "RB",
           "slot": "BN",
-          "status": "Q"
+          "status": null
         },
         {
           "id": "31482",
@@ -599,13 +600,13 @@
           "slot": "DEF",
           "status": null
         }
-      ],
-      "snapshotAt": "2026-10-11T05:51:52.211Z"
+      ]
     },
     {
       "id": "5",
       "key": "470.l.258793.t.5",
       "name": "I’m confused",
+      "owner": "Karissa",
       "players": [
         {
           "id": "30977",
@@ -650,7 +651,7 @@
           "nflTeam": "Cle",
           "position": "WR",
           "slot": "WR",
-          "status": null
+          "status": "Q"
         },
         {
           "id": "31056",
@@ -671,13 +672,22 @@
           "status": "Q"
         },
         {
+          "id": "31840",
+          "key": "470.p.31840",
+          "name": "T.J. Hockenson",
+          "nflTeam": "Min",
+          "position": "TE",
+          "slot": "BN",
+          "status": "Q"
+        },
+        {
           "id": "41010",
           "key": "470.p.41010",
           "name": "Jaylen Wright",
           "nflTeam": "Mia",
           "position": "RB",
           "slot": "BN",
-          "status": "Q"
+          "status": null
         },
         {
           "id": "42638",
@@ -686,7 +696,7 @@
           "nflTeam": "NYJ",
           "position": "TE",
           "slot": "BN",
-          "status": null
+          "status": "Q"
         },
         {
           "id": "40030",
@@ -698,22 +708,13 @@
           "status": null
         },
         {
-          "id": "31840",
-          "key": "470.p.31840",
-          "name": "T.J. Hockenson",
-          "nflTeam": "Min",
-          "position": "TE",
-          "slot": "BN",
-          "status": null
-        },
-        {
           "id": "42697",
           "key": "470.p.42697",
           "name": "Caleb Douglas",
           "nflTeam": "Mia",
           "position": "WR",
           "slot": "BN",
-          "status": "O"
+          "status": "Q"
         },
         {
           "id": "33413",
@@ -751,13 +752,13 @@
           "slot": "BN",
           "status": null
         }
-      ],
-      "snapshotAt": "2026-10-11T05:51:52.211Z"
+      ]
     },
     {
       "id": "6",
       "key": "470.l.258793.t.6",
       "name": "Hard Count Kai",
+      "owner": "Kai",
       "players": [
         {
           "id": "29369",
@@ -784,7 +785,7 @@
           "nflTeam": "Cle",
           "position": "RB",
           "slot": "RB",
-          "status": null
+          "status": "Q"
         },
         {
           "id": "33966",
@@ -829,7 +830,7 @@
           "nflTeam": "Was",
           "position": "WR",
           "slot": "BN",
-          "status": "O"
+          "status": "Q"
         },
         {
           "id": "34047",
@@ -847,7 +848,7 @@
           "nflTeam": "Atl",
           "position": "QB",
           "slot": "BN",
-          "status": null
+          "status": "Q"
         },
         {
           "id": "41058",
@@ -903,30 +904,21 @@
           "slot": "DEF",
           "status": null
         }
-      ],
-      "snapshotAt": "2026-10-11T05:51:52.211Z"
+      ]
     },
     {
       "id": "7",
       "key": "470.l.258793.t.7",
       "name": "Ten Feline Overlords",
+      "owner": "Aaron",
       "players": [
         {
-          "id": "32671",
-          "key": "470.p.32671",
-          "name": "Joe Burrow",
-          "nflTeam": "Cin",
+          "id": "40029",
+          "key": "470.p.40029",
+          "name": "Bryce Young",
+          "nflTeam": "Car",
           "position": "QB",
           "slot": "QB",
-          "status": null
-        },
-        {
-          "id": "31960",
-          "key": "470.p.31960",
-          "name": "Tony Pollard",
-          "nflTeam": "Ten",
-          "position": "RB",
-          "slot": "RB",
           "status": null
         },
         {
@@ -937,6 +929,15 @@
           "position": "RB",
           "slot": "RB",
           "status": null
+        },
+        {
+          "id": "33991",
+          "key": "470.p.33991",
+          "name": "Breece Hall",
+          "nflTeam": "NYJ",
+          "position": "RB",
+          "slot": "RB",
+          "status": "Q"
         },
         {
           "id": "40168",
@@ -966,31 +967,31 @@
           "status": null
         },
         {
+          "id": "31960",
+          "key": "470.p.31960",
+          "name": "Tony Pollard",
+          "nflTeam": "Ten",
+          "position": "RB",
+          "slot": "W/R/T",
+          "status": null
+        },
+        {
           "id": "34095",
           "key": "470.p.34095",
           "name": "Isaiah Likely",
           "nflTeam": "NYG",
           "position": "TE",
-          "slot": "W/R/T",
-          "status": null
-        },
-        {
-          "id": "31868",
-          "key": "470.p.31868",
-          "name": "Deebo Samuel Sr.",
-          "nflTeam": "SF",
-          "position": "WR",
           "slot": "BN",
           "status": null
         },
         {
-          "id": "40042",
-          "key": "470.p.40042",
-          "name": "Jordan Addison",
-          "nflTeam": "Min",
-          "position": "WR",
+          "id": "32671",
+          "key": "470.p.32671",
+          "name": "Joe Burrow",
+          "nflTeam": "Cin",
+          "position": "QB",
           "slot": "BN",
-          "status": "O"
+          "status": null
         },
         {
           "id": "34054",
@@ -998,15 +999,6 @@
           "name": "Brian Robinson",
           "nflTeam": "Atl",
           "position": "RB",
-          "slot": "BN",
-          "status": null
-        },
-        {
-          "id": "40029",
-          "key": "470.p.40029",
-          "name": "Bryce Young",
-          "nflTeam": "Car",
-          "position": "QB",
           "slot": "BN",
           "status": null
         },
@@ -1020,13 +1012,13 @@
           "status": "CEL"
         },
         {
-          "id": "33991",
-          "key": "470.p.33991",
-          "name": "Breece Hall",
-          "nflTeam": "NYJ",
-          "position": "RB",
+          "id": "40042",
+          "key": "470.p.40042",
+          "name": "Jordan Addison",
+          "nflTeam": "Min",
+          "position": "WR",
           "slot": "IR",
-          "status": "O"
+          "status": "Q"
         },
         {
           "id": "34008",
@@ -1038,21 +1030,21 @@
           "status": "IR"
         },
         {
-          "id": "33537",
-          "key": "470.p.33537",
-          "name": "Evan McPherson",
-          "nflTeam": "Cin",
+          "id": "30346",
+          "key": "470.p.30346",
+          "name": "Harrison Butker",
+          "nflTeam": "KC",
           "position": "K",
           "slot": "K",
           "status": null
         },
         {
-          "id": "100020",
-          "key": "470.p.100020",
-          "name": "Jets",
-          "nflTeam": "NYJ",
-          "position": "DEF",
-          "slot": "DEF",
+          "id": "33537",
+          "key": "470.p.33537",
+          "name": "Evan McPherson",
+          "nflTeam": "Cin",
+          "position": "K",
+          "slot": "BN",
           "status": null
         },
         {
@@ -1061,16 +1053,25 @@
           "name": "Chiefs",
           "nflTeam": "KC",
           "position": "DEF",
+          "slot": "DEF",
+          "status": null
+        },
+        {
+          "id": "100020",
+          "key": "470.p.100020",
+          "name": "Jets",
+          "nflTeam": "NYJ",
+          "position": "DEF",
           "slot": "BN",
           "status": null
         }
-      ],
-      "snapshotAt": "2026-10-11T17:50:58.720Z"
+      ]
     },
     {
       "id": "8",
       "key": "470.l.258793.t.8",
       "name": "Playmaker Adam",
+      "owner": "Adam",
       "players": [
         {
           "id": "40875",
@@ -1106,7 +1107,7 @@
           "nflTeam": "Sea",
           "position": "WR",
           "slot": "WR",
-          "status": null
+          "status": "Q"
         },
         {
           "id": "40901",
@@ -1207,13 +1208,13 @@
           "slot": "BN",
           "status": null
         }
-      ],
-      "snapshotAt": "2026-10-11T05:51:52.211Z"
+      ]
     },
     {
       "id": "9",
       "key": "470.l.258793.t.9",
       "name": "Screen Pass Eva",
+      "owner": "Eva",
       "players": [
         {
           "id": "31833",
@@ -1240,7 +1241,7 @@
           "nflTeam": "Hou",
           "position": "RB",
           "slot": "RB",
-          "status": null
+          "status": "D"
         },
         {
           "id": "33500",
@@ -1294,7 +1295,7 @@
           "nflTeam": "Phi",
           "position": "WR",
           "slot": "BN",
-          "status": "O"
+          "status": "Q"
         },
         {
           "id": "40926",
@@ -1350,13 +1351,13 @@
           "slot": "DEF",
           "status": null
         }
-      ],
-      "snapshotAt": "2026-10-11T05:51:52.211Z"
+      ]
     },
     {
       "id": "10",
       "key": "470.l.258793.t.10",
       "name": "Walking Drafters",
+      "owner": "Dharma",
       "players": [
         {
           "id": "40881",
@@ -1446,7 +1447,7 @@
           "nflTeam": "NYJ",
           "position": "WR",
           "slot": "BN",
-          "status": "O"
+          "status": "Q"
         },
         {
           "id": "40078",
@@ -1482,7 +1483,7 @@
           "nflTeam": "LAR",
           "position": "K",
           "slot": "K",
-          "status": null
+          "status": "NA"
         },
         {
           "id": "100016",
@@ -1493,13 +1494,13 @@
           "slot": "DEF",
           "status": null
         }
-      ],
-      "snapshotAt": "2026-10-11T05:51:52.211Z"
+      ]
     },
     {
       "id": "11",
       "key": "470.l.258793.t.11",
       "name": "Stiff Arm Beth",
+      "owner": "Beth",
       "players": [
         {
           "id": "32723",
@@ -1517,7 +1518,7 @@
           "nflTeam": "Phi",
           "position": "RB",
           "slot": "RB",
-          "status": "O"
+          "status": "Q"
         },
         {
           "id": "29279",
@@ -1535,7 +1536,7 @@
           "nflTeam": "Was",
           "position": "WR",
           "slot": "WR",
-          "status": "Q"
+          "status": null
         },
         {
           "id": "27535",
@@ -1636,13 +1637,13 @@
           "slot": "DEF",
           "status": null
         }
-      ],
-      "snapshotAt": "2026-10-11T05:51:52.211Z"
+      ]
     },
     {
       "id": "12",
       "key": "470.l.258793.t.12",
       "name": "Juicy Juke Brody",
+      "owner": "Brody",
       "players": [
         {
           "id": "33389",
@@ -1678,7 +1679,7 @@
           "nflTeam": "Cin",
           "position": "WR",
           "slot": "WR",
-          "status": "Q"
+          "status": null
         },
         {
           "id": "33989",
@@ -1705,7 +1706,7 @@
           "nflTeam": "Bal",
           "position": "WR",
           "slot": "W/R/T",
-          "status": "Q"
+          "status": null
         },
         {
           "id": "33415",
@@ -1723,7 +1724,7 @@
           "nflTeam": "Ind",
           "position": "WR",
           "slot": "BN",
-          "status": "Q"
+          "status": null
         },
         {
           "id": "32725",
@@ -1788,13 +1789,13 @@
           "slot": "DEF",
           "status": null
         }
-      ],
-      "snapshotAt": "2026-10-11T05:51:52.211Z"
+      ]
     },
     {
       "id": "13",
       "key": "470.l.258793.t.13",
       "name": "NO PARKING",
+      "owner": "Brendan",
       "players": [
         {
           "id": "9265",
@@ -1866,16 +1867,16 @@
           "nflTeam": "NE",
           "position": "RB",
           "slot": "BN",
-          "status": null
+          "status": "D"
         },
         {
           "id": "40893",
           "key": "470.p.40893",
           "name": "Marvin Harrison Jr.",
-          "nflTeam": "Ari",
+          "nflTeam": "Hou",
           "position": "WR",
           "slot": "BN",
-          "status": "O"
+          "status": null
         },
         {
           "id": "42730",
@@ -1931,13 +1932,13 @@
           "slot": "BN",
           "status": null
         }
-      ],
-      "snapshotAt": "2026-10-11T05:51:52.211Z"
+      ]
     },
     {
       "id": "14",
       "key": "470.l.258793.t.14",
       "name": "Bench Warmers",
+      "owner": "Alexandria",
       "players": [
         {
           "id": "25812",
@@ -1964,7 +1965,7 @@
           "nflTeam": "NE",
           "position": "RB",
           "slot": "RB",
-          "status": "Q"
+          "status": null
         },
         {
           "id": "27581",
@@ -2065,193 +2066,25 @@
           "slot": "DEF",
           "status": null
         }
-      ],
-      "snapshotAt": "2026-10-11T05:51:52.211Z"
+      ]
     }
   ],
   "teamSnapshots": {
-    "7": {
-      "0": "2",
-      "1": "0",
-      "2": "2",
-      "3": "6",
-      "4": "-",
-      "5": "1",
-      "6": "0",
-      "7": "-",
-      "8": "1",
-      "9": "0",
-      "10": "T",
-      "11": "0",
-      "12": "4",
-      "13": ":",
-      "14": "4",
-      "15": "3",
-      "16": ":",
-      "17": "4",
-      "18": "9",
-      "19": ".",
-      "20": "9",
-      "21": "9",
-      "22": "5",
-      "23": "Z",
-      "snapshotAt": "2026-10-11T17:50:58.720Z",
-      "players": [
-        {
-          "id": "32671",
-          "key": "470.p.32671",
-          "name": "Joe Burrow",
-          "nflTeam": "Cin",
-          "position": "QB",
-          "slot": "QB",
-          "status": null
-        },
-        {
-          "id": "31960",
-          "key": "470.p.31960",
-          "name": "Tony Pollard",
-          "nflTeam": "Ten",
-          "position": "RB",
-          "slot": "RB",
-          "status": null
-        },
-        {
-          "id": "40971",
-          "key": "470.p.40971",
-          "name": "MarShawn Lloyd",
-          "nflTeam": "GB",
-          "position": "RB",
-          "slot": "RB",
-          "status": null
-        },
-        {
-          "id": "40168",
-          "key": "470.p.40168",
-          "name": "Puka Nacua",
-          "nflTeam": "LAR",
-          "position": "WR",
-          "slot": "WR",
-          "status": null
-        },
-        {
-          "id": "40121",
-          "key": "470.p.40121",
-          "name": "Michael Wilson",
-          "nflTeam": "Ari",
-          "position": "WR",
-          "slot": "WR",
-          "status": null
-        },
-        {
-          "id": "40878",
-          "key": "470.p.40878",
-          "name": "Brock Bowers",
-          "nflTeam": "LV",
-          "position": "TE",
-          "slot": "TE",
-          "status": null
-        },
-        {
-          "id": "34095",
-          "key": "470.p.34095",
-          "name": "Isaiah Likely",
-          "nflTeam": "NYG",
-          "position": "TE",
-          "slot": "W/R/T",
-          "status": null
-        },
-        {
-          "id": "31868",
-          "key": "470.p.31868",
-          "name": "Deebo Samuel Sr.",
-          "nflTeam": "SF",
-          "position": "WR",
-          "slot": "BN",
-          "status": null
-        },
-        {
-          "id": "40042",
-          "key": "470.p.40042",
-          "name": "Jordan Addison",
-          "nflTeam": "Min",
-          "position": "WR",
-          "slot": "BN",
-          "status": "O"
-        },
-        {
-          "id": "34054",
-          "key": "470.p.34054",
-          "name": "Brian Robinson",
-          "nflTeam": "Atl",
-          "position": "RB",
-          "slot": "BN",
-          "status": null
-        },
-        {
-          "id": "40029",
-          "key": "470.p.40029",
-          "name": "Bryce Young",
-          "nflTeam": "Car",
-          "position": "QB",
-          "slot": "BN",
-          "status": null
-        },
-        {
-          "id": "31856",
-          "key": "470.p.31856",
-          "name": "Josh Jacobs",
-          "nflTeam": "GB",
-          "position": "RB",
-          "slot": "BN",
-          "status": "CEL"
-        },
-        {
-          "id": "33991",
-          "key": "470.p.33991",
-          "name": "Breece Hall",
-          "nflTeam": "NYJ",
-          "position": "RB",
-          "slot": "IR",
-          "status": "O"
-        },
-        {
-          "id": "34008",
-          "key": "470.p.34008",
-          "name": "Alec Pierce",
-          "nflTeam": "Ind",
-          "position": "WR",
-          "slot": "IR",
-          "status": "IR"
-        },
-        {
-          "id": "33537",
-          "key": "470.p.33537",
-          "name": "Evan McPherson",
-          "nflTeam": "Cin",
-          "position": "K",
-          "slot": "K",
-          "status": null
-        },
-        {
-          "id": "100020",
-          "key": "470.p.100020",
-          "name": "Jets",
-          "nflTeam": "NYJ",
-          "position": "DEF",
-          "slot": "DEF",
-          "status": null
-        },
-        {
-          "id": "100012",
-          "key": "470.p.100012",
-          "name": "Chiefs",
-          "nflTeam": "KC",
-          "position": "DEF",
-          "slot": "BN",
-          "status": null
-        }
-      ]
-    }
+    "1": "2026-10-12T23:51:19Z",
+    "2": "2026-10-12T23:51:19Z",
+    "3": "2026-10-12T23:51:19Z",
+    "4": "2026-10-12T23:51:19Z",
+    "5": "2026-10-12T23:51:19Z",
+    "6": "2026-10-12T23:51:19Z",
+    "7": "2026-10-12T23:51:19Z",
+    "8": "2026-10-12T23:51:19Z",
+    "9": "2026-10-12T23:51:19Z",
+    "10": "2026-10-12T23:51:19Z",
+    "11": "2026-10-12T23:51:19Z",
+    "12": "2026-10-12T23:51:19Z",
+    "13": "2026-10-12T23:51:19Z",
+    "14": "2026-10-12T23:51:19Z"
   },
-  "userTeamLastRefreshedAt": "2026-10-11T17:50:58.720Z"
+  "userTeamLastRefreshedAt": "2026-10-12T23:51:19Z",
+  "source": "Yahoo Fantasy via Flaim Fantasy"
 }

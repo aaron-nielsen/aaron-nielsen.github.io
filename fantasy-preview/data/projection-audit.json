@@ -1,0 +1,239 @@
+{
+  "generatedAt": "2026-10-13T20:35:00.930Z",
+  "leagueId": "470.l.258793",
+  "period": [
+    6,
+    17
+  ],
+  "yahooCollectedAt": "2026-10-13T00:30:26.239709+00:00",
+  "scope": "Same player and same week, Yahoo > 0, using the enriched forecasts shown in the app. Questionable current-week fallback is if-active. Missing/bye Yahoo rows excluded. Projection differences are not accuracy measurements.",
+  "before": {
+    "n": 1397,
+    "higher": 53.8,
+    "meanGap": 0.27,
+    "medianRatio": 1.027
+  },
+  "after": {
+    "n": 1397,
+    "higher": 54.4,
+    "meanGap": 0.31,
+    "medianRatio": 1.027
+  },
+  "healthy": {
+    "n": 1107,
+    "higher": 53.9,
+    "meanGap": 0.37,
+    "medianRatio": 1.025
+  },
+  "healthyByPosition": {
+    "QB": {
+      "n": 133,
+      "higher": 45.1,
+      "meanGap": -0.09,
+      "medianRatio": 0.991
+    },
+    "RB": {
+      "n": 299,
+      "higher": 55.5,
+      "meanGap": 0.66,
+      "medianRatio": 1.047
+    },
+    "WR": {
+      "n": 287,
+      "higher": 58.2,
+      "meanGap": 0.43,
+      "medianRatio": 1.036
+    },
+    "TE": {
+      "n": 144,
+      "higher": 70.1,
+      "meanGap": 1.12,
+      "medianRatio": 1.139
+    },
+    "K": {
+      "n": 111,
+      "higher": 0.9,
+      "meanGap": -1.27,
+      "medianRatio": 0.854
+    },
+    "DEF": {
+      "n": 133,
+      "higher": 76.7,
+      "meanGap": 0.58,
+      "medianRatio": 1.093
+    }
+  },
+  "own": {
+    "n": 189,
+    "higher": 69.8,
+    "meanGap": 0.94,
+    "medianRatio": 1.117
+  },
+  "ownCurrent": [
+    {
+      "id": "40029",
+      "name": "Bryce Young",
+      "position": "QB",
+      "status": null,
+      "week": 6,
+      "dv": 18.17,
+      "yahoo": 16.23,
+      "gap": 1.9400000000000013,
+      "conditional": false
+    },
+    {
+      "id": "40971",
+      "name": "MarShawn Lloyd",
+      "position": "RB",
+      "status": null,
+      "week": 6,
+      "dv": 8.23,
+      "yahoo": 10.39,
+      "gap": -2.16,
+      "conditional": false
+    },
+    {
+      "id": "33991",
+      "name": "Breece Hall",
+      "position": "RB",
+      "status": "Q",
+      "week": 6,
+      "dv": 13.1,
+      "yahoo": 11.86,
+      "gap": 1.2400000000000002,
+      "conditional": true
+    },
+    {
+      "id": "40168",
+      "name": "Puka Nacua",
+      "position": "WR",
+      "status": null,
+      "week": 6,
+      "dv": 21.25,
+      "yahoo": 18.53,
+      "gap": 2.719999999999999,
+      "conditional": false
+    },
+    {
+      "id": "40121",
+      "name": "Michael Wilson",
+      "position": "WR",
+      "status": null,
+      "week": 6,
+      "dv": 12.73,
+      "yahoo": 11.84,
+      "gap": 0.8900000000000006,
+      "conditional": false
+    },
+    {
+      "id": "40878",
+      "name": "Brock Bowers",
+      "position": "TE",
+      "status": null,
+      "week": 6,
+      "dv": 15.03,
+      "yahoo": 14.09,
+      "gap": 0.9399999999999995,
+      "conditional": false
+    },
+    {
+      "id": "31960",
+      "name": "Tony Pollard",
+      "position": "RB",
+      "status": null,
+      "week": 6,
+      "dv": 12.37,
+      "yahoo": 10.1,
+      "gap": 2.2699999999999996,
+      "conditional": false
+    },
+    {
+      "id": "34095",
+      "name": "Isaiah Likely",
+      "position": "TE",
+      "status": null,
+      "week": 6,
+      "dv": 12.96,
+      "yahoo": 10.06,
+      "gap": 2.9000000000000004,
+      "conditional": false
+    },
+    {
+      "id": "34054",
+      "name": "Brian Robinson",
+      "position": "RB",
+      "status": null,
+      "week": 6,
+      "dv": 6.68,
+      "yahoo": 5.75,
+      "gap": 0.9299999999999997,
+      "conditional": false
+    },
+    {
+      "id": "34008",
+      "name": "Alec Pierce",
+      "position": "WR",
+      "status": "IR",
+      "week": 6,
+      "dv": 0,
+      "yahoo": 5.64,
+      "gap": -5.64,
+      "conditional": false
+    },
+    {
+      "id": "30346",
+      "name": "Harrison Butker",
+      "position": "K",
+      "status": null,
+      "week": 6,
+      "dv": 7.58,
+      "yahoo": 8.85,
+      "gap": -1.2699999999999996,
+      "conditional": false
+    },
+    {
+      "id": "100012",
+      "name": "Chiefs",
+      "position": "DEF",
+      "status": null,
+      "week": 6,
+      "dv": 8.68,
+      "yahoo": 8.63,
+      "gap": 0.049999999999998934,
+      "conditional": false
+    },
+    {
+      "id": "100020",
+      "name": "Jets",
+      "position": "DEF",
+      "status": null,
+      "week": 6,
+      "dv": 7.35,
+      "yahoo": 5.96,
+      "gap": 1.3899999999999997,
+      "conditional": false
+    }
+  ],
+  "scoringAudit": {
+    "checkedAt": "2026-10-13T21:43:51.780Z",
+    "source": "https://football.fantasysports.yahoo.com/f1/258793/settings",
+    "leagueRulesMatchYahooSettings": true,
+    "majorCustomRules": {
+      "passingTD": 6,
+      "interception": -3,
+      "sackSuffered": -1,
+      "reception": 0.5,
+      "fieldGoalYards": 0.1
+    },
+    "savedOffensiveBaselineChecks": {
+      "players": 452,
+      "mismatchesAbove003": 0
+    },
+    "knownOmissions": [
+      "Projected offensive fumbles lost",
+      "Projected two-point conversions",
+      "Projected return touchdowns"
+    ],
+    "conclusion": "Custom league scoring matches saved offensive baselines. Missing projected minor scoring components prevent complete apples-to-apples comparison; no verified full-PPR versus half-PPR mismatch."
+  }
+}

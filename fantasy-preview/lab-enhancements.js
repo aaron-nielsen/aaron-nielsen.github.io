@@ -27,7 +27,7 @@ function flag(w, p) {
   if(w?.state==='bye')return '<span class="flag bye">Bye</span>';
   if(w?.state==='unavailable_reported')return '<span class="flag inactive">Unavailable</span>';
   if(w?.state==='needs_availability_confirmation')return '<span class="flag review">Check injury</span>';
-  if(w?.state==='assumed_active_future' && p?.injuryStatus)return '<span class="flag review">Status '+clean(p.injuryStatus)+' was reported in Week 5</span>';
+  if(w?.state==='assumed_active_future' && p?.injuryStatus)return '<span class="flag review">Status '+clean(p.injuryStatus)+' was reported in the roster snapshot</span>';
   if(w?.state==='assumed_active_future')return '<span class="flag muted">Assuming active</span>';
   return '<span class="flag muted">If active</span>';
 }
@@ -141,7 +141,7 @@ function renderFutureProjections(){
     const current=!a.usable?'—':w?.state==='bye'?'BYE':display(w,selectedWeek);
     return '<details class="stat-details'+(String(p.fantasyTeamId)===mineId?' my-player':'')+(a.usable?'':' no-availability')+'">'+
       '<summary><span class="mini-position">'+clean(p.position)+'</span>'+
-      '<span class="stat-identity"><strong>'+clean(p.name)+'</strong><small>'+clean(p.fantasyTeam)+' · '+clean(p.nflTeam)+' · '+clean(opp(w))+' <span class="forecast-flag">'+clean(stateLabel)+'</span></small></span>'+
+      '<span class="stat-identity"><strong>'+(window.DaVinciPlayerDetail?.link(p)||clean(p.name))+'</strong><small>'+clean(p.fantasyTeam)+' · '+clean(p.nflTeam)+' · '+clean(opp(w))+' <span class="forecast-flag">'+clean(stateLabel)+'</span></small></span>'+
       '<strong class="stat-value">'+clean(current)+'</strong>'+
       '<strong class="stat-value">'+summaryPts(h.fourPts)+'</strong>'+
       '<strong class="stat-value">'+summaryPts(h.rosPts)+'</strong>'+
@@ -151,7 +151,7 @@ function renderFutureProjections(){
   $el('allProjections').innerHTML=
     '<div class="stat-column-head"><span>Player / matchup</span><span>Week '+selectedWeek+'</span><span>Next 4 games</span><span>ROS</span></div>'+
     (listHtml||'<div class="empty-copy">No matching players.</div>');
-  $el('projectionCoverage').textContent=futureData.players.length+' modeled players including K and DEF · complete team context through Week 3; offensive stats through Week '+futureData.statsThroughWeek;
+  $el('projectionCoverage').textContent=futureData.players.length+' modeled players · offense and defense through Week '+(futureData.defenseThroughWeek||futureData.statsThroughWeek)+' · K/DEF context through Week '+Math.min(Number(specialContext.dataThroughWeek),Number(week.week)-1);
   $el('forecastContext').textContent='Week '+selectedWeek+' points and future totals assume participation unless marked otherwise. Next four means four scheduled NFL games, skipping byes; ROS begins Week '+Math.max(6,selectedWeek)+'. Players not currently active are not given actionable point totals.';
 }
 function renderMine(){
@@ -164,7 +164,7 @@ function renderMine(){
       const w=record(p,selectedWeek),h=horizon(p),a=access(p);
       const current=!a.usable?'—':display(w,selectedWeek);
       return '<div class="compact-projection-row"><span class="mini-position">'+clean(p.position)+'</span>'+
-        '<div><strong>'+clean(p.name)+'</strong><small>'+clean(opp(w))+' · 4g '+summaryPts(h.fourPts)+' · ROS '+summaryPts(h.rosPts)+(a.review?' · check status':'')+'</small></div><span>'+clean(current)+'</span></div>';
+        '<div><strong>'+(window.DaVinciPlayerDetail?.link(p)||clean(p.name))+'</strong><small>'+clean(opp(w))+' · 4g '+summaryPts(h.fourPts)+' · ROS '+summaryPts(h.rosPts)+(a.review?' · check status':'')+'</small></div><span>'+clean(current)+'</span></div>';
     }).join('')+'</div>'+
     '';
 }
@@ -298,7 +298,7 @@ function showTrades(){
    return;
  }
  const renderPlayers=ps=>'<ul class="trade-person-list">'+ps.map(p=>
-   '<li class="trade-person"><strong>'+clean(p.name)+'</strong><span class="trade-pos">'+clean(p.position)+'</span></li>'
+   '<li class="trade-person"><strong>'+(window.DaVinciPlayerDetail?.link(p)||clean(p.name))+'</strong><span class="trade-pos">'+clean(p.position)+'</span></li>'
  ).join('')+'</ul>';
  area.innerHTML=selected.map(t=>{
    const both=t.youSend.length+t.youReceive.length;
@@ -326,10 +326,13 @@ function init(){
     return;
   }
   futureById=new Map(futureData.players.map(p=>[String(p.yahooId),p]));
+  const first=Math.max(Number(week.week),Number(futureData.startWeek));
+  selectedWeek=first;
   const weekSel=$el('futureWeek');
-  if(weekSel){weekSel.innerHTML=Array.from({length:futureData.endWeek-futureData.startWeek+1},(_,i)=>'<option value="'+(futureData.startWeek+i)+'">Week '+(futureData.startWeek+i)+'</option>').join('');weekSel.value=String(futureData.startWeek);weekSel.addEventListener('change',()=>{selectedWeek=Number(weekSel.value);renderFutureProjections();renderMine();});}
+  if(weekSel){weekSel.innerHTML=Array.from({length:futureData.endWeek-first+1},(_,i)=>'<option value="'+(first+i)+'">Week '+(first+i)+'</option>').join('');weekSel.value=String(first);weekSel.addEventListener('change',()=>{selectedWeek=Number(weekSel.value);renderFutureProjections();renderMine();});}
+  const tradeFirst=Math.max(6,Number(week.week));
   const tradeSel=$el('tradeFromWeek');
-  if(tradeSel){tradeSel.innerHTML=Array.from({length:futureData.endWeek-5},(_,i)=>'<option value="'+(6+i)+'">Weeks '+(6+i)+'–'+futureData.endWeek+'</option>').join('');tradeSel.addEventListener('change',showTrades);}
+  if(tradeSel){tradeSel.innerHTML=Array.from({length:futureData.endWeek-tradeFirst+1},(_,i)=>'<option value="'+(tradeFirst+i)+'">Weeks '+(tradeFirst+i)+'–'+futureData.endWeek+'</option>').join('');tradeSel.addEventListener('change',showTrades);}
   $el('tradePosition')?.addEventListener('change',showTrades);
   $el('tradePackageFilter')?.addEventListener('change',showTrades);
   $el('tradeLimit')?.addEventListener('change',showTrades);

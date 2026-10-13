@@ -55,7 +55,7 @@ function person(p,slot,w,isReserve){
  const detail=[scenario+matchup,activity].filter(Boolean).join(' · ');
  return '<div class="roster-board-row'+(p.slot==='IR'?' is-ir':'')+'">'+
   '<span class="roster-board-position">'+esc(slot)+'</span>'+
-  '<span class="roster-board-player"><strong>'+esc(p.name)+badge+'</strong>'+
+  '<span class="roster-board-player"><strong>'+(root.DaVinciPlayerDetail?.link(p)||esc(p.name))+badge+'</strong>'+
   (detail?'<small>'+esc(detail)+'</small>':'')+'</span>'+
   '<span class="roster-board-points">'+esc(v)+'</span></div>';
 }

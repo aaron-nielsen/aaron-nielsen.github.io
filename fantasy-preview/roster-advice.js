@@ -20,7 +20,9 @@ function inaccessible(p,w){
  const conditionalReturn=Number(w)>Number(state.week)&&
   frame?.availabilityProbability!=null&&frame.availabilityProbability>=.55&&frame.state!=='bye';
  const rosterBlocked=p.slot==='IR'||p.rosterSlot==='IR'||EXCLUDED.has(code)||code.startsWith('IR-')||code.startsWith('PUP-');
- return (rosterBlocked&&!conditionalReturn)||(w<=state.week&&OUT.has(code));
+ // A dated OUT/doubtful designation cannot silently become a healthy future
+ // starter. Only an explicit availability-adjusted return window may do that.
+ return (rosterBlocked&&!conditionalReturn)||(OUT.has(code)&&!conditionalReturn);
 }
 function points(p,w){
  const f=byId.get(String(p.id||p.yahooId));
@@ -180,7 +182,7 @@ function renderWaivers(){
   return '<div class="decision-row pickup-move"><span class="decision-position">'+esc(c.p.position)+'</span>'+
    '<span class="decision-main"><strong>Add '+esc(c.p.name)+'</strong><small>Drop '+esc(c.drop.name)+'</small></span>'+
    '<b>+'+fmt(rate)+' <small>pts/wk</small></b></div>';
- }).join(''):'';
+ }).join(''):'<div class="decision-empty">No projected lineup upgrades.</div>';
  const label=weeks.length===1?'Week '+weeks[0]+' projection':'Total projected points for selected horizon';
  const value=v=>v==null?'—':fmt(v);
  const watch=''+
@@ -200,7 +202,7 @@ function renderWaivers(){
    }).join(''):'<div class="decision-empty">No eligible modeled players.</div>')+'</section>'
   ).join('')+'</div>';
  const notice='<details class="projection-details"><summary>Projection details</summary><p>Next game skips byes. ROS is the total for Weeks '+first+'–'+state.future.endWeek+', including the current week and zero for byes. Estimates assume participation except explicit availability adjustments; check injuries and Yahoo waiver status. Missing forecasts show —. K/DEF projections are experimental.</p></details>';
- rootEl.innerHTML=highlights+watch+notice+(!allReady?'<p class="available-notice">Pickup gains unavailable: a complete baseline lineup could not be projected.</p>':'');
+ rootEl.innerHTML=highlights+'<details class="waiver-watch-details"><summary>Available players by position</summary>'+watch+'</details>'+notice+(!allReady?'<p class="available-notice">Pickup gains unavailable: a complete baseline lineup could not be projected.</p>':'');
  rootEl.setAttribute('aria-label','Roster pickup advice, ranked by '+label);
 
 }

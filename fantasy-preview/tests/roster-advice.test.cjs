@@ -124,11 +124,11 @@ for(const league of [
   context:teamContext,league:settings,rosters,available,futureData:future,weekly
  });
  assert.ok(count.k>0 && count.def>0);
- elements.clear();element('lineupWeek').value='5';element('waiverHorizon').value='next_week';
- context.DaVinciAdvice.init({rosters,available,future,week:5,teamId:league.myId});
+ elements.clear();element('lineupWeek').value=String(weekly.week);element('waiverHorizon').value='next_week';
+ context.DaVinciAdvice.init({rosters,available,future,week:Number(weekly.week),teamId:league.myId});
  const team=rosters.teams.find(t=>t.id===league.myId);
  assert.ok(team);
- for(const week of [5,6,7,8]){
+ for(const week of Array.from({length:4},(_,i)=>Number(weekly.week)+i)){
   const lineup=context.DaVinciAdvice.lineup(team.players,week);
   assert.ok(lineup,league.name+' Week '+week+' incomplete lineup');
   assert.equal(lineup.selections.length,9);

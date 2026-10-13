@@ -16,10 +16,10 @@ const target={innerHTML:''},remaining={innerHTML:''},remainingPoints={innerHTML:
 const games=[{home:team('7'),away:team('8')}];
 const record={rosters:{teams:[{id:'7'},{id:'8'}]},week:{week:5,matchups:games},matchupSchedule:{weeks:[{week:6,matchups:games},{week:7,matchups:games},{week:8,matchups:games},{week:9,matchups:[]}]},TEAM_ID:'7',$:id=>({'#projectedRemaining':remaining,'#remainingPoints':remainingPoints,'#overallPoints':overallPoints}[id]||target),standing:()=>({wins:1,losses:3,ties:0}),currentTeamForecast:t=>({davinci:t.id==='7'?100:90}),modelTeamLineup:(id,w)=>({points:w===6?(id==='7'?80:90):w===7?(id==='7'?110:90):100})};
 vm.runInNewContext(recordCode+'renderProjectedRecord();',record);assert.match(target.innerHTML,/3–4–1/,'Historical record plus two projected wins, one loss and a tie');assert.match(target.title,/Weeks 5–8/,'Unscheduled playoff games are excluded');
-record.modelTeamLineup=()=>null;vm.runInNewContext(recordCode+'renderProjectedRecord();',record);assert.match(target.innerHTML,/PROJECTED OVERALL:/);assert.match(remaining.innerHTML,/—/);assert.match(target.title,/3 unprojected/,'Missing lineup forecasts remain unknown');
+record.modelTeamLineup=()=>null;vm.runInNewContext(recordCode+'renderProjectedRecord();',record);assert.match(target.innerHTML,/Projected record/);assert.match(remaining.innerHTML,/3 games pending/);assert.match(target.title,/3 unprojected/,'Missing lineup forecasts remain unknown');
 console.log('Future pairing, optimized lineup, bye, projected record and missing-data checks passed.');
 
-assert.match(remaining.innerHTML,/REMAINING RECORD:/);
+assert.match(remaining.innerHTML,/Remaining record/);
 assert.doesNotMatch(html,/id="waiverRank"/);
 
 assert.doesNotMatch(html,/id="selectedTeam"/);

@@ -1,0 +1,13 @@
+.player-detail-link{font:inherit;color:inherit;font-weight:inherit;text-align:inherit;background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-decoration-color:transparent;text-underline-offset:3px}
+.player-detail-link:hover,.player-detail-link:focus-visible{text-decoration-color:currentColor;color:#78602b}
+#playerDetail{width:min(960px,calc(100vw - 32px));max-height:90vh;padding:26px;border:1px solid #b9a77c;border-radius:12px;background:#faf7ef;color:#25251e;box-shadow:0 24px 80px #0005;overflow:auto}
+#playerDetail::backdrop{background:#15161180}
+.player-detail-header{display:flex;justify-content:space-between;gap:16px;align-items:start}
+.player-detail-header h2{margin:0;font-size:28px}.player-detail-header p{margin:8px 0 0;color:#68675d;font-size:13px}
+.player-detail-close{font-size:28px;line-height:1;border:0;background:none;cursor:pointer;color:inherit;padding:0 8px}
+.player-detail-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:24px 0;padding:18px 0;border-block:1px solid #d7cfbc}
+.player-detail-metrics small,.player-detail-metrics span{display:block;color:#6d6b60;font-size:12px}.player-detail-metrics strong{display:block;font-size:24px;margin:7px 0;font-variant-numeric:tabular-nums}
+.player-detail-panels{display:grid;grid-template-columns:1fr 1.3fr;gap:28px}.player-detail-panels h3{font-size:17px;margin:0 0 10px}
+.player-detail-scroll{overflow:auto}.player-detail-panels table{width:100%;border-collapse:collapse;font-size:13px}.player-detail-panels th,.player-detail-panels td{padding:9px 7px;border-bottom:1px solid #e1dacb;text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}.player-detail-panels th:first-child,.player-detail-panels td:nth-child(2){text-align:left}.player-detail-panels thead th{color:#6e6b5d;font-weight:500}
+.player-detail-sources{font-size:12px;color:#706b5c;margin-top:20px}.player-detail-sources summary{cursor:pointer}.player-detail-sources p{line-height:1.6}
+@media(max-width:680px){#playerDetail{padding:18px}.player-detail-metrics{grid-template-columns:repeat(2,1fr);gap:14px}.player-detail-panels{grid-template-columns:1fr;gap:24px}}

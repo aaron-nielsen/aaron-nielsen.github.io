@@ -1,0 +1,14 @@
+'use strict';
+const assert=require('node:assert/strict');
+require('../player-detail.js');
+const data={week:6,rosters:{teams:[{name:'My team',players:[{id:'p',name:'Player',position:'RB'}]}]},available:{players:[]},results:{throughWeek:5,players:[{id:'p',results:[{week:1,points:0},{week:2,points:12}]}]},future:{players:[{yahooId:'p',weeks:Array.from({length:12},(_,i)=>({week:i+6,points:i?10:null,activePoints:11,state:i?'scheduled':'needs_availability_confirmation',opponent:'OPP',home:true}))}]},yahoo:{players:[{yahooId:'p',weeks:Array.from({length:12},(_,i)=>({week:i+6,points:8}))}]}};
+const p=global.DaVinciPlayerDetail.build(data,'p');
+assert.equal(p.actualTotal,12);assert.equal(p.known,2);assert.equal(p.actuals[2].points,null,'Missing historical points never become zero');
+assert.equal(p.projected.length,12);assert.equal(p.davinciTotal,121);assert.equal(p.yahooTotal,96);assert.equal(p.conditional,true);
+data.yahoo.players=[];assert.equal(global.DaVinciPlayerDetail.build(data,'p').yahooTotal,null,'No Da Vinci fallback for missing Yahoo forecasts');
+assert.equal(global.DaVinciPlayerDetail.build(data,'other'),null);
+assert.match(global.DaVinciPlayerDetail.link({id:'p',name:'A < B'}),/A &lt; B/);
+const {blend,scoreStats}=require('../scripts/update-player-stats.cjs');
+assert.equal(blend({rushYards:50},[{rushing_yards:140}],8).rushYards,60,'One new game must not overwhelm the saved prior');
+assert.equal(scoreStats({passYards:250,passTD:2,interceptions:1,sacksSuffered:2},{4:.04,5:6,6:-3,7:-1}),17);
+console.log('Player detail actuals, separate projection sources, missing data and incremental update checks passed');

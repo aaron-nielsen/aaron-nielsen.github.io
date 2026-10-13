@@ -4,6 +4,17 @@
 'use strict';
 const NOT_ACTIVE=new Set(['NA','N/A']);
 function reconcile({available,rosters,futureData,weekly}){
+ const owners=new Map((rosters?.teams||[]).flatMap(t=>t.players.map(p=>[String(p.id),{team:t,player:p}])));
+ const open=new Set((available?.players||[]).map(p=>String(p.id)));
+ // Forecast ownership follows the roster snapshot, even when projected stats
+ // were generated earlier. A dropped player outside the sampled market is unknown.
+ for(const p of [...(futureData?.players||[]),...(weekly?.players||[])]){
+  const owner=owners.get(String(p.yahooId));
+  p.fantasyTeamId=owner?String(owner.team.id):null;
+  p.fantasyTeam=owner?owner.team.name:open.has(String(p.yahooId))?'Available':'Ownership unverified';
+  p.ownership=owner?'rostered':open.has(String(p.yahooId))?'available':'unknown';
+  p.rosterSlot=owner?.player.slot||null;
+ }
  const source=new Map([...(available?.players||[]),...(rosters?.teams||[]).flatMap(t=>t.players)].map(p=>[String(p.id),String(p.status||'').toUpperCase().trim()]));
  const blocked=code=>/^(IR|PUP|NFI|OUT|O|NA|N\/A|CEL|SUSP|SUS)$|^(IR|PUP|NFI)-/.test(code);
  let excluded=0;

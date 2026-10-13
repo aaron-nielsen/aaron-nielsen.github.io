@@ -13,7 +13,7 @@ const byId=p=>String(p.id||p.yahooId);
 let state=null,job=0,rowsOther=[],rowsMine=[],deals=[],lastWeeks=[],sortBy='edge',sortDir=-1,done=false;
 function weeks(){
  const start=Number($('marginalHorizon')?.value||6);
- const end=start===6?17:start===7?17:start===15?17:start+3;
+ const end=Number(state.future.endWeek);
  return Array.from({length:Math.max(0,Math.min(end,Number(state.future.endWeek))-start+1)},(_,i)=>i+start);
 }
 function score(players,range){
@@ -267,10 +267,12 @@ function run(){
 function init(options){
  const el=$('marginalLab');
  if(!el)return;
- if(options.leagueKey!=='csu'||String(options.teamId)!=='7'){el.hidden=true;return;}
  el.hidden=false;
  state={...options,forecasts:new Map(options.future.players.map(p=>[String(p.yahooId),p]))};
  heading();
+ const first=Math.max(Number(options.week)+1,Number(options.future.startWeek));
+ const horizonOptions=$('marginalHorizon');
+ if(horizonOptions)horizonOptions.innerHTML=[first,first+1,first+2,15].filter((w,i,a)=>w<=options.future.endWeek&&a.indexOf(w)===i).map(w=>'<option value="'+w+'">Weeks '+w+'–'+options.future.endWeek+'</option>').join('');
  for(const id of ['marginalSearch','marginalTeam','marginalPosition','marginalLimit']){
   const control=$(id);if(control)control.addEventListener(id==='marginalSearch'?'input':'change',render);
  }
@@ -283,7 +285,9 @@ function init(options){
   renderTables();
  });
  const trigger=$('marginalRecalculate');if(trigger)trigger.addEventListener('click',run);
- run();
+ const details=$('arbitrageDetails');
+ if(details)details.addEventListener('toggle',()=>{if(details.open&&!done&&job===0)run();});
+ setStatus('Expand this section to calculate team-to-team lineup values locally.');
 }
 root.DaVinciMarginal={init};
 })(typeof window!=='undefined'?window:globalThis);

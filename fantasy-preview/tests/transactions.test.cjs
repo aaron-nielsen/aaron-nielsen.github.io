@@ -7,7 +7,7 @@ const js=p=>fs.readFileSync(path.join(BASE,p),'utf8');
 require(path.join(BASE,'special-teams-model.js'));
 const special=read('data/special-teams-context.json');
 const markup=js('index.html');
-assert.ok(markup.includes('data-page="transactions"'),'Missing Transactions nav');
+assert.ok(markup.includes('data-jump="transactions"'),'Missing trade activity tab');
 assert.ok(markup.includes('id="transactionCards"'),'Missing transaction cards');
 assert.ok(markup.includes('transaction-grades.js'),'Transaction model script not loaded');
 for(const {dir,id,label,minimum} of [

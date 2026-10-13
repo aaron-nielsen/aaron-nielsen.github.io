@@ -1,0 +1,80 @@
+{
+  "leagueKey": "csu",
+  "teamId": "4",
+  "manager": "Brayden",
+  "team": "the football understander",
+  "avoidOfferingPositions": [
+    "QB"
+  ],
+  "preferenceNote": "User expects no QB interest because Brayden already has Brock Purdy.",
+  "source": "User recollection, reported 2026-10-12",
+  "events": [
+    {
+      "status": "Reported rejection; recollection uncertain",
+      "send": [
+        "Puka Nacua"
+      ],
+      "receive": [
+        "Ashton Jeanty"
+      ],
+      "note": "User thinks this offer was made and declined. Treat Jeanty as a difficult target; avoid recommending the same offer again."
+    },
+    {
+      "status": "Reported counteroffer; incomplete",
+      "send": [
+        "Brock Bowers",
+        "Puka Nacua"
+      ],
+      "receive": [
+        "Chuba Hubbard",
+        "Cam Skattebo",
+        "Unknown third player"
+      ],
+      "note": "Cannot grade the complete exchange until the third player is identified. Indicates interest in Puka and Bowers and possible willingness to discuss Hubbard and Skattebo, not acceptance of a smaller offer."
+    }
+  ],
+  "showHistory": false,
+  "rejectedOffers": [
+    {
+      "teamId": "1",
+      "team": "Blitzmaster",
+      "reportedAt": "2026-10-12",
+      "send": [
+        "MarShawn Lloyd",
+        "Michael Wilson",
+        "Chiefs"
+      ],
+      "receive": [
+        "Tetairoa McMillan",
+        "Keon Coleman"
+      ],
+      "status": "Rejected, reported by user"
+    },
+    {
+      "teamId": "1",
+      "team": "Blitzmaster",
+      "reportedAt": "2026-10-12",
+      "send": [
+        "Deebo Samuel",
+        "Joe Burrow",
+        "MarShawn Lloyd",
+        "Chiefs"
+      ],
+      "receive": [
+        "Justin Herbert",
+        "Tetairoa McMillan"
+      ],
+      "status": "Rejected, reported by user"
+    }
+  ],
+  "targetSearch": {
+    "partnerId": "4",
+    "targetId": "33514",
+    "anchorId": "40971",
+    "bonusId": "100012",
+    "companionPositions": [
+      "TE",
+      "WR"
+    ]
+  }
+}

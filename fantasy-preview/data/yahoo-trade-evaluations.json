@@ -1,5 +1,5 @@
 {
-  "source": "User-provided Yahoo Evaluate Trade screenshot, October 10, 2026",
+  "source": "User-provided Yahoo Evaluate Trade results",
   "leagueId": "470.l.258793",
   "evaluations": [
     {
@@ -17,6 +17,268 @@
       "gainYou": 42.81,
       "gainThem": -34.69,
       "kind": "Yahoo optimized-lineup evaluation"
+    },
+    {
+      "teamId": "7",
+      "partnerId": "12",
+      "send": [
+        "32671"
+      ],
+      "receive": [
+        "32705"
+      ],
+      "startWeek": 6,
+      "endWeek": 17,
+      "gainYou": 10.65,
+      "gainThem": -54.32,
+      "kind": "Yahoo optimized-lineup evaluation",
+      "reportedAt": "2026-10-12",
+      "source": "User-provided Yahoo Evaluate Trade screenshot, October 12, 2026",
+      "playerRemainingPoints": {
+        "32671": 201.37,
+        "32705": 133.49
+      },
+      "weeklyImpacts": [
+        {
+          "week": 6,
+          "you": 2.15,
+          "them": -5.57
+        },
+        {
+          "week": 7,
+          "you": 3.32,
+          "them": -0.45
+        },
+        {
+          "week": 8,
+          "you": -1.55,
+          "them": -3.17
+        },
+        {
+          "week": 9,
+          "you": 2.72,
+          "them": -4.09
+        },
+        {
+          "week": 10,
+          "you": -2.98,
+          "them": 1.19
+        },
+        {
+          "week": 11,
+          "you": 0.27,
+          "them": -3.9
+        },
+        {
+          "week": 12,
+          "you": 1.37,
+          "them": -5.64
+        },
+        {
+          "week": 13,
+          "you": 0.93,
+          "them": -11.38
+        },
+        {
+          "week": 14,
+          "you": 3.4,
+          "them": -5.34
+        },
+        {
+          "week": 15,
+          "you": 1.85,
+          "them": -4.16
+        },
+        {
+          "week": 16,
+          "you": -0.84,
+          "them": -5.21
+        },
+        {
+          "week": 17,
+          "you": 0.01,
+          "them": -6.6
+        }
+      ]
+    },
+    {
+      "teamId": "7",
+      "partnerId": "12",
+      "send": [
+        "32671"
+      ],
+      "receive": [
+        "32725"
+      ],
+      "startWeek": 6,
+      "endWeek": 17,
+      "gainYou": -25.78,
+      "gainThem": 1.06,
+      "kind": "Yahoo optimized-lineup evaluation",
+      "reportedAt": "2026-10-12",
+      "source": "User-provided Yahoo Evaluate Trade screenshot, October 12, 2026",
+      "playerRemainingPoints": {
+        "32671": 201.37,
+        "32725": 78.11
+      },
+      "weeklyImpacts": [
+        {
+          "week": 6,
+          "you": 0,
+          "them": -0.43
+        },
+        {
+          "week": 7,
+          "you": 0,
+          "them": 5
+        },
+        {
+          "week": 8,
+          "you": -3.34,
+          "them": 0.41
+        },
+        {
+          "week": 9,
+          "you": -1.37,
+          "them": 0
+        },
+        {
+          "week": 10,
+          "you": -2.98,
+          "them": 1.19
+        },
+        {
+          "week": 11,
+          "you": -4.01,
+          "them": 1.33
+        },
+        {
+          "week": 12,
+          "you": -2.77,
+          "them": 0.16
+        },
+        {
+          "week": 13,
+          "you": -2.72,
+          "them": -7.42
+        },
+        {
+          "week": 14,
+          "you": -0.66,
+          "them": 0
+        },
+        {
+          "week": 15,
+          "you": -0.45,
+          "them": 0.82
+        },
+        {
+          "week": 16,
+          "you": -3.68,
+          "them": 0
+        },
+        {
+          "week": 17,
+          "you": -3.8,
+          "them": 0
+        }
+      ]
+    },
+    {
+      "teamId": "7",
+      "partnerId": "4",
+      "send": [
+        "40971",
+        "34095",
+        "100012"
+      ],
+      "receive": [
+        "40051",
+        "33514"
+      ],
+      "startWeek": 6,
+      "endWeek": 17,
+      "gainYou": -0.44,
+      "gainThem": 2.81,
+      "kind": "Yahoo optimized-lineup evaluation",
+      "reportedAt": "2026-10-12",
+      "source": "User-provided Yahoo Evaluate Trade text, October 12, 2026",
+      "playerRemainingPoints": {
+        "40971": 91.54,
+        "34095": 94.89,
+        "100012": 84.37,
+        "40051": 75.61,
+        "33514": 130.92
+      },
+      "weeklyImpacts": [
+        {
+          "week": 6,
+          "you": 0.4,
+          "them": 1.17
+        },
+        {
+          "week": 7,
+          "you": 3.36,
+          "them": -1.6
+        },
+        {
+          "week": 8,
+          "you": 2.88,
+          "them": 3.2
+        },
+        {
+          "week": 9,
+          "you": 0.03,
+          "them": 0.93
+        },
+        {
+          "week": 10,
+          "you": 0.53,
+          "them": -0.71
+        },
+        {
+          "week": 11,
+          "you": 0.22,
+          "them": 0.64
+        },
+        {
+          "week": 12,
+          "you": 1.42,
+          "them": 0
+        },
+        {
+          "week": 13,
+          "you": -13.08,
+          "them": -1.27
+        },
+        {
+          "week": 14,
+          "you": 1.67,
+          "them": -0.72
+        },
+        {
+          "week": 15,
+          "you": 1.35,
+          "them": 0.35
+        },
+        {
+          "week": 16,
+          "you": 0.75,
+          "them": 0.25
+        },
+        {
+          "week": 17,
+          "you": 0.03,
+          "them": 0.57
+        }
+      ],
+      "excludedWeekExample": {
+        "week": 5,
+        "beforeYou": 110.16,
+        "afterYou": 97.74,
+        "impactYou": -12.42,
+        "includedInSeasonalDifferential": false
+      }
     }
   ]
 }

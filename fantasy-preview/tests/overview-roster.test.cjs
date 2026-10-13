@@ -37,7 +37,7 @@ for(const entry of [{folder:'data/',id:'7',label:'CSU Stats'},{folder:'data/nebr
  const target=ids.find(x=>slots[x.slot]===switchPlayer?.position);
  const newIds=ids.map(x=>x===target?{...x,id:switchPlayer.id}:x);
  const optimizer=()=>({ids:newIds});
- context.DaVinciRosterOverview.init({rosters,weekly,future,teamId:entry.id,snapshotWeek:5,optimize:optimizer});
+ context.DaVinciRosterOverview.init({rosters,weekly,future,teamId:entry.id,snapshotWeek:weekly.week,optimize:optimizer});
  const current=root.innerHTML;
  assert.match(current,/Starters/);assert.match(current,/Bench/);assert.match(current,/Injured reserve/);
  assert.match(current,/Yahoo lineup/);
@@ -50,7 +50,7 @@ for(const entry of [{folder:'data/',id:'7',label:'CSU Stats'},{folder:'data/nebr
  for(const p of IR)assert.ok(current.includes(encodedName(p)),entry.label+' hides IR '+p.name);
  assert.ok(!current.includes('No eligible backup'),'No empty backup placeholders');
  assert.equal((current.match(/class="roster-board-row/g)||[]).length,roster.length,entry.label+' should render every Yahoo roster player once');
- context.DaVinciRosterOverview.render(6);
+ context.DaVinciRosterOverview.render(Number(weekly.week)+1);
  const upcoming=root.innerHTML;
  assert.match(upcoming,/Optimized lineup/);
  assert.ok(upcoming.includes(encodedName(switchPlayer)),entry.label+' future optimized starter visible');
@@ -63,7 +63,7 @@ require(path.join(base,'matchup-overview.js'));
 assert.ok(html.includes('./matchup-overview.js'),'Submitted-lineup module loaded');
 assert.ok(!html.includes('Model breakdown'),'Overview model strip removed');
 for(const entry of [{folder:'data/',id:'7'},{folder:'data/nebraska/',id:'6'}]){
- const data={rosters:read(entry.folder+'rosters.json'),weekly:read(entry.folder+'weekly.json'),future:read(entry.folder+'future.json'),week:5};
+ const data={rosters:read(entry.folder+'rosters.json'),weekly:read(entry.folder+'weekly.json'),future:read(entry.folder+'future.json'),week:read(entry.folder+'weekly.json').week};
  const actual=globalThis.DaVinciMatchup.submitted(data,entry.id);
  assert.equal(actual.rows.length,9);
  const roster=data.rosters.teams.find(t=>t.id===entry.id).players;
@@ -85,3 +85,15 @@ console.log('Both leagues compare submitted starters with explicit missing, OUT 
 assert.match(html,/clean-dashboard\.css\?v=/,"Changed stylesheet must bypass stale browser caches");
 assert.match(html,/matchup-overview\.js\?v=/,"Changed matchup code must be versioned with the stylesheet");
 assert.doesNotMatch(html,/Yahoo standings unavailable|Same submitted lineup/,"Overview should not display placeholder prose");
+
+// Cleared live status must not hide an available conditional active forecast.
+const archived=read('data/historical/snapshot-week-5.json');
+const brodyData={rosters:archived.rosters,weekly:archived.weekly,future:read('data/future.json'),week:5};
+require(path.join(base,'special-teams-model.js'));
+globalThis.DaVinciSpecialTeams.enrich({context:read('data/special-teams-context.json'),league:read('data/league.json'),rosters:brodyData.rosters,available:read('data/available.json'),futureData:brodyData.future,weekly:brodyData.weekly});
+const benchWarmers=globalThis.DaVinciMatchup.submitted(brodyData,'14');
+const stevenson=benchWarmers.rows.find(r=>r.player?.id==='33508');
+assert.equal(stevenson.player.status,null);assert.equal(stevenson.conditional,true);assert.equal(stevenson.points,10.45);
+assert.ok(Number.isFinite(benchWarmers.total),'Bench Warmers must show a numeric projection');
+
+for(const team of brodyData.rosters.teams)assert.ok(Number.isFinite(globalThis.DaVinciMatchup.submitted(brodyData,team.id).total),team.name+' current matchup score must be numeric');
