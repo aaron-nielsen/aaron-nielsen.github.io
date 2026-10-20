@@ -134,7 +134,7 @@ for(const league of [{folder:'data/',teamId:'7',count:53},{folder:'data/nebraska
  assert.equal(element('transactionCards').innerHTML,'','Ratings should be lazily evaluated');
  ctx.DaVinciTransactions.update();
  const html=element('transactionCards').innerHTML;
- assert.equal((html.match(/class="txn-card"/g)||[]).length,league.count,'All Yahoo moves must show, even if ungraded');
+ assert.equal((html.match(/class="txn-card"/g)||[]).length,transactions.transactions.length,'All Yahoo moves must show, even if ungraded');
  assert.ok(!html.includes('undefined'),'Do not show undefined players or team names');
  if(league.folder==='data/'){
   assert.match(html,/Breece Hall/);

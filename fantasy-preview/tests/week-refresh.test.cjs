@@ -19,5 +19,14 @@ try{
  raw.rosters[0].data.players[0].status=null;
  refresh(base,raw);
  assert.equal(read('weekly').players[0].weeklyProjectedPoints,12,'Cleared roster status must clear stale uncertainty');
+ raw.rosters[0].data.pointsCoverage={type:'week',week:6};raw.rosters[0].data.players[0].points=20.9;
+ refresh(base,raw);
+ assert.equal(read('rosters').teams[0].players[0].actualPoints,20.9);
+ assert.equal(read('weekly').players[0].weeklyProjectedPoints,12,'Live points must not replace a forecast');
+ assert.equal(read('rosters').teamSnapshots['1'],read('rosters').retrievedAt);
+ raw.rosters[0].data.pointsCoverage.week=5;refresh(base,raw);
+ assert.equal(read('rosters').teams[0].players[0].actualPoints,undefined,'Wrong-week points cannot appear in the current matchup');
+ raw.rosters[0].data.players=[];refresh(base,raw);
+ assert.equal(read('future').players[0].ownership,'unverified','A dropped player is not still assigned to their old owner or assumed available');
  console.log('Week rollover, partial-refresh rejection, dated model provenance and status changes passed');
 }finally{fs.rmSync(base,{recursive:true,force:true});}

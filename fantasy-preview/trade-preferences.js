@@ -415,7 +415,10 @@ function render(){
   for(const t of options){const key=t.partner.id+'/'+t.receive.players.filter(p=>!['K','DEF'].includes(p.position)).map(id).sort().join('.');if(seenTargets.has(key))variants.push(t);else{seenTargets.add(key);first.push(t);}}
   const shown=first.concat(variants).slice(0,limit);
   if(!shown.length){
-   if(['arbitrage','edge','yahoo'].includes($('tradeGoal')?.value)){target.innerHTML='<div class="trade-personal-loading">No matching trades improve your lineup and meet the selected trade goal.</div>';return;}
+   if(['arbitrage','edge','yahoo'].includes($('tradeGoal')?.value)){
+    const missing=(state.yahooFuture?.coverage?.missingPlayers||[]).filter(p=>String(p.teamId)===String(state.teamId));
+    target.innerHTML='<div class="trade-personal-loading">'+(missing.length?'Trade comparisons need projections for '+missing.map(p=>esc(p.name)).join(', ')+'.':'No matching trades improve your lineup and meet the selected trade goal.')+'</div>';return;
+   }
    target.innerHTML='<div class="trade-personal-loading">No trades here improve BOTH lineups by at least '+fmt(MIN_ROS_GAIN_PER_WEEK)+' pts/week over the rest of the season. Try another player or manager.</div>';
    return;
   }

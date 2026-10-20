@@ -10,7 +10,7 @@ assert.equal(mine.missing,1);assert.equal(mine.complete,false);
 assert.equal(mine.points,210,'Opponent uncertainty must not discard known own points');
 assert.equal(mine.pointsComplete,true);assert.equal(mine.overallPoints,510);
 const other=ctx.result.find(t=>t.id==='12');assert.equal(other.pointsComplete,false);
-assert.match(html,/Compare starters/);assert.match(html,/overview-disclosure/);
+assert.doesNotMatch(html,/<summary>Compare starters<\/summary>/);assert.match(html,/<div class="matchup-lineup-details"><div id="matchupLineups"/);assert.match(html,/overview-disclosure/);
 console.log('Overview points remain available when an opponent forecast is missing');
 
 ctx.week.week=6;ctx.currentTeamForecast=t=>({davinci:t.id==='7'?100:90});ctx.matchupSchedule.weeks=[{week:5,matchups:[pair]},{week:6,matchups:[pair]},{week:7,matchups:[pair]}];

@@ -12,7 +12,8 @@ function refresh(base,raw,at=new Date().toISOString()){
  const teams=raw.rosters?.map(r=>{
   if(!r?.success||r.data?.snapshot?.type!=='current'||!r.data.teamKey?.startsWith(league.leagueId+'.t.'))throw Error('Invalid current roster');
   const d=r.data;
-  return {id:d.teamKey.split('.').at(-1),key:d.teamKey,name:d.teamName,owner:d.ownerName,players:d.players.map(p=>({id:String(p.playerId),key:p.playerKey,name:p.name,nflTeam:p.team,position:p.position,slot:p.selectedPosition,status:p.status||null}))};
+  const pointsWeek=Number(d.pointsCoverage?.week);
+  return {id:d.teamKey.split('.').at(-1),key:d.teamKey,name:d.teamName,owner:d.ownerName,players:d.players.map(p=>({id:String(p.playerId),key:p.playerKey,name:p.name,nflTeam:p.team,position:p.position,slot:p.selectedPosition,status:p.status||null,...(pointsWeek===current&&typeof p.points==='number'?{actualPoints:p.points,actualPointsWeek:pointsWeek}:{})}))};
  });
  if(teams?.length!==Number(info.numTeams)||new Set(teams.map(t=>t.id)).size!==teams.length)throw Error('Incomplete roster refresh');
  const side=s=>({...s,id:String(s.teamId),name:s.teamName});
@@ -20,11 +21,13 @@ function refresh(base,raw,at=new Date().toISOString()){
  const paired=matchups.flatMap(m=>[m.home.id,m.away.id]);
  if(paired.length!==teams.length||new Set(paired).size!==teams.length||!teams.every(t=>paired.includes(t.id))||standings.standings.length!==teams.length)throw Error('Incomplete scoreboard or standings');
  const owners=new Map(teams.flatMap(t=>t.players.map(p=>[p.id,{team:t,player:p}])));
+ if(owners.size!==teams.reduce((n,t)=>n+t.players.length,0))throw Error('Duplicate player ownership in roster refresh');
  const oldReports=new Map(weekly.players.map(p=>[String(p.yahooId),p]));
  const reports=[];
  for(const p of future.players){
   const owner=owners.get(String(p.yahooId)),previous=oldReports.get(String(p.yahooId));
   if(owner){p.injuryStatus=owner.player.status;p.rosterSlot=owner.player.slot;p.fantasyTeamId=owner.team.id;p.fantasyTeam=owner.team.name;p.ownership='rostered';}
+  else if(p.ownership==='rostered'){p.fantasyTeamId=null;p.fantasyTeam=null;p.rosterSlot=null;p.ownership='unverified';}
   const frame=p.weeks.find(w=>Number(w.week)===current);
   if(!frame)continue;
   const code=String(p.injuryStatus||'').toUpperCase();
@@ -43,7 +46,7 @@ function refresh(base,raw,at=new Date().toISOString()){
  const history=path.join(base,'historical');fs.mkdirSync(history,{recursive:true});
  const archive=path.join(history,'snapshot-week-'+oldWeek.week+'.json');
  if(current>oldWeek.week&&!fs.existsSync(archive))fs.writeFileSync(archive,JSON.stringify({week:oldWeek,rosters:oldRosters,weekly:read('weekly')},null,2)+'\n');
- write('rosters',{...oldRosters,retrievedAt:at,source:'Yahoo Fantasy via Flaim Fantasy',teams});
+ write('rosters',{...oldRosters,retrievedAt:at,source:'Yahoo Fantasy via Flaim Fantasy',teamSnapshots:Object.fromEntries(teams.map(t=>[t.id,at])),userTeamLastRefreshedAt:at,teams});
  write('week',{...oldWeek,retrievedAt:at,week:current,matchups,standings:standings.standings.map(s=>({...s,teamId:String(s.teamId),rank:Number(s.rank),wins:Number(s.wins),losses:Number(s.losses),ties:Number(s.ties),pointsFor:Number(s.pointsFor),pointsAgainst:Number(s.pointsAgainst)}))});
  league.retrievedAt=at;league.currentWeekAtSnapshot=current;league.scoringByYahooStatId=Object.fromEntries(info.statModifiers.map(s=>[s.statId,Number(s.value)]));
  write('league',league);write('weekly',weekly);write('future',future);

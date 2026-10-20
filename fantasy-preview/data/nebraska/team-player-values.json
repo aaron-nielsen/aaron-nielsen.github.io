@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "source": "Da Vinci scenario model",
-  "calculatedAt": "2026-10-13T20:41:50.672Z",
+  "calculatedAt": "2026-10-20T02:11:07.672Z",
   "leagueId": "470.l.1699881",
   "leagueKey": "nebraska",
   "forecastGeneratedAt": "2026-10-10T06:21:07.580Z",
@@ -524,7 +524,7 @@
       "name": "Josh Jacobs",
       "position": "RB",
       "ownerId": "5",
-      "aboveReplacement": -34.73000000000002
+      "aboveReplacement": 29.70999999999998
     },
     {
       "id": "27548",
@@ -4789,7 +4789,7 @@
         },
         {
           "id": "31856",
-          "impact": 2.430000000000291,
+          "impact": 29.5,
           "drop": "Kyle Pitts Sr.",
           "kind": "Gain if added"
         },
@@ -8262,7 +8262,7 @@
         },
         {
           "id": "31856",
-          "impact": -1.1300000000003365,
+          "impact": 38.179999999999836,
           "drop": "Ollie Gordon II",
           "kind": "Gain if added"
         },
@@ -11735,7 +11735,7 @@
         },
         {
           "id": "31856",
-          "impact": 2.0499999999999545,
+          "impact": 33.80000000000018,
           "drop": "DeVonta Smith",
           "kind": "Gain if added"
         },
@@ -15208,7 +15208,7 @@
         },
         {
           "id": "31856",
-          "impact": 0,
+          "impact": 14.549999999999727,
           "drop": "Emanuel Wilson",
           "kind": "Gain if added"
         },
@@ -18265,13 +18265,13 @@
         },
         {
           "id": "29279",
-          "impact": 59.720000000000255,
+          "impact": 40.460000000000036,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "41791",
-          "impact": 65.61000000000013,
+          "impact": 46.350000000000136,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -18283,13 +18283,13 @@
         },
         {
           "id": "27581",
-          "impact": 25.80000000000041,
+          "impact": 24.710000000000264,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "33392",
-          "impact": 5.990000000000009,
+          "impact": 5.989999999999782,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -18319,7 +18319,7 @@
         },
         {
           "id": "32725",
-          "impact": 9.36999999999989,
+          "impact": 0,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -18355,25 +18355,25 @@
         },
         {
           "id": "42625",
-          "impact": 9.909999999999854,
+          "impact": 0,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "41922",
-          "impact": 24.27000000000021,
+          "impact": 8.940000000000282,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "33500",
-          "impact": 50.93000000000029,
+          "impact": 49.83999999999992,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "32687",
-          "impact": 85.65000000000009,
+          "impact": 84.94000000000005,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -18385,7 +18385,7 @@
         },
         {
           "id": "32703",
-          "impact": 40.27000000000021,
+          "impact": 39.180000000000064,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -18403,19 +18403,19 @@
         },
         {
           "id": "41969",
-          "impact": 6.4099999999998545,
+          "impact": 0,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "28592",
-          "impact": 9.180000000000064,
+          "impact": 9.179999999999836,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "29269",
-          "impact": 7.190000000000055,
+          "impact": 7.189999999999827,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -18427,7 +18427,7 @@
         },
         {
           "id": "40835",
-          "impact": 10.9200000000003,
+          "impact": 10.920000000000073,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -18445,19 +18445,19 @@
         },
         {
           "id": "34120",
-          "impact": 64.61000000000013,
+          "impact": 45.00999999999999,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "41823",
-          "impact": 9.829999999999927,
+          "impact": 0,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "40168",
-          "impact": 72.84000000000037,
+          "impact": 71.75000000000023,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -18469,7 +18469,7 @@
         },
         {
           "id": "41799",
-          "impact": 21.550000000000182,
+          "impact": 21.549999999999955,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -18515,13 +18515,13 @@
         },
         {
           "id": "41988",
-          "impact": 11.490000000000236,
+          "impact": 11.490000000000009,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "100034",
-          "impact": 8.290000000000191,
+          "impact": 8.289999999999964,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -18533,19 +18533,19 @@
         },
         {
           "id": "33423",
-          "impact": 32.190000000000055,
+          "impact": 15.800000000000182,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "30295",
-          "impact": 59.01999999999998,
+          "impact": 39.42000000000007,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "40041",
-          "impact": 50.1700000000003,
+          "impact": 49.080000000000155,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -18563,7 +18563,7 @@
         },
         {
           "id": "40707",
-          "impact": 8.539999999999964,
+          "impact": 0,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -18580,7 +18580,7 @@
         },
         {
           "id": "41793",
-          "impact": 27.329999999999927,
+          "impact": 26.24000000000001,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -18598,7 +18598,7 @@
         },
         {
           "id": "31960",
-          "impact": 19.25999999999999,
+          "impact": 5.019999999999982,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -18616,14 +18616,14 @@
         },
         {
           "id": "30977",
-          "impact": 2.6699999999998454,
+          "impact": 2.6700000000000728,
           "drop": "C.J. Stroud",
           "kind": "Loss if removed"
         },
         {
           "id": "34019",
-          "impact": 45.25999999999976,
-          "drop": "Michael Carter",
+          "impact": 40.950000000000045,
+          "drop": null,
           "kind": "Loss if removed"
         },
         {
@@ -18633,13 +18633,13 @@
         },
         {
           "id": "33477",
-          "impact": 38.80000000000018,
+          "impact": 37.61000000000013,
           "drop": "Keenan Allen",
           "kind": "Loss if removed"
         },
         {
           "id": "31896",
-          "impact": 8.840000000000146,
+          "impact": 7.650000000000091,
           "drop": "Keenan Allen",
           "kind": "Loss if removed"
         },
@@ -18651,20 +18651,20 @@
         },
         {
           "id": "41807",
-          "impact": 5.7999999999999545,
-          "drop": "Michael Carter",
+          "impact": 2.6800000000000637,
+          "drop": null,
           "kind": "Loss if removed"
         },
         {
           "id": "41824",
-          "impact": 4.9699999999998,
+          "impact": 3.7799999999999727,
           "drop": "Keenan Allen",
           "kind": "Loss if removed"
         },
         {
           "id": "33514",
-          "impact": 30.279999999999973,
-          "drop": "Michael Carter",
+          "impact": 18.769999999999982,
+          "drop": "Woody Marks",
           "kind": "Loss if removed"
         },
         {
@@ -18675,13 +18675,13 @@
         },
         {
           "id": "9265",
-          "impact": 18.259999999999764,
+          "impact": 18.26000000000022,
           "drop": "Jacoby Brissett",
           "kind": "Loss if removed"
         },
         {
           "id": "31856",
-          "impact": 0,
+          "impact": 19.950000000000273,
           "drop": "Woody Marks",
           "kind": "Loss if removed"
         },
@@ -18704,31 +18704,31 @@
         },
         {
           "id": "32671",
-          "impact": 7.580000000000155,
+          "impact": 7.579999999999927,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "40055",
-          "impact": 88.5,
+          "impact": 68.89999999999986,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "34447",
-          "impact": 41.570000000000164,
+          "impact": 24.850000000000136,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "33963",
-          "impact": 4.430000000000064,
+          "impact": 4.009999999999991,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "40121",
-          "impact": 36.91000000000031,
+          "impact": 36.20000000000027,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -18740,7 +18740,7 @@
         },
         {
           "id": "32705",
-          "impact": 34.84000000000037,
+          "impact": 16.59999999999991,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -18769,7 +18769,7 @@
         },
         {
           "id": "41845",
-          "impact": 15.049999999999955,
+          "impact": 1.300000000000182,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -18798,7 +18798,7 @@
         },
         {
           "id": "100023",
-          "impact": 7.860000000000127,
+          "impact": 7.8599999999999,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -18809,7 +18809,7 @@
         },
         {
           "id": "40059",
-          "impact": 96.31999999999994,
+          "impact": 76.72000000000003,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -18820,7 +18820,7 @@
         },
         {
           "id": "40899",
-          "impact": 3.2999999999999545,
+          "impact": 3.240000000000009,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -18832,7 +18832,7 @@
         },
         {
           "id": "30259",
-          "impact": 27.450000000000273,
+          "impact": 27.450000000000045,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -18849,19 +18849,19 @@
         },
         {
           "id": "33508",
-          "impact": 13.7800000000002,
+          "impact": 0.9400000000000546,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "33538",
-          "impact": 6.949999999999818,
+          "impact": 0,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "30180",
-          "impact": 14.849999999999909,
+          "impact": 2.410000000000082,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -18897,25 +18897,25 @@
         },
         {
           "id": "32711",
-          "impact": 71.25000000000045,
+          "impact": 51.99000000000024,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "31905",
-          "impact": 8.259999999999991,
+          "impact": 0,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "33966",
-          "impact": 55.86000000000013,
+          "impact": 54.76999999999998,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "40039",
-          "impact": 17.01000000000022,
+          "impact": 16.300000000000182,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -18927,13 +18927,13 @@
         },
         {
           "id": "33965",
-          "impact": 3.0300000000002,
+          "impact": 2.9400000000000546,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "31908",
-          "impact": 4.5,
+          "impact": 3.809999999999718,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -18945,7 +18945,7 @@
         },
         {
           "id": "40962",
-          "impact": 6.619999999999891,
+          "impact": 0,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -18974,13 +18974,13 @@
         },
         {
           "id": "100020",
-          "impact": 5.459999999999809,
+          "impact": 5.460000000000036,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "100006",
-          "impact": 4.720000000000027,
+          "impact": 4.7199999999998,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -18992,13 +18992,13 @@
         },
         {
           "id": "40196",
-          "impact": 50.470000000000255,
+          "impact": 30.870000000000346,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "40993",
-          "impact": 34.190000000000055,
+          "impact": 17.079999999999927,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -19022,7 +19022,7 @@
         },
         {
           "id": "33113",
-          "impact": 28.90000000000009,
+          "impact": 28.90000000000032,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -19034,7 +19034,7 @@
         },
         {
           "id": "33996",
-          "impact": 76.37000000000057,
+          "impact": 56.77000000000021,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -19046,13 +19046,13 @@
         },
         {
           "id": "40084",
-          "impact": 6.350000000000136,
+          "impact": 5.940000000000055,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "33100",
-          "impact": 10.6099999999999,
+          "impact": 0,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -19064,13 +19064,13 @@
         },
         {
           "id": "41312",
-          "impact": 11.970000000000027,
+          "impact": 11.970000000000255,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "100016",
-          "impact": 8.6700000000003,
+          "impact": 8.670000000000073,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -19082,25 +19082,25 @@
         },
         {
           "id": "30121",
-          "impact": 57.61000000000013,
+          "impact": 41.210000000000264,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "41821",
-          "impact": 30.110000000000127,
+          "impact": 11.920000000000073,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "33393",
-          "impact": 18.5300000000002,
+          "impact": 17.819999999999936,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "33989",
-          "impact": 3.5800000000001546,
+          "impact": 2.7799999999999727,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -19112,7 +19112,7 @@
         },
         {
           "id": "34007",
-          "impact": 5.4500000000000455,
+          "impact": 5.3400000000001455,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -19160,13 +19160,13 @@
         },
         {
           "id": "100026",
-          "impact": 9.480000000000246,
+          "impact": 9.480000000000018,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "40030",
-          "impact": 0.36000000000012733,
+          "impact": 0.35999999999989996,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -19702,7 +19702,7 @@
         },
         {
           "id": "40981",
-          "impact": 6.539999999999964,
+          "impact": 0,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -19713,13 +19713,13 @@
         },
         {
           "id": "40971",
-          "impact": 6.3599999999999,
+          "impact": 0,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "41902",
-          "impact": 7.199999999999818,
+          "impact": 0,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -19736,19 +19736,19 @@
         },
         {
           "id": "34054",
-          "impact": 7.4699999999998,
+          "impact": 0,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "41002",
-          "impact": 3.199999999999818,
+          "impact": 0,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "34107",
-          "impact": 7.3599999999999,
+          "impact": 0,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -19760,7 +19760,7 @@
         },
         {
           "id": "42744",
-          "impact": 4.289999999999964,
+          "impact": 0,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -19778,7 +19778,7 @@
         },
         {
           "id": "42712",
-          "impact": 4.129999999999882,
+          "impact": 0,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -19789,13 +19789,13 @@
         },
         {
           "id": "42796",
-          "impact": 3.589999999999918,
+          "impact": 0,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "40119",
-          "impact": 4.649999999999864,
+          "impact": 0,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -19806,7 +19806,7 @@
         },
         {
           "id": "41010",
-          "impact": 3.269999999999982,
+          "impact": 0,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -19817,13 +19817,13 @@
         },
         {
           "id": "41344",
-          "impact": 3.959999999999809,
+          "impact": 0,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "40108",
-          "impact": 5.829999999999927,
+          "impact": 0,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -19851,13 +19851,13 @@
         },
         {
           "id": "41881",
-          "impact": 3.259999999999991,
+          "impact": 0,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "33412",
-          "impact": 5.709999999999809,
+          "impact": 0,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -19868,19 +19868,19 @@
         },
         {
           "id": "41048",
-          "impact": 3.939999999999827,
+          "impact": 0,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "31945",
-          "impact": 4.039999999999964,
+          "impact": 0,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "30227",
-          "impact": 4.2999999999999545,
+          "impact": 0,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -19891,13 +19891,13 @@
         },
         {
           "id": "31906",
-          "impact": 5.329999999999927,
+          "impact": 0,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "41031",
-          "impact": 1.5199999999999818,
+          "impact": 0,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -19909,13 +19909,13 @@
         },
         {
           "id": "42763",
-          "impact": 2.75,
+          "impact": 0,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "42139",
-          "impact": 4.429999999999836,
+          "impact": 0,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -19926,7 +19926,7 @@
         },
         {
           "id": "42820",
-          "impact": 2.75,
+          "impact": 0,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -19937,7 +19937,7 @@
         },
         {
           "id": "42809",
-          "impact": 3.369999999999891,
+          "impact": 0,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -19948,19 +19948,19 @@
         },
         {
           "id": "40742",
-          "impact": 3.119999999999891,
+          "impact": 0,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "42859",
-          "impact": 3.209999999999809,
+          "impact": 0,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "41006",
-          "impact": 2.230000000000018,
+          "impact": 0,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -19982,13 +19982,13 @@
         },
         {
           "id": "41933",
-          "impact": 3.2799999999999727,
+          "impact": 0,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "41937",
-          "impact": 3.1099999999999,
+          "impact": 0,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -20000,13 +20000,13 @@
         },
         {
           "id": "42012",
-          "impact": 2.0399999999999636,
+          "impact": 0,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "41983",
-          "impact": 0.4800000000000182,
+          "impact": 0,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -20017,13 +20017,13 @@
         },
         {
           "id": "42852",
-          "impact": 2.1499999999998636,
+          "impact": 0,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "34357",
-          "impact": 4.809999999999945,
+          "impact": 0,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -20044,13 +20044,13 @@
         },
         {
           "id": "40474",
-          "impact": 0.029999999999972715,
+          "impact": 0,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "33495",
-          "impact": 7.069999999999936,
+          "impact": 0,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -20076,7 +20076,7 @@
         },
         {
           "id": "40696",
-          "impact": 2.7899999999999636,
+          "impact": 0,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -20259,7 +20259,7 @@
         },
         {
           "id": "41097",
-          "impact": 0.4399999999998272,
+          "impact": 0.44000000000005457,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -20819,7 +20819,7 @@
         },
         {
           "id": "40078",
-          "impact": 7.2800000000002,
+          "impact": 7.279999999999973,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -20842,7 +20842,7 @@
         },
         {
           "id": "33443",
-          "impact": 8.330000000000155,
+          "impact": 8.329999999999927,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -20866,7 +20866,7 @@
         },
         {
           "id": "34036",
-          "impact": 6.170000000000073,
+          "impact": 6.169999999999845,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -20878,7 +20878,7 @@
         },
         {
           "id": "29344",
-          "impact": 12.38000000000011,
+          "impact": 12.379999999999882,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -20942,7 +20942,7 @@
         },
         {
           "id": "41003",
-          "impact": 4.7000000000000455,
+          "impact": 4.699999999999818,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -20992,7 +20992,7 @@
         },
         {
           "id": "34057",
-          "impact": 3.490000000000009,
+          "impact": 3.4899999999997817,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -21004,7 +21004,7 @@
         },
         {
           "id": "40226",
-          "impact": 2.6800000000000637,
+          "impact": 2.6799999999998363,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -21016,7 +21016,7 @@
         },
         {
           "id": "40995",
-          "impact": 4.190000000000055,
+          "impact": 4.189999999999827,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -21040,13 +21040,13 @@
         },
         {
           "id": "31969",
-          "impact": 3.480000000000018,
+          "impact": 3.479999999999791,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "33774",
-          "impact": 2.1800000000000637,
+          "impact": 2.1799999999998363,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -21069,13 +21069,13 @@
         },
         {
           "id": "33550",
-          "impact": 3.6900000000000546,
+          "impact": 3.689999999999827,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "34068",
-          "impact": 2.1900000000000546,
+          "impact": 2.189999999999827,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -21350,7 +21350,7 @@
         },
         {
           "id": "33537",
-          "impact": 8.800000000000182,
+          "impact": 8.799999999999955,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -21374,13 +21374,13 @@
         },
         {
           "id": "28188",
-          "impact": 7.779999999999973,
+          "impact": 7.779999999999745,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "32417",
-          "impact": 3.5100000000002183,
+          "impact": 3.509999999999991,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -21392,7 +21392,7 @@
         },
         {
           "id": "31977",
-          "impact": 8.610000000000127,
+          "impact": 8.6099999999999,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -21428,19 +21428,19 @@
         },
         {
           "id": "31137",
-          "impact": 7.880000000000109,
+          "impact": 7.879999999999882,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "40496",
-          "impact": 6.5,
+          "impact": 6.499999999999773,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "40159",
-          "impact": 10.480000000000018,
+          "impact": 10.480000000000246,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -21452,13 +21452,13 @@
         },
         {
           "id": "32384",
-          "impact": 6.930000000000064,
+          "impact": 6.929999999999836,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "42262",
-          "impact": 8.25,
+          "impact": 8.249999999999773,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -21495,7 +21495,7 @@
         },
         {
           "id": "31199",
-          "impact": 7.680000000000064,
+          "impact": 7.679999999999836,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -21614,7 +21614,7 @@
         },
         {
           "id": "100025",
-          "impact": 6.400000000000318,
+          "impact": 6.400000000000091,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -21662,13 +21662,13 @@
         },
         {
           "id": "100028",
-          "impact": 6.240000000000009,
+          "impact": 6.239999999999782,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
         {
           "id": "100027",
-          "impact": 0.5299999999999727,
+          "impact": 0.5300000000002001,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -21686,7 +21686,7 @@
         },
         {
           "id": "100001",
-          "impact": 6.060000000000173,
+          "impact": 6.059999999999945,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         },
@@ -21716,7 +21716,7 @@
         },
         {
           "id": "100015",
-          "impact": 6.260000000000218,
+          "impact": 6.259999999999991,
           "drop": "Kyle Monangai",
           "kind": "Gain if added"
         }
@@ -22154,7 +22154,7 @@
         },
         {
           "id": "31856",
-          "impact": 0,
+          "impact": 5.560000000000173,
           "drop": "Rome Odunze",
           "kind": "Gain if added"
         },
@@ -25627,7 +25627,7 @@
         },
         {
           "id": "31856",
-          "impact": 0.5199999999999818,
+          "impact": 27.95999999999981,
           "drop": "Lamar Jackson",
           "kind": "Gain if added"
         },
@@ -29100,8 +29100,8 @@
         },
         {
           "id": "31856",
-          "impact": 6.5499999999999545,
-          "drop": "Romeo Doubs",
+          "impact": 46.899999999999864,
+          "drop": "Blake Corum",
           "kind": "Gain if added"
         },
         {
@@ -32573,7 +32573,7 @@
         },
         {
           "id": "31856",
-          "impact": 0,
+          "impact": 4.7999999999999545,
           "drop": "Jakobi Meyers",
           "kind": "Gain if added"
         },
@@ -36046,7 +36046,7 @@
         },
         {
           "id": "31856",
-          "impact": 1.0299999999999727,
+          "impact": 23.97999999999979,
           "drop": "DJ Moore",
           "kind": "Gain if added"
         },

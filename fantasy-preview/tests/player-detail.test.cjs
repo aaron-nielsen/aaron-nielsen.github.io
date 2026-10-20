@@ -7,6 +7,10 @@ assert.equal(p.actualTotal,12);assert.equal(p.known,2);assert.equal(p.actuals[2]
 assert.equal(p.projected.length,12);assert.equal(p.davinciTotal,121);assert.equal(p.yahooTotal,96);assert.equal(p.conditional,true);
 data.yahoo.players=[];assert.equal(global.DaVinciPlayerDetail.build(data,'p').yahooTotal,null,'No Da Vinci fallback for missing Yahoo forecasts');
 assert.equal(global.DaVinciPlayerDetail.build(data,'other'),null);
+data.rosters.teams[0].players[0].actualPoints=20.9;data.rosters.teams[0].players[0].actualPointsWeek=6;
+assert.equal(global.DaVinciPlayerDetail.build(data,'p').currentPoints,20.9);
+data.rosters.teams[0].players[0].actualPointsWeek=5;
+assert.equal(global.DaVinciPlayerDetail.build(data,'p').currentPoints,null);
 assert.match(global.DaVinciPlayerDetail.link({id:'p',name:'A < B'}),/A &lt; B/);
 const {blend,scoreStats}=require('../scripts/update-player-stats.cjs');
 assert.equal(blend({rushYards:50},[{rushing_yards:140}],8).rushYards,60,'One new game must not overwhelm the saved prior');

@@ -6,7 +6,7 @@ const round=n=>Math.round(n*100)/100||0;
 function create(data){
  const frames=new Map((data?.players||[]).map(p=>[id(p),p])),cache=new Map(),marginalCache=new Map();
  function score(players,week){
-  const key=week+'/'+players.map(id).sort().join('.');
+  const key=week+'/'+players.map(p=>id(p)+':'+p.position).sort().join('.');
   if(cache.has(key))return cache.get(key);
   const groups={QB:[],RB:[],WR:[],TE:[],K:[],DEF:[]};
   for(const p of players){
@@ -23,7 +23,17 @@ function create(data){
   cache.set(key,total);return total;
  }
  function delta(before,after,weeks){
-  const weekly=weeks.map(week=>{const a=score(before,week),b=score(after,week);return {week,before:a,after:b,impact:a==null||b==null?null:round(b-a)};});
+  // QB, K, DEF and the RB/WR/TE+FLEX unit optimize independently. Unchanged
+  // units cancel exactly, even if their absolute totals are unavailable.
+  const group=p=>['RB','WR','TE'].includes(p.position)?'FLEX':['QB','K','DEF'].includes(p.position)?p.position:null;
+  const valid=[...before,...after].every(p=>group(p)!==null);
+  const signature=(players,g)=>players.filter(p=>group(p)===g).map(p=>id(p)+':'+p.position).sort().join('.');
+  const changed=['QB','FLEX','K','DEF'].filter(g=>signature(before,g)!==signature(after,g));
+  const subset=players=>players.filter(p=>changed.includes(group(p)));
+  const weekly=weeks.map(week=>{
+   const a=score(before,week),b=score(after,week),x=valid?score(subset(before),week):null,y=valid?score(subset(after),week):null;
+   return {week,before:a,after:b,impact:x==null||y==null?null:round(y-x)};
+  });
   return {impact:weekly.some(g=>g.impact==null)?null:round(weekly.reduce((n,g)=>n+g.impact,0)),weekly};
  }
  function trade(mine,partner,send,receive,weeks){

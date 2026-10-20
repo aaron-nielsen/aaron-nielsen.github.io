@@ -1,73 +1,69 @@
 {
-  "generatedAt": "2026-10-13T20:35:00.930Z",
+  "generatedAt": "2026-10-20T02:11:22.480Z",
   "leagueId": "470.l.258793",
   "period": [
     6,
     17
   ],
   "yahooCollectedAt": "2026-10-13T00:30:26.239709+00:00",
-  "scope": "Same player and same week, Yahoo > 0, using the enriched forecasts shown in the app. Questionable current-week fallback is if-active. Missing/bye Yahoo rows excluded. Projection differences are not accuracy measurements.",
-  "before": {
-    "n": 1397,
-    "higher": 53.8,
-    "meanGap": 0.27,
-    "medianRatio": 1.027
-  },
+  "yahooUpdatedAt": "2026-10-13T22:19:09.886Z",
+  "scope": "Same player and week, positive Yahoo forecast, enriched Da Vinci estimates as displayed. Current-week questionable fallback is if-active. Missing and Yahoo-zero rows excluded. Differences from Yahoo are not prediction accuracy or estimates of Yahoo injury probability.",
+  "before": null,
   "after": {
-    "n": 1397,
-    "higher": 54.4,
-    "meanGap": 0.31,
-    "medianRatio": 1.027
+    "n": 2362,
+    "higher": 51.778,
+    "meanGap": 0.141,
+    "medianRatio": 1.009
   },
   "healthy": {
-    "n": 1107,
-    "higher": 53.9,
-    "meanGap": 0.37,
-    "medianRatio": 1.025
+    "n": 2011,
+    "higher": 52.163,
+    "meanGap": 0.289,
+    "medianRatio": 1.011
   },
   "healthyByPosition": {
     "QB": {
-      "n": 133,
-      "higher": 45.1,
-      "meanGap": -0.09,
-      "medianRatio": 0.991
+      "n": 277,
+      "higher": 49.097,
+      "meanGap": -0.009,
+      "medianRatio": 0.998
     },
     "RB": {
-      "n": 299,
-      "higher": 55.5,
-      "meanGap": 0.66,
-      "medianRatio": 1.047
+      "n": 529,
+      "higher": 59.735,
+      "meanGap": 0.956,
+      "medianRatio": 1.072
     },
     "WR": {
-      "n": 287,
-      "higher": 58.2,
-      "meanGap": 0.43,
-      "medianRatio": 1.036
+      "n": 564,
+      "higher": 55.496,
+      "meanGap": 0.244,
+      "medianRatio": 1.028
     },
     "TE": {
-      "n": 144,
-      "higher": 70.1,
-      "meanGap": 1.12,
-      "medianRatio": 1.139
+      "n": 244,
+      "higher": 52.869,
+      "meanGap": 0.527,
+      "medianRatio": 1.023
     },
     "K": {
-      "n": 111,
-      "higher": 0.9,
-      "meanGap": -1.27,
-      "medianRatio": 0.854
+      "n": 176,
+      "higher": 1.136,
+      "meanGap": -1.617,
+      "medianRatio": 0.85
     },
     "DEF": {
-      "n": 133,
-      "higher": 76.7,
-      "meanGap": 0.58,
-      "medianRatio": 1.093
+      "n": 221,
+      "higher": 69.231,
+      "meanGap": 0.438,
+      "medianRatio": 1.066
     }
   },
   "own": {
-    "n": 189,
-    "higher": 69.8,
-    "meanGap": 0.94,
-    "medianRatio": 1.117
+    "n": 177,
+    "higher": 71.186,
+    "meanGap": 1.282,
+    "medianRatio": 1.121
   },
   "ownCurrent": [
     {
@@ -77,8 +73,8 @@
       "status": null,
       "week": 6,
       "dv": 18.17,
-      "yahoo": 16.23,
-      "gap": 1.9400000000000013,
+      "yahoo": 15.71,
+      "gap": 2.460000000000001,
       "conditional": false
     },
     {
@@ -88,20 +84,20 @@
       "status": null,
       "week": 6,
       "dv": 8.23,
-      "yahoo": 10.39,
-      "gap": -2.16,
+      "yahoo": 10.91,
+      "gap": -2.6799999999999997,
       "conditional": false
     },
     {
       "id": "33991",
       "name": "Breece Hall",
       "position": "RB",
-      "status": "Q",
+      "status": "O",
       "week": 6,
-      "dv": 13.1,
-      "yahoo": 11.86,
-      "gap": 1.2400000000000002,
-      "conditional": true
+      "dv": 0,
+      "yahoo": 10.5,
+      "gap": -10.5,
+      "conditional": false
     },
     {
       "id": "40168",
@@ -110,8 +106,8 @@
       "status": null,
       "week": 6,
       "dv": 21.25,
-      "yahoo": 18.53,
-      "gap": 2.719999999999999,
+      "yahoo": 19.37,
+      "gap": 1.879999999999999,
       "conditional": false
     },
     {
@@ -121,8 +117,8 @@
       "status": null,
       "week": 6,
       "dv": 12.73,
-      "yahoo": 11.84,
-      "gap": 0.8900000000000006,
+      "yahoo": 11.33,
+      "gap": 1.4000000000000004,
       "conditional": false
     },
     {
@@ -132,19 +128,8 @@
       "status": null,
       "week": 6,
       "dv": 15.03,
-      "yahoo": 14.09,
-      "gap": 0.9399999999999995,
-      "conditional": false
-    },
-    {
-      "id": "31960",
-      "name": "Tony Pollard",
-      "position": "RB",
-      "status": null,
-      "week": 6,
-      "dv": 12.37,
-      "yahoo": 10.1,
-      "gap": 2.2699999999999996,
+      "yahoo": 14.35,
+      "gap": 0.6799999999999997,
       "conditional": false
     },
     {
@@ -154,30 +139,30 @@
       "status": null,
       "week": 6,
       "dv": 12.96,
-      "yahoo": 10.06,
-      "gap": 2.9000000000000004,
+      "yahoo": 10.6,
+      "gap": 2.360000000000001,
+      "conditional": false
+    },
+    {
+      "id": "31960",
+      "name": "Tony Pollard",
+      "position": "RB",
+      "status": null,
+      "week": 6,
+      "dv": 12.37,
+      "yahoo": 10.14,
+      "gap": 2.2299999999999986,
       "conditional": false
     },
     {
       "id": "34054",
-      "name": "Brian Robinson",
+      "name": "Brian Robinson Jr.",
       "position": "RB",
       "status": null,
       "week": 6,
       "dv": 6.68,
-      "yahoo": 5.75,
-      "gap": 0.9299999999999997,
-      "conditional": false
-    },
-    {
-      "id": "34008",
-      "name": "Alec Pierce",
-      "position": "WR",
-      "status": "IR",
-      "week": 6,
-      "dv": 0,
-      "yahoo": 5.64,
-      "gap": -5.64,
+      "yahoo": 5.53,
+      "gap": 1.1499999999999995,
       "conditional": false
     },
     {
@@ -187,8 +172,8 @@
       "status": null,
       "week": 6,
       "dv": 7.58,
-      "yahoo": 8.85,
-      "gap": -1.2699999999999996,
+      "yahoo": 8.24,
+      "gap": -0.6600000000000001,
       "conditional": false
     },
     {
@@ -198,42 +183,9 @@
       "status": null,
       "week": 6,
       "dv": 8.68,
-      "yahoo": 8.63,
-      "gap": 0.049999999999998934,
-      "conditional": false
-    },
-    {
-      "id": "100020",
-      "name": "Jets",
-      "position": "DEF",
-      "status": null,
-      "week": 6,
-      "dv": 7.35,
-      "yahoo": 5.96,
-      "gap": 1.3899999999999997,
+      "yahoo": 8.88,
+      "gap": -0.20000000000000107,
       "conditional": false
     }
-  ],
-  "scoringAudit": {
-    "checkedAt": "2026-10-13T21:43:51.780Z",
-    "source": "https://football.fantasysports.yahoo.com/f1/258793/settings",
-    "leagueRulesMatchYahooSettings": true,
-    "majorCustomRules": {
-      "passingTD": 6,
-      "interception": -3,
-      "sackSuffered": -1,
-      "reception": 0.5,
-      "fieldGoalYards": 0.1
-    },
-    "savedOffensiveBaselineChecks": {
-      "players": 452,
-      "mismatchesAbove003": 0
-    },
-    "knownOmissions": [
-      "Projected offensive fumbles lost",
-      "Projected two-point conversions",
-      "Projected return touchdowns"
-    ],
-    "conclusion": "Custom league scoring matches saved offensive baselines. Missing projected minor scoring components prevent complete apples-to-apples comparison; no verified full-PPR versus half-PPR mismatch."
-  }
+  ]
 }

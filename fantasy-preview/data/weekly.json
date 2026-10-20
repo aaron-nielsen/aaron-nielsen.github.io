@@ -4,7 +4,7 @@
   "season": 2026,
   "week": 6,
   "generatedAt": "2026-10-13T20:35:00.930Z",
-  "rosterSnapshotAt": "2026-10-13T20:04:37.921Z",
+  "rosterSnapshotAt": "2026-10-20T02:08:52.646Z",
   "availableSnapshotAt": "2026-10-10T03:08:05.001Z",
   "statsThroughWeek": 5,
   "sources": [
@@ -16,7 +16,7 @@
     "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2025.csv",
     "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv"
   ],
-  "note": "New completed games blended with the saved baseline using four prior games plus the previous current-season sample. Existing opponent factors, snap models, and K/DEF team context retain their original dates.",
+  "note": "Rolled from saved future scenarios; model and stats dates are unchanged. Current roster statuses refreshed via Flaim.",
   "players": [
     {
       "position": "QB",
@@ -49,7 +49,7 @@
       "fantasyTeamId": "2",
       "fantasyTeam": "Stochastically Bounded Ends",
       "ownership": "rostered",
-      "rosterSlot": "QB",
+      "rosterSlot": "BN",
       "injuryStatus": null,
       "conditionalPointsPerGame": 21.03,
       "opponent": null,
@@ -61,7 +61,7 @@
       "weeklyProjectedPoints": 0,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "bye",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -106,7 +106,7 @@
       "weeklyProjectedPoints": 22.85,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "RB",
@@ -139,7 +139,7 @@
       "fantasyTeamId": "10",
       "fantasyTeam": "Walking Drafters",
       "ownership": "rostered",
-      "rosterSlot": "RB",
+      "rosterSlot": "BN",
       "injuryStatus": null,
       "conditionalPointsPerGame": 20.94,
       "opponent": null,
@@ -151,7 +151,7 @@
       "weeklyProjectedPoints": 0,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "bye",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -196,7 +196,7 @@
       "weeklyProjectedPoints": 17.48,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -241,7 +241,7 @@
       "weeklyProjectedPoints": 0,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "bye",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "RB",
@@ -286,7 +286,7 @@
       "weeklyProjectedPoints": 18.13,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -331,7 +331,7 @@
       "weeklyProjectedPoints": 16.39,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -376,7 +376,7 @@
       "weeklyProjectedPoints": 21.46,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -410,7 +410,7 @@
       "fantasyTeam": "NO PARKING",
       "ownership": "rostered",
       "rosterSlot": "WR",
-      "injuryStatus": "Q",
+      "injuryStatus": null,
       "conditionalPointsPerGame": 16.48,
       "opponent": "GB",
       "gameDate": "2026-10-18",
@@ -418,10 +418,10 @@
       "location": "away",
       "matchupFactor": 0.9933,
       "activeGamePoints": 16.37,
-      "weeklyProjectedPoints": null,
+      "weeklyProjectedPoints": 16.37,
       "weeklyAvailability": "uncertain",
-      "forecastStatus": "needs_availability_confirmation",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "forecastStatus": "assuming_active",
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -454,7 +454,7 @@
       "fantasyTeamId": "8",
       "fantasyTeam": "Playmaker Adam",
       "ownership": "rostered",
-      "rosterSlot": "QB",
+      "rosterSlot": "BN",
       "injuryStatus": null,
       "conditionalPointsPerGame": 16.57,
       "opponent": "SEA",
@@ -466,7 +466,7 @@
       "weeklyProjectedPoints": 15.15,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -511,7 +511,7 @@
       "weeklyProjectedPoints": 20.71,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -556,7 +556,7 @@
       "weeklyProjectedPoints": 18.37,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -589,7 +589,7 @@
       "fantasyTeamId": "8",
       "fantasyTeam": "Playmaker Adam",
       "ownership": "rostered",
-      "rosterSlot": "BN",
+      "rosterSlot": "QB",
       "injuryStatus": null,
       "conditionalPointsPerGame": 16.86,
       "opponent": "LAC",
@@ -600,7 +600,7 @@
       "weeklyProjectedPoints": 15.49,
       "weeklyAvailability": "bye",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z",
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z",
       "gameTime": null
     },
     {
@@ -634,7 +634,7 @@
       "fantasyTeamId": "14",
       "fantasyTeam": "Bench Warmers",
       "ownership": "rostered",
-      "rosterSlot": "BN",
+      "rosterSlot": "QB",
       "injuryStatus": null,
       "conditionalPointsPerGame": 17.77,
       "opponent": "DAL",
@@ -646,7 +646,7 @@
       "weeklyProjectedPoints": 19.55,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "RB",
@@ -691,7 +691,7 @@
       "weeklyProjectedPoints": 15.81,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -725,7 +725,7 @@
       "fantasyTeam": "Bench Warmers",
       "ownership": "rostered",
       "rosterSlot": "IR",
-      "injuryStatus": "Q",
+      "injuryStatus": null,
       "conditionalPointsPerGame": 16.78,
       "opponent": "ATL",
       "gameDate": "2026-10-18",
@@ -736,7 +736,7 @@
       "weeklyProjectedPoints": null,
       "weeklyAvailability": "uncertain",
       "forecastStatus": "needs_availability_confirmation",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -780,7 +780,7 @@
       "weeklyProjectedPoints": 17.97,
       "weeklyAvailability": "bye",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z",
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z",
       "gameTime": null
     },
     {
@@ -826,7 +826,7 @@
       "weeklyProjectedPoints": 15.63,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -871,7 +871,7 @@
       "weeklyProjectedPoints": 17.22,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "RB",
@@ -915,7 +915,7 @@
       "weeklyProjectedPoints": 16.82,
       "weeklyAvailability": "bye",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z",
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z",
       "gameTime": null
     },
     {
@@ -949,7 +949,7 @@
       "fantasyTeamId": "14",
       "fantasyTeam": "Bench Warmers",
       "ownership": "rostered",
-      "rosterSlot": "QB",
+      "rosterSlot": "BN",
       "injuryStatus": null,
       "conditionalPointsPerGame": 15.86,
       "opponent": "BUF",
@@ -961,7 +961,7 @@
       "weeklyProjectedPoints": 17.45,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -1006,7 +1006,7 @@
       "weeklyProjectedPoints": 14.2,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "RB",
@@ -1051,7 +1051,7 @@
       "weeklyProjectedPoints": 15.4,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "TE",
@@ -1096,7 +1096,7 @@
       "weeklyProjectedPoints": 14.52,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "RB",
@@ -1141,7 +1141,7 @@
       "weeklyProjectedPoints": 16.52,
       "weeklyAvailability": "uncertain",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -1186,7 +1186,7 @@
       "weeklyProjectedPoints": 17.51,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "RB",
@@ -1231,7 +1231,7 @@
       "weeklyProjectedPoints": 14.36,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -1264,7 +1264,7 @@
       "fantasyTeamId": "9",
       "fantasyTeam": "Screen Pass Eva",
       "ownership": "rostered",
-      "rosterSlot": "WR",
+      "rosterSlot": "BN",
       "injuryStatus": null,
       "conditionalPointsPerGame": 15.06,
       "opponent": null,
@@ -1276,7 +1276,7 @@
       "weeklyProjectedPoints": 0,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "bye",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "RB",
@@ -1321,7 +1321,7 @@
       "weeklyProjectedPoints": 14.48,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -1351,10 +1351,10 @@
       "matchMethod": "crosswalk",
       "name": "Aaron Rodgers",
       "nflTeam": "Pit",
-      "fantasyTeamId": null,
-      "fantasyTeam": "Available",
-      "ownership": "available",
-      "rosterSlot": null,
+      "fantasyTeamId": "2",
+      "fantasyTeam": "Stochastically Bounded Ends",
+      "ownership": "rostered",
+      "rosterSlot": "QB",
       "injuryStatus": null,
       "conditionalPointsPerGame": 16.81,
       "opponent": "TB",
@@ -1366,7 +1366,7 @@
       "weeklyProjectedPoints": 15.57,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-10T02:53:22.198Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -1399,7 +1399,7 @@
       "fantasyTeamId": "9",
       "fantasyTeam": "Screen Pass Eva",
       "ownership": "rostered",
-      "rosterSlot": "BN",
+      "rosterSlot": "QB",
       "injuryStatus": null,
       "conditionalPointsPerGame": 16.89,
       "opponent": "SF",
@@ -1411,7 +1411,7 @@
       "weeklyProjectedPoints": 15.44,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -1445,7 +1445,7 @@
       "fantasyTeam": "Playmaker Adam",
       "ownership": "rostered",
       "rosterSlot": "WR",
-      "injuryStatus": "Q",
+      "injuryStatus": null,
       "conditionalPointsPerGame": 15.96,
       "opponent": "DEN",
       "gameDate": "2026-10-15",
@@ -1453,10 +1453,10 @@
       "location": "away",
       "matchupFactor": 0.9016,
       "activeGamePoints": 14.39,
-      "weeklyProjectedPoints": null,
+      "weeklyProjectedPoints": 14.39,
       "weeklyAvailability": "no_reported_restriction",
-      "forecastStatus": "needs_availability_confirmation",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "forecastStatus": "assuming_active",
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -1486,10 +1486,10 @@
       "matchMethod": "crosswalk",
       "name": "Justin Herbert",
       "nflTeam": "LAC",
-      "fantasyTeamId": "1",
-      "fantasyTeam": "Blitzmaster",
-      "ownership": "rostered",
-      "rosterSlot": "BN",
+      "fantasyTeamId": null,
+      "fantasyTeam": null,
+      "ownership": "unverified",
+      "rosterSlot": null,
       "injuryStatus": null,
       "conditionalPointsPerGame": 14.48,
       "opponent": "KC",
@@ -1546,7 +1546,7 @@
       "weeklyProjectedPoints": 15.05,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -1591,7 +1591,7 @@
       "weeklyProjectedPoints": 0,
       "weeklyAvailability": "out",
       "forecastStatus": "unavailable_reported",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "RB",
@@ -1624,7 +1624,7 @@
       "fantasyTeamId": "13",
       "fantasyTeam": "NO PARKING",
       "ownership": "rostered",
-      "rosterSlot": "RB",
+      "rosterSlot": "BN",
       "injuryStatus": null,
       "conditionalPointsPerGame": 15.4,
       "opponent": null,
@@ -1636,7 +1636,7 @@
       "weeklyProjectedPoints": 0,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "bye",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -1666,10 +1666,10 @@
       "matchMethod": "crosswalk",
       "name": "Jalen Hurts",
       "nflTeam": "Phi",
-      "fantasyTeamId": "11",
-      "fantasyTeam": "Stiff Arm Beth",
-      "ownership": "rostered",
-      "rosterSlot": "QB",
+      "fantasyTeamId": null,
+      "fantasyTeam": null,
+      "ownership": "unverified",
+      "rosterSlot": null,
       "injuryStatus": null,
       "conditionalPointsPerGame": 14.8,
       "opponent": "CAR",
@@ -1711,10 +1711,10 @@
       "matchMethod": "crosswalk",
       "name": "Deshaun Watson",
       "nflTeam": "Cle",
-      "fantasyTeamId": null,
-      "fantasyTeam": "Available",
-      "ownership": "available",
-      "rosterSlot": null,
+      "fantasyTeamId": "11",
+      "fantasyTeam": "Stiff Arm Beth",
+      "ownership": "rostered",
+      "rosterSlot": "QB",
       "injuryStatus": null,
       "conditionalPointsPerGame": 14.06,
       "opponent": "BAL",
@@ -1726,7 +1726,7 @@
       "weeklyProjectedPoints": 14.18,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-10T02:53:22.198Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -1760,7 +1760,7 @@
       "fantasyTeam": "Stochastically Bounded Ends",
       "ownership": "rostered",
       "rosterSlot": "IR",
-      "injuryStatus": "Q",
+      "injuryStatus": "O",
       "conditionalPointsPerGame": 14.77,
       "opponent": "CLE",
       "gameDate": "2026-10-18",
@@ -1768,10 +1768,10 @@
       "location": "away",
       "matchupFactor": 1.0055,
       "activeGamePoints": 14.85,
-      "weeklyProjectedPoints": null,
+      "weeklyProjectedPoints": 0,
       "weeklyAvailability": "out",
-      "forecastStatus": "needs_availability_confirmation",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "forecastStatus": "unavailable_reported",
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -1816,7 +1816,7 @@
       "weeklyProjectedPoints": 13.34,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -1849,7 +1849,7 @@
       "fantasyTeamId": "9",
       "fantasyTeam": "Screen Pass Eva",
       "ownership": "rostered",
-      "rosterSlot": "QB",
+      "rosterSlot": "BN",
       "injuryStatus": null,
       "conditionalPointsPerGame": 15.19,
       "opponent": null,
@@ -1861,7 +1861,7 @@
       "weeklyProjectedPoints": 0,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "bye",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "RB",
@@ -1894,7 +1894,7 @@
       "fantasyTeamId": "1",
       "fantasyTeam": "Blitzmaster",
       "ownership": "rostered",
-      "rosterSlot": "RB",
+      "rosterSlot": "BN",
       "injuryStatus": null,
       "conditionalPointsPerGame": 13.84,
       "opponent": null,
@@ -1906,7 +1906,7 @@
       "weeklyProjectedPoints": 0,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "bye",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -1951,7 +1951,7 @@
       "weeklyProjectedPoints": 12.73,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -1984,7 +1984,7 @@
       "fantasyTeamId": "12",
       "fantasyTeam": "Juicy Juke Brody",
       "ownership": "rostered",
-      "rosterSlot": "WR",
+      "rosterSlot": "BN",
       "injuryStatus": null,
       "conditionalPointsPerGame": 12.94,
       "opponent": null,
@@ -1996,7 +1996,7 @@
       "weeklyProjectedPoints": 0,
       "weeklyAvailability": "uncertain",
       "forecastStatus": "bye",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "RB",
@@ -2041,7 +2041,7 @@
       "weeklyProjectedPoints": 15.79,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -2086,7 +2086,7 @@
       "weeklyProjectedPoints": 14.29,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "RB",
@@ -2131,7 +2131,7 @@
       "weeklyProjectedPoints": 14.99,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -2176,7 +2176,7 @@
       "weeklyProjectedPoints": 13.22,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -2254,7 +2254,7 @@
       "fantasyTeamId": "1",
       "fantasyTeam": "Blitzmaster",
       "ownership": "rostered",
-      "rosterSlot": "BN",
+      "rosterSlot": "W/R/T",
       "injuryStatus": null,
       "conditionalPointsPerGame": 13.37,
       "opponent": "PHI",
@@ -2265,7 +2265,7 @@
       "weeklyProjectedPoints": 14.37,
       "weeklyAvailability": "bye",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z",
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z",
       "gameTime": null
     },
     {
@@ -2344,7 +2344,7 @@
       "fantasyTeamId": "10",
       "fantasyTeam": "Walking Drafters",
       "ownership": "rostered",
-      "rosterSlot": "W/R/T",
+      "rosterSlot": "WR",
       "injuryStatus": null,
       "conditionalPointsPerGame": 12.63,
       "opponent": "JAX",
@@ -2356,7 +2356,7 @@
       "weeklyProjectedPoints": 13.63,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "RB",
@@ -2389,8 +2389,8 @@
       "fantasyTeamId": "7",
       "fantasyTeam": "Ten Feline Overlords",
       "ownership": "rostered",
-      "rosterSlot": "RB",
-      "injuryStatus": "Q",
+      "rosterSlot": "IR",
+      "injuryStatus": "O",
       "conditionalPointsPerGame": 13.28,
       "opponent": "NE",
       "gameDate": "2026-10-18",
@@ -2398,10 +2398,10 @@
       "location": "away",
       "matchupFactor": 0.9866,
       "activeGamePoints": 13.1,
-      "weeklyProjectedPoints": null,
+      "weeklyProjectedPoints": 0,
       "weeklyAvailability": "out",
-      "forecastStatus": "needs_availability_confirmation",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "forecastStatus": "unavailable_reported",
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -2525,7 +2525,7 @@
       "fantasyTeam": "Bench Warmers",
       "ownership": "rostered",
       "rosterSlot": "WR",
-      "injuryStatus": null,
+      "injuryStatus": "O",
       "conditionalPointsPerGame": 13.76,
       "opponent": "ARI",
       "gameDate": "2026-10-18",
@@ -2533,10 +2533,10 @@
       "location": "home",
       "matchupFactor": 1.1,
       "activeGamePoints": 15.14,
-      "weeklyProjectedPoints": 15.14,
+      "weeklyProjectedPoints": 0,
       "weeklyAvailability": "no_reported_restriction",
-      "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "forecastStatus": "unavailable_reported",
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "RB",
@@ -2581,7 +2581,7 @@
       "weeklyProjectedPoints": 15.08,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "RB",
@@ -2626,7 +2626,7 @@
       "weeklyProjectedPoints": 12.56,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -2660,7 +2660,7 @@
       "fantasyTeam": "Hard Count Kai",
       "ownership": "rostered",
       "rosterSlot": "BN",
-      "injuryStatus": "Q",
+      "injuryStatus": null,
       "conditionalPointsPerGame": 13.02,
       "opponent": "CHI",
       "gameDate": "2026-10-18",
@@ -2668,10 +2668,10 @@
       "location": "home",
       "matchupFactor": 0.9849,
       "activeGamePoints": 12.82,
-      "weeklyProjectedPoints": null,
+      "weeklyProjectedPoints": 12.82,
       "weeklyAvailability": "no_reported_restriction",
-      "forecastStatus": "needs_availability_confirmation",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "forecastStatus": "assuming_active",
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -2761,7 +2761,7 @@
       "weeklyProjectedPoints": 14.17,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -2884,8 +2884,8 @@
       "fantasyTeamId": "6",
       "fantasyTeam": "Hard Count Kai",
       "ownership": "rostered",
-      "rosterSlot": "RB",
-      "injuryStatus": "Q",
+      "rosterSlot": "BN",
+      "injuryStatus": "O",
       "conditionalPointsPerGame": 11.99,
       "opponent": "BAL",
       "gameDate": "2026-10-18",
@@ -2893,10 +2893,10 @@
       "location": "home",
       "matchupFactor": 0.9168,
       "activeGamePoints": 10.99,
-      "weeklyProjectedPoints": null,
+      "weeklyProjectedPoints": 0,
       "weeklyAvailability": "no_reported_restriction",
-      "forecastStatus": "needs_availability_confirmation",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "forecastStatus": "unavailable_reported",
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "RB",
@@ -2974,8 +2974,8 @@
       "fantasyTeamId": "9",
       "fantasyTeam": "Screen Pass Eva",
       "ownership": "rostered",
-      "rosterSlot": "BN",
-      "injuryStatus": "Q",
+      "rosterSlot": "WR",
+      "injuryStatus": null,
       "conditionalPointsPerGame": 12.51,
       "opponent": "CAR",
       "gameDate": "2026-10-18",
@@ -2983,10 +2983,10 @@
       "location": "home",
       "matchupFactor": 0.9519,
       "activeGamePoints": 11.91,
-      "weeklyProjectedPoints": null,
+      "weeklyProjectedPoints": 11.91,
       "weeklyAvailability": "out",
-      "forecastStatus": "needs_availability_confirmation",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "forecastStatus": "assuming_active",
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "RB",
@@ -3020,7 +3020,7 @@
       "fantasyTeam": "Ten Feline Overlords",
       "ownership": "rostered",
       "rosterSlot": "BN",
-      "injuryStatus": "CEL",
+      "injuryStatus": null,
       "conditionalPointsPerGame": 12.43,
       "opponent": "DAL",
       "gameDate": "2026-10-18",
@@ -3028,10 +3028,10 @@
       "location": "home",
       "matchupFactor": 1.1,
       "activeGamePoints": 13.67,
-      "weeklyProjectedPoints": 0,
+      "weeklyProjectedPoints": 13.67,
       "weeklyAvailability": "out",
-      "forecastStatus": "unavailable_reported",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "forecastStatus": "assuming_active",
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -3076,7 +3076,7 @@
       "weeklyProjectedPoints": 10.33,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "RB",
@@ -3109,7 +3109,7 @@
       "fantasyTeamId": "4",
       "fantasyTeam": "the football understander",
       "ownership": "rostered",
-      "rosterSlot": "RB",
+      "rosterSlot": "BN",
       "injuryStatus": null,
       "conditionalPointsPerGame": 11.84,
       "opponent": "NO",
@@ -3121,7 +3121,7 @@
       "weeklyProjectedPoints": 13.02,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -3166,7 +3166,7 @@
       "weeklyProjectedPoints": 0,
       "weeklyAvailability": "uncertain",
       "forecastStatus": "bye",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -3289,7 +3289,7 @@
       "fantasyTeamId": "12",
       "fantasyTeam": "Juicy Juke Brody",
       "ownership": "rostered",
-      "rosterSlot": "W/R/T",
+      "rosterSlot": "WR",
       "injuryStatus": null,
       "conditionalPointsPerGame": 11.74,
       "opponent": "CLE",
@@ -3301,7 +3301,7 @@
       "weeklyProjectedPoints": 12.52,
       "weeklyAvailability": "uncertain",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "RB",
@@ -3334,7 +3334,7 @@
       "fantasyTeamId": "4",
       "fantasyTeam": "the football understander",
       "ownership": "rostered",
-      "rosterSlot": "BN",
+      "rosterSlot": "RB",
       "injuryStatus": null,
       "conditionalPointsPerGame": 11.89,
       "opponent": "PHI",
@@ -3345,7 +3345,7 @@
       "weeklyProjectedPoints": 11.42,
       "weeklyAvailability": "bye",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z",
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z",
       "gameTime": null
     },
     {
@@ -3379,7 +3379,7 @@
       "fantasyTeamId": "7",
       "fantasyTeam": "Ten Feline Overlords",
       "ownership": "rostered",
-      "rosterSlot": "W/R/T",
+      "rosterSlot": "RB",
       "injuryStatus": null,
       "conditionalPointsPerGame": 11.09,
       "opponent": "IND",
@@ -3391,7 +3391,7 @@
       "weeklyProjectedPoints": 12.2,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "TE",
@@ -3424,7 +3424,7 @@
       "fantasyTeamId": "2",
       "fantasyTeam": "Stochastically Bounded Ends",
       "ownership": "rostered",
-      "rosterSlot": "TE",
+      "rosterSlot": "BN",
       "injuryStatus": null,
       "conditionalPointsPerGame": 12.39,
       "opponent": null,
@@ -3436,7 +3436,7 @@
       "weeklyProjectedPoints": 0,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "bye",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -3616,7 +3616,7 @@
       "weeklyProjectedPoints": 11.38,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "RB",
@@ -3650,7 +3650,7 @@
       "fantasyTeam": "Blitzmaster",
       "ownership": "rostered",
       "rosterSlot": "IR",
-      "injuryStatus": "Q",
+      "injuryStatus": "O",
       "conditionalPointsPerGame": 11.08,
       "opponent": "ATL",
       "gameDate": "2026-10-18",
@@ -3658,10 +3658,10 @@
       "location": "away",
       "matchupFactor": 0.9497,
       "activeGamePoints": 10.52,
-      "weeklyProjectedPoints": null,
+      "weeklyProjectedPoints": 0,
       "weeklyAvailability": "out",
-      "forecastStatus": "needs_availability_confirmation",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "forecastStatus": "unavailable_reported",
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -3694,18 +3694,18 @@
       "fantasyTeamId": "4",
       "fantasyTeam": "the football understander",
       "ownership": "rostered",
-      "rosterSlot": "WR",
-      "injuryStatus": "Q",
+      "rosterSlot": "BN",
+      "injuryStatus": "O",
       "conditionalPointsPerGame": 11.08,
       "opponent": "LAC",
       "gameDate": "2026-10-18",
       "location": "home",
       "matchupFactor": 1.0216,
       "activeGamePoints": 11.32,
-      "weeklyProjectedPoints": null,
+      "weeklyProjectedPoints": 0,
       "weeklyAvailability": "bye",
-      "forecastStatus": "needs_availability_confirmation",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z",
+      "forecastStatus": "unavailable_reported",
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z",
       "gameTime": null
     },
     {
@@ -3751,7 +3751,7 @@
       "weeklyProjectedPoints": 10,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -3886,7 +3886,7 @@
       "weeklyProjectedPoints": 9.29,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -3976,7 +3976,7 @@
       "weeklyProjectedPoints": 0,
       "weeklyAvailability": "out",
       "forecastStatus": "unavailable_reported",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -4010,7 +4010,7 @@
       "fantasyTeam": "Hard Count Kai",
       "ownership": "rostered",
       "rosterSlot": "BN",
-      "injuryStatus": "Q",
+      "injuryStatus": null,
       "conditionalPointsPerGame": 10.87,
       "opponent": "SF",
       "gameDate": "2026-10-19",
@@ -4018,10 +4018,10 @@
       "location": "away",
       "matchupFactor": 0.9368,
       "activeGamePoints": 10.18,
-      "weeklyProjectedPoints": null,
+      "weeklyProjectedPoints": 10.18,
       "weeklyAvailability": "out",
-      "forecastStatus": "needs_availability_confirmation",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "forecastStatus": "assuming_active",
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "RB",
@@ -4066,7 +4066,7 @@
       "weeklyProjectedPoints": 9.37,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "RB",
@@ -4111,7 +4111,7 @@
       "weeklyProjectedPoints": 9.93,
       "weeklyAvailability": "uncertain",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -4156,7 +4156,7 @@
       "weeklyProjectedPoints": 12.08,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -4190,7 +4190,7 @@
       "fantasyTeam": "Stiff Arm Beth",
       "ownership": "rostered",
       "rosterSlot": "WR",
-      "injuryStatus": null,
+      "injuryStatus": "O",
       "conditionalPointsPerGame": 10.41,
       "opponent": "SF",
       "gameDate": "2026-10-19",
@@ -4198,10 +4198,10 @@
       "location": "away",
       "matchupFactor": 0.9368,
       "activeGamePoints": 9.75,
-      "weeklyProjectedPoints": 9.75,
+      "weeklyProjectedPoints": 0,
       "weeklyAvailability": "uncertain",
-      "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "forecastStatus": "unavailable_reported",
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -4246,7 +4246,7 @@
       "weeklyProjectedPoints": 11.36,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -4291,7 +4291,7 @@
       "weeklyProjectedPoints": 10.36,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "TE",
@@ -4324,7 +4324,7 @@
       "fantasyTeamId": "7",
       "fantasyTeam": "Ten Feline Overlords",
       "ownership": "rostered",
-      "rosterSlot": "BN",
+      "rosterSlot": "W/R/T",
       "injuryStatus": null,
       "conditionalPointsPerGame": 12.31,
       "opponent": "NO",
@@ -4336,7 +4336,7 @@
       "weeklyProjectedPoints": 12.96,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -4381,7 +4381,7 @@
       "weeklyProjectedPoints": 13.44,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -4471,7 +4471,7 @@
       "weeklyProjectedPoints": 11.83,
       "weeklyAvailability": "uncertain",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -4561,7 +4561,7 @@
       "weeklyProjectedPoints": 11.76,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "TE",
@@ -4606,7 +4606,7 @@
       "weeklyProjectedPoints": 10.59,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -4786,7 +4786,7 @@
       "weeklyProjectedPoints": 8.37,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -4876,7 +4876,7 @@
       "weeklyProjectedPoints": 8.92,
       "weeklyAvailability": "uncertain",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "TE",
@@ -4921,7 +4921,7 @@
       "weeklyProjectedPoints": 9.48,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -4954,7 +4954,7 @@
       "fantasyTeamId": "10",
       "fantasyTeam": "Walking Drafters",
       "ownership": "rostered",
-      "rosterSlot": "WR",
+      "rosterSlot": "BN",
       "injuryStatus": null,
       "conditionalPointsPerGame": 10.79,
       "opponent": null,
@@ -4966,7 +4966,7 @@
       "weeklyProjectedPoints": 0,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "bye",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -5011,7 +5011,7 @@
       "weeklyProjectedPoints": 11.36,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -5044,8 +5044,8 @@
       "fantasyTeamId": "3",
       "fantasyTeam": "Lone Wolf Stacy",
       "ownership": "rostered",
-      "rosterSlot": "IR",
-      "injuryStatus": "IR",
+      "rosterSlot": "W/R/T",
+      "injuryStatus": "Q",
       "conditionalPointsPerGame": 9.86,
       "opponent": "NYJ",
       "gameDate": "2026-10-18",
@@ -5053,10 +5053,10 @@
       "location": "home",
       "matchupFactor": 0.9272,
       "activeGamePoints": 9.14,
-      "weeklyProjectedPoints": 0,
+      "weeklyProjectedPoints": null,
       "weeklyAvailability": "out",
-      "forecastStatus": "unavailable_reported",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "forecastStatus": "needs_availability_confirmation",
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "TE",
@@ -5090,7 +5090,7 @@
       "fantasyTeam": "NO PARKING",
       "ownership": "rostered",
       "rosterSlot": "W/R/T",
-      "injuryStatus": null,
+      "injuryStatus": "O",
       "conditionalPointsPerGame": 10.74,
       "opponent": "TEN",
       "gameDate": "2026-10-18",
@@ -5098,10 +5098,10 @@
       "location": "home",
       "matchupFactor": 0.9095,
       "activeGamePoints": 9.77,
-      "weeklyProjectedPoints": 9.77,
+      "weeklyProjectedPoints": 0,
       "weeklyAvailability": "no_reported_restriction",
-      "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "forecastStatus": "unavailable_reported",
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "TE",
@@ -5146,7 +5146,7 @@
       "weeklyProjectedPoints": 0,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "bye",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -5180,7 +5180,7 @@
       "fantasyTeam": "Stiff Arm Beth",
       "ownership": "rostered",
       "rosterSlot": "WR",
-      "injuryStatus": null,
+      "injuryStatus": "Q",
       "conditionalPointsPerGame": 10.97,
       "opponent": "WAS",
       "gameDate": "2026-10-19",
@@ -5188,10 +5188,10 @@
       "location": "home",
       "matchupFactor": 1.0859,
       "activeGamePoints": 11.91,
-      "weeklyProjectedPoints": 11.91,
+      "weeklyProjectedPoints": null,
       "weeklyAvailability": "no_reported_restriction",
-      "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "forecastStatus": "needs_availability_confirmation",
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -5269,7 +5269,7 @@
       "fantasyTeamId": "1",
       "fantasyTeam": "Blitzmaster",
       "ownership": "rostered",
-      "rosterSlot": "W/R/T",
+      "rosterSlot": "BN",
       "injuryStatus": null,
       "conditionalPointsPerGame": 10.45,
       "opponent": null,
@@ -5281,7 +5281,7 @@
       "weeklyProjectedPoints": 0,
       "weeklyAvailability": "uncertain",
       "forecastStatus": "bye",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "RB",
@@ -5326,7 +5326,7 @@
       "weeklyProjectedPoints": 9.94,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "RB",
@@ -5360,7 +5360,7 @@
       "fantasyTeam": "I’m confused",
       "ownership": "rostered",
       "rosterSlot": "RB",
-      "injuryStatus": "Q",
+      "injuryStatus": null,
       "conditionalPointsPerGame": 9.65,
       "opponent": "TB",
       "gameDate": "2026-10-18",
@@ -5368,10 +5368,10 @@
       "location": "away",
       "matchupFactor": 0.9304,
       "activeGamePoints": 8.98,
-      "weeklyProjectedPoints": null,
+      "weeklyProjectedPoints": 8.98,
       "weeklyAvailability": "uncertain",
-      "forecastStatus": "needs_availability_confirmation",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "forecastStatus": "assuming_active",
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -5404,7 +5404,7 @@
       "fantasyTeamId": "12",
       "fantasyTeam": "Juicy Juke Brody",
       "ownership": "rostered",
-      "rosterSlot": "BN",
+      "rosterSlot": "W/R/T",
       "injuryStatus": null,
       "conditionalPointsPerGame": 9.28,
       "opponent": "TEN",
@@ -5416,7 +5416,7 @@
       "weeklyProjectedPoints": 9.8,
       "weeklyAvailability": "uncertain",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "RB",
@@ -5450,7 +5450,7 @@
       "fantasyTeam": "Stiff Arm Beth",
       "ownership": "rostered",
       "rosterSlot": "RB",
-      "injuryStatus": "Q",
+      "injuryStatus": "O",
       "conditionalPointsPerGame": 9.59,
       "opponent": "CAR",
       "gameDate": "2026-10-18",
@@ -5458,10 +5458,10 @@
       "location": "home",
       "matchupFactor": 1.0412,
       "activeGamePoints": 9.99,
-      "weeklyProjectedPoints": null,
+      "weeklyProjectedPoints": 0,
       "weeklyAvailability": "out",
-      "forecastStatus": "needs_availability_confirmation",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "forecastStatus": "unavailable_reported",
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -5540,7 +5540,7 @@
       "fantasyTeam": "NO PARKING",
       "ownership": "rostered",
       "rosterSlot": "BN",
-      "injuryStatus": "D",
+      "injuryStatus": null,
       "conditionalPointsPerGame": 8.93,
       "opponent": "NYJ",
       "gameDate": "2026-10-18",
@@ -5548,10 +5548,10 @@
       "location": "home",
       "matchupFactor": 1.0725,
       "activeGamePoints": 9.58,
-      "weeklyProjectedPoints": null,
+      "weeklyProjectedPoints": 9.58,
       "weeklyAvailability": "no_reported_restriction",
-      "forecastStatus": "needs_availability_confirmation",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "forecastStatus": "assuming_active",
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "TE",
@@ -5596,7 +5596,7 @@
       "weeklyProjectedPoints": 9.94,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -5641,7 +5641,7 @@
       "weeklyProjectedPoints": 8.43,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -5671,10 +5671,10 @@
       "matchMethod": "crosswalk",
       "name": "Tank Dell",
       "nflTeam": "Hou",
-      "fantasyTeamId": "7",
-      "fantasyTeam": "Ten Feline Overlords",
-      "ownership": "rostered",
-      "rosterSlot": "IR",
+      "fantasyTeamId": null,
+      "fantasyTeam": null,
+      "ownership": "unverified",
+      "rosterSlot": null,
       "injuryStatus": "IR-R",
       "conditionalPointsPerGame": 9.47,
       "opponent": "JAX",
@@ -5764,8 +5764,8 @@
       "fantasyTeamId": "8",
       "fantasyTeam": "Playmaker Adam",
       "ownership": "rostered",
-      "rosterSlot": "RB",
-      "injuryStatus": null,
+      "rosterSlot": "BN",
+      "injuryStatus": "O",
       "conditionalPointsPerGame": 8.54,
       "opponent": "LAR",
       "gameDate": "2026-10-18",
@@ -5773,10 +5773,10 @@
       "location": "away",
       "matchupFactor": 0.987,
       "activeGamePoints": 8.43,
-      "weeklyProjectedPoints": 8.43,
+      "weeklyProjectedPoints": 0,
       "weeklyAvailability": "no_reported_restriction",
-      "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "forecastStatus": "unavailable_reported",
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -5821,7 +5821,7 @@
       "weeklyProjectedPoints": 9,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -5900,17 +5900,17 @@
       "fantasyTeam": "Stiff Arm Beth",
       "ownership": "rostered",
       "rosterSlot": "W/R/T",
-      "injuryStatus": "Q",
+      "injuryStatus": null,
       "conditionalPointsPerGame": 9.12,
       "opponent": "PHI",
       "gameDate": "2026-10-18",
       "location": "away",
       "matchupFactor": 1.0746,
       "activeGamePoints": 9.8,
-      "weeklyProjectedPoints": null,
+      "weeklyProjectedPoints": 9.8,
       "weeklyAvailability": "bye",
-      "forecastStatus": "needs_availability_confirmation",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z",
+      "forecastStatus": "assuming_active",
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z",
       "gameTime": null
     },
     {
@@ -5944,8 +5944,8 @@
       "fantasyTeamId": "2",
       "fantasyTeam": "Stochastically Bounded Ends",
       "ownership": "rostered",
-      "rosterSlot": "W/R/T",
-      "injuryStatus": null,
+      "rosterSlot": "BN",
+      "injuryStatus": "IR",
       "conditionalPointsPerGame": 9.69,
       "opponent": "SF",
       "gameDate": "2026-10-19",
@@ -5953,10 +5953,10 @@
       "location": "away",
       "matchupFactor": 1.0523,
       "activeGamePoints": 10.2,
-      "weeklyProjectedPoints": 10.2,
+      "weeklyProjectedPoints": 0,
       "weeklyAvailability": "no_reported_restriction",
-      "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "forecastStatus": "unavailable_reported",
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -6001,7 +6001,7 @@
       "weeklyProjectedPoints": 9.23,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -6091,7 +6091,7 @@
       "weeklyProjectedPoints": 7.9,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "RB",
@@ -6136,7 +6136,7 @@
       "weeklyProjectedPoints": 9.87,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -6226,7 +6226,7 @@
       "weeklyProjectedPoints": 8.1,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -6316,7 +6316,7 @@
       "weeklyProjectedPoints": 9.34,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "TE",
@@ -6360,7 +6360,7 @@
       "weeklyProjectedPoints": 7.94,
       "weeklyAvailability": "bye",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z",
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z",
       "gameTime": null
     },
     {
@@ -6406,7 +6406,7 @@
       "weeklyProjectedPoints": 11.83,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "RB",
@@ -6451,7 +6451,7 @@
       "weeklyProjectedPoints": 0,
       "weeklyAvailability": "out",
       "forecastStatus": "unavailable_reported",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -6529,7 +6529,7 @@
       "fantasyTeamId": "7",
       "fantasyTeam": "Ten Feline Overlords",
       "ownership": "rostered",
-      "rosterSlot": "IR",
+      "rosterSlot": "BN",
       "injuryStatus": "Q",
       "conditionalPointsPerGame": 8.51,
       "opponent": null,
@@ -6541,7 +6541,7 @@
       "weeklyProjectedPoints": 0,
       "weeklyAvailability": "uncertain",
       "forecastStatus": "bye",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "RB",
@@ -6710,7 +6710,7 @@
       "fantasyTeam": "I’m confused",
       "ownership": "rostered",
       "rosterSlot": "WR",
-      "injuryStatus": "Q",
+      "injuryStatus": null,
       "conditionalPointsPerGame": 7.57,
       "opponent": "BAL",
       "gameDate": "2026-10-18",
@@ -6718,10 +6718,10 @@
       "location": "home",
       "matchupFactor": 1.0576,
       "activeGamePoints": 8.01,
-      "weeklyProjectedPoints": null,
+      "weeklyProjectedPoints": 8.01,
       "weeklyAvailability": "no_reported_restriction",
-      "forecastStatus": "needs_availability_confirmation",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "forecastStatus": "assuming_active",
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -6754,7 +6754,7 @@
       "fantasyTeamId": "3",
       "fantasyTeam": "Lone Wolf Stacy",
       "ownership": "rostered",
-      "rosterSlot": "W/R/T",
+      "rosterSlot": "BN",
       "injuryStatus": null,
       "conditionalPointsPerGame": 8.95,
       "opponent": "PIT",
@@ -6766,7 +6766,7 @@
       "weeklyProjectedPoints": 8.41,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "TE",
@@ -6811,7 +6811,7 @@
       "weeklyProjectedPoints": 7.18,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "TE",
@@ -6856,7 +6856,7 @@
       "weeklyProjectedPoints": 7.52,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -6901,7 +6901,7 @@
       "weeklyProjectedPoints": 0,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "bye",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "RB",
@@ -6934,8 +6934,8 @@
       "fantasyTeamId": "9",
       "fantasyTeam": "Screen Pass Eva",
       "ownership": "rostered",
-      "rosterSlot": "RB",
-      "injuryStatus": "D",
+      "rosterSlot": "BN",
+      "injuryStatus": "O",
       "conditionalPointsPerGame": 7.46,
       "opponent": "JAX",
       "gameDate": "2026-10-18",
@@ -6943,10 +6943,10 @@
       "location": "away",
       "matchupFactor": 0.9077,
       "activeGamePoints": 6.77,
-      "weeklyProjectedPoints": null,
+      "weeklyProjectedPoints": 0,
       "weeklyAvailability": "no_reported_restriction",
-      "forecastStatus": "needs_availability_confirmation",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "forecastStatus": "unavailable_reported",
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -6976,10 +6976,10 @@
       "matchMethod": "crosswalk",
       "name": "Adonai Mitchell",
       "nflTeam": "NYJ",
-      "fantasyTeamId": "10",
-      "fantasyTeam": "Walking Drafters",
-      "ownership": "rostered",
-      "rosterSlot": "BN",
+      "fantasyTeamId": null,
+      "fantasyTeam": null,
+      "ownership": "unverified",
+      "rosterSlot": null,
       "injuryStatus": "Q",
       "conditionalPointsPerGame": 8.18,
       "opponent": "NE",
@@ -7069,7 +7069,7 @@
       "fantasyTeamId": "9",
       "fantasyTeam": "Screen Pass Eva",
       "ownership": "rostered",
-      "rosterSlot": "BN",
+      "rosterSlot": "W/R/T",
       "injuryStatus": null,
       "conditionalPointsPerGame": 7.81,
       "opponent": "BUF",
@@ -7081,7 +7081,7 @@
       "weeklyProjectedPoints": 8.59,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "TE",
@@ -7126,7 +7126,7 @@
       "weeklyProjectedPoints": 8.11,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -7171,7 +7171,7 @@
       "weeklyProjectedPoints": 8.02,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "TE",
@@ -7291,10 +7291,10 @@
       "matchMethod": "crosswalk",
       "name": "Tyler Higbee",
       "nflTeam": "LAR",
-      "fantasyTeamId": null,
-      "fantasyTeam": "Available",
-      "ownership": "available",
-      "rosterSlot": null,
+      "fantasyTeamId": "2",
+      "fantasyTeam": "Stochastically Bounded Ends",
+      "ownership": "rostered",
+      "rosterSlot": "TE",
       "injuryStatus": null,
       "conditionalPointsPerGame": 8.38,
       "opponent": "ARI",
@@ -7306,7 +7306,7 @@
       "weeklyProjectedPoints": 9.22,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-10T02:53:22.198Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "RB",
@@ -7339,7 +7339,7 @@
       "fantasyTeamId": "6",
       "fantasyTeam": "Hard Count Kai",
       "ownership": "rostered",
-      "rosterSlot": "BN",
+      "rosterSlot": "RB",
       "injuryStatus": null,
       "conditionalPointsPerGame": 7.35,
       "opponent": "SF",
@@ -7351,7 +7351,7 @@
       "weeklyProjectedPoints": 7.73,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -7381,11 +7381,11 @@
       "matchMethod": "crosswalk",
       "name": "Deebo Samuel Sr.",
       "nflTeam": "SF",
-      "fantasyTeamId": "7",
-      "fantasyTeam": "Ten Feline Overlords",
+      "fantasyTeamId": "1",
+      "fantasyTeam": "Blitzmaster",
       "ownership": "rostered",
-      "rosterSlot": "W/R/T",
-      "injuryStatus": null,
+      "rosterSlot": "IR",
+      "injuryStatus": "O",
       "conditionalPointsPerGame": 7.49,
       "opponent": "WAS",
       "gameDate": "2026-10-19",
@@ -7393,10 +7393,10 @@
       "location": "home",
       "matchupFactor": 1.0859,
       "activeGamePoints": 8.13,
-      "weeklyProjectedPoints": 8.13,
+      "weeklyProjectedPoints": 0,
       "weeklyAvailability": "no_reported_restriction",
-      "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-10T02:53:22.198Z"
+      "forecastStatus": "unavailable_reported",
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -7441,7 +7441,7 @@
       "weeklyProjectedPoints": 7.25,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -7565,7 +7565,7 @@
       "fantasyTeam": "Playmaker Adam",
       "ownership": "rostered",
       "rosterSlot": "BN",
-      "injuryStatus": "IR",
+      "injuryStatus": "IR-R",
       "conditionalPointsPerGame": 7.84,
       "opponent": null,
       "gameDate": null,
@@ -7576,7 +7576,7 @@
       "weeklyProjectedPoints": 0,
       "weeklyAvailability": "out",
       "forecastStatus": "bye",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -7610,7 +7610,7 @@
       "fantasyTeam": "Blitzmaster",
       "ownership": "rostered",
       "rosterSlot": "BN",
-      "injuryStatus": "Q",
+      "injuryStatus": "O",
       "conditionalPointsPerGame": 7.81,
       "opponent": "LV",
       "gameDate": "2026-10-18",
@@ -7618,10 +7618,10 @@
       "location": "away",
       "matchupFactor": 1.0549,
       "activeGamePoints": 8.24,
-      "weeklyProjectedPoints": null,
+      "weeklyProjectedPoints": 0,
       "weeklyAvailability": "uncertain",
-      "forecastStatus": "needs_availability_confirmation",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "forecastStatus": "unavailable_reported",
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -7700,7 +7700,7 @@
       "fantasyTeam": "Blitzmaster",
       "ownership": "rostered",
       "rosterSlot": "WR",
-      "injuryStatus": null,
+      "injuryStatus": "IR",
       "conditionalPointsPerGame": 7.16,
       "opponent": "NYJ",
       "gameDate": "2026-10-18",
@@ -7708,10 +7708,10 @@
       "location": "home",
       "matchupFactor": 0.9272,
       "activeGamePoints": 6.64,
-      "weeklyProjectedPoints": 6.64,
+      "weeklyProjectedPoints": 0,
       "weeklyAvailability": "no_reported_restriction",
-      "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "forecastStatus": "unavailable_reported",
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "TE",
@@ -7834,7 +7834,7 @@
       "fantasyTeamId": "2",
       "fantasyTeam": "Stochastically Bounded Ends",
       "ownership": "rostered",
-      "rosterSlot": "BN",
+      "rosterSlot": "W/R/T",
       "injuryStatus": null,
       "conditionalPointsPerGame": 7.34,
       "opponent": "HOU",
@@ -7846,7 +7846,7 @@
       "weeklyProjectedPoints": 8.07,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -7924,7 +7924,7 @@
       "fantasyTeamId": "10",
       "fantasyTeam": "Walking Drafters",
       "ownership": "rostered",
-      "rosterSlot": "BN",
+      "rosterSlot": "W/R/T",
       "injuryStatus": null,
       "conditionalPointsPerGame": 7.89,
       "opponent": "HOU",
@@ -7936,7 +7936,7 @@
       "weeklyProjectedPoints": 7.18,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "RB",
@@ -7981,7 +7981,7 @@
       "weeklyProjectedPoints": 6.95,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -8026,7 +8026,7 @@
       "weeklyProjectedPoints": 8.52,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -8160,7 +8160,7 @@
       "weeklyProjectedPoints": 7.59,
       "weeklyAvailability": "bye",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z",
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z",
       "gameTime": null
     },
     {
@@ -8205,7 +8205,7 @@
       "weeklyProjectedPoints": 6.95,
       "weeklyAvailability": "bye",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z",
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z",
       "gameTime": null
     },
     {
@@ -8251,7 +8251,7 @@
       "weeklyProjectedPoints": 6.91,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "RB",
@@ -8431,7 +8431,7 @@
       "weeklyProjectedPoints": 6.83,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "RB",
@@ -8476,7 +8476,7 @@
       "weeklyProjectedPoints": 6.54,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -8566,7 +8566,7 @@
       "weeklyProjectedPoints": 9.25,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -8734,8 +8734,8 @@
       "fantasyTeamId": "4",
       "fantasyTeam": "the football understander",
       "ownership": "rostered",
-      "rosterSlot": "BN",
-      "injuryStatus": "Q",
+      "rosterSlot": "WR",
+      "injuryStatus": null,
       "conditionalPointsPerGame": 7.08,
       "opponent": "KC",
       "gameDate": "2026-10-18",
@@ -8743,10 +8743,10 @@
       "location": "away",
       "matchupFactor": 0.9016,
       "activeGamePoints": 6.38,
-      "weeklyProjectedPoints": null,
+      "weeklyProjectedPoints": 6.38,
       "weeklyAvailability": "out",
-      "forecastStatus": "needs_availability_confirmation",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "forecastStatus": "assuming_active",
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -8881,7 +8881,7 @@
       "weeklyProjectedPoints": null,
       "weeklyAvailability": "uncertain",
       "forecastStatus": "needs_availability_confirmation",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -8926,7 +8926,7 @@
       "weeklyProjectedPoints": 0,
       "weeklyAvailability": "out",
       "forecastStatus": "unavailable_reported",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -9016,7 +9016,7 @@
       "weeklyProjectedPoints": 6.35,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -9241,7 +9241,7 @@
       "weeklyProjectedPoints": 6.81,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -9376,7 +9376,7 @@
       "weeklyProjectedPoints": 0,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "bye",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -9451,10 +9451,10 @@
       "matchMethod": "crosswalk",
       "name": "Keon Coleman",
       "nflTeam": "Buf",
-      "fantasyTeamId": "1",
-      "fantasyTeam": "Blitzmaster",
-      "ownership": "rostered",
-      "rosterSlot": "BN",
+      "fantasyTeamId": null,
+      "fantasyTeam": null,
+      "ownership": "unverified",
+      "rosterSlot": null,
       "injuryStatus": null,
       "conditionalPointsPerGame": 6.72,
       "opponent": "LV",
@@ -9556,7 +9556,7 @@
       "weeklyProjectedPoints": 0,
       "weeklyAvailability": "out",
       "forecastStatus": "unavailable_reported",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -9586,10 +9586,10 @@
       "matchMethod": "crosswalk",
       "name": "Roman Wilson",
       "nflTeam": "Pit",
-      "fantasyTeamId": "3",
-      "fantasyTeam": "Lone Wolf Stacy",
-      "ownership": "rostered",
-      "rosterSlot": "BN",
+      "fantasyTeamId": null,
+      "fantasyTeam": null,
+      "ownership": "unverified",
+      "rosterSlot": null,
       "injuryStatus": "O",
       "conditionalPointsPerGame": 5.89,
       "opponent": "TB",
@@ -9634,7 +9634,7 @@
       "fantasyTeamId": "10",
       "fantasyTeam": "Walking Drafters",
       "ownership": "rostered",
-      "rosterSlot": "BN",
+      "rosterSlot": "RB",
       "injuryStatus": null,
       "conditionalPointsPerGame": 7.5,
       "opponent": "ARI",
@@ -9646,7 +9646,7 @@
       "weeklyProjectedPoints": 7.2,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -9781,7 +9781,7 @@
       "weeklyProjectedPoints": 7.26,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "TE",
@@ -9826,7 +9826,7 @@
       "weeklyProjectedPoints": 6.48,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -9860,7 +9860,7 @@
       "fantasyTeam": "the football understander",
       "ownership": "rostered",
       "rosterSlot": "BN",
-      "injuryStatus": "D",
+      "injuryStatus": "O",
       "conditionalPointsPerGame": 6.11,
       "opponent": "KC",
       "gameDate": "2026-10-18",
@@ -9868,10 +9868,10 @@
       "location": "away",
       "matchupFactor": 0.9016,
       "activeGamePoints": 5.51,
-      "weeklyProjectedPoints": null,
+      "weeklyProjectedPoints": 0,
       "weeklyAvailability": "no_reported_restriction",
-      "forecastStatus": "needs_availability_confirmation",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "forecastStatus": "unavailable_reported",
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -10126,10 +10126,10 @@
       "matchMethod": "exact_name_position_team",
       "name": "Dohnte Meyers",
       "nflTeam": "Cin",
-      "fantasyTeamId": "3",
-      "fantasyTeam": "Lone Wolf Stacy",
-      "ownership": "rostered",
-      "rosterSlot": "BN",
+      "fantasyTeamId": null,
+      "fantasyTeam": null,
+      "ownership": "unverified",
+      "rosterSlot": null,
       "injuryStatus": null,
       "conditionalPointsPerGame": 5.91,
       "opponent": null,
@@ -10186,7 +10186,7 @@
       "weeklyProjectedPoints": 6.26,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -10366,7 +10366,7 @@
       "weeklyProjectedPoints": 8.2,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "RB",
@@ -10411,7 +10411,7 @@
       "weeklyProjectedPoints": 6.15,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -10456,7 +10456,7 @@
       "weeklyProjectedPoints": 0,
       "weeklyAvailability": "out",
       "forecastStatus": "unavailable_reported",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -10501,7 +10501,7 @@
       "weeklyProjectedPoints": 5.36,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -10636,7 +10636,7 @@
       "weeklyProjectedPoints": 5.46,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "TE",
@@ -10711,10 +10711,10 @@
       "matchMethod": "crosswalk",
       "name": "Najee Harris",
       "nflTeam": "NYG",
-      "fantasyTeamId": null,
-      "fantasyTeam": "Available",
-      "ownership": "available",
-      "rosterSlot": null,
+      "fantasyTeamId": "8",
+      "fantasyTeam": "Playmaker Adam",
+      "ownership": "rostered",
+      "rosterSlot": "RB",
       "injuryStatus": null,
       "conditionalPointsPerGame": 5.65,
       "opponent": "NO",
@@ -10726,7 +10726,7 @@
       "weeklyProjectedPoints": 6.22,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-10T02:53:22.198Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -10771,7 +10771,7 @@
       "weeklyProjectedPoints": 0,
       "weeklyAvailability": "out",
       "forecastStatus": "bye",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -10816,7 +10816,7 @@
       "weeklyProjectedPoints": 5.78,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "RB",
@@ -10849,7 +10849,7 @@
       "fantasyTeamId": "9",
       "fantasyTeam": "Screen Pass Eva",
       "ownership": "rostered",
-      "rosterSlot": "W/R/T",
+      "rosterSlot": "RB",
       "injuryStatus": null,
       "conditionalPointsPerGame": 7.39,
       "opponent": "NE",
@@ -10861,7 +10861,7 @@
       "weeklyProjectedPoints": 7.29,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -11161,10 +11161,10 @@
       "matchMethod": "crosswalk",
       "name": "Kendrick Bourne",
       "nflTeam": "Ari",
-      "fantasyTeamId": null,
-      "fantasyTeam": "Available",
-      "ownership": "available",
-      "rosterSlot": null,
+      "fantasyTeamId": "3",
+      "fantasyTeam": "Lone Wolf Stacy",
+      "ownership": "rostered",
+      "rosterSlot": "BN",
       "injuryStatus": null,
       "conditionalPointsPerGame": 6.41,
       "opponent": "LAR",
@@ -11176,7 +11176,7 @@
       "weeklyProjectedPoints": 6.13,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-10T02:53:22.198Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "TE",
@@ -11210,7 +11210,7 @@
       "fantasyTeam": "I’m confused",
       "ownership": "rostered",
       "rosterSlot": "BN",
-      "injuryStatus": "Q",
+      "injuryStatus": null,
       "conditionalPointsPerGame": 5.37,
       "opponent": "NE",
       "gameDate": "2026-10-18",
@@ -11218,10 +11218,10 @@
       "location": "away",
       "matchupFactor": 0.9095,
       "activeGamePoints": 4.88,
-      "weeklyProjectedPoints": null,
+      "weeklyProjectedPoints": 4.88,
       "weeklyAvailability": "no_reported_restriction",
-      "forecastStatus": "needs_availability_confirmation",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "forecastStatus": "assuming_active",
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "TE",
@@ -11356,7 +11356,7 @@
       "weeklyProjectedPoints": 0,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "bye",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -11791,10 +11791,10 @@
       "matchMethod": "crosswalk",
       "name": "Tank Bigsby",
       "nflTeam": "Phi",
-      "fantasyTeamId": "4",
-      "fantasyTeam": "the football understander",
-      "ownership": "rostered",
-      "rosterSlot": "BN",
+      "fantasyTeamId": null,
+      "fantasyTeam": null,
+      "ownership": "unverified",
+      "rosterSlot": null,
       "injuryStatus": "IR",
       "conditionalPointsPerGame": 5.51,
       "opponent": "CAR",
@@ -11896,7 +11896,7 @@
       "weeklyProjectedPoints": 5.71,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -12121,7 +12121,7 @@
       "weeklyProjectedPoints": 4.55,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -12241,10 +12241,10 @@
       "matchMethod": "crosswalk",
       "name": "Kimani Vidal",
       "nflTeam": "LAC",
-      "fantasyTeamId": null,
-      "fantasyTeam": "Available",
-      "ownership": "available",
-      "rosterSlot": null,
+      "fantasyTeamId": "1",
+      "fantasyTeam": "Blitzmaster",
+      "ownership": "rostered",
+      "rosterSlot": "RB",
       "injuryStatus": null,
       "conditionalPointsPerGame": 6.17,
       "opponent": "KC",
@@ -12256,7 +12256,7 @@
       "weeklyProjectedPoints": 6.02,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-10T02:53:22.198Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "QB",
@@ -12391,7 +12391,7 @@
       "weeklyProjectedPoints": 5.73,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "TE",
@@ -12661,7 +12661,7 @@
       "weeklyProjectedPoints": 5.86,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "TE",
@@ -12830,7 +12830,7 @@
       "fantasyTeam": "Juicy Juke Brody",
       "ownership": "rostered",
       "rosterSlot": "BN",
-      "injuryStatus": null,
+      "injuryStatus": "Q",
       "conditionalPointsPerGame": 5.4,
       "opponent": "CLE",
       "gameDate": "2026-10-18",
@@ -12838,10 +12838,10 @@
       "location": "away",
       "matchupFactor": 1.0663,
       "activeGamePoints": 5.76,
-      "weeklyProjectedPoints": 5.76,
+      "weeklyProjectedPoints": null,
       "weeklyAvailability": "no_reported_restriction",
-      "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "forecastStatus": "needs_availability_confirmation",
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -12976,7 +12976,7 @@
       "weeklyProjectedPoints": 0,
       "weeklyAvailability": "out",
       "forecastStatus": "unavailable_reported",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -13111,7 +13111,7 @@
       "weeklyProjectedPoints": 0,
       "weeklyAvailability": "out",
       "forecastStatus": "unavailable_reported",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -13381,7 +13381,7 @@
       "weeklyProjectedPoints": 0,
       "weeklyAvailability": "out",
       "forecastStatus": "unavailable_reported",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -13456,10 +13456,10 @@
       "matchMethod": "exact_name_position_team",
       "name": "Mike Washington Jr.",
       "nflTeam": "LV",
-      "fantasyTeamId": "6",
-      "fantasyTeam": "Hard Count Kai",
-      "ownership": "rostered",
-      "rosterSlot": "BN",
+      "fantasyTeamId": null,
+      "fantasyTeam": null,
+      "ownership": "unverified",
+      "rosterSlot": null,
       "injuryStatus": null,
       "conditionalPointsPerGame": 4.42,
       "opponent": "BUF",
@@ -13876,7 +13876,7 @@
       "weeklyProjectedPoints": 3.87,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -14266,10 +14266,10 @@
       "matchMethod": "exact_name_position_team",
       "name": "Germie Bernard",
       "nflTeam": "Pit",
-      "fantasyTeamId": null,
-      "fantasyTeam": "Available",
-      "ownership": "available",
-      "rosterSlot": null,
+      "fantasyTeamId": "3",
+      "fantasyTeam": "Lone Wolf Stacy",
+      "ownership": "rostered",
+      "rosterSlot": "BN",
       "injuryStatus": null,
       "conditionalPointsPerGame": 5.39,
       "opponent": "TB",
@@ -14281,7 +14281,7 @@
       "weeklyProjectedPoints": 4.95,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-10T02:53:22.198Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "RB",
@@ -14371,7 +14371,7 @@
       "weeklyProjectedPoints": 3.8,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "RB",
@@ -14941,10 +14941,10 @@
       "matchMethod": "crosswalk",
       "name": "Tyrone Tracy Jr.",
       "nflTeam": "NYG",
-      "fantasyTeamId": "8",
-      "fantasyTeam": "Playmaker Adam",
-      "ownership": "rostered",
-      "rosterSlot": "BN",
+      "fantasyTeamId": null,
+      "fantasyTeam": null,
+      "ownership": "unverified",
+      "rosterSlot": null,
       "injuryStatus": null,
       "conditionalPointsPerGame": 4.23,
       "opponent": "NO",
@@ -15270,7 +15270,7 @@
       "weeklyProjectedPoints": 0,
       "weeklyAvailability": "bye",
       "forecastStatus": "unavailable_reported",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z",
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z",
       "gameTime": null
     },
     {
@@ -16350,7 +16350,7 @@
       "weeklyProjectedPoints": 3.78,
       "weeklyAvailability": "bye",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z",
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z",
       "gameTime": null
     },
     {
@@ -17776,10 +17776,10 @@
       "matchMethod": "crosswalk",
       "name": "Will Shipley",
       "nflTeam": "Phi",
-      "fantasyTeamId": "3",
-      "fantasyTeam": "Lone Wolf Stacy",
-      "ownership": "rostered",
-      "rosterSlot": "BN",
+      "fantasyTeamId": null,
+      "fantasyTeam": null,
+      "ownership": "unverified",
+      "rosterSlot": null,
       "injuryStatus": "D",
       "conditionalPointsPerGame": 3.66,
       "opponent": "CAR",
@@ -18196,7 +18196,7 @@
       "weeklyProjectedPoints": 0,
       "weeklyAvailability": "uncertain",
       "forecastStatus": "bye",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "TE",
@@ -19456,7 +19456,7 @@
       "weeklyProjectedPoints": 2.4,
       "weeklyAvailability": "no_reported_restriction",
       "forecastStatus": "assuming_active",
-      "injurySnapshotAt": "2026-10-13T20:04:37.921Z"
+      "injurySnapshotAt": "2026-10-20T02:08:52.646Z"
     },
     {
       "position": "WR",
@@ -20366,6 +20366,6 @@
     "needsReview": 17,
     "assumingActive": 382
   },
-  "preparedAt": "2026-10-13T20:04:37.921Z",
+  "preparedAt": "2026-10-20T02:08:52.646Z",
   "defenseThroughWeek": 5
 }

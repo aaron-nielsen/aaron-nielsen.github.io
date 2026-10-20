@@ -80,73 +80,179 @@
     },
     {
       "week": 7,
+      "retrievedAt": "2026-10-20T02:06:32.319Z",
       "matchups": [
         {
+          "matchupId": 1,
+          "week": 7,
+          "status": "upcoming",
           "home": {
+            "teamKey": "470.l.258793.t.1",
+            "teamId": "1",
+            "teamName": "Blitzmaster",
+            "points": 0,
+            "projectedPoints": 72.51,
+            "winProbability": 0.26,
             "id": "1",
             "name": "Blitzmaster"
           },
           "away": {
+            "teamKey": "470.l.258793.t.8",
+            "teamId": "8",
+            "teamName": "Playmaker Adam",
+            "points": 0,
+            "projectedPoints": 95.76,
+            "winProbability": 0.74,
             "id": "8",
             "name": "Playmaker Adam"
           }
         },
         {
+          "matchupId": 2,
+          "week": 7,
+          "status": "upcoming",
           "home": {
+            "teamKey": "470.l.258793.t.2",
+            "teamId": "2",
+            "teamName": "Stochastically Bounded Ends",
+            "points": 0,
+            "projectedPoints": 80.22,
+            "winProbability": 0.35,
             "id": "2",
             "name": "Stochastically Bounded Ends"
           },
           "away": {
+            "teamKey": "470.l.258793.t.4",
+            "teamId": "4",
+            "teamName": "the football understander",
+            "points": 0,
+            "projectedPoints": 94.4,
+            "winProbability": 0.65,
             "id": "4",
             "name": "the football understander"
           }
         },
         {
+          "matchupId": 3,
+          "week": 7,
+          "status": "upcoming",
           "home": {
+            "teamKey": "470.l.258793.t.3",
+            "teamId": "3",
+            "teamName": "Lone Wolf Stacy",
+            "points": 0,
+            "projectedPoints": 83.31,
+            "winProbability": 0.57,
             "id": "3",
             "name": "Lone Wolf Stacy"
           },
           "away": {
+            "teamKey": "470.l.258793.t.9",
+            "teamId": "9",
+            "teamName": "Screen Pass Eva",
+            "points": 0,
+            "projectedPoints": 76.69,
+            "winProbability": 0.43,
             "id": "9",
             "name": "Screen Pass Eva"
           }
         },
         {
+          "matchupId": 4,
+          "week": 7,
+          "status": "upcoming",
           "home": {
+            "teamKey": "470.l.258793.t.5",
+            "teamId": "5",
+            "teamName": "I’m confused",
+            "points": 0,
+            "projectedPoints": 38.01,
+            "winProbability": 0.06,
             "id": "5",
             "name": "I’m confused"
           },
           "away": {
+            "teamKey": "470.l.258793.t.10",
+            "teamId": "10",
+            "teamName": "Walking Drafters",
+            "points": 0,
+            "projectedPoints": 85.89,
+            "winProbability": 0.94,
             "id": "10",
             "name": "Walking Drafters"
           }
         },
         {
+          "matchupId": 5,
+          "week": 7,
+          "status": "upcoming",
           "home": {
+            "teamKey": "470.l.258793.t.6",
+            "teamId": "6",
+            "teamName": "Hard Count Kai",
+            "points": 0,
+            "projectedPoints": 104.12,
+            "winProbability": 0.46,
             "id": "6",
             "name": "Hard Count Kai"
           },
           "away": {
+            "teamKey": "470.l.258793.t.7",
+            "teamId": "7",
+            "teamName": "Ten Feline Overlords",
+            "points": 0,
+            "projectedPoints": 109.03,
+            "winProbability": 0.54,
             "id": "7",
             "name": "Ten Feline Overlords"
           }
         },
         {
+          "matchupId": 6,
+          "week": 7,
+          "status": "upcoming",
           "home": {
+            "teamKey": "470.l.258793.t.11",
+            "teamId": "11",
+            "teamName": "Stiff Arm Beth",
+            "points": 0,
+            "projectedPoints": 84.77,
+            "winProbability": 0.57,
             "id": "11",
             "name": "Stiff Arm Beth"
           },
           "away": {
+            "teamKey": "470.l.258793.t.12",
+            "teamId": "12",
+            "teamName": "Juicy Juke Brody",
+            "points": 0,
+            "projectedPoints": 77.4,
+            "winProbability": 0.43,
             "id": "12",
             "name": "Juicy Juke Brody"
           }
         },
         {
+          "matchupId": 7,
+          "week": 7,
+          "status": "upcoming",
           "home": {
+            "teamKey": "470.l.258793.t.13",
+            "teamId": "13",
+            "teamName": "NO PARKING",
+            "points": 0,
+            "projectedPoints": 90.43,
+            "winProbability": 0.64,
             "id": "13",
             "name": "NO PARKING"
           },
           "away": {
+            "teamKey": "470.l.258793.t.14",
+            "teamId": "14",
+            "teamName": "Bench Warmers",
+            "points": 0,
+            "projectedPoints": 78.35,
+            "winProbability": 0.36,
             "id": "14",
             "name": "Bench Warmers"
           }

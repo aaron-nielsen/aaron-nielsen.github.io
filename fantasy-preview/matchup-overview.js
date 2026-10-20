@@ -24,7 +24,8 @@ function submitted(data,teamId){
   const points=out||bye?0:raw!=null&&Number.isFinite(Number(raw))?Number(raw):null;
   const opponent=report?.opponent??frame?.opponent;
   const home=report?report.location==='home':frame?.home;
-  return {slot,player:p,points,conditional,label:out?'OUT':bye?'BYE':points==null?'—':points.toFixed(1)+(conditional?'＊':''),opponent:bye?'Bye week':opponent?(home?'vs ':'@ ')+opponent:'Schedule unavailable'};
+  const actual=Number(p.actualPointsWeek)===Number(data.week)&&Number.isFinite(p.actualPoints)?p.actualPoints:null;
+  return {slot,player:p,points,actual,conditional,label:out?'OUT':bye?'BYE':points==null?'—':points.toFixed(1)+(conditional?'＊':''),opponent:bye?'Bye week':opponent?(home?'vs ':'@ ')+opponent:'Schedule unavailable'};
  });
  return {rows,conditional:rows.some(r=>r.conditional),total:rows.every(r=>r.points!=null)?rows.reduce((s,r)=>s+r.points,0):null};
 }
@@ -52,10 +53,10 @@ function render(data){
  const a=build(data,data.you.id),b=build(data,data.other.id);
  const person=(r,side)=>{
   const identity='<span class="matchup-identity"><strong>'+(r.player?(root.DaVinciPlayerDetail?.link(r.player)||esc(r.player.name)):'Empty slot')+'</strong><small>'+esc([r.player?.nflTeam,r.opponent,r.player?.status].filter(Boolean).join(' · '))+'</small></span>';
-  const score='<b title="'+(r.points==null?'Projection pending':r.label==='OUT'?'Out':r.label==='BYE'?'Bye week':'Da Vinci projected points')+'">'+esc(r.label.replace('＊',''))+(r.conditional?'<sup class="forecast-conditional" title="Projected if active">†</sup>':'')+'</b>';
+  const score=r.actual!=null?'<b title="Scored so far">'+r.actual.toFixed(1)+'</b>':'<b title="'+(r.points==null?'Projection pending':r.label==='OUT'?'Out':r.label==='BYE'?'Bye week':'Da Vinci projected points')+'">'+esc(r.label.replace('＊',''))+(r.conditional?'<sup class="forecast-conditional" title="Projected if active">†</sup>':'')+'</b>';
   return '<div class="matchup-player '+side+'">'+(side==='left'?identity+score:score+identity)+'</div>';
  };
- target.innerHTML=a.rows.map((r,i)=>'<div class="matchup-starter-row">'+person(r,'left')+'<span class="matchup-slot">'+(r.slot==='W/R/T'?'FLEX':r.slot)+'</span>'+person(b.rows[i],'right')+'</div>').join('')+
+ target.innerHTML=(!future&&a.rows.some(r=>r.actual!=null)?'<div class="future-lineup-label">Points scored</div>':'')+a.rows.map((r,i)=>'<div class="matchup-starter-row">'+person(r,'left')+'<span class="matchup-slot">'+(r.slot==='W/R/T'?'FLEX':r.slot)+'</span>'+person(b.rows[i],'right')+'</div>').join('')+
   '<details class="projection-details"><summary>Projection details</summary><p>'+(future?'Future weeks use optimized current rosters, without assumed pickups. Yahoo totals are omitted because submitted future lineups may differ. ':'')+'† means if active, including the team total. Da Vinci and Yahoo totals use each manager’s current starters. OUT and BYE count as zero; — means a projection is missing, including any team total that depends on it. Projections assume participation unless adjusted for availability. K/DEF estimates are experimental.</p></details>';
 
 }

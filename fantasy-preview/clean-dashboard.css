@@ -1098,9 +1098,7 @@ body{font:16px/1.48 'Source Sans 3',Arial,sans-serif;color:var(--text);backgroun
 #page-overview .overview-team-header .overview-metrics strong{font-size:22px!important}
 #page-overview .overview-team-header .overview-metrics small{font-size:12px!important;text-transform:none!important;letter-spacing:0!important}
 .metric-pending{font-size:11px;color:#8a6c48}
-.overview-disclosure,.matchup-lineup-details>summary,.waiver-watch-details>summary{padding:14px 18px;font-weight:650;font-size:14px;cursor:pointer;color:#65513d}
-.matchup-lineup-details>summary{text-align:center;padding:12px 0;border-top:1px solid #e9dfd2}
-.matchup-lineup-details[open]>summary{margin-bottom:8px}
+.overview-disclosure,.waiver-watch-details>summary{padding:14px 18px;font-weight:650;font-size:14px;cursor:pointer;color:#65513d}
 #page-overview .planning-shortcut{margin:16px 0;padding:14px 18px;background:#f7efe2}
 #page-overview .planning-shortcut>div{flex:1;min-width:0}
 #page-overview .planning-shortcut strong{font-size:15px;display:block}

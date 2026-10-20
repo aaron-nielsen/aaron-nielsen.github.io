@@ -37,9 +37,9 @@ for(const folder of ['data/','data/nebraska/']){
  assert.equal(pierce.weeks.find(f=>f.week===6).points,0,'Pierce is barred Week 6');
  assert.ok(!sandbox.DaVinciReturns.ready(pierce,7),'Only 35% scenario, not in projected starters Week 7');
  assert.ok(sandbox.DaVinciReturns.ready(pierce,8),'Consider Pierce from Week 8 at 55%');
- assert.ok(!sandbox.DaVinciReturns.ready(jacobs,12));
+ assert.ok(sandbox.DaVinciReturns.ready(jacobs,7),'Verified eligibility begins Week 7; do not retain the old speculative suspension discount');
  assert.ok(sandbox.DaVinciReturns.ready(jacobs,13));
- assert.ok(jacobs.weeks.find(f=>f.week===13).activePoints>jacobs.weeks.find(f=>f.week===13).points);
+ assert.equal(jacobs.weeks.find(f=>f.week===13).activePoints,jacobs.weeks.find(f=>f.week===13).points);
  console.log(folder+' verified projected return windows and conditional versus probability-weighted points');
 }
 // Check optimizer re-introduces only a specifically reviewed, plausibly available player.
