@@ -111,7 +111,7 @@ const repaired=context.DaVinciPersonalTrades.repairRoster(own.concat(other[9]),o
 assert.equal(repaired.players.length,own.length);assert.ok(repaired.players.some(p=>p.id===other[9].id));assert.match(repaired.notes.join(),/Drop/);
 assert.equal(context.DaVinciPersonalTrades.repairRoster(own.slice(0,-1),own,new Set(),[6,7]),null,'Missing free agents cannot invent roster repair');
 
-vm.runInNewContext(read('trade-preferences.js').replace('root.DaVinciPersonalTrades={init,active,render};','root.DaVinciPersonalTrades={init,active,render,yahooEvaluation,arbitrageValues,getCandidates};'),context);
+vm.runInNewContext(read('trade-preferences.js').replace('root.DaVinciPersonalTrades={init,active,render};','root.DaVinciPersonalTrades={init,active,render,yahooEvaluation,arbitrageValues,getCandidates,distinctTrades};'),context);
 getElementById('tradePackageFilter').value='balanced_all';
 const offer={partner:rosters.teams[1],send:{players:[own[9]]},receive:{players:[other[9]]}};
 const yourAfter=own.slice(0,-1).concat(other[9]),theirAfter=other.slice(0,-1).concat(own[9]);
@@ -126,6 +126,13 @@ assert.equal(arb.players[0].arbitrage,36,'An outgoing player more useful to the 
 assert.equal(arb.players[1].arbitrage,-6,'An incoming player more useful to its owner is negative arbitrage');
 assert.equal(arb.total,30,'Total marginal value sums both transfer spreads');
 assert.equal(arb.fullTrade,34,'Full trade impact is independently recomputed rather than summing overlapping player values');
+const variant={...offer,send:{players:[own[9],own[7]]},receive:{players:[other[9],other[8]]}};
+const alternative={...offer,receive:{players:[other[3]]}};
+const distinct=context.DaVinciPersonalTrades.distinctTrades([offer,variant,alternative],rosters.teams[0],[6,7]);
+assert.equal(distinct.length,2,'A kicker/defense throw-in must not turn the same target into another trade idea');
+assert.equal(distinct[0],offer,'Keep the highest-ranked package for the target');
+assert.equal(distinct[1],alternative,'Different targets remain available');
+
 getElementById('tradeGoal').value='arbitrage';
 assert.ok(context.DaVinciPersonalTrades.getCandidates().some(c=>c.send.players.some(p=>p.id==='my-trade')&&c.receive.players.some(p=>p.id==='their-target')),'Positive outgoing arbitrage can qualify despite negative incoming arbitrage');
 context.DaVinciPersonalTrades.render();

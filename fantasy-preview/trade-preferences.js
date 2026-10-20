@@ -390,6 +390,17 @@ function partnersHTML(options){
  const yahooOnly=['arbitrage','yahoo'].includes($('tradeGoal')?.value);
  return '<div class="trade-partner-fits"><strong>Best partner fits</strong>'+rows.map(t=>{const you=yahooOnly?t.yahoo.gainYou:t.gainYou,them=yahooOnly||$('tradeGoal')?.value==='edge'?t.yahoo?.gainThem:t.gainThem;return '<button type="button" data-trade-partner="'+esc(t.partner.id)+'"><span>'+esc(t.partner.name)+'</span><small>You '+(you>=0?'+':'')+fmt(you)+(yahooOnly?' Yahoo':' DV')+' · Partner '+(them>=0?'+':'')+fmt(them)+(yahooOnly||$('tradeGoal')?.value==='edge'?' Yahoo':' DV')+'</small></button>';}).join('')+'</div>';
 }
+function distinctTrades(options){
+ const seenTargets=new Set(),result=[];
+ for(const trade of options){
+  const skill=trade.receive.players.filter(p=>!['K','DEF'].includes(p.position));
+  const targets=skill.length?skill:trade.receive.players;
+  if(targets.some(p=>seenTargets.has(id(p))))continue;
+  for(const player of targets)seenTargets.add(id(player));
+  result.push(trade);
+ }
+ return result;
+}
 function render(){
  const target=$('tradeResults');if(!target||!state)return;
  const job=++nextJob;
@@ -402,13 +413,12 @@ function render(){
   if(job!==nextJob)return;
   const shape=$('tradePackageFilter')?.value;
   if(['one_each','two_each','three_each'].includes(shape)){const n={one_each:1,two_each:2,three_each:3}[shape];options=options.filter(t=>t.send.players.length===n&&t.receive.players.length===n);}
-  const info=$('targetResults');if(info&&searchStats){info.innerHTML='<div class="trade-result-summary"><strong>'+options.length+' matching trades</strong><details><summary>Coverage & calculation</summary><p>'+searchStats.candidates+' packages screened'+($('tradeGoal')?.value==='model'?' · Da Vinci lineup projections.</p>':' · '+(searchStats.yahooCovered||0)+' with Yahoo coverage.</p>'+yahooCoverageHTML()+'<p>Yahoo: existing rosters, no waiver moves. Da Vinci upside is calculated separately.</p>'+yahooChecksHTML())+'</details></div>'+partnersHTML(options)+(['one_each','two_each','three_each'].includes($('tradePackageFilter')?.value)?'<button type="button" class="plan-export" id="broadenTrades">Include multi-player trades</button>':'');
+  options=distinctTrades(options);
+  const info=$('targetResults');if(info&&searchStats){info.innerHTML='<div class="trade-result-summary"><strong>'+options.length+' distinct trade ideas</strong><details><summary>Coverage & calculation</summary><p>'+searchStats.candidates+' packages screened'+($('tradeGoal')?.value==='model'?' · Da Vinci lineup projections.</p>':' · '+(searchStats.yahooCovered||0)+' with Yahoo coverage.</p>'+yahooCoverageHTML()+'<p>Yahoo: existing rosters, no waiver moves. Da Vinci upside is calculated separately.</p>'+yahooChecksHTML())+'</details></div>'+partnersHTML(options)+(['one_each','two_each','three_each'].includes($('tradePackageFilter')?.value)?'<button type="button" class="plan-export" id="broadenTrades">Include multi-player trades</button>':'');
    $('broadenTrades')?.addEventListener('click',()=>{$('tradePackageFilter').value='practical';render();});
    for(const button of info.querySelectorAll?.('[data-trade-partner]')||[])button.addEventListener('click',()=>{$('tradePartner').value=button.dataset.tradePartner;refresh();render();});
   }
-  const limit=Number($('tradeLimit')?.value||12),seenTargets=new Set(),first=[],variants=[];
-  for(const t of options){const key=t.partner.id+'/'+t.receive.players.filter(p=>!['K','DEF'].includes(p.position)).map(id).sort().join('.');if(seenTargets.has(key))variants.push(t);else{seenTargets.add(key);first.push(t);}}
-  const shown=first.concat(variants).slice(0,limit);
+  const shown=options.slice(0,Number($('tradeLimit')?.value||12));
   if(!shown.length){
    if(['arbitrage','edge','yahoo'].includes($('tradeGoal')?.value)){
     target.innerHTML='<div class="trade-personal-loading">No matching trades in this period. See coverage for incomplete comparisons.</div>';return;
