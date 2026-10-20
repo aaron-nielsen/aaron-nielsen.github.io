@@ -147,16 +147,10 @@ function renderWaivers(){
  });
  const dropChoices=roster.filter(p=>p.slot==='BN'&&!EXCLUDED.has(status(p))&&!OUT.has(status(p)));
  const moveCandidates=bestByPosition.flatMap(x=>x.list.slice(0,2));
- // The kicker forecast is based on the NFL offense's FG/PAT opportunities,
- // not kicker-specific accuracy. Do not recommend streaming a healthy kicker
- // for small, unvalidated week-to-week model differences.
- const needsKicker=roster.filter(p=>p.position==='K'&&p.slot!=='IR')
-  .every(p=>inaccessible(p,weeks[0])||!Number.isFinite(points(p,weeks[0]))||points(p,weeks[0])===0);
  const changes=[];
  if(allReady){
   const baseTotal=baselines.reduce((n,x)=>n+x.score,0);
   for(const candidate of moveCandidates){
-   if(candidate.position==='K'&&!needsKicker)continue;
    const possible=dropChoices.filter(p=>candidate.position!=='K'&&candidate.position!=='DEF');
    if(['K','DEF'].includes(candidate.position))
     possible.push(...roster.filter(p=>p.position===candidate.position&&p.slot!=='IR'));
@@ -173,11 +167,7 @@ function renderWaivers(){
   }
  }
  changes.sort((a,b)=>b.gain-a.gain);
- // Defense streaming needs a more substantial modeled edge than a skill
- // position; kicker additions are only suggested when the current K cannot
- // supply points (bye/inactive/empty), not as speculative marginal swaps.
- const shown=changes.filter(c=>c.gain/weeks.length>=
-  (c.p.position==='DEF'?1.75:c.p.position==='K'?0.8:0.85)).slice(0,4);
+ const shown=changes.filter(c=>c.gain/weeks.length>=(['K','DEF'].includes(c.p.position)?0.5:0.85)).slice(0,4);
  const highlights=shown.length?'<div class="decision-section-title">Potential upgrades</div>'+shown.map(c=>{
   const rate=c.gain/weeks.length;
   return '<div class="decision-row pickup-move"><span class="decision-position">'+esc(c.p.position)+'</span>'+
@@ -189,7 +179,7 @@ function renderWaivers(){
  const watch=''+
   '<div class="available-position-grid">'+bestByPosition.map(({pos,list})=>
    '<section class="available-position" aria-label="Top available '+pos+'"><h3>'+pos+'</h3>'+
-   '<div class="available-columns"><span>Player / next matchup</span><span>Next game</span><span>ROS total</span></div>'+
+   '<div class="available-columns"><span>Player / next matchup</span><span>'+(['K','DEF'].includes(pos)?'Next / gain':'Next game')+'</span><span>ROS total</span></div>'+
    (list.length?list.map(p=>{
     const frame=p.weeks?.find(g=>Number(g.week)>=first&&g.state!=='bye');
     const next=frame?points(p,Number(frame.week)):null;
@@ -197,13 +187,19 @@ function renderWaivers(){
     const code=status({...p,status:live?.status||p.injuryStatus||p.status});
     const matchup=frame?.opponent?(frame.home?'vs ':'@ ')+frame.opponent:'Schedule unavailable';
     const note=(frame?'W'+frame.week+' · ':'')+matchup+(code?' · '+code:'');
+    const ownedScores=frame?roster.filter(r=>r.position===pos&&!inaccessible(r,Number(frame.week))).map(r=>points(r,Number(frame.week))).filter(v=>v!=null):[];
+    const edge=['K','DEF'].includes(pos)&&next!=null&&ownedScores.length?next-Math.max(...ownedScores):null;
+    const edgeText=edge==null?'':'<small class="streaming-gain" title="Projected gain versus your best owned '+pos+'">('+(edge>=0?'+':'')+fmt(edge)+')</small>';
     return '<div class="decision-row pickup-watch"><span class="decision-position">'+pos+'</span>'+
      '<span class="decision-main"><strong>'+esc(p.name)+'</strong><small>'+esc(p.nflTeam||'')+' · '+esc(note)+'</small></span>'+
-     '<b>'+value(next)+'</b><b>'+value(totalFor(p,rosWeeks))+'</b></div>';
+     '<b>'+value(next)+edgeText+'</b><b>'+value(totalFor(p,rosWeeks))+'</b></div>';
    }).join(''):'<div class="decision-empty">No eligible modeled players.</div>')+'</section>'
   ).join('')+'</div>';
  const notice='<details class="projection-details"><summary>Projection details</summary><p>Next game skips byes. ROS is the total for Weeks '+first+'–'+state.future.endWeek+', including the current week and zero for byes. Estimates assume participation except explicit availability adjustments; check injuries and Yahoo waiver status. Missing forecasts show —. K/DEF projections are experimental.</p></details>';
- rootEl.innerHTML=highlights+'<details class="waiver-watch-details"><summary>Available players by position</summary>'+watch+'</details>'+notice+(!allReady?'<p class="available-notice">Pickup gains unavailable: a complete baseline lineup could not be projected.</p>':'');
+ const research=state.pickupResearch;
+ const researched=research&&Number(research.week)===Number(weeks[0])&&String(research.teamId)===String(state.teamId)?research.players.map(r=>({research:r,player:availableMap.get(String(r.id))})).filter(r=>r.player&&!roster.some(p=>String(p.id)===String(r.player.id))&&!OUT.has(status(r.player))&&!EXCLUDED.has(status(r.player))):[];
+ const shortlist=researched.length?'<section class="pickup-shortlist" aria-label="Pickup shortlist"><h3>Consider adding</h3>'+researched.map(({research:r,player:p})=>'<article class="pickup-shortlist-row"><strong>'+esc(p.name)+' <small>'+esc(p.position)+'</small></strong><span>'+esc(r.reason)+'</span><a href="'+esc(r.source)+'" target="_blank" rel="noopener">Report</a></article>').join('')+'<p>'+esc(research.rosterMove)+'</p><small>Reviewed '+esc(research.reviewedAt)+' · Bench additions, separate from projected starter gains</small></section>':'';
+ rootEl.innerHTML=shortlist+highlights+watch+notice+(!allReady?'<p class="available-notice">Pickup gains unavailable: a complete baseline lineup could not be projected.</p>':'');
  rootEl.setAttribute('aria-label','Roster pickup advice, ranked by '+label);
 
 }

@@ -84,7 +84,7 @@ const waivers=element('waiverRecommendations').innerHTML;
 for(const id of ['Available QB','Available RB','Available WR','Available TE','Available Kicker','Available Defense']){
  assert.ok(waivers.includes(id),'Missing available '+id);
 }
-assert.doesNotMatch(waivers,/Drop Current Kicker/,'Do not recommend a speculative healthy-kicker stream');
+assert.match(waivers,/Drop Current Kicker/,'Allow a meaningful kicker gain instead of suppressing healthy-kicker comparisons');
 const kickerWeek5=future.find(p=>p.yahooId==='k').weeks.find(w=>w.week===5);
 kickerWeek5.state='bye';
 kickerWeek5.points=0;
@@ -103,7 +103,7 @@ assert.equal(element('lineupChangeWeek').textContent,'WEEK 6');
 element('waiverHorizon').value='four_weeks';
 context.DaVinciAdvice.renderWaivers();
 assert.ok(element('waiverRecommendations').innerHTML.includes('Available Defense'));
-console.log('Roster-advice checks passed: nine slots, legal backups, injury exclusion, six-position availability, K bye coverage without speculative streaming, defense drops, week switching.');
+console.log('Roster-advice checks passed: nine slots, legal backups, injury exclusion, six-position availability, K/DEF streaming gains and bye coverage, defense drops, week switching.');
 
 
 /* Integration check with both actual league snapshots and K/DEF enrichment. */
@@ -140,7 +140,8 @@ for(const league of [
   assert.equal((group.match(/class="decision-row pickup-watch"/g)||[]).length,3,league.name+' requires three at every position');
  }
  assert.equal((html.match(/ROS total/g)||[]).length,6);
- assert.equal((html.match(/Next game<\/span>/g)||[]).length,6);
+ assert.equal((html.match(/Next game<\/span>/g)||[]).length,4);
+ assert.equal((html.match(/Next \/ gain<\/span>/g)||[]).length,2);
  const originalHTML=html;
  element('waiverHorizon').value='rest_of_season';context.DaVinciAdvice.renderWaivers();
  assert.equal((element('waiverRecommendations').innerHTML.match(/class="decision-row pickup-watch"/g)||[]).length,18,'ROS ranking retains three per position');
@@ -163,3 +164,12 @@ const byeHTML=element('waiverRecommendations').innerHTML;
 assert.match(byeHTML,/W6/);assert.match(byeHTML,/<b>20.0<\/b><b>35.0<\/b>/);
 byeForecast.weeks[2].points=null;context.DaVinciAdvice.renderWaivers();
 assert.match(element('waiverRecommendations').innerHTML,/<b>20.0<\/b><b>—<\/b>/,'Incomplete ROS must be unavailable, not a partial sum');
+
+// Researched suggestions must match this team/week and current availability.
+elements.clear();
+const shortlistData={rosters:{teams:[{id:'7',players:[]}]},available:{players:[{id:'byeQB',name:'Available research target',position:'QB'}]},future:{startWeek:5,endWeek:7,players:[byeForecast]},week:5,teamId:'7',pickupResearch:{week:5,teamId:'7',players:[{id:'byeQB',reason:'Verified available choice',source:'https://example.com/report'},{id:'removed',reason:'No longer available',source:'https://example.com/report'}],reviewedAt:'2026-10-20',rosterMove:'Use an extra bench slot.'}};
+context.DaVinciAdvice.init(shortlistData);
+assert.match(element('waiverRecommendations').innerHTML,/Verified available choice/);
+assert.doesNotMatch(element('waiverRecommendations').innerHTML,/No longer available/);
+shortlistData.pickupResearch.week=4;context.DaVinciAdvice.renderWaivers();
+assert.doesNotMatch(element('waiverRecommendations').innerHTML,/Verified available choice/,'Old research must not carry into a new week');

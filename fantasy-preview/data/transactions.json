@@ -2,13 +2,13 @@
   "source": "Yahoo completed transactions, rolling 30-day window",
   "leagueId": "470.l.258793",
   "season": 2026,
-  "retrievedAt": "2026-10-20T02:06:32.319Z",
+  "retrievedAt": "2026-10-20T20:10:44.623Z",
   "coverage": {
     "window": {
       "mode": "recent_30_days_timestamp",
       "weeks": [],
-      "start_timestamp_ms": 1789869871512,
-      "end_timestamp_ms": 1792461871512,
+      "start_timestamp_ms": 1789935012425,
+      "end_timestamp_ms": 1792527012425,
       "returned_rows": 71
     },
     "limitations": null,

@@ -1,0 +1,27 @@
+{
+  "week": 7,
+  "teamId": "7",
+  "leagueId": "470.l.258793",
+  "reviewedAt": "2026-10-20",
+  "players": [
+    {
+      "id": "40108",
+      "label": "Immediate RB depth",
+      "reason": "22 touches in Week 6; my first choice for a bench RB addition.",
+      "source": "https://www.fantasypros.com/2026/10/top-5-fantasy-football-waiver-wire-priority-pickups-week-7-2026/"
+    },
+    {
+      "id": "42652",
+      "label": "WR upside",
+      "reason": "Returned with six catches, 103 yards and a touchdown. A bench upside add.",
+      "source": "https://sports.yahoo.com/articles/fantasy-football-top-10-waiver-160445848.html"
+    },
+    {
+      "id": "40222",
+      "label": "WR depth",
+      "reason": "A short-term receiving option for bye-week cover; lower ceiling than Cooper.",
+      "source": "https://www.cbssports.com/nfl/players/3126241/demario-douglas/fantasy/"
+    }
+  ],
+  "rosterMove": "Use the extra kicker slot first: keep McPherson and consider dropping Butker. A second defense is the next expendable slot."
+}
