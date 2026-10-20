@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "retrievedAt": "2026-10-20T02:44:56.147Z",
+  "retrievedAt": "2026-10-20T20:34:01.821Z",
   "leagueId": "470.l.1699881",
   "teams": [
     {
@@ -18,7 +18,7 @@
           "slot": "QB",
           "status": null,
           "actualPoints": 0,
-          "actualPointsWeek": 6
+          "actualPointsWeek": 7
         },
         {
           "id": "29279",
@@ -28,8 +28,8 @@
           "position": "RB",
           "slot": "RB",
           "status": null,
-          "actualPoints": 4.5,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "41791",
@@ -39,19 +39,8 @@
           "position": "RB",
           "slot": "RB",
           "status": null,
-          "actualPoints": 13.8,
-          "actualPointsWeek": 6
-        },
-        {
-          "id": "27581",
-          "key": "470.p.27581",
-          "name": "Davante Adams",
-          "nflTeam": "LAR",
-          "position": "WR",
-          "slot": "WR",
-          "status": "O",
-          "actualPoints": 5.4,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "32692",
@@ -62,40 +51,7 @@
           "slot": "WR",
           "status": null,
           "actualPoints": 0,
-          "actualPointsWeek": 6
-        },
-        {
-          "id": "33392",
-          "key": "470.p.33392",
-          "name": "Kyle Pitts Sr.",
-          "nflTeam": "Atl",
-          "position": "TE",
-          "slot": "TE",
-          "status": null,
-          "actualPoints": 20.5,
-          "actualPointsWeek": 6
-        },
-        {
-          "id": "41900",
-          "key": "470.p.41900",
-          "name": "Bhayshul Tuten",
-          "nflTeam": "Jax",
-          "position": "RB",
-          "slot": "W/R/T",
-          "status": null,
-          "actualPoints": 22.7,
-          "actualPointsWeek": 6
-        },
-        {
-          "id": "26686",
-          "key": "470.p.26686",
-          "name": "Travis Kelce",
-          "nflTeam": "KC",
-          "position": "TE",
-          "slot": "BN",
-          "status": null,
-          "actualPoints": 7.3,
-          "actualPointsWeek": 6
+          "actualPointsWeek": 7
         },
         {
           "id": "40126",
@@ -103,10 +59,65 @@
           "name": "Josh Downs",
           "nflTeam": "Ind",
           "position": "WR",
+          "slot": "WR",
+          "status": null,
+          "actualPoints": 0,
+          "actualPointsWeek": 7
+        },
+        {
+          "id": "26686",
+          "key": "470.p.26686",
+          "name": "Travis Kelce",
+          "nflTeam": "KC",
+          "position": "TE",
+          "slot": "TE",
+          "status": null,
+          "actualPoints": 0,
+          "actualPointsWeek": 7
+        },
+        {
+          "id": "32725",
+          "key": "470.p.32725",
+          "name": "J.K. Dobbins",
+          "nflTeam": "Den",
+          "position": "RB",
+          "slot": "W/R/T",
+          "status": null,
+          "actualPoints": 0,
+          "actualPointsWeek": 7
+        },
+        {
+          "id": "27581",
+          "key": "470.p.27581",
+          "name": "Davante Adams",
+          "nflTeam": "LAR",
+          "position": "WR",
+          "slot": "BN",
+          "status": "O",
+          "actualPoints": 0,
+          "actualPointsWeek": 7
+        },
+        {
+          "id": "33392",
+          "key": "470.p.33392",
+          "name": "Kyle Pitts Sr.",
+          "nflTeam": "Atl",
+          "position": "TE",
           "slot": "BN",
           "status": null,
-          "actualPoints": 6.7,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
+        },
+        {
+          "id": "41900",
+          "key": "470.p.41900",
+          "name": "Bhayshul Tuten",
+          "nflTeam": "Jax",
+          "position": "RB",
+          "slot": "BN",
+          "status": null,
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "40201",
@@ -116,19 +127,8 @@
           "position": "WR",
           "slot": "BN",
           "status": null,
-          "actualPoints": 3.4,
-          "actualPointsWeek": 6
-        },
-        {
-          "id": "32725",
-          "key": "470.p.32725",
-          "name": "J.K. Dobbins",
-          "nflTeam": "Den",
-          "position": "RB",
-          "slot": "BN",
-          "status": null,
-          "actualPoints": 12.1,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "40900",
@@ -138,8 +138,8 @@
           "position": "QB",
           "slot": "BN",
           "status": null,
-          "actualPoints": 16.5,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "40114",
@@ -149,8 +149,8 @@
           "position": "WR",
           "slot": "BN",
           "status": null,
-          "actualPoints": 24.2,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "31482",
@@ -160,8 +160,8 @@
           "position": "K",
           "slot": "K",
           "status": null,
-          "actualPoints": 5,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "100021",
@@ -171,8 +171,8 @@
           "position": "DEF",
           "slot": "DEF",
           "status": null,
-          "actualPoints": 2,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         }
       ]
     },
@@ -190,8 +190,8 @@
           "position": "QB",
           "slot": "QB",
           "status": null,
-          "actualPoints": 23.8,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "41922",
@@ -202,7 +202,7 @@
           "slot": "RB",
           "status": null,
           "actualPoints": 0,
-          "actualPointsWeek": 6
+          "actualPointsWeek": 7
         },
         {
           "id": "34107",
@@ -212,8 +212,8 @@
           "position": "RB",
           "slot": "RB",
           "status": null,
-          "actualPoints": 5.3,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "32687",
@@ -223,8 +223,8 @@
           "position": "WR",
           "slot": "WR",
           "status": null,
-          "actualPoints": 11.5,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "41808",
@@ -234,8 +234,30 @@
           "position": "WR",
           "slot": "WR",
           "status": null,
-          "actualPoints": 19.4,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
+        },
+        {
+          "id": "40064",
+          "key": "470.p.40064",
+          "name": "Sam LaPorta",
+          "nflTeam": "Det",
+          "position": "TE",
+          "slot": "TE",
+          "status": null,
+          "actualPoints": 0,
+          "actualPointsWeek": 7
+        },
+        {
+          "id": "33500",
+          "key": "470.p.33500",
+          "name": "Amon-Ra St. Brown",
+          "nflTeam": "Det",
+          "position": "WR",
+          "slot": "W/R/T",
+          "status": null,
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "29269",
@@ -243,10 +265,10 @@
           "name": "Hunter Henry",
           "nflTeam": "NE",
           "position": "TE",
-          "slot": "TE",
+          "slot": "BN",
           "status": null,
-          "actualPoints": 12.8,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "34063",
@@ -254,10 +276,10 @@
           "name": "Dameon Pierce",
           "nflTeam": "Phi",
           "position": "RB",
-          "slot": "W/R/T",
+          "slot": "BN",
           "status": null,
-          "actualPoints": 13,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "42625",
@@ -266,31 +288,9 @@
           "nflTeam": "Ari",
           "position": "RB",
           "slot": "BN",
-          "status": "O",
+          "status": "Q",
           "actualPoints": 0,
-          "actualPointsWeek": 6
-        },
-        {
-          "id": "33500",
-          "key": "470.p.33500",
-          "name": "Amon-Ra St. Brown",
-          "nflTeam": "Det",
-          "position": "WR",
-          "slot": "BN",
-          "status": null,
-          "actualPoints": 0,
-          "actualPointsWeek": 6
-        },
-        {
-          "id": "40064",
-          "key": "470.p.40064",
-          "name": "Sam LaPorta",
-          "nflTeam": "Det",
-          "position": "TE",
-          "slot": "BN",
-          "status": null,
-          "actualPoints": 0,
-          "actualPointsWeek": 6
+          "actualPointsWeek": 7
         },
         {
           "id": "32703",
@@ -301,7 +301,7 @@
           "slot": "BN",
           "status": null,
           "actualPoints": 0,
-          "actualPointsWeek": 6
+          "actualPointsWeek": 7
         },
         {
           "id": "31833",
@@ -312,7 +312,7 @@
           "slot": "BN",
           "status": null,
           "actualPoints": 0,
-          "actualPointsWeek": 6
+          "actualPointsWeek": 7
         },
         {
           "id": "28378",
@@ -322,8 +322,8 @@
           "position": "K",
           "slot": "K",
           "status": null,
-          "actualPoints": 8,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "40835",
@@ -334,7 +334,7 @@
           "slot": "BN",
           "status": null,
           "actualPoints": 0,
-          "actualPointsWeek": 6
+          "actualPointsWeek": 7
         },
         {
           "id": "100014",
@@ -344,8 +344,8 @@
           "position": "DEF",
           "slot": "DEF",
           "status": null,
-          "actualPoints": 3,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         }
       ]
     },
@@ -363,8 +363,8 @@
           "position": "QB",
           "slot": "QB",
           "status": null,
-          "actualPoints": 16.64,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "34120",
@@ -374,8 +374,8 @@
           "position": "RB",
           "slot": "RB",
           "status": null,
-          "actualPoints": 8.2,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "41823",
@@ -385,8 +385,8 @@
           "position": "RB",
           "slot": "RB",
           "status": null,
-          "actualPoints": 2.5,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "40168",
@@ -396,8 +396,8 @@
           "position": "WR",
           "slot": "WR",
           "status": null,
-          "actualPoints": 11,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "33394",
@@ -407,8 +407,8 @@
           "position": "WR",
           "slot": "WR",
           "status": null,
-          "actualPoints": 4.4,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "33443",
@@ -418,8 +418,8 @@
           "position": "TE",
           "slot": "TE",
           "status": null,
-          "actualPoints": 2.1,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "27535",
@@ -428,9 +428,9 @@
           "nflTeam": "SF",
           "position": "WR",
           "slot": "W/R/T",
-          "status": "O",
-          "actualPoints": 10.9,
-          "actualPointsWeek": 6
+          "status": "Q",
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "41799",
@@ -439,9 +439,9 @@
           "nflTeam": "Ind",
           "position": "TE",
           "slot": "BN",
-          "status": "O",
+          "status": "Q",
           "actualPoints": 0,
-          "actualPointsWeek": 6
+          "actualPointsWeek": 7
         },
         {
           "id": "33398",
@@ -451,8 +451,8 @@
           "position": "WR",
           "slot": "BN",
           "status": null,
-          "actualPoints": 17,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "31010",
@@ -462,8 +462,8 @@
           "position": "WR",
           "slot": "BN",
           "status": null,
-          "actualPoints": 2.9,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "32676",
@@ -473,8 +473,8 @@
           "position": "QB",
           "slot": "BN",
           "status": null,
-          "actualPoints": 9.76,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "42646",
@@ -484,8 +484,8 @@
           "position": "WR",
           "slot": "BN",
           "status": null,
-          "actualPoints": 5.9,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "28534",
@@ -495,8 +495,8 @@
           "position": "WR",
           "slot": "BN",
           "status": null,
-          "actualPoints": 13.4,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "42654",
@@ -507,7 +507,7 @@
           "slot": "IR",
           "status": "IR",
           "actualPoints": 0,
-          "actualPointsWeek": 6
+          "actualPointsWeek": 7
         },
         {
           "id": "41988",
@@ -517,8 +517,8 @@
           "position": "K",
           "slot": "K",
           "status": null,
-          "actualPoints": 4,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "100033",
@@ -528,8 +528,8 @@
           "position": "DEF",
           "slot": "DEF",
           "status": null,
-          "actualPoints": 9,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         }
       ]
     },
@@ -547,8 +547,8 @@
           "position": "QB",
           "slot": "QB",
           "status": null,
-          "actualPoints": 19.84,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "33423",
@@ -558,8 +558,8 @@
           "position": "RB",
           "slot": "RB",
           "status": null,
-          "actualPoints": 12,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "40707",
@@ -569,8 +569,8 @@
           "position": "RB",
           "slot": "RB",
           "status": null,
-          "actualPoints": 5.2,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "40041",
@@ -580,8 +580,8 @@
           "position": "WR",
           "slot": "WR",
           "status": null,
-          "actualPoints": 19.4,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "41793",
@@ -591,8 +591,8 @@
           "position": "WR",
           "slot": "WR",
           "status": null,
-          "actualPoints": 11.6,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "40878",
@@ -602,8 +602,8 @@
           "position": "TE",
           "slot": "TE",
           "status": null,
-          "actualPoints": 9,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "41293",
@@ -613,8 +613,8 @@
           "position": "WR",
           "slot": "W/R/T",
           "status": null,
-          "actualPoints": 12.7,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "40896",
@@ -624,8 +624,8 @@
           "position": "QB",
           "slot": "BN",
           "status": null,
-          "actualPoints": 12.52,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "33991",
@@ -634,9 +634,9 @@
           "nflTeam": "NYJ",
           "position": "RB",
           "slot": "BN",
-          "status": "O",
+          "status": "Q",
           "actualPoints": 0,
-          "actualPointsWeek": 6
+          "actualPointsWeek": 7
         },
         {
           "id": "33967",
@@ -647,7 +647,7 @@
           "slot": "BN",
           "status": null,
           "actualPoints": 0,
-          "actualPointsWeek": 6
+          "actualPointsWeek": 7
         },
         {
           "id": "30295",
@@ -658,7 +658,7 @@
           "slot": "BN",
           "status": null,
           "actualPoints": 0,
-          "actualPointsWeek": 6
+          "actualPointsWeek": 7
         },
         {
           "id": "42626",
@@ -668,8 +668,8 @@
           "position": "WR",
           "slot": "BN",
           "status": null,
-          "actualPoints": 16,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "31960",
@@ -679,8 +679,8 @@
           "position": "RB",
           "slot": "BN",
           "status": null,
-          "actualPoints": 7.6,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "40819",
@@ -690,8 +690,8 @@
           "position": "K",
           "slot": "K",
           "status": null,
-          "actualPoints": 1,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "100012",
@@ -701,8 +701,8 @@
           "position": "DEF",
           "slot": "DEF",
           "status": null,
-          "actualPoints": 15,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         }
       ]
     },
@@ -713,26 +713,15 @@
       "owner": "Ali",
       "players": [
         {
-          "id": "30977",
-          "key": "470.p.30977",
-          "name": "Josh Allen",
-          "nflTeam": "Buf",
+          "id": "9265",
+          "key": "470.p.9265",
+          "name": "Matthew Stafford",
+          "nflTeam": "LAR",
           "position": "QB",
           "slot": "QB",
           "status": null,
-          "actualPoints": 18.3,
-          "actualPointsWeek": 6
-        },
-        {
-          "id": "34019",
-          "key": "470.p.34019",
-          "name": "James Cook III",
-          "nflTeam": "Buf",
-          "position": "RB",
-          "slot": "RB",
-          "status": null,
-          "actualPoints": 22.8,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "33514",
@@ -742,8 +731,19 @@
           "position": "RB",
           "slot": "RB",
           "status": null,
-          "actualPoints": 18.6,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
+        },
+        {
+          "id": "31856",
+          "key": "470.p.31856",
+          "name": "Josh Jacobs",
+          "nflTeam": "GB",
+          "position": "RB",
+          "slot": "RB",
+          "status": null,
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "33477",
@@ -753,8 +753,8 @@
           "position": "WR",
           "slot": "WR",
           "status": null,
-          "actualPoints": 9.4,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "31896",
@@ -764,8 +764,8 @@
           "position": "WR",
           "slot": "WR",
           "status": null,
-          "actualPoints": 14.8,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "40078",
@@ -775,8 +775,8 @@
           "position": "TE",
           "slot": "TE",
           "status": null,
-          "actualPoints": 6.9,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "41824",
@@ -786,8 +786,30 @@
           "position": "WR",
           "slot": "W/R/T",
           "status": null,
-          "actualPoints": 13.5,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
+        },
+        {
+          "id": "34019",
+          "key": "470.p.34019",
+          "name": "James Cook III",
+          "nflTeam": "Buf",
+          "position": "RB",
+          "slot": "BN",
+          "status": null,
+          "actualPoints": 0,
+          "actualPointsWeek": 7
+        },
+        {
+          "id": "30977",
+          "key": "470.p.30977",
+          "name": "Josh Allen",
+          "nflTeam": "Buf",
+          "position": "QB",
+          "slot": "BN",
+          "status": null,
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "41804",
@@ -797,8 +819,8 @@
           "position": "WR",
           "slot": "BN",
           "status": null,
-          "actualPoints": 14.3,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "27548",
@@ -808,19 +830,8 @@
           "position": "WR",
           "slot": "BN",
           "status": null,
-          "actualPoints": 1.8,
-          "actualPointsWeek": 6
-        },
-        {
-          "id": "31856",
-          "key": "470.p.31856",
-          "name": "Josh Jacobs",
-          "nflTeam": "GB",
-          "position": "RB",
-          "slot": "BN",
-          "status": null,
           "actualPoints": 0,
-          "actualPointsWeek": 6
+          "actualPointsWeek": 7
         },
         {
           "id": "41807",
@@ -830,8 +841,8 @@
           "position": "RB",
           "slot": "BN",
           "status": null,
-          "actualPoints": 5.9,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "42025",
@@ -840,20 +851,9 @@
           "nflTeam": "Chi",
           "position": "RB",
           "slot": "BN",
-          "status": "O",
+          "status": "Q",
           "actualPoints": 0,
-          "actualPointsWeek": 6
-        },
-        {
-          "id": "9265",
-          "key": "470.p.9265",
-          "name": "Matthew Stafford",
-          "nflTeam": "LAR",
-          "position": "QB",
-          "slot": "BN",
-          "status": null,
-          "actualPoints": 16.88,
-          "actualPointsWeek": 6
+          "actualPointsWeek": 7
         },
         {
           "id": "28227",
@@ -863,8 +863,8 @@
           "position": "K",
           "slot": "K",
           "status": null,
-          "actualPoints": 9,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "100007",
@@ -874,8 +874,8 @@
           "position": "DEF",
           "slot": "DEF",
           "status": null,
-          "actualPoints": 12,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         }
       ]
     },
@@ -886,15 +886,15 @@
       "owner": "Aaron",
       "players": [
         {
-          "id": "29325",
-          "key": "470.p.29325",
-          "name": "Jacoby Brissett",
-          "nflTeam": "Ari",
+          "id": "32671",
+          "key": "470.p.32671",
+          "name": "Joe Burrow",
+          "nflTeam": "Cin",
           "position": "QB",
           "slot": "QB",
           "status": null,
-          "actualPoints": 7.92,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "40055",
@@ -904,8 +904,8 @@
           "position": "RB",
           "slot": "RB",
           "status": null,
-          "actualPoints": 6.3,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "34447",
@@ -915,8 +915,8 @@
           "position": "RB",
           "slot": "RB",
           "status": null,
-          "actualPoints": 8.8,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "33963",
@@ -926,8 +926,8 @@
           "position": "WR",
           "slot": "WR",
           "status": null,
-          "actualPoints": 10.2,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "40121",
@@ -937,8 +937,8 @@
           "position": "WR",
           "slot": "WR",
           "status": null,
-          "actualPoints": 5.2,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "34010",
@@ -948,8 +948,8 @@
           "position": "TE",
           "slot": "TE",
           "status": null,
-          "actualPoints": 8.8,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "32705",
@@ -959,19 +959,19 @@
           "position": "RB",
           "slot": "W/R/T",
           "status": null,
-          "actualPoints": 21,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
-          "id": "32671",
-          "key": "470.p.32671",
-          "name": "Joe Burrow",
-          "nflTeam": "Cin",
+          "id": "29325",
+          "key": "470.p.29325",
+          "name": "Jacoby Brissett",
+          "nflTeam": "Ari",
           "position": "QB",
           "slot": "BN",
           "status": null,
           "actualPoints": 0,
-          "actualPointsWeek": 6
+          "actualPointsWeek": 7
         },
         {
           "id": "40901",
@@ -981,8 +981,8 @@
           "position": "WR",
           "slot": "BN",
           "status": null,
-          "actualPoints": 5.4,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "33998",
@@ -992,8 +992,8 @@
           "position": "WR",
           "slot": "BN",
           "status": null,
-          "actualPoints": 3.7,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "42661",
@@ -1003,8 +1003,8 @@
           "position": "WR",
           "slot": "BN",
           "status": null,
-          "actualPoints": 2,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "41845",
@@ -1014,8 +1014,8 @@
           "position": "RB",
           "slot": "BN",
           "status": null,
-          "actualPoints": 13.1,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "31056",
@@ -1025,8 +1025,8 @@
           "position": "TE",
           "slot": "BN",
           "status": null,
-          "actualPoints": 0.9,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "34008",
@@ -1037,7 +1037,7 @@
           "slot": "IR",
           "status": "IR",
           "actualPoints": 0,
-          "actualPointsWeek": 6
+          "actualPointsWeek": 7
         },
         {
           "id": "34320",
@@ -1048,7 +1048,7 @@
           "slot": "IR",
           "status": "IR-R",
           "actualPoints": 0,
-          "actualPointsWeek": 6
+          "actualPointsWeek": 7
         },
         {
           "id": "41499",
@@ -1058,8 +1058,8 @@
           "position": "K",
           "slot": "K",
           "status": null,
-          "actualPoints": 9,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "100023",
@@ -1069,8 +1069,8 @@
           "position": "DEF",
           "slot": "DEF",
           "status": null,
-          "actualPoints": 10,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         }
       ]
     },
@@ -1087,9 +1087,9 @@
           "nflTeam": "Bal",
           "position": "QB",
           "slot": "QB",
-          "status": "O",
+          "status": "Q",
           "actualPoints": 0,
-          "actualPointsWeek": 6
+          "actualPointsWeek": 7
         },
         {
           "id": "40059",
@@ -1100,7 +1100,7 @@
           "slot": "RB",
           "status": null,
           "actualPoints": 0,
-          "actualPointsWeek": 6
+          "actualPointsWeek": 7
         },
         {
           "id": "30972",
@@ -1109,9 +1109,9 @@
           "nflTeam": "Phi",
           "position": "RB",
           "slot": "RB",
-          "status": "O",
+          "status": "Q",
           "actualPoints": 0,
-          "actualPointsWeek": 6
+          "actualPointsWeek": 7
         },
         {
           "id": "40899",
@@ -1121,8 +1121,8 @@
           "position": "WR",
           "slot": "WR",
           "status": null,
-          "actualPoints": 22.5,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "31868",
@@ -1133,7 +1133,7 @@
           "slot": "WR",
           "status": "O",
           "actualPoints": 0,
-          "actualPointsWeek": 6
+          "actualPointsWeek": 7
         },
         {
           "id": "30259",
@@ -1143,8 +1143,8 @@
           "position": "TE",
           "slot": "TE",
           "status": null,
-          "actualPoints": 15.4,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "33413",
@@ -1155,7 +1155,7 @@
           "slot": "W/R/T",
           "status": "IR",
           "actualPoints": 0,
-          "actualPointsWeek": 6
+          "actualPointsWeek": 7
         },
         {
           "id": "30123",
@@ -1165,8 +1165,8 @@
           "position": "QB",
           "slot": "BN",
           "status": null,
-          "actualPoints": 11.48,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "33508",
@@ -1176,8 +1176,8 @@
           "position": "RB",
           "slot": "BN",
           "status": null,
-          "actualPoints": 3.6,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "33538",
@@ -1187,8 +1187,8 @@
           "position": "RB",
           "slot": "BN",
           "status": null,
-          "actualPoints": 2.9,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "30180",
@@ -1198,8 +1198,8 @@
           "position": "RB",
           "slot": "BN",
           "status": null,
-          "actualPoints": 13.9,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "40877",
@@ -1209,8 +1209,8 @@
           "position": "WR",
           "slot": "BN",
           "status": null,
-          "actualPoints": 10.8,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "31107",
@@ -1220,8 +1220,8 @@
           "position": "TE",
           "slot": "BN",
           "status": null,
-          "actualPoints": 5.3,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "29792",
@@ -1231,8 +1231,8 @@
           "position": "K",
           "slot": "K",
           "status": null,
-          "actualPoints": 11,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "100030",
@@ -1242,8 +1242,8 @@
           "position": "DEF",
           "slot": "DEF",
           "status": null,
-          "actualPoints": 1,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         }
       ]
     },
@@ -1261,8 +1261,8 @@
           "position": "QB",
           "slot": "QB",
           "status": null,
-          "actualPoints": 28.34,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "32711",
@@ -1272,8 +1272,8 @@
           "position": "RB",
           "slot": "RB",
           "status": null,
-          "actualPoints": 20.1,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "31905",
@@ -1282,9 +1282,9 @@
           "nflTeam": "Hou",
           "position": "RB",
           "slot": "RB",
-          "status": "O",
+          "status": "Q",
           "actualPoints": 0,
-          "actualPointsWeek": 6
+          "actualPointsWeek": 7
         },
         {
           "id": "33966",
@@ -1294,8 +1294,8 @@
           "position": "WR",
           "slot": "WR",
           "status": null,
-          "actualPoints": 12.3,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "33965",
@@ -1305,8 +1305,8 @@
           "position": "WR",
           "slot": "WR",
           "status": null,
-          "actualPoints": 6.4,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "40048",
@@ -1316,8 +1316,8 @@
           "position": "TE",
           "slot": "TE",
           "status": null,
-          "actualPoints": 7.3,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "40039",
@@ -1327,8 +1327,8 @@
           "position": "WR",
           "slot": "W/R/T",
           "status": null,
-          "actualPoints": 9.7,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "40962",
@@ -1338,8 +1338,8 @@
           "position": "RB",
           "slot": "BN",
           "status": null,
-          "actualPoints": 13,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "31908",
@@ -1349,8 +1349,8 @@
           "position": "WR",
           "slot": "BN",
           "status": "O",
-          "actualPoints": 3.2,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "40875",
@@ -1360,8 +1360,8 @@
           "position": "QB",
           "slot": "BN",
           "status": null,
-          "actualPoints": 4.48,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "42638",
@@ -1371,8 +1371,8 @@
           "position": "TE",
           "slot": "BN",
           "status": null,
-          "actualPoints": 1.7,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "34088",
@@ -1382,8 +1382,8 @@
           "position": "WR",
           "slot": "BN",
           "status": "IR",
-          "actualPoints": 10.7,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "31883",
@@ -1393,8 +1393,8 @@
           "position": "WR",
           "slot": "IR",
           "status": "Q",
-          "actualPoints": 4.2,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "41062",
@@ -1404,8 +1404,8 @@
           "position": "K",
           "slot": "K",
           "status": null,
-          "actualPoints": 9,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "100020",
@@ -1415,8 +1415,8 @@
           "position": "DEF",
           "slot": "DEF",
           "status": null,
-          "actualPoints": 4,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "100006",
@@ -1426,8 +1426,8 @@
           "position": "DEF",
           "slot": "BN",
           "status": null,
-          "actualPoints": 5,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         }
       ]
     },
@@ -1445,8 +1445,8 @@
           "position": "QB",
           "slot": "QB",
           "status": null,
-          "actualPoints": 21.24,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "40993",
@@ -1456,8 +1456,8 @@
           "position": "RB",
           "slot": "RB",
           "status": null,
-          "actualPoints": 5.9,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "33996",
@@ -1467,8 +1467,8 @@
           "position": "RB",
           "slot": "RB",
           "status": null,
-          "actualPoints": 26.9,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "40234",
@@ -1478,8 +1478,8 @@
           "position": "WR",
           "slot": "WR",
           "status": null,
-          "actualPoints": 8.4,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "40084",
@@ -1488,9 +1488,9 @@
           "nflTeam": "KC",
           "position": "WR",
           "slot": "WR",
-          "status": "O",
+          "status": "Q",
           "actualPoints": 0,
-          "actualPointsWeek": 6
+          "actualPointsWeek": 7
         },
         {
           "id": "40102",
@@ -1500,8 +1500,8 @@
           "position": "TE",
           "slot": "TE",
           "status": null,
-          "actualPoints": 6.2,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "40981",
@@ -1511,8 +1511,8 @@
           "position": "RB",
           "slot": "W/R/T",
           "status": null,
-          "actualPoints": 11.4,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "40196",
@@ -1523,7 +1523,7 @@
           "slot": "BN",
           "status": null,
           "actualPoints": 0,
-          "actualPointsWeek": 6
+          "actualPointsWeek": 7
         },
         {
           "id": "33100",
@@ -1533,8 +1533,8 @@
           "position": "RB",
           "slot": "BN",
           "status": null,
-          "actualPoints": 6.4,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "25812",
@@ -1544,8 +1544,8 @@
           "position": "QB",
           "slot": "BN",
           "status": null,
-          "actualPoints": 19.52,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "31019",
@@ -1555,8 +1555,8 @@
           "position": "TE",
           "slot": "BN",
           "status": null,
-          "actualPoints": 9.1,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "41902",
@@ -1566,8 +1566,8 @@
           "position": "RB",
           "slot": "BN",
           "status": null,
-          "actualPoints": 9.1,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "32723",
@@ -1578,7 +1578,7 @@
           "slot": "IR",
           "status": "IR",
           "actualPoints": 0,
-          "actualPointsWeek": 6
+          "actualPointsWeek": 7
         },
         {
           "id": "40296",
@@ -1588,8 +1588,8 @@
           "position": "K",
           "slot": "K",
           "status": "IR",
-          "actualPoints": 4,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "42838",
@@ -1599,8 +1599,8 @@
           "position": "K",
           "slot": "BN",
           "status": null,
-          "actualPoints": 12,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "100017",
@@ -1610,8 +1610,8 @@
           "position": "DEF",
           "slot": "DEF",
           "status": null,
-          "actualPoints": 6,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         }
       ]
     },
@@ -1629,8 +1629,8 @@
           "position": "QB",
           "slot": "QB",
           "status": null,
-          "actualPoints": 13.02,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "30121",
@@ -1640,8 +1640,8 @@
           "position": "RB",
           "slot": "RB",
           "status": null,
-          "actualPoints": 24.9,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "41821",
@@ -1650,9 +1650,9 @@
           "nflTeam": "Cle",
           "position": "RB",
           "slot": "RB",
-          "status": "O",
+          "status": "Q",
           "actualPoints": 0,
-          "actualPointsWeek": 6
+          "actualPointsWeek": 7
         },
         {
           "id": "33393",
@@ -1663,7 +1663,7 @@
           "slot": "WR",
           "status": null,
           "actualPoints": 0,
-          "actualPointsWeek": 6
+          "actualPointsWeek": 7
         },
         {
           "id": "33989",
@@ -1673,8 +1673,8 @@
           "position": "WR",
           "slot": "WR",
           "status": null,
-          "actualPoints": 7.9,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "41877",
@@ -1684,8 +1684,8 @@
           "position": "TE",
           "slot": "TE",
           "status": null,
-          "actualPoints": 1.4,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "34007",
@@ -1695,8 +1695,8 @@
           "position": "WR",
           "slot": "W/R/T",
           "status": null,
-          "actualPoints": 10.3,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "30994",
@@ -1705,9 +1705,9 @@
           "nflTeam": "Buf",
           "position": "WR",
           "slot": "BN",
-          "status": "O",
+          "status": "Q",
           "actualPoints": 0,
-          "actualPointsWeek": 6
+          "actualPointsWeek": 7
         },
         {
           "id": "40042",
@@ -1718,7 +1718,7 @@
           "slot": "BN",
           "status": "Q",
           "actualPoints": 0,
-          "actualPointsWeek": 6
+          "actualPointsWeek": 7
         },
         {
           "id": "42010",
@@ -1729,7 +1729,7 @@
           "slot": "BN",
           "status": "IR",
           "actualPoints": 0,
-          "actualPointsWeek": 6
+          "actualPointsWeek": 7
         },
         {
           "id": "30973",
@@ -1739,8 +1739,8 @@
           "position": "QB",
           "slot": "BN",
           "status": null,
-          "actualPoints": 13.02,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "34095",
@@ -1750,8 +1750,8 @@
           "position": "TE",
           "slot": "BN",
           "status": null,
-          "actualPoints": 20.9,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         },
         {
           "id": "40883",
@@ -1762,7 +1762,7 @@
           "slot": "BN",
           "status": null,
           "actualPoints": 0,
-          "actualPointsWeek": 6
+          "actualPointsWeek": 7
         },
         {
           "id": "41093",
@@ -1773,7 +1773,7 @@
           "slot": "K",
           "status": null,
           "actualPoints": 0,
-          "actualPointsWeek": 6
+          "actualPointsWeek": 7
         },
         {
           "id": "100026",
@@ -1783,24 +1783,24 @@
           "position": "DEF",
           "slot": "DEF",
           "status": null,
-          "actualPoints": 3,
-          "actualPointsWeek": 6
+          "actualPoints": 0,
+          "actualPointsWeek": 7
         }
       ]
     }
   ],
   "teamSnapshots": {
-    "1": "2026-10-20T02:44:56.147Z",
-    "2": "2026-10-20T02:44:56.147Z",
-    "3": "2026-10-20T02:44:56.147Z",
-    "4": "2026-10-20T02:44:56.147Z",
-    "5": "2026-10-20T02:44:56.147Z",
-    "6": "2026-10-20T02:44:56.147Z",
-    "7": "2026-10-20T02:44:56.147Z",
-    "8": "2026-10-20T02:44:56.147Z",
-    "9": "2026-10-20T02:44:56.147Z",
-    "10": "2026-10-20T02:44:56.147Z"
+    "1": "2026-10-20T20:34:01.821Z",
+    "2": "2026-10-20T20:34:01.821Z",
+    "3": "2026-10-20T20:34:01.821Z",
+    "4": "2026-10-20T20:34:01.821Z",
+    "5": "2026-10-20T20:34:01.821Z",
+    "6": "2026-10-20T20:34:01.821Z",
+    "7": "2026-10-20T20:34:01.821Z",
+    "8": "2026-10-20T20:34:01.821Z",
+    "9": "2026-10-20T20:34:01.821Z",
+    "10": "2026-10-20T20:34:01.821Z"
   },
-  "userTeamLastRefreshedAt": "2026-10-20T02:44:56.147Z",
+  "userTeamLastRefreshedAt": "2026-10-20T20:34:01.821Z",
   "source": "Yahoo Fantasy via Flaim Fantasy"
 }

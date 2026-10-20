@@ -5,7 +5,7 @@
   "teamCount": 10,
   "userTeamId": "6",
   "year": 2026,
-  "currentWeekAtSnapshot": 6,
+  "currentWeekAtSnapshot": 7,
   "startingSlots": [
     "QB",
     "RB",
@@ -54,5 +54,5 @@
     "57": 6,
     "82": 2
   },
-  "retrievedAt": "2026-10-20T02:44:56.147Z"
+  "retrievedAt": "2026-10-20T20:34:01.821Z"
 }

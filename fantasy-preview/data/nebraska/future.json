@@ -4,7 +4,7 @@
   "startWeek": 5,
   "endWeek": 17,
   "generatedAt": "2026-10-20T02:45:28.874Z",
-  "rosterSnapshotAt": "2026-10-20T02:44:56.147Z",
+  "rosterSnapshotAt": "2026-10-20T20:34:01.821Z",
   "statsThroughWeek": 5,
   "scoringCategories": [
     {
@@ -118,7 +118,7 @@
           "factor": 0.9462,
           "activePoints": 19.43,
           "points": 19.43,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -247,7 +247,7 @@
       "fantasyTeam": "2-Point Ali",
       "nflTeam": "LAR",
       "ownership": "rostered",
-      "rosterSlot": "BN",
+      "rosterSlot": "QB",
       "injuryStatus": null,
       "sampleGames2026": 5,
       "baselineStats": {
@@ -294,7 +294,7 @@
           "factor": 1.1,
           "activePoints": 22.5,
           "points": 22.5,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -468,7 +468,7 @@
           "factor": 1.1,
           "activePoints": 23.03,
           "points": 23.03,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -644,7 +644,7 @@
           "factor": 0.9205,
           "activePoints": 16.69,
           "points": 16.69,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -772,7 +772,7 @@
       "fantasyTeam": "Nebraska Bugeaters",
       "nflTeam": "Cin",
       "ownership": "rostered",
-      "rosterSlot": "BN",
+      "rosterSlot": "QB",
       "injuryStatus": null,
       "sampleGames2026": 5,
       "baselineStats": {
@@ -818,7 +818,7 @@
           "factor": 1.0048,
           "activePoints": 19.97,
           "points": 19.97,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -994,7 +994,7 @@
           "factor": 1.0523,
           "activePoints": 19.06,
           "points": 19.06,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -1169,7 +1169,7 @@
           "factor": 1.0495,
           "activePoints": 19.12,
           "points": 19.12,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -1297,7 +1297,7 @@
       "fantasyTeam": "2-Point Ali",
       "nflTeam": "Buf",
       "ownership": "rostered",
-      "rosterSlot": "QB",
+      "rosterSlot": "BN",
       "injuryStatus": null,
       "sampleGames2026": 5,
       "baselineStats": {
@@ -1519,7 +1519,7 @@
           "factor": 1.0746,
           "activePoints": 17.71,
           "points": 17.71,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -1694,7 +1694,7 @@
           "factor": 1.1,
           "activePoints": 17.99,
           "points": 17.99,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -1869,7 +1869,7 @@
           "factor": 1.0548,
           "activePoints": 19.86,
           "points": 19.86,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -2044,7 +2044,7 @@
           "factor": 1.0045,
           "activePoints": 16.99,
           "points": 16.99,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -2219,7 +2219,7 @@
           "factor": 0.9083,
           "activePoints": 15.55,
           "points": 15.55,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -2389,7 +2389,7 @@
           "factor": 1.1,
           "activePoints": 19.36,
           "points": 19.36,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -2564,7 +2564,7 @@
           "factor": 0.9045,
           "activePoints": 14.46,
           "points": 14.46,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -2739,7 +2739,7 @@
           "factor": 0.9083,
           "activePoints": 15.7,
           "points": 15.7,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -2908,7 +2908,7 @@
           "factor": 0.9279,
           "activePoints": 16.26,
           "points": 16.26,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -3078,7 +3078,7 @@
           "factor": 1.0515,
           "activePoints": 18.5,
           "points": 18.5,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -3206,7 +3206,7 @@
       "fantasyTeam": "Nebraska Bugeaters",
       "nflTeam": "Ari",
       "ownership": "rostered",
-      "rosterSlot": "QB",
+      "rosterSlot": "BN",
       "injuryStatus": null,
       "sampleGames2026": 5,
       "baselineStats": {
@@ -3253,7 +3253,7 @@
           "factor": 0.9676,
           "activePoints": 17.67,
           "points": 17.67,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -3428,7 +3428,7 @@
           "factor": 0.9759,
           "activePoints": 15.93,
           "points": 15.93,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -3598,7 +3598,7 @@
           "factor": 0.9779,
           "activePoints": 16.07,
           "points": 16.07,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -3773,7 +3773,7 @@
           "factor": 0.9396,
           "activePoints": 14.09,
           "points": 14.09,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -3948,7 +3948,7 @@
           "factor": 1.0345,
           "activePoints": 16.59,
           "points": 16.59,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -4123,7 +4123,7 @@
           "factor": 1.0606,
           "activePoints": 16.94,
           "points": 16.94,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -4298,7 +4298,7 @@
           "factor": 0.987,
           "activePoints": 14.82,
           "points": 14.82,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -4473,7 +4473,7 @@
           "factor": 1.0017,
           "activePoints": 19.84,
           "points": 19.84,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -4648,7 +4648,7 @@
           "factor": 0.9497,
           "activePoints": 14.88,
           "points": 14.88,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -4776,7 +4776,7 @@
       "fantasyTeam": "Gridiron Juliean",
       "nflTeam": "Det",
       "ownership": "rostered",
-      "rosterSlot": "BN",
+      "rosterSlot": "W/R/T",
       "injuryStatus": null,
       "sampleGames2026": 5,
       "baselineStats": {
@@ -4822,7 +4822,7 @@
           "factor": 0.9932,
           "activePoints": 14.96,
           "points": 14.96,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -4998,7 +4998,7 @@
           "factor": 0.967,
           "activePoints": 15.44,
           "points": 15.44,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -5173,7 +5173,7 @@
           "factor": 0.9886,
           "activePoints": 16.79,
           "points": 16.79,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -5523,7 +5523,7 @@
           "factor": 0.9015,
           "activePoints": 14.39,
           "points": 14.39,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -5873,7 +5873,7 @@
           "factor": 0.9095,
           "activePoints": 14.56,
           "points": 14.56,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -6047,8 +6047,8 @@
           "date": "2026-10-25",
           "factor": 1.0898,
           "activePoints": 17.88,
-          "points": 17.88,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -6216,7 +6216,7 @@
           "factor": 1.1,
           "activePoints": 16.94,
           "points": 16.94,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -6391,8 +6391,8 @@
           "date": "2026-10-26",
           "factor": 1.0976,
           "activePoints": 17.03,
-          "points": 17.03,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -6567,7 +6567,7 @@
           "factor": 0.9426,
           "activePoints": 15.35,
           "points": 15.35,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -6696,7 +6696,7 @@
       "nflTeam": "Bal",
       "ownership": "rostered",
       "rosterSlot": "QB",
-      "injuryStatus": "O",
+      "injuryStatus": "Q",
       "sampleGames2026": 4,
       "baselineStats": {
         "passAttempts": 23.48,
@@ -6741,8 +6741,8 @@
           "date": "2026-10-25",
           "factor": 1.0525,
           "activePoints": 16.06,
-          "points": 16.06,
-          "state": "assumed_active_future",
+          "points": null,
+          "state": "needs_availability_confirmation",
           "defenseThroughWeek": 5
         },
         {
@@ -6911,7 +6911,7 @@
           "factor": 0.9083,
           "activePoints": 13.85,
           "points": 13.85,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -7085,7 +7085,7 @@
           "factor": 1.0677,
           "activePoints": 16.92,
           "points": 16.92,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -7260,7 +7260,7 @@
           "factor": 0.9168,
           "activePoints": 12.69,
           "points": 12.69,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -7436,7 +7436,7 @@
           "factor": 0.9015,
           "activePoints": 11.99,
           "points": 11.99,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -7610,7 +7610,7 @@
           "factor": 1.0575,
           "activePoints": 13.68,
           "points": 13.68,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -7739,7 +7739,7 @@
       "fantasyTeam": "2-Point Ali",
       "nflTeam": "Buf",
       "ownership": "rostered",
-      "rosterSlot": "RB",
+      "rosterSlot": "BN",
       "injuryStatus": null,
       "sampleGames2026": 5,
       "baselineStats": {
@@ -8136,7 +8136,7 @@
           "factor": 1.1,
           "activePoints": 17.72,
           "points": 17.72,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -8311,7 +8311,7 @@
           "factor": 1.0055,
           "activePoints": 13.41,
           "points": 13.41,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -8486,7 +8486,7 @@
           "factor": 0.9126,
           "activePoints": 10.39,
           "points": 10.39,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -8661,7 +8661,7 @@
           "factor": 0.918,
           "activePoints": 12.27,
           "points": 12.27,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -8830,8 +8830,8 @@
           "date": "2026-10-25",
           "factor": 1.0303,
           "activePoints": 13.75,
-          "points": 13.75,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -9000,7 +9000,7 @@
           "factor": 0.9463,
           "activePoints": 11.95,
           "points": 11.95,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -9129,7 +9129,7 @@
       "nflTeam": "NYJ",
       "ownership": "rostered",
       "rosterSlot": "BN",
-      "injuryStatus": "O",
+      "injuryStatus": "Q",
       "sampleGames2026": 3,
       "baselineStats": {
         "passAttempts": 0.01,
@@ -9174,8 +9174,8 @@
           "date": "2026-10-25",
           "factor": 1.1,
           "activePoints": 14.61,
-          "points": 14.61,
-          "state": "assumed_active_future",
+          "points": null,
+          "state": "needs_availability_confirmation",
           "defenseThroughWeek": 5
         },
         {
@@ -9344,7 +9344,7 @@
           "factor": 1.0209,
           "activePoints": 14.44,
           "points": 14.44,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -9519,7 +9519,7 @@
           "factor": 0.9083,
           "activePoints": 13.04,
           "points": 13.04,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -9642,7 +9642,7 @@
       "fantasyTeam": "4th Qtr cory",
       "nflTeam": "LAR",
       "ownership": "rostered",
-      "rosterSlot": "WR",
+      "rosterSlot": "BN",
       "injuryStatus": "O",
       "sampleGames2026": 5,
       "baselineStats": {
@@ -9688,8 +9688,8 @@
           "date": "2026-10-25",
           "factor": 1.0548,
           "activePoints": 14.51,
-          "points": 14.51,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -9864,7 +9864,7 @@
           "factor": 1.0412,
           "activePoints": 15.53,
           "points": 15.53,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -10039,7 +10039,7 @@
           "factor": 0.9866,
           "activePoints": 13.05,
           "points": 13.05,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -10214,7 +10214,7 @@
           "factor": 0.9126,
           "activePoints": 11.89,
           "points": 11.89,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -10388,7 +10388,7 @@
           "factor": 1.0048,
           "activePoints": 13.46,
           "points": 13.46,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -10558,7 +10558,7 @@
           "factor": 0.9604,
           "activePoints": 12.37,
           "points": 12.37,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -10733,7 +10733,7 @@
           "factor": 0.9779,
           "activePoints": 12.67,
           "points": 12.67,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -10902,7 +10902,7 @@
           "factor": 0.9205,
           "activePoints": 12.48,
           "points": 12.48,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -11025,7 +11025,7 @@
       "nflTeam": "Cle",
       "ownership": "rostered",
       "rosterSlot": "RB",
-      "injuryStatus": "O",
+      "injuryStatus": "Q",
       "sampleGames2026": 5,
       "baselineStats": {
         "passAttempts": 0,
@@ -11070,8 +11070,8 @@
           "date": "2026-10-25",
           "factor": 0.9888,
           "activePoints": 11.86,
-          "points": 11.86,
-          "state": "assumed_active_future",
+          "points": null,
+          "state": "needs_availability_confirmation",
           "defenseThroughWeek": 5
         },
         {
@@ -11244,8 +11244,8 @@
           "date": "2026-10-25",
           "factor": 1.0725,
           "activePoints": 13.48,
-          "points": 13.48,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -11415,7 +11415,7 @@
           "factor": 1.0741,
           "activePoints": 13.44,
           "points": 13.44,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -11537,7 +11537,7 @@
       "fantasyTeam": "2-Point Ali",
       "nflTeam": "GB",
       "ownership": "rostered",
-      "rosterSlot": "BN",
+      "rosterSlot": "RB",
       "injuryStatus": null,
       "sampleGames2026": 0,
       "baselineStats": {
@@ -11584,7 +11584,7 @@
           "factor": 0.9449,
           "activePoints": 11.75,
           "points": 11.75,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -11753,7 +11753,7 @@
           "factor": 0.9586,
           "activePoints": 12.37,
           "points": 12.37,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -11928,7 +11928,7 @@
           "factor": 0.9045,
           "activePoints": 10.71,
           "points": 10.71,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -12102,7 +12102,7 @@
           "factor": 1.0575,
           "activePoints": 13.44,
           "points": 13.44,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -12276,8 +12276,8 @@
           "date": "2026-10-25",
           "factor": 0.9272,
           "activePoints": 11.28,
-          "points": 11.28,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -12446,8 +12446,8 @@
           "date": "2026-10-25",
           "factor": 1.043,
           "activePoints": 12.57,
-          "points": 12.57,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -12616,7 +12616,7 @@
           "factor": 0.9673,
           "activePoints": 11.48,
           "points": 11.48,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -12791,7 +12791,7 @@
           "factor": 0.9304,
           "activePoints": 11.06,
           "points": 11.06,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -12961,7 +12961,7 @@
           "factor": 0.9064,
           "activePoints": 10.05,
           "points": 10.05,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -13089,7 +13089,7 @@
       "fantasyTeam": "Gridiron Juliean",
       "nflTeam": "Det",
       "ownership": "rostered",
-      "rosterSlot": "BN",
+      "rosterSlot": "TE",
       "injuryStatus": null,
       "sampleGames2026": 5,
       "baselineStats": {
@@ -13135,7 +13135,7 @@
           "factor": 0.9246,
           "activePoints": 11.46,
           "points": 11.46,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -13310,8 +13310,8 @@
           "date": "2026-10-25",
           "factor": 0.9898,
           "activePoints": 12.32,
-          "points": 12.32,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -13479,8 +13479,8 @@
           "date": "2026-10-25",
           "factor": 0.9898,
           "activePoints": 12.58,
-          "points": 12.58,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -13648,7 +13648,7 @@
           "factor": 0.9083,
           "activePoints": 12.25,
           "points": 12.25,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -13824,7 +13824,7 @@
           "factor": 0.9367,
           "activePoints": 10.81,
           "points": 10.81,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -13953,7 +13953,7 @@
       "nflTeam": "Chi",
       "ownership": "rostered",
       "rosterSlot": "BN",
-      "injuryStatus": "O",
+      "injuryStatus": "Q",
       "sampleGames2026": 4,
       "baselineStats": {
         "passAttempts": 0,
@@ -13998,8 +13998,8 @@
           "date": "2026-10-22",
           "factor": 0.9866,
           "activePoints": 10.93,
-          "points": 10.93,
-          "state": "assumed_active_future",
+          "points": null,
+          "state": "needs_availability_confirmation",
           "defenseThroughWeek": 5
         },
         {
@@ -14122,7 +14122,7 @@
       "nflTeam": "KC",
       "ownership": "rostered",
       "rosterSlot": "WR",
-      "injuryStatus": "O",
+      "injuryStatus": "Q",
       "sampleGames2026": 3,
       "baselineStats": {
         "passAttempts": 0,
@@ -14167,8 +14167,8 @@
           "date": "2026-10-25",
           "factor": 0.9015,
           "activePoints": 9.99,
-          "points": 9.99,
-          "state": "assumed_active_future",
+          "points": null,
+          "state": "needs_availability_confirmation",
           "defenseThroughWeek": 5
         },
         {
@@ -14512,8 +14512,8 @@
           "date": "2026-10-25",
           "factor": 1.0209,
           "activePoints": 13.19,
-          "points": 13.19,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -14682,7 +14682,7 @@
           "factor": 0.9083,
           "activePoints": 9.22,
           "points": 9.22,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -14857,7 +14857,7 @@
           "factor": 1.0018,
           "activePoints": 10.14,
           "points": 10.14,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -15031,7 +15031,7 @@
           "factor": 1.0677,
           "activePoints": 13.3,
           "points": 13.3,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -15200,8 +15200,8 @@
           "date": "2026-10-25",
           "factor": 1.0109,
           "activePoints": 10.99,
-          "points": 10.99,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -15539,7 +15539,7 @@
           "factor": 0.9599,
           "activePoints": 9.22,
           "points": 9.22,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -15714,7 +15714,7 @@
           "factor": 1.0109,
           "activePoints": 9.75,
           "points": 9.75,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -15889,7 +15889,7 @@
           "factor": 1.0746,
           "activePoints": 13.07,
           "points": 13.07,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -16239,7 +16239,7 @@
           "factor": 0.9015,
           "activePoints": 10.55,
           "points": 10.55,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -16414,7 +16414,7 @@
           "factor": 0.971,
           "activePoints": 9.81,
           "points": 9.81,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -16589,7 +16589,7 @@
           "factor": 0.9095,
           "activePoints": 11.2,
           "points": 11.2,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -16764,7 +16764,7 @@
           "factor": 1.1,
           "activePoints": 13.76,
           "points": 13.76,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -16938,8 +16938,8 @@
           "date": "2026-10-25",
           "factor": 1.0295,
           "activePoints": 10.73,
-          "points": 10.73,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -17108,7 +17108,7 @@
           "factor": 1.0013,
           "activePoints": 11.04,
           "points": 11.04,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -17452,7 +17452,7 @@
           "factor": 1.1,
           "activePoints": 12.9,
           "points": 12.9,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -17627,7 +17627,7 @@
           "factor": 0.9779,
           "activePoints": 9.42,
           "points": 9.42,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -17802,7 +17802,7 @@
           "factor": 0.9898,
           "activePoints": 13.66,
           "points": 13.66,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -17977,7 +17977,7 @@
           "factor": 1.0515,
           "activePoints": 10.93,
           "points": 10.93,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -18146,7 +18146,7 @@
           "factor": 1.1,
           "activePoints": 9.8,
           "points": 9.8,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -18321,7 +18321,7 @@
           "factor": 1.1,
           "activePoints": 10.21,
           "points": 10.21,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -18496,7 +18496,7 @@
           "factor": 0.9898,
           "activePoints": 9.63,
           "points": 9.63,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -18671,7 +18671,7 @@
           "factor": 1.0662,
           "activePoints": 9.63,
           "points": 9.63,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -18846,7 +18846,7 @@
           "factor": 1.0088,
           "activePoints": 9.32,
           "points": 9.32,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -19020,7 +19020,7 @@
           "factor": 0.9932,
           "activePoints": 10.72,
           "points": 10.72,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -19196,7 +19196,7 @@
           "factor": 1.1,
           "activePoints": 11.63,
           "points": 11.63,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -19370,8 +19370,8 @@
           "date": "2026-10-22",
           "factor": 0.986,
           "activePoints": 9.72,
-          "points": 9.72,
-          "state": "assumed_active_future",
+          "points": null,
+          "state": "needs_availability_confirmation",
           "defenseThroughWeek": 5
         },
         {
@@ -19494,7 +19494,7 @@
       "nflTeam": "Ind",
       "ownership": "rostered",
       "rosterSlot": "BN",
-      "injuryStatus": "O",
+      "injuryStatus": "Q",
       "sampleGames2026": 5,
       "baselineStats": {
         "passAttempts": 0.01,
@@ -19539,8 +19539,8 @@
           "date": "2026-10-25",
           "factor": 0.9095,
           "activePoints": 9.77,
-          "points": 9.77,
-          "state": "assumed_active_future",
+          "points": null,
+          "state": "needs_availability_confirmation",
           "defenseThroughWeek": 5
         },
         {
@@ -19714,7 +19714,7 @@
           "factor": 1.0979,
           "activePoints": 9.62,
           "points": 9.62,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -19844,7 +19844,7 @@
       "nflTeam": "SF",
       "ownership": "rostered",
       "rosterSlot": "W/R/T",
-      "injuryStatus": "O",
+      "injuryStatus": "Q",
       "sampleGames2026": 5,
       "baselineStats": {
         "passAttempts": 0,
@@ -19889,8 +19889,8 @@
           "date": "2026-10-25",
           "factor": 1.0295,
           "activePoints": 11.29,
-          "points": 11.29,
-          "state": "assumed_active_future",
+          "points": null,
+          "state": "needs_availability_confirmation",
           "defenseThroughWeek": 5
         },
         {
@@ -20233,7 +20233,7 @@
           "factor": 0.9878,
           "activePoints": 10.32,
           "points": 10.32,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -20362,7 +20362,7 @@
       "fantasyTeam": "4th Qtr cory",
       "nflTeam": "Den",
       "ownership": "rostered",
-      "rosterSlot": "BN",
+      "rosterSlot": "W/R/T",
       "injuryStatus": null,
       "sampleGames2026": 5,
       "baselineStats": {
@@ -20409,7 +20409,7 @@
           "factor": 0.9599,
           "activePoints": 9.78,
           "points": 9.78,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -20584,7 +20584,7 @@
           "factor": 1.1,
           "activePoints": 10.62,
           "points": 10.62,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -20752,8 +20752,8 @@
           "date": "2026-10-25",
           "factor": 0.9123,
           "activePoints": 8.47,
-          "points": 8.47,
-          "state": "assumed_active_future",
+          "points": null,
+          "state": "needs_availability_confirmation",
           "defenseThroughWeek": 5
         },
         {
@@ -20882,7 +20882,7 @@
       "nflTeam": "Phi",
       "ownership": "rostered",
       "rosterSlot": "RB",
-      "injuryStatus": "O",
+      "injuryStatus": "Q",
       "sampleGames2026": 4,
       "baselineStats": {
         "passAttempts": 0,
@@ -20927,8 +20927,8 @@
           "date": "2026-10-26",
           "factor": 1.1,
           "activePoints": 10.55,
-          "points": 10.55,
-          "state": "assumed_active_future",
+          "points": null,
+          "state": "needs_availability_confirmation",
           "defenseThroughWeek": 5
         },
         {
@@ -21097,7 +21097,7 @@
           "factor": 0.9083,
           "activePoints": 9.22,
           "points": 9.22,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -21266,7 +21266,7 @@
           "factor": 1.0013,
           "activePoints": 8.94,
           "points": 8.94,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -21441,7 +21441,7 @@
           "factor": 1.1,
           "activePoints": 10.49,
           "points": 10.49,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -21616,7 +21616,7 @@
           "factor": 0.9396,
           "activePoints": 8.37,
           "points": 8.37,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -21790,8 +21790,8 @@
           "date": "2026-10-25",
           "factor": 0.9463,
           "activePoints": 8.96,
-          "points": 8.96,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -21959,8 +21959,8 @@
           "date": "2026-10-25",
           "factor": 1.1,
           "activePoints": 11.3,
-          "points": 11.3,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -22083,7 +22083,7 @@
       "nflTeam": "Ari",
       "ownership": "rostered",
       "rosterSlot": "BN",
-      "injuryStatus": "O",
+      "injuryStatus": "Q",
       "sampleGames2026": 5,
       "baselineStats": {
         "passAttempts": 0,
@@ -22128,8 +22128,8 @@
           "date": "2026-10-25",
           "factor": 1.043,
           "activePoints": 8.91,
-          "points": 8.91,
-          "state": "assumed_active_future",
+          "points": null,
+          "state": "needs_availability_confirmation",
           "defenseThroughWeek": 5
         },
         {
@@ -22304,7 +22304,7 @@
           "factor": 1.0662,
           "activePoints": 9.71,
           "points": 9.71,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -22478,8 +22478,8 @@
           "date": "2026-10-25",
           "factor": 1.0898,
           "activePoints": 10.4,
-          "points": 10.4,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -22648,7 +22648,7 @@
           "factor": 0.918,
           "activePoints": 8.37,
           "points": 8.37,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -22946,7 +22946,7 @@
       "fantasyTeam": "4th Qtr cory",
       "nflTeam": "Ind",
       "ownership": "rostered",
-      "rosterSlot": "BN",
+      "rosterSlot": "WR",
       "injuryStatus": null,
       "sampleGames2026": 5,
       "baselineStats": {
@@ -22993,7 +22993,7 @@
           "factor": 0.9123,
           "activePoints": 7.97,
           "points": 7.97,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -23167,8 +23167,8 @@
           "date": "2026-10-25",
           "factor": 1.0898,
           "activePoints": 11.46,
-          "points": 11.46,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -23337,7 +23337,7 @@
           "factor": 0.9095,
           "activePoints": 7.3,
           "points": 7.3,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -23512,7 +23512,7 @@
           "factor": 0.9761,
           "activePoints": 9.23,
           "points": 9.23,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -23687,7 +23687,7 @@
           "factor": 1.0495,
           "activePoints": 11.05,
           "points": 11.05,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -23809,7 +23809,7 @@
       "fantasyTeam": "4th Qtr cory",
       "nflTeam": "Jax",
       "ownership": "rostered",
-      "rosterSlot": "W/R/T",
+      "rosterSlot": "BN",
       "injuryStatus": null,
       "sampleGames2026": 5,
       "baselineStats": {
@@ -24031,7 +24031,7 @@
           "factor": 0.9586,
           "activePoints": 8.79,
           "points": 8.79,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -24328,7 +24328,7 @@
       "fantasyTeam": "4th Qtr cory",
       "nflTeam": "KC",
       "ownership": "rostered",
-      "rosterSlot": "BN",
+      "rosterSlot": "TE",
       "injuryStatus": null,
       "sampleGames2026": 4,
       "baselineStats": {
@@ -24375,7 +24375,7 @@
           "factor": 0.9095,
           "activePoints": 7.94,
           "points": 7.94,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -24719,8 +24719,8 @@
           "date": "2026-10-25",
           "factor": 0.9761,
           "activePoints": 8.39,
-          "points": 8.39,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -24889,7 +24889,7 @@
           "factor": 1.1,
           "activePoints": 9.52,
           "points": 9.52,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -25062,8 +25062,8 @@
           "date": "2026-10-25",
           "factor": 0.9878,
           "activePoints": 8.41,
-          "points": 8.41,
-          "state": "assumed_active_future",
+          "points": null,
+          "state": "needs_availability_confirmation",
           "defenseThroughWeek": 5
         },
         {
@@ -25231,8 +25231,8 @@
           "date": "2026-10-25",
           "factor": 1.0725,
           "activePoints": 9.01,
-          "points": 9.01,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -25401,8 +25401,8 @@
           "date": "2026-10-25",
           "factor": 1.0295,
           "activePoints": 8.63,
-          "points": 8.63,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -25569,8 +25569,8 @@
           "date": "2026-10-25",
           "factor": 1.1,
           "activePoints": 9.2,
-          "points": 9.2,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -25740,7 +25740,7 @@
           "factor": 1.055,
           "activePoints": 7.99,
           "points": 7.99,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -25915,7 +25915,7 @@
           "factor": 0.9519,
           "activePoints": 8.52,
           "points": 8.52,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -26090,7 +26090,7 @@
           "factor": 1.0255,
           "activePoints": 8.09,
           "points": 8.09,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -26265,7 +26265,7 @@
           "factor": 0.9095,
           "activePoints": 6.99,
           "points": 6.99,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -26439,7 +26439,7 @@
           "factor": 0.9272,
           "activePoints": 7.76,
           "points": 7.76,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -26569,7 +26569,7 @@
       "nflTeam": "Hou",
       "ownership": "rostered",
       "rosterSlot": "RB",
-      "injuryStatus": "O",
+      "injuryStatus": "Q",
       "sampleGames2026": 5,
       "baselineStats": {
         "passAttempts": 0.03,
@@ -26614,8 +26614,8 @@
           "date": "2026-10-25",
           "factor": 1.0303,
           "activePoints": 7.69,
-          "points": 7.69,
-          "state": "assumed_active_future",
+          "points": null,
+          "state": "needs_availability_confirmation",
           "defenseThroughWeek": 5
         },
         {
@@ -26789,8 +26789,8 @@
           "date": "2026-10-25",
           "factor": 0.9015,
           "activePoints": 7.37,
-          "points": 7.37,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -26958,8 +26958,8 @@
           "date": "2026-10-25",
           "factor": 1.0303,
           "activePoints": 8.39,
-          "points": 8.39,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -27128,7 +27128,7 @@
           "factor": 0.9568,
           "activePoints": 7.47,
           "points": 7.47,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -27303,7 +27303,7 @@
           "factor": 1.1,
           "activePoints": 8.49,
           "points": 8.49,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -27478,7 +27478,7 @@
           "factor": 0.971,
           "activePoints": 7.59,
           "points": 7.59,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -27653,7 +27653,7 @@
           "factor": 1.1,
           "activePoints": 8.42,
           "points": 8.42,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -27828,7 +27828,7 @@
           "factor": 1.0525,
           "activePoints": 11.67,
           "points": 11.67,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -28003,7 +28003,7 @@
           "factor": 1.1,
           "activePoints": 9.22,
           "points": 9.22,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -28352,8 +28352,8 @@
           "date": "2026-10-25",
           "factor": 1.0295,
           "activePoints": 7.71,
-          "points": 7.71,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -28528,7 +28528,7 @@
           "factor": 0.9519,
           "activePoints": 7.35,
           "points": 7.35,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -28702,8 +28702,8 @@
           "date": "2026-10-25",
           "factor": 1.0209,
           "activePoints": 9.42,
-          "points": 9.42,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -28870,8 +28870,8 @@
           "date": "2026-10-25",
           "factor": 1.1,
           "activePoints": 8.62,
-          "points": 8.62,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -28995,7 +28995,7 @@
       "nflTeam": "Buf",
       "ownership": "rostered",
       "rosterSlot": "BN",
-      "injuryStatus": "O",
+      "injuryStatus": "Q",
       "sampleGames2026": 4,
       "baselineStats": {
         "passAttempts": 0.02,
@@ -29210,7 +29210,7 @@
           "factor": 1.0898,
           "activePoints": 10.39,
           "points": 10.39,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -29384,8 +29384,8 @@
           "date": "2026-10-22",
           "factor": 0.986,
           "activePoints": 7.06,
-          "points": 7.06,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -29560,7 +29560,7 @@
           "factor": 0.9095,
           "activePoints": 6.35,
           "points": 6.35,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -29735,7 +29735,7 @@
           "factor": 0.9064,
           "activePoints": 7.01,
           "points": 7.01,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -30078,8 +30078,8 @@
           "date": "2026-10-25",
           "factor": 1.0055,
           "activePoints": 8.13,
-          "points": 8.13,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -30598,7 +30598,7 @@
           "factor": 1.055,
           "activePoints": 8.5,
           "points": 8.5,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -30772,8 +30772,8 @@
           "date": "2026-10-25",
           "factor": 0.9759,
           "activePoints": 7.31,
-          "points": 7.31,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -30943,7 +30943,7 @@
           "factor": 0.9015,
           "activePoints": 6.7,
           "points": 6.7,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -31113,7 +31113,7 @@
           "factor": 1.0911,
           "activePoints": 8.06,
           "points": 8.06,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -31456,8 +31456,8 @@
           "date": "2026-10-25",
           "factor": 1.1,
           "activePoints": 7.96,
-          "points": 7.96,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -31626,8 +31626,8 @@
           "date": "2026-10-25",
           "factor": 0.9426,
           "activePoints": 7.38,
-          "points": 7.38,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -31794,8 +31794,8 @@
           "date": "2026-10-25",
           "factor": 1.0048,
           "activePoints": 7.56,
-          "points": 7.56,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -31965,7 +31965,7 @@
           "factor": 1.0303,
           "activePoints": 7.75,
           "points": 7.75,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -32140,7 +32140,7 @@
           "factor": 1.0523,
           "activePoints": 6.87,
           "points": 6.87,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -32315,7 +32315,7 @@
           "factor": 1.0746,
           "activePoints": 8.04,
           "points": 8.04,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -32490,7 +32490,7 @@
           "factor": 1.0531,
           "activePoints": 8.93,
           "points": 8.93,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -32665,7 +32665,7 @@
           "factor": 1.0045,
           "activePoints": 7.5,
           "points": 7.5,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -32833,8 +32833,8 @@
           "date": "2026-10-22",
           "factor": 0.986,
           "activePoints": 6.99,
-          "points": 6.99,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -33171,8 +33171,8 @@
           "date": "2026-10-25",
           "factor": 0.9898,
           "activePoints": 7.59,
-          "points": 7.59,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -33341,7 +33341,7 @@
           "factor": 0.9463,
           "activePoints": 6.84,
           "points": 6.84,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -33684,8 +33684,8 @@
           "date": "2026-10-25",
           "factor": 1.0018,
           "activePoints": 6.96,
-          "points": 6.96,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -33853,8 +33853,8 @@
           "date": "2026-10-25",
           "factor": 1.0295,
           "activePoints": 7.13,
-          "points": 7.13,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -34023,7 +34023,7 @@
           "factor": 1.043,
           "activePoints": 6.71,
           "points": 6.71,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -34197,8 +34197,8 @@
           "date": "2026-10-25",
           "factor": 0.9083,
           "activePoints": 6.94,
-          "points": 6.94,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -34541,8 +34541,8 @@
           "date": "2026-10-25",
           "factor": 1.0677,
           "activePoints": 8.01,
-          "points": 8.01,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -34711,8 +34711,8 @@
           "date": "2026-10-25",
           "factor": 1.043,
           "activePoints": 7.14,
-          "points": 7.14,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -35055,8 +35055,8 @@
           "date": "2026-10-25",
           "factor": 0.9123,
           "activePoints": 6.19,
-          "points": 6.19,
-          "state": "assumed_active_future",
+          "points": null,
+          "state": "needs_availability_confirmation",
           "defenseThroughWeek": 5
         },
         {
@@ -35225,7 +35225,7 @@
           "factor": 1.1,
           "activePoints": 8.24,
           "points": 8.24,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -35393,7 +35393,7 @@
           "factor": 0.9837,
           "activePoints": 6.58,
           "points": 6.58,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -35912,8 +35912,8 @@
           "date": "2026-10-25",
           "factor": 0.9761,
           "activePoints": 6.45,
-          "points": 6.45,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -36082,7 +36082,7 @@
           "factor": 1.0018,
           "activePoints": 5.9,
           "points": 5.9,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -36257,7 +36257,7 @@
           "factor": 1.0345,
           "activePoints": 7.76,
           "points": 7.76,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -36430,8 +36430,8 @@
           "date": "2026-10-25",
           "factor": 1.0048,
           "activePoints": 6.96,
-          "points": 6.96,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -36601,7 +36601,7 @@
           "factor": 0.971,
           "activePoints": 5.88,
           "points": 5.88,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -36776,7 +36776,7 @@
           "factor": 1.0415,
           "activePoints": 6.87,
           "points": 6.87,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -36904,7 +36904,7 @@
       "fantasyTeam": "Gridiron Juliean",
       "nflTeam": "NE",
       "ownership": "rostered",
-      "rosterSlot": "TE",
+      "rosterSlot": "BN",
       "injuryStatus": null,
       "sampleGames2026": 5,
       "baselineStats": {
@@ -36951,7 +36951,7 @@
           "factor": 0.9095,
           "activePoints": 6.48,
           "points": 6.48,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -37300,8 +37300,8 @@
           "date": "2026-10-25",
           "factor": 1.0525,
           "activePoints": 7.46,
-          "points": 7.46,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -37639,7 +37639,7 @@
           "factor": 0.9426,
           "activePoints": 7.31,
           "points": 7.31,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -37807,8 +37807,8 @@
           "date": "2026-10-25",
           "factor": 0.9126,
           "activePoints": 6.29,
-          "points": 6.29,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -37976,8 +37976,8 @@
           "date": "2026-10-25",
           "factor": 1.1,
           "activePoints": 7.08,
-          "points": 7.08,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -38145,7 +38145,7 @@
           "factor": 1.0575,
           "activePoints": 6.25,
           "points": 6.25,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -38670,8 +38670,8 @@
           "date": "2026-10-25",
           "factor": 1.0303,
           "activePoints": 6.57,
-          "points": 6.57,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -38840,7 +38840,7 @@
           "factor": 0.9083,
           "activePoints": 6.09,
           "points": 6.09,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -39009,7 +39009,7 @@
           "factor": 0.9449,
           "activePoints": 7.04,
           "points": 7.04,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -39184,7 +39184,7 @@
           "factor": 1.0412,
           "activePoints": 6.33,
           "points": 6.33,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -39358,8 +39358,8 @@
           "date": "2026-10-25",
           "factor": 0.9123,
           "activePoints": 5.77,
-          "points": 5.77,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -39528,7 +39528,7 @@
           "factor": 0.9015,
           "activePoints": 5.36,
           "points": 5.36,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -39703,7 +39703,7 @@
           "factor": 1.0741,
           "activePoints": 7.08,
           "points": 7.08,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -40047,7 +40047,7 @@
           "factor": 0.9404,
           "activePoints": 5.56,
           "points": 5.56,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -40221,7 +40221,7 @@
           "factor": 0.9095,
           "activePoints": 5.58,
           "points": 5.58,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -40397,7 +40397,7 @@
           "factor": 0.9045,
           "activePoints": 5.11,
           "points": 5.11,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -40570,8 +40570,8 @@
           "date": "2026-10-25",
           "factor": 0.9272,
           "activePoints": 5.63,
-          "points": 5.63,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -40741,7 +40741,7 @@
           "factor": 0.9015,
           "activePoints": 5.45,
           "points": 5.45,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -40910,7 +40910,7 @@
           "factor": 1.1,
           "activePoints": 8.13,
           "points": 8.13,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -41084,7 +41084,7 @@
           "factor": 1.0575,
           "activePoints": 6.35,
           "points": 6.35,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -41254,7 +41254,7 @@
           "factor": 1.1,
           "activePoints": 6.25,
           "points": 6.25,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -41428,8 +41428,8 @@
           "date": "2026-10-25",
           "factor": 0.9497,
           "activePoints": 5.68,
-          "points": 5.68,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -41772,8 +41772,8 @@
           "date": "2026-10-26",
           "factor": 1.0415,
           "activePoints": 5.33,
-          "points": 5.33,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -41947,8 +41947,8 @@
           "date": "2026-10-26",
           "factor": 0.9604,
           "activePoints": 5.7,
-          "points": 5.7,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -42117,7 +42117,7 @@
           "factor": 0.9015,
           "activePoints": 5.78,
           "points": 5.78,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -42292,7 +42292,7 @@
           "factor": 1.1,
           "activePoints": 5.91,
           "points": 5.91,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -42466,8 +42466,8 @@
           "date": "2026-10-25",
           "factor": 0.9779,
           "activePoints": 5.77,
-          "points": 5.77,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -42635,8 +42635,8 @@
           "date": "2026-10-25",
           "factor": 0.9463,
           "activePoints": 5.56,
-          "points": 5.56,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -42804,7 +42804,7 @@
           "factor": 1.0725,
           "activePoints": 7.46,
           "points": 7.46,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -42979,7 +42979,7 @@
           "factor": 0.9932,
           "activePoints": 5.12,
           "points": 5.12,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -43155,7 +43155,7 @@
           "factor": 1.1,
           "activePoints": 5.97,
           "points": 5.97,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -43330,7 +43330,7 @@
           "factor": 0.9045,
           "activePoints": 5.18,
           "points": 5.18,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -43499,7 +43499,7 @@
           "factor": 1.055,
           "activePoints": 5.67,
           "points": 5.67,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -43674,7 +43674,7 @@
           "factor": 1.1,
           "activePoints": 6.51,
           "points": 6.51,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -43848,8 +43848,8 @@
           "date": "2026-10-25",
           "factor": 0.9015,
           "activePoints": 5.09,
-          "points": 5.09,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -44018,8 +44018,8 @@
           "date": "2026-10-25",
           "factor": 0.9568,
           "activePoints": 5.41,
-          "points": 5.41,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -44188,7 +44188,7 @@
           "factor": 1.0109,
           "activePoints": 6.06,
           "points": 6.06,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -44362,8 +44362,8 @@
           "date": "2026-10-26",
           "factor": 1.1,
           "activePoints": 6.06,
-          "points": 6.06,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -44531,8 +44531,8 @@
           "date": "2026-10-22",
           "factor": 1.0013,
           "activePoints": 5.52,
-          "points": 5.52,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -44654,7 +44654,7 @@
       "fantasyTeam": "4th Qtr cory",
       "nflTeam": "Atl",
       "ownership": "rostered",
-      "rosterSlot": "TE",
+      "rosterSlot": "BN",
       "injuryStatus": null,
       "sampleGames2026": 5,
       "baselineStats": {
@@ -44701,7 +44701,7 @@
           "factor": 0.9095,
           "activePoints": 5.71,
           "points": 5.71,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -44875,8 +44875,8 @@
           "date": "2026-10-25",
           "factor": 1.0055,
           "activePoints": 5.77,
-          "points": 5.77,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -45045,7 +45045,7 @@
           "factor": 0.986,
           "activePoints": 6.96,
           "points": 6.96,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -45219,8 +45219,8 @@
           "date": "2026-10-25",
           "factor": 1.0088,
           "activePoints": 5.46,
-          "points": 5.46,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -45388,8 +45388,8 @@
           "date": "2026-10-25",
           "factor": 0.9015,
           "activePoints": 4.86,
-          "points": 4.86,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -45558,7 +45558,7 @@
           "factor": 0.9015,
           "activePoints": 4.55,
           "points": 4.55,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -45733,7 +45733,7 @@
           "factor": 1.0741,
           "activePoints": 5.94,
           "points": 5.94,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -45908,7 +45908,7 @@
           "factor": 1.0088,
           "activePoints": 4.85,
           "points": 4.85,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -46258,7 +46258,7 @@
           "factor": 1.0055,
           "activePoints": 5.47,
           "points": 5.47,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -46426,8 +46426,8 @@
           "date": "2026-10-25",
           "factor": 0.9568,
           "activePoints": 5.07,
-          "points": 5.07,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -46596,7 +46596,7 @@
           "factor": 0.9463,
           "activePoints": 5.02,
           "points": 5.02,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -46770,8 +46770,8 @@
           "date": "2026-10-25",
           "factor": 0.9095,
           "activePoints": 4.77,
-          "points": 4.77,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -46940,7 +46940,7 @@
           "factor": 0.9519,
           "activePoints": 4.93,
           "points": 4.93,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -47108,8 +47108,8 @@
           "date": "2026-10-25",
           "factor": 0.9673,
           "activePoints": 4.98,
-          "points": 4.98,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -47447,7 +47447,7 @@
           "factor": 0.9064,
           "activePoints": 4.83,
           "points": 4.83,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -47622,7 +47622,7 @@
           "factor": 1.0531,
           "activePoints": 4.97,
           "points": 4.97,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -47797,7 +47797,7 @@
           "factor": 0.9673,
           "activePoints": 5.22,
           "points": 5.22,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -47972,7 +47972,7 @@
           "factor": 0.918,
           "activePoints": 4.56,
           "points": 4.56,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -48141,8 +48141,8 @@
           "date": "2026-10-25",
           "factor": 0.918,
           "activePoints": 4.56,
-          "points": 4.56,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -48311,8 +48311,8 @@
           "date": "2026-10-25",
           "factor": 0.9599,
           "activePoints": 4.73,
-          "points": 4.73,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -48481,7 +48481,7 @@
           "factor": 1.1,
           "activePoints": 5.18,
           "points": 5.18,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -48655,8 +48655,8 @@
           "date": "2026-10-25",
           "factor": 1.1,
           "activePoints": 5.38,
-          "points": 5.38,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -48824,8 +48824,8 @@
           "date": "2026-10-25",
           "factor": 1.0045,
           "activePoints": 5.15,
-          "points": 5.15,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -49162,8 +49162,8 @@
           "date": "2026-10-25",
           "factor": 0.9888,
           "activePoints": 4.77,
-          "points": 4.77,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -49331,8 +49331,8 @@
           "date": "2026-10-25",
           "factor": 1.1,
           "activePoints": 5.29,
-          "points": 5.29,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -49500,7 +49500,7 @@
           "factor": 0.9272,
           "activePoints": 4.23,
           "points": 4.23,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -49676,7 +49676,7 @@
           "factor": 0.987,
           "activePoints": 4.36,
           "points": 4.36,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -49850,8 +49850,8 @@
           "date": "2026-10-25",
           "factor": 1.1,
           "activePoints": 5.24,
-          "points": 5.24,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -50019,8 +50019,8 @@
           "date": "2026-10-25",
           "factor": 0.9497,
           "activePoints": 4.48,
-          "points": 4.48,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -50189,7 +50189,7 @@
           "factor": 1.1,
           "activePoints": 4.87,
           "points": 4.87,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -50364,7 +50364,7 @@
           "factor": 1.0911,
           "activePoints": 5.12,
           "points": 5.12,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -50533,8 +50533,8 @@
           "date": "2026-10-25",
           "factor": 0.918,
           "activePoints": 4.28,
-          "points": 4.28,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -50878,8 +50878,8 @@
           "date": "2026-10-25",
           "factor": 0.9396,
           "activePoints": 4.37,
-          "points": 4.37,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -51047,8 +51047,8 @@
           "date": "2026-10-25",
           "factor": 0.9568,
           "activePoints": 4.44,
-          "points": 4.44,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -51217,7 +51217,7 @@
           "factor": 1.1,
           "activePoints": 5.45,
           "points": 5.45,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -51386,7 +51386,7 @@
           "factor": 1.0662,
           "activePoints": 4.89,
           "points": 4.89,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -51561,7 +51561,7 @@
           "factor": 0.9396,
           "activePoints": 3.85,
           "points": 3.85,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -51735,8 +51735,8 @@
           "date": "2026-10-26",
           "factor": 0.9604,
           "activePoints": 4.4,
-          "points": 4.4,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -51904,8 +51904,8 @@
           "date": "2026-10-25",
           "factor": 0.9673,
           "activePoints": 4.41,
-          "points": 4.41,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -52074,7 +52074,7 @@
           "factor": 1.043,
           "activePoints": 4.12,
           "points": 4.12,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -52249,7 +52249,7 @@
           "factor": 1.0018,
           "activePoints": 5.4,
           "points": 5.4,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -52423,7 +52423,7 @@
           "factor": 0.9168,
           "activePoints": 5.13,
           "points": 5.13,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -52599,7 +52599,7 @@
           "factor": 0.9497,
           "activePoints": 3.94,
           "points": 3.94,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -52774,7 +52774,7 @@
           "factor": 0.9888,
           "activePoints": 4.11,
           "points": 4.11,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -52949,7 +52949,7 @@
           "factor": 0.9463,
           "activePoints": 5.07,
           "points": 5.07,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -53123,8 +53123,8 @@
           "date": "2026-10-25",
           "factor": 1.0898,
           "activePoints": 5.37,
-          "points": 5.37,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -53292,8 +53292,8 @@
           "date": "2026-10-25",
           "factor": 0.9279,
           "activePoints": 4.31,
-          "points": 4.31,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -53631,8 +53631,8 @@
           "date": "2026-10-25",
           "factor": 0.9519,
           "activePoints": 4.14,
-          "points": 4.14,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -53801,7 +53801,7 @@
           "factor": 1.0548,
           "activePoints": 4.56,
           "points": 4.56,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -53969,7 +53969,7 @@
           "factor": 0.9878,
           "activePoints": 3.72,
           "points": 3.72,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -54145,7 +54145,7 @@
           "factor": 0.9095,
           "activePoints": 3.9,
           "points": 3.9,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -54320,7 +54320,7 @@
           "factor": 1.0662,
           "activePoints": 4.28,
           "points": 4.28,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -54495,7 +54495,7 @@
           "factor": 0.9045,
           "activePoints": 3.83,
           "points": 3.83,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -54669,8 +54669,8 @@
           "date": "2026-10-26",
           "factor": 1.0741,
           "activePoints": 4.54,
-          "points": 4.54,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -55014,7 +55014,7 @@
           "factor": 1.1,
           "activePoints": 4.64,
           "points": 4.64,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -55183,7 +55183,7 @@
           "factor": 1.0507,
           "activePoints": 3.93,
           "points": 3.93,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -55358,7 +55358,7 @@
           "factor": 0.967,
           "activePoints": 4.56,
           "points": 4.56,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -55532,8 +55532,8 @@
           "date": "2026-10-25",
           "factor": 1.0295,
           "activePoints": 4.3,
-          "points": 4.3,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -55701,8 +55701,8 @@
           "date": "2026-10-25",
           "factor": 0.9304,
           "activePoints": 3.86,
-          "points": 3.86,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -56040,8 +56040,8 @@
           "date": "2026-10-25",
           "factor": 0.9761,
           "activePoints": 4.11,
-          "points": 4.11,
-          "state": "assumed_active_future",
+          "points": null,
+          "state": "needs_availability_confirmation",
           "defenseThroughWeek": 5
         },
         {
@@ -56216,7 +56216,7 @@
           "factor": 0.9015,
           "activePoints": 3.52,
           "points": 3.52,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -56391,7 +56391,7 @@
           "factor": 0.9367,
           "activePoints": 4.07,
           "points": 4.07,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -56566,7 +56566,7 @@
           "factor": 0.9673,
           "activePoints": 3.92,
           "points": 3.92,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -56734,8 +56734,8 @@
           "date": "2026-10-25",
           "factor": 0.9761,
           "activePoints": 3.85,
-          "points": 3.85,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -56904,7 +56904,7 @@
           "factor": 0.9898,
           "activePoints": 4.17,
           "points": 4.17,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -57073,7 +57073,7 @@
           "factor": 1.0741,
           "activePoints": 5.36,
           "points": 5.36,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -57248,7 +57248,7 @@
           "factor": 1.0911,
           "activePoints": 4.16,
           "points": 4.16,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -57417,8 +57417,8 @@
           "date": "2026-10-25",
           "factor": 1.1,
           "activePoints": 4.16,
-          "points": 4.16,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -57587,7 +57587,7 @@
           "factor": 0.9396,
           "activePoints": 3.54,
           "points": 3.54,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -57756,7 +57756,7 @@
           "factor": 1.1,
           "activePoints": 3.89,
           "points": 3.89,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -57930,8 +57930,8 @@
           "date": "2026-10-25",
           "factor": 1.1,
           "activePoints": 4.11,
-          "points": 4.11,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -58100,7 +58100,7 @@
           "factor": 1.1,
           "activePoints": 4.11,
           "points": 4.11,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -58775,8 +58775,8 @@
           "date": "2026-10-25",
           "factor": 0.9568,
           "activePoints": 3.53,
-          "points": 3.53,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -58945,7 +58945,7 @@
           "factor": 0.9519,
           "activePoints": 3.86,
           "points": 3.86,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -59120,7 +59120,7 @@
           "factor": 0.9759,
           "activePoints": 3.58,
           "points": 3.58,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -59290,7 +59290,7 @@
           "factor": 1.1,
           "activePoints": 3.86,
           "points": 3.86,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -59464,8 +59464,8 @@
           "date": "2026-10-25",
           "factor": 0.9095,
           "activePoints": 3.27,
-          "points": 3.27,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -59634,7 +59634,7 @@
           "factor": 0.9045,
           "activePoints": 3.09,
           "points": 3.09,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -59808,8 +59808,8 @@
           "date": "2026-10-25",
           "factor": 0.9015,
           "activePoints": 3.22,
-          "points": 3.22,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -59976,8 +59976,8 @@
           "date": "2026-10-25",
           "factor": 1.0575,
           "activePoints": 3.78,
-          "points": 3.78,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -60147,7 +60147,7 @@
           "factor": 0.9497,
           "activePoints": 2.82,
           "points": 2.82,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -60322,7 +60322,7 @@
           "factor": 1.1,
           "activePoints": 3.86,
           "points": 3.86,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -60490,8 +60490,8 @@
           "date": "2026-10-25",
           "factor": 0.9095,
           "activePoints": 3.18,
-          "points": 3.18,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -60659,8 +60659,8 @@
           "date": "2026-10-25",
           "factor": 0.9015,
           "activePoints": 3.15,
-          "points": 3.15,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -60829,7 +60829,7 @@
           "factor": 1.1,
           "activePoints": 3.49,
           "points": 3.49,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -61004,7 +61004,7 @@
           "factor": 0.9095,
           "activePoints": 3.17,
           "points": 3.17,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -61174,7 +61174,7 @@
           "factor": 0.9045,
           "activePoints": 3.13,
           "points": 3.13,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -61342,8 +61342,8 @@
           "date": "2026-10-25",
           "factor": 0.9761,
           "activePoints": 3.38,
-          "points": 3.38,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -61512,7 +61512,7 @@
           "factor": 0.9095,
           "activePoints": 3.13,
           "points": 3.13,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -61680,8 +61680,8 @@
           "date": "2026-10-25",
           "factor": 0.9888,
           "activePoints": 3.31,
-          "points": 3.31,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -62019,7 +62019,7 @@
           "factor": 0.9367,
           "activePoints": 2.74,
           "points": 2.74,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -62194,7 +62194,7 @@
           "factor": 0.9095,
           "activePoints": 2.84,
           "points": 2.84,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -62369,7 +62369,7 @@
           "factor": 0.9449,
           "activePoints": 3,
           "points": 3,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -62894,7 +62894,7 @@
           "factor": 0.9015,
           "activePoints": 2.91,
           "points": 2.91,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -63406,8 +63406,8 @@
           "date": "2026-10-25",
           "factor": 0.9449,
           "activePoints": 3.03,
-          "points": 3.03,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -63576,7 +63576,7 @@
           "factor": 0.9367,
           "activePoints": 2.9,
           "points": 2.9,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -63750,8 +63750,8 @@
           "date": "2026-10-25",
           "factor": 0.9015,
           "activePoints": 2.96,
-          "points": 2.96,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -63926,7 +63926,7 @@
           "factor": 1.0255,
           "activePoints": 3.11,
           "points": 3.11,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -64101,7 +64101,7 @@
           "factor": 1.0295,
           "activePoints": 3.22,
           "points": 3.22,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -64270,7 +64270,7 @@
           "factor": 1.1,
           "activePoints": 4.03,
           "points": 4.03,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -64445,7 +64445,7 @@
           "factor": 0.9673,
           "activePoints": 2.99,
           "points": 2.99,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -64613,7 +64613,7 @@
           "factor": 1.0725,
           "activePoints": 3.28,
           "points": 3.28,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -64782,8 +64782,8 @@
           "date": "2026-10-26",
           "factor": 0.9604,
           "activePoints": 2.92,
-          "points": 2.92,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -64952,7 +64952,7 @@
           "factor": 0.9568,
           "activePoints": 3.13,
           "points": 3.13,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -65126,8 +65126,8 @@
           "date": "2026-10-25",
           "factor": 0.9015,
           "activePoints": 2.72,
-          "points": 2.72,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -65296,7 +65296,7 @@
           "factor": 0.9064,
           "activePoints": 2.73,
           "points": 2.73,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -65464,8 +65464,8 @@
           "date": "2026-10-25",
           "factor": 1.0898,
           "activePoints": 3.54,
-          "points": 3.54,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -65632,8 +65632,8 @@
           "date": "2026-10-25",
           "factor": 1.0725,
           "activePoints": 2.94,
-          "points": 2.94,
-          "state": "assumed_active_future",
+          "points": null,
+          "state": "needs_availability_confirmation",
           "defenseThroughWeek": 5
         },
         {
@@ -65809,7 +65809,7 @@
           "factor": 1.0606,
           "activePoints": 3.71,
           "points": 3.71,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -65984,7 +65984,7 @@
           "factor": 0.9015,
           "activePoints": 2.62,
           "points": 2.62,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -66154,7 +66154,7 @@
           "factor": 1.0662,
           "activePoints": 3.22,
           "points": 3.22,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -66329,7 +66329,7 @@
           "factor": 1.0412,
           "activePoints": 2.82,
           "points": 2.82,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -66503,8 +66503,8 @@
           "date": "2026-10-22",
           "factor": 0.9866,
           "activePoints": 2.79,
-          "points": 2.79,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -66673,7 +66673,7 @@
           "factor": 0.9888,
           "activePoints": 2.38,
           "points": 2.38,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -66848,7 +66848,7 @@
           "factor": 0.9095,
           "activePoints": 3.15,
           "points": 3.15,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -67022,8 +67022,8 @@
           "date": "2026-10-25",
           "factor": 1.1,
           "activePoints": 3.2,
-          "points": 3.2,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -67191,7 +67191,7 @@
           "factor": 1.1,
           "activePoints": 2.73,
           "points": 2.73,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -67367,7 +67367,7 @@
           "factor": 0.986,
           "activePoints": 4.07,
           "points": 4.07,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -67541,7 +67541,7 @@
           "factor": 0.9837,
           "activePoints": 3.35,
           "points": 3.35,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -67717,7 +67717,7 @@
           "factor": 0.9095,
           "activePoints": 2.34,
           "points": 2.34,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -67886,7 +67886,7 @@
           "factor": 1.0911,
           "activePoints": 2.8,
           "points": 2.8,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -68055,8 +68055,8 @@
           "date": "2026-10-25",
           "factor": 1.0606,
           "activePoints": 2.73,
-          "points": 2.73,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -68225,7 +68225,7 @@
           "factor": 1.1,
           "activePoints": 2.77,
           "points": 2.77,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -68393,8 +68393,8 @@
           "date": "2026-10-25",
           "factor": 1.1,
           "activePoints": 3.18,
-          "points": 3.18,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -68562,8 +68562,8 @@
           "date": "2026-10-26",
           "factor": 0.9404,
           "activePoints": 2.31,
-          "points": 2.31,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -68731,7 +68731,7 @@
           "factor": 0.9246,
           "activePoints": 2.15,
           "points": 2.15,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -68907,7 +68907,7 @@
           "factor": 1.0507,
           "activePoints": 2.37,
           "points": 2.37,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -69082,7 +69082,7 @@
           "factor": 1.0746,
           "activePoints": 2.61,
           "points": 2.61,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -69257,7 +69257,7 @@
           "factor": 0.9095,
           "activePoints": 2,
           "points": 2,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -69430,8 +69430,8 @@
           "date": "2026-10-25",
           "factor": 1.0979,
           "activePoints": 2.53,
-          "points": 2.53,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -69601,7 +69601,7 @@
           "factor": 1.1,
           "activePoints": 2.49,
           "points": 2.49,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -69945,7 +69945,7 @@
           "factor": 0.9673,
           "activePoints": 2.79,
           "points": 2.79,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -70295,7 +70295,7 @@
           "factor": 0.971,
           "activePoints": 1.69,
           "points": 1.69,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -70470,7 +70470,7 @@
           "factor": 0.9759,
           "activePoints": 2.04,
           "points": 2.04,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -70639,7 +70639,7 @@
           "factor": 1.1,
           "activePoints": 2.12,
           "points": 2.12,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -70815,7 +70815,7 @@
           "factor": 1.1,
           "activePoints": 2.16,
           "points": 2.16,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -71152,8 +71152,8 @@
           "date": "2026-10-25",
           "factor": 1.0255,
           "activePoints": 1.66,
-          "points": 1.66,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -71321,7 +71321,7 @@
           "factor": 0.9272,
           "activePoints": 1.44,
           "points": 1.44,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -71491,7 +71491,7 @@
           "factor": 0.9095,
           "activePoints": 1.4,
           "points": 1.4,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -71836,7 +71836,7 @@
           "factor": 1.1,
           "activePoints": 1.65,
           "points": 1.65,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -72010,8 +72010,8 @@
           "date": "2026-10-22",
           "factor": 0.9095,
           "activePoints": 1.22,
-          "points": 1.22,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -72354,8 +72354,8 @@
           "date": "2026-10-25",
           "factor": 1.1,
           "activePoints": 1.18,
-          "points": 1.18,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -72523,8 +72523,8 @@
           "date": "2026-10-25",
           "factor": 0.9304,
           "activePoints": 0.61,
-          "points": 0.61,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -72693,7 +72693,7 @@
           "factor": 0.9168,
           "activePoints": 0.4,
           "points": 0.4,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -72868,8 +72868,8 @@
           "date": "2026-10-25",
           "factor": 1.1,
           "activePoints": 0.52,
-          "points": 0.52,
-          "state": "assumed_active_future",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 5
         },
         {
@@ -73038,7 +73038,7 @@
           "factor": 1.1,
           "activePoints": 0.34,
           "points": 0.34,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -73206,7 +73206,7 @@
           "factor": 1.1,
           "activePoints": 0.02,
           "points": 0.02,
-          "state": "assumed_active_future",
+          "state": "assuming_active",
           "defenseThroughWeek": 5
         },
         {
@@ -73333,8 +73333,8 @@
     "rostered": 130,
     "available": 295
   },
-  "currentWeekAtSnapshot": 6,
-  "preparedAt": "2026-10-20T02:44:56.147Z",
+  "currentWeekAtSnapshot": 7,
+  "preparedAt": "2026-10-20T20:34:01.821Z",
   "updateSource": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv",
   "updateNotice": "Offensive baselines and defensive matchup ratings refreshed through Week 5. Snap history retains its original date; K/DEF team context has separately reported feature cutoffs.",
   "defenseThroughWeek": 5,

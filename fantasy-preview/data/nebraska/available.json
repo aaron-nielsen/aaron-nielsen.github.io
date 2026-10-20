@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "retrievedAt": "2026-10-20T02:44:56.242Z",
+  "retrievedAt": "2026-10-20T20:34:01.918Z",
   "source": "Yahoo/Flaim",
   "leagueId": "470.l.1699881",
   "coverage": "up to 100 per position, sampled",
@@ -21,7 +21,7 @@
       "name": "C.J. Stroud",
       "nflTeam": "Hou",
       "position": "QB",
-      "yahooWideRosteredPercent": 66,
+      "yahooWideRosteredPercent": 67,
       "status": null
     },
     {
@@ -30,7 +30,7 @@
       "name": "Aaron Rodgers",
       "nflTeam": "Pit",
       "position": "QB",
-      "yahooWideRosteredPercent": 43,
+      "yahooWideRosteredPercent": 42,
       "status": null
     },
     {
@@ -39,7 +39,7 @@
       "name": "Daniel Jones",
       "nflTeam": "Ind",
       "position": "QB",
-      "yahooWideRosteredPercent": 28,
+      "yahooWideRosteredPercent": 27,
       "status": null
     },
     {
@@ -48,8 +48,8 @@
       "name": "Baker Mayfield",
       "nflTeam": "TB",
       "position": "QB",
-      "yahooWideRosteredPercent": 24,
-      "status": "O"
+      "yahooWideRosteredPercent": 23,
+      "status": "Q"
     },
     {
       "id": "41810",
@@ -70,21 +70,21 @@
       "status": null
     },
     {
-      "id": "28389",
-      "key": "470.p.28389",
-      "name": "Jameis Winston",
-      "nflTeam": "NYG",
-      "position": "QB",
-      "yahooWideRosteredPercent": 16,
-      "status": null
-    },
-    {
       "id": "40889",
       "key": "470.p.40889",
       "name": "Michael Penix Jr.",
       "nflTeam": "Atl",
       "position": "QB",
       "yahooWideRosteredPercent": 16,
+      "status": null
+    },
+    {
+      "id": "28389",
+      "key": "470.p.28389",
+      "name": "Jameis Winston",
+      "nflTeam": "NYG",
+      "position": "QB",
+      "yahooWideRosteredPercent": 15,
       "status": null
     },
     {
@@ -120,7 +120,7 @@
       "name": "Tyler Huntley",
       "nflTeam": "Bal",
       "position": "QB",
-      "yahooWideRosteredPercent": 7,
+      "yahooWideRosteredPercent": 6,
       "status": null
     },
     {
@@ -193,7 +193,7 @@
       "nflTeam": "Was",
       "position": "QB",
       "yahooWideRosteredPercent": 1,
-      "status": "O"
+      "status": "D"
     },
     {
       "id": "41930",
@@ -268,15 +268,6 @@
       "status": null
     },
     {
-      "id": "25785",
-      "key": "470.p.25785",
-      "name": "Russell Wilson",
-      "nflTeam": "NYG",
-      "position": "QB",
-      "yahooWideRosteredPercent": null,
-      "status": "NA"
-    },
-    {
       "id": "33455",
       "key": "470.p.33455",
       "name": "Davis Mills",
@@ -284,6 +275,15 @@
       "position": "QB",
       "yahooWideRosteredPercent": null,
       "status": null
+    },
+    {
+      "id": "25785",
+      "key": "470.p.25785",
+      "name": "Russell Wilson",
+      "nflTeam": "NYG",
+      "position": "QB",
+      "yahooWideRosteredPercent": null,
+      "status": "NA"
     },
     {
       "id": "42037",
@@ -598,7 +598,7 @@
       "nflTeam": "SF",
       "position": "QB",
       "yahooWideRosteredPercent": null,
-      "status": "NA"
+      "status": null
     },
     {
       "id": "42732",
@@ -912,7 +912,7 @@
       "name": "MarShawn Lloyd",
       "nflTeam": "GB",
       "position": "RB",
-      "yahooWideRosteredPercent": 84,
+      "yahooWideRosteredPercent": 82,
       "status": null
     },
     {
@@ -943,15 +943,6 @@
       "status": null
     },
     {
-      "id": "34054",
-      "key": "470.p.34054",
-      "name": "Brian Robinson Jr.",
-      "nflTeam": "Atl",
-      "position": "RB",
-      "yahooWideRosteredPercent": 43,
-      "status": null
-    },
-    {
       "id": "40926",
       "key": "470.p.40926",
       "name": "Jonathon Brooks",
@@ -961,12 +952,21 @@
       "status": "IR"
     },
     {
+      "id": "34054",
+      "key": "470.p.34054",
+      "name": "Brian Robinson Jr.",
+      "nflTeam": "Atl",
+      "position": "RB",
+      "yahooWideRosteredPercent": 42,
+      "status": null
+    },
+    {
       "id": "40641",
       "key": "470.p.40641",
       "name": "Keaton Mitchell",
       "nflTeam": "LAC",
       "position": "RB",
-      "yahooWideRosteredPercent": 38,
+      "yahooWideRosteredPercent": 37,
       "status": null
     },
     {
@@ -984,7 +984,7 @@
       "name": "De'Von Achane",
       "nflTeam": "Mia",
       "position": "RB",
-      "yahooWideRosteredPercent": 32,
+      "yahooWideRosteredPercent": 31,
       "status": "IR"
     },
     {
@@ -997,15 +997,6 @@
       "status": null
     },
     {
-      "id": "42712",
-      "key": "470.p.42712",
-      "name": "Kaelon Black",
-      "nflTeam": "SF",
-      "position": "RB",
-      "yahooWideRosteredPercent": 29,
-      "status": null
-    },
-    {
       "id": "42730",
       "key": "470.p.42730",
       "name": "Jonah Coleman",
@@ -1013,6 +1004,15 @@
       "position": "RB",
       "yahooWideRosteredPercent": 28,
       "status": "IR"
+    },
+    {
+      "id": "42712",
+      "key": "470.p.42712",
+      "name": "Kaelon Black",
+      "nflTeam": "SF",
+      "position": "RB",
+      "yahooWideRosteredPercent": 28,
+      "status": null
     },
     {
       "id": "40231",
@@ -1047,7 +1047,7 @@
       "name": "Kimani Vidal",
       "nflTeam": "LAC",
       "position": "RB",
-      "yahooWideRosteredPercent": 19,
+      "yahooWideRosteredPercent": 18,
       "status": null
     },
     {
@@ -1056,7 +1056,7 @@
       "name": "Najee Harris",
       "nflTeam": "NYG",
       "position": "RB",
-      "yahooWideRosteredPercent": 15,
+      "yahooWideRosteredPercent": 13,
       "status": null
     },
     {
@@ -1078,15 +1078,6 @@
       "status": null
     },
     {
-      "id": "41907",
-      "key": "470.p.41907",
-      "name": "Dylan Sampson",
-      "nflTeam": "Cle",
-      "position": "RB",
-      "yahooWideRosteredPercent": 8,
-      "status": "IR-R"
-    },
-    {
       "id": "34207",
       "key": "470.p.34207",
       "name": "Isiah Pacheco",
@@ -1096,22 +1087,13 @@
       "status": "IR"
     },
     {
-      "id": "41002",
-      "key": "470.p.41002",
-      "name": "Will Shipley",
-      "nflTeam": "Phi",
-      "position": "RB",
-      "yahooWideRosteredPercent": 8,
-      "status": "IR"
-    },
-    {
-      "id": "30423",
-      "key": "470.p.30423",
-      "name": "Austin Ekeler",
-      "nflTeam": "Was",
+      "id": "41907",
+      "key": "470.p.41907",
+      "name": "Dylan Sampson",
+      "nflTeam": "Cle",
       "position": "RB",
       "yahooWideRosteredPercent": 7,
-      "status": null
+      "status": "IR-R"
     },
     {
       "id": "41344",
@@ -1120,6 +1102,24 @@
       "nflTeam": "Sea",
       "position": "RB",
       "yahooWideRosteredPercent": 7,
+      "status": null
+    },
+    {
+      "id": "41002",
+      "key": "470.p.41002",
+      "name": "Will Shipley",
+      "nflTeam": "Phi",
+      "position": "RB",
+      "yahooWideRosteredPercent": 7,
+      "status": "IR"
+    },
+    {
+      "id": "30423",
+      "key": "470.p.30423",
+      "name": "Austin Ekeler",
+      "nflTeam": "Was",
+      "position": "RB",
+      "yahooWideRosteredPercent": 6,
       "status": null
     },
     {
@@ -1318,7 +1318,7 @@
       "nflTeam": "TB",
       "position": "RB",
       "yahooWideRosteredPercent": 1,
-      "status": "O"
+      "status": "Q"
     },
     {
       "id": "41913",
@@ -1519,15 +1519,6 @@
       "status": "NA"
     },
     {
-      "id": "26753",
-      "key": "470.p.26753",
-      "name": "Kyle Juszczyk",
-      "nflTeam": "SF",
-      "position": "RB",
-      "yahooWideRosteredPercent": null,
-      "status": null
-    },
-    {
       "id": "41961",
       "key": "470.p.41961",
       "name": "Robbie Ouzts",
@@ -1589,6 +1580,15 @@
       "position": "RB",
       "yahooWideRosteredPercent": null,
       "status": "NA"
+    },
+    {
+      "id": "26753",
+      "key": "470.p.26753",
+      "name": "Kyle Juszczyk",
+      "nflTeam": "SF",
+      "position": "RB",
+      "yahooWideRosteredPercent": null,
+      "status": null
     },
     {
       "id": "33235",
@@ -1821,7 +1821,7 @@
       "name": "Marvin Harrison Jr.",
       "nflTeam": "Hou",
       "position": "WR",
-      "yahooWideRosteredPercent": 78,
+      "yahooWideRosteredPercent": 77,
       "status": null
     },
     {
@@ -1857,7 +1857,7 @@
       "name": "Germie Bernard",
       "nflTeam": "Pit",
       "position": "WR",
-      "yahooWideRosteredPercent": 51,
+      "yahooWideRosteredPercent": 52,
       "status": null
     },
     {
@@ -1893,7 +1893,7 @@
       "name": "Malik Washington",
       "nflTeam": "Mia",
       "position": "WR",
-      "yahooWideRosteredPercent": 41,
+      "yahooWideRosteredPercent": 42,
       "status": null
     },
     {
@@ -1902,7 +1902,7 @@
       "name": "Quentin Johnston",
       "nflTeam": "LAC",
       "position": "WR",
-      "yahooWideRosteredPercent": 41,
+      "yahooWideRosteredPercent": 40,
       "status": null
     },
     {
@@ -1920,7 +1920,7 @@
       "name": "Michael Pittman Jr.",
       "nflTeam": "Pit",
       "position": "WR",
-      "yahooWideRosteredPercent": 33,
+      "yahooWideRosteredPercent": 32,
       "status": "IR"
     },
     {
@@ -1947,7 +1947,7 @@
       "name": "De'Zhaun Stribling",
       "nflTeam": "SF",
       "position": "WR",
-      "yahooWideRosteredPercent": 27,
+      "yahooWideRosteredPercent": 26,
       "status": "IR"
     },
     {
@@ -1983,7 +1983,7 @@
       "name": "Kalif Raymond",
       "nflTeam": "Chi",
       "position": "WR",
-      "yahooWideRosteredPercent": 17,
+      "yahooWideRosteredPercent": 16,
       "status": null
     },
     {
@@ -2002,7 +2002,7 @@
       "nflTeam": "NYJ",
       "position": "WR",
       "yahooWideRosteredPercent": 15,
-      "status": "O"
+      "status": "D"
     },
     {
       "id": "41087",
@@ -2014,15 +2014,6 @@
       "status": null
     },
     {
-      "id": "33415",
-      "key": "470.p.33415",
-      "name": "Rashod Bateman",
-      "nflTeam": "Bal",
-      "position": "WR",
-      "yahooWideRosteredPercent": 13,
-      "status": "Q"
-    },
-    {
       "id": "42702",
       "key": "470.p.42702",
       "name": "Ja'Kobi Lane",
@@ -2030,6 +2021,15 @@
       "position": "WR",
       "yahooWideRosteredPercent": 12,
       "status": null
+    },
+    {
+      "id": "33415",
+      "key": "470.p.33415",
+      "name": "Rashod Bateman",
+      "nflTeam": "Bal",
+      "position": "WR",
+      "yahooWideRosteredPercent": 12,
+      "status": "Q"
     },
     {
       "id": "40224",
@@ -2045,6 +2045,15 @@
       "key": "470.p.42464",
       "name": "Darius Cooper",
       "nflTeam": "Phi",
+      "position": "WR",
+      "yahooWideRosteredPercent": 9,
+      "status": null
+    },
+    {
+      "id": "40222",
+      "key": "470.p.40222",
+      "name": "DeMario Douglas",
+      "nflTeam": "NE",
       "position": "WR",
       "yahooWideRosteredPercent": 9,
       "status": null
@@ -2068,10 +2077,10 @@
       "status": "Q"
     },
     {
-      "id": "40222",
-      "key": "470.p.40222",
-      "name": "DeMario Douglas",
-      "nflTeam": "NE",
+      "id": "41885",
+      "key": "470.p.41885",
+      "name": "Jaylin Noel",
+      "nflTeam": "Hou",
       "position": "WR",
       "yahooWideRosteredPercent": 8,
       "status": null
@@ -2083,22 +2092,13 @@
       "nflTeam": "LAC",
       "position": "WR",
       "yahooWideRosteredPercent": 8,
-      "status": "O"
+      "status": "Q"
     },
     {
       "id": "30182",
       "key": "470.p.30182",
       "name": "Cooper Kupp",
       "nflTeam": "Sea",
-      "position": "WR",
-      "yahooWideRosteredPercent": 7,
-      "status": null
-    },
-    {
-      "id": "41885",
-      "key": "470.p.41885",
-      "name": "Jaylin Noel",
-      "nflTeam": "Hou",
       "position": "WR",
       "yahooWideRosteredPercent": 7,
       "status": null
@@ -2113,15 +2113,6 @@
       "status": null
     },
     {
-      "id": "42693",
-      "key": "470.p.42693",
-      "name": "Antonio Williams",
-      "nflTeam": "Was",
-      "position": "WR",
-      "yahooWideRosteredPercent": 6,
-      "status": null
-    },
-    {
       "id": "31017",
       "key": "470.p.31017",
       "name": "Christian Kirk",
@@ -2131,13 +2122,22 @@
       "status": "IR-R"
     },
     {
-      "id": "40954",
-      "key": "470.p.40954",
-      "name": "Jalen McMillan",
-      "nflTeam": "TB",
+      "id": "42652",
+      "key": "470.p.42652",
+      "name": "Omar Cooper Jr.",
+      "nflTeam": "NYJ",
+      "position": "WR",
+      "yahooWideRosteredPercent": 6,
+      "status": null
+    },
+    {
+      "id": "42693",
+      "key": "470.p.42693",
+      "name": "Antonio Williams",
+      "nflTeam": "Was",
       "position": "WR",
       "yahooWideRosteredPercent": 5,
-      "status": "IR"
+      "status": null
     },
     {
       "id": "34147",
@@ -2158,28 +2158,10 @@
       "status": null
     },
     {
-      "id": "34709",
-      "key": "470.p.34709",
-      "name": "KaVontae Turpin",
-      "nflTeam": "Dal",
-      "position": "WR",
-      "yahooWideRosteredPercent": 5,
-      "status": "Q"
-    },
-    {
       "id": "42696",
       "key": "470.p.42696",
       "name": "Malachi Fields",
       "nflTeam": "NYG",
-      "position": "WR",
-      "yahooWideRosteredPercent": 5,
-      "status": null
-    },
-    {
-      "id": "42652",
-      "key": "470.p.42652",
-      "name": "Omar Cooper Jr.",
-      "nflTeam": "NYJ",
       "position": "WR",
       "yahooWideRosteredPercent": 5,
       "status": null
@@ -2192,6 +2174,15 @@
       "position": "WR",
       "yahooWideRosteredPercent": 4,
       "status": null
+    },
+    {
+      "id": "40954",
+      "key": "470.p.40954",
+      "name": "Jalen McMillan",
+      "nflTeam": "TB",
+      "position": "WR",
+      "yahooWideRosteredPercent": 4,
+      "status": "IR"
     },
     {
       "id": "32685",
@@ -2230,15 +2221,6 @@
       "status": null
     },
     {
-      "id": "42296",
-      "key": "470.p.42296",
-      "name": "Efton Chism III",
-      "nflTeam": "NE",
-      "position": "WR",
-      "yahooWideRosteredPercent": 3,
-      "status": null
-    },
-    {
       "id": "41865",
       "key": "470.p.41865",
       "name": "Isaac TeSlaa",
@@ -2270,6 +2252,15 @@
       "key": "470.p.41903",
       "name": "Chimere Dike",
       "nflTeam": "Ten",
+      "position": "WR",
+      "yahooWideRosteredPercent": 2,
+      "status": null
+    },
+    {
+      "id": "42296",
+      "key": "470.p.42296",
+      "name": "Efton Chism III",
+      "nflTeam": "NE",
       "position": "WR",
       "yahooWideRosteredPercent": 2,
       "status": null
@@ -2356,6 +2347,15 @@
       "status": null
     },
     {
+      "id": "42035",
+      "key": "470.p.42035",
+      "name": "Konata Mumpfield",
+      "nflTeam": "LAR",
+      "position": "WR",
+      "yahooWideRosteredPercent": 1,
+      "status": null
+    },
+    {
       "id": "41864",
       "key": "470.p.41864",
       "name": "Kyle Williams",
@@ -2398,15 +2398,6 @@
       "nflTeam": "Atl",
       "position": "WR",
       "yahooWideRosteredPercent": 1,
-      "status": null
-    },
-    {
-      "id": "42035",
-      "key": "470.p.42035",
-      "name": "Konata Mumpfield",
-      "nflTeam": "LAR",
-      "position": "WR",
-      "yahooWideRosteredPercent": null,
       "status": null
     },
     {
@@ -2482,19 +2473,19 @@
       "status": null
     },
     {
-      "id": "31857",
-      "key": "470.p.31857",
-      "name": "Hollywood Brown",
-      "nflTeam": "Phi",
+      "id": "33999",
+      "key": "470.p.33999",
+      "name": "John Metchie III",
+      "nflTeam": "Car",
       "position": "WR",
       "yahooWideRosteredPercent": null,
       "status": null
     },
     {
-      "id": "33999",
-      "key": "470.p.33999",
-      "name": "John Metchie III",
-      "nflTeam": "Car",
+      "id": "31857",
+      "key": "470.p.31857",
+      "name": "Hollywood Brown",
+      "nflTeam": "Phi",
       "position": "WR",
       "yahooWideRosteredPercent": null,
       "status": null
@@ -2518,6 +2509,15 @@
       "status": "NA"
     },
     {
+      "id": "41917",
+      "key": "470.p.41917",
+      "name": "Jordan Watkins",
+      "nflTeam": "SF",
+      "position": "WR",
+      "yahooWideRosteredPercent": null,
+      "status": null
+    },
+    {
       "id": "29341",
       "key": "470.p.29341",
       "name": "Chris Moore",
@@ -2536,15 +2536,6 @@
       "status": null
     },
     {
-      "id": "34094",
-      "key": "470.p.34094",
-      "name": "Calvin Austin III",
-      "nflTeam": "NYG",
-      "position": "WR",
-      "yahooWideRosteredPercent": null,
-      "status": "IR"
-    },
-    {
       "id": "40676",
       "key": "470.p.40676",
       "name": "Ryan Miller",
@@ -2552,6 +2543,15 @@
       "position": "WR",
       "yahooWideRosteredPercent": null,
       "status": "NA"
+    },
+    {
+      "id": "34094",
+      "key": "470.p.34094",
+      "name": "Calvin Austin III",
+      "nflTeam": "NYG",
+      "position": "WR",
+      "yahooWideRosteredPercent": null,
+      "status": "IR"
     },
     {
       "id": "40991",
@@ -2590,15 +2590,6 @@
       "status": "NA"
     },
     {
-      "id": "31981",
-      "key": "470.p.31981",
-      "name": "Hunter Renfrow",
-      "nflTeam": "Car",
-      "position": "WR",
-      "yahooWideRosteredPercent": null,
-      "status": "NA"
-    },
-    {
       "id": "42400",
       "key": "470.p.42400",
       "name": "Jahdae Walker",
@@ -2606,6 +2597,15 @@
       "position": "WR",
       "yahooWideRosteredPercent": null,
       "status": null
+    },
+    {
+      "id": "31981",
+      "key": "470.p.31981",
+      "name": "Hunter Renfrow",
+      "nflTeam": "Car",
+      "position": "WR",
+      "yahooWideRosteredPercent": null,
+      "status": "NA"
     },
     {
       "id": "32798",
@@ -2689,15 +2689,6 @@
       "status": "NA"
     },
     {
-      "id": "40630",
-      "key": "470.p.40630",
-      "name": "Tyrell Shavers",
-      "nflTeam": "Buf",
-      "position": "WR",
-      "yahooWideRosteredPercent": null,
-      "status": "PUP-R"
-    },
-    {
       "id": "42238",
       "key": "470.p.42238",
       "name": "Jackson Meeks",
@@ -2705,6 +2696,15 @@
       "position": "WR,TE",
       "yahooWideRosteredPercent": null,
       "status": null
+    },
+    {
+      "id": "40167",
+      "key": "470.p.40167",
+      "name": "Justin Shorter",
+      "nflTeam": "LV",
+      "position": "WR,TE",
+      "yahooWideRosteredPercent": null,
+      "status": "NA"
     },
     {
       "id": "41795",
@@ -2739,7 +2739,7 @@
       "name": "Tyler Higbee",
       "nflTeam": "LAR",
       "position": "TE",
-      "yahooWideRosteredPercent": 35,
+      "yahooWideRosteredPercent": 34,
       "status": null
     },
     {
@@ -2929,7 +2929,7 @@
       "nflTeam": "NYG",
       "position": "TE",
       "yahooWideRosteredPercent": null,
-      "status": "O"
+      "status": "Q"
     },
     {
       "id": "40702",
@@ -2974,22 +2974,22 @@
       "nflTeam": "Bal",
       "position": "TE",
       "yahooWideRosteredPercent": null,
-      "status": "O"
-    },
-    {
-      "id": "41827",
-      "key": "470.p.41827",
-      "name": "Mason Taylor",
-      "nflTeam": "NYJ",
-      "position": "TE",
-      "yahooWideRosteredPercent": null,
-      "status": null
+      "status": "Q"
     },
     {
       "id": "40226",
       "key": "470.p.40226",
       "name": "Elijah Higgins",
       "nflTeam": "Ari",
+      "position": "TE",
+      "yahooWideRosteredPercent": null,
+      "status": null
+    },
+    {
+      "id": "41827",
+      "key": "470.p.41827",
+      "name": "Mason Taylor",
+      "nflTeam": "NYJ",
       "position": "TE",
       "yahooWideRosteredPercent": null,
       "status": null
@@ -3031,15 +3031,6 @@
       "status": null
     },
     {
-      "id": "31901",
-      "key": "470.p.31901",
-      "name": "Josh Oliver",
-      "nflTeam": "Min",
-      "position": "TE",
-      "yahooWideRosteredPercent": null,
-      "status": "IR"
-    },
-    {
       "id": "31071",
       "key": "470.p.31071",
       "name": "Ian Thomas",
@@ -3049,6 +3040,15 @@
       "status": null
     },
     {
+      "id": "31901",
+      "key": "470.p.31901",
+      "name": "Josh Oliver",
+      "nflTeam": "Min",
+      "position": "TE",
+      "yahooWideRosteredPercent": null,
+      "status": "IR"
+    },
+    {
       "id": "31257",
       "key": "470.p.31257",
       "name": "Tanner Hudson",
@@ -3056,15 +3056,6 @@
       "position": "TE",
       "yahooWideRosteredPercent": null,
       "status": "IR"
-    },
-    {
-      "id": "30614",
-      "key": "470.p.30614",
-      "name": "Taysom Hill",
-      "nflTeam": "NO",
-      "position": "TE",
-      "yahooWideRosteredPercent": null,
-      "status": "NA"
     },
     {
       "id": "41692",
@@ -3083,6 +3074,15 @@
       "position": "TE",
       "yahooWideRosteredPercent": null,
       "status": null
+    },
+    {
+      "id": "30614",
+      "key": "470.p.30614",
+      "name": "Taysom Hill",
+      "nflTeam": "NO",
+      "position": "TE",
+      "yahooWideRosteredPercent": null,
+      "status": "NA"
     },
     {
       "id": "33550",
@@ -3148,15 +3148,6 @@
       "status": "NA"
     },
     {
-      "id": "33774",
-      "key": "470.p.33774",
-      "name": "Brock Wright",
-      "nflTeam": "Det",
-      "position": "TE",
-      "yahooWideRosteredPercent": null,
-      "status": null
-    },
-    {
       "id": "42678",
       "key": "470.p.42678",
       "name": "Nate Boerkircher",
@@ -3179,6 +3170,15 @@
       "key": "470.p.41949",
       "name": "Mitchell Evans",
       "nflTeam": "Car",
+      "position": "TE",
+      "yahooWideRosteredPercent": null,
+      "status": null
+    },
+    {
+      "id": "33774",
+      "key": "470.p.33774",
+      "name": "Brock Wright",
+      "nflTeam": "Det",
       "position": "TE",
       "yahooWideRosteredPercent": null,
       "status": null
@@ -3612,7 +3612,7 @@
       "name": "Cameron Dicker",
       "nflTeam": "LAC",
       "position": "K",
-      "yahooWideRosteredPercent": 59,
+      "yahooWideRosteredPercent": 58,
       "status": null
     },
     {
@@ -3621,7 +3621,7 @@
       "name": "Tyler Bass",
       "nflTeam": "Buf",
       "position": "K",
-      "yahooWideRosteredPercent": 46,
+      "yahooWideRosteredPercent": 43,
       "status": null
     },
     {
@@ -3639,7 +3639,7 @@
       "name": "Evan McPherson",
       "nflTeam": "Cin",
       "position": "K",
-      "yahooWideRosteredPercent": 31,
+      "yahooWideRosteredPercent": 32,
       "status": null
     },
     {
@@ -3661,19 +3661,19 @@
       "status": null
     },
     {
-      "id": "43171",
-      "key": "470.p.43171",
-      "name": "Dominic Zvada",
-      "nflTeam": "NYG",
-      "position": "K",
-      "yahooWideRosteredPercent": 17,
-      "status": null
-    },
-    {
       "id": "32417",
       "key": "470.p.32417",
       "name": "Chase McLaughlin",
       "nflTeam": "TB",
+      "position": "K",
+      "yahooWideRosteredPercent": 16,
+      "status": null
+    },
+    {
+      "id": "43171",
+      "key": "470.p.43171",
+      "name": "Dominic Zvada",
+      "nflTeam": "NYG",
       "position": "K",
       "yahooWideRosteredPercent": 16,
       "status": null
@@ -3711,7 +3711,7 @@
       "name": "Andy Borregales",
       "nflTeam": "NE",
       "position": "K",
-      "yahooWideRosteredPercent": 7,
+      "yahooWideRosteredPercent": 6,
       "status": null
     },
     {
@@ -3820,7 +3820,7 @@
       "nflTeam": "Mia",
       "position": "K",
       "yahooWideRosteredPercent": null,
-      "status": null
+      "status": "NA"
     },
     {
       "id": "27120",
@@ -4035,7 +4035,7 @@
       "name": "Colts",
       "nflTeam": "Ind",
       "position": "DEF",
-      "yahooWideRosteredPercent": 52,
+      "yahooWideRosteredPercent": 48,
       "status": null
     },
     {
@@ -4044,7 +4044,7 @@
       "name": "Panthers",
       "nflTeam": "Car",
       "position": "DEF",
-      "yahooWideRosteredPercent": 28,
+      "yahooWideRosteredPercent": 27,
       "status": null
     },
     {
@@ -4062,7 +4062,7 @@
       "name": "Browns",
       "nflTeam": "Cle",
       "position": "DEF",
-      "yahooWideRosteredPercent": 21,
+      "yahooWideRosteredPercent": 22,
       "status": null
     },
     {
@@ -4080,7 +4080,7 @@
       "name": "Bills",
       "nflTeam": "Buf",
       "position": "DEF",
-      "yahooWideRosteredPercent": 17,
+      "yahooWideRosteredPercent": 16,
       "status": null
     },
     {
@@ -4156,21 +4156,21 @@
       "status": null
     },
     {
+      "id": "100010",
+      "key": "470.p.100010",
+      "name": "Titans",
+      "nflTeam": "Ten",
+      "position": "DEF",
+      "yahooWideRosteredPercent": 4,
+      "status": null
+    },
+    {
       "id": "100028",
       "key": "470.p.100028",
       "name": "Commanders",
       "nflTeam": "Was",
       "position": "DEF",
       "yahooWideRosteredPercent": 3,
-      "status": null
-    },
-    {
-      "id": "100010",
-      "key": "470.p.100010",
-      "name": "Titans",
-      "nflTeam": "Ten",
-      "position": "DEF",
-      "yahooWideRosteredPercent": 2,
       "status": null
     },
     {
@@ -4193,7 +4193,7 @@
     }
   ],
   "warnings": [],
-  "injuryStatusSnapshotAt": "2026-10-20T02:44:56.242Z",
+  "injuryStatusSnapshotAt": "2026-10-20T20:34:01.918Z",
   "counts": {
     "QB": 100,
     "RB": 100,

@@ -9,7 +9,7 @@ const $=id=>document.getElementById(id);
 const fmt=v=>Number(v).toFixed(1);
 const MIN_ROS_GAIN_PER_WEEK=.5; // For EACH fantasy manager, not just the requester.
 const id=p=>String(p.id||p.yahooId);
-let state=null, selectedOut=new Set(),selectedIn=new Set(),nextJob=0, oldFallback=null,searchStats=null,unverifiedCandidates=[],lineupCache=new Map(),fitCache=new Map();
+let state=null, selectedOut=new Set(),selectedIn=new Set(),nextJob=0, oldFallback=null,searchStats=null,lineupCache=new Map(),fitCache=new Map();
 const status=p=>String(p.status||p.injuryStatus||'').toUpperCase();
 const eligible=p=>{
  // User preference: Hall cannot be offered while his current injury persists.
@@ -291,7 +291,6 @@ function optimized(players,week){
  return lineupCache.get(key);
 }
 function evaluate(){
- unverifiedCandidates=[];
  const weeks=starts(),mine=state.rosters.teams.find(t=>String(t.id)===String(state.teamId));
  if(!weeks.length)return [];
  const candidates=getCandidates();
@@ -306,8 +305,7 @@ function evaluate(){
   return yahoo?.gainYou>0&&yahoo?.gainThem>=0&&arbitrageValues(c,mine,weeks).total>0&&bonusIsThrowin(c,mine,weeks,yahoo);
  }):covered;
 
- const research=verifiedMode?candidates.filter(c=>!covered.includes(c)&&![...c.send.players,...c.receive.players].some(p=>['O','OUT','D','DOUBTFUL'].includes(status(p)))).slice(0,240):[];
- const otherIds=new Set([...viable,...research].map(x=>x.partner.id));
+ const otherIds=new Set(viable.map(x=>x.partner.id));
  const baseline={
   you:weeks.map(w=>optimized(mine.players,w)),
   peers:new Map(state.rosters.teams.filter(t=>otherIds.has(t.id)).map(t=>[t.id,weeks.map(w=>optimized(t.players,w))]))
@@ -316,9 +314,6 @@ function evaluate(){
  // A proposed trade must make BOTH nine-position projected lineups better
  // over the entire selected remainder of the season. Small noisy gains do not count.
  const evaluated=viable.map(c=>evaluateOffer(c,mine.players,baseline,weeks)).filter(Boolean);
- unverifiedCandidates=research.map(c=>evaluateOffer(c,mine.players,baseline,weeks)).filter(t=>t&&!t.yahoo&&t.avgYou>=MIN_ROS_GAIN_PER_WEEK&&t.avgThem>=MIN_ROS_GAIN_PER_WEEK)
- .sort((a,b)=>Math.min(b.avgYou,b.avgThem)-Math.min(a.avgYou,a.avgThem));
- searchStats.researchTested=research.length;
  searchStats.valid=evaluated.length;
  const results=evaluated
  .filter(t=>$('tradeGoal')?.value==='arbitrage'?t.yahoo?.gainYou>0&&t.yahoo?.gainThem>=0&&arbitrageValues(t,mine,weeks).total>0:$('tradeGoal')?.value==='edge'?t.avgYou>=MIN_ROS_GAIN_PER_WEEK&&t.yahoo?.gainThem>=0:$('tradeGoal')?.value==='yahoo'?t.yahoo?.gainYou>=weeks.length*MIN_ROS_GAIN_PER_WEEK&&t.yahoo?.gainThem>=weeks.length*MIN_ROS_GAIN_PER_WEEK:t.avgYou>=MIN_ROS_GAIN_PER_WEEK&&t.avgThem>=MIN_ROS_GAIN_PER_WEEK)
@@ -411,7 +406,6 @@ function render(){
    $('broadenTrades')?.addEventListener('click',()=>{$('tradePackageFilter').value='practical';render();});
    for(const button of info.querySelectorAll?.('[data-trade-partner]')||[])button.addEventListener('click',()=>{$('tradePartner').value=button.dataset.tradePartner;refresh();render();});
   }
-  renderResearch();
   const limit=Number($('tradeLimit')?.value||12),seenTargets=new Set(),first=[],variants=[];
   for(const t of options){const key=t.partner.id+'/'+t.receive.players.filter(p=>!['K','DEF'].includes(p.position)).map(id).sort().join('.');if(seenTargets.has(key))variants.push(t);else{seenTargets.add(key);first.push(t);}}
   const shown=first.concat(variants).slice(0,limit);
@@ -425,18 +419,6 @@ function render(){
   target.innerHTML=shown.map(resultHTML).join('');
  };
  if(typeof requestAnimationFrame==='function')requestAnimationFrame(run);else run();
-}
-function renderResearch(){
- const target=$('tradeResearch');if(!target)return;
- if(!['arbitrage','edge','yahoo'].includes($('tradeGoal')?.value)){target.innerHTML='';return;}
- const counts={},pairs=new Set();
- const shown=unverifiedCandidates.filter(t=>{
-  const key=t.partner.id+'/'+t.receive.key;if(pairs.has(key)||(counts[t.partner.id]||0)>=3)return false;
-  pairs.add(key);counts[t.partner.id]=(counts[t.partner.id]||0)+1;return true;
- }).slice(0,Number($('tradeLimit')?.value||6));
- if(!shown.length){target.innerHTML='';return;}
- const list=players=>players.map(p=>esc(p.name)).join(' + ');
- target.innerHTML='<div class="section-top"><h3>Candidates to check in Yahoo</h3></div><p class="plan-context">'+'Yahoo impact is not yet available for these candidates.</p>'+(shown.length?shown.map(t=>'<article class="trade-personal-card"><div class="trade-personal-head"><strong>'+esc(t.partner.name)+'</strong><span>'+t.shape+' · Yahoo check needed</span></div><div class="trade-personal-sides"><div><small>YOU SEND</small><p>'+list(t.send.players)+'</p><strong>Your Da Vinci upside: +'+fmt(t.gainYou)+' period pts</strong></div><div><small>YOU RECEIVE</small><p>'+list(t.receive.players)+'</p><strong>Partner’s Yahoo impact: Unknown</strong></div></div></article>').join(''):'<p class="plan-context">No additional candidates passed this limited model screen. Try a target player or manager.</p>');
 }
 function yahooCoverageHTML(){
  const coverage=state.yahooFuture?.coverage;
