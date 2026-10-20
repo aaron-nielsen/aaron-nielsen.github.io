@@ -26,7 +26,7 @@ body{font:16px/1.48 'Source Sans 3',Arial,sans-serif;color:var(--text);backgroun
 .projection-table-row.mine,.scoreboard-item.mine{background:#f9f0e1}
 .projection-table-head{background:#f3e9db;color:#655d53}
 .finder-surface{background:#f8f0e4;border:1px solid #d8cab8;border-radius:10px}
-.finder-surface:after,.record-upper:after{opacity:.28}
+.record-upper:after{opacity:.28}
 .select,.finder-controls .select,.finder-controls input,.projection-controls input{font:500 14px 'Source Sans 3',sans-serif;background:#fffdf9;border:1px solid #cbbca9;border-radius:6px;color:#403830}
 .team-overview{background:#f8efe2;border:1px solid #dbccbb}
 .team-overview h2{font:750 25px 'Source Sans 3',sans-serif}
