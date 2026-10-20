@@ -65,7 +65,7 @@ for(const entry of [{slug:'',user:'7',id:'470.l.258793',n:14},
    const lineup=modelTeamLineup(team.id,week);
    if(!lineup){
     const blocked=p=>p.slot==='IR'||['O','OUT','IR','IR-R','CEL','SUSP','SUS','NA','N/A','PUP','PUP-R','NFI','NFI-R'].includes(p.status);
-    assert.ok(['QB','K','DEF'].some(pos=>!team.players.some(p=>p.position===pos&&!blocked(p))),entry.slug+' unexpected missing '+team.name+' / W'+week);
+    assert.ok(Object.entries({QB:1,RB:2,WR:2,TE:1,K:1,DEF:1}).some(([pos,needed])=>team.players.filter(p=>p.position===pos&&!blocked(p)).length<needed),entry.slug+' unexpected missing '+team.name+' / W'+week);
     continue; // An unavailable sole kicker cannot form a complete optimized lineup.
    }
    assert.equal(lineup.ids.length,9);

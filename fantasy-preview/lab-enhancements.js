@@ -135,7 +135,9 @@ function renderFutureProjections(){
     const bv=activeValue(b,record(b,selectedWeek));
     return (bv??-100)-(av??-100)||a.name.localeCompare(b.name);
   });
-  const listHtml=list.map(p=>{
+  const limit=$el('projectionLimit')?.value||'50';
+  const shown=limit==='all'?list:list.slice(0,Number(limit)||50);
+  const listHtml=shown.map(p=>{
     const w=record(p,selectedWeek),a=access(p),h=horizon(p);
     const stateLabel=!a.usable?'Not active':a.review?'Status: '+a.status:w?.state==='bye'?'Bye':'';
     const current=!a.usable?'—':w?.state==='bye'?'BYE':display(w,selectedWeek);
@@ -151,7 +153,7 @@ function renderFutureProjections(){
   $el('allProjections').innerHTML=
     '<div class="stat-column-head"><span>Player / matchup</span><span>Week '+selectedWeek+'</span><span>Next 4 games</span><span>ROS</span></div>'+
     (listHtml||'<div class="empty-copy">No matching players.</div>');
-  $el('projectionCoverage').textContent=futureData.players.length+' modeled players · offense and defense through Week '+(futureData.defenseThroughWeek||futureData.statsThroughWeek)+' · K/DEF context through Week '+Math.min(Number(specialContext.dataThroughWeek),Number(week.week)-1);
+  $el('projectionCoverage').textContent=shown.length+' of '+list.length+' matching players · model stats through Week '+futureData.statsThroughWeek;
   $el('forecastContext').textContent='Week '+selectedWeek+' points and future totals assume participation unless marked otherwise. Next four means four scheduled NFL games, skipping byes; ROS begins Week '+Math.max(6,selectedWeek)+'. Players not currently active are not given actionable point totals.';
 }
 function renderMine(){
@@ -327,9 +329,11 @@ function init(){
   }
   futureById=new Map(futureData.players.map(p=>[String(p.yahooId),p]));
   const first=Math.max(Number(week.week),Number(futureData.startWeek));
-  selectedWeek=first;
+  const defaultWeek=typeof planningWeek==='function'?planningWeek():first;
+  selectedWeek=defaultWeek;
   const weekSel=$el('futureWeek');
-  if(weekSel){weekSel.innerHTML=Array.from({length:futureData.endWeek-first+1},(_,i)=>'<option value="'+(first+i)+'">Week '+(first+i)+'</option>').join('');weekSel.value=String(first);weekSel.addEventListener('change',()=>{selectedWeek=Number(weekSel.value);renderFutureProjections();renderMine();});}
+  if(weekSel){weekSel.innerHTML=Array.from({length:futureData.endWeek-first+1},(_,i)=>'<option value="'+(first+i)+'">Week '+(first+i)+'</option>').join('');weekSel.value=String(defaultWeek);weekSel.addEventListener('change',()=>{selectedWeek=Number(weekSel.value);renderFutureProjections();renderMine();});}
+  $el('projectionLimit')?.addEventListener('change',renderFutureProjections);
   const tradeFirst=Math.max(6,Number(week.week));
   const tradeSel=$el('tradeFromWeek');
   if(tradeSel){tradeSel.innerHTML=Array.from({length:futureData.endWeek-tradeFirst+1},(_,i)=>'<option value="'+(tradeFirst+i)+'">Weeks '+(tradeFirst+i)+'–'+futureData.endWeek+'</option>').join('');tradeSel.addEventListener('change',showTrades);}

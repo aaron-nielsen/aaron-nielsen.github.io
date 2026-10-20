@@ -70,6 +70,12 @@ function refresh(base,input,at=new Date().toISOString()){
  future.forecastNotice='Future offense estimates assume participation, except explicit return scenarios. Defense factors use completed games through Week '+through+' and are capped at +/-10%. Yahoo forecasts remain a separate dated source.';
  future.updateNotice='Offensive baselines and defensive matchup ratings refreshed through Week '+through+'. Snap history retains its original date; K/DEF team context has separately reported feature cutoffs.';
  weekly.generatedAt=at;weekly.defenseThroughWeek=through;
+ // League-specific defense ratings can be refreshed independently of shared
+ // red-zone context, whose collection date must remain unchanged.
+ if(!input.context){
+  write('defense-ratings',report);write('future',future);write('weekly',weekly);
+  return {throughWeek:through,teams:rows.length,changedFrames:changed,redZoneThroughWeek:null};
+ }
  const context=read('special-teams-context');
  const pbp=new Map(Object.entries(input.context.teams).flatMap(([team,t])=>t.games.filter(g=>g.seasonType==='REG').map(g=>[g.gameId+'/'+norm(team),g])));
  const counts=new Map();for(const g of pbp.values())counts.set(g.week,(counts.get(g.week)||0)+1);

@@ -148,7 +148,7 @@ assert.equal(context.DaVinciPersonalTrades.yahooEvaluation(offer,[7],yourAfter,t
 getElementById('tradeGoal').value='edge';
 context.DaVinciPersonalTrades.render();
 assert.doesNotMatch(getElementById('tradeResults').innerHTML,/trade-personal-card/,'Negative Yahoo partner gain cannot qualify as a Yahoo-fair coup');
-assert.match(getElementById('tradeResults').innerHTML,/No matching trades improve your lineup/);
+assert.match(getElementById('tradeResults').innerHTML,/No matching trades in this period/);
 
 // Yahoo fairness is mandatory even when Da Vinci projects a strong gain.
 getElementById('tradeFromWeek').value='6';
@@ -162,7 +162,7 @@ assert.match(getElementById('tradeResults').innerHTML,/-12.00/,'Yahoo own-side l
 fairYahoo.evaluations[0].gainThem=-1;
 context.DaVinciPersonalTrades.init({rosters,available,future,yahooEvaluations:fairYahoo,teamId:owner,optimize:context.DaVinciAdvice.lineup});
 context.DaVinciPersonalTrades.render();
-assert.match(getElementById('tradeResults').innerHTML,/No matching trades improve your lineup/,'Negative Yahoo partner impact cannot qualify');
+assert.match(getElementById('tradeResults').innerHTML,/No matching trades in this period/,'Negative Yahoo partner impact cannot qualify');
 const references=JSON.parse(read('data/yahoo-trade-evaluations.json')).evaluations.filter(e=>e.partnerId==='12');
 assert.equal(references.length,2);
 for(const e of references){

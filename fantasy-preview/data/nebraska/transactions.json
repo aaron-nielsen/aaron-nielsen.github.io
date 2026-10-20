@@ -2,19 +2,518 @@
   "source": "Yahoo completed transactions, rolling 30-day window",
   "leagueId": "470.l.1699881",
   "season": 2026,
+  "retrievedAt": "2026-10-20T02:44:56.242Z",
   "coverage": {
     "window": {
       "mode": "recent_30_days_timestamp",
       "weeks": [],
-      "start_timestamp_ms": 1789064534582,
-      "end_timestamp_ms": 1791656534582,
-      "returned_rows": 11
+      "start_timestamp_ms": 1789872216731,
+      "end_timestamp_ms": 1792464216731,
+      "returned_rows": 29
     },
     "limitations": null,
     "warning": null,
     "truncated": false
   },
   "transactions": [
+    {
+      "transaction_id": "470.l.1699881.tr.32",
+      "type": "add",
+      "status": "complete",
+      "timestamp": 1792339813000,
+      "date": "2026-10-18",
+      "week": null,
+      "team_ids": [
+        "470.l.1699881.t.3"
+      ],
+      "players_added": [
+        {
+          "id": "33443",
+          "name": "Pat Freiermuth",
+          "position": "TE",
+          "team": "Pit"
+        }
+      ],
+      "players_dropped": [
+        {
+          "id": "34085",
+          "name": "Jake Ferguson",
+          "position": "TE",
+          "team": "Dal"
+        }
+      ],
+      "faab_bid": null,
+      "waiver_priority": null,
+      "draft_picks": null
+    },
+    {
+      "transaction_id": "470.l.1699881.tr.31",
+      "type": "add",
+      "status": "complete",
+      "timestamp": 1792245980000,
+      "date": "2026-10-17",
+      "week": null,
+      "team_ids": [
+        "470.l.1699881.t.2"
+      ],
+      "players_added": [
+        {
+          "id": "34063",
+          "name": "Dameon Pierce",
+          "position": "RB",
+          "team": "Phi"
+        }
+      ],
+      "players_dropped": [],
+      "faab_bid": null,
+      "waiver_priority": null,
+      "draft_picks": null
+    },
+    {
+      "transaction_id": "470.l.1699881.tr.30",
+      "type": "drop",
+      "status": "complete",
+      "timestamp": 1792245927000,
+      "date": "2026-10-17",
+      "week": null,
+      "team_ids": [
+        "470.l.1699881.t.2"
+      ],
+      "players_added": [],
+      "players_dropped": [
+        {
+          "id": "28592",
+          "name": "Darren Waller",
+          "position": "TE",
+          "team": "Car"
+        }
+      ],
+      "faab_bid": null,
+      "waiver_priority": null,
+      "draft_picks": null
+    },
+    {
+      "transaction_id": "470.l.1699881.tr.29",
+      "type": "add",
+      "status": "complete",
+      "timestamp": 1792245814000,
+      "date": "2026-10-17",
+      "week": null,
+      "team_ids": [
+        "470.l.1699881.t.2"
+      ],
+      "players_added": [
+        {
+          "id": "34107",
+          "name": "Tyler Allgeier",
+          "position": "RB",
+          "team": "Ari"
+        }
+      ],
+      "players_dropped": [
+        {
+          "id": "41969",
+          "name": "Ollie Gordon II",
+          "position": "RB",
+          "team": "Mia"
+        }
+      ],
+      "faab_bid": null,
+      "waiver_priority": null,
+      "draft_picks": null
+    },
+    {
+      "transaction_id": "470.l.1699881.tr.27",
+      "type": "add",
+      "status": "complete",
+      "timestamp": 1792221952000,
+      "date": "2026-10-17",
+      "week": null,
+      "team_ids": [
+        "470.l.1699881.t.3"
+      ],
+      "players_added": [
+        {
+          "id": "28534",
+          "name": "Stefon Diggs",
+          "position": "WR",
+          "team": "Was"
+        }
+      ],
+      "players_dropped": [],
+      "faab_bid": null,
+      "waiver_priority": null,
+      "draft_picks": null
+    },
+    {
+      "transaction_id": "470.l.1699881.tr.26",
+      "type": "add",
+      "status": "complete",
+      "timestamp": 1792183255000,
+      "date": "2026-10-16",
+      "week": null,
+      "team_ids": [
+        "470.l.1699881.t.5"
+      ],
+      "players_added": [
+        {
+          "id": "40078",
+          "name": "Brenton Strange",
+          "position": "TE",
+          "team": "Jax"
+        }
+      ],
+      "players_dropped": [
+        {
+          "id": "41795",
+          "name": "Colston Loveland",
+          "position": "TE",
+          "team": "Chi"
+        }
+      ],
+      "faab_bid": null,
+      "waiver_priority": null,
+      "draft_picks": null
+    },
+    {
+      "transaction_id": "470.l.1699881.tr.25",
+      "type": "add",
+      "status": "complete",
+      "timestamp": 1792117464000,
+      "date": "2026-10-16",
+      "week": null,
+      "team_ids": [
+        "470.l.1699881.t.3"
+      ],
+      "players_added": [
+        {
+          "id": "100033",
+          "name": "Ravens",
+          "position": "DEF",
+          "team": "Bal"
+        }
+      ],
+      "players_dropped": [
+        {
+          "id": "100034",
+          "name": "Texans",
+          "position": "DEF",
+          "team": "Hou"
+        }
+      ],
+      "faab_bid": null,
+      "waiver_priority": null,
+      "draft_picks": null
+    },
+    {
+      "transaction_id": "470.l.1699881.tr.24",
+      "type": "add",
+      "status": "complete",
+      "timestamp": 1792110535000,
+      "date": "2026-10-16",
+      "week": null,
+      "team_ids": [
+        "470.l.1699881.t.9"
+      ],
+      "players_added": [
+        {
+          "id": "41902",
+          "name": "Woody Marks",
+          "position": "RB",
+          "team": "Hou"
+        }
+      ],
+      "players_dropped": [
+        {
+          "id": "100016",
+          "name": "Vikings",
+          "position": "DEF",
+          "team": "Min"
+        }
+      ],
+      "faab_bid": null,
+      "waiver_priority": null,
+      "draft_picks": null
+    },
+    {
+      "transaction_id": "470.l.1699881.tr.23",
+      "type": "add",
+      "status": "complete",
+      "timestamp": 1792110244000,
+      "date": "2026-10-16",
+      "week": null,
+      "team_ids": [
+        "470.l.1699881.t.9"
+      ],
+      "players_added": [
+        {
+          "id": "31019",
+          "name": "Dallas Goedert",
+          "position": "TE",
+          "team": "Phi"
+        }
+      ],
+      "players_dropped": [
+        {
+          "id": "33113",
+          "name": "Juwan Johnson",
+          "position": "TE",
+          "team": "NO"
+        }
+      ],
+      "faab_bid": null,
+      "waiver_priority": null,
+      "draft_picks": null
+    },
+    {
+      "transaction_id": "470.l.1699881.tr.22",
+      "type": "add",
+      "status": "complete",
+      "timestamp": 1792110211000,
+      "date": "2026-10-16",
+      "week": null,
+      "team_ids": [
+        "470.l.1699881.t.9"
+      ],
+      "players_added": [
+        {
+          "id": "40981",
+          "name": "Braelon Allen",
+          "position": "RB",
+          "team": "NYJ"
+        }
+      ],
+      "players_dropped": [
+        {
+          "id": "40908",
+          "name": "Ladd McConkey",
+          "position": "WR",
+          "team": "LAC"
+        }
+      ],
+      "faab_bid": null,
+      "waiver_priority": null,
+      "draft_picks": null
+    },
+    {
+      "transaction_id": "470.l.1699881.tr.21",
+      "type": "add",
+      "status": "complete",
+      "timestamp": 1792109965000,
+      "date": "2026-10-16",
+      "week": null,
+      "team_ids": [
+        "470.l.1699881.t.9"
+      ],
+      "players_added": [
+        {
+          "id": "25812",
+          "name": "Kirk Cousins",
+          "position": "QB",
+          "team": "LV"
+        }
+      ],
+      "players_dropped": [],
+      "faab_bid": null,
+      "waiver_priority": null,
+      "draft_picks": null
+    },
+    {
+      "transaction_id": "470.l.1699881.tr.20",
+      "type": "add",
+      "status": "complete",
+      "timestamp": 1792006310000,
+      "date": "2026-10-14",
+      "week": null,
+      "team_ids": [
+        "470.l.1699881.t.9"
+      ],
+      "players_added": [
+        {
+          "id": "42838",
+          "name": "Trey Smack",
+          "position": "K",
+          "team": "GB"
+        }
+      ],
+      "players_dropped": [
+        {
+          "id": "41058",
+          "name": "Malik Washington",
+          "position": "WR",
+          "team": "Mia"
+        }
+      ],
+      "faab_bid": null,
+      "waiver_priority": null,
+      "draft_picks": null
+    },
+    {
+      "transaction_id": "470.l.1699881.tr.19",
+      "type": "add",
+      "status": "complete",
+      "timestamp": 1792006261000,
+      "date": "2026-10-14",
+      "week": null,
+      "team_ids": [
+        "470.l.1699881.t.9"
+      ],
+      "players_added": [
+        {
+          "id": "40296",
+          "name": "Blake Grupe",
+          "position": "K",
+          "team": "LAR"
+        }
+      ],
+      "players_dropped": [
+        {
+          "id": "32231",
+          "name": "Jakobi Meyers",
+          "position": "WR",
+          "team": "Jax"
+        }
+      ],
+      "faab_bid": null,
+      "waiver_priority": null,
+      "draft_picks": null
+    },
+    {
+      "transaction_id": "470.l.1699881.tr.18",
+      "type": "drop",
+      "status": "complete",
+      "timestamp": 1792006138000,
+      "date": "2026-10-14",
+      "week": null,
+      "team_ids": [
+        "470.l.1699881.t.9"
+      ],
+      "players_added": [],
+      "players_dropped": [
+        {
+          "id": "41312",
+          "name": "Harrison Mevis",
+          "position": "K",
+          "team": "LAR"
+        }
+      ],
+      "faab_bid": null,
+      "waiver_priority": null,
+      "draft_picks": null
+    },
+    {
+      "transaction_id": "470.l.1699881.tr.17",
+      "type": "add",
+      "status": "complete",
+      "timestamp": 1792003074000,
+      "date": "2026-10-14",
+      "week": null,
+      "team_ids": [
+        "470.l.1699881.t.4"
+      ],
+      "players_added": [
+        {
+          "id": "100012",
+          "name": "Chiefs",
+          "position": "DEF",
+          "team": "KC"
+        }
+      ],
+      "players_dropped": [
+        {
+          "id": "100004",
+          "name": "Bengals",
+          "position": "DEF",
+          "team": "Cin"
+        }
+      ],
+      "faab_bid": null,
+      "waiver_priority": null,
+      "draft_picks": null
+    },
+    {
+      "transaction_id": "470.l.1699881.tr.15",
+      "type": "add",
+      "status": "complete",
+      "timestamp": 1791963104000,
+      "date": "2026-10-14",
+      "week": null,
+      "team_ids": [
+        "470.l.1699881.t.6"
+      ],
+      "players_added": [
+        {
+          "id": "29325",
+          "name": "Jacoby Brissett",
+          "position": "QB",
+          "team": "Ari"
+        }
+      ],
+      "players_dropped": [
+        {
+          "id": "28534",
+          "name": "Stefon Diggs",
+          "position": "WR",
+          "team": "Was"
+        }
+      ],
+      "faab_bid": null,
+      "waiver_priority": null,
+      "draft_picks": null
+    },
+    {
+      "transaction_id": "470.l.1699881.tr.14",
+      "type": "add",
+      "status": "complete",
+      "timestamp": 1791963104000,
+      "date": "2026-10-14",
+      "week": null,
+      "team_ids": [
+        "470.l.1699881.t.2"
+      ],
+      "players_added": [
+        {
+          "id": "31833",
+          "name": "Kyler Murray",
+          "position": "QB",
+          "team": "Min"
+        }
+      ],
+      "players_dropped": [
+        {
+          "id": "41825",
+          "name": "Tyler Shough",
+          "position": "QB",
+          "team": "NO"
+        }
+      ],
+      "faab_bid": null,
+      "waiver_priority": null,
+      "draft_picks": null
+    },
+    {
+      "transaction_id": "470.l.1699881.tr.13",
+      "type": "add",
+      "status": "complete",
+      "timestamp": 1791963104000,
+      "date": "2026-10-14",
+      "week": null,
+      "team_ids": [
+        "470.l.1699881.t.9"
+      ],
+      "players_added": [
+        {
+          "id": "100017",
+          "name": "Patriots",
+          "position": "DEF",
+          "team": "NE"
+        }
+      ],
+      "players_dropped": [],
+      "faab_bid": null,
+      "waiver_priority": null,
+      "draft_picks": null
+    },
     {
       "transaction_id": "470.l.1699881.tr.12",
       "type": "add",

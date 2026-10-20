@@ -26,7 +26,8 @@ for(const folder of ['data/','data/nebraska/']){
  assert.equal(brooks.points,0,'Confirmed-out Brooks should have zero projection');
  assert.ok(robinson.projectedStats.carries>0,'Other players receive independent usage trends');
  const brooksWeek6=futureData.players.find(p=>p.name==='Chris Brooks').weeks.find(g=>g.week===6);
- assert.ok(brooksWeek6.points>0&&brooksWeek6.playingTime.label==='Recent snap and opportunity history',
+ if(brooksWeek6.state==='unavailable_reported')assert.equal(brooksWeek6.points,0,'New injury information must remain unavailable');
+ else assert.ok(brooksWeek6.points>0&&brooksWeek6.playingTime.label==='Recent snap and opportunity history',
   'Week 6 may use normal playing-time trends, but not the Week 5 Brooks injury override');
  assert.ok(futureData.players.find(p=>p.name==='Brian Robinson').weeks.find(g=>g.week===17).playingTime.adjustment<=1.02,
   'Recent-week trend should decay into long-range baseline');

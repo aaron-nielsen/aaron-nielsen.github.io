@@ -57,7 +57,7 @@ function lineup(players,w,allowEmpty=false){
 }
 function mine(){return state.rosters.teams.find(t=>String(t.id)===String(state.teamId))?.players||[];}
 function horizon(){
- const first=Math.max(state.week,Number(state.future.startWeek));
+ const first=Math.max(state.recommendationWeek??state.week,Number(state.future.startWeek));
  const last=Number(state.future.endWeek)||17;
  const mode=$('waiverHorizon')?.value||'next_week';
  const count=mode==='next_week'?1:mode==='four_weeks'?4:last-first+1;
@@ -66,7 +66,7 @@ function horizon(){
 function renderRecommendations(){
  if(!state)return;
  const target=$('lineupRecommendations');if(!target)return;
- const w=Number($('lineupWeek')?.value||state.week);
+ const w=Number((state.recommendationWeek!=null?$('decisionWeek')?.value:null)||$('lineupWeek')?.value||state.week);
  const chip=$('lineupChangeWeek');if(chip)chip.textContent='WEEK '+w;
  const roster=mine(),original=roster.filter(p=>!['BN','IR'].includes(p.slot));
  const best=lineup(roster,w);
@@ -101,6 +101,7 @@ function renderRecommendations(){
   '<div class="decision-list">'+summaries.join('')+'</div>'+flagText+nextWeekActions();
 }
 function nextWeekActions(){
+ if(Number($('decisionWeek')?.value||state.week)>Number(state.week))return '';
  const w=Number(state.week)+1;if(w>Number(state.future.endWeek))return '';
  const roster=mine(),notes=[];
  for(const pos of ['QB','RB','WR','TE','K','DEF']){
@@ -130,7 +131,7 @@ function renderWaivers(){
    const merged={...p,status:live?.status||p.injuryStatus||p.status};
    return !inaccessible(merged,weeks[0])&&!OUT.has(status(merged));
   });
- const first=Math.max(state.week,Number(state.future.startWeek));
+ const first=Math.max(state.recommendationWeek??state.week,Number(state.future.startWeek));
  const rosWeeks=Array.from({length:Math.max(0,Number(state.future.endWeek)-first+1)},(_,i)=>first+i);
  const totalFor=(p,range)=>{
   const values=range.map(w=>points({id:p.yahooId},w));
@@ -208,8 +209,10 @@ function renderWaivers(){
 }
 function init(data){
  state=data;
- const first=Math.max(state.week,Number(state.future.startWeek));
+ const first=Math.max(state.recommendationWeek??state.week,Number(state.future.startWeek));
  const last=Number(state.future.endWeek)||17;
+ const decision=$('decisionWeek');
+ if(decision&&state.recommendationWeek!=null){decision.innerHTML=Array.from({length:last-Number(state.week)+1},(_,i)=>'<option value="'+(Number(state.week)+i)+'">Week '+(Number(state.week)+i)+'</option>').join('');decision.value=String(first);decision.addEventListener('change',renderRecommendations);}
  const selector=$('waiverHorizon');
  if(selector){
   const modes=[['next_week','Week '+first],

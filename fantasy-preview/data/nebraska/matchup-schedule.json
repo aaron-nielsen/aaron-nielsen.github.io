@@ -60,53 +60,129 @@
     },
     {
       "week": 7,
+      "retrievedAt": "2026-10-20T02:44:56.242Z",
       "matchups": [
         {
+          "matchupId": 1,
+          "week": 7,
+          "status": "upcoming",
           "home": {
+            "teamKey": "470.l.1699881.t.1",
+            "teamId": "1",
+            "teamName": "4th Qtr cory",
+            "points": 0,
+            "projectedPoints": 105.52,
+            "winProbability": 0.79,
             "id": "1",
             "name": "4th Qtr cory"
           },
           "away": {
+            "teamKey": "470.l.1699881.t.8",
+            "teamId": "8",
+            "teamName": "Locked In Hunter",
+            "points": 0,
+            "projectedPoints": 72.6,
+            "winProbability": 0.21,
             "id": "8",
             "name": "Locked In Hunter"
           }
         },
         {
+          "matchupId": 2,
+          "week": 7,
+          "status": "upcoming",
           "home": {
+            "teamKey": "470.l.1699881.t.2",
+            "teamId": "2",
+            "teamName": "Gridiron Juliean",
+            "points": 0,
+            "projectedPoints": 88.51,
+            "winProbability": 0.51,
             "id": "2",
             "name": "Gridiron Juliean"
           },
           "away": {
+            "teamKey": "470.l.1699881.t.7",
+            "teamId": "7",
+            "teamName": "Friday Night Z",
+            "points": 0,
+            "projectedPoints": 87.79,
+            "winProbability": 0.49,
             "id": "7",
             "name": "Friday Night Z"
           }
         },
         {
+          "matchupId": 3,
+          "week": 7,
+          "status": "upcoming",
           "home": {
+            "teamKey": "470.l.1699881.t.3",
+            "teamId": "3",
+            "teamName": "New York Teams",
+            "points": 0,
+            "projectedPoints": 108.52,
+            "winProbability": 0.39,
             "id": "3",
             "name": "New York Teams"
           },
           "away": {
+            "teamKey": "470.l.1699881.t.6",
+            "teamId": "6",
+            "teamName": "Nebraska Bugeaters",
+            "points": 0,
+            "projectedPoints": 121.31,
+            "winProbability": 0.61,
             "id": "6",
             "name": "Nebraska Bugeaters"
           }
         },
         {
+          "matchupId": 4,
+          "week": 7,
+          "status": "upcoming",
           "home": {
+            "teamKey": "470.l.1699881.t.4",
+            "teamId": "4",
+            "teamName": "#6 THE Pulverizing Perrin's",
+            "points": 0,
+            "projectedPoints": 109.73,
+            "winProbability": 0.85,
             "id": "4",
-            "name": "Halftime Perrin"
+            "name": "#6 THE Pulverizing Perrin's"
           },
           "away": {
+            "teamKey": "470.l.1699881.t.5",
+            "teamId": "5",
+            "teamName": "2-Point Ali",
+            "points": 0,
+            "projectedPoints": 66.19,
+            "winProbability": 0.15,
             "id": "5",
             "name": "2-Point Ali"
           }
         },
         {
+          "matchupId": 5,
+          "week": 7,
+          "status": "upcoming",
           "home": {
+            "teamKey": "470.l.1699881.t.9",
+            "teamId": "9",
+            "teamName": "3rd & Long anton",
+            "points": 0,
+            "projectedPoints": 87.26,
+            "winProbability": 0.27,
             "id": "9",
             "name": "3rd & Long anton"
           },
           "away": {
+            "teamKey": "470.l.1699881.t.10",
+            "teamId": "10",
+            "teamName": "Trenches Brody",
+            "points": 0,
+            "projectedPoints": 112.55,
+            "winProbability": 0.73,
             "id": "10",
             "name": "Trenches Brody"
           }

@@ -393,7 +393,7 @@ function partnersHTML(options){
  const best=new Map();for(const t of options)if(!best.has(String(t.partner.id)))best.set(String(t.partner.id),t);
  const rows=[...best.values()].slice(0,5);if(!rows.length)return '';
  const yahooOnly=['arbitrage','yahoo'].includes($('tradeGoal')?.value);
- return '<div class="trade-partner-fits"><strong>Best partner fits</strong>'+rows.map(t=>{const you=yahooOnly?t.yahoo.gainYou:t.gainYou;return '<button type="button" data-trade-partner="'+esc(t.partner.id)+'"><span>'+esc(t.partner.name)+'</span><small>You '+(you>=0?'+':'')+fmt(you)+(yahooOnly?' Yahoo':' DV')+' · Partner '+(t.yahoo?.gainThem>=0?'+':'')+fmt(t.yahoo?.gainThem)+' Yahoo</small></button>';}).join('')+'</div>';
+ return '<div class="trade-partner-fits"><strong>Best partner fits</strong>'+rows.map(t=>{const you=yahooOnly?t.yahoo.gainYou:t.gainYou,them=yahooOnly||$('tradeGoal')?.value==='edge'?t.yahoo?.gainThem:t.gainThem;return '<button type="button" data-trade-partner="'+esc(t.partner.id)+'"><span>'+esc(t.partner.name)+'</span><small>You '+(you>=0?'+':'')+fmt(you)+(yahooOnly?' Yahoo':' DV')+' · Partner '+(them>=0?'+':'')+fmt(them)+(yahooOnly||$('tradeGoal')?.value==='edge'?' Yahoo':' DV')+'</small></button>';}).join('')+'</div>';
 }
 function render(){
  const target=$('tradeResults');if(!target||!state)return;
@@ -407,7 +407,7 @@ function render(){
   if(job!==nextJob)return;
   const shape=$('tradePackageFilter')?.value;
   if(['one_each','two_each','three_each'].includes(shape)){const n={one_each:1,two_each:2,three_each:3}[shape];options=options.filter(t=>t.send.players.length===n&&t.receive.players.length===n);}
-  const info=$('targetResults');if(info&&searchStats){info.innerHTML='<div class="trade-result-summary"><strong>'+options.length+' matching trades</strong><details><summary>Coverage & calculation</summary><p>'+searchStats.candidates+' packages screened · '+(searchStats.yahooCovered||0)+' with Yahoo coverage.</p>'+yahooCoverageHTML()+'<p>Yahoo: existing rosters, no waiver moves. Da Vinci upside is calculated separately.</p>'+yahooChecksHTML()+'</details></div>'+partnersHTML(options);
+  const info=$('targetResults');if(info&&searchStats){info.innerHTML='<div class="trade-result-summary"><strong>'+options.length+' matching trades</strong><details><summary>Coverage & calculation</summary><p>'+searchStats.candidates+' packages screened'+($('tradeGoal')?.value==='model'?' · Da Vinci lineup projections.</p>':' · '+(searchStats.yahooCovered||0)+' with Yahoo coverage.</p>'+yahooCoverageHTML()+'<p>Yahoo: existing rosters, no waiver moves. Da Vinci upside is calculated separately.</p>'+yahooChecksHTML())+'</details></div>'+partnersHTML(options);
    for(const button of info.querySelectorAll?.('[data-trade-partner]')||[])button.addEventListener('click',()=>{$('tradePartner').value=button.dataset.tradePartner;refresh();render();});
   }
   renderResearch();
@@ -416,8 +416,7 @@ function render(){
   const shown=first.concat(variants).slice(0,limit);
   if(!shown.length){
    if(['arbitrage','edge','yahoo'].includes($('tradeGoal')?.value)){
-    const missing=(state.yahooFuture?.coverage?.missingPlayers||[]).filter(p=>String(p.teamId)===String(state.teamId));
-    target.innerHTML='<div class="trade-personal-loading">'+(missing.length?'Trade comparisons need projections for '+missing.map(p=>esc(p.name)).join(', ')+'.':'No matching trades improve your lineup and meet the selected trade goal.')+'</div>';return;
+    target.innerHTML='<div class="trade-personal-loading">No matching trades in this period. See coverage for incomplete comparisons.</div>';return;
    }
    target.innerHTML='<div class="trade-personal-loading">No trades here improve BOTH lineups by at least '+fmt(MIN_ROS_GAIN_PER_WEEK)+' pts/week over the rest of the season. Try another player or manager.</div>';
    return;
@@ -553,6 +552,7 @@ function init(settings){
  lineupCache=new Map();fitCache=new Map();
  state={...settings,yahooModel:settings.yahooFuture&&root.YahooValues?.create(settings.yahooFuture),futureMap:new Map(settings.future.players.map(p=>[String(p.yahooId),p]))};
  if(!state.optimize)throw Error('Full-lineup optimizer unavailable');
+ if(settings.planningWeek&&$('tradeFromWeek'))$('tradeFromWeek').value=String(settings.planningWeek);
  const container=$('tradePreferenceBuilder');if(!container)return;
  oldFallback=root.DaVinciLab?.rankTrades;
  draw();
