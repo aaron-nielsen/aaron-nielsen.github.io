@@ -858,8 +858,8 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 <script src="./yahoo-values.js?v=20261019groups"></script>
 <script src="./trade-preferences.js?v=20261019refresh"></script>
 <script src="./marginal-arbitrage.js?v=20261012a"></script>
-<script src="./planning-model.js?v=20261012a"></script>
-<script src="./planning-view.js?v=20261013detail"></script>
+<script src="./planning-model.js?v=20261019coverage"></script>
+<script src="./planning-view.js?v=20261019coverage"></script>
 <script src="./transaction-grades.js?v=20261010v"></script>
 <script src="./historical-trends.js"></script>
 <script src="./historical-trends-view.js"></script>
@@ -1536,7 +1536,7 @@ async function get(path){const r=await fetch(DATA_BASE+path+'.json',{cache:'no-s
    window.DaVinciPersonalTrades?.init({rosters,available,week:Number(week.week),future:futureData,teamId:TEAM_ID,leagueKey:LEAGUE_KEY,negotiations:negotiationData,yahooFuture:await get('yahoo-projections').catch(()=>null),yahooEvaluations:await get('yahoo-trade-evaluations').catch(()=>null),optimize:window.DaVinciAdvice.lineup});
    window.DaVinciTransactions?.init({rosters,available,week:Number(week.week),future:futureData,teamId:TEAM_ID,transactions:transactionsData,optimize:window.DaVinciAdvice.lineup,partialOptimize:window.DaVinciAdvice.partialLineup});
    window.DaVinciMarginal?.init({rosters,available,week:Number(week.week),future:futureData,teamId:TEAM_ID,leagueKey:LEAGUE_KEY,optimize:window.DaVinciAdvice.lineup});
-   window.DaVinciPlanning?.init({rosters,available,week:Number(week.week),future:futureData,teamId:TEAM_ID,leagueKey:LEAGUE_KEY,schedule:matchupSchedule,negotiations:negotiationData,nflSchedule:await fetch('./data/nfl-schedule.json').then(r=>r.ok?r.json():null).catch(()=>null),optimize:window.DaVinciAdvice.lineup});
+   window.DaVinciPlanning?.init({rosters,available,week:Number(week.week),future:futureData,teamId:TEAM_ID,leagueKey:LEAGUE_KEY,schedule:matchupSchedule,negotiations:negotiationData,nflSchedule:await fetch('./data/nfl-schedule.json').then(r=>r.ok?r.json():null).catch(()=>null),optimize:window.DaVinciAdvice.lineup,partialOptimize:window.DaVinciAdvice.partialLineup});
    const pageFromLink=location.hash.slice(1);if(['overview','schedule','values','rosters','finder','projections','standings','trades','transactions','performance'].includes(pageFromLink))showPage(pageFromLink);
  }catch(e){
   $('#hero').innerHTML='<div class="loading"><strong>Dashboard data could not be loaded.</strong><p>'+esc(e.message)+'</p><p>Check the published JSON files or reload this page.</p></div>';

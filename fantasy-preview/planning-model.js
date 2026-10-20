@@ -68,9 +68,16 @@ function create(data){
   };
  }
  function lineup(team,w){return data.optimize(team.players,w);}
+ function scheduleLineup(team,w){
+  if(!team)return {line:null,complete:false,missing:[]};
+  const full=lineup(team,w),line=full||data.partialOptimize?.(team.players,w)||null;
+  const occupied=new Set((line?.selections||[]).map(p=>p.slot));
+  return {line,complete:!!full,missing:SLOTS.filter((s,i)=>!occupied.has(i))};
+ }
  function positionScores(line){
   if(!line)return null;
-  const groups={};for(const pick of line.selections||[]){const slot=SLOTS[pick.slot];groups[slot]=(groups[slot]||0)+pick.points;}
+  const groups={},counts={};for(const pick of line.selections||[]){const slot=SLOTS[pick.slot];groups[slot]=(groups[slot]||0)+pick.points;counts[slot]=(counts[slot]||0)+1;}
+  for(const pos of Object.keys(groups))if(counts[pos]!==SLOTS.filter(s=>s===pos).length)delete groups[pos];
   return groups;
  }
  function schedule(){
@@ -79,9 +86,10 @@ function create(data){
    const game=data.schedule?.weeks?.find(r=>Number(r.week)===w)?.matchups?.find(m=>[m.home,m.away].some(t=>String(t.id)===String(data.teamId)));
    const opponent=game?(String(game.home.id)===String(data.teamId)?game.away:game.home):null;
    const team=opponent?data.rosters.teams.find(t=>String(t.id)===String(opponent.id)):null;
-   const theirs=team?lineup(team,w):null,mine=own?lineup(own,w):null;
+   const ownForecast=scheduleLineup(own,w),otherForecast=scheduleLineup(team,w);
+   const theirs=otherForecast.line,mine=ownForecast.line;
    const groups=positionScores(theirs);
-   const all=data.rosters.teams.map(t=>positionScores(lineup(t,w))).filter(Boolean);
+   const all=data.rosters.teams.map(t=>positionScores(scheduleLineup(t,w).line)).filter(Boolean);
    const weaknesses=[],strengths=[];
    if(groups)for(const pos of Object.keys(groups)){
     const values=all.map(g=>g[pos]).filter(Number.isFinite).sort((a,b)=>a-b);
@@ -93,7 +101,8 @@ function create(data){
    weaknesses.sort((a,b)=>a.gap-b.gap);strengths.sort((a,b)=>b.gap-a.gap);
    const byes=own?.players.filter(p=>forecasts.get(id(p))?.weeks?.find(g=>Number(g.week)===w)?.state==='bye').map(p=>p.name)||[];
    rows.push({week:w,opponent:opponent?.name||null,yours:mine?.score??null,theirs:theirs?.score??null,
-    margin:mine&&theirs?mine.score-theirs.score:null,weaknesses:weaknesses.slice(0,2),strengths:strengths.slice(0,2),byes});
+    yoursComplete:ownForecast.complete,theirsComplete:otherForecast.complete,yourMissingSlots:ownForecast.missing,missingSlots:otherForecast.missing,
+    margin:ownForecast.complete&&otherForecast.complete?mine.score-theirs.score:null,weaknesses:weaknesses.slice(0,2),strengths:strengths.slice(0,2),byes});
   }
   return rows;
  }

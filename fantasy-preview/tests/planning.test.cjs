@@ -19,6 +19,13 @@ const impact=model.impactContext(weeks);assert.equal(impact(model.players.find(p
 assert.equal(impact(free[2]).impact,null);
 const schedule=model.schedule();assert.equal(schedule[0].opponent,'Opponent');assert.equal(schedule[0].margin,8);assert.equal(schedule[0].weaknesses[0].pos,'WR');assert.equal(schedule[0].weaknesses[0].gap,-4);
 assert.equal(schedule[1].opponent,null);assert.equal(schedule[1].theirs,null);assert.equal(schedule[1].margin,null,'Unknown playoff pairings cannot reuse current opponents');
+data.partialOptimize=global.DaVinciAdvice.partialLineup;rival[7].status='IR';
+const partial=global.DaVinciPlanningModel.create(data).schedule()[0];
+assert.equal(partial.theirs,72,'Known starters remain visible when the kicker is unavailable');
+assert.equal(partial.theirsComplete,false);assert.deepEqual(partial.missingSlots,['K']);
+assert.equal(partial.margin,null,'A partial subtotal cannot produce a full-matchup margin');
+assert.ok(!partial.weaknesses.some(p=>p.pos==='K'),'An unknown slot must not masquerade as a zero-point weakness');
+rival[7].status=null;
 assert.equal(model.nflGame(players[0],6).opponent,'ARI');assert.equal(model.nflGame(players[0],7),null);
 future.players.find(p=>p.yahooId==='3').weeks[0]={week:6,state:'bye',points:0};
 assert.equal(model.value(players[3],weeks).vor,0,'Bye zero remains a real zero, with the streaming replacement cost retained');

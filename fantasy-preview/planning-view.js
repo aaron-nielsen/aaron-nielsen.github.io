@@ -43,11 +43,16 @@ function compute(){
   chunk();
  },0);
 }
-function weakness(row){return row.weaknesses.length?row.weaknesses.map(x=>x.pos+' '+signed(x.gap)+' vs median').join(' · '):row.theirs==null?'Forecast unavailable':'No clear weakness';}
+function weakness(row){
+ if(!row.opponent)return 'Opponent TBD';
+ if(row.missingSlots?.length)return row.missingSlots.join(', ')+' unavailable';
+ return row.weaknesses.length?row.weaknesses.map(x=>x.pos+' '+signed(x.gap)+' vs median').join(' · '):row.theirs==null?'Projection data missing':'No clear weakness';
+}
+function scheduleScore(score,complete,missing){return fmt(score)+(score!=null&&complete===false?'<small>Subtotal · '+(9-(missing?.length||0))+'/9 starters</small>':'');}
 function renderSchedule(){
  planningRows=planningRows||model.schedule();
  $('scheduleContext').textContent=dates()+' · future lineups assume current rosters';
- $('scheduleRows').innerHTML=planningRows.map(r=>'<tr><td>W'+r.week+'</td><td><strong>'+esc(r.opponent||'Not scheduled')+'</strong><small>'+esc(r.strengths.length?'Strength: '+r.strengths.map(x=>x.pos+' '+signed(x.gap)).join(' · '):'')+'</small></td><td class="plan-number">'+fmt(r.yours)+'</td><td class="plan-number">'+fmt(r.theirs)+'</td><td class="plan-number">'+signed(r.margin)+'</td><td>'+esc(weakness(r))+'</td><td>'+esc(r.byes.join(', ')||'None')+'</td></tr>').join('');
+ $('scheduleRows').innerHTML=planningRows.map(r=>'<tr><td>W'+r.week+'</td><td><strong>'+esc(r.opponent||'Opponent TBD')+'</strong><small>'+esc(r.strengths.length?'Strength: '+r.strengths.map(x=>x.pos+' '+signed(x.gap)).join(' · '):'')+'</small></td><td class="plan-number">'+scheduleScore(r.yours,r.yoursComplete,r.yourMissingSlots)+'</td><td class="plan-number">'+scheduleScore(r.theirs,r.theirsComplete,r.missingSlots)+'</td><td class="plan-number">'+signed(r.margin)+'</td><td>'+esc(weakness(r))+'</td><td>'+esc(r.byes.join(', ')||'None')+'</td></tr>').join('');
  renderNfl();
 }
 function renderNfl(){
