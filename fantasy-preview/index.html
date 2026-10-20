@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8"><meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#eae3d5">
 <title>Da Vinci Fantasy Lab | Fantasy Football Analytics</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -591,7 +592,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 
 .standings-table{width:100%;border-collapse:collapse;font-size:14px}.standings-table th{text-align:left;color:var(--muted);font-size:11px;padding:15px 12px;border-bottom:1px solid var(--border)}.standings-table td{padding:13px 12px;border-bottom:1px solid var(--border)}.standings-table td:first-child{width:45px;color:var(--muted)}.standings-table td:nth-child(n+3),.standings-table th:nth-child(n+3){text-align:right;white-space:nowrap}.standings-table .playoff-position{font-weight:800}.standings-table .your-team{background:#f6e7cc}.standings-legend{padding:14px 12px;font-size:12px;color:var(--muted)}
 </style>
-<link rel="stylesheet" href="./clean-dashboard.css?v=20261020overview">
+<link rel="stylesheet" href="./clean-dashboard.css?v=20261020review">
 <link rel="stylesheet" href="./trade-preferences.css?v=20261013points">
 <link rel="stylesheet" href="./marginal-arbitrage.css?v=20261011a">
 <style id="team-score-comparison">
@@ -683,7 +684,8 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 </head><body>
 <div class="shell">
 
-<div class="renaissance-banner"><img src="./assets/da-vinci-fantasy-lab-approved.webp" alt="Da Vinci Fantasy Lab — original parchment portrait, lettering and football analytics drawings" width="1000" height="333" fetchpriority="high" decoding="async"></div>
+<button type="button" class="banner-toggle" id="bannerToggle" aria-label="Show dashboard" aria-expanded="false" aria-controls="dashboardContent"><div class="renaissance-banner"><img src="./assets/da-vinci-fantasy-lab-approved.webp" alt="Da Vinci Fantasy Lab — original parchment portrait, lettering and football analytics drawings" width="1000" height="333" fetchpriority="high" decoding="async"></div></button>
+<div id="dashboardContent" hidden>
 <div class="league-switch"><select id="leagueSelector" aria-label="Choose fantasy league"><option value="csu">CSU Stats · Ten Feline Overlords (14 teams)</option><option value="nebraska">Nebraska Bugeaters (10 teams)</option></select><span id="leagueSnapshot" class="league-switch-note">Updated</span></div>
 <nav class="nav" aria-label="Dashboard navigation"><button class="nav-btn active" type="button" data-page="overview">Overview</button><button class="nav-btn" type="button" data-page="schedule">Schedule</button><button class="nav-btn" type="button" data-page="finder">Players</button><button class="nav-btn" type="button" data-page="rosters">Rosters</button><button class="nav-btn" type="button" data-page="standings">Standings</button><button class="nav-btn" type="button" data-page="trades">Trades</button><button class="nav-btn" type="button" data-page="projections">Analysis</button></nav>
 <main id="app">
@@ -704,6 +706,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 </div>
 
 
+<section class="panel overview-bench" aria-label="Your bench"><div class="panel-header"><div class="panel-title">Your bench</div><span id="overviewBenchWeek" class="chip"></span></div><div id="overviewBench"></div></section>
 <div id="planningShortcut" class="planning-shortcut" aria-label="Future planning"></div>
 <section class="panel recommendations-panel" aria-label="Roster changes">
 <div class="panel-header"><div><div class="panel-title">Lineup decisions</div></div><select class="select" id="decisionWeek" aria-label="Lineup advice week"></select><span class="chip visually-hidden" id="lineupChangeWeek">WEEK 5</span></div>
@@ -726,7 +729,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 </section>
 </section>
 <section id="page-rosters" class="page" hidden>
-<div class="section-top"><div><div class="eyebrow" id="rosterLeagueCount">League rosters</div><h2>Rosters</h2><p id="rosterLeagueIntro" class="visually-hidden">Team roster comparison.</p></div><select class="select" id="teamChoice" aria-label="Select fantasy team"></select><select id="rosterWeek" class="select" aria-label="Roster projection week"></select></div>
+<div class="section-top"><div><div class="eyebrow" id="rosterLeagueCount">League rosters</div><h2>League rosters</h2><p id="rosterLeagueIntro" class="visually-hidden">Team roster comparison.</p></div><select class="select" id="teamChoice" aria-label="Select fantasy team"></select><select id="rosterWeek" class="select" aria-label="Roster projection week"></select></div>
 
 <div class="panel roster-compare" id="rosterComparison" aria-label="Starter and eligible backup comparison"></div><div class="roster-secondary"><div class="panel group-panel" id="benchGroup"></div><div class="panel group-panel" id="irGroup"></div></div>
 </section>
@@ -772,7 +775,8 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
   <label for="tradeFromWeek">Evaluate <select id="tradeFromWeek" class="select"><option value="6">Weeks 6–17</option></select></label>
   <label for="tradePackageFilter">Packages <select id="tradePackageFilter" class="select"><option value="one_each">1-for-1 only</option><option value="two_each">2-for-2 only</option><option value="three_each">3-for-3 only</option><option value="balanced">2-for-2 or 3-for-3</option><option value="balanced_all">1-for-1, 2-for-2, 3-for-3</option><option value="practical" selected>Practical packages · bonuses allowed</option><option value="all">All packages · 1–3 each</option><option value="unequal">Unequal packages · 1–3 each</option><option value="1_for_2">1-for-2 only</option><option value="1_for_3">1-for-3 only</option><option value="2_for_1">2-for-1 only</option><option value="2_for_3">2-for-3 only</option><option value="3_for_1">3-for-1 only</option><option value="3_for_2">3-for-2 only</option></select></label>
   <label>Find <select id="tradeGoal" class="select"><option value="arbitrage">Positive arbitrage</option><option value="edge">Da Vinci upside</option><option value="model">Da Vinci · both teams gain</option><option value="yahoo">Yahoo · both teams gain</option></select></label>
-  <label>Show <select id="tradeLimit" class="select"><option>6</option><option>12</option><option>24</option></select></label><div id="tradeCount" class="trade-count">Calculating candidates…</div></div></section>
+  <label>Show <select id="tradeLimit" class="select"><option>6</option><option selected>12</option><option>24</option></select></label><div id="tradeCount" class="trade-count">Calculating candidates…</div></div></section>
+  <div id="tradeOpponentNotice" class="trade-opponent-notice"></div>
   <section class="trade-search-summary" id="reasonableTargets"><div class="panel-header"><div><div class="panel-title">Trade search</div><div class="panel-sub"></div></div><a class="plan-export" id="matrixLink" href="./yahoo-matrix.html">Gain/loss matrix</a><button type="button" class="plan-export" id="targetCalculate">Find targets</button></div><div id="targetResults" class="plan-context"><p>Yahoo must show a benefit for the partner. Da Vinci estimates your upside separately.</p></div></section>
   <div id="tradeResults" class="trades-grid"><div class="empty-copy">Calculating lineup-adjusted trade ideas…</div></div>
   <section id="tradeResearch" class="trade-research" aria-label="Candidates awaiting Yahoo validation"></section>
@@ -845,22 +849,23 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 <dialog id="playerDetail" aria-labelledby="playerDetailTitle"><div id="playerDetailContent"></div></dialog>
 <footer class="footer"><div>DA VINCI FANTASY LAB / CSU STATS · MMXXVI</div><div>READ-ONLY PROTOTYPE · POWERED BY YAHOO LEAGUE DATA</div></footer>
 </div>
+</div>
 <script src="./special-teams-model.js?v=20261013defense"></script>
 <link rel="stylesheet" href="./player-detail.css?v=20261013a">
 <script src="./player-detail.js?v=20261019refresh"></script>
-<script src="./lab-enhancements.js?v=20261020overview"></script>
+<script src="./lab-enhancements.js?v=20261020review"></script>
 <script src="./availability-sanity.js?v=20261012a"></script>
 <script src="./return-outlook.js?v=20261019return"></script>
 <script src="./playing-time-model.js"></script>
-<script src="./roster-advice.js?v=20261020overview"></script>
-<script src="./dashboard-context.js?v=20261020overview"></script>
-<script src="./matchup-overview.js?v=20261019refresh"></script>
+<script src="./roster-advice.js?v=20261020review"></script>
+<script src="./dashboard-context.js?v=20261020review"></script>
+<script src="./matchup-overview.js?v=20261020review"></script>
 <script src="./overview-roster.js"></script>
 <script src="./yahoo-values.js?v=20261019groups"></script>
-<script src="./trade-preferences.js?v=20261020overview"></script>
+<script src="./trade-preferences.js?v=20261020review"></script>
 <script src="./marginal-arbitrage.js?v=20261012a"></script>
 <script src="./planning-model.js?v=20261019coverage"></script>
-<script src="./planning-view.js?v=20261019coverage"></script>
+<script src="./planning-view.js?v=20261020review"></script>
 <script src="./transaction-grades.js?v=20261010v"></script>
 <script src="./historical-trends.js"></script>
 <script src="./historical-trends-view.js"></script>
@@ -1031,7 +1036,7 @@ function renderModelTeamRankings(){
  '<div class="model-team-head paired"><span>TEAM</span><span>Da Vinci</span><span>Yahoo</span><span></span></div>':
  '<div class="model-team-head"><span>TEAM</span><span>'+(multiple?'TOTAL MODELED PTS':'MODELED PTS')+'</span></div>';
  area.innerHTML+=
- (showYahoo?'<p class="quiet tiny" style="margin:7px 0 10px">Da Vinci optimizes nine eligible starters; Yahoo uses its current submitted lineup. Both include K and DEF.</p>':'')+
+ ''+
  rows.map((r,i)=>{
   const games=r.games.map(g=>{
    if(!g.lineup)return '<p>Week '+g.week+': incomplete lineup</p>';
@@ -1086,12 +1091,15 @@ function renderFeaturedMatchup(selected){
  const controls='<div class="featured-matchup-heading"><h2>Week '+w+' matchup</h2><select id="matchupWeek" class="select" aria-label="Matchup week">'+selectable.map(n=>'<option value="'+n+'"'+(n===w?' selected':'')+'>Week '+n+'</option>').join('')+'</select></div>';
  if(!m){$('#hero').innerHTML=controls+'<p>Opponent not yet scheduled.</p>';return;}
  const you=String(m.home.id)===String(TEAM_ID)?m.home:m.away,other=you===m.home?m.away:m.home;
- const data={rosters,weekly,future:futureData,week:w,snapshotWeek:Number(week.week),you,other,optimize:modelTeamLineup};
- const forecast=t=>future?{davinci:window.DaVinciMatchup.projected(data,t.id).total,future:true}:currentTeamForecast(t);
+ const data={rosters,available,weekly,future:futureData,week:w,snapshotWeek:Number(week.week),you,other,optimize:modelTeamLineup,hasStarted:m.status==='final'||Number(you.points)>0||Number(other.points)>0};
+ const forecast=t=>future?{davinci:window.DaVinciMatchup.projected(data,t.id).total,future:true}:String(t.id)===String(other.id)?{...currentTeamForecast(t),davinci:window.DaVinciMatchup.plannedDefense(data,t.id).total}:currentTeamForecast(t);
  $('#hero').innerHTML=controls+'<div class="matchup-summary-row">'+matchupTeamCard(you,'left',forecast(you))+
   '<div class="league-pair-labels">'+(future?'':'<span>Score</span>')+'<span>Da Vinci</span>'+(future?'':'<span>Yahoo pregame</span>')+'</div>'+matchupTeamCard(other,'right',forecast(other))+'</div>'+
   (future?'<div class="future-lineup-label">Projected starters</div>':'')+'<div class="matchup-lineup-details"><div id="matchupLineups" aria-label="Weekly starting lineups"></div></div>';
  window.DaVinciMatchup.render(data);
+ const reserves=team(TEAM_ID).players.filter(p=>['BN','IR'].includes(p.slot));
+ $('#overviewBenchWeek').textContent='WEEK '+w+' PROJECTION';
+ $('#overviewBench').innerHTML=reserves.map(p=>row(p,w)).join('');
  $('#matchupWeek').addEventListener('change',e=>renderFeaturedMatchup(e.target.value));
 }
 function getProjectedStandings(){
@@ -1516,7 +1524,7 @@ $('#waiverHorizon').addEventListener('change',()=>window.DaVinciAdvice?.renderWa
 document.querySelectorAll('.nav-btn').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
 document.querySelectorAll('[data-jump]').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.jump)));
 async function get(path){const r=await fetch(DATA_BASE+path+'.json',{cache:'no-store'});if(!r.ok)throw Error('Data file '+path+' returned HTTP '+r.status);return r.json();}
-(async()=>{
+async function loadDashboard(){
  try{
   [rosters,available,week,model,backtest,weekly,futureData,waivers,leagueSettings,specialContext,specialValidation,transactionsData,usageHistory]=await Promise.all([get('rosters'),get('available'),get('week'),get('projections').catch(()=>null),get('backtest').catch(()=>null),get('weekly').catch(()=>null),get('future').catch(()=>null),get('waivers').catch(()=>null),get('league'),fetch('./data/special-teams-context.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Special-teams context unavailable');return r.json();}),fetch('./data/special-teams-validation.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null),get('transactions').catch(()=>null),fetch('./data/usage-history.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null)]);
   if(!Array.isArray(rosters.teams)||!Array.isArray(available.players)||!Array.isArray(week.matchups)||!Array.isArray(week.standings)||!team(TEAM_ID)||!matchup())throw Error('League data incomplete or mismatched');
@@ -1554,7 +1562,10 @@ async function get(path){const r=await fetch(DATA_BASE+path+'.json',{cache:'no-s
    window.DaVinciAdvice.init({rosters,available,week:Number(week.week),recommendationWeek:planningWeek(),future:futureData,teamId:TEAM_ID,pickupResearch:await get('pickup-research').catch(()=>null)});
    const negotiationData=await fetch('./data/trade-negotiations.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null);
    window.DaVinciPlayerDetail?.init({rosters,available,future:futureData,week:Number(week.week),results:await get('player-results').catch(()=>null),yahoo:await yahooForecasts});
-   window.DaVinciPersonalTrades?.init({rosters,available,week:Number(week.week),future:futureData,teamId:TEAM_ID,leagueKey:LEAGUE_KEY,planningWeek:planningWeek(),negotiations:negotiationData,yahooFuture:await yahooForecasts,yahooEvaluations:await get('yahoo-trade-evaluations').catch(()=>null),optimize:window.DaVinciAdvice.lineup});
+   const tradeRound=planningWeek()===Number(week.week)?week:matchupSchedule?.weeks?.find(r=>Number(r.week)===planningWeek());
+   const tradeMatch=tradeRound?.matchups?.find(m=>[m.home.id,m.away.id].map(String).includes(String(TEAM_ID)));
+   const tradeOpponent=tradeMatch?(String(tradeMatch.home.id)===String(TEAM_ID)?tradeMatch.away.id:tradeMatch.home.id):null;
+   window.DaVinciPersonalTrades?.init({rosters,available,week:Number(week.week),future:futureData,teamId:TEAM_ID,leagueKey:LEAGUE_KEY,planningWeek:planningWeek(),opponentId:tradeOpponent,negotiations:negotiationData,yahooFuture:await yahooForecasts,yahooEvaluations:await get('yahoo-trade-evaluations').catch(()=>null),optimize:window.DaVinciAdvice.lineup});
    window.DaVinciTransactions?.init({rosters,available,week:Number(week.week),future:futureData,teamId:TEAM_ID,transactions:transactionsData,optimize:window.DaVinciAdvice.lineup,partialOptimize:window.DaVinciAdvice.partialLineup});
    window.DaVinciMarginal?.init({rosters,available,week:Number(week.week),future:futureData,teamId:TEAM_ID,leagueKey:LEAGUE_KEY,optimize:window.DaVinciAdvice.lineup});
    window.DaVinciPlanning?.init({rosters,available,week:Number(week.week),future:futureData,teamId:TEAM_ID,leagueKey:LEAGUE_KEY,schedule:matchupSchedule,negotiations:negotiationData,nflSchedule:await fetch('./data/nfl-schedule.json').then(r=>r.ok?r.json():null).catch(()=>null),optimize:window.DaVinciAdvice.lineup,partialOptimize:window.DaVinciAdvice.partialLineup});
@@ -1565,5 +1576,11 @@ async function get(path){const r=await fetch(DATA_BASE+path+'.json',{cache:'no-s
   $('#hero').innerHTML='<div class="loading"><strong>Dashboard data could not be loaded.</strong><p>'+esc(e.message)+'</p><p>Check the published JSON files or reload this page.</p></div>';
   $('#sync').textContent='Data load failed';
  }
-})();
+}
+let dashboardLoaded=false;
+$('#bannerToggle').addEventListener('click',()=>{
+ const content=$('#dashboardContent'),open=content.hidden;
+ content.hidden=!open;$('#bannerToggle').setAttribute('aria-expanded',String(open));$('#bannerToggle').setAttribute('aria-label',open?'Hide dashboard':'Show dashboard');
+ if(open&&!dashboardLoaded){dashboardLoaded=true;loadDashboard();}
+});
 </script></body></html>

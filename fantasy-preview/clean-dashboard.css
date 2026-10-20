@@ -1135,3 +1135,11 @@ body{font:16px/1.48 'Source Sans 3',Arial,sans-serif;color:var(--text);backgroun
 @media(max-width:600px){.pickup-shortlist-row{grid-template-columns:minmax(0,1fr) auto;gap:5px 12px}.pickup-shortlist-row span{grid-row:2;grid-column:1 / -1}}
 
 .streaming-gain{display:block;font-size:11px;font-weight:400;color:#78644c;margin-top:3px}
+
+.banner-toggle{display:block;width:100%;max-width:800px;margin:0 auto;padding:0;border:0;background:transparent;cursor:pointer;border-radius:2px}
+.banner-toggle:focus-visible{outline:2px solid #835a2e;outline-offset:4px}
+#dashboardContent[hidden]{display:none!important}
+.overview-bench{margin:16px 0}.overview-bench #overviewBench{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));padding:0 16px}.overview-bench .player-line{min-width:0;border-bottom:1px solid #e5d7c6;padding:12px 4px}
+.matchup-player>b .matchup-actual{display:block;font-size:11px;font-weight:400;color:#806e59;white-space:nowrap}.matchup-estimate{font-size:11px;color:#8a6a44}
+.trade-opponent-notice{padding:10px 16px;margin:0 0 12px;border-left:3px solid #9c753f;background:#f4ead8;font-size:14px;line-height:1.5}.trade-opponent-notice:empty{display:none}
+@media(max-width:600px){.overview-bench #overviewBench{grid-template-columns:minmax(0,1fr)}}

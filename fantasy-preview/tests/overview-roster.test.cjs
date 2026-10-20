@@ -97,3 +97,18 @@ assert.equal(stevenson.player.status,null);assert.equal(stevenson.conditional,tr
 assert.ok(Number.isFinite(benchWarmers.total),'Bench Warmers must show a numeric projection');
 
 for(const team of brodyData.rosters.teams)assert.ok(Number.isFinite(globalThis.DaVinciMatchup.submitted(brodyData,team.id).total),team.name+' current matchup score must be numeric');
+
+// Zero actual points before kickoff must not hide projections; a bye DEF gets an explicit estimate.
+const labels=['QB','RB','RB','WR','WR','TE','W/R/T','K','DEF'];
+const fixtureTeams=['7','6'].map(id=>({id,players:labels.map((slot,i)=>({id:id+'-'+i,name:id+' Player '+i,position:slot==='W/R/T'?'WR':slot,slot,actualPoints:0,actualPointsWeek:7}))}));
+const fixtureFuture=fixtureTeams.flatMap(t=>t.players.map((p,i)=>({yahooId:p.id,weeks:[{week:7,points:t.id==='6'&&i===8?0:10,state:t.id==='6'&&i===8?'bye':'assuming_active',opponent:'TEST',home:true}]})));
+fixtureFuture.push({yahooId:'open-def',weeks:[{week:7,points:8,state:'assuming_active',opponent:'TEST',home:true}]});
+const fixture={rosters:{teams:fixtureTeams},future:{players:fixtureFuture},week:7,snapshotWeek:7,you:{id:'7'},other:{id:'6'},available:{players:[{id:'open-def',name:'Streaming Defense',position:'DEF'}]}};
+const planned=globalThis.DaVinciMatchup.plannedDefense(fixture,'6');
+assert.equal(planned.total,88);assert.equal(planned.rows[8].estimated,true);assert.equal(planned.rows[8].player.name,'Streaming Defense');
+assert.equal(globalThis.DaVinciMatchup.submitted(fixture,'6').total,80,'The submitted lineup remains unchanged');
+assert.equal(globalThis.DaVinciMatchup.plannedDefense({...fixture,available:{players:[]}},'6').rows[8].label,'BYE','Unknown replacement must not be invented');
+let rendered='';globalThis.document={getElementById:()=>({set innerHTML(value){rendered=value}})};
+globalThis.DaVinciMatchup.render(fixture);
+assert.match(rendered,/Projected points/);assert.doesNotMatch(rendered,/0.0 scored/);assert.match(rendered,/Expected DEF replacement/);assert.doesNotMatch(rendered,/Projection details/);
+fixture.hasStarted=true;globalThis.DaVinciMatchup.render(fixture);assert.match(rendered,/0.0 scored/,'Actual zero remains valid after play begins');

@@ -70,6 +70,12 @@ function renderRecommendations(){
  const chip=$('lineupChangeWeek');if(chip)chip.textContent='WEEK '+w;
  const roster=mine(),original=roster.filter(p=>!['BN','IR'].includes(p.slot));
  const best=lineup(roster,w);
+ if(best)for(const pos of ['K','DEF']){
+  const starter=original.find(p=>p.position===pos),chosen=best.selections.find(s=>s.player.position===pos);
+  const currentPoints=starter&&!inaccessible(starter,w)?points(starter,w):null;
+  const edge=chosen&&currentPoints!=null?chosen.points-currentPoints:null;
+  if(starter&&chosen&&String(starter.id)!==String(chosen.player.id)&&currentPoints>0&&edge>=0&&edge<0.5){best.score-=edge;chosen.player=starter;chosen.points=currentPoints;}
+ }
  if(!best){target.innerHTML='<div class="decision-empty">A full nine-player lineup could not be projected.</div>';return;}
  const chosenIds=new Set(best.selections.map(x=>String(x.player.id)));
  const currentIds=new Set(original.map(x=>String(x.id)));

@@ -173,3 +173,10 @@ assert.match(element('waiverRecommendations').innerHTML,/Verified available choi
 assert.doesNotMatch(element('waiverRecommendations').innerHTML,/No longer available/);
 shortlistData.pickupResearch.week=4;context.DaVinciAdvice.renderWaivers();
 assert.doesNotMatch(element('waiverRecommendations').innerHTML,/Verified available choice/,'Old research must not carry into a new week');
+
+// Do not recommend a healthy special-teams swap for an edge under half a point.
+elements.clear();
+const tinyK={id:'tinyK',name:'Tiny Kicker Upgrade',position:'K',slot:'BN'};
+const tinyFuture=future.concat([{yahooId:'tinyK',position:'K',weeks:[{week:5,points:4.4,state:'assuming_active'}]}]);
+context.DaVinciAdvice.init({rosters:{teams:[{id:'7',players:[...starters,...reserves,tinyK]}]},available:{players:[]},future:{startWeek:5,endWeek:6,players:tinyFuture},week:5,teamId:'7'});
+assert.doesNotMatch(element('lineupRecommendations').innerHTML,/Start Tiny Kicker Upgrade/);

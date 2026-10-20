@@ -63,10 +63,10 @@ function renderNfl(){
   if(!game)return '<td>'+(!data.nflSchedule?'Schedule unavailable':'BYE / no scheduled game')+'</td>';
   const consistent=frame&&root.DaVinciPlanningModel.norm(frame.opponent)===root.DaVinciPlanningModel.norm(game.opponent);
   const factor=consistent&&Number.isFinite(frame.factor)?frame.factor:null;
-  const note=factor==null?'Matchup rating unavailable':factor>=1.03?'Favorable':factor<=.97?'Difficult':'Neutral';
-  return '<td><strong>'+esc((game.home?'vs ':'@ ')+game.opponent)+'</strong><small>'+esc(game.date)+'</small><span class="plan-matchup '+(note==='Favorable'?'favorable':note==='Difficult'?'difficult':'')+'">'+note+'</span><small>'+fmt(consistent?model.point(p,w):null)+' pts'+(factor==null?'':' · '+signed((factor-1)*100)+'% model factor')+'</small></td>';
+  const note=factor==null?'Adjustment unavailable':signed((factor-1)*100)+'% vs neutral matchup';
+  return '<td><strong>'+esc((game.home?'vs ':'@ ')+game.opponent)+'</strong><small>'+esc(game.date)+'</small><span class="plan-matchup '+(factor>=1.03?'favorable':factor<=.97?'difficult':'')+'">'+note+'</span><small>'+fmt(consistent?model.point(p,w):null)+' projected pts'+'</small></td>';
  }).join('')+'</tr>').join('');
- $('nflScheduleSource').textContent=data.nflSchedule?'NFL schedule checked '+String(data.nflSchedule.retrievedAt).slice(0,10)+' · matchup ratings use the dated model':'NFL schedule unavailable';
+ $('nflScheduleSource').textContent=data.nflSchedule?'NFL schedule checked '+String(data.nflSchedule.retrievedAt).slice(0,10)+' · percentages adjust this player’s fantasy projection, not the NFL game total':'NFL schedule unavailable';
 }
 function exportValues(){
  const rows=filtered(),cell=x=>'"'+String(x??'').replaceAll('"','""')+'"';

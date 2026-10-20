@@ -361,7 +361,7 @@ function resultHTML(t){
  }
  return '<article class="trade-personal-card" aria-label="'+esc(t.partner.name+' '+t.shape)+'"><p class="plan-context">'+esc(t.partner.name)+'</p>'+
  '<div class="trade-personal-sides"><div><div class="trade-list-label"><small>YOU SEND</small></div>'+formatList(t.send.players)+summary(mine?.name||'Your team',t.beforeYou,t.afterYou,t.gainYou,t.avgYou)+'</div><div><div class="trade-list-label"><small>YOU RECEIVE</small></div>'+formatList(t.receive.players)+summary(t.partner.name,t.beforeThem,t.afterThem,t.gainThem,t.avgThem)+'</div></div>'+totals
- +(t.yahoo?'<div class="trade-yahoo-comparison" title="'+esc(t.yahoo.source)+'">Yahoo ROS · You '+(t.yahoo.gainYou>=0?'+':'')+fmt(t.yahoo.gainYou)+' · Theirs '+(t.yahoo.gainThem>=0?'+':'')+fmt(t.yahoo.gainThem)+'</div>':'')+((t.adjustments.you.length||t.adjustments.them.length)?'<details><summary>Roster moves assumed</summary><p>'+esc(['You: '+t.adjustments.you.join('; '),t.partner.name+': '+t.adjustments.them.join('; ')].join(' · '))+'</p></details>':'')+'</article>';
+ +(t.yahoo?'<div class="trade-yahoo-comparison" title="'+esc(t.yahoo.source)+'">Yahoo ROS · You '+(t.yahoo.gainYou>=0?'+':'')+fmt(t.yahoo.gainYou)+' · Theirs '+(t.yahoo.gainThem>=0?'+':'')+fmt(t.yahoo.gainThem)+'</div>':'')+'</article>';
 }
 function tradePlayerPoints(p,weeks){
  if(!state.yahooModel)return playerPts(p,weeks);
@@ -407,11 +407,12 @@ function render(){
   if(job!==nextJob)return;
   const shape=$('tradePackageFilter')?.value;
   if(['one_each','two_each','three_each'].includes(shape)){const n={one_each:1,two_each:2,three_each:3}[shape];options=options.filter(t=>t.send.players.length===n&&t.receive.players.length===n);}
-  const info=$('targetResults');if(info&&searchStats){info.innerHTML='<div class="trade-result-summary"><strong>'+options.length+' matching trades</strong><details><summary>Coverage & calculation</summary><p>'+searchStats.candidates+' packages screened'+($('tradeGoal')?.value==='model'?' · Da Vinci lineup projections.</p>':' · '+(searchStats.yahooCovered||0)+' with Yahoo coverage.</p>'+yahooCoverageHTML()+'<p>Yahoo: existing rosters, no waiver moves. Da Vinci upside is calculated separately.</p>'+yahooChecksHTML())+'</details></div>'+partnersHTML(options);
+  const info=$('targetResults');if(info&&searchStats){info.innerHTML='<div class="trade-result-summary"><strong>'+options.length+' matching trades</strong><details><summary>Coverage & calculation</summary><p>'+searchStats.candidates+' packages screened'+($('tradeGoal')?.value==='model'?' · Da Vinci lineup projections.</p>':' · '+(searchStats.yahooCovered||0)+' with Yahoo coverage.</p>'+yahooCoverageHTML()+'<p>Yahoo: existing rosters, no waiver moves. Da Vinci upside is calculated separately.</p>'+yahooChecksHTML())+'</details></div>'+partnersHTML(options)+(['one_each','two_each','three_each'].includes($('tradePackageFilter')?.value)?'<button type="button" class="plan-export" id="broadenTrades">Include multi-player trades</button>':'');
+   $('broadenTrades')?.addEventListener('click',()=>{$('tradePackageFilter').value='practical';render();});
    for(const button of info.querySelectorAll?.('[data-trade-partner]')||[])button.addEventListener('click',()=>{$('tradePartner').value=button.dataset.tradePartner;refresh();render();});
   }
   renderResearch();
-  const limit=Number($('tradeLimit')?.value||6),seenTargets=new Set(),first=[],variants=[];
+  const limit=Number($('tradeLimit')?.value||12),seenTargets=new Set(),first=[],variants=[];
   for(const t of options){const key=t.partner.id+'/'+t.receive.players.filter(p=>!['K','DEF'].includes(p.position)).map(id).sort().join('.');if(seenTargets.has(key))variants.push(t);else{seenTargets.add(key);first.push(t);}}
   const shown=first.concat(variants).slice(0,limit);
   if(!shown.length){
@@ -435,7 +436,7 @@ function renderResearch(){
  }).slice(0,Number($('tradeLimit')?.value||6));
  if(!shown.length){target.innerHTML='';return;}
  const list=players=>players.map(p=>esc(p.name)).join(' + ');
- target.innerHTML='<div class="section-top"><h3>Candidates to check in Yahoo</h3></div><p class="plan-context">'+'Yahoo impact is not yet available for these candidates.</p>'+(shown.length?shown.map(t=>'<article class="trade-personal-card"><div class="trade-personal-head"><strong>'+esc(t.partner.name)+'</strong><span>'+t.shape+' · Yahoo check needed</span></div><div class="trade-personal-sides"><div><small>YOU SEND</small><p>'+list(t.send.players)+'</p><strong>Your Da Vinci upside: +'+fmt(t.gainYou)+' period pts</strong></div><div><small>YOU RECEIVE</small><p>'+list(t.receive.players)+'</p><strong>Partner’s Yahoo impact: Unknown</strong></div></div><details><summary>Roster assumptions</summary><p>'+esc(['You: '+(t.adjustments.you.join('; ')||'No repair'),t.partner.name+': '+(t.adjustments.them.join('; ')||'No repair')].join(' · '))+'</p></details></article>').join(''):'<p class="plan-context">No additional candidates passed this limited model screen. Try a target player or manager.</p>');
+ target.innerHTML='<div class="section-top"><h3>Candidates to check in Yahoo</h3></div><p class="plan-context">'+'Yahoo impact is not yet available for these candidates.</p>'+(shown.length?shown.map(t=>'<article class="trade-personal-card"><div class="trade-personal-head"><strong>'+esc(t.partner.name)+'</strong><span>'+t.shape+' · Yahoo check needed</span></div><div class="trade-personal-sides"><div><small>YOU SEND</small><p>'+list(t.send.players)+'</p><strong>Your Da Vinci upside: +'+fmt(t.gainYou)+' period pts</strong></div><div><small>YOU RECEIVE</small><p>'+list(t.receive.players)+'</p><strong>Partner’s Yahoo impact: Unknown</strong></div></div></article>').join(''):'<p class="plan-context">No additional candidates passed this limited model screen. Try a target player or manager.</p>');
 }
 function yahooCoverageHTML(){
  const coverage=state.yahooFuture?.coverage;
@@ -556,6 +557,8 @@ function init(settings){
  const container=$('tradePreferenceBuilder');if(!container)return;
  oldFallback=root.DaVinciLab?.rankTrades;
  draw();
+ const opponent=state.rosters.teams.find(t=>String(t.id)===String(state.opponentId));
+ const notice=$('tradeOpponentNotice');if(notice)notice.textContent=opponent?'You play '+opponent.name+' this week. Consider waiting until after the matchup to trade with them.':'';
  $('tradeFromWeek')?.addEventListener('change',()=>{if(active())updated()});
  $('tradePartner')?.addEventListener('change',()=>{refresh();if(active())updated()});
  $('tradePackageFilter')?.addEventListener('change',()=>{if(active())updated()});

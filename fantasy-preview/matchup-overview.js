@@ -46,19 +46,31 @@ function projected(data,teamId){
  });
  return {rows,conditional:rows.some(r=>r.conditional),total:lineup?.points??null};
 }
+function plannedDefense(data,teamId){
+ const result=submitted(data,teamId),index=result.rows.findIndex(r=>r.slot==='DEF'&&(!r.player||r.label==='BYE'));
+ if(index<0)return result;
+ const forecasts=new Map((data.future?.players||[]).map(p=>[String(p.yahooId),p]));
+ const roster=data.rosters.teams.find(t=>String(t.id)===String(teamId))?.players||[];
+ const eligible=list=>list.filter(p=>p.position==='DEF'&&!['O','OUT','IR','NA'].includes(String(p.status||'').toUpperCase())).map(p=>({player:p,frame:forecasts.get(String(p.id))?.weeks?.find(w=>Number(w.week)===Number(data.week))})).filter(x=>x.frame&&x.frame.state!=='bye'&&x.frame.state!=='unavailable_reported'&&Number.isFinite(x.frame.points)).sort((a,b)=>b.frame.points-a.frame.points);
+ const own=eligible(roster),open=eligible(data.available?.players||[]),choice=own[0]||open[0];
+ if(!choice)return result;
+ const {player,frame}=choice;
+ result.rows[index]={slot:'DEF',player:{...player,slot:'DEF'},points:frame.points,label:Number(frame.points).toFixed(1),estimated:true,conditional:false,opponent:frame.opponent?(frame.home?'vs ':'@ ')+frame.opponent:'Schedule unavailable'};
+ result.total=result.rows.every(r=>r.points!=null)?result.rows.reduce((sum,r)=>sum+r.points,0):null;
+ result.defenseReplacement={name:player.name,source:own.length?'bench':'available'};
+ return result;
+}
 function render(data){
  const target=document.getElementById('matchupLineups');if(!target)return;
  const future=Number(data.week)>Number(data.snapshotWeek??data.week);
- const build=future?projected:submitted;
- const a=build(data,data.you.id),b=build(data,data.other.id);
+ const a=future?projected(data,data.you.id):submitted(data,data.you.id),b=future?projected(data,data.other.id):plannedDefense(data,data.other.id);
+ const scored=Boolean(data.hasStarted)||[...a.rows,...b.rows].some(r=>r.actual!=null&&r.actual!==0);
  const person=(r,side)=>{
-  const identity='<span class="matchup-identity"><strong>'+(r.player?(root.DaVinciPlayerDetail?.link(r.player)||esc(r.player.name)):'Empty slot')+'</strong><small>'+esc([r.player?.nflTeam,r.opponent,r.player?.status].filter(Boolean).join(' · '))+'</small></span>';
-  const score=r.actual!=null?'<b title="Scored so far">'+r.actual.toFixed(1)+'</b>':'<b title="'+(r.points==null?'Projection pending':r.label==='OUT'?'Out':r.label==='BYE'?'Bye week':'Da Vinci projected points')+'">'+esc(r.label.replace('＊',''))+(r.conditional?'<sup class="forecast-conditional" title="Projected if active">†</sup>':'')+'</b>';
+  const identity='<span class="matchup-identity"><strong>'+(r.player?(root.DaVinciPlayerDetail?.link(r.player)||esc(r.player.name)):'Empty slot')+'</strong><small>'+esc([r.player?.nflTeam,r.opponent,r.player?.status].filter(Boolean).join(' · '))+'</small>'+(r.estimated?'<small class="matchup-estimate">Expected DEF replacement</small>':'')+'</span>';
+  const score='<b title="'+(r.points==null?'Projection pending':r.label==='OUT'?'Out':r.label==='BYE'?'Bye week':'Projected fantasy points')+'">'+esc(r.label.replace('＊',''))+(r.conditional?'<sup class="forecast-conditional" title="Projected if active">†</sup>':'')+(scored&&r.actual!=null?'<small class="matchup-actual">'+r.actual.toFixed(1)+' scored</small>':'')+'</b>';
   return '<div class="matchup-player '+side+'">'+(side==='left'?identity+score:score+identity)+'</div>';
  };
- target.innerHTML=(!future&&a.rows.some(r=>r.actual!=null)?'<div class="future-lineup-label">Points scored</div>':'')+a.rows.map((r,i)=>'<div class="matchup-starter-row">'+person(r,'left')+'<span class="matchup-slot">'+(r.slot==='W/R/T'?'FLEX':r.slot)+'</span>'+person(b.rows[i],'right')+'</div>').join('')+
-  '<details class="projection-details"><summary>Projection details</summary><p>'+(future?'Future weeks use optimized current rosters, without assumed pickups. Yahoo totals are omitted because submitted future lineups may differ. ':'')+'† means if active, including the team total. Da Vinci and Yahoo totals use each manager’s current starters. OUT and BYE count as zero; — means a projection is missing, including any team total that depends on it. Projections assume participation unless adjusted for availability. K/DEF estimates are experimental.</p></details>';
-
+ target.innerHTML='<div class="future-lineup-label">Projected points'+(scored?' · actual scores below':'')+'</div>'+a.rows.map((r,i)=>'<div class="matchup-starter-row">'+person(r,'left')+'<span class="matchup-slot">'+(r.slot==='W/R/T'?'FLEX':r.slot)+'</span>'+person(b.rows[i],'right')+'</div>').join('');
 }
-root.DaVinciMatchup={submitted,projected,render};
+root.DaVinciMatchup={submitted,projected,plannedDefense,render};
 })(typeof window!=='undefined'?window:globalThis);
