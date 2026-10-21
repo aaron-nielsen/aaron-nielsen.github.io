@@ -17,7 +17,7 @@ for(const pos of ['QB','RB','WR','TE']){
 }
 assert.throws(()=>ratings(players.slice(1),teams,{4:.04},4),/Incomplete player\/team stats/);
 const report=JSON.parse(fs.readFileSync(__dirname+'/../data/defense-ratings.json'));
-assert.equal(report.teams.length,32);assert.equal(report.throughWeek,5);
+assert.equal(report.teams.length,32);assert.equal(report.throughWeek,JSON.parse(fs.readFileSync(__dirname+'/../data/week.json')).week-1);
 const special=require('../special-teams-model.js');
 // Model must discard target-week and later team stats for a stale league view.
 const source=fs.readFileSync(__dirname+'/../special-teams-model.js','utf8');assert.match(source,/Number\(g\[1\]\)<targetWeek/);

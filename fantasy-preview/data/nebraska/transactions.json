@@ -2,20 +2,202 @@
   "source": "Yahoo completed transactions, rolling 30-day window",
   "leagueId": "470.l.1699881",
   "season": 2026,
-  "retrievedAt": "2026-10-20T20:34:01.918Z",
+  "retrievedAt": "2026-10-21T19:53:36.592Z",
   "coverage": {
     "window": {
       "mode": "recent_30_days_timestamp",
       "weeks": [],
-      "start_timestamp_ms": 1789936420212,
-      "end_timestamp_ms": 1792528420212,
-      "returned_rows": 29
+      "start_timestamp_ms": 1790020393343,
+      "end_timestamp_ms": 1792612393343,
+      "returned_rows": 36
     },
     "limitations": null,
     "warning": null,
     "truncated": false
   },
   "transactions": [
+    {
+      "transaction_id": "470.l.1699881.tr.39",
+      "type": "add",
+      "status": "complete",
+      "timestamp": 1792600052000,
+      "date": "2026-10-21",
+      "week": null,
+      "team_ids": [
+        "470.l.1699881.t.4"
+      ],
+      "players_added": [
+        {
+          "id": "100034",
+          "name": "Texans",
+          "position": "DEF",
+          "team": "Hou"
+        }
+      ],
+      "players_dropped": [
+        {
+          "id": "100012",
+          "name": "Chiefs",
+          "position": "DEF",
+          "team": "KC"
+        }
+      ],
+      "faab_bid": null,
+      "waiver_priority": null,
+      "draft_picks": null
+    },
+    {
+      "transaction_id": "470.l.1699881.tr.38",
+      "type": "add",
+      "status": "complete",
+      "timestamp": 1792600014000,
+      "date": "2026-10-21",
+      "week": null,
+      "team_ids": [
+        "470.l.1699881.t.4"
+      ],
+      "players_added": [
+        {
+          "id": "40030",
+          "name": "C.J. Stroud",
+          "position": "QB",
+          "team": "Hou"
+        }
+      ],
+      "players_dropped": [
+        {
+          "id": "40707",
+          "name": "Emanuel Wilson",
+          "position": "RB",
+          "team": "Sea"
+        }
+      ],
+      "faab_bid": null,
+      "waiver_priority": null,
+      "draft_picks": null
+    },
+    {
+      "transaction_id": "470.l.1699881.tr.37",
+      "type": "add",
+      "status": "complete",
+      "timestamp": 1792592237000,
+      "date": "2026-10-21",
+      "week": null,
+      "team_ids": [
+        "470.l.1699881.t.5"
+      ],
+      "players_added": [
+        {
+          "id": "41795",
+          "name": "Colston Loveland",
+          "position": "TE",
+          "team": "Chi"
+        }
+      ],
+      "players_dropped": [
+        {
+          "id": "42025",
+          "name": "Kyle Monangai",
+          "position": "RB",
+          "team": "Chi"
+        }
+      ],
+      "faab_bid": null,
+      "waiver_priority": null,
+      "draft_picks": null
+    },
+    {
+      "transaction_id": "470.l.1699881.tr.36",
+      "type": "add",
+      "status": "complete",
+      "timestamp": 1792568369000,
+      "date": "2026-10-21",
+      "week": null,
+      "team_ids": [
+        "470.l.1699881.t.9"
+      ],
+      "players_added": [
+        {
+          "id": "41969",
+          "name": "Ollie Gordon II",
+          "position": "RB",
+          "team": "Mia"
+        }
+      ],
+      "players_dropped": [],
+      "faab_bid": null,
+      "waiver_priority": null,
+      "draft_picks": null
+    },
+    {
+      "transaction_id": "470.l.1699881.tr.35",
+      "type": "add",
+      "status": "complete",
+      "timestamp": 1792568369000,
+      "date": "2026-10-21",
+      "week": null,
+      "team_ids": [
+        "470.l.1699881.t.9"
+      ],
+      "players_added": [
+        {
+          "id": "42669",
+          "name": "Germie Bernard",
+          "position": "WR",
+          "team": "Pit"
+        }
+      ],
+      "players_dropped": [],
+      "faab_bid": null,
+      "waiver_priority": null,
+      "draft_picks": null
+    },
+    {
+      "transaction_id": "470.l.1699881.tr.34",
+      "type": "drop",
+      "status": "complete",
+      "timestamp": 1792539698000,
+      "date": "2026-10-20",
+      "week": null,
+      "team_ids": [
+        "470.l.1699881.t.9"
+      ],
+      "players_added": [],
+      "players_dropped": [
+        {
+          "id": "40981",
+          "name": "Braelon Allen",
+          "position": "RB",
+          "team": "NYJ"
+        }
+      ],
+      "faab_bid": null,
+      "waiver_priority": null,
+      "draft_picks": null
+    },
+    {
+      "transaction_id": "470.l.1699881.tr.33",
+      "type": "drop",
+      "status": "complete",
+      "timestamp": 1792539399000,
+      "date": "2026-10-20",
+      "week": null,
+      "team_ids": [
+        "470.l.1699881.t.9"
+      ],
+      "players_added": [],
+      "players_dropped": [
+        {
+          "id": "40296",
+          "name": "Blake Grupe",
+          "position": "K",
+          "team": "LAR"
+        }
+      ],
+      "faab_bid": null,
+      "waiver_priority": null,
+      "draft_picks": null
+    },
     {
       "transaction_id": "470.l.1699881.tr.32",
       "type": "add",

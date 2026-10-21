@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "retrievedAt": "2026-10-20T20:34:01.821Z",
+  "retrievedAt": "2026-10-21T19:53:36.532Z",
   "leagueId": "470.l.1699881",
   "teams": [
     {
@@ -93,7 +93,7 @@
           "nflTeam": "LAR",
           "position": "WR",
           "slot": "BN",
-          "status": "O",
+          "status": "IR",
           "actualPoints": 0,
           "actualPointsWeek": 7
         },
@@ -422,12 +422,23 @@
           "actualPointsWeek": 7
         },
         {
+          "id": "33398",
+          "key": "470.p.33398",
+          "name": "DeVonta Smith",
+          "nflTeam": "Phi",
+          "position": "WR",
+          "slot": "W/R/T",
+          "status": null,
+          "actualPoints": 0,
+          "actualPointsWeek": 7
+        },
+        {
           "id": "27535",
           "key": "470.p.27535",
           "name": "Mike Evans",
           "nflTeam": "SF",
           "position": "WR",
-          "slot": "W/R/T",
+          "slot": "BN",
           "status": "Q",
           "actualPoints": 0,
           "actualPointsWeek": 7
@@ -440,17 +451,6 @@
           "position": "TE",
           "slot": "BN",
           "status": "Q",
-          "actualPoints": 0,
-          "actualPointsWeek": 7
-        },
-        {
-          "id": "33398",
-          "key": "470.p.33398",
-          "name": "DeVonta Smith",
-          "nflTeam": "Phi",
-          "position": "WR",
-          "slot": "BN",
-          "status": null,
           "actualPoints": 0,
           "actualPointsWeek": 7
         },
@@ -540,10 +540,10 @@
       "owner": "Perrin",
       "players": [
         {
-          "id": "40029",
-          "key": "470.p.40029",
-          "name": "Bryce Young",
-          "nflTeam": "Car",
+          "id": "40030",
+          "key": "470.p.40030",
+          "name": "C.J. Stroud",
+          "nflTeam": "Hou",
           "position": "QB",
           "slot": "QB",
           "status": null,
@@ -562,10 +562,10 @@
           "actualPointsWeek": 7
         },
         {
-          "id": "40707",
-          "key": "470.p.40707",
-          "name": "Emanuel Wilson",
-          "nflTeam": "Sea",
+          "id": "30295",
+          "key": "470.p.30295",
+          "name": "Aaron Jones Sr.",
+          "nflTeam": "Min",
           "position": "RB",
           "slot": "RB",
           "status": null,
@@ -617,6 +617,17 @@
           "actualPointsWeek": 7
         },
         {
+          "id": "40029",
+          "key": "470.p.40029",
+          "name": "Bryce Young",
+          "nflTeam": "Car",
+          "position": "QB",
+          "slot": "BN",
+          "status": null,
+          "actualPoints": 0,
+          "actualPointsWeek": 7
+        },
+        {
           "id": "40896",
           "key": "470.p.40896",
           "name": "Jayden Daniels",
@@ -644,17 +655,6 @@
           "name": "Jameson Williams",
           "nflTeam": "Det",
           "position": "WR",
-          "slot": "BN",
-          "status": null,
-          "actualPoints": 0,
-          "actualPointsWeek": 7
-        },
-        {
-          "id": "30295",
-          "key": "470.p.30295",
-          "name": "Aaron Jones Sr.",
-          "nflTeam": "Min",
-          "position": "RB",
           "slot": "BN",
           "status": null,
           "actualPoints": 0,
@@ -694,10 +694,10 @@
           "actualPointsWeek": 7
         },
         {
-          "id": "100012",
-          "key": "470.p.100012",
-          "name": "Chiefs",
-          "nflTeam": "KC",
+          "id": "100034",
+          "key": "470.p.100034",
+          "name": "Texans",
+          "nflTeam": "Hou",
           "position": "DEF",
           "slot": "DEF",
           "status": null,
@@ -768,10 +768,10 @@
           "actualPointsWeek": 7
         },
         {
-          "id": "40078",
-          "key": "470.p.40078",
-          "name": "Brenton Strange",
-          "nflTeam": "Jax",
+          "id": "41795",
+          "key": "470.p.41795",
+          "name": "Colston Loveland",
+          "nflTeam": "Chi",
           "position": "TE",
           "slot": "TE",
           "status": null,
@@ -785,6 +785,17 @@
           "nflTeam": "Chi",
           "position": "WR",
           "slot": "W/R/T",
+          "status": null,
+          "actualPoints": 0,
+          "actualPointsWeek": 7
+        },
+        {
+          "id": "40078",
+          "key": "470.p.40078",
+          "name": "Brenton Strange",
+          "nflTeam": "Jax",
+          "position": "TE",
+          "slot": "BN",
           "status": null,
           "actualPoints": 0,
           "actualPointsWeek": 7
@@ -818,7 +829,7 @@
           "nflTeam": "TB",
           "position": "WR",
           "slot": "BN",
-          "status": null,
+          "status": "Q",
           "actualPoints": 0,
           "actualPointsWeek": 7
         },
@@ -841,17 +852,6 @@
           "position": "RB",
           "slot": "BN",
           "status": null,
-          "actualPoints": 0,
-          "actualPointsWeek": 7
-        },
-        {
-          "id": "42025",
-          "key": "470.p.42025",
-          "name": "Kyle Monangai",
-          "nflTeam": "Chi",
-          "position": "RB",
-          "slot": "BN",
-          "status": "Q",
           "actualPoints": 0,
           "actualPointsWeek": 7
         },
@@ -1392,7 +1392,7 @@
           "nflTeam": "NE",
           "position": "WR",
           "slot": "IR",
-          "status": "Q",
+          "status": null,
           "actualPoints": 0,
           "actualPointsWeek": 7
         },
@@ -1455,7 +1455,7 @@
           "nflTeam": "TB",
           "position": "RB",
           "slot": "RB",
-          "status": null,
+          "status": "Q",
           "actualPoints": 0,
           "actualPointsWeek": 7
         },
@@ -1466,17 +1466,6 @@
           "nflTeam": "KC",
           "position": "RB",
           "slot": "RB",
-          "status": null,
-          "actualPoints": 0,
-          "actualPointsWeek": 7
-        },
-        {
-          "id": "40234",
-          "key": "470.p.40234",
-          "name": "Parker Washington",
-          "nflTeam": "Jax",
-          "position": "WR",
-          "slot": "WR",
           "status": null,
           "actualPoints": 0,
           "actualPointsWeek": 7
@@ -1504,10 +1493,10 @@
           "actualPointsWeek": 7
         },
         {
-          "id": "40981",
-          "key": "470.p.40981",
-          "name": "Braelon Allen",
-          "nflTeam": "NYJ",
+          "id": "40196",
+          "key": "470.p.40196",
+          "name": "Chase Brown",
+          "nflTeam": "Cin",
           "position": "RB",
           "slot": "W/R/T",
           "status": null,
@@ -1515,11 +1504,11 @@
           "actualPointsWeek": 7
         },
         {
-          "id": "40196",
-          "key": "470.p.40196",
-          "name": "Chase Brown",
-          "nflTeam": "Cin",
-          "position": "RB",
+          "id": "40234",
+          "key": "470.p.40234",
+          "name": "Parker Washington",
+          "nflTeam": "Jax",
+          "position": "WR",
           "slot": "BN",
           "status": null,
           "actualPoints": 0,
@@ -1570,6 +1559,28 @@
           "actualPointsWeek": 7
         },
         {
+          "id": "42669",
+          "key": "470.p.42669",
+          "name": "Germie Bernard",
+          "nflTeam": "Pit",
+          "position": "WR",
+          "slot": "BN",
+          "status": null,
+          "actualPoints": 0,
+          "actualPointsWeek": 7
+        },
+        {
+          "id": "41969",
+          "key": "470.p.41969",
+          "name": "Ollie Gordon II",
+          "nflTeam": "Mia",
+          "position": "RB",
+          "slot": "BN",
+          "status": null,
+          "actualPoints": 0,
+          "actualPointsWeek": 7
+        },
+        {
           "id": "32723",
           "key": "470.p.32723",
           "name": "Jalen Hurts",
@@ -1581,23 +1592,12 @@
           "actualPointsWeek": 7
         },
         {
-          "id": "40296",
-          "key": "470.p.40296",
-          "name": "Blake Grupe",
-          "nflTeam": "LAR",
-          "position": "K",
-          "slot": "K",
-          "status": "IR",
-          "actualPoints": 0,
-          "actualPointsWeek": 7
-        },
-        {
           "id": "42838",
           "key": "470.p.42838",
           "name": "Trey Smack",
           "nflTeam": "GB",
           "position": "K",
-          "slot": "BN",
+          "slot": "K",
           "status": null,
           "actualPoints": 0,
           "actualPointsWeek": 7
@@ -1790,17 +1790,17 @@
     }
   ],
   "teamSnapshots": {
-    "1": "2026-10-20T20:34:01.821Z",
-    "2": "2026-10-20T20:34:01.821Z",
-    "3": "2026-10-20T20:34:01.821Z",
-    "4": "2026-10-20T20:34:01.821Z",
-    "5": "2026-10-20T20:34:01.821Z",
-    "6": "2026-10-20T20:34:01.821Z",
-    "7": "2026-10-20T20:34:01.821Z",
-    "8": "2026-10-20T20:34:01.821Z",
-    "9": "2026-10-20T20:34:01.821Z",
-    "10": "2026-10-20T20:34:01.821Z"
+    "1": "2026-10-21T19:53:36.532Z",
+    "2": "2026-10-21T19:53:36.532Z",
+    "3": "2026-10-21T19:53:36.532Z",
+    "4": "2026-10-21T19:53:36.532Z",
+    "5": "2026-10-21T19:53:36.532Z",
+    "6": "2026-10-21T19:53:36.532Z",
+    "7": "2026-10-21T19:53:36.532Z",
+    "8": "2026-10-21T19:53:36.532Z",
+    "9": "2026-10-21T19:53:36.532Z",
+    "10": "2026-10-21T19:53:36.532Z"
   },
-  "userTeamLastRefreshedAt": "2026-10-20T20:34:01.821Z",
+  "userTeamLastRefreshedAt": "2026-10-21T19:53:36.532Z",
   "source": "Yahoo Fantasy via Flaim Fantasy"
 }

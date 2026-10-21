@@ -15,15 +15,31 @@ function reconcile({available,rosters,futureData,weekly}){
   p.ownership=owner?'rostered':open.has(String(p.yahooId))?'available':'unknown';
   p.rosterSlot=owner?.player.slot||null;
  }
- const source=new Map([...(available?.players||[]),...(rosters?.teams||[]).flatMap(t=>t.players)].map(p=>[String(p.id),String(p.status||'').toUpperCase().trim()]));
+ const live=new Map([...(available?.players||[]),...(rosters?.teams||[]).flatMap(t=>t.players)].map(p=>[String(p.id),p]));
+ const source=new Map([...live].map(([id,p])=>[id,String(p.status||'').toUpperCase().trim()]));
+ const norm=s=>({LA:'LAR',JAC:'JAX',WSH:'WAS'}[String(s||'').toUpperCase()]||String(s||'').toUpperCase());
  const blocked=code=>/^(IR|PUP|NFI|OUT|O|NA|N\/A|CEL|SUSP|SUS)$|^(IR|PUP|NFI)-/.test(code);
  let excluded=0;
  for(const p of futureData?.players||[]){
   if(!source.has(String(p.yahooId)))continue;
   const code=source.get(String(p.yahooId));
-  if(code)p.injuryStatus=code;
+  p.injuryStatus=code||null;
+  const current=live.get(String(p.yahooId));
+  if(current.nflTeam&&p.nflTeam&&norm(current.nflTeam)!==norm(p.forecastNflTeam||p.nflTeam)){
+   p.forecastNflTeam=p.forecastNflTeam||p.nflTeam;p.nflTeam=current.nflTeam;
+   const schedule=futureData.players.find(other=>other!==p&&norm(other.nflTeam)===norm(p.nflTeam));
+   for(const frame of p.weeks||[])if(Number(frame.week)>=Number(weekly?.week??futureData.startWeek)){
+    const next=schedule?.weeks?.find(w=>Number(w.week)===Number(frame.week));
+    frame.opponent=next?.opponent??null;frame.home=next?.home??null;frame.date=next?.date??null;
+    frame.points=null;frame.activePoints=null;frame.state='team_changed_needs_forecast';
+   }
+  }
   const seasonOut=String(p.yahooId)==='40118'&&p.name==="De'Von Achane";
   if(seasonOut)p.seasonUnavailable={asOf:'2026-10-10',reason:'Season-ending ACL injury',source:'https://amp.nfl.com/news/dolphins-rb-devon-achane-miss-2026-season-acl-tear'};
+  if(!blocked(code)&&!p.seasonUnavailable)for(const frame of p.weeks||[]){
+   if(Number(frame.week)!==Number(weekly?.week??futureData.startWeek))continue;
+   if(['needs_availability_confirmation','unavailable_reported'].includes(frame.state)&&Number.isFinite(frame.activePoints)&&frame.activePoints>0){frame.points=frame.activePoints;frame.state='assuming_active';}
+  }
   if(!NOT_ACTIVE.has(code)){
    if(blocked(code)||seasonOut){for(const w of p.weeks||[]){if(seasonOut||Number(w.week)===Number(weekly?.week??futureData.startWeek)){w.points=0;w.state='unavailable_reported';}}}
    continue;
@@ -38,7 +54,11 @@ function reconcile({available,rosters,futureData,weekly}){
  for(const p of weekly?.players||[]){
   if(!source.has(String(p.yahooId)))continue;
   const code=source.get(String(p.yahooId));
-  if(code)p.injuryStatus=code;
+  p.injuryStatus=code||null;
+  const current=live.get(String(p.yahooId)),forecast=futureData?.players?.find(f=>String(f.yahooId)===String(p.yahooId));
+  if(current.nflTeam)p.nflTeam=current.nflTeam;
+  const frame=forecast?.weeks?.find(w=>Number(w.week)===Number(weekly.week));
+  if(frame){p.weeklyProjectedPoints=frame.points;p.activeGamePoints=frame.activePoints;p.forecastStatus=frame.state;p.opponent=frame.opponent;p.location=frame.home?'home':'away';}
   if(!blocked(code))continue;
   p.nflEligibility='inactive';
   p.weeklyProjectedPoints=0;if(NOT_ACTIVE.has(code))p.activeGamePoints=0;p.forecastStatus='unavailable_reported';

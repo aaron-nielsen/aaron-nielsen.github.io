@@ -12,7 +12,7 @@ require(path.join(BASE,'special-teams-model.js'));
 const modeler=globalThis.DaVinciSpecialTeams;
 assert.ok(modeler && typeof modeler.enrich==='function');
 const context=json('data/special-teams-context.json');
-assert.ok(context.dataThroughWeek>0 && context.dataThroughWeek<=5,'Current source may include completed Week 5');
+assert.ok(context.dataThroughWeek>0 && context.dataThroughWeek<json('data/week.json').week,'Team context must exclude the current fantasy week');
 assert.ok(context.games.every(g=>g[0]!==2026||g[1]<=context.dataThroughWeek));
 assert.ok(context.games.length>=1100);
 const starts=html.indexOf('const MODEL_SKILL_SLOTS=');

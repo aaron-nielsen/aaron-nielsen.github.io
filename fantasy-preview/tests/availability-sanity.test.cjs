@@ -43,3 +43,27 @@ for(const folder of ['data/','data/nebraska/']){
  reconcile({available,futureData,weekly});
  assert.equal(futureData.players[1].weeks[0].points,0,'Final reconciliation blocks healthy enrichment leaking into current week');
 }
+
+// Fresh Yahoo clearances remove stale injury flags without fabricating a forecast.
+{
+ const available={players:[{id:'cleared',status:null,nflTeam:'BAL'},{id:'missing',status:null}]};
+ const futureData={players:[{yahooId:'cleared',nflTeam:'BAL',injuryStatus:'IR',weeks:[{week:7,points:null,activePoints:8.4,state:'needs_availability_confirmation'}]},{yahooId:'missing',injuryStatus:'O',weeks:[{week:7,points:null,activePoints:null,state:'needs_availability_confirmation'}]}]};
+ const weekly={week:7,players:[{yahooId:'cleared',injuryStatus:'IR'}]};
+ reconcile({available,futureData,weekly});
+ assert.equal(futureData.players[0].injuryStatus,null);
+ assert.equal(weekly.players[0].weeklyProjectedPoints,8.4);
+ assert.equal(futureData.players[1].weeks[0].points,null);
+}
+// An NFL trade invalidates the old team's role forecast, including after enrichment.
+{
+ const available={players:[{id:'traded',status:null,nflTeam:'HOU'}]};
+ const futureData={players:[{yahooId:'traded',nflTeam:'ARI',weeks:[{week:7,opponent:'DEN',points:12,activePoints:12}]},{yahooId:'teammate',nflTeam:'HOU',weeks:[{week:7,opponent:'NYG',home:true,date:'2026-10-25',points:14}]}]};
+ const weekly={week:7,players:[{yahooId:'traded',nflTeam:'ARI'}]};
+ reconcile({available,futureData,weekly});
+ assert.equal(futureData.players[0].weeks[0].points,null);
+ assert.equal(futureData.players[0].weeks[0].opponent,'NYG');
+ assert.equal(weekly.players[0].nflTeam,'HOU');
+ futureData.players[0].weeks[0].points=12;
+ reconcile({available,futureData,weekly});
+ assert.equal(futureData.players[0].weeks[0].points,null,'Old role cannot reappear after enrichment');
+}

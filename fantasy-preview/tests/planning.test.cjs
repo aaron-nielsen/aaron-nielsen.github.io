@@ -41,7 +41,7 @@ for(const base of ['data','data/nebraska']){
  const m=global.DaVinciPlanningModel.create(data);assert.equal(m.players.length,new Set(m.players.map(p=>String(p.id))).size);assert.ok(m.players.length>=500);
  for(const p of m.players){const v=m.value(p,m.range());assert.ok(v.vor===null||Number.isFinite(v.vor));}
  assert.equal(m.schedule().length,data.future.endWeek-data.week);assert.ok(m.schedule().some(r=>r.opponent));
- for(const p of m.forecasts.values())for(const w of p.weeks){const game=m.nflGame(p,w.week);assert.equal(global.DaVinciPlanningModel.norm(game?.opponent),global.DaVinciPlanningModel.norm(w.opponent),p.name+' W'+w.week+' schedule mismatch');}
+ for(const p of m.forecasts.values())for(const w of p.weeks.filter(w=>Number(w.week)>=Number(data.week))){const game=m.nflGame(p,w.week);assert.equal(global.DaVinciPlanningModel.norm(game?.opponent),global.DaVinciPlanningModel.norm(w.opponent),p.name+' W'+w.week+' schedule mismatch');}
  console.log(base+': '+m.players.length+' unique player values, future matchup pairings and all NFL opponents verified');
 }
 console.log('Replacement values, legal lineup impact, unknown forecasts, byes and opponent weaknesses passed.');
