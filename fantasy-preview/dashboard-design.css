@@ -1,7 +1,7 @@
 /* Shared dashboard presentation: restrained parchment, clear data, compact controls. */
 :root{--base:#f3f1eb;--card:#fffefb;--card2:#f5f4ef;--text:#253c34;--muted:#717b73;--border:#dce1d8;--orange:#956e3d;--teal:#28714f;--shadow:0 3px 16px #233b2d06}
 body{background:var(--base);color:var(--text);font-size:15px;line-height:1.45}
-.banner-toggle{max-width:480px!important;margin:18px auto 20px;border-radius:8px;overflow:hidden;transition:box-shadow .15s}
+.banner-toggle{max-width:800px!important;margin:18px auto 20px;border-radius:8px;overflow:hidden;transition:box-shadow .15s}
 .banner-toggle:hover{box-shadow:0 4px 20px #49381f1c}
 .renaissance-banner{margin:0!important;border-radius:8px!important}
 .league-switch{padding:0 0 14px;gap:12px;border-bottom:0}
@@ -96,7 +96,7 @@ button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible,su
 .standings-table{font-variant-numeric:tabular-nums}.standings-table th{color:#7a886c;background:#eef3e6}.standings-table td{border-color:#e1e8d6}
 .footer{border-color:#d7dfce;color:#939b87;font-size:9px;letter-spacing:.03em;padding-top:18px;margin-top:28px}
 @media(max-width:600px){
- .banner-toggle{max-width:360px!important;margin:12px auto 16px;width:90%}
+ .banner-toggle{max-width:800px!important;margin:12px auto 16px;width:100%}
  .league-switch select{max-width:73%;font-size:11px;padding:8px}.league-switch-note{font-size:10px}
  .nav{top:4px;padding:5px!important;gap:2px!important;border-radius:9px;margin-bottom:18px!important}.nav>.nav-btn{font-size:11px!important;padding:9px 10px!important}
  .section-top h1,.section-top h2{font-size:25px}.overview-jumps{gap:4px}.overview-jumps button{font-size:11px;padding:5px 9px}
@@ -111,5 +111,9 @@ button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible,su
 
 .trade-source-badge{float:right;font-size:10px;font-weight:600;color:#7d8a70;background:#f0f4e9;border-radius:4px;padding:4px 7px}
 
-.matrix-banner{max-width:480px;margin:0 auto 22px;border-radius:8px;overflow:hidden}
+.matrix-banner{max-width:800px;margin:0 auto 22px;border-radius:8px;overflow:hidden}
 #matrixContent{max-width:1200px;margin:auto}#matrixContent h1{color:#2d4938;font-size:26px}#matrixContent .page-tabs button[aria-selected="true"]{background:#315a41;border-color:#315a41;color:white}#matrixContent .scroll{border-color:#dce5d4}#matrixContent th{background:#edf3e6;color:#617653}#matrixContent td{background:#fffefb;border-color:#e3eadc}#matrixContent input,#matrixContent select{border-color:#ccd9c1;border-radius:7px}#matrixContent>p{color:#78866b;font-size:13px}
+
+/* Full-width masthead, with less vertical space. */
+.renaissance-banner>img,.matrix-banner img{width:100%!important;height:180px!important;aspect-ratio:auto!important;object-fit:cover!important;object-position:center 55%!important}
+@media(max-width:600px){.renaissance-banner>img,.matrix-banner img{height:auto!important;aspect-ratio:3/1!important}}
