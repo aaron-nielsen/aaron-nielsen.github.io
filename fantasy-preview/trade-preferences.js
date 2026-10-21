@@ -407,6 +407,8 @@ function distinctTrades(options){
 }
 function render(){
  const target=$('tradeResults');if(!target||!state)return;
+ const count=$('tradeCount');if(count)count.hidden=true;
+ const previousSummary=$('targetResults');if(previousSummary)previousSummary.innerHTML='';
  const job=++nextJob;
  searchWorker?.terminate();searchWorker=null;
  target.setAttribute?.('aria-busy','true');
