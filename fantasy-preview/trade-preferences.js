@@ -5,10 +5,13 @@ const POSITION_ORDER={QB:0,RB:1,WR:2,TE:3,K:4,DEF:5};
 const POSITIONS=new Set(Object.keys(POSITION_ORDER));
 const BLOCK=new Set(['IR','IR-R','NA','N/A','PUP','PUP-R','NFI','NFI-R','CEL','SUSP','SUS']);
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const $=id=>document.getElementById(id);
+const $=id=>typeof document==='undefined'?null:document.getElementById(id);
+let searchControls=null;
+const control=id=>searchControls?searchControls[id]:$(id)?.value;
 const fmt=v=>Number(v).toFixed(1);
 const MIN_ROS_GAIN_PER_WEEK=.5; // For EACH fantasy manager, not just the requester.
 const id=p=>String(p.id||p.yahooId);
+let searchWorker=null,workerSettings=null,resultCache=new Map();
 let state=null, selectedOut=new Set(),selectedIn=new Set(),nextJob=0, oldFallback=null,searchStats=null,lineupCache=new Map(),fitCache=new Map();
 const status=p=>String(p.status||p.injuryStatus||'').toUpperCase();
 const eligible=p=>{
@@ -33,11 +36,11 @@ function playerPts(p,weeks){
  return known===weeks.length?sum:null;
 }
 function starts(){
- const week=Number($('tradeFromWeek')?.value||6);
+ const week=Number(control('tradeFromWeek')||6);
  const end=Number(state.future.endWeek||17);
  return Array.from({length:Math.max(0,end-week+1)},(_,i)=>week+i);
 }
-function partnerFilter(){return $('tradePartner')?.value||'all';}
+function partnerFilter(){return control('tradePartner')||'all';}
 function possible(people){return people.filter(eligible).filter(p=>playerPts(p,starts())!==null);}
 function combinations(arr,n){
  const result=[];
@@ -81,7 +84,7 @@ function requestedTargetCandidates(own,peers){
  const anchor=own.players.find(p=>id(p)===String(request.anchorId));
  const bonus=own.players.find(p=>id(p)===String(request.bonusId));
  if(!partner||!target||!anchor||!eligible(anchor)||!eligible(target))return [];
- const weeks=starts(),mode=$('tradePackageFilter')?.value;
+ const weeks=starts(),mode=control('tradePackageFilter');
  const healthy=p=>eligible(p)&&p.slot!=='IR'&&!BLOCK.has(status(p))&&!['O','OUT','D','DOUBTFUL'].includes(status(p));
  const companions=own.players.filter(p=>request.companionPositions.includes(p.position)&&healthy(p));
  const depth=partner.players.filter(p=>p.slot==='BN'&&['TE','WR'].includes(p.position)&&healthy(p)).sort((a,b)=>playerPts(a,weeks)-playerPts(b,weeks)).slice(0,2);
@@ -91,7 +94,7 @@ function requestedTargetCandidates(own,peers){
   if(extra&&!bonus)continue;
   const send=[anchor,companion,...(extra?[bonus]:[])],receive=[target,...(returnPlayer?[returnPlayer]:[])];
   const n=send.length,r=receive.length;
-  const position=$('tradePosition')?.value||'all';
+  const position=control('tradePosition')||'all';
   if(!selectedIn.size&&!['all','offense_no_qb'].includes(position)&&!receive.some(p=>p.position===position))continue;
   if(selectedOut.size&&!send.some(p=>selectedOut.has(id(p)))||selectedIn.size&&!receive.some(p=>selectedIn.has(id(p))))continue;
   if(['one_each','two_each','three_each'].includes(mode)&&(n!==r||n!=={one_each:1,two_each:2,three_each:3}[mode]))continue;
@@ -110,7 +113,7 @@ function getCandidates(){
  const proposals=[];
  for(const other of peers){
   const weeks=starts();
-  const edge=$('tradeGoal')?.value==='edge';
+  const edge=control('tradeGoal')==='edge';
   const premium=(owner,recipient,p)=>{
    const loss=state.yahooModel?.marginal(owner.players,p,weeks).lossIfRemoved;
    const gain=state.yahooModel?.marginal(recipient.players,p,weeks).gainIfAdded;
@@ -130,7 +133,7 @@ function getCandidates(){
    const gain=state.yahooModel.marginal(other.players,p,weeks).gainIfAdded,loss=state.yahooModel.marginal(own.players,p,weeks).lossIfRemoved;
    return Number.isFinite(gain)&&Number.isFinite(loss)&&gain>loss;
   }).map(id));
-  if($('tradeGoal')?.value==='arbitrage'&&!positiveTargets.size&&!positiveSends.size)continue;
+  if(control('tradeGoal')==='arbitrage'&&!positiveTargets.size&&!positiveSends.size)continue;
   const summarize=(pack,owner,recipient)=>{
    const values=pack.players.map(p=>({loss:state.yahooModel?.marginal(owner.players,p,weeks).lossIfRemoved,gain:state.yahooModel?.marginal(recipient.players,p,weeks).gainIfAdded,dv:edge?daVinciMarginal(own,p,weeks,String(owner.id)===String(own.id)):null}));
    if(values.some(v=>!Number.isFinite(v.loss)||!Number.isFinite(v.gain)))return null;
@@ -139,7 +142,7 @@ function getCandidates(){
   for(const group of Object.values(outgoing))for(const p of group)p.fitValues=summarize(p,own,other);
   for(const group of Object.values(inbound))for(const p of group)p.fitValues=summarize(p,other,own);
   const shortlist=[];
-  const mode=$('tradePackageFilter')?.value||'balanced';
+  const mode=control('tradePackageFilter')||'balanced';
   const sizes=({one_each:[1],two_each:[2],three_each:[3],balanced:[2,3]})[mode]||[1,2,3];
   for(const n of sizes){
    for(const r of sizes){
@@ -149,12 +152,12 @@ function getCandidates(){
     if(mode.includes('_for_')&&mode!==n+'_for_'+r)continue;
    for(const send of outgoing[n]){
     for(const receive of inbound[r]){
-     if($('tradeGoal')?.value==='arbitrage'&&!receive.players.some(p=>positiveTargets.has(id(p)))&&!send.players.some(p=>positiveSends.has(id(p))))continue;
+     if(control('tradeGoal')==='arbitrage'&&!receive.players.some(p=>positiveTargets.has(id(p)))&&!send.players.some(p=>positiveSends.has(id(p))))continue;
      if(receive.players.some(p=>['RB','WR','TE','QB'].includes(p.position))&&send.players.filter(p=>['K','DEF'].includes(p.position)).length>1)continue;
      if(rejectedOffer(other.id,send.players,receive.players))continue;
      const notes=state.negotiations;
      if(notes&&notes.leagueKey===state.leagueKey&&String(notes.teamId)===String(other.id)&&send.players.some(p=>notes.avoidOfferingPositions?.includes(p.position)))continue;
-     const position=$('tradePosition')?.value||'all';
+     const position=control('tradePosition')||'all';
      if(!selectedIn.size&&position!=='all'&&position!=='offense_no_qb'&&!receive.players.some(p=>p.position===position))continue;
      if(!selectedIn.size&&position==='offense_no_qb'&&receive.players.some(p=>!['RB','WR','TE'].includes(p.position)))continue;
      // K/DEF are throw-ins: their season totals cannot buy an offensive asset.
@@ -174,7 +177,7 @@ function getCandidates(){
   shortlist.sort((a,b)=>(b.fitScore??-Infinity)-(a.fitScore??-Infinity)||a.gap-b.gap||a.bonuses-b.bonuses||a.balance-b.balance);
   // Retain variety of packages and targets rather than only near-identical deals.
   const retained=[], seen=new Set(),byShape={},byTarget={},byReturn={};
-  const arbitrageMode=$('tradeGoal')?.value==='arbitrage',shapeLimit=arbitrageMode?24:12;
+  const arbitrageMode=control('tradeGoal')==='arbitrage',shapeLimit=arbitrageMode?24:12;
   for(const item of shortlist){
    const n=item.shape;
    if((item.gap>.65&&!(item.fit&&(edge?item.fit.dvYou:item.fit.you)>0&&item.fit.them>0))||(byShape[n]||0)>=shapeLimit)continue;
@@ -200,11 +203,11 @@ function getCandidates(){
   const send=e.send.map(pid=>own.players.find(p=>id(p)===String(pid))),receive=e.receive.map(pid=>partner.players.find(p=>id(p)===String(pid)));
   if([...send,...receive].some(p=>!p)||rejectedOffer(partner.id,send,receive))continue;
   if(selectedOut.size&&!send.some(p=>selectedOut.has(id(p)))||selectedIn.size&&!receive.some(p=>selectedIn.has(id(p))))continue;
-  const n=send.length,r=receive.length,mode=$('tradePackageFilter')?.value||'balanced';
+  const n=send.length,r=receive.length,mode=control('tradePackageFilter')||'balanced';
   if(n>3||r>3||mode==='practical'&&!['1-1','1-2','2-1','2-2','3-2','2-3'].includes(n+'-'+r))continue;
   if(['one_each','two_each','three_each'].includes(mode)&&(n!==r||n!=={one_each:1,two_each:2,three_each:3}[mode]))continue;
   if(mode.includes('_for_')&&mode!==n+'_for_'+r||mode==='unequal'&&n===r||mode==='balanced'&&(n!==r||n===1)||mode==='balanced_all'&&n!==r)continue;
-  const position=$('tradePosition')?.value||'all';
+  const position=control('tradePosition')||'all';
   if(!selectedIn.size&&position==='offense_no_qb'&&receive.some(p=>!['RB','WR','TE'].includes(p.position)))continue;
   if(!selectedIn.size&&!['all','offense_no_qb'].includes(position)&&!receive.some(p=>p.position===position))continue;
   const pack=players=>({players,count:players.length,key:players.map(id).sort().join('.'),raw:players.reduce((n,p)=>n+(playerPts(p,starts())||0),0)});
@@ -214,7 +217,7 @@ function getCandidates(){
  }
  const unique=new Map([...observed,...result,...requestedTargetCandidates(own,peers)].map(c=>[c.key,c]));
  const candidates=[...unique.values()];
- if($('tradeGoal')?.value==='arbitrage')return candidates.filter(c=>c.receive.players.some(p=>{
+ if(control('tradeGoal')==='arbitrage')return candidates.filter(c=>c.receive.players.some(p=>{
   if(!state.yahooModel||['K','DEF'].includes(p.position))return false;
   const gain=state.yahooModel.marginal(own.players,p,starts()).gainIfAdded,loss=state.yahooModel.marginal(c.partner.players,p,starts()).lossIfRemoved;
   return Number.isFinite(gain)&&Number.isFinite(loss)&&gain>loss;
@@ -297,10 +300,10 @@ function evaluate(){
  searchStats={candidates:candidates.length,valid:0,passed:0,shapes:{}};
  for(const c of candidates)searchStats.shapes[c.shape]=(searchStats.shapes[c.shape]||0)+1;
  if(!candidates.length)return [];
- const verifiedMode=['arbitrage','edge','yahoo'].includes($('tradeGoal')?.value);
+ const verifiedMode=['arbitrage','edge','yahoo'].includes(control('tradeGoal'));
  const covered=verifiedMode?candidates.filter(c=>yahooEvaluation(c,weeks,[],[])!==null):candidates;
  searchStats.yahooCovered=covered.length;
- const viable=$('tradeGoal')?.value==='arbitrage'?covered.filter(c=>{
+ const viable=control('tradeGoal')==='arbitrage'?covered.filter(c=>{
   const yahoo=yahooEvaluation(c,weeks,[],[]);
   return yahoo?.gainYou>0&&yahoo?.gainThem>=0&&arbitrageValues(c,mine,weeks).total>0&&bonusIsThrowin(c,mine,weeks,yahoo);
  }):covered;
@@ -316,17 +319,17 @@ function evaluate(){
  const evaluated=viable.map(c=>evaluateOffer(c,mine.players,baseline,weeks)).filter(Boolean);
  searchStats.valid=evaluated.length;
  const results=evaluated
- .filter(t=>$('tradeGoal')?.value==='arbitrage'?t.yahoo?.gainYou>0&&t.yahoo?.gainThem>=0&&arbitrageValues(t,mine,weeks).total>0:$('tradeGoal')?.value==='edge'?t.avgYou>=MIN_ROS_GAIN_PER_WEEK&&t.yahoo?.gainThem>=0:$('tradeGoal')?.value==='yahoo'?t.yahoo?.gainYou>=weeks.length*MIN_ROS_GAIN_PER_WEEK&&t.yahoo?.gainThem>=weeks.length*MIN_ROS_GAIN_PER_WEEK:t.avgYou>=MIN_ROS_GAIN_PER_WEEK&&t.avgThem>=MIN_ROS_GAIN_PER_WEEK)
+ .filter(t=>control('tradeGoal')==='arbitrage'?t.yahoo?.gainYou>0&&t.yahoo?.gainThem>=0&&arbitrageValues(t,mine,weeks).total>0:control('tradeGoal')==='edge'?t.avgYou>=MIN_ROS_GAIN_PER_WEEK&&t.yahoo?.gainThem>=0:control('tradeGoal')==='yahoo'?t.yahoo?.gainYou>=weeks.length*MIN_ROS_GAIN_PER_WEEK&&t.yahoo?.gainThem>=weeks.length*MIN_ROS_GAIN_PER_WEEK:t.avgYou>=MIN_ROS_GAIN_PER_WEEK&&t.avgThem>=MIN_ROS_GAIN_PER_WEEK)
  .filter(t=>bonusIsThrowin(t,mine,weeks,t.yahoo))
  .sort((a,b)=>{
-  if($('tradeGoal')?.value==='arbitrage')return arbitrageValues(b,mine,weeks).total-arbitrageValues(a,mine,weeks).total||Math.min(b.yahoo.gainYou,b.yahoo.gainThem)-Math.min(a.yahoo.gainYou,a.yahoo.gainThem);
+  if(control('tradeGoal')==='arbitrage')return arbitrageValues(b,mine,weeks).total-arbitrageValues(a,mine,weeks).total||Math.min(b.yahoo.gainYou,b.yahoo.gainThem)-Math.min(a.yahoo.gainYou,a.yahoo.gainThem);
   if(Boolean(a.requestedTarget)!==Boolean(b.requestedTarget))return a.requestedTarget?-1:1;
   if(Boolean(a.bonuses)!==Boolean(b.bonuses))return a.bonuses?1:-1;
   // Prioritize balance: maximizing the smaller team's benefit is a better
   // starting point for a mutually acceptable offer than maximizing just ours.
   if(Boolean(a.injuryAssumptions.length)!==Boolean(b.injuryAssumptions.length))return a.injuryAssumptions.length?1:-1;
-  if($('tradeGoal')?.value==='edge')return b.gainYou-a.gainYou;
-  if($('tradeGoal')?.value==='yahoo')return Math.min(b.yahoo.gainYou,b.yahoo.gainThem)-Math.min(a.yahoo.gainYou,a.yahoo.gainThem)||(b.yahoo.gainYou+b.yahoo.gainThem)-(a.yahoo.gainYou+a.yahoo.gainThem);
+  if(control('tradeGoal')==='edge')return b.gainYou-a.gainYou;
+  if(control('tradeGoal')==='yahoo')return Math.min(b.yahoo.gainYou,b.yahoo.gainThem)-Math.min(a.yahoo.gainYou,a.yahoo.gainThem)||(b.yahoo.gainYou+b.yahoo.gainThem)-(a.yahoo.gainYou+a.yahoo.gainThem);
   const as=Math.min(a.avgYou,a.avgThem)*3+(a.avgYou+a.avgThem)*.20-a.gap*1.2;
   const bs=Math.min(b.avgYou,b.avgThem)*3+(b.avgYou+b.avgThem)*.20-b.gap*1.2;
   return bs-as;
@@ -349,33 +352,34 @@ function resultHTML(t){
  const formatList=players=>'<div class="trade-marginal-heading"><span></span><span>Points (arbitrage)</span></div>'+players.map(p=>{const value=byPlayer.get(id(p)),points=tradePlayerPoints(p,weeks),arb=value?.arbitrage??null;const signed=arb===null?'Unknown':(arb<0?'−':'+')+Math.abs(arb).toFixed(2);return '<div class="trade-player-row trade-marginal-row"><span>'+(root.DaVinciPlayerDetail?.link(p)||esc(p.name))+' <small>('+esc(p.position)+(['K','DEF'].includes(p.position)?' · bonus':'')+')</small></span><span class="trade-player-value"><b>'+(points===null?'Unknown':points.toFixed(2))+'</b> <b class="trade-marginal '+(arb===null?'':arb<0?'negative':arb>0?'positive':'neutral')+'">('+signed+')</b></span></div>';}).join('');
  const totals='<div class="trade-arbitrage-totals"><div title="Sum of each recipient’s acquisition gain minus the current owner’s removal loss."><strong>Total marginal value</strong>'+valueHTML(arbitrage.total)+'</div></div>';
  const summary=(name,before,after,gain,avg)=>'<div class="trade-team-summary"><strong>'+esc(name)+'</strong><span>Lineup ROS <b>'+fmt(before)+' → '+fmt(after)+'</b></span><b class="trade-gain">'+(gain>=0?'+':'')+fmt(gain)+' pts · '+(avg>=0?'+':'')+fmt(avg)+' /wk</b></div>';
- if(['arbitrage','edge','yahoo'].includes($('tradeGoal')?.value)){
+ if(['arbitrage','edge','yahoo'].includes(control('tradeGoal'))){
   const signed=n=>(n>=0?'+':'')+Number(n).toFixed(2);
   const metric=(title,n)=>'<div class="trade-team-summary"><strong>'+title+'</strong><b class="trade-gain">'+signed(n)+' period pts</b></div>';
   return '<article class="trade-personal-card" aria-label="'+esc(t.partner.name+' '+t.shape)+'"><p class="plan-context">'+esc(t.partner.name)+' · Weeks '+weeks[0]+'–'+weeks.at(-1)+' · '+esc(snapshotRange([mine,t.partner],weeks))+'</p><div class="trade-personal-sides"><div><div class="trade-list-label"><small>YOU SEND</small></div>'+formatList(t.send.players)+metric('Your Da Vinci upside',t.gainYou)+metric('Your lineup impact',t.yahoo.gainYou)+'</div><div><div class="trade-list-label"><small>YOU RECEIVE</small></div>'+formatList(t.receive.players)+metric('Partner’s lineup impact',t.yahoo.gainThem)+'</div></div>'+totals+'</article>';
  }
- return '<article class="trade-personal-card" aria-label="'+esc(t.partner.name+' '+t.shape)+'"><p class="plan-context">'+esc(t.partner.name)+'</p>'+
+ return '<article class="trade-personal-card" aria-label="'+esc(t.partner.name+' '+t.shape)+'"><p class="plan-context">'+esc(t.partner.name)+'<span class="trade-source-badge">Da Vinci · '+esc(t.shape)+'</span></p>'+
  '<div class="trade-personal-sides"><div><div class="trade-list-label"><small>YOU SEND</small></div>'+formatList(t.send.players)+summary(mine?.name||'Your team',t.beforeYou,t.afterYou,t.gainYou,t.avgYou)+'</div><div><div class="trade-list-label"><small>YOU RECEIVE</small></div>'+formatList(t.receive.players)+summary(t.partner.name,t.beforeThem,t.afterThem,t.gainThem,t.avgThem)+'</div></div>'+totals
  +(t.yahoo?'<div class="trade-yahoo-comparison" title="'+esc(t.yahoo.source)+'">Yahoo ROS · You '+(t.yahoo.gainYou>=0?'+':'')+fmt(t.yahoo.gainYou)+' · Theirs '+(t.yahoo.gainThem>=0?'+':'')+fmt(t.yahoo.gainThem)+'</div>':'')+'</article>';
 }
 function tradePlayerPoints(p,weeks){
- if(!state.yahooModel)return playerPts(p,weeks);
+ if(control('tradeGoal')==='model'||!state.yahooModel)return playerPts(p,weeks);
  const player=state.yahooFuture.players.find(q=>id(q)===id(p));
  const frames=weeks.map(w=>player?.weeks.find(f=>Number(f.week)===w));
  if(frames.some(f=>!Number.isFinite(f?.points)))return null;
  return Math.round(frames.reduce((n,f)=>n+f.points,0)*100)/100;
 }
 function arbitrageValues(t,mine,weeks){
- const source=state.yahooModel?'Yahoo':'Da Vinci';
- const marginal=(team,p,owned)=>{if(state.yahooModel){const v=state.yahooModel.marginal(team.players,p,weeks);return owned?v.lossIfRemoved:v.gainIfAdded;}return daVinciMarginal(team,p,weeks,owned);};
+ const useYahoo=Boolean(state.yahooModel)&&control('tradeGoal')!=='model';
+ const source=useYahoo?'Yahoo':'Da Vinci';
+ const marginal=(team,p,owned)=>{if(useYahoo){const v=state.yahooModel.marginal(team.players,p,weeks);return owned?v.lossIfRemoved:v.gainIfAdded;}return daVinciMarginal(team,p,weeks,owned);};
  const players=[];
  for(const [list,owner,recipient] of [[t.send.players,mine,t.partner],[t.receive.players,t.partner,mine]])for(const player of list){
   const loss=marginal(owner,player,true),gain=marginal(recipient,player,false);
   players.push({player,ownerLoss:loss,recipientGain:gain,arbitrage:Number.isFinite(loss)&&Number.isFinite(gain)?Math.round((gain-loss)*100)/100:null});
  }
- const exact=state.yahooModel?state.yahooModel.trade(mine.players,t.partner.players,t.send.players,t.receive.players,weeks):null;
+ const exact=useYahoo?state.yahooModel.trade(mine.players,t.partner.players,t.send.players,t.receive.players,weeks):null;
  return {source,players,total:players.some(p=>p.arbitrage===null)?null:Math.round(players.reduce((n,p)=>n+p.arbitrage,0)*100)/100,
-  fullTrade:state.yahooModel?(exact?Math.round((exact.gainYou+exact.gainThem)*100)/100:null):Number.isFinite(t.gainYou)&&Number.isFinite(t.gainThem)?Math.round((t.gainYou+t.gainThem)*100)/100:null};
+  fullTrade:useYahoo?(exact?Math.round((exact.gainYou+exact.gainThem)*100)/100:null):Number.isFinite(t.gainYou)&&Number.isFinite(t.gainThem)?Math.round((t.gainYou+t.gainThem)*100)/100:null};
 }
 function snapshotRange(teams,weeks){
  const ids=new Set(teams.flatMap(t=>t.players.map(id))),dates=[];
@@ -387,8 +391,8 @@ function snapshotRange(teams,weeks){
 function partnersHTML(options){
  const best=new Map();for(const t of options)if(!best.has(String(t.partner.id)))best.set(String(t.partner.id),t);
  const rows=[...best.values()].slice(0,5);if(!rows.length)return '';
- const yahooOnly=['arbitrage','yahoo'].includes($('tradeGoal')?.value);
- return '<div class="trade-partner-fits"><strong>Best partner fits</strong>'+rows.map(t=>{const you=yahooOnly?t.yahoo.gainYou:t.gainYou,them=yahooOnly||$('tradeGoal')?.value==='edge'?t.yahoo?.gainThem:t.gainThem;return '<button type="button" data-trade-partner="'+esc(t.partner.id)+'"><span>'+esc(t.partner.name)+'</span><small>You '+(you>=0?'+':'')+fmt(you)+(yahooOnly?' Yahoo':' DV')+' · Partner '+(them>=0?'+':'')+fmt(them)+(yahooOnly||$('tradeGoal')?.value==='edge'?' Yahoo':' DV')+'</small></button>';}).join('')+'</div>';
+ const yahooOnly=['arbitrage','yahoo'].includes(control('tradeGoal'));
+ return '<div class="trade-partner-fits"><strong>Best partner fits</strong>'+rows.map(t=>{const you=yahooOnly?t.yahoo.gainYou:t.gainYou,them=yahooOnly||control('tradeGoal')==='edge'?t.yahoo?.gainThem:t.gainThem;return '<button type="button" data-trade-partner="'+esc(t.partner.id)+'"><span>'+esc(t.partner.name)+'</span><small>You '+(you>=0?'+':'')+fmt(you)+(yahooOnly?' Yahoo':' DV')+' · Partner '+(them>=0?'+':'')+fmt(them)+(yahooOnly||control('tradeGoal')==='edge'?' Yahoo':' DV')+'</small></button>';}).join('')+'</div>';
 }
 function distinctTrades(options){
  const seenTargets=new Set(),result=[];
@@ -404,32 +408,63 @@ function distinctTrades(options){
 function render(){
  const target=$('tradeResults');if(!target||!state)return;
  const job=++nextJob;
- target.innerHTML='<div class="trade-personal-loading">Evaluating roster-fit trades…</div>';
+ searchWorker?.terminate();searchWorker=null;
+ target.setAttribute?.('aria-busy','true');
+ target.innerHTML='<div class="trade-personal-loading search-progress" role="status"><span class="search-spinner" aria-hidden="true"></span><span>Comparing both teams’ lineups…</span><button type="button" class="plan-export" id="cancelTradeSearch">Cancel</button></div>';
+ $('cancelTradeSearch')?.addEventListener('click',()=>{nextJob++;searchWorker?.terminate();searchWorker=null;target.setAttribute?.('aria-busy','false');target.innerHTML='<div class="trade-personal-loading">Search cancelled. Adjust the filters or select Find trades.</div>';});
  // Defer lineup calculations until the loading row paints; ignore outdated requests.
- const run=()=>{
+ const finish=(options,stats)=>{
   if(job!==nextJob)return;
-  let options=[];
-  try{options=evaluate()}catch(error){target.innerHTML='<div class="trade-personal-loading">Could not calculate these packages.</div>';return;}
-  if(job!==nextJob)return;
-  const shape=$('tradePackageFilter')?.value;
+  searchStats=stats;target.setAttribute?.('aria-busy','false');
+  const shape=control('tradePackageFilter');
   if(['one_each','two_each','three_each'].includes(shape)){const n={one_each:1,two_each:2,three_each:3}[shape];options=options.filter(t=>t.send.players.length===n&&t.receive.players.length===n);}
   options=distinctTrades(options);
-  const info=$('targetResults');if(info&&searchStats){info.innerHTML='<div class="trade-result-summary"><strong>'+options.length+' distinct trade ideas</strong><details><summary>Coverage & calculation</summary><p>'+searchStats.candidates+' packages screened'+($('tradeGoal')?.value==='model'?' · Da Vinci lineup projections.</p>':' · '+(searchStats.yahooCovered||0)+' with Yahoo coverage.</p>'+yahooCoverageHTML()+'<p>Yahoo: existing rosters, no waiver moves. Da Vinci upside is calculated separately.</p>'+yahooChecksHTML())+'</details></div>'+partnersHTML(options)+(['one_each','two_each','three_each'].includes($('tradePackageFilter')?.value)?'<button type="button" class="plan-export" id="broadenTrades">Include multi-player trades</button>':'');
+  const info=$('targetResults');if(info&&searchStats){info.innerHTML='<div class="trade-result-summary"><strong>'+options.length+' distinct trade ideas</strong><details><summary>Coverage & calculation</summary><p>'+searchStats.candidates+' packages screened'+(control('tradeGoal')==='model'?' · Da Vinci lineup projections.</p>':' · '+(searchStats.yahooCovered||0)+' with Yahoo coverage.</p>'+yahooCoverageHTML()+'<p>Yahoo: existing rosters, no waiver moves. Da Vinci upside is calculated separately.</p>'+yahooChecksHTML())+'</details></div>'+partnersHTML(options)+(['one_each','two_each','three_each'].includes(control('tradePackageFilter'))?'<button type="button" class="plan-export" id="broadenTrades">Include multi-player trades</button>':'');
    $('broadenTrades')?.addEventListener('click',()=>{$('tradePackageFilter').value='practical';render();});
    for(const button of info.querySelectorAll?.('[data-trade-partner]')||[])button.addEventListener('click',()=>{$('tradePartner').value=button.dataset.tradePartner;refresh();render();});
   }
-  const shown=options.slice(0,Number($('tradeLimit')?.value||12));
+  const shown=options.slice(0,Number(control('tradeLimit')||12));
   if(!shown.length){
-   if(['arbitrage','edge','yahoo'].includes($('tradeGoal')?.value)){
-    target.innerHTML='<div class="trade-personal-loading">No matching trades in this period. See coverage for incomplete comparisons.</div>';return;
+   if(['arbitrage','edge','yahoo'].includes(control('tradeGoal'))){
+    const missing=missingYahooPlayers();
+    target.innerHTML='<div class="trade-empty-state"><span class="empty-state-label">'+(missing.length?'FORECAST COVERAGE':'TRADE SEARCH')+'</span><h3>'+(missing.length?'Yahoo forecasts needed':'No matching trades in this period')+'</h3><p>'+(missing.length?'Saved Yahoo forecasts are incomplete for '+esc(missing.slice(0,3).join(', '))+(missing.length>3?' and '+(missing.length-3)+' more players':'')+'.':'No packages meet these filters and both teams’ value requirements.')+'</p><button type="button" class="plan-export" id="showModelTrades">Explore Da Vinci trade ideas</button><small>Uses model projections for both teams.</small></div>';
+    $('showModelTrades')?.addEventListener('click',()=>{$('tradeGoal').value='model';render();});return;
    }
    target.innerHTML='<div class="trade-personal-loading">No trades here improve BOTH lineups by at least '+fmt(MIN_ROS_GAIN_PER_WEEK)+' pts/week over the rest of the season. Try another player or manager.</div>';
    return;
   }
   target.innerHTML=shown.map(resultHTML).join('');
  };
- if(typeof requestAnimationFrame==='function')requestAnimationFrame(run);else run();
+ const filters=Object.fromEntries(['tradeFromWeek','tradePartner','tradePackageFilter','tradeGoal','tradePosition'].map(k=>[k,control(k)]));
+ const selection={send:[...selectedOut],receive:[...selectedIn]},key=JSON.stringify([filters,selection]);
+ const deliver=result=>{resultCache.set(key,result);if(resultCache.size>12)resultCache.delete(resultCache.keys().next().value);finish(result.options,result.stats);};
+ const fail=()=>{if(job!==nextJob)return;searchWorker?.terminate();searchWorker=null;target.setAttribute?.('aria-busy','false');target.innerHTML='<div class="trade-empty-state"><h3>Trade search could not finish</h3><p>Try fewer players or a specific trade partner, then select Find trades.</p></div>';};
+ if(resultCache.has(key)){const result=resultCache.get(key);finish(result.options,result.stats);return;}
+ if(typeof Worker==='function'&&root.location?.protocol!=='file:'&&workerSettings){
+  try{
+   searchWorker=new Worker('./trade-search-worker.js?v=20261021design');
+   const worker=searchWorker;
+   worker.onmessage=event=>{worker.terminate();if(job!==nextJob)return;searchWorker=null;if(event.data.error){fail();return;}deliver(event.data);};
+   worker.onerror=fail;
+   worker.postMessage({settings:workerSettings,filters,selection});
+  }catch(error){fail();}
+ }else{
+  const run=()=>{if(job!==nextJob)return;try{deliver({options:evaluate(),stats:searchStats});}catch(error){fail();}};
+  if(typeof requestAnimationFrame==='function')requestAnimationFrame(run);else run();
+ }
 }
+function missingYahooPlayers(){
+ if(!state.yahooFuture)return [];
+ const mine=state.rosters.teams.find(t=>String(t.id)===String(state.teamId));
+ return (mine?.players||[]).filter(p=>starts().some(w=>!Number.isFinite(state.yahooFuture?.players?.find(f=>id(f)===id(p))?.weeks?.find(f=>Number(f.week)===w)?.points))).map(p=>p.name);
+}
+function calculate(settings,filters,selection){
+ searchControls=filters;selectedOut=new Set(selection.send);selectedIn=new Set(selection.receive);
+ lineupCache=new Map();fitCache=new Map();
+ state={...settings,yahooModel:settings.yahooFuture&&root.YahooValues?.create(settings.yahooFuture),futureMap:new Map(settings.future.players.map(p=>[String(p.yahooId),p]))};
+ const options=evaluate();return {options,stats:searchStats};
+}
+root.DaVinciTradeSearch={calculate};
 function yahooCoverageHTML(){
  const coverage=state.yahooFuture?.coverage;
  if(!coverage)return '';
@@ -442,7 +477,7 @@ function yahooChecksHTML(){
  const signed=n=>(n>=0?'+':'')+Number(n).toFixed(2);
  return '<details class="plan-method"><summary>Yahoo projection checks</summary><p>Yahoo evaluations · October 12 · Weeks 6–17.</p><div class="plan-scroll"><table class="plan-table"><thead><tr><th>Exchange</th><th>Your Yahoo impact</th><th>Partner’s Yahoo impact</th></tr></thead><tbody>'+checks.map(e=>'<tr><td>'+esc(names(e.send)+' → '+names(e.receive))+'</td><td>'+signed(e.gainYou)+'</td><td>'+signed(e.gainThem)+'</td></tr>').join('')+'</tbody></table></div></details>';
 }
-function active(){const mode=$('tradePackageFilter')?.value||'';return selectedOut.size>0||selectedIn.size>0||mode==='all'||mode==='practical'||mode==='unequal'||mode.includes('_for_')||Boolean($('tradeGoal')?.value);}
+function active(){const mode=control('tradePackageFilter')||'';return selectedOut.size>0||selectedIn.size>0||mode==='all'||mode==='practical'||mode==='unequal'||mode.includes('_for_')||Boolean(control('tradeGoal'));}
 function refresh(){
  for(const [type,selected] of [['send',selectedOut],['receive',selectedIn]]){
   const box=$('trade'+(type==='send'?'Send':'Receive')+'Box');
@@ -542,6 +577,8 @@ function updated(){
  }
 }
 function init(settings){
+ searchControls=null;searchWorker?.terminate();searchWorker=null;resultCache=new Map();
+ const {optimize,...serializable}=settings;workerSettings=serializable;
  lineupCache=new Map();fitCache=new Map();
  state={...settings,yahooModel:settings.yahooFuture&&root.YahooValues?.create(settings.yahooFuture),futureMap:new Map(settings.future.players.map(p=>[String(p.yahooId),p]))};
  if(!state.optimize)throw Error('Full-lineup optimizer unavailable');
@@ -557,7 +594,7 @@ function init(settings){
  $('tradeLimit')?.addEventListener('change',()=>{if(active())updated()});
  $('tradeGoal')?.addEventListener('change',updated);
  $('tradePosition')?.addEventListener('change',()=>{if(active())updated()});
- updated();
+ if(!settings.deferSearch)updated();
 }
 root.DaVinciPersonalTrades={init,active,render};
 })(typeof window!=='undefined'?window:globalThis);

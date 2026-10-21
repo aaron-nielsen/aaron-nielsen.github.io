@@ -681,17 +681,24 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 }
 </style>
 <link rel="stylesheet" href="./planning.css?v=20261012a">
+<link rel="stylesheet" href="./dashboard-design.css?v=20261021a">
 </head><body>
 <div class="shell">
 
 <button type="button" class="banner-toggle" id="bannerToggle" aria-label="Show dashboard" aria-expanded="false" aria-controls="dashboardContent"><div class="renaissance-banner"><img src="./assets/da-vinci-fantasy-lab-approved.webp" alt="Da Vinci Fantasy Lab — original parchment portrait, lettering and football analytics drawings" width="1000" height="333" fetchpriority="high" decoding="async"></div></button>
 <div id="dashboardContent" hidden>
 <div class="league-switch"><select id="leagueSelector" aria-label="Choose fantasy league"><option value="csu">CSU Stats · Ten Feline Overlords (14 teams)</option><option value="nebraska">Nebraska Bugeaters (10 teams)</option></select><span id="leagueSnapshot" class="league-switch-note">Updated</span></div>
-<nav class="nav" aria-label="Dashboard navigation"><button class="nav-btn active" type="button" data-page="overview">Overview</button><button class="nav-btn" type="button" data-page="schedule">Schedule</button><button class="nav-btn" type="button" data-page="finder">Players</button><button class="nav-btn" type="button" data-page="rosters">Rosters</button><button class="nav-btn" type="button" data-page="standings">Standings</button><button class="nav-btn" type="button" data-page="trades">Trades</button><button class="nav-btn" type="button" data-page="projections">Analysis</button></nav>
+<nav class="nav" aria-label="Dashboard navigation"><button class="nav-btn active" type="button" data-page="overview">Overview</button><button class="nav-btn" type="button" data-page="schedule">Schedule</button><button class="nav-btn" type="button" data-page="finder">Players</button><button class="nav-btn" type="button" data-page="standings">Standings</button><button class="nav-btn" type="button" data-page="trades">Trades</button><button class="nav-btn" type="button" data-page="projections">Analysis</button></nav>
 <main id="app">
 <section id="page-overview" class="page">
 <div class="section-top"><div><div class="eyebrow" id="overviewLeagueLabel">2026 Fantasy Football</div><h1>Overview</h1></div><details class="data-status"><summary id="sync">Loading data…</summary><div id="dataDates"></div></details></div>
+<nav class="overview-jumps" aria-label="Overview sections"><button type="button" data-section="hero">Matchup</button><button type="button" data-section="overviewBench">Bench</button><button type="button" data-section="pickupSection">Pickups</button><button type="button" data-section="leagueBoard">League matchups</button></nav>
 <div class="overview-top">
+<section class="panel recommendations-panel" aria-label="Roster changes">
+<div class="panel-header"><div><div class="panel-title">Lineup decisions</div></div><select class="select" id="decisionWeek" aria-label="Lineup advice week"></select><span class="chip visually-hidden" id="lineupChangeWeek">WEEK 5</span></div>
+<div id="lineupRecommendations" class="recommendation-grid"><div class="empty-copy">Finding lineup upgrades…</div></div>
+
+</section>
  <div class="matchup" id="hero"><div class="loading">Loading this week's matchup…</div></div>
  <div class="overview-team-header team-overview"><div class="overview-team-identity" id="overviewTeamIdentity"></div>
  <div class="overview-metrics" aria-label="My team standings" id="overviewMetrics">
@@ -708,12 +715,8 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 
 <section class="panel overview-bench" aria-label="Your bench"><div class="panel-header"><div class="panel-title">Your bench</div><span id="overviewBenchWeek" class="chip"></span></div><div id="overviewBench"></div></section>
 <div id="planningShortcut" class="planning-shortcut" aria-label="Future planning"></div>
-<section class="panel recommendations-panel" aria-label="Roster changes">
-<div class="panel-header"><div><div class="panel-title">Lineup decisions</div></div><select class="select" id="decisionWeek" aria-label="Lineup advice week"></select><span class="chip visually-hidden" id="lineupChangeWeek">WEEK 5</span></div>
-<div id="lineupRecommendations" class="recommendation-grid"><div class="empty-copy">Finding lineup upgrades…</div></div>
 
-</section>
-<section class="panel waiver-panel" aria-label="Best available player recommendations">
+<section id="pickupSection" class="panel waiver-panel" aria-label="Best available player recommendations">
  <div class="panel-header"><div><div class="panel-title">Available players</div></div>
  <select id="waiverHorizon" class="select waiver-horizon" aria-label="Rank available players and evaluate upgrades by">
   <option value="next_week">Week 5</option>
@@ -729,12 +732,13 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 </section>
 </section>
 <section id="page-rosters" class="page" hidden>
+<div class="page-tabs" aria-label="Player views"><button type="button" data-jump="finder">Find players</button><button type="button" data-jump="values">Player values</button><button type="button" data-jump="rosters" class="selected" aria-current="page">League rosters</button></div>
 <div class="section-top"><div><div class="eyebrow" id="rosterLeagueCount">League rosters</div><h2>League rosters</h2><p id="rosterLeagueIntro" class="visually-hidden">Team roster comparison.</p></div><select class="select" id="teamChoice" aria-label="Select fantasy team"></select><select id="rosterWeek" class="select" aria-label="Roster projection week"></select></div>
 
 <div class="panel roster-compare" id="rosterComparison" aria-label="Starter and eligible backup comparison"></div><div class="roster-secondary"><div class="panel group-panel" id="benchGroup"></div><div class="panel group-panel" id="irGroup"></div></div>
 </section>
 <section id="page-finder" class="page" hidden>
-<div class="page-tabs" aria-label="Player views"><button type="button" data-jump="finder" class="selected" aria-current="page">Find players</button><button type="button" data-jump="values">Player values</button></div>
+<div class="page-tabs" aria-label="Player views"><button type="button" data-jump="finder" class="selected" aria-current="page">Find players</button><button type="button" data-jump="values">Player values</button><button type="button" data-jump="rosters">League rosters</button></div>
 <div class="section-top"><div><h2>Find players</h2></div></div>
 <div class="finder-surface"><h2>Search players</h2><div class="finder-controls"><input id="finderQuery" type="search" placeholder="Search players or teams…" aria-label="Find fantasy players"><select class="select" id="finderPos" aria-label="Player position"><option value="all">All positions</option><option value="offense_no_qb">Offense (no QB)</option><option>QB</option><option>RB</option><option>WR</option><option>TE</option><option>K</option><option value="DEF">DEF</option></select><select class="select" id="finderStatus" aria-label="Ownership status"><option value="all">Everyone</option><option value="available" selected>Available players</option><option value="rostered">Rostered</option><option value="mine">My players</option></select><select class="select" id="finderSort" aria-label="Sort players"><option value="market">Rostered percentage</option><option value="model" selected>Projected points</option><option value="name">Player name</option><option value="ros">Rest of season points</option></select></div></div>
 <div class="finder-summary"><select id="finderWeek" class="select" aria-label="Player forecast week"></select><span id="finderCount">Loading players…</span></div>
@@ -777,14 +781,14 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
   <label>Find <select id="tradeGoal" class="select"><option value="arbitrage">Positive arbitrage</option><option value="edge">Da Vinci upside</option><option value="model">Da Vinci · both teams gain</option><option value="yahoo">Yahoo · both teams gain</option></select></label>
   <label>Show <select id="tradeLimit" class="select"><option>6</option><option selected>12</option><option>24</option></select></label><div id="tradeCount" class="trade-count">Calculating candidates…</div></div></section>
   <div id="tradeOpponentNotice" class="trade-opponent-notice"></div>
-  <section class="trade-search-summary" id="reasonableTargets"><div class="panel-header"><div><div class="panel-title">Trade search</div><div class="panel-sub"></div></div><a class="plan-export" id="matrixLink" href="./yahoo-matrix.html">Gain/loss matrix</a><button type="button" class="plan-export" id="targetCalculate">Find targets</button></div><div id="targetResults" class="plan-context"><p>Yahoo must show a benefit for the partner. Da Vinci estimates your upside separately.</p></div></section>
-  <div id="tradeResults" class="trades-grid"><div class="empty-copy">Calculating lineup-adjusted trade ideas…</div></div>
+  <section class="trade-search-summary" id="reasonableTargets"><div class="panel-header"><div><div class="panel-title">Results</div><div class="panel-sub"></div></div><a class="plan-export" id="matrixLink" href="./yahoo-matrix.html">Gain/loss matrix</a><button type="button" class="plan-export" id="targetCalculate">Find trades</button></div><div id="targetResults" class="plan-context"></div></section>
+  <div id="tradeResults" class="trades-grid" aria-live="polite" aria-busy="false"><div class="empty-copy">Choose your preferences to find trades.</div></div>
 
 
 
 </div></section>
 <section id="page-values" class="page" hidden>
-<div class="page-tabs" aria-label="Player views"><button type="button" data-jump="finder">Find players</button><button type="button" data-jump="values" class="selected" aria-current="page">Player values</button></div>
+<div class="page-tabs" aria-label="Player views"><button type="button" data-jump="finder">Find players</button><button type="button" data-jump="values" class="selected" aria-current="page">Player values</button><button type="button" data-jump="rosters">League rosters</button></div>
 <div class="section-top"><div><div class="eyebrow">League-specific points</div><h2>Player values</h2></div></div>
 <section class="panel">
 <div class="plan-controls">
@@ -856,12 +860,12 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 <script src="./availability-sanity.js?v=20261021a"></script>
 <script src="./return-outlook.js?v=20261019return"></script>
 <script src="./playing-time-model.js"></script>
-<script src="./roster-advice.js?v=20261020review"></script>
+<script src="./roster-advice.js?v=20261021design"></script>
 <script src="./dashboard-context.js?v=20261020review"></script>
 <script src="./matchup-overview.js?v=20261020review"></script>
 <script src="./overview-roster.js"></script>
 <script src="./yahoo-values.js?v=20261019groups"></script>
-<script src="./trade-preferences.js?v=20261020distinct"></script>
+<script src="./trade-preferences.js?v=20261021design"></script>
 <script src="./marginal-arbitrage.js?v=20261012a"></script>
 <script src="./planning-model.js?v=20261019coverage"></script>
 <script src="./planning-view.js?v=20261020review"></script>
@@ -1507,9 +1511,10 @@ function renderAllProjections(){
 }
 function showPage(page){
  if(!['overview','schedule','values','rosters','finder','projections','standings','trades','transactions','performance'].includes(page))return;
- if(location.hash!=='#'+page)history.replaceState(null,'','#'+page);
+ if(location.hash!=='#'+page)history.pushState(null,'','#'+page);
  document.querySelectorAll('.page').forEach(x=>x.hidden=x.id!=='page-'+page);
- document.querySelectorAll('.nav-btn').forEach(x=>{const primaryPage=({transactions:'trades',values:'finder',performance:'projections'})[page]||page;const on=x.dataset.page===primaryPage;x.classList.toggle('active',on);x.setAttribute('aria-current',on?'page':'false');});
+ document.querySelectorAll('.nav-btn').forEach(x=>{const primaryPage=({transactions:'trades',values:'finder',performance:'projections',rosters:'finder'})[page]||page;const on=x.dataset.page===primaryPage;x.classList.toggle('active',on);x.setAttribute('aria-current',on?'page':'false');});
+ if(page==='trades')window.DaVinciPersonalTrades?.render();
  if(page==='transactions'){
   window.DaVinciTransactions?.update();
   window.DaVinciHistoricalView?.render(LEAGUE_KEY);
@@ -1519,9 +1524,11 @@ function showPage(page){
  window.scrollTo({top:0,behavior:'smooth'});
 }
 window.DaVinciShowPage=showPage;
+window.addEventListener('hashchange',()=>showPage(location.hash.slice(1)||'overview'));
 $('#waiverHorizon').addEventListener('change',()=>window.DaVinciAdvice?.renderWaivers());
 document.querySelectorAll('.nav-btn').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
 document.querySelectorAll('[data-jump]').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.jump)));
+document.querySelectorAll('[data-section]').forEach(b=>b.addEventListener('click',()=>document.getElementById(b.dataset.section)?.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'})));
 async function get(path){const r=await fetch(DATA_BASE+path+'.json',{cache:'no-store'});if(!r.ok)throw Error('Data file '+path+' returned HTTP '+r.status);return r.json();}
 async function loadDashboard(){
  try{
@@ -1561,10 +1568,11 @@ async function loadDashboard(){
    window.DaVinciAdvice.init({rosters,available,week:Number(week.week),recommendationWeek:planningWeek(),future:futureData,teamId:TEAM_ID,pickupResearch:await get('pickup-research').catch(()=>null)});
    const negotiationData=await fetch('./data/trade-negotiations.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null);
    window.DaVinciPlayerDetail?.init({rosters,available,future:futureData,week:Number(week.week),results:await get('player-results').catch(()=>null),yahoo:await yahooForecasts});
+   window.DaVinciAdvice.renderWaivers();
    const tradeRound=planningWeek()===Number(week.week)?week:matchupSchedule?.weeks?.find(r=>Number(r.week)===planningWeek());
    const tradeMatch=tradeRound?.matchups?.find(m=>[m.home.id,m.away.id].map(String).includes(String(TEAM_ID)));
    const tradeOpponent=tradeMatch?(String(tradeMatch.home.id)===String(TEAM_ID)?tradeMatch.away.id:tradeMatch.home.id):null;
-   window.DaVinciPersonalTrades?.init({rosters,available,week:Number(week.week),future:futureData,teamId:TEAM_ID,leagueKey:LEAGUE_KEY,planningWeek:planningWeek(),opponentId:tradeOpponent,negotiations:negotiationData,yahooFuture:await yahooForecasts,yahooEvaluations:await get('yahoo-trade-evaluations').catch(()=>null),optimize:window.DaVinciAdvice.lineup});
+   window.DaVinciPersonalTrades?.init({deferSearch:true,rosters,available,week:Number(week.week),future:futureData,teamId:TEAM_ID,leagueKey:LEAGUE_KEY,planningWeek:planningWeek(),opponentId:tradeOpponent,negotiations:negotiationData,yahooFuture:await yahooForecasts,yahooEvaluations:await get('yahoo-trade-evaluations').catch(()=>null),optimize:window.DaVinciAdvice.lineup});
    window.DaVinciTransactions?.init({rosters,available,week:Number(week.week),future:futureData,teamId:TEAM_ID,transactions:transactionsData,optimize:window.DaVinciAdvice.lineup,partialOptimize:window.DaVinciAdvice.partialLineup});
    window.DaVinciMarginal?.init({rosters,available,week:Number(week.week),future:futureData,teamId:TEAM_ID,leagueKey:LEAGUE_KEY,optimize:window.DaVinciAdvice.lineup});
    window.DaVinciPlanning?.init({rosters,available,week:Number(week.week),future:futureData,teamId:TEAM_ID,leagueKey:LEAGUE_KEY,schedule:matchupSchedule,negotiations:negotiationData,nflSchedule:await fetch('./data/nfl-schedule.json').then(r=>r.ok?r.json():null).catch(()=>null),optimize:window.DaVinciAdvice.lineup,partialOptimize:window.DaVinciAdvice.partialLineup});
@@ -1572,8 +1580,9 @@ async function loadDashboard(){
    $('#dataDates').innerHTML='<span>Rosters & scores · '+new Date(week.retrievedAt).toLocaleDateString(undefined,{month:'short',day:'numeric'})+'</span><span>Model stats · through Week '+futureData.statsThroughWeek+'</span><span>Trade forecasts · '+(yahooDates?.collectedAt?new Date(yahooDates.collectedAt).toLocaleDateString(undefined,{month:'short',day:'numeric'}):'Not collected')+'</span>';
    const pageFromLink=location.hash.slice(1);if(['overview','schedule','values','rosters','finder','projections','standings','trades','transactions','performance'].includes(pageFromLink))showPage(pageFromLink);
  }catch(e){
-  $('#hero').innerHTML='<div class="loading"><strong>Dashboard data could not be loaded.</strong><p>'+esc(e.message)+'</p><p>Check the published JSON files or reload this page.</p></div>';
+  $('#hero').innerHTML='<div class="loading"><strong>Dashboard data could not be loaded.</strong><p>Reload to try again.</p><button type="button" class="plan-export" id="reloadDashboard">Reload dashboard</button></div>';
   $('#sync').textContent='Data load failed';
+  $('#reloadDashboard')?.addEventListener('click',()=>location.reload());
  }
 }
 let dashboardLoaded=false;

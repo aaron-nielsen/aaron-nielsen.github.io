@@ -11,7 +11,7 @@ const EXCLUDED=new Set(['IR','IR-R','PUP','PUP-R','NFI','NFI-R','NA','N/A','CEL'
 const OUT=new Set(['OUT','O','D','DOUBTFUL']);
 const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const fmt=v=>Number(v).toFixed(1);
-const $=id=>document.getElementById(id);
+const $=id=>typeof document==='undefined'?null:document.getElementById(id);
 let state=null, byId=null;
 function status(p){return String(p.status||p.injuryStatus||'').toUpperCase().trim();}
 function inaccessible(p,w){
@@ -197,14 +197,14 @@ function renderWaivers(){
     const edge=['K','DEF'].includes(pos)&&next!=null&&ownedScores.length?next-Math.max(...ownedScores):null;
     const edgeText=edge==null?'':'<small class="streaming-gain" title="Projected gain versus your best owned '+pos+'">('+(edge>=0?'+':'')+fmt(edge)+')</small>';
     return '<div class="decision-row pickup-watch"><span class="decision-position">'+pos+'</span>'+
-     '<span class="decision-main"><strong>'+esc(p.name)+'</strong><small>'+esc(p.nflTeam||'')+' · '+esc(note)+'</small></span>'+
+     '<span class="decision-main"><strong>'+(root.DaVinciPlayerDetail?.link(p)||esc(p.name))+'</strong><small>'+esc(p.nflTeam||'')+' · '+esc(note)+'</small></span>'+
      '<b>'+value(next)+edgeText+'</b><b>'+value(totalFor(p,rosWeeks))+'</b></div>';
    }).join(''):'<div class="decision-empty">No eligible modeled players.</div>')+'</section>'
   ).join('')+'</div>';
  const notice='<details class="projection-details"><summary>Projection details</summary><p>Next game skips byes. ROS is the total for Weeks '+first+'–'+state.future.endWeek+', including the current week and zero for byes. Estimates assume participation except explicit availability adjustments; check injuries and Yahoo waiver status. Missing forecasts show —. K/DEF projections are experimental.</p></details>';
  const research=state.pickupResearch;
  const researched=research&&Number(research.week)===Number(weeks[0])&&String(research.teamId)===String(state.teamId)?research.players.map(r=>({research:r,player:availableMap.get(String(r.id))})).filter(r=>r.player&&!roster.some(p=>String(p.id)===String(r.player.id))&&!OUT.has(status(r.player))&&!EXCLUDED.has(status(r.player))):[];
- const shortlist=researched.length?'<section class="pickup-shortlist" aria-label="Pickup shortlist"><h3>Consider adding</h3>'+researched.map(({research:r,player:p})=>'<article class="pickup-shortlist-row"><strong>'+esc(p.name)+' <small>'+esc(p.position)+'</small></strong><span>'+esc(r.reason)+'</span><a href="'+esc(r.source)+'" target="_blank" rel="noopener">Report</a></article>').join('')+'<p>'+esc(research.rosterMove)+'</p><small>Reviewed '+esc(research.reviewedAt)+' · Bench additions, separate from projected starter gains</small></section>':'';
+ const shortlist=researched.length?'<section class="pickup-shortlist" aria-label="Pickup shortlist"><h3>Consider adding</h3>'+researched.map(({research:r,player:p})=>'<article class="pickup-shortlist-row"><strong>'+(root.DaVinciPlayerDetail?.link(p)||esc(p.name))+' <small>'+esc(p.position)+'</small></strong><span>'+esc(r.reason)+'</span><a href="'+esc(r.source)+'" target="_blank" rel="noopener">Report</a></article>').join('')+'<p>'+esc(research.rosterMove)+'</p><small>Reviewed '+esc(research.reviewedAt)+' · Bench additions, separate from projected starter gains</small></section>':'';
  rootEl.innerHTML=shortlist+highlights+watch+notice+(!allReady?'<p class="available-notice">Pickup gains unavailable: a complete baseline lineup could not be projected.</p>':'');
  rootEl.setAttribute('aria-label','Roster pickup advice, ranked by '+label);
 
