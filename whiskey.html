@@ -78,11 +78,10 @@ button,input,select{font:inherit}
 .detail-table{table-layout:auto;min-width:900px}
 .detail-table td:first-child{min-width:210px}
 .detail-table td:nth-child(3),.detail-table td:nth-child(4){min-width:125px}
-.unrated-table{table-layout:auto;min-width:1150px}
+.unrated-table{table-layout:auto;min-width:1000px}
 .unrated-table th,.unrated-table td{padding:9px 8px}
 .unrated-table td:nth-child(2){min-width:210px}
 .unrated-table td:nth-child(4),.unrated-table td:nth-child(5){min-width:135px}
-.unrated-table td:nth-child(8){min-width:165px;max-width:250px}
 .family-summary-section summary{cursor:pointer;padding:14px;font-weight:650}
 .style-sep{color:var(--muted);padding:0 2px}
 .style-substyle-cell{display:inline;white-space:normal}
@@ -538,7 +537,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
     var html='<div class="whiskey-table-wrap"><table class="whiskey-table unrated-table"><thead><tr>'+
       th("unrated","priority","#","num")+th("unrated","name","Whiskey")+
       th("unrated","region","Region")+th("unrated","style","Style")+th("unrated","substyle","Sub-style")+
-      th("unrated","place","Place")+th("unrated","estimated_price_usd","Est. $","num")+th("unrated","listingCount","Findability evidence")+
+      th("unrated","place","Place")+th("unrated","estimated_price_usd","Est. $","num")+
       '</tr></thead><tbody>';
     xs.forEach(function(r){
       html+='<tr>'+
@@ -547,7 +546,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
         '<td><button class="filter-link unrated-region-link" data-region="'+esc(r.region)+'">'+esc(r.region)+'</button></td>'+
         '<td>'+styleCell(r,true)+'</td><td>'+substyleCell(r,true)+'</td>'+
         '<td>'+(r.place?'<button class="filter-link unrated-place-link" data-place="'+esc(r.place)+'">'+esc(r.place)+'</button>':'')+'</td>'+
-        '<td class="num">$'+r.estimated_price_usd+'</td><td>'+findabilityCell(r)+'</td>'+
+        '<td class="num">$'+r.estimated_price_usd+'</td>'+
         '</tr>';
     });
     return html+'</tbody></table></div>';
@@ -1165,26 +1164,6 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
     }).join('')+'</tbody></table></div>';
   }
 
-  function recentEvidence(r){
-    return (r.findability_evidence||[]).filter(function(e){var age=Date.now()-Date.parse(e.observed_on+"T00:00:00Z");return age>=0&&age<=180*86400000});
-  }
-  function listingCount(r){
-    var xs=recentEvidence(r).filter(function(e){return e.signal==="retailer_listing"});
-    return xs.length?new Set(xs.map(function(e){return e.retailer})).size:null;
-  }
-  function findabilityCell(r){
-    var xs=r.findability_evidence||[];
-    if(!xs.length)return 'Not assessed';
-    return '<details><summary>'+(r.listingCount==null?'Evidence available':r.listingCount+' retailer'+(r.listingCount===1?'':'s')+' listed')+'</summary>'+xs.map(function(e){
-      var label=e.retailer||'Producer';
-      return '<p><a href="'+esc(e.url)+'" target="_blank" rel="noopener noreferrer">'+esc(label)+'</a> · '+esc(e.market)+' · '+esc(e.observed_on)+'<br>'+esc(e.note)+'</p>';
-    }).join('')+'</details>';
-  }
-  function findabilityNote(){
-    var assessed=unratedRows.filter(function(r){return (r.findability_evidence||[]).length}).length;
-    return '<p class="view-note">Findability pilot: '+assessed+' of '+unratedRows.length+' bottles have linked public evidence. Sort Findability evidence for observed retailer listing counts (within 180 days). This is a lower bound from a partial audit, not an easiest-to-hardest ranking or a popularity score. A listing does not confirm local stock or shipping eligibility; Not assessed does not mean rare. Open a cell for sources, market and date.</p>';
-  }
-
   function renderMain(){
     document.getElementById("whiskey-controls").style.display="none";
     var styles=styleRows().sort(function(a,b){return b.whiskeys-a.whiskeys||a.name.localeCompare(b.name)});
@@ -1215,7 +1194,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
         whiskeyTable(filtered(rows.filter(function(r){return r.n<3})),"need-more");
     }else if(activeTab==="unrated"){
       document.getElementById("whiskey-controls").style.display="grid";
-      document.getElementById("unrated").innerHTML=findabilityNote()+unratedTable(filtered(unratedRows))+
+      document.getElementById("unrated").innerHTML=unratedTable(filtered(unratedRows))+
         '<details class="chart-section family-summary-section"><summary>Explore the Whiskey Style Family Tree</summary><p class="view-note">A browsing guide to grain, regional and production styles. Counts follow your filters; click a style to explore it.</p>'+styleFamilyTreeTable(filtered(unratedRows),true)+'</details>';
     }else if(activeTab==="history"){
       document.getElementById("whiskey-controls").style.display="none";
@@ -1593,7 +1572,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
     fetch(DATA_URL,{cache:"no-store"}).then(function(res){return res.json()}).then(function(json){
       data=json;
       unratedRows=(data.unrated_suggestions||[]).map(function(r){
-        return Object.assign({},r,{place:r.province||suggestionPlace(r),listingCount:listingCount(r)});
+        return Object.assign({},r,{place:r.province||suggestionPlace(r)});
       });
       computeRows();
       setupFilters();
