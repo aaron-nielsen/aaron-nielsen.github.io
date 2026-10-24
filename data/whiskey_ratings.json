@@ -1083,7 +1083,7 @@
     {
       "name": "Jack Daniel's Tennessee Apple",
       "style": "Flavored Whiskey / Liqueur",
-      "substyle": "Fruit / Apple",
+      "substyle": "Fruit",
       "ratings": [
         {
           "score": 2.8,
@@ -1093,12 +1093,15 @@
       "region": "American",
       "abv": 35,
       "distillery": "Jack Daniel's",
-      "place": "Tennessee"
+      "place": "Tennessee",
+      "attributes": [
+        "Apple"
+      ]
     },
     {
       "name": "Jack Daniel's Tennessee Blackberry",
       "style": "Flavored Whiskey / Liqueur",
-      "substyle": "Fruit / Blackberry",
+      "substyle": "Fruit",
       "ratings": [
         {
           "score": 3.2,
@@ -1108,7 +1111,10 @@
       "region": "American",
       "abv": 35,
       "distillery": "Jack Daniel's",
-      "place": "Tennessee"
+      "place": "Tennessee",
+      "attributes": [
+        "Blackberry"
+      ]
     },
     {
       "name": "Jameson",
@@ -2349,6 +2355,30 @@
           "order": 1
         }
       ]
+    },
+    {
+      "name": "Leopold Bros Michigan Cherry Whiskey",
+      "region": "American",
+      "style": "Flavored Whiskey / Liqueur",
+      "substyle": "Fruit",
+      "distillery": "Leopold Bros",
+      "estimated_price_usd": 37,
+      "place": "Colorado",
+      "recommendation_group": "Owned",
+      "priority": 580,
+      "abv": 40,
+      "owned": true,
+      "owned_bottle_name": "Leopold Brothers Michigan Cherry",
+      "attributes": [
+        "Michigan Cherry"
+      ],
+      "ratings": [
+        {
+          "score": 3.4,
+          "date": "2026-10-23",
+          "order": 2
+        }
+      ]
     }
   ],
   "unrated_suggestions": [
@@ -2809,7 +2839,7 @@
       "name": "Crown Royal Regal Apple",
       "region": "Canadian",
       "style": "Flavored Whiskey / Liqueur",
-      "substyle": "Fruit / Apple",
+      "substyle": "Fruit",
       "distillery": "Crown Royal",
       "estimated_price_usd": 30,
       "recommendation_group": "Mass-market priority",
@@ -2827,6 +2857,9 @@
           "observed_on": "2026-10-23",
           "note": "Exact expression in retailer catalogue. Stock and shipping not verified."
         }
+      ],
+      "attributes": [
+        "Apple"
       ]
     },
     {
@@ -3047,7 +3080,7 @@
       "name": "Crown Royal Peach",
       "region": "Canadian",
       "style": "Flavored Whiskey / Liqueur",
-      "substyle": "Fruit / Peach",
+      "substyle": "Fruit",
       "distillery": "Crown Royal",
       "estimated_price_usd": 30,
       "recommendation_group": "Mass-market priority",
@@ -3073,6 +3106,9 @@
           "observed_on": "2026-10-23",
           "note": "Exact expression listed; page reports unavailable online. Check store quantities separately."
         }
+      ],
+      "attributes": [
+        "Peach"
       ]
     },
     {
@@ -3292,14 +3328,15 @@
       "name": "Leopold Bros 9-Year-Old Three Chamber Cask Strength Rye",
       "region": "American",
       "style": "Rye",
-      "substyle": "Three Chamber",
+      "substyle": "",
       "distillery": "Leopold Bros",
       "estimated_price_usd": 160,
       "place": "Colorado",
       "recommendation_group": "Colorado priority",
       "priority": 80,
       "attributes": [
-        "Cask Strength"
+        "Cask Strength",
+        "Three Chamber"
       ],
       "age_years": 9
     },
@@ -3565,11 +3602,14 @@
       "name": "Jim Beam Apple",
       "region": "American",
       "style": "Flavored Whiskey / Liqueur",
-      "substyle": "Fruit / Apple",
+      "substyle": "Fruit",
       "distillery": "Jim Beam",
       "estimated_price_usd": 18,
       "recommendation_group": "Mass-market priority",
-      "priority": 101
+      "priority": 101,
+      "attributes": [
+        "Apple"
+      ]
     },
     {
       "name": "Willett Family Estate 4 Year Rye",
@@ -7365,12 +7405,15 @@
       "name": "Leopold Bros Maryland Style Rye",
       "region": "American",
       "style": "Rye",
-      "substyle": "Maryland Style",
+      "substyle": "",
       "distillery": "Leopold Bros",
       "estimated_price_usd": 55,
       "place": "Colorado",
       "recommendation_group": "Explore",
-      "priority": 408
+      "priority": 408,
+      "attributes": [
+        "Maryland Style"
+      ]
     },
     {
       "name": "Laws San Luis Valley Straight Rye",
@@ -8331,11 +8374,14 @@
       "name": "Jim Beam Red Stag Black Cherry",
       "region": "American",
       "style": "Flavored Whiskey / Liqueur",
-      "substyle": "Fruit / Black Cherry",
+      "substyle": "Fruit",
       "distillery": "Jim Beam",
       "estimated_price_usd": 20,
       "recommendation_group": "Low-brow",
-      "priority": 483
+      "priority": 483,
+      "attributes": [
+        "Black Cherry"
+      ]
     },
     {
       "name": "Laws Four Grain Bourbon Bottled in Bond",
@@ -8918,12 +8964,15 @@
       "name": "Leopold Bros Three Chamber Rye",
       "region": "American",
       "style": "Rye",
-      "substyle": "Three Chamber",
+      "substyle": "",
       "distillery": "Leopold Bros",
       "estimated_price_usd": 250,
       "place": "Colorado",
       "recommendation_group": "Explore",
-      "priority": 532
+      "priority": 532,
+      "attributes": [
+        "Three Chamber"
+      ]
     },
     {
       "name": "Writers' Tears Double Oak",
@@ -9337,12 +9386,15 @@
       "name": "Evan Williams Peach",
       "region": "American",
       "style": "Flavored Whiskey / Liqueur",
-      "substyle": "Fruit / Peach",
+      "substyle": "Fruit",
       "distillery": "Heaven Hill",
       "estimated_price_usd": 18,
       "place": "Kentucky",
       "recommendation_group": "Low-brow",
-      "priority": 566
+      "priority": 566,
+      "attributes": [
+        "Peach"
+      ]
     },
     {
       "name": "Pendleton Directors Reserve 20 Year",
@@ -9455,11 +9507,14 @@
       "name": "Bird Dog Peach Whiskey",
       "region": "American",
       "style": "Flavored Whiskey / Liqueur",
-      "substyle": "Fruit / Peach",
+      "substyle": "Fruit",
       "distillery": "Bird Dog",
       "estimated_price_usd": 20,
       "recommendation_group": "Low-brow",
-      "priority": 576
+      "priority": 576,
+      "attributes": [
+        "Peach"
+      ]
     },
     {
       "name": "Yukon Jack",
@@ -9480,20 +9535,6 @@
       "estimated_price_usd": 15,
       "recommendation_group": "Low-brow",
       "priority": 578
-    },
-    {
-      "name": "Leopold Bros Michigan Cherry Whiskey",
-      "region": "American",
-      "style": "Flavored Whiskey / Liqueur",
-      "substyle": "Fruit / Michigan Cherry",
-      "distillery": "Leopold Bros",
-      "estimated_price_usd": 37,
-      "place": "Colorado",
-      "recommendation_group": "Owned",
-      "priority": 580,
-      "abv": 40,
-      "owned": true,
-      "owned_bottle_name": "Leopold Brothers Michigan Cherry"
     }
   ],
   "unrated_note": "Unrated recommendations are expanding toward 1,000. Priority balances classic and high-volume mass-market whiskeys, likely taste fit, familiar producers, strong rye coverage, all-50-state U.S. representation, Scotch-region gaps, Colorado depth, international exploration, bottles verified in local Wilbur's Total Beverage inventory, and purchased-but-not-yet-rated bottles. Estimated prices are rough local/U.S. retail guides; actual purchase size and paid price are stored separately when known.",
