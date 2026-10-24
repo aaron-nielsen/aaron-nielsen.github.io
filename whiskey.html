@@ -82,7 +82,6 @@ button,input,select{font:inherit}
 .unrated-table th,.unrated-table td{padding:9px 8px}
 .unrated-table td:nth-child(2){min-width:210px}
 .unrated-table td:nth-child(4),.unrated-table td:nth-child(5){min-width:135px}
-.family-summary-section summary{cursor:pointer;padding:14px;font-weight:650}
 .style-sep{color:var(--muted);padding:0 2px}
 .style-substyle-cell{display:inline;white-space:normal}
 .style-substyle-cell .filter-link{display:inline;white-space:normal;overflow-wrap:normal;word-break:keep-all}
@@ -165,7 +164,7 @@ button,input,select{font:inherit}
 .style-tree-indent{display:inline-block;flex:0 0 auto}
 .style-tree .filter-link{white-space:normal}
 .style-tree-depth{color:var(--muted);font-size:.76rem;margin-left:7px}
-.family-summary-section{margin-top:18px}
+.family-summary-section{margin:0 0 18px}
 .family-tree .family-label{display:flex;align-items:center;min-width:0}
 .family-tree .family-indent{display:inline-block;flex:0 0 auto}
 .family-tree .family-connector{color:#8f735c;margin-right:7px}
@@ -1169,8 +1168,8 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
     document.getElementById("main").innerHTML=
       '<section class="main-section"><h2>Recent Ratings</h2>'+mainRecent()+'</section>'+
       '<section class="main-section"><h2>Top Rated Whiskeys</h2>'+mainTopRated()+'</section>'+
-      '<section class="chart-section"><h2>Most Tasted Distilleries</h2>'+distilleryChart(distilleryRows())+'</section>'+
       '<section class="main-section"><h2>Next 10 to Taste</h2>'+nextTastesTable()+'</section>'+
+      '<section class="chart-section"><h2>Most Tasted Distilleries</h2>'+distilleryChart(distilleryRows())+'</section>'+
       '<div class="geo-grid">'+
         '<section class="chart-section"><h2>American Whiskeys by State</h2>'+placeHierarchyTable("American")+'</section>'+
         '<section class="chart-section"><h2>Scotch Single Malts by Region</h2>'+placeHierarchyTable("Scotch")+'</section>'+
@@ -1193,8 +1192,9 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
         whiskeyTable(filtered(rows.filter(function(r){return r.n<3})),"need-more");
     }else if(activeTab==="unrated"){
       document.getElementById("whiskey-controls").style.display="grid";
-      document.getElementById("unrated").innerHTML=unratedTable(filtered(unratedRows))+
-        '<details class="chart-section family-summary-section"><summary>Explore the Whiskey Style Family Tree</summary><p class="view-note">A browsing guide to grain, regional and production styles. Counts follow your filters; click a style to explore it.</p>'+styleFamilyTreeTable(filtered(unratedRows),true)+'</details>';
+      document.getElementById("unrated").innerHTML=
+        '<section class="chart-section family-summary-section"><h2>Whiskey Style Family Tree</h2>'+styleFamilyTreeTable(filtered(unratedRows),true)+'</section>'+
+        unratedTable(filtered(unratedRows));
     }else if(activeTab==="history"){
       document.getElementById("whiskey-controls").style.display="none";
       document.getElementById("history").innerHTML=historyTable();
