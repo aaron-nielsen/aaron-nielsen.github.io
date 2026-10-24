@@ -2322,6 +2322,33 @@
         }
       ],
       "owned_bottle_name": "Woodford Reserve Wheat Whiskey"
+    },
+    {
+      "name": "Kentucky Deluxe Blended Whiskey",
+      "region": "American",
+      "style": "Blended Whiskey",
+      "substyle": "",
+      "distillery": "Barton 1792",
+      "estimated_price_usd": 10,
+      "place": "Kentucky",
+      "recommendation_group": "Purchased",
+      "abv": 40,
+      "local_purchase": {
+        "date": "2026-10-03",
+        "store": "Mulberry Max Wine & Spirits",
+        "volume_ml": 375,
+        "shelf_price_usd": 4.99,
+        "paid_price_usd": 4.49
+      },
+      "priority": 579,
+      "owned": true,
+      "ratings": [
+        {
+          "score": 2.8,
+          "date": "2026-10-23",
+          "order": 1
+        }
+      ]
     }
   ],
   "unrated_suggestions": [
@@ -9453,26 +9480,6 @@
       "estimated_price_usd": 15,
       "recommendation_group": "Low-brow",
       "priority": 578
-    },
-    {
-      "name": "Kentucky Deluxe Blended Whiskey",
-      "region": "American",
-      "style": "Blended Whiskey",
-      "substyle": "",
-      "distillery": "Barton 1792",
-      "estimated_price_usd": 10,
-      "place": "Kentucky",
-      "recommendation_group": "Purchased",
-      "abv": 40,
-      "local_purchase": {
-        "date": "2026-10-03",
-        "store": "Mulberry Max Wine & Spirits",
-        "volume_ml": 375,
-        "shelf_price_usd": 4.99,
-        "paid_price_usd": 4.49
-      },
-      "priority": 579,
-      "owned": true
     },
     {
       "name": "Leopold Bros Michigan Cherry Whiskey",
