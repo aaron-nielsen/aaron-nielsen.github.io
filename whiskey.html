@@ -1147,8 +1147,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
 
   function nextTastesTable(){
     var items=nextTastes();
-    return '<p class="view-note">On hand first, then fewer than 3 ratings, then oldest recorded tasting. Undated histories follow dated ones within each group. Suggestions include rated whiskies and any unrated bottles on hand.</p>'+
-      '<div class="whiskey-table-wrap"><table class="whiskey-table"><thead><tr><th>Whiskey</th><th>Why taste it?</th><th class="num">Ratings</th><th>Last rated</th></tr></thead><tbody>'+items.map(function(r){
+    return '<div class="whiskey-table-wrap"><table class="whiskey-table"><thead><tr><th>Whiskey</th><th>Why taste it?</th><th class="num">Ratings</th><th>Last rated</th></tr></thead><tbody>'+items.map(function(r){
         var reason=(r.owned?'🥃 On hand':'Not on hand')+(r.n<3?' · Needs '+(3-r.n)+' more to qualify':' · Revisit');
         return '<tr><td>'+(r.n?'<button class="whiskey-name" data-name="'+esc(r.name)+'">'+esc(r.name)+'</button>':esc(r.name))+'</td><td>'+reason+'</td><td class="num">'+r.n+'</td><td>'+(r.n===0?'Not yet rated':r.lastTasted?prettyDate(r.lastTasted):'Date unknown')+'</td></tr>';
       }).join('')+'</tbody></table></div>';
@@ -1168,10 +1167,10 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
     document.getElementById("whiskey-controls").style.display="none";
     var styles=styleRows().sort(function(a,b){return b.whiskeys-a.whiskeys||a.name.localeCompare(b.name)});
     document.getElementById("main").innerHTML=
-      '<section class="main-section"><h2>Next 10 to Taste</h2>'+nextTastesTable()+'</section>'+
       '<section class="main-section"><h2>Recent Ratings</h2>'+mainRecent()+'</section>'+
       '<section class="main-section"><h2>Top Rated Whiskeys</h2>'+mainTopRated()+'</section>'+
       '<section class="chart-section"><h2>Most Tasted Distilleries</h2>'+distilleryChart(distilleryRows())+'</section>'+
+      '<section class="main-section"><h2>Next 10 to Taste</h2>'+nextTastesTable()+'</section>'+
       '<div class="geo-grid">'+
         '<section class="chart-section"><h2>American Whiskeys by State</h2>'+placeHierarchyTable("American")+'</section>'+
         '<section class="chart-section"><h2>Scotch Single Malts by Region</h2>'+placeHierarchyTable("Scotch")+'</section>'+
