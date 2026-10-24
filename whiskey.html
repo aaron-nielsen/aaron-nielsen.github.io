@@ -78,6 +78,9 @@ button,input,select{font:inherit}
 .detail-table{table-layout:auto;min-width:900px}
 .detail-table td:first-child{min-width:210px}
 .detail-table td:nth-child(3),.detail-table td:nth-child(4){min-width:125px}
+.unrated-scroll{max-height:min(60vh,560px);overflow:auto;overscroll-behavior:contain;scrollbar-gutter:stable}
+.unrated-scroll thead th{position:sticky;top:0;z-index:1}
+.unrated-scroll:focus-visible{outline:2px solid var(--green2);outline-offset:3px}
 .unrated-table{table-layout:auto;min-width:1000px}
 .unrated-table th,.unrated-table td{padding:9px 8px}
 .unrated-table td:nth-child(2){min-width:210px}
@@ -85,7 +88,7 @@ button,input,select{font:inherit}
 .style-sep{color:var(--muted);padding:0 2px}
 .style-substyle-cell{display:inline;white-space:normal}
 .style-substyle-cell .filter-link{display:inline;white-space:normal;overflow-wrap:normal;word-break:keep-all}
-.geo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.geo-grid{margin-bottom:18px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 .geo-grid .chart-section{margin:0}
 .place-chart .bar-row{grid-template-columns:minmax(100px,150px) 1fr 34px}
 .whiskey-name{color:#f3ebe3;text-decoration:none;cursor:pointer;background:none;border:0;padding:0;font:inherit;text-align:left}
@@ -164,7 +167,7 @@ button,input,select{font:inherit}
 .style-tree-indent{display:inline-block;flex:0 0 auto}
 .style-tree .filter-link{white-space:normal}
 .style-tree-depth{color:var(--muted);font-size:.76rem;margin-left:7px}
-.family-summary-section{margin:0 0 18px}
+.family-summary-section{margin:18px 0 0}
 .family-tree .family-label{display:flex;align-items:center;min-width:0}
 .family-tree .family-indent{display:inline-block;flex:0 0 auto}
 .family-tree .family-connector{color:#8f735c;margin-right:7px}
@@ -533,7 +536,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
 
   function unratedTable(source){
     var xs=sorted(sortState.unrated,source);
-    var html='<div class="whiskey-table-wrap"><table class="whiskey-table unrated-table"><thead><tr>'+
+    var html='<div class="whiskey-table-wrap unrated-scroll" role="region" aria-label="Unrated whiskeys" tabindex="0"><table class="whiskey-table unrated-table"><thead><tr>'+
       th("unrated","priority","#","num")+th("unrated","name","Whiskey")+
       th("unrated","region","Region")+th("unrated","style","Style")+th("unrated","substyle","Sub-style")+
       th("unrated","place","Place")+th("unrated","estimated_price_usd","Est. $","num")+
@@ -1155,10 +1158,11 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
   function provinceTable(){
     var groups={};
     rows.filter(function(r){return r.region==="Canadian"}).forEach(function(r){var key=r.province||"Unknown";(groups[key]||(groups[key]=[])).push(r)});
-    return '<p class="view-note">Province or territory of the producer distillery, where documented; bottling location may differ. Avg weights each tasting equally. Q Avg uses whiskies with at least 3 ratings.</p><div class="whiskey-table-wrap"><table class="whiskey-table"><thead><tr><th>Province / Territory</th><th class="num">Whiskeys</th><th class="num">Tastings</th><th class="num">Avg</th><th class="num">Q Avg</th></tr></thead><tbody>'+Object.keys(groups).sort().map(function(key){
+    return '<div class="whiskey-table-wrap"><table class="whiskey-table"><thead><tr><th>Province / Territory</th><th class="num">Whiskeys</th><th class="num">Tastings</th><th class="num">Avg</th><th class="num">Q Avg</th></tr></thead><tbody>'+Object.keys(groups).sort().map(function(key){
       var items=groups[key],scores=[],q=items.filter(function(r){return r.n>=3});
+      var label=key==="Unknown"?"Province unconfirmed ("+items.map(function(r){return r.name.replace(" Original Canadian Whisky","")}).join(", ")+")":key;
       items.forEach(function(r){r.ratings.forEach(function(x){scores.push(x.score)})});
-      return '<tr><td><button class="filter-link province-link" data-province="'+esc(key)+'">'+esc(key)+'</button></td><td class="num">'+items.length+'</td><td class="num">'+scores.length+'</td><td class="num">'+fmt(avg(scores))+'</td><td class="num">'+(q.length?fmt(avg(q.map(function(r){return r.average}))):'—')+'</td></tr>';
+      return '<tr><td><button class="filter-link province-link" data-province="'+esc(key)+'">'+esc(label)+'</button></td><td class="num">'+items.length+'</td><td class="num">'+scores.length+'</td><td class="num">'+fmt(avg(scores))+'</td><td class="num">'+(q.length?fmt(avg(q.map(function(r){return r.average}))):'—')+'</td></tr>';
     }).join('')+'</tbody></table></div>';
   }
 
@@ -1175,7 +1179,8 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
         '<section class="chart-section"><h2>Scotch Single Malts by Region</h2>'+placeHierarchyTable("Scotch")+'</section>'+
       '</div>'+
       '<section class="chart-section"><h2>Canadian Whiskies by Province / Territory</h2>'+provinceTable()+'</section>'+
-      '<section class="chart-section style-summary-section"><h2>Whiskeys by Style</h2>'+styleHierarchyTable()+'</section>';
+      '<section class="chart-section style-summary-section"><h2>Whiskeys by Style</h2>'+styleHierarchyTable()+'</section>'+
+      '<section class="chart-section family-summary-section"><h2>Whiskey Style Family Tree</h2>'+styleFamilyTreeTable(rows,false)+'</section>';
   }
 
   function render(){
@@ -1193,8 +1198,8 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
     }else if(activeTab==="unrated"){
       document.getElementById("whiskey-controls").style.display="grid";
       document.getElementById("unrated").innerHTML=
-        '<section class="chart-section family-summary-section"><h2>Whiskey Style Family Tree</h2>'+styleFamilyTreeTable(filtered(unratedRows),true)+'</section>'+
-        unratedTable(filtered(unratedRows));
+        unratedTable(filtered(unratedRows))+
+        '<section class="chart-section family-summary-section"><h2>Whiskey Style Family Tree</h2>'+styleFamilyTreeTable(filtered(unratedRows),true)+'</section>';
     }else if(activeTab==="history"){
       document.getElementById("whiskey-controls").style.display="none";
       document.getElementById("history").innerHTML=historyTable();
