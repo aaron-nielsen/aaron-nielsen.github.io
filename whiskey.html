@@ -211,6 +211,9 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
 .dialog-filter-row select{background:#181411;color:var(--text);border:1px solid #5a3f2b;border-radius:8px;padding:6px 9px;min-width:170px}
 dialog.whiskey-dialog.group-dialog{max-width:880px}
 
+@media(max-width:1100px){
+  .whiskey-controls{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
 @media(max-width:800px){
   .stats-row{grid-template-columns:repeat(2,minmax(0,1fr))}
   .detail-table{table-layout:auto;min-width:760px}
