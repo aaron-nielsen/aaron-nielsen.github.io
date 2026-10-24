@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "updated": "2026-10-10",
+  "updated": "2026-10-23",
   "notes": "Canonical whiskey rating history and taxonomy. Unknown historical dates are null. Canonical style taxonomy is stored in style_taxonomy; style is the broad whiskey type, substyle is reserved for meaningful nested subtypes, geography is stored in place/subplace, and age/finish/attributes are structured separately. Group counts use every tasted whiskey; group averages and style percentiles use qualified whiskeys with n>=3. ABV is stored for each rated whiskey; batch-, barrel-, vintage-, or market-dependent expressions use a representative/typical ABV to keep the site display compact.",
   "products": [
     {
@@ -2185,6 +2185,10 @@
         {
           "score": 3.2,
           "date": "2026-10-09"
+        },
+        {
+          "score": 3.2,
+          "date": "2026-10-23"
         }
       ],
       "region": "American",
@@ -2285,6 +2289,31 @@
       },
       "distillery": "Pendleton",
       "place": "Canada"
+    },
+    {
+      "name": "Woodford Reserve Wheat Whiskey",
+      "region": "American",
+      "style": "Wheat Whiskey",
+      "substyle": "",
+      "distillery": "Woodford Reserve",
+      "estimated_price_usd": 41.99,
+      "place": "Kentucky",
+      "local_purchase": {
+        "date": "2026-10-03",
+        "store": "Mulberry Max Wine & Spirits",
+        "volume_ml": 750,
+        "shelf_price_usd": 41.99,
+        "paid_price_usd": 37.79
+      },
+      "owned": true,
+      "abv": 45.2,
+      "ratings": [
+        {
+          "score": 3.5,
+          "date": "2026-10-23"
+        }
+      ],
+      "owned_bottle_name": "Woodford Reserve Wheat Whiskey"
     }
   ],
   "unrated_suggestions": [
@@ -2694,25 +2723,6 @@
       "estimated_price_usd": 55,
       "recommendation_group": "Explore",
       "place": "Campbeltown"
-    },
-    {
-      "name": "Woodford Reserve Wheat Whiskey",
-      "region": "American",
-      "style": "Wheat Whiskey",
-      "substyle": "",
-      "distillery": "Woodford Reserve",
-      "estimated_price_usd": 41.99,
-      "place": "Kentucky",
-      "recommendation_group": "Familiar distillery",
-      "priority": 35,
-      "local_purchase": {
-        "date": "2026-10-03",
-        "store": "Mulberry Max Wine & Spirits",
-        "volume_ml": 750,
-        "shelf_price_usd": 41.99,
-        "paid_price_usd": 37.79
-      },
-      "owned": true
     },
     {
       "name": "Woodford Reserve Personal Selection",
