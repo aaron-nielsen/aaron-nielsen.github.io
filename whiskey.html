@@ -51,7 +51,7 @@ button,input,select{font:inherit}
 .nav-row button:hover{border-color:var(--green2)}
 .nav-row button.active{background:var(--green);border-color:var(--green);color:#0e1710;font-weight:700}
 
-.whiskey-controls{display:grid;grid-template-columns:minmax(220px,2fr) minmax(120px,.75fr) minmax(145px,1fr) minmax(145px,1fr) minmax(110px,.75fr) 74px;gap:8px;margin:0 0 14px;align-items:stretch;width:100%;box-sizing:border-box}
+.whiskey-controls{display:grid;grid-template-columns:minmax(180px,1.5fr) repeat(4,minmax(125px,1fr)) minmax(110px,.75fr) 74px;gap:8px;margin:0 0 14px;align-items:stretch;width:100%;box-sizing:border-box}
 .view-note{margin:4px 0 12px;color:var(--muted);font-size:.9rem}
 .whiskey-controls input,.whiskey-controls select{width:100%;min-width:0;box-sizing:border-box;background:#181411;color:var(--text);border:1px solid #5a3f2b;border-radius:9px;padding:9px 11px}
 .whiskey-controls .clear-filters{width:100%;box-sizing:border-box;background:#251a14;color:var(--text);border:1px solid #6a4a31;border-radius:9px;padding:9px 10px;cursor:pointer;white-space:nowrap}
@@ -75,25 +75,15 @@ button,input,select{font:inherit}
 .whiskey-table th.active-sort{box-shadow:inset 0 -2px 0 var(--green2)}
 .whiskey-table td.num,.whiskey-table th.num{text-align:center;font-variant-numeric:tabular-nums}
 .whiskey-table tr:hover td{background:#211815}
-.detail-table{table-layout:fixed;min-width:0}
-.detail-table th,.detail-table td{padding:9px 9px}
-.detail-table th:nth-child(1),.detail-table td:nth-child(1){width:31%}
-.detail-table th:nth-child(2),.detail-table td:nth-child(2){width:12%}
-.detail-table th:nth-child(3),.detail-table td:nth-child(3){width:29%}
-.detail-table th:nth-child(4),.detail-table td:nth-child(4){width:8%}
-.detail-table th:nth-child(5),.detail-table td:nth-child(5){width:5%}
-.detail-table th:nth-child(6),.detail-table td:nth-child(6){width:8%}
-.detail-table th:nth-child(7),.detail-table td:nth-child(7){width:7%}
-.detail-table td:nth-child(1),.detail-table td:nth-child(3){overflow-wrap:anywhere}
-.detail-table td:nth-child(2){overflow-wrap:break-word}
-.unrated-table{table-layout:fixed;min-width:0}
+.detail-table{table-layout:auto;min-width:900px}
+.detail-table td:first-child{min-width:210px}
+.detail-table td:nth-child(3),.detail-table td:nth-child(4){min-width:125px}
+.unrated-table{table-layout:auto;min-width:1150px}
 .unrated-table th,.unrated-table td{padding:9px 8px}
-.unrated-table th:nth-child(1),.unrated-table td:nth-child(1){width:5%}
-.unrated-table th:nth-child(2),.unrated-table td:nth-child(2){width:34%;overflow-wrap:break-word}
-.unrated-table th:nth-child(3),.unrated-table td:nth-child(3){width:12%;white-space:nowrap}
-.unrated-table th:nth-child(4),.unrated-table td:nth-child(4){width:29%;overflow-wrap:normal;word-break:normal}
-.unrated-table th:nth-child(5),.unrated-table td:nth-child(5){width:12%;white-space:nowrap;overflow-wrap:normal;word-break:normal}
-.unrated-table th:nth-child(6),.unrated-table td:nth-child(6){width:8%}
+.unrated-table td:nth-child(2){min-width:210px}
+.unrated-table td:nth-child(4),.unrated-table td:nth-child(5){min-width:135px}
+.unrated-table td:nth-child(8){min-width:165px;max-width:250px}
+.family-summary-section summary{cursor:pointer;padding:14px;font-weight:650}
 .style-sep{color:var(--muted);padding:0 2px}
 .style-substyle-cell{display:inline;white-space:normal}
 .style-substyle-cell .filter-link{display:inline;white-space:normal;overflow-wrap:normal;word-break:keep-all}
@@ -203,13 +193,8 @@ dialog.whiskey-dialog::backdrop{background:rgba(0,0,0,.7)}
 .earlier-ratings{margin:12px 0 2px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--panel2);color:var(--muted);font-size:.9rem}
 .earlier-ratings strong{color:var(--text);font-weight:600}
 .history-undated{margin:10px 2px 0;color:var(--muted);font-size:.9rem}
-.history-table{table-layout:fixed;min-width:0}
-.history-table th,.history-table td{padding:9px 8px}
-.history-table th:nth-child(1),.history-table td:nth-child(1){width:16%}
-.history-table th:nth-child(2),.history-table td:nth-child(2){width:34%;overflow-wrap:anywhere}
-.history-table th:nth-child(3),.history-table td:nth-child(3){width:9%}
-.history-table th:nth-child(4),.history-table td:nth-child(4){width:13%}
-.history-table th:nth-child(5),.history-table td:nth-child(5){width:28%;overflow-wrap:anywhere}
+.history-table{table-layout:auto;min-width:850px}
+.history-table td:nth-child(2){min-width:210px}
 .whiskey-history-list{width:100%;border-collapse:collapse}
 .whiskey-history-list td,.whiskey-history-list th{border-bottom:1px solid #4a3425;padding:8px}
 .whiskey-history-list th:first-child,.whiskey-history-list td:first-child,
@@ -290,6 +275,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
   <div class="whiskey-controls" id="whiskey-controls" style="display:none">
     <input id="search" type="search" placeholder="Search whiskey…">
     <select id="region-filter"><option value="">All regions</option></select>
+    <select id="province-filter" aria-label="Canadian province or territory"><option value="">All provinces / territories</option></select>
     <select id="style-filter"><option value="">All styles</option></select>
     <select id="substyle-filter"><option value="">All sub-styles</option></select>
     <select id="owned-filter">
@@ -396,7 +382,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
   function computeRows(){
     rows=data.products.map(function(p){
       var scores=p.ratings.map(function(r){return r.score});
-      return Object.assign({},p,{n:scores.length,average:avg(scores),place:ratedPlace(p)});
+      return Object.assign({},p,{n:scores.length,average:avg(scores),place:p.province||ratedPlace(p)});
     });
     var all=rows.map(function(r){return r.average});
     var qualified=rows.filter(function(r){return r.n>=3}).map(function(r){return r.average});
@@ -424,7 +410,15 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
     document.getElementById("region-filter").innerHTML='<option value="">All regions</option>'+
       regions.map(function(x){return '<option>'+esc(x)+'</option>';}).join("");
     document.getElementById("region-filter").value=regions.indexOf(currentRegion)>=0?currentRegion:"";
+    updateProvinces();
     updateStyles();
+  }
+
+  function updateProvinces(){
+    var select=document.getElementById("province-filter"),current=select.value;
+    var provinces=Array.from(new Set(currentFilterSource().filter(function(r){return r.region==="Canadian"}).map(function(r){return r.province||"Unknown"}))).sort();
+    select.innerHTML='<option value="">All provinces / territories</option>'+provinces.map(function(x){return "<option>"+esc(x)+"</option>"}).join("");
+    select.value=provinces.indexOf(current)>=0?current:"";
   }
 
   function updateStyles(){
@@ -449,9 +443,9 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
     var source=base.filter(function(r){
       return (!region||r.region===region)&&(!style||r.style===style);
     });
-    var subs=Array.from(new Set(source.map(function(r){return r.substyle}).filter(Boolean))).sort();
+    var subs=Array.from(new Set(source.reduce(function(out,r){if(r.substyle){out.push(r.substyle);out.push(r.substyle.split(" / ")[0])}return out},[]))).sort();
     select.innerHTML='<option value="">All sub-styles</option>'+
-      subs.map(function(x){return '<option>'+esc(x)+'</option>';}).join("");
+      subs.map(function(x){return '<option value="'+esc(x)+'">'+esc(substyleLabel(x))+'</option>';}).join("");
     select.value=subs.indexOf(current)>=0?current:"";
   }
 
@@ -461,9 +455,11 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
     var style=document.getElementById("style-filter").value;
     var sub=document.getElementById("substyle-filter").value;
     var owned=document.getElementById("owned-filter").value;
+    var province=document.getElementById("province-filter").value;
     return source.filter(function(r){
-      return (!q||(r.name+" "+r.region+" "+r.style+" "+(r.substyle||"")+" "+(r.distillery||"")+" "+(r.place||"")+" "+(r.subplace||"")+" "+(r.finish||"")+" "+((r.attributes||[]).join(" "))).toLowerCase().indexOf(q)>=0)&&
+      return (!q||(r.name+" "+r.region+" "+r.style+" "+substyleLabel(r.substyle)+" "+(r.distillery||"")+" "+(r.place||"")+" "+(r.province||"")+" "+(r.subplace||"")+" "+(r.finish||"")+" "+((r.attributes||[]).join(" "))).toLowerCase().indexOf(q)>=0)&&
         (!region||r.region===region)&&(!style||r.style===style)&&
+        (!province||(r.region==="Canadian"&&(r.province||"Unknown")===province))&&
         (!sub||r.substyle===sub||(r.substyle&&r.substyle.indexOf(sub+" / ")===0))&&
         (!owned||(owned==="owned"&&r.owned)||(owned==="not-owned"&&!r.owned))&&
         (!activeDistillery||activeTab==="unrated"||distilleryName(r)===activeDistillery);
@@ -503,14 +499,12 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
       label+'</th>';
   }
 
-  function styleSubstyleCell(r,unrated){
-    var styleClass=unrated?"unrated-style-link":"style-link";
-    var subClass=unrated?"unrated-substyle-link":"substyle-link";
-    var html='<span class="style-substyle-cell"><button class="filter-link '+styleClass+'" data-style="'+esc(r.style)+'">'+esc(r.style)+'</button>';
-    if(r.substyle){
-      html+=' <span class="style-sep">–</span> <button class="filter-link '+subClass+'" data-substyle="'+esc(r.substyle)+'">'+esc(r.substyle)+'</button>';
-    }
-    return html+'</span>';
+  function substyleLabel(value){return (value||"").replace(/^Fruit(?= \/|$)/,"Fruited")}
+  function styleCell(r,unrated){
+    return '<button class="filter-link '+(unrated?'unrated-style-link':'style-link')+'" data-style="'+esc(r.style)+'">'+esc(r.style)+'</button>';
+  }
+  function substyleCell(r,unrated){
+    return r.substyle?'<button class="filter-link '+(unrated?'unrated-substyle-link':'substyle-link')+'" data-parent-style="'+esc(r.style)+'" data-substyle="'+esc(r.substyle)+'">'+esc(substyleLabel(r.substyle))+'</button>':'—';
   }
 
   function whiskeyTable(source,tab){
@@ -518,7 +512,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
     var pctKey=tab==="qualified"?"qPercentile":"percentile";
     var pctLabel="%ile";
     var html='<div class="whiskey-table-wrap"><table class="whiskey-table detail-table"><thead><tr>'+
-      th(tab,"name","Whiskey")+th(tab,"region","Region")+th(tab,"style","Style – Sub-style")+
+      th(tab,"name","Whiskey")+th(tab,"region","Region")+th(tab,"style","Style")+th(tab,"substyle","Sub-style")+
       '<th class="num">ABV</th>'+th(tab,"n","n","num")+th(tab,"average","Avg","num")+th(tab,pctKey,pctLabel,"num")+
       '</tr></thead><tbody>';
     xs.forEach(function(r){
@@ -528,7 +522,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
         '<td><button class="whiskey-name" data-name="'+esc(r.name)+'">'+esc(r.name)+'</button>'+
         (ownedNeedMore?'<span class="owned-glass" title="On hand" aria-label="On hand">🥃</span>':'')+'</td>'+
         '<td><button class="filter-link region-link" data-region="'+esc(r.region)+'">'+esc(r.region)+'</button></td>'+
-        '<td>'+styleSubstyleCell(r,false)+'</td>'+
+        '<td>'+styleCell(r,false)+'</td><td>'+substyleCell(r,false)+'</td>'+
         '<td class="num">'+esc(abvLabel(r))+'</td>'+
         '<td class="num">'+r.n+'</td><td class="num">'+fmt(r.average)+'</td>'+
         '<td class="num">'+(pct==null?"—":pct)+'</td></tr>';
@@ -540,17 +534,17 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
     var xs=sorted(sortState.unrated,source);
     var html='<div class="whiskey-table-wrap"><table class="whiskey-table unrated-table"><thead><tr>'+
       th("unrated","priority","#","num")+th("unrated","name","Whiskey")+
-      th("unrated","region","Region")+th("unrated","style","Style – Sub-style")+
-      th("unrated","place","Place")+th("unrated","estimated_price_usd","Est. $","num")+
+      th("unrated","region","Region")+th("unrated","style","Style")+th("unrated","substyle","Sub-style")+
+      th("unrated","place","Place")+th("unrated","estimated_price_usd","Est. $","num")+th("unrated","listingCount","Findability evidence")+
       '</tr></thead><tbody>';
     xs.forEach(function(r){
       html+='<tr>'+
         '<td class="num">'+r.priority+'</td>'+
         '<td>'+esc(r.name)+'</td>'+
         '<td><button class="filter-link unrated-region-link" data-region="'+esc(r.region)+'">'+esc(r.region)+'</button></td>'+
-        '<td>'+styleSubstyleCell(r,true)+'</td>'+
+        '<td>'+styleCell(r,true)+'</td><td>'+substyleCell(r,true)+'</td>'+
         '<td>'+(r.place?'<button class="filter-link unrated-place-link" data-place="'+esc(r.place)+'">'+esc(r.place)+'</button>':'')+'</td>'+
-        '<td class="num">$'+r.estimated_price_usd+'</td>'+
+        '<td class="num">$'+r.estimated_price_usd+'</td><td>'+findabilityCell(r)+'</td>'+
         '</tr>';
     });
     return html+'</tbody></table></div>';
@@ -573,7 +567,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
     var xs=sorted(sortState.history,dated);
     var html='<div class="whiskey-table-wrap"><table class="whiskey-table history-table"><thead><tr>'+
       th("history","date","Date")+th("history","name","Whiskey")+th("history","score","Rating","num")+
-      th("history","region","Region")+th("history","style","Style – Sub-style")+
+      th("history","region","Region")+th("history","style","Style")+th("history","substyle","Sub-style")+
       '</tr></thead><tbody>';
     xs.forEach(function(h){
       html+='<tr>'+
@@ -581,7 +575,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
         '<td><button class="whiskey-name" data-name="'+esc(h.name)+'">'+esc(h.name)+'</button></td>'+
         '<td class="num">'+h.score.toFixed(1)+'</td>'+
         '<td><button class="filter-link region-link" data-region="'+esc(h.region)+'">'+esc(h.region)+'</button></td>'+
-        '<td>'+styleSubstyleCell(h,false)+'</td>'+
+        '<td>'+styleCell(h,false)+'</td><td>'+substyleCell(h,false)+'</td>'+
         '</tr>';
     });
     html+='</tbody></table></div>';
@@ -618,14 +612,14 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
   function mainRecent(){
     var xs=sorted(mainSort.recent,historyRows().filter(function(h){return h.date})).slice(0,10);
     var html='<div class="whiskey-table-wrap"><table class="whiskey-table"><thead><tr>'+
-      mth("recent","date","Date")+mth("recent","name","Whiskey")+mth("recent","score","Rating","num")+mth("recent","region","Region")+mth("recent","style","Style – Sub-style")+
+      mth("recent","date","Date")+mth("recent","name","Whiskey")+mth("recent","score","Rating","num")+mth("recent","region","Region")+mth("recent","style","Style")+mth("recent","substyle","Sub-style")+
       '</tr></thead><tbody>';
     xs.forEach(function(h){
       html+='<tr><td style="white-space:nowrap">'+prettyDate(h.date)+'</td>'+
         '<td><button class="whiskey-name" data-name="'+esc(h.name)+'">'+esc(h.name)+'</button></td>'+
         '<td class="num">'+h.score.toFixed(1)+'</td>'+
         '<td><button class="filter-link region-link" data-region="'+esc(h.region)+'">'+esc(h.region)+'</button></td>'+
-        '<td>'+styleSubstyleCell(h,false)+'</td></tr>';
+        '<td>'+styleCell(h,false)+'</td><td>'+substyleCell(h,false)+'</td></tr>';
     });
     return html+'</tbody></table></div>';
   }
@@ -642,14 +636,14 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
     var xs=topExpanded?sortedSource:sortedSource.slice(0,10);
     var html='<div class="whiskey-table-wrap"><table class="whiskey-table"><thead><tr>'+
       '<th class="num">#</th>'+mth("top","name","Whiskey")+mth("top","average","Avg","num")+mth("top","n","n","num")+
-      mth("top","qPercentile","%ile","num")+mth("top","region","Region")+mth("top","style","Style – Sub-style")+
+      mth("top","qPercentile","%ile","num")+mth("top","region","Region")+mth("top","style","Style")+mth("top","substyle","Sub-style")+
       '</tr></thead><tbody>';
     xs.forEach(function(r){
       html+='<tr><td class="num">'+rankMap[r.name]+'</td><td><button class="whiskey-name" data-name="'+esc(r.name)+'">'+esc(r.name)+'</button></td>'+
         '<td class="num">'+fmt(r.average)+'</td><td class="num">'+r.n+'</td>'+
         '<td class="num">'+r.qPercentile+'</td>'+
         '<td><button class="filter-link region-link" data-region="'+esc(r.region)+'">'+esc(r.region)+'</button></td>'+
-        '<td>'+styleSubstyleCell(r,false)+'</td></tr>';
+        '<td>'+styleCell(r,false)+'</td><td>'+substyleCell(r,false)+'</td></tr>';
     });
     html+='</tbody></table></div>';
     if(source.length>10){
@@ -762,7 +756,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
         : '<span class="style-tree-spacer"></span>';
       var link=node.depth===0
         ? '<button class="filter-link style-link" data-style="'+esc(node.path)+'">'+esc(node.name)+'</button>'
-        : '<button class="filter-link substyle-link" data-parent-style="'+esc(rootStyle)+'" data-substyle="'+esc(node.path)+'">'+esc(node.name)+'</button>';
+        : '<button class="filter-link substyle-link" data-parent-style="'+esc(rootStyle)+'" data-substyle="'+esc(node.path)+'">'+esc(substyleLabel(node.name))+'</button>';
 
       body.push(
         '<tr class="'+(node.depth===0?'style-root':'style-child')+'">'+
@@ -788,9 +782,9 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
       '<tbody>'+body.join("")+'</tbody></table></div>';
   }
 
-  function familyNodeItems(node){
+  function familyNodeItems(node,source){
     if(node.style){
-      return rows.filter(function(r){
+      return source.filter(function(r){
         if(r.style!==node.style)return false;
         if(!node.substyle)return true;
         return r.substyle===node.substyle||(r.substyle&&r.substyle.indexOf(node.substyle+" / ")===0);
@@ -798,28 +792,29 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
     }
     var seen={},out=[];
     (node.children||[]).forEach(function(child){
-      familyNodeItems(child).forEach(function(r){
+      familyNodeItems(child,source).forEach(function(r){
         if(!seen[r.name]){seen[r.name]=true;out.push(r)}
       });
     });
     return out;
   }
 
-  function styleFamilyTreeTable(){
+  function styleFamilyTreeTable(source,isUnrated){
+    source=source||rows;
     var root=data.style_taxonomy&&data.style_taxonomy.tree;
     if(!root)return '<div class="chart-body"><p class="view-note">No style taxonomy available.</p></div>';
     var body=[];
 
     function addNode(node,depth){
-      var items=familyNodeItems(node);
+      var items=familyNodeItems(node,source);
       var qualified=items.filter(function(r){return r.n>=3});
       var qAverage=qualified.length?avg(qualified.map(function(r){return r.average})):null;
       var indent=depth*20;
       var label;
       if(node.style&&node.substyle){
-        label='<button class="filter-link substyle-link" data-parent-style="'+esc(node.style)+'" data-substyle="'+esc(node.substyle)+'">'+esc(node.name)+'</button>';
+        label='<button class="filter-link '+(isUnrated?"unrated-substyle-link":"substyle-link")+'" data-parent-style="'+esc(node.style)+'" data-substyle="'+esc(node.substyle)+'">'+esc(node.name)+'</button>';
       }else if(node.style){
-        label='<button class="filter-link style-link" data-style="'+esc(node.style)+'">'+esc(node.name)+'</button>';
+        label='<button class="filter-link '+(isUnrated?"unrated-style-link":"style-link")+'" data-style="'+esc(node.style)+'">'+esc(node.name)+'</button>';
       }else{
         label='<span class="'+(depth===0?'family-root':'family-group')+'">'+esc(node.name)+'</span>';
       }
@@ -828,7 +823,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
           '<td><div class="family-label"><span class="family-indent" style="width:'+indent+'px"></span>'+
           (depth?'<span class="family-connector">↳</span>':'')+label+'</div></td>'+
           '<td class="num">'+items.length+'</td>'+
-          '<td class="num">'+(qAverage==null?'—':fmt(qAverage))+'</td>'+
+          (isUnrated?'':'<td class="num">'+(qAverage==null?'—':fmt(qAverage))+'</td>')+
         '</tr>'
       );
       (node.children||[]).forEach(function(child){addNode(child,depth+1)});
@@ -836,7 +831,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
 
     addNode(root,0);
     return '<div class="whiskey-table-wrap"><table class="style-tree family-tree">'+
-      '<thead><tr><th>Family / Style</th><th class="num">Whiskeys</th><th class="num">Q Avg</th></tr></thead>'+
+      '<thead><tr><th>Family / Style</th><th class="num">'+(isUnrated?'Unrated whiskeys':'Whiskeys')+'</th>'+(isUnrated?'':'<th class="num">Q Avg</th>')+'</tr></thead>'+
       '<tbody>'+body.join("")+'</tbody></table></div>';
   }
 
@@ -929,13 +924,13 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
   function distilleryChart(items){
     var shown=distilleryExpanded?items:items.slice(0,10);
     var max=Math.max.apply(null,shown.map(function(x){return x.ratings}));
-    var head='<div class="distillery-head"><span></span><span></span><span>Tastings</span><span>Whiskeys</span><span>Q Avg</span></div>';
+    var head='<div class="distillery-head"><span></span><span></span><span>Whiskeys</span><span>Tastings</span><span>Q Avg</span></div>';
     var body=shown.map(function(x){
       var w=max?100*x.ratings/max:0;
       return '<div class="bar-row"><div class="bar-label"><button class="filter-link distillery-link" data-distillery="'+esc(x.name)+'">'+esc(x.name)+'</button></div>'+
         '<div class="bar-track"><div class="bar-fill" style="width:'+w.toFixed(1)+'%;background:'+whiskeyGradient(x.ratings,max)+'"></div></div>'+
-        '<div class="dist-num">'+x.ratings+'</div>'+
         '<div class="dist-num">'+x.whiskeys+'</div>'+
+        '<div class="dist-num">'+x.ratings+'</div>'+
         '<div class="dist-num">'+(x.qAverage==null?'—':fmt(x.qAverage))+'</div></div>';
     }).join('');
     var more=items.length>10
@@ -1137,10 +1132,61 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
     '</div>';
   }
 
+  function nextTastes(){
+    var candidates=rows.concat(unratedRows.filter(function(r){return r.owned}).map(function(r){return Object.assign({},r,{n:0,ratings:[]})}));
+    return candidates.map(function(r){
+      var dates=(r.ratings||[]).map(function(x){return x.date}).filter(Boolean).sort();
+      return Object.assign({},r,{lastTasted:dates.length?dates[dates.length-1]:null});
+    }).sort(function(a,b){
+      return Number(!!b.owned)-Number(!!a.owned)||Number(b.n<3)-Number(a.n<3)||
+        ((a.n===0?"0000":a.lastTasted||"9999").localeCompare(b.n===0?"0000":b.lastTasted||"9999"))||a.name.localeCompare(b.name);
+    }).slice(0,10);
+  }
+
+  function nextTastesTable(){
+    var items=nextTastes();
+    return '<p class="view-note">On hand first, then fewer than 3 ratings, then oldest recorded tasting. Undated histories follow dated ones within each group. Suggestions include rated whiskies and any unrated bottles on hand.</p>'+
+      '<div class="whiskey-table-wrap"><table class="whiskey-table"><thead><tr><th>Whiskey</th><th>Why taste it?</th><th class="num">Ratings</th><th>Last rated</th></tr></thead><tbody>'+items.map(function(r){
+        var reason=(r.owned?'🥃 On hand':'Not on hand')+(r.n<3?' · Needs '+(3-r.n)+' more to qualify':' · Revisit');
+        return '<tr><td>'+(r.n?'<button class="whiskey-name" data-name="'+esc(r.name)+'">'+esc(r.name)+'</button>':esc(r.name))+'</td><td>'+reason+'</td><td class="num">'+r.n+'</td><td>'+(r.n===0?'Not yet rated':r.lastTasted?prettyDate(r.lastTasted):'Date unknown')+'</td></tr>';
+      }).join('')+'</tbody></table></div>';
+  }
+
+  function provinceTable(){
+    var groups={};
+    rows.filter(function(r){return r.region==="Canadian"}).forEach(function(r){var key=r.province||"Unknown";(groups[key]||(groups[key]=[])).push(r)});
+    return '<p class="view-note">Province or territory of the producer distillery, where documented; bottling location may differ. Avg weights each tasting equally. Q Avg uses whiskies with at least 3 ratings.</p><div class="whiskey-table-wrap"><table class="whiskey-table"><thead><tr><th>Province / Territory</th><th class="num">Whiskeys</th><th class="num">Tastings</th><th class="num">Avg</th><th class="num">Q Avg</th></tr></thead><tbody>'+Object.keys(groups).sort().map(function(key){
+      var items=groups[key],scores=[],q=items.filter(function(r){return r.n>=3});
+      items.forEach(function(r){r.ratings.forEach(function(x){scores.push(x.score)})});
+      return '<tr><td><button class="filter-link province-link" data-province="'+esc(key)+'">'+esc(key)+'</button></td><td class="num">'+items.length+'</td><td class="num">'+scores.length+'</td><td class="num">'+fmt(avg(scores))+'</td><td class="num">'+(q.length?fmt(avg(q.map(function(r){return r.average}))):'—')+'</td></tr>';
+    }).join('')+'</tbody></table></div>';
+  }
+
+  function recentEvidence(r){
+    return (r.findability_evidence||[]).filter(function(e){var age=Date.now()-Date.parse(e.observed_on+"T00:00:00Z");return age>=0&&age<=180*86400000});
+  }
+  function listingCount(r){
+    var xs=recentEvidence(r).filter(function(e){return e.signal==="retailer_listing"});
+    return xs.length?new Set(xs.map(function(e){return e.retailer})).size:null;
+  }
+  function findabilityCell(r){
+    var xs=r.findability_evidence||[];
+    if(!xs.length)return 'Not assessed';
+    return '<details><summary>'+(r.listingCount==null?'Evidence available':r.listingCount+' retailer'+(r.listingCount===1?'':'s')+' listed')+'</summary>'+xs.map(function(e){
+      var label=e.retailer||'Producer';
+      return '<p><a href="'+esc(e.url)+'" target="_blank" rel="noopener noreferrer">'+esc(label)+'</a> · '+esc(e.market)+' · '+esc(e.observed_on)+'<br>'+esc(e.note)+'</p>';
+    }).join('')+'</details>';
+  }
+  function findabilityNote(){
+    var assessed=unratedRows.filter(function(r){return (r.findability_evidence||[]).length}).length;
+    return '<p class="view-note">Findability pilot: '+assessed+' of '+unratedRows.length+' bottles have linked public evidence. Sort Findability evidence for observed retailer listing counts (within 180 days). This is a lower bound from a partial audit, not an easiest-to-hardest ranking or a popularity score. A listing does not confirm local stock or shipping eligibility; Not assessed does not mean rare. Open a cell for sources, market and date.</p>';
+  }
+
   function renderMain(){
     document.getElementById("whiskey-controls").style.display="none";
     var styles=styleRows().sort(function(a,b){return b.whiskeys-a.whiskeys||a.name.localeCompare(b.name)});
     document.getElementById("main").innerHTML=
+      '<section class="main-section"><h2>Next 10 to Taste</h2>'+nextTastesTable()+'</section>'+
       '<section class="main-section"><h2>Recent Ratings</h2>'+mainRecent()+'</section>'+
       '<section class="main-section"><h2>Top Rated Whiskeys</h2>'+mainTopRated()+'</section>'+
       '<section class="chart-section"><h2>Most Tasted Distilleries</h2>'+distilleryChart(distilleryRows())+'</section>'+
@@ -1148,8 +1194,8 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
         '<section class="chart-section"><h2>American Whiskeys by State</h2>'+placeHierarchyTable("American")+'</section>'+
         '<section class="chart-section"><h2>Scotch Single Malts by Region</h2>'+placeHierarchyTable("Scotch")+'</section>'+
       '</div>'+
-      '<section class="chart-section style-summary-section"><h2>Whiskeys by Style</h2>'+styleHierarchyTable()+'</section>'+
-      '<section class="chart-section family-summary-section"><h2>Whiskey Style Family Tree</h2>'+styleFamilyTreeTable()+'</section>';
+      '<section class="chart-section"><h2>Canadian Whiskies by Province / Territory</h2>'+provinceTable()+'</section>'+
+      '<section class="chart-section style-summary-section"><h2>Whiskeys by Style</h2>'+styleHierarchyTable()+'</section>';
   }
 
   function render(){
@@ -1166,7 +1212,8 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
         whiskeyTable(filtered(rows.filter(function(r){return r.n<3})),"need-more");
     }else if(activeTab==="unrated"){
       document.getElementById("whiskey-controls").style.display="grid";
-      document.getElementById("unrated").innerHTML=unratedTable(filtered(unratedRows));
+      document.getElementById("unrated").innerHTML=findabilityNote()+unratedTable(filtered(unratedRows))+
+        '<details class="chart-section family-summary-section"><summary>Explore the Whiskey Style Family Tree</summary><p class="view-note">A browsing guide to grain, regional and production styles. Counts follow your filters; click a style to explore it.</p>'+styleFamilyTreeTable(filtered(unratedRows),true)+'</details>';
     }else if(activeTab==="history"){
       document.getElementById("whiskey-controls").style.display="none";
       document.getElementById("history").innerHTML=historyTable();
@@ -1180,6 +1227,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
     activeTab=tab;
     if((previous==="unrated")!==(tab==="unrated")){
       document.getElementById("search").value="";
+        document.getElementById("province-filter").value="";
       document.getElementById("region-filter").value="";
       document.getElementById("style-filter").value="";
       document.getElementById("substyle-filter").value="";
@@ -1220,6 +1268,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
     activateAll();
     activeDistillery=distillery;
     document.getElementById("search").value="";
+        document.getElementById("province-filter").value="";
     document.getElementById("region-filter").value="";
     updateStyles();
     document.getElementById("style-filter").value="";
@@ -1232,6 +1281,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
     activateAll();
     activeDistillery="";
     document.getElementById("search").value="";
+        document.getElementById("province-filter").value="";
     document.getElementById("region-filter").value=region;
     updateStyles();
     render();
@@ -1241,6 +1291,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
     activateAll();
     activeDistillery="";
     document.getElementById("search").value="";
+        document.getElementById("province-filter").value="";
     document.getElementById("region-filter").value="";
     updateStyles();
     document.getElementById("style-filter").value=style;
@@ -1253,6 +1304,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
     activateAll();
     activeDistillery="";
     document.getElementById("search").value="";
+        document.getElementById("province-filter").value="";
     document.getElementById("region-filter").value="";
     updateStyles();
     document.getElementById("style-filter").value="";
@@ -1262,6 +1314,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
   }
 
   function bindEvents(){
+    document.querySelectorAll(".province-link").forEach(function(btn){btn.onclick=function(){showGroupDetail("province",btn.getAttribute("data-province"))}});
     document.querySelectorAll(".sortable[data-tab]").forEach(function(cell){
       cell.onclick=function(){
         var tab=cell.getAttribute("data-tab"),key=cell.getAttribute("data-sort"),s=sortState[tab];
@@ -1274,7 +1327,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
       cell.onclick=function(){
         var section=cell.getAttribute("data-main-section"),key=cell.getAttribute("data-main-sort"),s=mainSort[section];
         if(s.key===key)s.dir*=-1;
-        else{s.key=key;s.dir=["name","style","date"].indexOf(key)>=0?1:-1}
+        else{s.key=key;s.dir=["name","style","substyle","date"].indexOf(key)>=0?1:-1}
         render();
       };
     });
@@ -1336,6 +1389,10 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
         document.getElementById("region-filter").value="";
         document.getElementById("style-filter").value="";
         updateStyles(); updateSubstyles();
+        if(btn.getAttribute("data-parent-style")){
+          document.getElementById("style-filter").value=btn.getAttribute("data-parent-style");
+          updateSubstyles();
+        }
         document.getElementById("substyle-filter").value=btn.getAttribute("data-substyle");
         render();
       };
@@ -1392,6 +1449,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
   function showGroupDetail(kind,value,parentStyle){
     parentStyle=parentStyle||"";
     var matches=rows.filter(function(r){
+      if(kind==="province")return r.region==="Canadian"&&(r.province||"Unknown")===value;
       if(kind==="region")return r.region===value;
       if(kind==="style")return r.style===value;
       if(kind==="substyle"){
@@ -1410,6 +1468,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
     var qualifiedMatches=matches.filter(function(r){return r.n>=3});
     var groupQAvg=qualifiedMatches.length?avg(qualifiedMatches.map(function(r){return r.average})):null;
     var kindLabel={
+      province:"Province / Territory",
       region:"Region",
       style:"Style",
       substyle:"Sub-style",
@@ -1430,7 +1489,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
         '<td class="num">'+fmt(r.average)+'</td>'+
         '<td class="num">'+r.n+'</td>'+
         '<td class="num">'+esc(abvLabel(r))+'</td>'+
-        '<td>'+esc(r.style)+(r.substyle?' <span class="style-sep">–</span> '+esc(r.substyle):'')+'</td>'+
+        '<td>'+esc(r.style)+'</td><td>'+esc(substyleLabel(r.substyle)||'—')+'</td>'+
         '</tr>';
     }).join("");
 
@@ -1453,7 +1512,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
       filterHtml+
       '<div class="dialog-table-wrap"><table class="category-summary-table">'+
       '<thead><tr><th>Whiskey</th>'+(isPlace?'<th>Distillery</th>':'')+
-      '<th class="num">Avg</th><th class="num">n</th><th class="num">ABV</th><th>Style – Sub-style</th></tr></thead>'+
+      '<th class="num">Avg</th><th class="num">n</th><th class="num">ABV</th><th>Style</th><th>Sub-style</th></tr></thead>'+
       '<tbody>'+body+'</tbody></table></div>';
 
     document.querySelectorAll("#dialog-content .dialog-whiskey-name").forEach(function(btn){
@@ -1531,7 +1590,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
     fetch(DATA_URL,{cache:"no-store"}).then(function(res){return res.json()}).then(function(json){
       data=json;
       unratedRows=(data.unrated_suggestions||[]).map(function(r){
-        return Object.assign({},r,{place:suggestionPlace(r)});
+        return Object.assign({},r,{place:r.province||suggestionPlace(r),listingCount:listingCount(r)});
       });
       computeRows();
       setupFilters();
@@ -1552,9 +1611,11 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
       document.getElementById("style-filter").addEventListener("change",function(){updateSubstyles();render()});
       document.getElementById("substyle-filter").addEventListener("change",render);
       document.getElementById("owned-filter").addEventListener("change",render);
+      document.getElementById("province-filter").addEventListener("change",render);
       document.getElementById("clear-filters").onclick=function(){
         activeDistillery="";
         document.getElementById("search").value="";
+        document.getElementById("province-filter").value="";
         document.getElementById("region-filter").value="";
         updateStyles();
         document.getElementById("style-filter").value="";
@@ -1579,3 +1640,4 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
   init();
 })();
 </script>
+

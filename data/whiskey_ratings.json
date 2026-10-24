@@ -365,7 +365,11 @@
       "owned": true,
       "owned_bottle_name": "Canadian Club",
       "distillery": "Canadian Club",
-      "place": "Ontario"
+      "place": "Ontario",
+      "province": "Ontario",
+      "province_source": "https://www.canadianclub.com/en-au/our-story",
+      "province_basis": "Producer distillery location; bottling location may differ",
+      "province_checked_on": "2026-10-23"
     },
     {
       "name": "Crown Royal",
@@ -388,7 +392,11 @@
       "region": "Canadian",
       "abv": 40,
       "distillery": "Crown Royal",
-      "place": "Manitoba"
+      "place": "Manitoba",
+      "province": "Manitoba",
+      "province_source": "https://www.crownroyal.com/story/our-home",
+      "province_basis": "Producer distillery location; bottling location may differ",
+      "province_checked_on": "2026-10-23"
     },
     {
       "name": "Dalmore 12 Year Old",
@@ -2778,7 +2786,21 @@
       "distillery": "Crown Royal",
       "estimated_price_usd": 30,
       "recommendation_group": "Mass-market priority",
-      "priority": 40
+      "priority": 40,
+      "province": "Manitoba",
+      "province_source": "https://www.crownroyal.com/story/our-home",
+      "province_basis": "Producer distillery location; bottling location may differ",
+      "province_checked_on": "2026-10-23",
+      "findability_evidence": [
+        {
+          "signal": "retailer_listing",
+          "retailer": "Total Wine",
+          "url": "https://www.totalwine.com/spirits/canadian-whisky/c/000840?brandcode=crown-royal",
+          "market": "US",
+          "observed_on": "2026-10-23",
+          "note": "Exact expression in retailer catalogue. Stock and shipping not verified."
+        }
+      ]
     },
     {
       "priority": 41,
@@ -3002,7 +3024,29 @@
       "distillery": "Crown Royal",
       "estimated_price_usd": 30,
       "recommendation_group": "Mass-market priority",
-      "priority": 61
+      "priority": 61,
+      "province": "Manitoba",
+      "province_source": "https://www.crownroyal.com/story/our-home",
+      "province_basis": "Producer distillery location; bottling location may differ",
+      "province_checked_on": "2026-10-23",
+      "findability_evidence": [
+        {
+          "signal": "retailer_listing",
+          "retailer": "Total Wine",
+          "url": "https://www.totalwine.com/spirits/canadian-whisky/c/000840?brandcode=crown-royal",
+          "market": "US",
+          "observed_on": "2026-10-23",
+          "note": "Exact expression in retailer catalogue. Stock and shipping not verified."
+        },
+        {
+          "signal": "retailer_listing",
+          "retailer": "SAQ",
+          "url": "https://www.saq.com/en/13985339",
+          "market": "Quebec, Canada",
+          "observed_on": "2026-10-23",
+          "note": "Exact expression listed; page reports unavailable online. Check store quantities separately."
+        }
+      ]
     },
     {
       "priority": 62,
@@ -3368,7 +3412,21 @@
       "substyle": "Rye-forward",
       "distillery": "Hiram Walker",
       "estimated_price_usd": 40,
-      "recommendation_group": "Classic"
+      "recommendation_group": "Classic",
+      "province": "Ontario",
+      "province_source": "https://www.pernod-ricard.com/en/brands/lot-no-40",
+      "province_basis": "Producer distillery location; bottling location may differ",
+      "province_checked_on": "2026-10-23",
+      "findability_evidence": [
+        {
+          "signal": "retailer_listing",
+          "retailer": "LCBO",
+          "url": "https://www.lcbo.com/en/lot-no-40-single-copper-pot-still-canadian-whisky-382861",
+          "market": "Ontario, Canada",
+          "observed_on": "2026-10-23",
+          "note": "Exact expression listed. Page contains conflicting stock states; stock not verified."
+        }
+      ]
     },
     {
       "priority": 93,
@@ -3381,7 +3439,11 @@
       "recommendation_group": "Explore",
       "attributes": [
         "Cask Strength"
-      ]
+      ],
+      "province": "Alberta",
+      "province_source": "https://www.suntoryglobalspirits.com/sites/default/files/beam-suntory-2022-sustainability-report.pdf",
+      "province_basis": "Producer distillery location; bottling location may differ",
+      "province_checked_on": "2026-10-23"
     },
     {
       "priority": 94,
@@ -4555,7 +4617,11 @@
       "substyle": "Rye-forward",
       "distillery": "Crown Royal",
       "estimated_price_usd": 35,
-      "recommendation_group": "Classic"
+      "recommendation_group": "Classic",
+      "province": "Manitoba",
+      "province_source": "https://www.crownroyal.com/story/our-home",
+      "province_basis": "Producer distillery location; bottling location may differ",
+      "province_checked_on": "2026-10-23"
     },
     {
       "name": "Knob Creek 18 Year Bourbon",
@@ -4618,7 +4684,21 @@
         "shelf_price_usd": 6.99,
         "paid_price_usd": 6.29
       },
-      "owned": true
+      "owned": true,
+      "province": "Alberta",
+      "province_source": "https://heavenhill.com/brands/",
+      "province_basis": "Producer distillery location; bottling location may differ",
+      "province_checked_on": "2026-10-23",
+      "findability_evidence": [
+        {
+          "signal": "retailer_listing",
+          "retailer": "Total Wine",
+          "url": "https://www.totalwine.com/spirits/canadian-whisky/null/black-velvet/p/1650175",
+          "market": "US",
+          "observed_on": "2026-10-23",
+          "note": "Exact expression listed; bottle sizes and availability vary by store. Stock not verified."
+        }
+      ]
     },
     {
       "name": "Jack Daniel's 12 Year Old",
@@ -6719,6 +6799,20 @@
       "priority": 365,
       "attributes": [
         "Double Oak"
+      ],
+      "province": "Ontario",
+      "province_source": "https://www.pernod-ricard.com/en/brands/lot-no-40",
+      "province_basis": "Producer distillery location; bottling location may differ",
+      "province_checked_on": "2026-10-23",
+      "findability_evidence": [
+        {
+          "signal": "retailer_listing",
+          "retailer": "LCBO",
+          "url": "https://www.lcbo.com/en/lot-no-40-dark-oak-canadian-whisky-19563",
+          "market": "Ontario, Canada",
+          "observed_on": "2026-10-23",
+          "note": "Exact expression listed. Page contains conflicting stock states; stock not verified."
+        }
       ]
     },
     {
@@ -6733,7 +6827,11 @@
       "priority": 366,
       "attributes": [
         "Cask Strength"
-      ]
+      ],
+      "province": "Ontario",
+      "province_source": "https://www.pernod-ricard.com/en/brands/lot-no-40",
+      "province_basis": "Producer distillery location; bottling location may differ",
+      "province_checked_on": "2026-10-23"
     },
     {
       "name": "Canadian Club 100% Rye",
@@ -6744,7 +6842,11 @@
       "estimated_price_usd": 25,
       "place": "Canada",
       "recommendation_group": "Explore",
-      "priority": 367
+      "priority": 367,
+      "province": "Ontario",
+      "province_source": "https://www.canadianclub.com/en-au/our-story",
+      "province_basis": "Producer distillery location; bottling location may differ",
+      "province_checked_on": "2026-10-23"
     },
     {
       "name": "Frey Ranch Straight Bourbon",
@@ -7226,7 +7328,11 @@
       "priority": 407,
       "attributes": [
         "Single Barrel"
-      ]
+      ],
+      "province": "Manitoba",
+      "province_source": "https://www.crownroyal.com/story/our-home",
+      "province_basis": "Producer distillery location; bottling location may differ",
+      "province_checked_on": "2026-10-23"
     },
     {
       "name": "Leopold Bros Maryland Style Rye",
@@ -7417,7 +7523,21 @@
       "estimated_price_usd": 35,
       "place": "Canada",
       "recommendation_group": "Explore",
-      "priority": 423
+      "priority": 423,
+      "province": "Manitoba",
+      "province_source": "https://www.crownroyal.com/story/our-home",
+      "province_basis": "Producer distillery location; bottling location may differ",
+      "province_checked_on": "2026-10-23",
+      "findability_evidence": [
+        {
+          "signal": "retailer_listing",
+          "retailer": "Total Wine",
+          "url": "https://www.totalwine.com/theme/crown-royal-whiskey",
+          "market": "US",
+          "observed_on": "2026-10-23",
+          "note": "Exact expression in retailer catalogue. Stock and shipping not verified."
+        }
+      ]
     },
     {
       "name": "Crown Royal XO",
@@ -7428,7 +7548,21 @@
       "estimated_price_usd": 50,
       "place": "Canada",
       "recommendation_group": "Explore",
-      "priority": 424
+      "priority": 424,
+      "province": "Manitoba",
+      "province_source": "https://www.crownroyal.com/story/our-home",
+      "province_basis": "Producer distillery location; bottling location may differ",
+      "province_checked_on": "2026-10-23",
+      "findability_evidence": [
+        {
+          "signal": "retailer_listing",
+          "retailer": "Total Wine",
+          "url": "https://www.totalwine.com/spirits/canadian-whisky/c/000840?brandcode=crown-royal",
+          "market": "US",
+          "observed_on": "2026-10-23",
+          "note": "Exact expression in retailer catalogue. Stock and shipping not verified."
+        }
+      ]
     },
     {
       "name": "Crown Royal Reserve",
@@ -7439,7 +7573,11 @@
       "estimated_price_usd": 45,
       "place": "Canada",
       "recommendation_group": "Explore",
-      "priority": 425
+      "priority": 425,
+      "province": "Manitoba",
+      "province_source": "https://www.crownroyal.com/story/our-home",
+      "province_basis": "Producer distillery location; bottling location may differ",
+      "province_checked_on": "2026-10-23"
     },
     {
       "name": "Templeton 10 Year Rye",
@@ -7463,7 +7601,11 @@
       "place": "Canada",
       "recommendation_group": "Explore",
       "priority": 427,
-      "age_years": 12
+      "age_years": 12,
+      "province": "Ontario",
+      "province_source": "https://www.canadianclub.com/en-au/our-story",
+      "province_basis": "Producer distillery location; bottling location may differ",
+      "province_checked_on": "2026-10-23"
     },
     {
       "name": "Canadian Club 20 Year",
@@ -7475,7 +7617,11 @@
       "place": "Canada",
       "recommendation_group": "Explore",
       "priority": 428,
-      "age_years": 20
+      "age_years": 20,
+      "province": "Ontario",
+      "province_source": "https://www.canadianclub.com/en-au/our-story",
+      "province_basis": "Producer distillery location; bottling location may differ",
+      "province_checked_on": "2026-10-23"
     },
     {
       "name": "291 Bad Guy Colorado Bourbon Rye",
@@ -7648,7 +7794,11 @@
       "priority": 442,
       "attributes": [
         "Cask Strength"
-      ]
+      ],
+      "province": "Alberta",
+      "province_source": "https://www.suntoryglobalspirits.com/sites/default/files/beam-suntory-2022-sustainability-report.pdf",
+      "province_basis": "Producer distillery location; bottling location may differ",
+      "province_checked_on": "2026-10-23"
     },
     {
       "name": "Glenfarclas 10 Year Old",
@@ -7876,7 +8026,11 @@
       "estimated_price_usd": 75,
       "place": "Canada",
       "recommendation_group": "Explore",
-      "priority": 461
+      "priority": 461,
+      "province": "British Columbia",
+      "province_source": "https://shelterpoint.ca/wp-content/uploads/ShelterPointWhisky.pdf",
+      "province_basis": "Producer distillery location; bottling location may differ",
+      "province_checked_on": "2026-10-23"
     },
     {
       "name": "Paul John Brilliance",
@@ -8023,7 +8177,11 @@
       "estimated_price_usd": 35,
       "place": "Canada",
       "recommendation_group": "Explore",
-      "priority": 473
+      "priority": 473,
+      "province": "Ontario",
+      "province_source": "https://www.jpwisers.com/en-ca/about-us/",
+      "province_basis": "Producer distillery location; bottling location may differ",
+      "province_checked_on": "2026-10-23"
     },
     {
       "name": "Bardstown Bourbon Company Origin Series Bottled-in-Bond",
@@ -8048,7 +8206,11 @@
       "estimated_price_usd": 30,
       "place": "Canada",
       "recommendation_group": "Explore",
-      "priority": 475
+      "priority": 475,
+      "province": "Alberta",
+      "province_source": "https://www.suntoryglobalspirits.com/sites/default/files/beam-suntory-2022-sustainability-report.pdf",
+      "province_basis": "Producer distillery location; bottling location may differ",
+      "province_checked_on": "2026-10-23"
     },
     {
       "name": "Early Times Bottled-in-Bond",
@@ -8254,7 +8416,11 @@
       "priority": 492,
       "attributes": [
         "Peated"
-      ]
+      ],
+      "province": "British Columbia",
+      "province_source": "https://shelterpoint.ca/wp-content/uploads/ShelterPointWhisky.pdf",
+      "province_basis": "Producer distillery location; bottling location may differ",
+      "province_checked_on": "2026-10-23"
     },
     {
       "name": "Two Brewers Release 46",
@@ -8265,7 +8431,21 @@
       "estimated_price_usd": 100,
       "place": "Canada",
       "recommendation_group": "Explore",
-      "priority": 493
+      "priority": 493,
+      "province": "Yukon",
+      "province_source": "https://www.twobrewerswhisky.com/about",
+      "province_basis": "Producer distillery location; bottling location may differ",
+      "province_checked_on": "2026-10-23",
+      "findability_evidence": [
+        {
+          "signal": "producer_release",
+          "retailer": null,
+          "url": "https://www.twobrewerswhisky.com/bottles/release-no-46",
+          "market": "Canada",
+          "observed_on": "2026-10-23",
+          "note": "Numbered release. Producer describes its releases as unique, never repeated; this does not establish remaining retail stock."
+        }
+      ]
     },
     {
       "name": "Dingle Single Pot Still",
@@ -8893,7 +9073,11 @@
       "estimated_price_usd": 30,
       "place": "Canada",
       "recommendation_group": "Explore",
-      "priority": 547
+      "priority": 547,
+      "province": "Ontario",
+      "province_source": "https://fortycreekwhisky.com/distillery/",
+      "province_basis": "Producer distillery location; bottling location may differ",
+      "province_checked_on": "2026-10-23"
     },
     {
       "name": "Forty Creek Confederation Oak Reserve",
@@ -8904,7 +9088,11 @@
       "estimated_price_usd": 70,
       "place": "Canada",
       "recommendation_group": "Explore",
-      "priority": 548
+      "priority": 548,
+      "province": "Ontario",
+      "province_source": "https://fortycreekwhisky.com/distillery/",
+      "province_basis": "Producer distillery location; bottling location may differ",
+      "province_checked_on": "2026-10-23"
     },
     {
       "name": "Forty Creek Double Barrel Reserve",
@@ -8918,7 +9106,11 @@
       "priority": 549,
       "attributes": [
         "Double Barrel"
-      ]
+      ],
+      "province": "Ontario",
+      "province_source": "https://fortycreekwhisky.com/distillery/",
+      "province_basis": "Producer distillery location; bottling location may differ",
+      "province_checked_on": "2026-10-23"
     },
     {
       "name": "J.P. Wiser's 15 Year Old",
@@ -8930,7 +9122,11 @@
       "place": "Canada",
       "recommendation_group": "Explore",
       "priority": 550,
-      "age_years": 15
+      "age_years": 15,
+      "province": "Ontario",
+      "province_source": "https://www.jpwisers.com/en-ca/about-us/",
+      "province_basis": "Producer distillery location; bottling location may differ",
+      "province_checked_on": "2026-10-23"
     },
     {
       "name": "J.P. Wiser's 18 Year Old",
@@ -8942,7 +9138,11 @@
       "place": "Canada",
       "recommendation_group": "Explore",
       "priority": 551,
-      "age_years": 18
+      "age_years": 18,
+      "province": "Ontario",
+      "province_source": "https://www.jpwisers.com/en-ca/about-us/",
+      "province_basis": "Producer distillery location; bottling location may differ",
+      "province_checked_on": "2026-10-23"
     },
     {
       "name": "Pike Creek 10 Year Rum Barrel Finish",
@@ -8966,7 +9166,11 @@
       "estimated_price_usd": 45,
       "place": "Canada",
       "recommendation_group": "Explore",
-      "priority": 553
+      "priority": 553,
+      "province": "Ontario",
+      "province_source": "https://www.pernod-ricard.com/en/brands/lot-no-40",
+      "province_basis": "Producer distillery location; bottling location may differ",
+      "province_checked_on": "2026-10-23"
     },
     {
       "name": "Bearface 7 Year Triple Oak",
@@ -9154,7 +9358,21 @@
       "distillery": "Crown Royal",
       "estimated_price_usd": 30,
       "recommendation_group": "Low-brow",
-      "priority": 570
+      "priority": 570,
+      "province": "Manitoba",
+      "province_source": "https://www.crownroyal.com/story/our-home",
+      "province_basis": "Producer distillery location; bottling location may differ",
+      "province_checked_on": "2026-10-23",
+      "findability_evidence": [
+        {
+          "signal": "retailer_listing",
+          "retailer": "Total Wine",
+          "url": "https://www.totalwine.com/spirits/canadian-whisky/c/000840?brandcode=crown-royal",
+          "market": "US",
+          "observed_on": "2026-10-23",
+          "note": "Exact expression in retailer catalogue. Stock and shipping not verified."
+        }
+      ]
     },
     {
       "name": "Benchmark Old No. 8",
@@ -9326,13 +9544,13 @@
     }
   ],
   "style_taxonomy": {
-    "version": 2,
+    "version": 3,
     "qualification_n": 3,
     "tree": {
       "name": "Whiskey",
       "children": [
         {
-          "name": "Named grain styles",
+          "name": "Grain & regional styles",
           "children": [
             {
               "name": "Bourbon",
