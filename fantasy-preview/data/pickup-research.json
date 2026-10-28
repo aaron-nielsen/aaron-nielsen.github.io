@@ -1,21 +1,21 @@
 {
-  "week": 7,
+  "week": 8,
   "teamId": "7",
   "leagueId": "470.l.258793",
-  "reviewedAt": "2026-10-21",
+  "reviewedAt": "2026-10-27",
   "players": [
     {
-      "id": "41885",
-      "label": "WR upside",
-      "reason": "Four catches for 107 yards and a touchdown in Week 6. A bench upside option, rather than an automatic start.",
-      "source": "https://www.fantasypros.com/2026/10/fantasy-football-start-sit-tre-tucker-jaylin-noel-aaron-rodgers-week-7-2026/"
+      "id": "41907",
+      "label": "RB depth",
+      "reason": "Dylan Sampson is the first RB depth claim to consider. Preserve Lloyd\u2019s Jacobs insurance; do not cut a scarce RB simply to force this pickup.",
+      "source": "https://www.profootballnetwork.com/fantasy-football/waiver-wire-targets-week-8-2026/"
     },
     {
-      "id": "42702",
-      "label": "WR depth",
-      "reason": "Activated from injured reserve and returned to the Ravens rotation. A speculative depth addition.",
-      "source": "https://www.baltimoreravens.com/news/jakobi-lane-ravens-activated-from-injured-reserve-carl-jones-2026"
+      "id": "42693",
+      "label": "WR upside",
+      "reason": "Antonio Williams is a role-growth target if a trade creates space. Prefer him to adding another defense.",
+      "source": "https://www.rotoballer.com/week-8-waiver-wire-pickups-omar-cooper-jr-antonio-williams-caleb-douglas-fantasy-football-outlooks/1976925"
     }
   ],
-  "rosterMove": "Prioritize useful RB/WR depth over carrying a second kicker."
+  "rosterMove": "Keep Chiefs and McPherson. Jets are the first cut, but activating Hall from IR may use that opening. Chiefs and Addison are already in pending offers."
 }

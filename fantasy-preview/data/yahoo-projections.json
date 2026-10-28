@@ -46,12 +46,23 @@
       "4",
       "6",
       "9",
-      "12",
-      "14"
+      "12"
     ],
     "missingTeams": [],
     "complete": false,
     "missingPlayers": [
+      {
+        "id": "40108",
+        "name": "Kendre Miller",
+        "teamId": "7",
+        "team": "Ten Feline Overlords"
+      },
+      {
+        "id": "42652",
+        "name": "Omar Cooper Jr.",
+        "teamId": "1",
+        "team": "Blitzmaster"
+      },
       {
         "id": "41052",
         "name": "Kimani Vidal",
@@ -61,12 +72,6 @@
       {
         "id": "30227",
         "name": "Samaje Perine",
-        "teamId": "1",
-        "team": "Blitzmaster"
-      },
-      {
-        "id": "42652",
-        "name": "Omar Cooper Jr.",
         "teamId": "1",
         "team": "Blitzmaster"
       },
@@ -101,6 +106,12 @@
         "team": "Lone Wolf Stacy"
       },
       {
+        "id": "40162",
+        "name": "Roschon Johnson",
+        "teamId": "3",
+        "team": "Lone Wolf Stacy"
+      },
+      {
         "id": "30551",
         "name": "Kendrick Bourne",
         "teamId": "3",
@@ -123,12 +134,6 @@
         "name": "Titans",
         "teamId": "5",
         "team": "I’m confused"
-      },
-      {
-        "id": "40108",
-        "name": "Kendre Miller",
-        "teamId": "7",
-        "team": "Ten Feline Overlords"
       },
       {
         "id": "34357",
@@ -159,6 +164,24 @@
         "name": "Dameon Pierce",
         "teamId": "13",
         "team": "NO PARKING"
+      },
+      {
+        "id": "31010",
+        "name": "Courtland Sutton",
+        "teamId": "13",
+        "team": "NO PARKING"
+      },
+      {
+        "id": "34261",
+        "name": "Tyler Goodson",
+        "teamId": "14",
+        "team": "Bench Warmers"
+      },
+      {
+        "id": "27120",
+        "name": "Brandon McManus",
+        "teamId": "14",
+        "team": "Bench Warmers"
       }
     ]
   },
@@ -17741,6 +17764,168 @@
       "collectedAt": "2026-10-13T21:56:39.598Z"
     },
     {
+      "yahooId": "40108",
+      "name": "Kendre Miller",
+      "position": "RB",
+      "positionSource": "Verified current roster",
+      "collectedAt": null,
+      "weeks": [
+        {
+          "week": 6,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 7,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 8,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 9,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 10,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 11,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 12,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 13,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 14,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 15,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 16,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 17,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        }
+      ]
+    },
+    {
+      "yahooId": "42652",
+      "name": "Omar Cooper Jr.",
+      "position": "WR",
+      "positionSource": "Verified current roster",
+      "collectedAt": null,
+      "weeks": [
+        {
+          "week": 6,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 7,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 8,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 9,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 10,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 11,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 12,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 13,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 14,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 15,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 16,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 17,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        }
+      ]
+    },
+    {
       "yahooId": "41052",
       "name": "Kimani Vidal",
       "position": "RB",
@@ -17825,87 +18010,6 @@
       "yahooId": "30227",
       "name": "Samaje Perine",
       "position": "RB",
-      "positionSource": "Verified current roster",
-      "collectedAt": null,
-      "weeks": [
-        {
-          "week": 6,
-          "points": null,
-          "state": "projection_not_collected",
-          "collectedAt": null
-        },
-        {
-          "week": 7,
-          "points": null,
-          "state": "projection_not_collected",
-          "collectedAt": null
-        },
-        {
-          "week": 8,
-          "points": null,
-          "state": "projection_not_collected",
-          "collectedAt": null
-        },
-        {
-          "week": 9,
-          "points": null,
-          "state": "projection_not_collected",
-          "collectedAt": null
-        },
-        {
-          "week": 10,
-          "points": null,
-          "state": "projection_not_collected",
-          "collectedAt": null
-        },
-        {
-          "week": 11,
-          "points": null,
-          "state": "projection_not_collected",
-          "collectedAt": null
-        },
-        {
-          "week": 12,
-          "points": null,
-          "state": "projection_not_collected",
-          "collectedAt": null
-        },
-        {
-          "week": 13,
-          "points": null,
-          "state": "projection_not_collected",
-          "collectedAt": null
-        },
-        {
-          "week": 14,
-          "points": null,
-          "state": "projection_not_collected",
-          "collectedAt": null
-        },
-        {
-          "week": 15,
-          "points": null,
-          "state": "projection_not_collected",
-          "collectedAt": null
-        },
-        {
-          "week": 16,
-          "points": null,
-          "state": "projection_not_collected",
-          "collectedAt": null
-        },
-        {
-          "week": 17,
-          "points": null,
-          "state": "projection_not_collected",
-          "collectedAt": null
-        }
-      ]
-    },
-    {
-      "yahooId": "42652",
-      "name": "Omar Cooper Jr.",
-      "position": "WR",
       "positionSource": "Verified current roster",
       "collectedAt": null,
       "weeks": [
@@ -18389,6 +18493,87 @@
       ]
     },
     {
+      "yahooId": "40162",
+      "name": "Roschon Johnson",
+      "position": "RB",
+      "positionSource": "Verified current roster",
+      "collectedAt": null,
+      "weeks": [
+        {
+          "week": 6,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 7,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 8,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 9,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 10,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 11,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 12,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 13,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 14,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 15,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 16,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 17,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        }
+      ]
+    },
+    {
       "yahooId": "30551",
       "name": "Kendrick Bourne",
       "position": "WR",
@@ -18635,87 +18820,6 @@
       "yahooId": "100010",
       "name": "Titans",
       "position": "DEF",
-      "positionSource": "Verified current roster",
-      "collectedAt": null,
-      "weeks": [
-        {
-          "week": 6,
-          "points": null,
-          "state": "projection_not_collected",
-          "collectedAt": null
-        },
-        {
-          "week": 7,
-          "points": null,
-          "state": "projection_not_collected",
-          "collectedAt": null
-        },
-        {
-          "week": 8,
-          "points": null,
-          "state": "projection_not_collected",
-          "collectedAt": null
-        },
-        {
-          "week": 9,
-          "points": null,
-          "state": "projection_not_collected",
-          "collectedAt": null
-        },
-        {
-          "week": 10,
-          "points": null,
-          "state": "projection_not_collected",
-          "collectedAt": null
-        },
-        {
-          "week": 11,
-          "points": null,
-          "state": "projection_not_collected",
-          "collectedAt": null
-        },
-        {
-          "week": 12,
-          "points": null,
-          "state": "projection_not_collected",
-          "collectedAt": null
-        },
-        {
-          "week": 13,
-          "points": null,
-          "state": "projection_not_collected",
-          "collectedAt": null
-        },
-        {
-          "week": 14,
-          "points": null,
-          "state": "projection_not_collected",
-          "collectedAt": null
-        },
-        {
-          "week": 15,
-          "points": null,
-          "state": "projection_not_collected",
-          "collectedAt": null
-        },
-        {
-          "week": 16,
-          "points": null,
-          "state": "projection_not_collected",
-          "collectedAt": null
-        },
-        {
-          "week": 17,
-          "points": null,
-          "state": "projection_not_collected",
-          "collectedAt": null
-        }
-      ]
-    },
-    {
-      "yahooId": "40108",
-      "name": "Kendre Miller",
-      "position": "RB",
       "positionSource": "Verified current roster",
       "collectedAt": null,
       "weeks": [
@@ -19197,7 +19301,250 @@
           "collectedAt": null
         }
       ]
+    },
+    {
+      "yahooId": "31010",
+      "name": "Courtland Sutton",
+      "position": "WR",
+      "positionSource": "Verified current roster",
+      "collectedAt": null,
+      "weeks": [
+        {
+          "week": 6,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 7,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 8,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 9,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 10,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 11,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 12,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 13,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 14,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 15,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 16,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 17,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        }
+      ]
+    },
+    {
+      "yahooId": "34261",
+      "name": "Tyler Goodson",
+      "position": "RB",
+      "positionSource": "Verified current roster",
+      "collectedAt": null,
+      "weeks": [
+        {
+          "week": 6,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 7,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 8,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 9,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 10,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 11,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 12,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 13,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 14,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 15,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 16,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 17,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        }
+      ]
+    },
+    {
+      "yahooId": "27120",
+      "name": "Brandon McManus",
+      "position": "K",
+      "positionSource": "Verified current roster",
+      "collectedAt": null,
+      "weeks": [
+        {
+          "week": 6,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 7,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 8,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 9,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 10,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 11,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 12,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 13,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 14,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 15,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 16,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        },
+        {
+          "week": 17,
+          "points": null,
+          "state": "projection_not_collected",
+          "collectedAt": null
+        }
+      ]
     }
   ],
-  "rosterSnapshotAt": "2026-10-21T19:53:36.400Z"
+  "rosterSnapshotAt": "2026-10-27T19:41:15.550Z"
 }

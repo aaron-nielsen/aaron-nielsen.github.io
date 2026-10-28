@@ -8,6 +8,12 @@ From the workspace root, run `python3 -m http.server 8766` and open `http://loca
 
 ## Where things live
 
+### Latest refresh: October 27, 2026
+
+Both leagues are on Week 8. The refresh includes all 24 rosters, Week 7 final scores, Week 8 and 9 matchups, standings, settings, recent transactions, and available-player pools (454 CSU / 464 Nebraska). Available players retain their acquisition state; an unknown waiver clearing time stays unknown. Pickup shortlists were reviewed against these pools.
+
+Offensive statistics and defensive matchup factors include completed Week 7 games. Special-team points/EPA context also includes Week 7; red-zone and playing-time inputs retain their older Week 4 cutoff. Yahoo current matchup totals are fresh, but individual rest-of-season Yahoo forecasts remain dated October 12–13. Rebuilding gain/loss values updates ownership and calculations, not those underlying Yahoo forecasts.
+
 - `index.html`: dashboard pages, league switching and startup.
 - `planning-model.js`: replacement values, recipient-specific lineup impact, fantasy opponent weaknesses and conservative trade-target screening.
 - `planning-view.js` and `planning.css`: Player values and Schedule views, filters and CSV export.

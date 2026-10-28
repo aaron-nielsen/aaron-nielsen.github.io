@@ -15,7 +15,7 @@ function refresh(base,raw,at=new Date().toISOString()){
   for(const p of d.freeAgents||[]){
    const id=String(p.id||p.playerId);
    if(owned.has(id))throw Error('Roster and available-player snapshots disagree for '+id);
-   players.push({id,key:p.playerKey,name:p.name,nflTeam:p.team,position:p.position,yahooWideRosteredPercent:p.percentOwned??null,status:p.status||null});
+   players.push({id,key:p.playerKey,name:p.name,nflTeam:p.team,position:p.position,yahooWideRosteredPercent:p.percentOwned??null,status:p.status||null,acquisitionState:p.acquisitionState??null,waiverClearsAt:p.waiverClearsAt??null});
   }
  }
  if(new Set(players.map(p=>p.id)).size!==players.length)throw Error('Duplicate available player');

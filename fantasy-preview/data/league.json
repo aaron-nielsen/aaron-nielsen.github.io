@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "retrievedAt": "2026-10-21T19:53:36.400Z",
+  "retrievedAt": "2026-10-27T19:41:15.550Z",
   "source": "Flaim Fantasy / Yahoo Fantasy",
   "platform": "yahoo",
   "sport": "football",
@@ -9,7 +9,7 @@
   "leagueName": "CSU Stats",
   "teamCount": 14,
   "userTeamId": "7",
-  "currentWeekAtSnapshot": 7,
+  "currentWeekAtSnapshot": 8,
   "startingSlots": [
     "QB",
     "RB",

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T02:11:22.480Z",
+  "generatedAt": "2026-10-27T19:48:35.315Z",
   "leagueId": "470.l.258793",
   "period": [
     6,
@@ -10,60 +10,60 @@
   "scope": "Same player and week, positive Yahoo forecast, enriched Da Vinci estimates as displayed. Current-week questionable fallback is if-active. Missing and Yahoo-zero rows excluded. Differences from Yahoo are not prediction accuracy or estimates of Yahoo injury probability.",
   "before": null,
   "after": {
-    "n": 2362,
-    "higher": 51.778,
-    "meanGap": 0.141,
-    "medianRatio": 1.009
+    "n": 2292,
+    "higher": 52.967,
+    "meanGap": 0.119,
+    "medianRatio": 1.014
   },
   "healthy": {
-    "n": 2011,
-    "higher": 52.163,
-    "meanGap": 0.289,
-    "medianRatio": 1.011
+    "n": 1926,
+    "higher": 54.829,
+    "meanGap": 0.311,
+    "medianRatio": 1.025
   },
   "healthyByPosition": {
     "QB": {
-      "n": 277,
-      "higher": 49.097,
-      "meanGap": -0.009,
+      "n": 287,
+      "higher": 49.826,
+      "meanGap": 0.095,
       "medianRatio": 0.998
     },
     "RB": {
-      "n": 529,
-      "higher": 59.735,
-      "meanGap": 0.956,
-      "medianRatio": 1.072
+      "n": 495,
+      "higher": 62.222,
+      "meanGap": 0.951,
+      "medianRatio": 1.087
     },
     "WR": {
-      "n": 564,
-      "higher": 55.496,
-      "meanGap": 0.244,
-      "medianRatio": 1.028
+      "n": 553,
+      "higher": 57.505,
+      "meanGap": 0.248,
+      "medianRatio": 1.037
     },
     "TE": {
-      "n": 244,
-      "higher": 52.869,
-      "meanGap": 0.527,
-      "medianRatio": 1.023
+      "n": 255,
+      "higher": 60.392,
+      "meanGap": 0.451,
+      "medianRatio": 1.043
     },
     "K": {
-      "n": 176,
-      "higher": 1.136,
-      "meanGap": -1.617,
-      "medianRatio": 0.85
+      "n": 150,
+      "higher": 0.667,
+      "meanGap": -1.537,
+      "medianRatio": 0.854
     },
     "DEF": {
-      "n": 221,
-      "higher": 69.231,
-      "meanGap": 0.438,
-      "medianRatio": 1.066
+      "n": 186,
+      "higher": 70.968,
+      "meanGap": 0.426,
+      "medianRatio": 1.06
     }
   },
   "own": {
-    "n": 177,
-    "higher": 71.186,
-    "meanGap": 1.282,
-    "medianRatio": 1.121
+    "n": 171,
+    "higher": 71.345,
+    "meanGap": 1.197,
+    "medianRatio": 1.097
   },
   "ownCurrent": [
     {
@@ -71,10 +71,10 @@
       "name": "Bryce Young",
       "position": "QB",
       "status": null,
-      "week": 6,
-      "dv": 18.17,
-      "yahoo": 15.71,
-      "gap": 2.460000000000001,
+      "week": 8,
+      "dv": 14.47,
+      "yahoo": 15.78,
+      "gap": -1.3099999999999987,
       "conditional": false
     },
     {
@@ -82,21 +82,21 @@
       "name": "MarShawn Lloyd",
       "position": "RB",
       "status": null,
-      "week": 6,
-      "dv": 8.23,
-      "yahoo": 10.91,
-      "gap": -2.6799999999999997,
+      "week": 8,
+      "dv": 7.27,
+      "yahoo": 8.59,
+      "gap": -1.3200000000000003,
       "conditional": false
     },
     {
       "id": "33991",
       "name": "Breece Hall",
       "position": "RB",
-      "status": "O",
-      "week": 6,
-      "dv": 0,
-      "yahoo": 10.5,
-      "gap": -10.5,
+      "status": "Q",
+      "week": 8,
+      "dv": 14.43,
+      "yahoo": 13.33,
+      "gap": 1.0999999999999996,
       "conditional": false
     },
     {
@@ -104,10 +104,10 @@
       "name": "Puka Nacua",
       "position": "WR",
       "status": null,
-      "week": 6,
-      "dv": 21.25,
-      "yahoo": 19.37,
-      "gap": 1.879999999999999,
+      "week": 8,
+      "dv": 18.45,
+      "yahoo": 16.33,
+      "gap": 2.120000000000001,
       "conditional": false
     },
     {
@@ -115,10 +115,10 @@
       "name": "Michael Wilson",
       "position": "WR",
       "status": null,
-      "week": 6,
-      "dv": 12.73,
-      "yahoo": 11.33,
-      "gap": 1.4000000000000004,
+      "week": 8,
+      "dv": 12.82,
+      "yahoo": 12.09,
+      "gap": 0.7300000000000004,
       "conditional": false
     },
     {
@@ -126,21 +126,10 @@
       "name": "Brock Bowers",
       "position": "TE",
       "status": null,
-      "week": 6,
-      "dv": 15.03,
-      "yahoo": 14.35,
-      "gap": 0.6799999999999997,
-      "conditional": false
-    },
-    {
-      "id": "34095",
-      "name": "Isaiah Likely",
-      "position": "TE",
-      "status": null,
-      "week": 6,
-      "dv": 12.96,
-      "yahoo": 10.6,
-      "gap": 2.360000000000001,
+      "week": 8,
+      "dv": 13.39,
+      "yahoo": 12.61,
+      "gap": 0.7800000000000011,
       "conditional": false
     },
     {
@@ -148,32 +137,76 @@
       "name": "Tony Pollard",
       "position": "RB",
       "status": null,
-      "week": 6,
-      "dv": 12.37,
-      "yahoo": 10.14,
-      "gap": 2.2299999999999986,
+      "week": 8,
+      "dv": 11.96,
+      "yahoo": 9.88,
+      "gap": 2.08,
+      "conditional": false
+    },
+    {
+      "id": "32671",
+      "name": "Joe Burrow",
+      "position": "QB",
+      "status": null,
+      "week": 8,
+      "dv": 21.17,
+      "yahoo": 19.43,
+      "gap": 1.740000000000002,
       "conditional": false
     },
     {
       "id": "34054",
       "name": "Brian Robinson Jr.",
       "position": "RB",
-      "status": null,
-      "week": 6,
-      "dv": 6.68,
-      "yahoo": 5.53,
-      "gap": 1.1499999999999995,
+      "status": "Q",
+      "week": 8,
+      "dv": 5.66,
+      "yahoo": 4.78,
+      "gap": 0.8799999999999999,
       "conditional": false
     },
     {
-      "id": "30346",
-      "name": "Harrison Butker",
+      "id": "31856",
+      "name": "Josh Jacobs",
+      "position": "RB",
+      "status": null,
+      "week": 8,
+      "dv": 14.84,
+      "yahoo": 3.97,
+      "gap": 10.87,
+      "conditional": false
+    },
+    {
+      "id": "40042",
+      "name": "Jordan Addison",
+      "position": "WR",
+      "status": null,
+      "week": 8,
+      "dv": 8.75,
+      "yahoo": 7.72,
+      "gap": 1.0300000000000002,
+      "conditional": false
+    },
+    {
+      "id": "34008",
+      "name": "Alec Pierce",
+      "position": "WR",
+      "status": "IR",
+      "week": 8,
+      "dv": 0,
+      "yahoo": 8.59,
+      "gap": -8.59,
+      "conditional": false
+    },
+    {
+      "id": "33537",
+      "name": "Evan McPherson",
       "position": "K",
       "status": null,
-      "week": 6,
-      "dv": 7.58,
-      "yahoo": 8.24,
-      "gap": -0.6600000000000001,
+      "week": 8,
+      "dv": 6.59,
+      "yahoo": 8.19,
+      "gap": -1.5999999999999996,
       "conditional": false
     },
     {
@@ -181,10 +214,21 @@
       "name": "Chiefs",
       "position": "DEF",
       "status": null,
-      "week": 6,
-      "dv": 8.68,
-      "yahoo": 8.88,
-      "gap": -0.20000000000000107,
+      "week": 8,
+      "dv": 7.21,
+      "yahoo": 6.22,
+      "gap": 0.9900000000000002,
+      "conditional": false
+    },
+    {
+      "id": "100020",
+      "name": "Jets",
+      "position": "DEF",
+      "status": null,
+      "week": 8,
+      "dv": 7.25,
+      "yahoo": 7.14,
+      "gap": 0.11000000000000032,
       "conditional": false
     }
   ]

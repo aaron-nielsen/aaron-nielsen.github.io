@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-21T20:00:24.288Z",
+  "generatedAt": "2026-10-27T19:43:16.697Z",
   "season": 2026,
   "leagueId": "470.l.258793",
-  "throughWeek": 6,
+  "throughWeek": 7,
   "method": "Position-specific fantasy points allowed, adjusted for opposing offenses using other games; six-game neutral prior, league-centered factors capped at +/-10%. Descriptive matchup estimates, not validated injury probabilities.",
   "sources": [
     "https://github.com/nflverse/nflverse-data/releases/tag/stats_player",
@@ -14,27 +14,27 @@
       "team": "ARI",
       "positions": {
         "QB": {
-          "games": 6,
-          "allowedPerGame": 24.1267,
-          "leagueAverage": 17.0489,
+          "games": 7,
+          "allowedPerGame": 24.5629,
+          "leagueAverage": 17.0354,
           "factor": 1.1
         },
         "RB": {
-          "games": 6,
-          "allowedPerGame": 19.7167,
-          "leagueAverage": 19.5898,
-          "factor": 0.9482
+          "games": 7,
+          "allowedPerGame": 21.0714,
+          "leagueAverage": 20.0883,
+          "factor": 0.9722
         },
         "WR": {
-          "games": 6,
-          "allowedPerGame": 30.25,
-          "leagueAverage": 26.5235,
-          "factor": 1.0619
+          "games": 7,
+          "allowedPerGame": 28.8429,
+          "leagueAverage": 26.1036,
+          "factor": 1.0599
         },
         "TE": {
-          "games": 6,
-          "allowedPerGame": 16.2,
-          "leagueAverage": 11.0952,
+          "games": 7,
+          "allowedPerGame": 13.9857,
+          "leagueAverage": 11.2257,
           "factor": 1.1
         }
       }
@@ -43,28 +43,28 @@
       "team": "ATL",
       "positions": {
         "QB": {
-          "games": 6,
-          "allowedPerGame": 19.3633,
-          "leagueAverage": 17.0489,
-          "factor": 1.0354
+          "games": 7,
+          "allowedPerGame": 18.0286,
+          "leagueAverage": 17.0354,
+          "factor": 0.9857
         },
         "RB": {
-          "games": 6,
-          "allowedPerGame": 20.6167,
-          "leagueAverage": 19.5898,
-          "factor": 1.0114
+          "games": 7,
+          "allowedPerGame": 23.7,
+          "leagueAverage": 20.0883,
+          "factor": 1.0889
         },
         "WR": {
-          "games": 6,
-          "allowedPerGame": 29.4167,
-          "leagueAverage": 26.5235,
-          "factor": 1.0233
+          "games": 7,
+          "allowedPerGame": 27.3857,
+          "leagueAverage": 26.1036,
+          "factor": 0.9967
         },
         "TE": {
-          "games": 6,
-          "allowedPerGame": 12.7833,
-          "leagueAverage": 11.0952,
-          "factor": 1.0574
+          "games": 7,
+          "allowedPerGame": 13.0571,
+          "leagueAverage": 11.2257,
+          "factor": 1.0634
         }
       }
     },
@@ -72,28 +72,28 @@
       "team": "BAL",
       "positions": {
         "QB": {
-          "games": 6,
-          "allowedPerGame": 12.86,
-          "leagueAverage": 17.0489,
-          "factor": 0.9486
+          "games": 7,
+          "allowedPerGame": 16.1486,
+          "leagueAverage": 17.0354,
+          "factor": 1.0201
         },
         "RB": {
-          "games": 6,
-          "allowedPerGame": 16.4833,
-          "leagueAverage": 19.5898,
-          "factor": 0.9282
+          "games": 7,
+          "allowedPerGame": 16.4143,
+          "leagueAverage": 20.0883,
+          "factor": 0.9153
         },
         "WR": {
-          "games": 6,
-          "allowedPerGame": 27.4333,
-          "leagueAverage": 26.5235,
-          "factor": 1.036
+          "games": 7,
+          "allowedPerGame": 29.1857,
+          "leagueAverage": 26.1036,
+          "factor": 1.0636
         },
         "TE": {
-          "games": 6,
-          "allowedPerGame": 8.5333,
-          "leagueAverage": 11.0952,
-          "factor": 0.9409
+          "games": 7,
+          "allowedPerGame": 10.2571,
+          "leagueAverage": 11.2257,
+          "factor": 1.0092
         }
       }
     },
@@ -103,26 +103,26 @@
         "QB": {
           "games": 6,
           "allowedPerGame": 25.1633,
-          "leagueAverage": 17.0489,
+          "leagueAverage": 17.0354,
           "factor": 1.1
         },
         "RB": {
           "games": 6,
           "allowedPerGame": 25.0167,
-          "leagueAverage": 19.5898,
+          "leagueAverage": 20.0883,
           "factor": 1.1
         },
         "WR": {
           "games": 6,
           "allowedPerGame": 35.4833,
-          "leagueAverage": 26.5235,
+          "leagueAverage": 26.1036,
           "factor": 1.1
         },
         "TE": {
           "games": 6,
           "allowedPerGame": 12,
-          "leagueAverage": 11.0952,
-          "factor": 0.9751
+          "leagueAverage": 11.2257,
+          "factor": 0.9657
         }
       }
     },
@@ -130,28 +130,28 @@
       "team": "CAR",
       "positions": {
         "QB": {
-          "games": 5,
-          "allowedPerGame": 18,
-          "leagueAverage": 17.0489,
-          "factor": 1.0673
+          "games": 6,
+          "allowedPerGame": 16.3933,
+          "leagueAverage": 17.0354,
+          "factor": 1.0295
         },
         "RB": {
-          "games": 5,
-          "allowedPerGame": 23.28,
-          "leagueAverage": 19.5898,
-          "factor": 1.0374
+          "games": 6,
+          "allowedPerGame": 26.65,
+          "leagueAverage": 20.0883,
+          "factor": 1.1
         },
         "WR": {
-          "games": 5,
-          "allowedPerGame": 23.36,
-          "leagueAverage": 26.5235,
-          "factor": 0.9548
+          "games": 6,
+          "allowedPerGame": 22.2,
+          "leagueAverage": 26.1036,
+          "factor": 0.9277
         },
         "TE": {
-          "games": 5,
-          "allowedPerGame": 13.16,
-          "leagueAverage": 11.0952,
-          "factor": 1.1
+          "games": 6,
+          "allowedPerGame": 10.9667,
+          "leagueAverage": 11.2257,
+          "factor": 1.0703
         }
       }
     },
@@ -159,28 +159,28 @@
       "team": "CHI",
       "positions": {
         "QB": {
-          "games": 6,
-          "allowedPerGame": 16.9533,
-          "leagueAverage": 17.0489,
-          "factor": 1.0445
+          "games": 7,
+          "allowedPerGame": 18.5943,
+          "leagueAverage": 17.0354,
+          "factor": 1.0797
         },
         "RB": {
-          "games": 6,
-          "allowedPerGame": 15.7667,
-          "leagueAverage": 19.5898,
-          "factor": 0.9248
+          "games": 7,
+          "allowedPerGame": 17.0286,
+          "leagueAverage": 20.0883,
+          "factor": 0.9524
         },
         "WR": {
-          "games": 6,
-          "allowedPerGame": 26.9,
-          "leagueAverage": 26.5235,
-          "factor": 0.999
+          "games": 7,
+          "allowedPerGame": 24.8,
+          "leagueAverage": 26.1036,
+          "factor": 0.9671
         },
         "TE": {
-          "games": 6,
-          "allowedPerGame": 8.5167,
-          "leagueAverage": 11.0952,
-          "factor": 0.9165
+          "games": 7,
+          "allowedPerGame": 10.6857,
+          "leagueAverage": 11.2257,
+          "factor": 0.9734
         }
       }
     },
@@ -188,27 +188,27 @@
       "team": "CIN",
       "positions": {
         "QB": {
-          "games": 5,
-          "allowedPerGame": 15.86,
-          "leagueAverage": 17.0489,
-          "factor": 1.0045
+          "games": 6,
+          "allowedPerGame": 15.2367,
+          "leagueAverage": 17.0354,
+          "factor": 0.9582
         },
         "RB": {
-          "games": 5,
-          "allowedPerGame": 17.02,
-          "leagueAverage": 19.5898,
-          "factor": 0.9678
+          "games": 6,
+          "allowedPerGame": 16.2,
+          "leagueAverage": 20.0883,
+          "factor": 0.9208
         },
         "WR": {
-          "games": 5,
-          "allowedPerGame": 24.38,
-          "leagueAverage": 26.5235,
-          "factor": 0.9641
+          "games": 6,
+          "allowedPerGame": 25.9833,
+          "leagueAverage": 26.1036,
+          "factor": 0.9976
         },
         "TE": {
-          "games": 5,
-          "allowedPerGame": 12.64,
-          "leagueAverage": 11.0952,
+          "games": 6,
+          "allowedPerGame": 11.9167,
+          "leagueAverage": 11.2257,
           "factor": 1.1
         }
       }
@@ -217,28 +217,28 @@
       "team": "CLE",
       "positions": {
         "QB": {
-          "games": 6,
-          "allowedPerGame": 15.9933,
-          "leagueAverage": 17.0489,
-          "factor": 0.9642
+          "games": 7,
+          "allowedPerGame": 14.2429,
+          "leagueAverage": 17.0354,
+          "factor": 0.937
         },
         "RB": {
-          "games": 6,
-          "allowedPerGame": 14.5667,
-          "leagueAverage": 19.5898,
-          "factor": 0.9022
+          "games": 7,
+          "allowedPerGame": 17.7571,
+          "leagueAverage": 20.0883,
+          "factor": 0.9495
         },
         "WR": {
-          "games": 6,
-          "allowedPerGame": 28.1167,
-          "leagueAverage": 26.5235,
-          "factor": 1.0218
+          "games": 7,
+          "allowedPerGame": 26.6714,
+          "leagueAverage": 26.1036,
+          "factor": 1.0158
         },
         "TE": {
-          "games": 6,
-          "allowedPerGame": 12.2,
-          "leagueAverage": 11.0952,
-          "factor": 1.0657
+          "games": 7,
+          "allowedPerGame": 11.1429,
+          "leagueAverage": 11.2257,
+          "factor": 1.0527
         }
       }
     },
@@ -246,28 +246,28 @@
       "team": "DAL",
       "positions": {
         "QB": {
-          "games": 6,
-          "allowedPerGame": 23.45,
-          "leagueAverage": 17.0489,
+          "games": 7,
+          "allowedPerGame": 21.4629,
+          "leagueAverage": 17.0354,
           "factor": 1.1
         },
         "RB": {
-          "games": 6,
-          "allowedPerGame": 21.6833,
-          "leagueAverage": 19.5898,
+          "games": 7,
+          "allowedPerGame": 22.9143,
+          "leagueAverage": 20.0883,
           "factor": 1.1
         },
         "WR": {
-          "games": 6,
-          "allowedPerGame": 30.6167,
-          "leagueAverage": 26.5235,
-          "factor": 1.0647
+          "games": 7,
+          "allowedPerGame": 29.8143,
+          "leagueAverage": 26.1036,
+          "factor": 1.0586
         },
         "TE": {
-          "games": 6,
-          "allowedPerGame": 10.2167,
-          "leagueAverage": 11.0952,
-          "factor": 0.9967
+          "games": 7,
+          "allowedPerGame": 9.8,
+          "leagueAverage": 11.2257,
+          "factor": 1.002
         }
       }
     },
@@ -275,28 +275,28 @@
       "team": "DEN",
       "positions": {
         "QB": {
-          "games": 6,
-          "allowedPerGame": 13.1,
-          "leagueAverage": 17.0489,
-          "factor": 0.9099
+          "games": 7,
+          "allowedPerGame": 13.44,
+          "leagueAverage": 17.0354,
+          "factor": 0.9051
         },
         "RB": {
-          "games": 6,
-          "allowedPerGame": 22.35,
-          "leagueAverage": 19.5898,
-          "factor": 1.0157
+          "games": 7,
+          "allowedPerGame": 21.1857,
+          "leagueAverage": 20.0883,
+          "factor": 0.9963
         },
         "WR": {
-          "games": 6,
-          "allowedPerGame": 23.4167,
-          "leagueAverage": 26.5235,
-          "factor": 0.9141
+          "games": 7,
+          "allowedPerGame": 22.2143,
+          "leagueAverage": 26.1036,
+          "factor": 0.9168
         },
         "TE": {
-          "games": 6,
-          "allowedPerGame": 10.9833,
-          "leagueAverage": 11.0952,
-          "factor": 1.0136
+          "games": 7,
+          "allowedPerGame": 13.0286,
+          "leagueAverage": 11.2257,
+          "factor": 1.0569
         }
       }
     },
@@ -304,27 +304,27 @@
       "team": "DET",
       "positions": {
         "QB": {
-          "games": 5,
-          "allowedPerGame": 28.66,
-          "leagueAverage": 17.0489,
+          "games": 6,
+          "allowedPerGame": 27.0433,
+          "leagueAverage": 17.0354,
           "factor": 1.1
         },
         "RB": {
-          "games": 5,
-          "allowedPerGame": 16.76,
-          "leagueAverage": 19.5898,
-          "factor": 0.9399
+          "games": 6,
+          "allowedPerGame": 17.65,
+          "leagueAverage": 20.0883,
+          "factor": 0.9779
         },
         "WR": {
-          "games": 5,
-          "allowedPerGame": 32.976,
-          "leagueAverage": 26.5235,
-          "factor": 1.1
+          "games": 6,
+          "allowedPerGame": 31.2467,
+          "leagueAverage": 26.1036,
+          "factor": 1.0961
         },
         "TE": {
-          "games": 5,
-          "allowedPerGame": 26.8,
-          "leagueAverage": 11.0952,
+          "games": 6,
+          "allowedPerGame": 24.7,
+          "leagueAverage": 11.2257,
           "factor": 1.1
         }
       }
@@ -333,28 +333,28 @@
       "team": "GB",
       "positions": {
         "QB": {
-          "games": 6,
-          "allowedPerGame": 10.1333,
-          "leagueAverage": 17.0489,
-          "factor": 0.9099
+          "games": 7,
+          "allowedPerGame": 11.9743,
+          "leagueAverage": 17.0354,
+          "factor": 0.9051
         },
         "RB": {
-          "games": 6,
-          "allowedPerGame": 24.65,
-          "leagueAverage": 19.5898,
-          "factor": 1.1
+          "games": 7,
+          "allowedPerGame": 23.6,
+          "leagueAverage": 20.0883,
+          "factor": 1.0584
         },
         "WR": {
-          "games": 6,
-          "allowedPerGame": 25.6333,
-          "leagueAverage": 26.5235,
-          "factor": 0.9954
+          "games": 7,
+          "allowedPerGame": 28.3714,
+          "leagueAverage": 26.1036,
+          "factor": 1.0446
         },
         "TE": {
-          "games": 6,
-          "allowedPerGame": 7.6333,
-          "leagueAverage": 11.0952,
-          "factor": 0.9165
+          "games": 7,
+          "allowedPerGame": 7,
+          "leagueAverage": 11.2257,
+          "factor": 0.9166
         }
       }
     },
@@ -362,28 +362,28 @@
       "team": "HOU",
       "positions": {
         "QB": {
-          "games": 6,
-          "allowedPerGame": 18.8633,
-          "leagueAverage": 17.0489,
-          "factor": 1.0472
+          "games": 7,
+          "allowedPerGame": 18.1086,
+          "leagueAverage": 17.0354,
+          "factor": 1.0238
         },
         "RB": {
-          "games": 6,
-          "allowedPerGame": 17.1333,
-          "leagueAverage": 19.5898,
-          "factor": 0.9515
+          "games": 7,
+          "allowedPerGame": 20.3714,
+          "leagueAverage": 20.0883,
+          "factor": 1.0288
         },
         "WR": {
-          "games": 6,
-          "allowedPerGame": 31.3,
-          "leagueAverage": 26.5235,
-          "factor": 1.075
+          "games": 7,
+          "allowedPerGame": 30.5571,
+          "leagueAverage": 26.1036,
+          "factor": 1.0765
         },
         "TE": {
-          "games": 6,
-          "allowedPerGame": 8.1333,
-          "leagueAverage": 11.0952,
-          "factor": 0.9165
+          "games": 7,
+          "allowedPerGame": 7.7714,
+          "leagueAverage": 11.2257,
+          "factor": 0.9166
         }
       }
     },
@@ -391,28 +391,28 @@
       "team": "IND",
       "positions": {
         "QB": {
-          "games": 6,
-          "allowedPerGame": 20.0967,
-          "leagueAverage": 17.0489,
-          "factor": 1.0821
+          "games": 7,
+          "allowedPerGame": 19.0686,
+          "leagueAverage": 17.0354,
+          "factor": 1.0879
         },
         "RB": {
-          "games": 6,
-          "allowedPerGame": 22.0167,
-          "leagueAverage": 19.5898,
-          "factor": 1.078
+          "games": 7,
+          "allowedPerGame": 20.2857,
+          "leagueAverage": 20.0883,
+          "factor": 1.0394
         },
         "WR": {
-          "games": 6,
-          "allowedPerGame": 25.5833,
-          "leagueAverage": 26.5235,
-          "factor": 0.9748
+          "games": 7,
+          "allowedPerGame": 23.9429,
+          "leagueAverage": 26.1036,
+          "factor": 0.9661
         },
         "TE": {
-          "games": 6,
-          "allowedPerGame": 10.85,
-          "leagueAverage": 11.0952,
-          "factor": 1.0346
+          "games": 7,
+          "allowedPerGame": 11.2571,
+          "leagueAverage": 11.2257,
+          "factor": 1.0609
         }
       }
     },
@@ -422,26 +422,26 @@
         "QB": {
           "games": 6,
           "allowedPerGame": 15.1633,
-          "leagueAverage": 17.0489,
-          "factor": 0.9506
+          "leagueAverage": 17.0354,
+          "factor": 0.9276
         },
         "RB": {
           "games": 6,
           "allowedPerGame": 14.7333,
-          "leagueAverage": 19.5898,
-          "factor": 0.9288
+          "leagueAverage": 20.0883,
+          "factor": 0.9147
         },
         "WR": {
           "games": 6,
           "allowedPerGame": 31.54,
-          "leagueAverage": 26.5235,
+          "leagueAverage": 26.1036,
           "factor": 1.1
         },
         "TE": {
           "games": 6,
           "allowedPerGame": 9.7333,
-          "leagueAverage": 11.0952,
-          "factor": 0.9704
+          "leagueAverage": 11.2257,
+          "factor": 0.9623
         }
       }
     },
@@ -449,27 +449,27 @@
       "team": "KC",
       "positions": {
         "QB": {
-          "games": 5,
-          "allowedPerGame": 11.04,
-          "leagueAverage": 17.0489,
-          "factor": 0.9293
+          "games": 6,
+          "allowedPerGame": 11.6967,
+          "leagueAverage": 17.0354,
+          "factor": 0.916
         },
         "RB": {
-          "games": 5,
-          "allowedPerGame": 16.44,
-          "leagueAverage": 19.5898,
-          "factor": 0.9265
+          "games": 6,
+          "allowedPerGame": 17.3,
+          "leagueAverage": 20.0883,
+          "factor": 0.9402
         },
         "WR": {
-          "games": 5,
-          "allowedPerGame": 16.48,
-          "leagueAverage": 26.5235,
-          "factor": 0.9018
+          "games": 6,
+          "allowedPerGame": 18.8833,
+          "leagueAverage": 26.1036,
+          "factor": 0.9003
         },
         "TE": {
-          "games": 5,
-          "allowedPerGame": 16.08,
-          "leagueAverage": 11.0952,
+          "games": 6,
+          "allowedPerGame": 14.8667,
+          "leagueAverage": 11.2257,
           "factor": 1.1
         }
       }
@@ -478,28 +478,28 @@
       "team": "LA",
       "positions": {
         "QB": {
-          "games": 6,
-          "allowedPerGame": 16.0867,
-          "leagueAverage": 17.0489,
-          "factor": 0.9461
+          "games": 7,
+          "allowedPerGame": 16.9886,
+          "leagueAverage": 17.0354,
+          "factor": 0.9636
         },
         "RB": {
-          "games": 6,
-          "allowedPerGame": 17.65,
-          "leagueAverage": 19.5898,
-          "factor": 0.9676
+          "games": 7,
+          "allowedPerGame": 18.2857,
+          "leagueAverage": 20.0883,
+          "factor": 0.9513
         },
         "WR": {
-          "games": 6,
-          "allowedPerGame": 22.0333,
-          "leagueAverage": 26.5235,
-          "factor": 0.9475
+          "games": 7,
+          "allowedPerGame": 22.0429,
+          "leagueAverage": 26.1036,
+          "factor": 0.9559
         },
         "TE": {
-          "games": 6,
-          "allowedPerGame": 5.9833,
-          "leagueAverage": 11.0952,
-          "factor": 0.9165
+          "games": 7,
+          "allowedPerGame": 7.4571,
+          "leagueAverage": 11.2257,
+          "factor": 0.9166
         }
       }
     },
@@ -509,26 +509,26 @@
         "QB": {
           "games": 6,
           "allowedPerGame": 14.5633,
-          "leagueAverage": 17.0489,
-          "factor": 0.9099
+          "leagueAverage": 17.0354,
+          "factor": 0.9051
         },
         "RB": {
           "games": 6,
           "allowedPerGame": 21.9667,
-          "leagueAverage": 19.5898,
-          "factor": 1.0424
+          "leagueAverage": 20.0883,
+          "factor": 1.044
         },
         "WR": {
           "games": 6,
           "allowedPerGame": 25.2,
-          "leagueAverage": 26.5235,
-          "factor": 1.0015
+          "leagueAverage": 26.1036,
+          "factor": 1.0137
         },
         "TE": {
           "games": 6,
           "allowedPerGame": 9.0833,
-          "leagueAverage": 11.0952,
-          "factor": 0.9165
+          "leagueAverage": 11.2257,
+          "factor": 0.9166
         }
       }
     },
@@ -536,27 +536,27 @@
       "team": "LV",
       "positions": {
         "QB": {
-          "games": 6,
-          "allowedPerGame": 22.3567,
-          "leagueAverage": 17.0489,
+          "games": 7,
+          "allowedPerGame": 22.2343,
+          "leagueAverage": 17.0354,
           "factor": 1.1
         },
         "RB": {
-          "games": 6,
-          "allowedPerGame": 22.3167,
-          "leagueAverage": 19.5898,
-          "factor": 1.0576
+          "games": 7,
+          "allowedPerGame": 24.2286,
+          "leagueAverage": 20.0883,
+          "factor": 1.1
         },
         "WR": {
-          "games": 6,
-          "allowedPerGame": 28.0833,
-          "leagueAverage": 26.5235,
-          "factor": 1.0635
+          "games": 7,
+          "allowedPerGame": 26.9,
+          "leagueAverage": 26.1036,
+          "factor": 1.0392
         },
         "TE": {
-          "games": 6,
-          "allowedPerGame": 14.7167,
-          "leagueAverage": 11.0952,
+          "games": 7,
+          "allowedPerGame": 16.2857,
+          "leagueAverage": 11.2257,
           "factor": 1.1
         }
       }
@@ -565,27 +565,27 @@
       "team": "MIA",
       "positions": {
         "QB": {
-          "games": 5,
-          "allowedPerGame": 21.82,
-          "leagueAverage": 17.0489,
-          "factor": 1.0913
+          "games": 6,
+          "allowedPerGame": 22.2633,
+          "leagueAverage": 17.0354,
+          "factor": 1.1
         },
         "RB": {
-          "games": 5,
-          "allowedPerGame": 26.18,
-          "leagueAverage": 19.5898,
+          "games": 6,
+          "allowedPerGame": 25.6833,
+          "leagueAverage": 20.0883,
           "factor": 1.1
         },
         "WR": {
-          "games": 5,
-          "allowedPerGame": 18.28,
-          "leagueAverage": 26.5235,
-          "factor": 0.9018
+          "games": 6,
+          "allowedPerGame": 19.1667,
+          "leagueAverage": 26.1036,
+          "factor": 0.9003
         },
         "TE": {
-          "games": 5,
-          "allowedPerGame": 16.12,
-          "leagueAverage": 11.0952,
+          "games": 6,
+          "allowedPerGame": 17.1333,
+          "leagueAverage": 11.2257,
           "factor": 1.1
         }
       }
@@ -594,28 +594,28 @@
       "team": "MIN",
       "positions": {
         "QB": {
-          "games": 5,
-          "allowedPerGame": 5.776,
-          "leagueAverage": 17.0489,
-          "factor": 0.9099
+          "games": 6,
+          "allowedPerGame": 4.5833,
+          "leagueAverage": 17.0354,
+          "factor": 0.9051
         },
         "RB": {
-          "games": 5,
-          "allowedPerGame": 13.08,
-          "leagueAverage": 19.5898,
-          "factor": 0.9022
+          "games": 6,
+          "allowedPerGame": 14.7833,
+          "leagueAverage": 20.0883,
+          "factor": 0.9067
         },
         "WR": {
-          "games": 5,
-          "allowedPerGame": 22.04,
-          "leagueAverage": 26.5235,
-          "factor": 0.9124
+          "games": 6,
+          "allowedPerGame": 20.35,
+          "leagueAverage": 26.1036,
+          "factor": 0.9003
         },
         "TE": {
-          "games": 5,
-          "allowedPerGame": 6.02,
-          "leagueAverage": 11.0952,
-          "factor": 0.9165
+          "games": 6,
+          "allowedPerGame": 5.3833,
+          "leagueAverage": 11.2257,
+          "factor": 0.9166
         }
       }
     },
@@ -623,28 +623,28 @@
       "team": "NE",
       "positions": {
         "QB": {
-          "games": 6,
-          "allowedPerGame": 13.6333,
-          "leagueAverage": 17.0489,
-          "factor": 0.9099
+          "games": 7,
+          "allowedPerGame": 14.9886,
+          "leagueAverage": 17.0354,
+          "factor": 0.9051
         },
         "RB": {
-          "games": 6,
-          "allowedPerGame": 18.4,
-          "leagueAverage": 19.5898,
-          "factor": 0.9705
+          "games": 7,
+          "allowedPerGame": 18.3857,
+          "leagueAverage": 20.0883,
+          "factor": 0.9344
         },
         "WR": {
-          "games": 6,
-          "allowedPerGame": 26.15,
-          "leagueAverage": 26.5235,
-          "factor": 0.9789
+          "games": 7,
+          "allowedPerGame": 26.7857,
+          "leagueAverage": 26.1036,
+          "factor": 1.0009
         },
         "TE": {
-          "games": 6,
-          "allowedPerGame": 8.1,
-          "leagueAverage": 11.0952,
-          "factor": 0.9165
+          "games": 7,
+          "allowedPerGame": 9.9,
+          "leagueAverage": 11.2257,
+          "factor": 0.9166
         }
       }
     },
@@ -652,28 +652,28 @@
       "team": "NO",
       "positions": {
         "QB": {
-          "games": 6,
-          "allowedPerGame": 17.7067,
-          "leagueAverage": 17.0489,
-          "factor": 1.0197
+          "games": 7,
+          "allowedPerGame": 16.9029,
+          "leagueAverage": 17.0354,
+          "factor": 0.9901
         },
         "RB": {
-          "games": 6,
-          "allowedPerGame": 28.7333,
-          "leagueAverage": 19.5898,
+          "games": 7,
+          "allowedPerGame": 28.4571,
+          "leagueAverage": 20.0883,
           "factor": 1.1
         },
         "WR": {
-          "games": 6,
-          "allowedPerGame": 26.7,
-          "leagueAverage": 26.5235,
-          "factor": 1.0447
+          "games": 7,
+          "allowedPerGame": 24.9143,
+          "leagueAverage": 26.1036,
+          "factor": 1.0039
         },
         "TE": {
-          "games": 6,
-          "allowedPerGame": 14.0833,
-          "leagueAverage": 11.0952,
-          "factor": 1.0698
+          "games": 7,
+          "allowedPerGame": 13.4857,
+          "leagueAverage": 11.2257,
+          "factor": 1.0434
         }
       }
     },
@@ -681,28 +681,28 @@
       "team": "NYG",
       "positions": {
         "QB": {
-          "games": 6,
-          "allowedPerGame": 21.4133,
-          "leagueAverage": 17.0489,
+          "games": 7,
+          "allowedPerGame": 20.8571,
+          "leagueAverage": 17.0354,
           "factor": 1.1
         },
         "RB": {
-          "games": 6,
-          "allowedPerGame": 20.65,
-          "leagueAverage": 19.5898,
-          "factor": 1.0673
+          "games": 7,
+          "allowedPerGame": 18.9286,
+          "leagueAverage": 20.0883,
+          "factor": 1.011
         },
         "WR": {
-          "games": 6,
-          "allowedPerGame": 25.65,
-          "leagueAverage": 26.5235,
-          "factor": 0.9582
+          "games": 7,
+          "allowedPerGame": 25.9571,
+          "leagueAverage": 26.1036,
+          "factor": 0.9588
         },
         "TE": {
-          "games": 6,
-          "allowedPerGame": 9.4,
-          "leagueAverage": 11.0952,
-          "factor": 0.9377
+          "games": 7,
+          "allowedPerGame": 9.1143,
+          "leagueAverage": 11.2257,
+          "factor": 0.9166
         }
       }
     },
@@ -710,28 +710,28 @@
       "team": "NYJ",
       "positions": {
         "QB": {
-          "games": 6,
-          "allowedPerGame": 15.28,
-          "leagueAverage": 17.0489,
-          "factor": 0.9514
+          "games": 7,
+          "allowedPerGame": 17.1,
+          "leagueAverage": 17.0354,
+          "factor": 1.0153
         },
         "RB": {
-          "games": 6,
-          "allowedPerGame": 21.0167,
-          "leagueAverage": 19.5898,
-          "factor": 1.0454
+          "games": 7,
+          "allowedPerGame": 20.5286,
+          "leagueAverage": 20.0883,
+          "factor": 1.0312
         },
         "WR": {
-          "games": 6,
-          "allowedPerGame": 25.5,
-          "leagueAverage": 26.5235,
-          "factor": 0.9577
+          "games": 7,
+          "allowedPerGame": 25.8143,
+          "leagueAverage": 26.1036,
+          "factor": 0.9801
         },
         "TE": {
-          "games": 6,
-          "allowedPerGame": 7.2833,
-          "leagueAverage": 11.0952,
-          "factor": 0.9165
+          "games": 7,
+          "allowedPerGame": 8.0143,
+          "leagueAverage": 11.2257,
+          "factor": 0.9205
         }
       }
     },
@@ -739,28 +739,28 @@
       "team": "PHI",
       "positions": {
         "QB": {
-          "games": 6,
-          "allowedPerGame": 19.7367,
-          "leagueAverage": 17.0489,
-          "factor": 1.0651
+          "games": 7,
+          "allowedPerGame": 20.8143,
+          "leagueAverage": 17.0354,
+          "factor": 1.1
         },
         "RB": {
-          "games": 6,
-          "allowedPerGame": 18.55,
-          "leagueAverage": 19.5898,
-          "factor": 0.9472
+          "games": 7,
+          "allowedPerGame": 19.5571,
+          "leagueAverage": 20.0883,
+          "factor": 0.9681
         },
         "WR": {
-          "games": 6,
-          "allowedPerGame": 31.7667,
-          "leagueAverage": 26.5235,
-          "factor": 1.0752
+          "games": 7,
+          "allowedPerGame": 33.6,
+          "leagueAverage": 26.1036,
+          "factor": 1.1
         },
         "TE": {
-          "games": 6,
-          "allowedPerGame": 9.2667,
-          "leagueAverage": 11.0952,
-          "factor": 0.9845
+          "games": 7,
+          "allowedPerGame": 8.2429,
+          "leagueAverage": 11.2257,
+          "factor": 0.9166
         }
       }
     },
@@ -768,28 +768,28 @@
       "team": "PIT",
       "positions": {
         "QB": {
-          "games": 6,
-          "allowedPerGame": 10.83,
-          "leagueAverage": 17.0489,
-          "factor": 0.9099
+          "games": 7,
+          "allowedPerGame": 11.1143,
+          "leagueAverage": 17.0354,
+          "factor": 0.9051
         },
         "RB": {
-          "games": 6,
-          "allowedPerGame": 18.45,
-          "leagueAverage": 19.5898,
-          "factor": 0.9706
+          "games": 7,
+          "allowedPerGame": 17.8143,
+          "leagueAverage": 20.0883,
+          "factor": 0.9383
         },
         "WR": {
-          "games": 6,
-          "allowedPerGame": 23.1333,
-          "leagueAverage": 26.5235,
-          "factor": 0.9532
+          "games": 7,
+          "allowedPerGame": 24.3857,
+          "leagueAverage": 26.1036,
+          "factor": 0.98
         },
         "TE": {
-          "games": 6,
-          "allowedPerGame": 9.65,
-          "leagueAverage": 11.0952,
-          "factor": 0.9769
+          "games": 7,
+          "allowedPerGame": 8.8429,
+          "leagueAverage": 11.2257,
+          "factor": 0.9166
         }
       }
     },
@@ -797,28 +797,28 @@
       "team": "SEA",
       "positions": {
         "QB": {
-          "games": 6,
-          "allowedPerGame": 9.99,
-          "leagueAverage": 17.0489,
-          "factor": 0.9099
+          "games": 7,
+          "allowedPerGame": 9.1343,
+          "leagueAverage": 17.0354,
+          "factor": 0.9051
         },
         "RB": {
-          "games": 6,
-          "allowedPerGame": 19.4333,
-          "leagueAverage": 19.5898,
-          "factor": 1.011
+          "games": 7,
+          "allowedPerGame": 18.1429,
+          "leagueAverage": 20.0883,
+          "factor": 0.9357
         },
         "WR": {
-          "games": 6,
-          "allowedPerGame": 18.7167,
-          "leagueAverage": 26.5235,
-          "factor": 0.9018
+          "games": 7,
+          "allowedPerGame": 17.0286,
+          "leagueAverage": 26.1036,
+          "factor": 0.9003
         },
         "TE": {
-          "games": 6,
-          "allowedPerGame": 6.75,
-          "leagueAverage": 11.0952,
-          "factor": 0.9165
+          "games": 7,
+          "allowedPerGame": 7.5429,
+          "leagueAverage": 11.2257,
+          "factor": 0.9166
         }
       }
     },
@@ -826,28 +826,28 @@
       "team": "SF",
       "positions": {
         "QB": {
-          "games": 6,
-          "allowedPerGame": 13.7433,
-          "leagueAverage": 17.0489,
-          "factor": 0.931
+          "games": 7,
+          "allowedPerGame": 15.5543,
+          "leagueAverage": 17.0354,
+          "factor": 0.9804
         },
         "RB": {
-          "games": 6,
-          "allowedPerGame": 20.15,
-          "leagueAverage": 19.5898,
-          "factor": 1.0431
+          "games": 7,
+          "allowedPerGame": 19.8429,
+          "leagueAverage": 20.0883,
+          "factor": 1.0003
         },
         "WR": {
-          "games": 6,
-          "allowedPerGame": 24.6167,
-          "leagueAverage": 26.5235,
-          "factor": 0.9683
+          "games": 7,
+          "allowedPerGame": 23.8714,
+          "leagueAverage": 26.1036,
+          "factor": 0.9662
         },
         "TE": {
-          "games": 6,
-          "allowedPerGame": 6.85,
-          "leagueAverage": 11.0952,
-          "factor": 0.9165
+          "games": 7,
+          "allowedPerGame": 9.1143,
+          "leagueAverage": 11.2257,
+          "factor": 0.9365
         }
       }
     },
@@ -855,28 +855,28 @@
       "team": "TB",
       "positions": {
         "QB": {
-          "games": 6,
-          "allowedPerGame": 14.5067,
-          "leagueAverage": 17.0489,
-          "factor": 0.929
+          "games": 7,
+          "allowedPerGame": 13.2629,
+          "leagueAverage": 17.0354,
+          "factor": 0.9051
         },
         "RB": {
-          "games": 6,
-          "allowedPerGame": 14.75,
-          "leagueAverage": 19.5898,
-          "factor": 0.9235
+          "games": 7,
+          "allowedPerGame": 15.4714,
+          "leagueAverage": 20.0883,
+          "factor": 0.9176
         },
         "WR": {
-          "games": 6,
-          "allowedPerGame": 25.9833,
-          "leagueAverage": 26.5235,
-          "factor": 0.9583
+          "games": 7,
+          "allowedPerGame": 23.7571,
+          "leagueAverage": 26.1036,
+          "factor": 0.9023
         },
         "TE": {
-          "games": 6,
-          "allowedPerGame": 12.6667,
-          "leagueAverage": 11.0952,
-          "factor": 1.0952
+          "games": 7,
+          "allowedPerGame": 13.3857,
+          "leagueAverage": 11.2257,
+          "factor": 1.1
         }
       }
     },
@@ -884,28 +884,28 @@
       "team": "TEN",
       "positions": {
         "QB": {
-          "games": 6,
-          "allowedPerGame": 13.5467,
-          "leagueAverage": 17.0489,
-          "factor": 0.923
+          "games": 7,
+          "allowedPerGame": 13.9286,
+          "leagueAverage": 17.0354,
+          "factor": 0.9447
         },
         "RB": {
-          "games": 6,
-          "allowedPerGame": 18.6333,
-          "leagueAverage": 19.5898,
-          "factor": 1.0149
+          "games": 7,
+          "allowedPerGame": 20.5571,
+          "leagueAverage": 20.0883,
+          "factor": 1.0614
         },
         "WR": {
-          "games": 6,
-          "allowedPerGame": 28.9667,
-          "leagueAverage": 26.5235,
-          "factor": 1.0632
+          "games": 7,
+          "allowedPerGame": 28.7571,
+          "leagueAverage": 26.1036,
+          "factor": 1.0766
         },
         "TE": {
-          "games": 6,
-          "allowedPerGame": 8.2167,
-          "leagueAverage": 11.0952,
-          "factor": 0.9165
+          "games": 7,
+          "allowedPerGame": 8.7714,
+          "leagueAverage": 11.2257,
+          "factor": 0.9166
         }
       }
     },
@@ -915,25 +915,25 @@
         "QB": {
           "games": 6,
           "allowedPerGame": 25.56,
-          "leagueAverage": 17.0489,
+          "leagueAverage": 17.0354,
           "factor": 1.1
         },
         "RB": {
           "games": 6,
           "allowedPerGame": 17.8833,
-          "leagueAverage": 19.5898,
-          "factor": 0.9763
+          "leagueAverage": 20.0883,
+          "factor": 0.9453
         },
         "WR": {
           "games": 6,
           "allowedPerGame": 29.4433,
-          "leagueAverage": 26.5235,
-          "factor": 1.0273
+          "leagueAverage": 26.1036,
+          "factor": 1.0342
         },
         "TE": {
           "games": 6,
           "allowedPerGame": 18.4333,
-          "leagueAverage": 11.0952,
+          "leagueAverage": 11.2257,
           "factor": 1.1
         }
       }

@@ -1,0 +1,33 @@
+{
+  "week": 8,
+  "teamId": "6",
+  "leagueId": "470.l.1699881",
+  "reviewedAt": "2026-10-27",
+  "players": [
+    {
+      "id": "42730",
+      "label": "First claim",
+      "reason": "Jonah Coleman over RJ Harvey: Coleman led Denver\u2019s RB snaps on his return. This upgrades the same backfield exposure without sacrificing a starting RB.",
+      "source": "https://www.fantasyguru.com/broncos-rookie-jonah-coleman-leads-broncos-rbs-with-30-snaps-in-return-from-ir"
+    },
+    {
+      "id": "42652",
+      "label": "Fallback claim",
+      "reason": "Omar Cooper Jr. is the WR upside alternative if Coleman is unavailable. Use the same Harvey drop so only one claim fills that spot.",
+      "source": "https://www.rotoballer.com/week-8-waiver-wire-pickups-omar-cooper-jr-antonio-williams-caleb-douglas-fantasy-football-outlooks/1976925"
+    },
+    {
+      "id": "33394",
+      "label": "Watch health",
+      "reason": "Jaylen Waddle is a longer-term alternative; check his chest injury before using a claim.",
+      "source": "https://sports.yahoo.com/articles/serious-jaylen-waddles-chest-injury-012647969.html"
+    },
+    {
+      "id": "40908",
+      "label": "Watch health",
+      "reason": "Ladd McConkey is another upside alternative, subject to concussion clearance.",
+      "source": "https://www.footballguys.com/injuries/weekly-report"
+    }
+  ],
+  "rosterMove": "Keep Steelers and Shrader. Vikings are included in two pending trade offers; do not drop them without reconsidering those offers. Available targets currently show waivers, with no confirmed clearing time."
+}

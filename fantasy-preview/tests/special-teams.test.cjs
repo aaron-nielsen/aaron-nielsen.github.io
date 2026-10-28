@@ -83,9 +83,10 @@ for(const entry of [{slug:'',user:'7',id:'470.l.258793',n:14},
  console.log((entry.slug||'csu')+': '+rosters.teams.length+' complete nine-starter teams, '+specials.length+' K/DST projections');
 }
 const id='100020',a=byLeague.csu.byId.get(id),b=byLeague['nebraska/'].byId.get(id);
-assert.ok(a && b && a.weeks.find(w=>w.week===7).points!==b.weeks.find(w=>w.week===7).points,
+const comparisonWeek=Math.max(Number(json('data/week.json').week),Number(json('data/nebraska/week.json').week));
+assert.ok(a && b && a.weeks.find(w=>w.week===comparisonWeek).points!==b.weeks.find(w=>w.week===comparisonWeek).points,
   'Defensive scoring should change when changing leagues');
 const kId='33537',c=byLeague.csu.byId.get(kId),d=byLeague['nebraska/'].byId.get(kId);
-assert.ok(c && d && c.weeks.find(w=>w.week===7).points!==d.weeks.find(w=>w.week===7).points,
+assert.ok(c && d && c.weeks.find(w=>w.week===comparisonWeek).points!==d.weeks.find(w=>w.week===comparisonWeek).points,
   'Kicker scoring should change with Yahoo scoring coefficients');
 console.log('Both leagues passed: matchup, defense, kicker, scoring and no-leakage checks.');
