@@ -132,3 +132,5 @@ body[data-league="nebraska"] #tradeCount{display:none}
 .trade-marginal-heading{font-size:10px;color:#8a765f;margin-bottom:5px}.trade-marginal-heading>span:not(:first-child),.trade-marginal{text-align:right;white-space:nowrap}
 .trade-marginal.positive{color:#37634a}.trade-marginal.negative{color:#a24832}.trade-marginal.neutral{color:#887763}
 @media(max-width:600px){.trade-personal-sides:has(.trade-marginal-row){grid-template-columns:1fr}.trade-personal-sides:has(.trade-marginal-row)>div+div{border-left:0;padding-left:0;border-top:1px solid #e4d6c5;padding-top:12px}}
+
+.trade-needs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;padding:18px}.trade-needs-card{border:1px solid #d9e1d5;border-radius:10px;padding:16px}.trade-needs-card p{margin:9px 0;font-size:.95rem}.trade-needs-card small{display:block;color:#786345}

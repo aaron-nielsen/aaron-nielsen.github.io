@@ -348,8 +348,8 @@ function resultHTML(t){
  const weeks=starts();
  const mine=state.rosters.teams.find(team=>String(team.id)===String(state.teamId));
  const arbitrage=arbitrageValues(t,mine,weeks),byPlayer=new Map(arbitrage.players.map(p=>[id(p.player),p]));
- const valueHTML=v=>'<b class="trade-marginal '+(v===null?'':v<0?'negative':v>0?'positive':'neutral')+'">'+(v===null?'Unknown':(v<0?'−':'+')+fmt(Math.abs(v)))+'</b>';
- const formatList=players=>'<div class="trade-marginal-heading"><span></span><span>Points (arbitrage)</span></div>'+players.map(p=>{const value=byPlayer.get(id(p)),points=tradePlayerPoints(p,weeks),arb=value?.arbitrage??null;const signed=arb===null?'Unknown':(arb<0?'−':'+')+Math.abs(arb).toFixed(2);return '<div class="trade-player-row trade-marginal-row"><span>'+(root.DaVinciPlayerDetail?.link(p)||esc(p.name))+' <small>('+esc(p.position)+(['K','DEF'].includes(p.position)?' · bonus':'')+')</small></span><span class="trade-player-value"><b>'+(points===null?'Unknown':points.toFixed(2))+'</b> <b class="trade-marginal '+(arb===null?'':arb<0?'negative':arb>0?'positive':'neutral')+'">('+signed+')</b></span></div>';}).join('');
+ const valueHTML=v=>'<b class="trade-marginal '+(v===null?'':v<0?'negative':v>0?'positive':'neutral')+'">'+(v===null?'Not collected':(v<0?'−':'+')+fmt(Math.abs(v)))+'</b>';
+ const formatList=players=>'<div class="trade-marginal-heading"><span></span><span>Points (arbitrage)</span></div>'+players.map(p=>{const value=byPlayer.get(id(p)),points=tradePlayerPoints(p,weeks),arb=value?.arbitrage??null;const signed=arb===null?'Not collected':(arb<0?'−':'+')+Math.abs(arb).toFixed(2);return '<div class="trade-player-row trade-marginal-row"><span>'+(root.DaVinciPlayerDetail?.link(p)||esc(p.name))+' <small>('+esc(p.position)+(['K','DEF'].includes(p.position)?' · bonus':'')+')</small></span><span class="trade-player-value"><b>'+(points===null?'Not collected':points.toFixed(2))+'</b> <b class="trade-marginal '+(arb===null?'':arb<0?'negative':arb>0?'positive':'neutral')+'">('+signed+')</b></span></div>';}).join('');
  const totals='<div class="trade-arbitrage-totals"><div title="Sum of each recipient’s acquisition gain minus the current owner’s removal loss."><strong>Total marginal value</strong>'+valueHTML(arbitrage.total)+'</div></div>';
  const summary=(name,before,after,gain,avg)=>'<div class="trade-team-summary"><strong>'+esc(name)+'</strong><span>Lineup ROS <b>'+fmt(before)+' → '+fmt(after)+'</b></span><b class="trade-gain">'+(gain>=0?'+':'')+fmt(gain)+' pts · '+(avg>=0?'+':'')+fmt(avg)+' /wk</b></div>';
  if(['arbitrage','edge','yahoo'].includes(control('tradeGoal'))){
@@ -470,7 +470,7 @@ root.DaVinciTradeSearch={calculate};
 function yahooCoverageHTML(){
  const coverage=state.yahooFuture?.coverage;
  if(!coverage)return '';
- return '<p><strong>Yahoo coverage: '+coverage.completeTeams.length+' of '+state.rosters.teams.length+' teams · '+state.yahooFuture.players.length+' players · Weeks 6–17.</strong> Snapshots '+esc(snapshotRange(state.rosters.teams,starts()))+'. '+(state.yahooFuture.collection?.state==='paused_by_user'?'Refresh paused. ':state.yahooFuture.coverage.complete?'All rostered players covered. ':'Missing teams remain unknown. ')+'<a href="./data/yahoo-team-player-values.json" download>Download gain/loss values</a>.</p>';
+ return '<p><strong>Yahoo coverage: '+coverage.completeTeams.length+' of '+state.rosters.teams.length+' teams · '+state.yahooFuture.players.length+' players · Weeks '+state.yahooFuture.weeks[0]+'–'+state.yahooFuture.weeks.at(-1)+'.</strong> Snapshots '+esc(snapshotRange(state.rosters.teams,starts()))+'. '+(state.yahooFuture.collection?.state==='paused_by_user'?'Refresh paused. ':state.yahooFuture.coverage.complete?'All rostered players covered. ':'Some current roster players lack weekly projections. ')+'<a href="./data/yahoo-team-player-values.json" download>Download gain/loss values</a>.</p>';
 }
 function yahooChecksHTML(){
  const checks=(state.yahooEvaluations?.evaluations||[]).filter(e=>e.reportedAt==='2026-10-12'&&String(e.teamId)===String(state.teamId));
@@ -585,6 +585,7 @@ function init(settings){
  state={...settings,yahooModel:settings.yahooFuture&&root.YahooValues?.create(settings.yahooFuture),futureMap:new Map(settings.future.players.map(p=>[String(p.yahooId),p]))};
  if(!state.optimize)throw Error('Full-lineup optimizer unavailable');
  if(settings.planningWeek&&$('tradeFromWeek'))$('tradeFromWeek').value=String(settings.planningWeek);
+ root.DaVinciTradeNeeds?.render(settings);
  const container=$('tradePreferenceBuilder');if(!container)return;
  oldFallback=root.DaVinciLab?.rankTrades;
  draw();

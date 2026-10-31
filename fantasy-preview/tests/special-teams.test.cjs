@@ -90,3 +90,14 @@ const kId='33537',c=byLeague.csu.byId.get(kId),d=byLeague['nebraska/'].byId.get(
 assert.ok(c && d && c.weeks.find(w=>w.week===comparisonWeek).points!==d.weeks.find(w=>w.week===comparisonWeek).points,
   'Kicker scoring should change with Yahoo scoring coefficients');
 console.log('Both leagues passed: matchup, defense, kicker, scoring and no-leakage checks.');
+
+// Home/away is a boolean in the normalized schedule passed to defense().
+function venueForecast(home){
+ const c=structuredClone(context);c.schedule=[{week:8,home:home?'WAS':'PHI',away:home?'PHI':'WAS',roof:'outdoors'}];
+ const args={context:c,league:json('data/league.json'),rosters:json('data/rosters.json'),available:json('data/available.json'),futureData:json('data/future.json')};
+ args.league.currentWeekAtSnapshot=8;modeler.enrich(args);
+ return args.futureData.players.find(p=>p.yahooId==='100028').weeks.find(w=>w.week===8);
+}
+const homeDefense=venueForecast(true),awayDefense=venueForecast(false);
+assert.equal(Math.round((awayDefense.stats.pointsAllowed-homeDefense.stats.pointsAllowed)*100)/100,2);
+assert.ok(homeDefense.points>awayDefense.points,'Home advantage must improve points-allowed fantasy scoring');

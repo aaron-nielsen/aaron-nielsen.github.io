@@ -780,6 +780,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
   <label for="tradePackageFilter">Packages <select id="tradePackageFilter" class="select"><option value="one_each">1-for-1 only</option><option value="two_each">2-for-2 only</option><option value="three_each">3-for-3 only</option><option value="balanced">2-for-2 or 3-for-3</option><option value="balanced_all">1-for-1, 2-for-2, 3-for-3</option><option value="practical" selected>Practical packages · bonuses allowed</option><option value="all">All packages · 1–3 each</option><option value="unequal">Unequal packages · 1–3 each</option><option value="1_for_2">1-for-2 only</option><option value="1_for_3">1-for-3 only</option><option value="2_for_1">2-for-1 only</option><option value="2_for_3">2-for-3 only</option><option value="3_for_1">3-for-1 only</option><option value="3_for_2">3-for-2 only</option></select></label>
   <label>Find <select id="tradeGoal" class="select"><option value="arbitrage">Positive arbitrage</option><option value="edge">Da Vinci upside</option><option value="model">Da Vinci · both teams gain</option><option value="yahoo">Yahoo · both teams gain</option></select></label>
   <label>Show <select id="tradeLimit" class="select"><option>6</option><option selected>12</option><option>24</option></select></label><div id="tradeCount" class="trade-count">Calculating candidates…</div></div></section>
+  <section id="tradeTeamNeeds" class="panel"></section>
   <div id="tradeOpponentNotice" class="trade-opponent-notice"></div>
   <section class="trade-search-summary" id="reasonableTargets"><div class="panel-header"><div><div class="panel-title">Results</div><div class="panel-sub"></div></div><a class="plan-export" id="matrixLink" href="./yahoo-matrix.html">Gain/loss matrix</a><button type="button" class="plan-export" id="targetCalculate">Find trades</button></div><div id="targetResults" class="plan-context"></div></section>
   <div id="tradeResults" class="trades-grid" aria-live="polite" aria-busy="false"><div class="empty-copy">Choose your preferences to find trades.</div></div>
@@ -865,6 +866,7 @@ body{background:linear-gradient(180deg,#d6a66e 0%,#e7c292 550px,#ead0a4 100%);co
 <script src="./matchup-overview.js?v=20261020review"></script>
 <script src="./overview-roster.js"></script>
 <script src="./yahoo-values.js?v=20261019groups"></script>
+<script src="./trade-needs.js?v=20261031"></script>
 <script src="./trade-preferences.js?v=20261021design2"></script>
 <script src="./marginal-arbitrage.js?v=20261012a"></script>
 <script src="./planning-model.js?v=20261019coverage"></script>

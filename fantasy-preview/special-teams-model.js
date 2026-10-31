@@ -63,7 +63,7 @@ function kicker(team,opp,game,scoring,model){
  return {points:round(pts),components:items,stats:{fgAttempts:round(kickAttempts),fgMade:round(fgm),fgMisses:round(misses),patMade:round(pats)},method:"Team RZ FG/PAT opportunity + opponent drives; league distance/make-rate priors",conditions:{roof:game.roof||"unknown",windMph:wind,weatherApplied:windPenalty>0}};
 }
 function defense(team,opp,game,scoring,model,opponentQB){
- const oppOff=model.get(opp,"offPts"),ownDef=model.get(team,"defPts"),home=asTeam(game.home)===asTeam(team);
+ const oppOff=model.get(opp,"offPts"),ownDef=model.get(team,"defPts"),home=game.home===true;
  const expectedPts=lim(avg(oppOff,ownDef)+(home?-1:1),8,42);
  const oppEPA=model.get(opp,"epaOff"),ownEPA=model.get(team,"epaDef");
  const strength=lim(1+(oppEPA-ownEPA)*.32,.77,1.28);
