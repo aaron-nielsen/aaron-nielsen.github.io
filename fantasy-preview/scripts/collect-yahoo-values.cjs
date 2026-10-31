@@ -8,14 +8,18 @@ const raw=read('yahoo-weekly-rosters'),rosters=read('rosters'),players=new Map()
 // Retain verified identities for players who have been dropped since collection.
 const identities=new Map(read('yahoo-projections').players.map(p=>[String(p.yahooId),p]));
 for(const t of rosters.teams)for(const p of t.players)identities.set(String(p.id),p);
-for(const rows of Object.values(raw.teams))for(const row of rows)for(const p of row.players){
+for(const rows of Object.values(raw.teams))for(const row of rows.filter(r=>raw.weeks.includes(r.week)))for(const p of row.players){
  const identity=identities.get(String(p.id)),position=identity?.position||p.position;
  if(!['QB','RB','WR','TE','K','DEF'].includes(position))throw Error('Verified position missing for '+p.id);
  if(!players.has(p.id))players.set(p.id,{yahooId:p.id,name:identity?.name||p.name,position,positionSource:identity?'Verified current roster':'Yahoo weekly roster',weeks:[],collectedAt:row.collectedAt||raw.collectedAt});
  const saved=players.get(p.id);
  const collectedAt=row.collectedAt||raw.collectedAt;if(Date.parse(collectedAt)<Date.parse(saved.collectedAt))saved.collectedAt=collectedAt;
- if(!saved.weeks.some(w=>w.week===row.week))saved.weeks.push({week:row.week,points:p.points,state:p.state,collectedAt});
+ const frame={week:row.week,points:p.points,state:p.state,collectedAt};
+ const existing=saved.weeks.findIndex(w=>w.week===row.week);
+ if(existing<0)saved.weeks.push(frame);
+ else if(Date.parse(collectedAt)>Date.parse(saved.weeks[existing].collectedAt))saved.weeks[existing]=frame;
 }
+for(const p of players.values())p.collectedAt=p.weeks.map(w=>w.collectedAt).filter(Boolean).sort()[0]||null;
 for(const t of rosters.teams)for(const p of t.players)if(!players.has(p.id))players.set(p.id,{yahooId:p.id,name:p.name,position:p.position,positionSource:'Verified current roster',collectedAt:null,weeks:raw.weeks.map(week=>({week,points:null,state:'projection_not_collected',collectedAt:null}))});
 const dates=[...players.values()].flatMap(p=>p.weeks.map(w=>w.collectedAt).filter(Boolean)).sort(),freshness={oldest:dates[0]||null,newest:dates.at(-1)||null};
 const data={schemaVersion:1,source:'Yahoo weekly projections · optimal lineups',collectedAt:freshness.oldest,updatedAt:raw.updatedAt,freshness,collection:raw.collection,leagueId:rosters.leagueId,weeks:raw.weeks,coverage:raw.coverage,players:[...players.values()]};

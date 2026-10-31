@@ -16,8 +16,9 @@ try{
  const weekly=read('weekly');assert.equal(weekly.week,6);assert.equal(weekly.players[0].opponent,'NEW');assert.equal(weekly.players[0].activeGamePoints,12);assert.equal(weekly.players[0].weeklyProjectedPoints,null,'Questionable is conditional, not confirmed');
  assert.equal(weekly.generatedAt,'old-model');assert.equal(read('future').statsThroughWeek,4,'Rollover must not claim newly collected stats');
  assert.equal(read('historical/snapshot-week-5').weekly.players[0].weeklyProjectedPoints,99,'Keep the original snapshot for history');
- raw.rosters[0].data.players[0].status=null;
+ raw.rosters[0].data.players[0].status=null;raw.rosters[0].data.players[0].isEditable=false;raw.rosters[0].data.players[0].eligiblePositions=['RB','W/R/T'];
  refresh(base,raw);
+ assert.equal(read('rosters').teams[0].players[0].isEditable,false);assert.equal(read('rosters').teams[0].players[0].editabilityWeek,6);assert.deepEqual(read('rosters').teams[0].players[0].eligiblePositions,['RB','W/R/T']);
  assert.equal(read('weekly').players[0].weeklyProjectedPoints,12,'Cleared roster status must clear stale uncertainty');
  raw.rosters[0].data.pointsCoverage={type:'week',week:6};raw.rosters[0].data.players[0].points=20.9;
  refresh(base,raw);

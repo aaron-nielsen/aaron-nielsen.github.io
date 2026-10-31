@@ -2,20 +2,20 @@
   "week": 8,
   "teamId": "7",
   "leagueId": "470.l.258793",
-  "reviewedAt": "2026-10-27",
+  "reviewedAt": "2026-10-31",
   "players": [
+    {
+      "id": "42642",
+      "label": "WR depth",
+      "reason": "Makai Lemon is available now and projects for 8.25 Yahoo points this week. Consider him for the bench if moving Brian Robinson Jr. to the open IR slot creates room; no RB cut is needed.",
+      "source": "https://football.fantasysports.yahoo.com/f1/258793/players"
+    },
     {
       "id": "41907",
       "label": "RB depth",
-      "reason": "Dylan Sampson is the first RB depth claim to consider. Preserve Lloyd\u2019s Jacobs insurance; do not cut a scarce RB simply to force this pickup.",
+      "reason": "Dylan Sampson remains available as an RB depth alternative. Compare his role with Lemon before using the same potential IR opening.",
       "source": "https://www.profootballnetwork.com/fantasy-football/waiver-wire-targets-week-8-2026/"
-    },
-    {
-      "id": "42693",
-      "label": "WR upside",
-      "reason": "Antonio Williams is a role-growth target if a trade creates space. Prefer him to adding another defense.",
-      "source": "https://www.rotoballer.com/week-8-waiver-wire-pickups-omar-cooper-jr-antonio-williams-caleb-douglas-fantasy-football-outlooks/1976925"
     }
   ],
-  "rosterMove": "Keep Chiefs and McPherson. Jets are the first cut, but activating Hall from IR may use that opening. Chiefs and Addison are already in pending offers."
+  "rosterMove": "Brian Robinson Jr. is OUT and Yahoo lists him as IR eligible; one of your two IR slots is open. Keep Chiefs for Week 9 coverage. No CSU trade offers are currently pending."
 }

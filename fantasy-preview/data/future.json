@@ -4,7 +4,7 @@
   "startWeek": 5,
   "endWeek": 17,
   "generatedAt": "2026-10-27T19:43:16.697Z",
-  "rosterSnapshotAt": "2026-10-27T19:41:15.550Z",
+  "rosterSnapshotAt": "2026-10-31T20:38:39.725Z",
   "statsThroughWeek": 7,
   "scoringCategories": [
     {
@@ -597,7 +597,7 @@
       "fantasyTeam": "Lone Wolf Stacy",
       "nflTeam": "NO",
       "ownership": "rostered",
-      "rosterSlot": "QB",
+      "rosterSlot": "BN",
       "injuryStatus": null,
       "sampleGames2026": 7,
       "baselineStats": {
@@ -1297,7 +1297,7 @@
       "fantasyTeam": "I’m confused",
       "nflTeam": "Buf",
       "ownership": "rostered",
-      "rosterSlot": "BN",
+      "rosterSlot": "QB",
       "injuryStatus": null,
       "sampleGames2026": 6,
       "baselineStats": {
@@ -1997,7 +1997,7 @@
       "fantasyTeam": "the football understander",
       "nflTeam": "SF",
       "ownership": "rostered",
-      "rosterSlot": "QB",
+      "rosterSlot": "BN",
       "injuryStatus": null,
       "sampleGames2026": 7,
       "baselineStats": {
@@ -3049,7 +3049,7 @@
       "fantasyTeam": "I’m confused",
       "nflTeam": "Hou",
       "ownership": "rostered",
-      "rosterSlot": "QB",
+      "rosterSlot": "BN",
       "injuryStatus": null,
       "sampleGames2026": 7,
       "baselineStats": {
@@ -3571,11 +3571,11 @@
       "yahooId": "25812",
       "name": "Kirk Cousins",
       "position": "QB",
-      "fantasyTeamId": null,
-      "fantasyTeam": null,
+      "fantasyTeamId": "1",
+      "fantasyTeam": "Blitzmaster",
       "nflTeam": "LV",
-      "ownership": "unverified",
-      "rosterSlot": null,
+      "ownership": "rostered",
+      "rosterSlot": "BN",
       "injuryStatus": null,
       "sampleGames2026": 7,
       "baselineStats": {
@@ -4801,7 +4801,7 @@
       "nflTeam": "Det",
       "ownership": "rostered",
       "rosterSlot": "WR",
-      "injuryStatus": "Q",
+      "injuryStatus": null,
       "sampleGames2026": 6,
       "baselineStats": {
         "passAttempts": 0,
@@ -4856,8 +4856,8 @@
           "date": "2026-11-01",
           "factor": 0.9003,
           "activePoints": 13.97,
-          "points": null,
-          "state": "needs_availability_confirmation",
+          "points": 13.97,
+          "state": "assuming_active",
           "defenseThroughWeek": 7
         },
         {
@@ -5325,7 +5325,7 @@
       "fantasyTeam": "Screen Pass Eva",
       "nflTeam": "Was",
       "ownership": "rostered",
-      "rosterSlot": "BN",
+      "rosterSlot": "QB",
       "injuryStatus": null,
       "sampleGames2026": 4,
       "baselineStats": {
@@ -6201,7 +6201,7 @@
       "nflTeam": "Min",
       "ownership": "rostered",
       "rosterSlot": "RB",
-      "injuryStatus": "Q",
+      "injuryStatus": null,
       "sampleGames2026": 6,
       "baselineStats": {
         "passAttempts": 0,
@@ -6256,8 +6256,8 @@
           "date": "2026-11-01",
           "factor": 0.9779,
           "activePoints": 13.88,
-          "points": null,
-          "state": "needs_availability_confirmation",
+          "points": 13.88,
+          "state": "assuming_active",
           "defenseThroughWeek": 7
         },
         {
@@ -6726,7 +6726,7 @@
       "nflTeam": "Bal",
       "ownership": "rostered",
       "rosterSlot": "BN",
-      "injuryStatus": "Q",
+      "injuryStatus": null,
       "sampleGames2026": 4,
       "baselineStats": {
         "passAttempts": 23.48,
@@ -6782,8 +6782,8 @@
           "date": "2026-11-01",
           "factor": 1.1,
           "activePoints": 16.25,
-          "points": null,
-          "state": "needs_availability_confirmation",
+          "points": 16.25,
+          "state": "assuming_active",
           "defenseThroughWeek": 7
         },
         {
@@ -6890,11 +6890,11 @@
       "yahooId": "31838",
       "name": "Daniel Jones",
       "position": "QB",
-      "fantasyTeamId": "13",
-      "fantasyTeam": "NO PARKING",
+      "fantasyTeamId": null,
+      "fantasyTeam": null,
       "nflTeam": "Ind",
-      "ownership": "rostered",
-      "rosterSlot": "BN",
+      "ownership": "unverified",
+      "rosterSlot": null,
       "injuryStatus": null,
       "sampleGames2026": 7,
       "baselineStats": {
@@ -7069,7 +7069,7 @@
       "fantasyTeam": "Screen Pass Eva",
       "nflTeam": "Min",
       "ownership": "rostered",
-      "rosterSlot": "QB",
+      "rosterSlot": "BN",
       "injuryStatus": null,
       "sampleGames2026": 5,
       "baselineStats": {
@@ -9164,7 +9164,7 @@
       "fantasyTeam": "Ten Feline Overlords",
       "nflTeam": "NYJ",
       "ownership": "rostered",
-      "rosterSlot": "IR",
+      "rosterSlot": "W/R/T",
       "injuryStatus": "Q",
       "sampleGames2026": 3,
       "baselineStats": {
@@ -9329,11 +9329,11 @@
       "yahooId": "26662",
       "name": "Geno Smith",
       "position": "QB",
-      "fantasyTeamId": null,
-      "fantasyTeam": "Available",
+      "fantasyTeamId": "3",
+      "fantasyTeam": "Lone Wolf Stacy",
       "nflTeam": "NYJ",
-      "ownership": "available",
-      "rosterSlot": null,
+      "ownership": "rostered",
+      "rosterSlot": "QB",
       "injuryStatus": null,
       "sampleGames2026": 7,
       "baselineStats": {
@@ -11405,7 +11405,7 @@
       "nflTeam": "Phi",
       "ownership": "rostered",
       "rosterSlot": "BN",
-      "injuryStatus": "Q",
+      "injuryStatus": "O",
       "sampleGames2026": 4,
       "baselineStats": {
         "passAttempts": 0,
@@ -11461,8 +11461,8 @@
           "date": "2026-11-01",
           "factor": 1.0342,
           "activePoints": 13.52,
-          "points": null,
-          "state": "needs_availability_confirmation",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 7
         },
         {
@@ -13652,11 +13652,11 @@
       "yahooId": "34042",
       "name": "Malik Willis",
       "position": "QB",
-      "fantasyTeamId": null,
-      "fantasyTeam": "Available",
+      "fantasyTeamId": "4",
+      "fantasyTeam": "the football understander",
       "nflTeam": "Mia",
-      "ownership": "available",
-      "rosterSlot": null,
+      "ownership": "rostered",
+      "rosterSlot": "QB",
       "injuryStatus": null,
       "sampleGames2026": 6,
       "baselineStats": {
@@ -13831,7 +13831,7 @@
       "fantasyTeam": "Lone Wolf Stacy",
       "nflTeam": "Atl",
       "ownership": "rostered",
-      "rosterSlot": "W/R/T",
+      "rosterSlot": "WR",
       "injuryStatus": null,
       "sampleGames2026": 7,
       "baselineStats": {
@@ -14007,7 +14007,7 @@
       "nflTeam": "Chi",
       "ownership": "rostered",
       "rosterSlot": "BN",
-      "injuryStatus": "Q",
+      "injuryStatus": "O",
       "sampleGames2026": 4,
       "baselineStats": {
         "passAttempts": 0,
@@ -14063,8 +14063,8 @@
           "date": "2026-11-02",
           "factor": 0.9357,
           "activePoints": 10.37,
-          "points": null,
-          "state": "needs_availability_confirmation",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 7
         },
         {
@@ -14175,8 +14175,8 @@
       "fantasyTeam": "the football understander",
       "nflTeam": "KC",
       "ownership": "rostered",
-      "rosterSlot": "BN",
-      "injuryStatus": "Q",
+      "rosterSlot": "WR",
+      "injuryStatus": null,
       "sampleGames2026": 3,
       "baselineStats": {
         "passAttempts": 0,
@@ -14232,8 +14232,8 @@
           "date": "2026-11-01",
           "factor": 0.9168,
           "activePoints": 10.16,
-          "points": null,
-          "state": "needs_availability_confirmation",
+          "points": 10.16,
+          "state": "assuming_active",
           "defenseThroughWeek": 7
         },
         {
@@ -15552,8 +15552,8 @@
       "fantasyTeam": "NO PARKING",
       "nflTeam": "Den",
       "ownership": "rostered",
-      "rosterSlot": "RB",
-      "injuryStatus": null,
+      "rosterSlot": "BN",
+      "injuryStatus": "IR",
       "sampleGames2026": 6,
       "baselineStats": {
         "passAttempts": 0.02,
@@ -15609,8 +15609,8 @@
           "date": "2026-11-01",
           "factor": 0.9402,
           "activePoints": 9.67,
-          "points": 9.67,
-          "state": "assuming_active",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 7
         },
         {
@@ -15903,7 +15903,7 @@
       "nflTeam": "Dal",
       "ownership": "rostered",
       "rosterSlot": "WR",
-      "injuryStatus": null,
+      "injuryStatus": "Q",
       "sampleGames2026": 7,
       "baselineStats": {
         "passAttempts": 0,
@@ -15959,8 +15959,8 @@
           "date": "2026-11-01",
           "factor": 1.0599,
           "activePoints": 12.91,
-          "points": 12.91,
-          "state": "assuming_active",
+          "points": null,
+          "state": "needs_availability_confirmation",
           "defenseThroughWeek": 7
         },
         {
@@ -16073,11 +16073,11 @@
       "yahooId": "31908",
       "name": "Terry McLaurin",
       "position": "WR",
-      "fantasyTeamId": "11",
-      "fantasyTeam": "Stiff Arm Beth",
+      "fantasyTeamId": null,
+      "fantasyTeam": null,
       "nflTeam": "Was",
-      "ownership": "rostered",
-      "rosterSlot": "WR",
+      "ownership": "unverified",
+      "rosterSlot": null,
       "injuryStatus": "O",
       "sampleGames2026": 5,
       "baselineStats": {
@@ -16778,7 +16778,7 @@
       "nflTeam": "GB",
       "ownership": "rostered",
       "rosterSlot": "WR",
-      "injuryStatus": null,
+      "injuryStatus": "Q",
       "sampleGames2026": 7,
       "baselineStats": {
         "passAttempts": 0,
@@ -16834,8 +16834,8 @@
           "date": "2026-10-29",
           "factor": 0.9277,
           "activePoints": 10.87,
-          "points": 10.87,
-          "state": "assuming_active",
+          "points": null,
+          "state": "needs_availability_confirmation",
           "defenseThroughWeek": 7
         },
         {
@@ -17465,7 +17465,7 @@
       "fantasyTeam": "Playmaker Adam",
       "nflTeam": "NYG",
       "ownership": "rostered",
-      "rosterSlot": "W/R/T",
+      "rosterSlot": "BN",
       "injuryStatus": null,
       "sampleGames2026": 7,
       "baselineStats": {
@@ -17640,7 +17640,7 @@
       "fantasyTeam": "the football understander",
       "nflTeam": "SF",
       "ownership": "rostered",
-      "rosterSlot": "TE",
+      "rosterSlot": "BN",
       "injuryStatus": null,
       "sampleGames2026": 7,
       "baselineStats": {
@@ -18685,7 +18685,7 @@
       "nflTeam": "Ten",
       "ownership": "rostered",
       "rosterSlot": "BN",
-      "injuryStatus": null,
+      "injuryStatus": "O",
       "sampleGames2026": 7,
       "baselineStats": {
         "passAttempts": 0,
@@ -18741,8 +18741,8 @@
           "date": "2026-11-01",
           "factor": 0.9976,
           "activePoints": 9.66,
-          "points": 9.66,
-          "state": "assuming_active",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 7
         },
         {
@@ -18855,11 +18855,11 @@
       "yahooId": "33113",
       "name": "Juwan Johnson",
       "position": "TE",
-      "fantasyTeamId": "3",
-      "fantasyTeam": "Lone Wolf Stacy",
+      "fantasyTeamId": null,
+      "fantasyTeam": null,
       "nflTeam": "NO",
-      "ownership": "rostered",
-      "rosterSlot": "TE",
+      "ownership": "unverified",
+      "rosterSlot": null,
       "injuryStatus": null,
       "sampleGames2026": 7,
       "baselineStats": {
@@ -19210,7 +19210,7 @@
       "nflTeam": "GB",
       "ownership": "rostered",
       "rosterSlot": "WR",
-      "injuryStatus": "Q",
+      "injuryStatus": null,
       "sampleGames2026": 7,
       "baselineStats": {
         "passAttempts": 0,
@@ -19266,8 +19266,8 @@
           "date": "2026-10-29",
           "factor": 0.9277,
           "activePoints": 10.23,
-          "points": null,
-          "state": "needs_availability_confirmation",
+          "points": 10.23,
+          "state": "assuming_active",
           "defenseThroughWeek": 7
         },
         {
@@ -19384,8 +19384,8 @@
       "fantasyTeam": "Lone Wolf Stacy",
       "nflTeam": "NE",
       "ownership": "rostered",
-      "rosterSlot": "WR",
-      "injuryStatus": null,
+      "rosterSlot": "BN",
+      "injuryStatus": "O",
       "sampleGames2026": 3,
       "baselineStats": {
         "passAttempts": 0,
@@ -19441,8 +19441,8 @@
           "date": "2026-11-01",
           "factor": 0.9003,
           "activePoints": 7.72,
-          "points": 7.72,
-          "state": "assuming_active",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 7
         },
         {
@@ -19559,8 +19559,8 @@
       "fantasyTeam": "NO PARKING",
       "nflTeam": "Ind",
       "ownership": "rostered",
-      "rosterSlot": "BN",
-      "injuryStatus": "Q",
+      "rosterSlot": "W/R/T",
+      "injuryStatus": null,
       "sampleGames2026": 5,
       "baselineStats": {
         "passAttempts": 0.01,
@@ -19616,8 +19616,8 @@
           "date": "2026-11-01",
           "factor": 0.9623,
           "activePoints": 10.34,
-          "points": null,
-          "state": "needs_availability_confirmation",
+          "points": 10.34,
+          "state": "assuming_active",
           "defenseThroughWeek": 7
         },
         {
@@ -19909,7 +19909,7 @@
       "fantasyTeam": "Stiff Arm Beth",
       "nflTeam": "SF",
       "ownership": "rostered",
-      "rosterSlot": "WR",
+      "rosterSlot": "BN",
       "injuryStatus": "Q",
       "sampleGames2026": 6,
       "baselineStats": {
@@ -20954,7 +20954,7 @@
       "nflTeam": "Phi",
       "ownership": "rostered",
       "rosterSlot": "RB",
-      "injuryStatus": "Q",
+      "injuryStatus": null,
       "sampleGames2026": 5,
       "baselineStats": {
         "passAttempts": 0,
@@ -21010,8 +21010,8 @@
           "date": "2026-11-01",
           "factor": 0.9453,
           "activePoints": 9.54,
-          "points": null,
-          "state": "needs_availability_confirmation",
+          "points": 9.54,
+          "state": "assuming_active",
           "defenseThroughWeek": 7
         },
         {
@@ -21298,7 +21298,7 @@
       "nflTeam": "NE",
       "ownership": "rostered",
       "rosterSlot": "BN",
-      "injuryStatus": null,
+      "injuryStatus": "O",
       "sampleGames2026": 6,
       "baselineStats": {
         "passAttempts": 0,
@@ -21354,8 +21354,8 @@
           "date": "2026-11-01",
           "factor": 1.1,
           "activePoints": 8.77,
-          "points": 8.77,
-          "state": "assuming_active",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 7
         },
         {
@@ -22166,8 +22166,8 @@
       "fantasyTeam": "Playmaker Adam",
       "nflTeam": "Ari",
       "ownership": "rostered",
-      "rosterSlot": "BN",
-      "injuryStatus": "Q",
+      "rosterSlot": "W/R/T",
+      "injuryStatus": null,
       "sampleGames2026": 5,
       "baselineStats": {
         "passAttempts": 0,
@@ -22223,8 +22223,8 @@
           "date": "2026-11-01",
           "factor": 1.1,
           "activePoints": 9.39,
-          "points": null,
-          "state": "needs_availability_confirmation",
+          "points": 9.39,
+          "state": "assuming_active",
           "defenseThroughWeek": 7
         },
         {
@@ -24243,7 +24243,7 @@
       "fantasyTeam": "Stiff Arm Beth",
       "nflTeam": "Buf",
       "ownership": "rostered",
-      "rosterSlot": "BN",
+      "rosterSlot": "WR",
       "injuryStatus": null,
       "sampleGames2026": 6,
       "baselineStats": {
@@ -24594,7 +24594,7 @@
       "fantasyTeam": "I’m confused",
       "nflTeam": "Jax",
       "ownership": "rostered",
-      "rosterSlot": "BN",
+      "rosterSlot": "WR",
       "injuryStatus": null,
       "sampleGames2026": 6,
       "baselineStats": {
@@ -25113,7 +25113,7 @@
       "fantasyTeam": "Ten Feline Overlords",
       "nflTeam": "Min",
       "ownership": "rostered",
-      "rosterSlot": "W/R/T",
+      "rosterSlot": "BN",
       "injuryStatus": null,
       "sampleGames2026": 5,
       "baselineStats": {
@@ -25795,7 +25795,7 @@
       "fantasyTeam": "I’m confused",
       "nflTeam": "Cle",
       "ownership": "rostered",
-      "rosterSlot": "WR",
+      "rosterSlot": "BN",
       "injuryStatus": null,
       "sampleGames2026": 7,
       "baselineStats": {
@@ -25971,7 +25971,7 @@
       "nflTeam": "TB",
       "ownership": "rostered",
       "rosterSlot": "BN",
-      "injuryStatus": "Q",
+      "injuryStatus": "O",
       "sampleGames2026": 6,
       "baselineStats": {
         "passAttempts": 0,
@@ -26027,8 +26027,8 @@
           "date": "2026-11-01",
           "factor": 0.9967,
           "activePoints": 9.45,
-          "points": null,
-          "state": "needs_availability_confirmation",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 7
         },
         {
@@ -28595,7 +28595,7 @@
       "fantasyTeam": "the football understander",
       "nflTeam": "TB",
       "ownership": "rostered",
-      "rosterSlot": "WR",
+      "rosterSlot": "BN",
       "injuryStatus": null,
       "sampleGames2026": 7,
       "baselineStats": {
@@ -30152,8 +30152,8 @@
       "fantasyTeam": "Stochastically Bounded Ends",
       "nflTeam": "Jax",
       "ownership": "rostered",
-      "rosterSlot": "W/R/T",
-      "injuryStatus": null,
+      "rosterSlot": "BN",
+      "injuryStatus": "Q",
       "sampleGames2026": 6,
       "baselineStats": {
         "passAttempts": 0.01,
@@ -30208,8 +30208,8 @@
           "date": "2026-11-01",
           "factor": 0.9661,
           "activePoints": 7.45,
-          "points": 7.45,
-          "state": "assuming_active",
+          "points": null,
+          "state": "needs_availability_confirmation",
           "defenseThroughWeek": 7
         },
         {
@@ -32582,7 +32582,7 @@
       "nflTeam": "Atl",
       "ownership": "rostered",
       "rosterSlot": "BN",
-      "injuryStatus": "Q",
+      "injuryStatus": "O",
       "sampleGames2026": 6,
       "baselineStats": {
         "passAttempts": 0,
@@ -32638,8 +32638,8 @@
           "date": "2026-11-01",
           "factor": 0.9176,
           "activePoints": 5.57,
-          "points": null,
-          "state": "needs_availability_confirmation",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 7
         },
         {
@@ -32756,7 +32756,7 @@
       "fantasyTeam": "Stochastically Bounded Ends",
       "nflTeam": "Dal",
       "ownership": "rostered",
-      "rosterSlot": "BN",
+      "rosterSlot": "W/R/T",
       "injuryStatus": null,
       "sampleGames2026": 7,
       "baselineStats": {
@@ -33615,11 +33615,11 @@
       "yahooId": "40051",
       "name": "Quentin Johnston",
       "position": "WR",
-      "fantasyTeamId": "4",
-      "fantasyTeam": "the football understander",
+      "fantasyTeamId": null,
+      "fantasyTeam": null,
       "nflTeam": "LAC",
-      "ownership": "rostered",
-      "rosterSlot": "BN",
+      "ownership": "unverified",
+      "rosterSlot": null,
       "injuryStatus": null,
       "sampleGames2026": 5,
       "baselineStats": {
@@ -34138,8 +34138,8 @@
       "fantasyTeam": "I’m confused",
       "nflTeam": "LAC",
       "ownership": "rostered",
-      "rosterSlot": "BN",
-      "injuryStatus": "Q",
+      "rosterSlot": "WR",
+      "injuryStatus": null,
       "sampleGames2026": 5,
       "baselineStats": {
         "passAttempts": 0,
@@ -34194,8 +34194,8 @@
           "date": "2026-11-01",
           "factor": 0.9559,
           "activePoints": 6.14,
-          "points": null,
-          "state": "needs_availability_confirmation",
+          "points": 6.14,
+          "state": "assuming_active",
           "defenseThroughWeek": 7
         },
         {
@@ -35510,7 +35510,7 @@
       "nflTeam": "Buf",
       "ownership": "rostered",
       "rosterSlot": "BN",
-      "injuryStatus": null,
+      "injuryStatus": "Q",
       "sampleGames2026": 6,
       "baselineStats": {
         "passAttempts": 0,
@@ -35565,8 +35565,8 @@
           "date": "2026-11-01",
           "factor": 1.0092,
           "activePoints": 6.39,
-          "points": 6.39,
-          "state": "assuming_active",
+          "points": null,
+          "state": "needs_availability_confirmation",
           "defenseThroughWeek": 7
         },
         {
@@ -36711,7 +36711,7 @@
       "nflTeam": "Sea",
       "ownership": "rostered",
       "rosterSlot": "IR",
-      "injuryStatus": "IR",
+      "injuryStatus": "IR-R",
       "sampleGames2026": 3,
       "baselineStats": {
         "passAttempts": 0,
@@ -37919,11 +37919,11 @@
       "yahooId": "41840",
       "name": "Tre' Harris",
       "position": "WR",
-      "fantasyTeamId": "4",
-      "fantasyTeam": "the football understander",
+      "fantasyTeamId": null,
+      "fantasyTeam": null,
       "nflTeam": "LAC",
-      "ownership": "rostered",
-      "rosterSlot": "BN",
+      "ownership": "unverified",
+      "rosterSlot": null,
       "injuryStatus": "Q",
       "sampleGames2026": 5,
       "baselineStats": {
@@ -39289,11 +39289,11 @@
       "yahooId": "42693",
       "name": "Antonio Williams",
       "position": "WR",
-      "fantasyTeamId": null,
-      "fantasyTeam": "Available",
+      "fantasyTeamId": "3",
+      "fantasyTeam": "Lone Wolf Stacy",
       "nflTeam": "Was",
-      "ownership": "available",
-      "rosterSlot": null,
+      "ownership": "rostered",
+      "rosterSlot": "W/R/T",
       "injuryStatus": null,
       "sampleGames2026": 6,
       "baselineStats": {
@@ -42065,11 +42065,11 @@
       "yahooId": "41001",
       "name": "AJ Barner",
       "position": "TE",
-      "fantasyTeamId": null,
-      "fantasyTeam": "Available",
+      "fantasyTeamId": "4",
+      "fantasyTeam": "the football understander",
       "nflTeam": "Sea",
-      "ownership": "available",
-      "rosterSlot": null,
+      "ownership": "rostered",
+      "rosterSlot": "TE",
       "injuryStatus": null,
       "sampleGames2026": 7,
       "baselineStats": {
@@ -42409,11 +42409,11 @@
       "yahooId": "34099",
       "name": "Chig Okonkwo",
       "position": "TE",
-      "fantasyTeamId": null,
-      "fantasyTeam": "Available",
+      "fantasyTeamId": "3",
+      "fantasyTeam": "Lone Wolf Stacy",
       "nflTeam": "Was",
-      "ownership": "available",
-      "rosterSlot": null,
+      "ownership": "rostered",
+      "rosterSlot": "TE",
       "injuryStatus": null,
       "sampleGames2026": 4,
       "baselineStats": {
@@ -45005,11 +45005,11 @@
       "yahooId": "40108",
       "name": "Kendre Miller",
       "position": "RB",
-      "fantasyTeamId": "7",
-      "fantasyTeam": "Ten Feline Overlords",
+      "fantasyTeamId": null,
+      "fantasyTeam": null,
       "nflTeam": "NO",
-      "ownership": "rostered",
-      "rosterSlot": "BN",
+      "ownership": "unverified",
+      "rosterSlot": null,
       "injuryStatus": null,
       "sampleGames2026": 6,
       "baselineStats": {
@@ -46035,7 +46035,7 @@
       "fantasyTeam": "I’m confused",
       "nflTeam": "NE",
       "ownership": "rostered",
-      "rosterSlot": "WR",
+      "rosterSlot": "BN",
       "injuryStatus": null,
       "sampleGames2026": 7,
       "baselineStats": {
@@ -46548,7 +46548,7 @@
       "fantasyTeam": "Stiff Arm Beth",
       "nflTeam": "Sea",
       "ownership": "rostered",
-      "rosterSlot": "BN",
+      "rosterSlot": "WR",
       "injuryStatus": null,
       "sampleGames2026": 7,
       "baselineStats": {
@@ -48619,7 +48619,7 @@
       "nflTeam": "Ten",
       "ownership": "rostered",
       "rosterSlot": "BN",
-      "injuryStatus": "Q",
+      "injuryStatus": "O",
       "sampleGames2026": 6,
       "baselineStats": {
         "passAttempts": 0,
@@ -48675,8 +48675,8 @@
           "date": "2026-11-01",
           "factor": 0.9208,
           "activePoints": 4.57,
-          "points": null,
-          "state": "needs_availability_confirmation",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 7
         },
         {
@@ -49827,7 +49827,7 @@
       "fantasyTeam": "NO PARKING",
       "nflTeam": "Den",
       "ownership": "rostered",
-      "rosterSlot": "BN",
+      "rosterSlot": "RB",
       "injuryStatus": null,
       "sampleGames2026": 3,
       "baselineStats": {
@@ -51717,7 +51717,7 @@
       "fantasyTeam": "I’m confused",
       "nflTeam": "LV",
       "ownership": "rostered",
-      "rosterSlot": "RB",
+      "rosterSlot": "BN",
       "injuryStatus": null,
       "sampleGames2026": 7,
       "baselineStats": {
@@ -53258,7 +53258,7 @@
       "fantasyTeam": "I’m confused",
       "nflTeam": "Jax",
       "ownership": "rostered",
-      "rosterSlot": "BN",
+      "rosterSlot": "RB",
       "injuryStatus": null,
       "sampleGames2026": 6,
       "baselineStats": {
@@ -54986,11 +54986,11 @@
       "yahooId": "30227",
       "name": "Samaje Perine",
       "position": "RB",
-      "fantasyTeamId": "1",
-      "fantasyTeam": "Blitzmaster",
+      "fantasyTeamId": null,
+      "fantasyTeam": null,
       "nflTeam": "Cin",
-      "ownership": "rostered",
-      "rosterSlot": "BN",
+      "ownership": "unverified",
+      "rosterSlot": null,
       "injuryStatus": null,
       "sampleGames2026": 6,
       "baselineStats": {
@@ -57407,11 +57407,11 @@
       "yahooId": "41048",
       "name": "Tyrone Tracy Jr.",
       "position": "RB",
-      "fantasyTeamId": "3",
-      "fantasyTeam": "Lone Wolf Stacy",
+      "fantasyTeamId": null,
+      "fantasyTeam": null,
       "nflTeam": "NYG",
-      "ownership": "rostered",
-      "rosterSlot": "BN",
+      "ownership": "unverified",
+      "rosterSlot": null,
       "injuryStatus": "O",
       "sampleGames2026": 7,
       "baselineStats": {
@@ -58630,7 +58630,7 @@
       "fantasyTeam": "Screen Pass Eva",
       "nflTeam": "Car",
       "ownership": "rostered",
-      "rosterSlot": "BN",
+      "rosterSlot": "IR",
       "injuryStatus": "IR",
       "sampleGames2026": 2,
       "baselineStats": {
@@ -63258,11 +63258,11 @@
       "yahooId": "42859",
       "name": "Seth McGowan",
       "position": "RB",
-      "fantasyTeamId": null,
-      "fantasyTeam": "Available",
+      "fantasyTeamId": "3",
+      "fantasyTeam": "Lone Wolf Stacy",
       "nflTeam": "Ind",
-      "ownership": "available",
-      "rosterSlot": null,
+      "ownership": "rostered",
+      "rosterSlot": "BN",
       "injuryStatus": null,
       "sampleGames2026": 7,
       "baselineStats": {
@@ -78277,7 +78277,7 @@
     "currentWeekUncertain": 17,
     "futureActiveScenarios": true
   },
-  "preparedAt": "2026-10-27T19:41:15.550Z",
+  "preparedAt": "2026-10-31T20:38:39.725Z",
   "currentWeekAtSnapshot": 8,
   "updateSource": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv",
   "updateNotice": "Offensive baselines and defensive matchup ratings refreshed through Week 7. Snap history retains its original date; K/DEF team context has separately reported feature cutoffs.",

@@ -180,3 +180,13 @@ const tinyK={id:'tinyK',name:'Tiny Kicker Upgrade',position:'K',slot:'BN'};
 const tinyFuture=future.concat([{yahooId:'tinyK',position:'K',weeks:[{week:5,points:4.4,state:'assuming_active'}]}]);
 context.DaVinciAdvice.init({rosters:{teams:[{id:'7',players:[...starters,...reserves,tinyK]}]},available:{players:[]},future:{startWeek:5,endWeek:6,players:tinyFuture},week:5,teamId:'7'});
 assert.doesNotMatch(element('lineupRecommendations').innerHTML,/Start Tiny Kicker Upgrade/);
+
+// Current-week locks hold starters in place and cannot promote a finished bench game.
+const lockedRoster=[...starters,...reserves].map(p=>({...p}));
+Object.assign(lockedRoster.find(p=>p.id==='wr2'),{isEditable:false,editabilityWeek:5,actualPoints:1,actualPointsWeek:5});
+Object.assign(lockedRoster.find(p=>p.id==='backwr'),{isEditable:false,editabilityWeek:5,actualPoints:30,actualPointsWeek:5});
+context.DaVinciAdvice.init({rosters:{teams:[{id:'7',players:lockedRoster}]},available:{players:free},future:{players:future,startWeek:5,endWeek:6},week:5,teamId:'7'});
+const lockedResult=context.DaVinciAdvice.lineup(lockedRoster,5);
+assert.ok(lockedResult.selections.some(s=>s.player.id==='wr2'&&s.points===1));
+assert.ok(!lockedResult.selections.some(s=>s.player.id==='backwr'));
+assert.ok(context.DaVinciAdvice.lineup(lockedRoster,6).selections.some(s=>s.player.id==='backwr'),'Current-week locks expire next week');

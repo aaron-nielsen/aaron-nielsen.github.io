@@ -13,7 +13,7 @@ function refresh(base,raw,at=new Date().toISOString()){
   if(!r?.success||r.data?.snapshot?.type!=='current'||!r.data.teamKey?.startsWith(league.leagueId+'.t.'))throw Error('Invalid current roster');
   const d=r.data;
   const pointsWeek=Number(d.pointsCoverage?.week);
-  return {id:d.teamKey.split('.').at(-1),key:d.teamKey,name:d.teamName,owner:d.ownerName,players:d.players.map(p=>({id:String(p.playerId),key:p.playerKey,name:p.name,nflTeam:p.team,position:p.position,slot:p.selectedPosition,status:p.status||null,...(pointsWeek===current&&typeof p.points==='number'?{actualPoints:p.points,actualPointsWeek:pointsWeek}:{})}))};
+  return {id:d.teamKey.split('.').at(-1),key:d.teamKey,name:d.teamName,owner:d.ownerName,players:d.players.map(p=>({id:String(p.playerId),key:p.playerKey,name:p.name,nflTeam:p.team,position:p.position,slot:p.selectedPosition,status:p.status||null,...(typeof p.isEditable==='boolean'?{isEditable:p.isEditable,editabilityWeek:current}:{}),...(Array.isArray(p.eligiblePositions)?{eligiblePositions:p.eligiblePositions}:{}),...(pointsWeek===current&&typeof p.points==='number'?{actualPoints:p.points,actualPointsWeek:pointsWeek}:{})}))};
  });
  if(teams?.length!==Number(info.numTeams)||new Set(teams.map(t=>t.id)).size!==teams.length)throw Error('Incomplete roster refresh');
  const side=s=>({...s,id:String(s.teamId),name:s.teamName});

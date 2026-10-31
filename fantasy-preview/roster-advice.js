@@ -24,7 +24,9 @@ function inaccessible(p,w){
  // starter. Only an explicit availability-adjusted return window may do that.
  return (rosterBlocked&&!conditionalReturn)||(OUT.has(code)&&!conditionalReturn);
 }
+function locked(p,w){return p.isEditable===false&&Number(p.editabilityWeek)===Number(w)&&Number(w)===Number(state.week);}
 function points(p,w){
+ if(locked(p,w)&&Number(p.actualPointsWeek)===Number(w)&&Number.isFinite(p.actualPoints))return p.actualPoints;
  const f=byId.get(String(p.id||p.yahooId));
  const frame=f?.weeks?.find(x=>Number(x.week)===w);
  if(!frame)return null;
@@ -33,8 +35,15 @@ function points(p,w){
 }
 function lineup(players,w,allowEmpty=false){
  const dp=Array(512).fill(null);
- dp[0]={score:0,selections:[]};
+ let fixedMask=0,fixedScore=0,fixed=[];
+ for(const p of players.filter(p=>locked(p,w)&&!['BN','IR'].includes(p.slot))){
+  const slot=SLOT_NAMES.findIndex((name,i)=>name===(p.slot==='W/R/T'?'FLEX':p.slot)&&!(fixedMask&(1<<i)));
+  const score=points(p,w);if(slot<0||score==null)return null;
+  fixedMask|=1<<slot;fixedScore+=score;fixed.push({player:p,slot,points:score});
+ }
+ dp[fixedMask]={score:fixedScore,selections:fixed};
  for(const p of players){
+  if(locked(p,w))continue;
   if(inaccessible(p,w))continue;
   const score=points(p,w);
   if(score==null)continue;
@@ -151,7 +160,7 @@ function renderWaivers(){
   const list=ordered.filter(p=>p.position===pos);
   return {pos,list:list.slice(0,3)};
  });
- const dropChoices=roster.filter(p=>p.slot==='BN'&&!EXCLUDED.has(status(p))&&!OUT.has(status(p)));
+ const dropChoices=roster.filter(p=>p.slot==='BN'&&!locked(p,state.week)&&!EXCLUDED.has(status(p))&&!OUT.has(status(p)));
  const moveCandidates=bestByPosition.flatMap(x=>x.list.slice(0,2));
  const changes=[];
  if(allReady){
@@ -159,7 +168,7 @@ function renderWaivers(){
   for(const candidate of moveCandidates){
    const possible=dropChoices.filter(p=>candidate.position!=='K'&&candidate.position!=='DEF');
    if(['K','DEF'].includes(candidate.position))
-    possible.push(...roster.filter(p=>p.position===candidate.position&&p.slot!=='IR'));
+    possible.push(...roster.filter(p=>p.position===candidate.position&&p.slot!=='IR'&&!locked(p,state.week)));
    if(!possible.length)continue;
    let bestMove=null;
    for(const drop of possible){

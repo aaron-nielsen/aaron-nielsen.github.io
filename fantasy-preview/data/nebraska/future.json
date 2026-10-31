@@ -4,7 +4,7 @@
   "startWeek": 5,
   "endWeek": 17,
   "generatedAt": "2026-10-27T19:42:56.541Z",
-  "rosterSnapshotAt": "2026-10-27T19:41:15.550Z",
+  "rosterSnapshotAt": "2026-10-31T20:38:39.831Z",
   "statsThroughWeek": 7,
   "scoringCategories": [
     {
@@ -1647,7 +1647,7 @@
       "fantasyTeam": "Locked In Hunter",
       "nflTeam": "Den",
       "ownership": "rostered",
-      "rosterSlot": "QB",
+      "rosterSlot": "BN",
       "injuryStatus": null,
       "sampleGames2026": 7,
       "baselineStats": {
@@ -1997,7 +1997,7 @@
       "fantasyTeam": "New York Teams",
       "nflTeam": "SF",
       "ownership": "rostered",
-      "rosterSlot": "QB",
+      "rosterSlot": "BN",
       "injuryStatus": null,
       "sampleGames2026": 7,
       "baselineStats": {
@@ -3045,11 +3045,11 @@
       "yahooId": "40030",
       "name": "C.J. Stroud",
       "position": "QB",
-      "fantasyTeamId": "4",
-      "fantasyTeam": "#6 THE Pulverizing Perrin's",
+      "fantasyTeamId": null,
+      "fantasyTeam": null,
       "nflTeam": "Hou",
-      "ownership": "rostered",
-      "rosterSlot": "QB",
+      "ownership": "unverified",
+      "rosterSlot": null,
       "injuryStatus": null,
       "sampleGames2026": 7,
       "baselineStats": {
@@ -3220,11 +3220,11 @@
       "yahooId": "29325",
       "name": "Jacoby Brissett",
       "position": "QB",
-      "fantasyTeamId": null,
-      "fantasyTeam": null,
+      "fantasyTeamId": "9",
+      "fantasyTeam": "3rd & Long anton",
       "nflTeam": "Ari",
-      "ownership": "unverified",
-      "rosterSlot": null,
+      "ownership": "rostered",
+      "rosterSlot": "BN",
       "injuryStatus": null,
       "sampleGames2026": 7,
       "baselineStats": {
@@ -3750,7 +3750,7 @@
       "fantasyTeam": "Locked In Hunter",
       "nflTeam": "NO",
       "ownership": "rostered",
-      "rosterSlot": "WR",
+      "rosterSlot": "BN",
       "injuryStatus": null,
       "sampleGames2026": 7,
       "baselineStats": {
@@ -4801,7 +4801,7 @@
       "nflTeam": "Det",
       "ownership": "rostered",
       "rosterSlot": "W/R/T",
-      "injuryStatus": "Q",
+      "injuryStatus": null,
       "sampleGames2026": 6,
       "baselineStats": {
         "passAttempts": 0,
@@ -4856,8 +4856,8 @@
           "date": "2026-11-01",
           "factor": 0.9003,
           "activePoints": 13.97,
-          "points": null,
-          "state": "needs_availability_confirmation",
+          "points": 13.97,
+          "state": "assuming_active",
           "defenseThroughWeek": 7
         },
         {
@@ -5325,7 +5325,7 @@
       "fantasyTeam": "#6 THE Pulverizing Perrin's",
       "nflTeam": "Was",
       "ownership": "rostered",
-      "rosterSlot": "BN",
+      "rosterSlot": "QB",
       "injuryStatus": null,
       "sampleGames2026": 4,
       "baselineStats": {
@@ -6200,8 +6200,8 @@
       "fantasyTeam": "#6 THE Pulverizing Perrin's",
       "nflTeam": "Min",
       "ownership": "rostered",
-      "rosterSlot": "RB",
-      "injuryStatus": "Q",
+      "rosterSlot": "BN",
+      "injuryStatus": null,
       "sampleGames2026": 6,
       "baselineStats": {
         "passAttempts": 0,
@@ -6256,8 +6256,8 @@
           "date": "2026-11-01",
           "factor": 0.9779,
           "activePoints": 13.88,
-          "points": null,
-          "state": "needs_availability_confirmation",
+          "points": 13.88,
+          "state": "assuming_active",
           "defenseThroughWeek": 7
         },
         {
@@ -6726,7 +6726,7 @@
       "nflTeam": "Bal",
       "ownership": "rostered",
       "rosterSlot": "QB",
-      "injuryStatus": "Q",
+      "injuryStatus": null,
       "sampleGames2026": 4,
       "baselineStats": {
         "passAttempts": 23.48,
@@ -6782,8 +6782,8 @@
           "date": "2026-11-01",
           "factor": 1.1,
           "activePoints": 16.79,
-          "points": null,
-          "state": "needs_availability_confirmation",
+          "points": 16.79,
+          "state": "assuming_active",
           "defenseThroughWeek": 7
         },
         {
@@ -7244,7 +7244,7 @@
       "fantasyTeam": "3rd & Long anton",
       "nflTeam": "Cin",
       "ownership": "rostered",
-      "rosterSlot": "BN",
+      "rosterSlot": "RB",
       "injuryStatus": null,
       "sampleGames2026": 6,
       "baselineStats": {
@@ -7594,7 +7594,7 @@
       "fantasyTeam": "Gridiron Juliean",
       "nflTeam": "Cin",
       "ownership": "rostered",
-      "rosterSlot": "BN",
+      "rosterSlot": "WR",
       "injuryStatus": null,
       "sampleGames2026": 6,
       "baselineStats": {
@@ -7944,7 +7944,7 @@
       "fantasyTeam": "Locked In Hunter",
       "nflTeam": "Jax",
       "ownership": "rostered",
-      "rosterSlot": "BN",
+      "rosterSlot": "QB",
       "injuryStatus": null,
       "sampleGames2026": 6,
       "baselineStats": {
@@ -9853,7 +9853,7 @@
       "fantasyTeam": "3rd & Long anton",
       "nflTeam": "TB",
       "ownership": "rostered",
-      "rosterSlot": "RB",
+      "rosterSlot": "W/R/T",
       "injuryStatus": null,
       "sampleGames2026": 7,
       "baselineStats": {
@@ -10203,7 +10203,7 @@
       "fantasyTeam": "New York Teams",
       "nflTeam": "Atl",
       "ownership": "rostered",
-      "rosterSlot": "BN",
+      "rosterSlot": "QB",
       "injuryStatus": null,
       "sampleGames2026": 5,
       "baselineStats": {
@@ -11405,7 +11405,7 @@
       "nflTeam": "Phi",
       "ownership": "rostered",
       "rosterSlot": "BN",
-      "injuryStatus": "Q",
+      "injuryStatus": "O",
       "sampleGames2026": 4,
       "baselineStats": {
         "passAttempts": 0,
@@ -11461,8 +11461,8 @@
           "date": "2026-11-01",
           "factor": 1.0342,
           "activePoints": 13.52,
-          "points": null,
-          "state": "needs_availability_confirmation",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 7
         },
         {
@@ -12968,7 +12968,7 @@
       "fantasyTeam": "#6 THE Pulverizing Perrin's",
       "nflTeam": "Ten",
       "ownership": "rostered",
-      "rosterSlot": "BN",
+      "rosterSlot": "RB",
       "injuryStatus": null,
       "sampleGames2026": 7,
       "baselineStats": {
@@ -14175,8 +14175,8 @@
       "fantasyTeam": "3rd & Long anton",
       "nflTeam": "KC",
       "ownership": "rostered",
-      "rosterSlot": "IR",
-      "injuryStatus": "Q",
+      "rosterSlot": "WR",
+      "injuryStatus": null,
       "sampleGames2026": 3,
       "baselineStats": {
         "passAttempts": 0,
@@ -14232,8 +14232,8 @@
           "date": "2026-11-01",
           "factor": 0.9168,
           "activePoints": 10.16,
-          "points": null,
-          "state": "needs_availability_confirmation",
+          "points": 10.16,
+          "state": "assuming_active",
           "defenseThroughWeek": 7
         },
         {
@@ -14341,11 +14341,11 @@
       "yahooId": "41807",
       "name": "Omarion Hampton",
       "position": "RB",
-      "fantasyTeamId": "5",
-      "fantasyTeam": "2-Point Ali",
+      "fantasyTeamId": null,
+      "fantasyTeam": null,
       "nflTeam": "LAC",
-      "ownership": "rostered",
-      "rosterSlot": "BN",
+      "ownership": "unverified",
+      "rosterSlot": null,
       "injuryStatus": null,
       "sampleGames2026": 6,
       "baselineStats": {
@@ -15377,7 +15377,7 @@
       "fantasyTeam": "New York Teams",
       "nflTeam": "Was",
       "ownership": "rostered",
-      "rosterSlot": "BN",
+      "rosterSlot": "WR",
       "injuryStatus": null,
       "sampleGames2026": 5,
       "baselineStats": {
@@ -15548,11 +15548,11 @@
       "yahooId": "41845",
       "name": "RJ Harvey",
       "position": "RB",
-      "fantasyTeamId": "6",
-      "fantasyTeam": "Nebraska Bugeaters",
+      "fantasyTeamId": null,
+      "fantasyTeam": null,
       "nflTeam": "Den",
-      "ownership": "rostered",
-      "rosterSlot": "BN",
+      "ownership": "unverified",
+      "rosterSlot": null,
       "injuryStatus": null,
       "sampleGames2026": 6,
       "baselineStats": {
@@ -15903,7 +15903,7 @@
       "nflTeam": "Dal",
       "ownership": "rostered",
       "rosterSlot": "W/R/T",
-      "injuryStatus": null,
+      "injuryStatus": "Q",
       "sampleGames2026": 7,
       "baselineStats": {
         "passAttempts": 0,
@@ -15959,8 +15959,8 @@
           "date": "2026-11-01",
           "factor": 1.0598,
           "activePoints": 12.91,
-          "points": 12.91,
-          "state": "assuming_active",
+          "points": null,
+          "state": "needs_availability_confirmation",
           "defenseThroughWeek": 7
         },
         {
@@ -16778,7 +16778,7 @@
       "nflTeam": "GB",
       "ownership": "rostered",
       "rosterSlot": "WR",
-      "injuryStatus": null,
+      "injuryStatus": "Q",
       "sampleGames2026": 7,
       "baselineStats": {
         "passAttempts": 0,
@@ -16834,8 +16834,8 @@
           "date": "2026-10-29",
           "factor": 0.9277,
           "activePoints": 10.87,
-          "points": 10.87,
-          "state": "assuming_active",
+          "points": null,
+          "state": "needs_availability_confirmation",
           "defenseThroughWeek": 7
         },
         {
@@ -18330,12 +18330,12 @@
       "yahooId": "33394",
       "name": "Jaylen Waddle",
       "position": "WR",
-      "fantasyTeamId": null,
-      "fantasyTeam": null,
+      "fantasyTeamId": "9",
+      "fantasyTeam": "3rd & Long anton",
       "nflTeam": "Den",
-      "ownership": "unverified",
-      "rosterSlot": null,
-      "injuryStatus": null,
+      "ownership": "rostered",
+      "rosterSlot": "BN",
+      "injuryStatus": "Q",
       "sampleGames2026": 7,
       "baselineStats": {
         "passAttempts": 0.01,
@@ -18391,8 +18391,8 @@
           "date": "2026-11-01",
           "factor": 0.9003,
           "activePoints": 7.77,
-          "points": 7.77,
-          "state": "assuming_active",
+          "points": null,
+          "state": "needs_availability_confirmation",
           "defenseThroughWeek": 7
         },
         {
@@ -18685,7 +18685,7 @@
       "nflTeam": "Ten",
       "ownership": "rostered",
       "rosterSlot": "BN",
-      "injuryStatus": null,
+      "injuryStatus": "O",
       "sampleGames2026": 7,
       "baselineStats": {
         "passAttempts": 0,
@@ -18741,8 +18741,8 @@
           "date": "2026-11-01",
           "factor": 0.9972,
           "activePoints": 9.65,
-          "points": 9.65,
-          "state": "assuming_active",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 7
         },
         {
@@ -19209,8 +19209,8 @@
       "fantasyTeam": "Gridiron Juliean",
       "nflTeam": "GB",
       "ownership": "rostered",
-      "rosterSlot": "WR",
-      "injuryStatus": "Q",
+      "rosterSlot": "BN",
+      "injuryStatus": null,
       "sampleGames2026": 7,
       "baselineStats": {
         "passAttempts": 0,
@@ -19266,8 +19266,8 @@
           "date": "2026-10-29",
           "factor": 0.9277,
           "activePoints": 10.23,
-          "points": null,
-          "state": "needs_availability_confirmation",
+          "points": 10.23,
+          "state": "assuming_active",
           "defenseThroughWeek": 7
         },
         {
@@ -19384,8 +19384,8 @@
       "fantasyTeam": "Locked In Hunter",
       "nflTeam": "NE",
       "ownership": "rostered",
-      "rosterSlot": "BN",
-      "injuryStatus": null,
+      "rosterSlot": "WR",
+      "injuryStatus": "O",
       "sampleGames2026": 3,
       "baselineStats": {
         "passAttempts": 0,
@@ -19441,8 +19441,8 @@
           "date": "2026-11-01",
           "factor": 0.9003,
           "activePoints": 7.72,
-          "points": 7.72,
-          "state": "assuming_active",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 7
         },
         {
@@ -19560,7 +19560,7 @@
       "nflTeam": "Ind",
       "ownership": "rostered",
       "rosterSlot": "BN",
-      "injuryStatus": "Q",
+      "injuryStatus": null,
       "sampleGames2026": 5,
       "baselineStats": {
         "passAttempts": 0.01,
@@ -19616,8 +19616,8 @@
           "date": "2026-11-01",
           "factor": 0.9623,
           "activePoints": 10.34,
-          "points": null,
-          "state": "needs_availability_confirmation",
+          "points": 10.34,
+          "state": "assuming_active",
           "defenseThroughWeek": 7
         },
         {
@@ -20774,11 +20774,11 @@
       "yahooId": "26699",
       "name": "Keenan Allen",
       "position": "WR",
-      "fantasyTeamId": "9",
-      "fantasyTeam": "3rd & Long anton",
+      "fantasyTeamId": null,
+      "fantasyTeam": null,
       "nflTeam": "Ind",
-      "ownership": "rostered",
-      "rosterSlot": "BN",
+      "ownership": "unverified",
+      "rosterSlot": null,
       "injuryStatus": null,
       "sampleGames2026": 6,
       "baselineStats": {
@@ -20954,7 +20954,7 @@
       "nflTeam": "Phi",
       "ownership": "rostered",
       "rosterSlot": "RB",
-      "injuryStatus": "Q",
+      "injuryStatus": null,
       "sampleGames2026": 5,
       "baselineStats": {
         "passAttempts": 0,
@@ -21010,8 +21010,8 @@
           "date": "2026-11-01",
           "factor": 0.9453,
           "activePoints": 9.54,
-          "points": null,
-          "state": "needs_availability_confirmation",
+          "points": 9.54,
+          "state": "assuming_active",
           "defenseThroughWeek": 7
         },
         {
@@ -21298,7 +21298,7 @@
       "nflTeam": "NE",
       "ownership": "rostered",
       "rosterSlot": "RB",
-      "injuryStatus": null,
+      "injuryStatus": "O",
       "sampleGames2026": 6,
       "baselineStats": {
         "passAttempts": 0,
@@ -21354,8 +21354,8 @@
           "date": "2026-11-01",
           "factor": 1.1,
           "activePoints": 8.77,
-          "points": 8.77,
-          "state": "assuming_active",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 7
         },
         {
@@ -22167,7 +22167,7 @@
       "nflTeam": "Ari",
       "ownership": "rostered",
       "rosterSlot": "RB",
-      "injuryStatus": "Q",
+      "injuryStatus": null,
       "sampleGames2026": 5,
       "baselineStats": {
         "passAttempts": 0,
@@ -22223,8 +22223,8 @@
           "date": "2026-11-01",
           "factor": 1.1,
           "activePoints": 9.39,
-          "points": null,
-          "state": "needs_availability_confirmation",
+          "points": 9.39,
+          "state": "assuming_active",
           "defenseThroughWeek": 7
         },
         {
@@ -22685,7 +22685,7 @@
       "fantasyTeam": "#6 THE Pulverizing Perrin's",
       "nflTeam": "Car",
       "ownership": "rostered",
-      "rosterSlot": "W/R/T",
+      "rosterSlot": "BN",
       "injuryStatus": null,
       "sampleGames2026": 5,
       "baselineStats": {
@@ -24594,7 +24594,7 @@
       "fantasyTeam": "3rd & Long anton",
       "nflTeam": "Jax",
       "ownership": "rostered",
-      "rosterSlot": "BN",
+      "rosterSlot": "WR",
       "injuryStatus": null,
       "sampleGames2026": 6,
       "baselineStats": {
@@ -24765,12 +24765,12 @@
       "yahooId": "40075",
       "name": "Zach Charbonnet",
       "position": "RB",
-      "fantasyTeamId": null,
-      "fantasyTeam": "Available in Nebraska Bugeaters",
+      "fantasyTeamId": "5",
+      "fantasyTeam": "2-Point Ali",
       "nflTeam": "Sea",
-      "ownership": "available",
-      "rosterSlot": null,
-      "injuryStatus": "PUP-R",
+      "ownership": "rostered",
+      "rosterSlot": "BN",
+      "injuryStatus": "Q",
       "sampleGames2026": 0,
       "baselineStats": {
         "passAttempts": 0,
@@ -24826,8 +24826,8 @@
           "date": "2026-11-02",
           "factor": 0.9524,
           "activePoints": 8.19,
-          "points": 0,
-          "state": "unavailable_reported",
+          "points": null,
+          "state": "needs_availability_confirmation",
           "defenseThroughWeek": 7
         },
         {
@@ -25971,7 +25971,7 @@
       "nflTeam": "TB",
       "ownership": "rostered",
       "rosterSlot": "BN",
-      "injuryStatus": "Q",
+      "injuryStatus": "O",
       "sampleGames2026": 6,
       "baselineStats": {
         "passAttempts": 0,
@@ -26027,8 +26027,8 @@
           "date": "2026-11-01",
           "factor": 0.9996,
           "activePoints": 9.48,
-          "points": null,
-          "state": "needs_availability_confirmation",
+          "points": 0,
+          "state": "unavailable_reported",
           "defenseThroughWeek": 7
         },
         {
@@ -28241,11 +28241,11 @@
       "yahooId": "34047",
       "name": "Rachaad White",
       "position": "RB",
-      "fantasyTeamId": null,
-      "fantasyTeam": "Available in Nebraska Bugeaters",
+      "fantasyTeamId": "6",
+      "fantasyTeam": "Nebraska Bugeaters",
       "nflTeam": "Was",
-      "ownership": "available",
-      "rosterSlot": null,
+      "ownership": "rostered",
+      "rosterSlot": "BN",
       "injuryStatus": null,
       "sampleGames2026": 5,
       "baselineStats": {
@@ -28591,11 +28591,11 @@
       "yahooId": "30197",
       "name": "Chris Godwin Jr.",
       "position": "WR",
-      "fantasyTeamId": "9",
-      "fantasyTeam": "3rd & Long anton",
+      "fantasyTeamId": null,
+      "fantasyTeam": null,
       "nflTeam": "TB",
-      "ownership": "rostered",
-      "rosterSlot": "WR",
+      "ownership": "unverified",
+      "rosterSlot": null,
       "injuryStatus": null,
       "sampleGames2026": 7,
       "baselineStats": {
@@ -32062,7 +32062,7 @@
       "fantasyTeam": "3rd & Long anton",
       "nflTeam": "Hou",
       "ownership": "rostered",
-      "rosterSlot": "W/R/T",
+      "rosterSlot": "BN",
       "injuryStatus": null,
       "sampleGames2026": 7,
       "baselineStats": {
@@ -33963,7 +33963,7 @@
       "fantasyTeam": "New York Teams",
       "nflTeam": "SF",
       "ownership": "rostered",
-      "rosterSlot": "WR",
+      "rosterSlot": "BN",
       "injuryStatus": null,
       "sampleGames2026": 0,
       "baselineStats": {
@@ -34991,7 +34991,7 @@
       "nflTeam": "Buf",
       "ownership": "rostered",
       "rosterSlot": "BN",
-      "injuryStatus": null,
+      "injuryStatus": "Q",
       "sampleGames2026": 6,
       "baselineStats": {
         "passAttempts": 0,
@@ -35046,8 +35046,8 @@
           "date": "2026-11-01",
           "factor": 1.0092,
           "activePoints": 6.39,
-          "points": 6.39,
-          "state": "assuming_active",
+          "points": null,
+          "state": "needs_availability_confirmation",
           "defenseThroughWeek": 7
         },
         {
@@ -36023,7 +36023,7 @@
       "nflTeam": "Sea",
       "ownership": "rostered",
       "rosterSlot": "IR",
-      "injuryStatus": "IR",
+      "injuryStatus": "IR-R",
       "sampleGames2026": 3,
       "baselineStats": {
         "passAttempts": 0,
@@ -36366,7 +36366,7 @@
       "fantasyTeam": "Locked In Hunter",
       "nflTeam": "LAR",
       "ownership": "rostered",
-      "rosterSlot": "BN",
+      "rosterSlot": "RB",
       "injuryStatus": null,
       "sampleGames2026": 7,
       "baselineStats": {
@@ -39294,7 +39294,7 @@
       "nflTeam": "TB",
       "ownership": "rostered",
       "rosterSlot": "BN",
-      "injuryStatus": null,
+      "injuryStatus": "Q",
       "sampleGames2026": 7,
       "baselineStats": {
         "passAttempts": 0,
@@ -39350,8 +39350,8 @@
           "date": "2026-11-01",
           "factor": 1.0889,
           "activePoints": 6.53,
-          "points": 6.53,
-          "state": "assuming_active",
+          "points": null,
+          "state": "needs_availability_confirmation",
           "defenseThroughWeek": 7
         },
         {
@@ -39808,11 +39808,11 @@
       "yahooId": "40201",
       "name": "Dontayvion Wicks",
       "position": "WR",
-      "fantasyTeamId": "1",
-      "fantasyTeam": "4th Qtr cory",
+      "fantasyTeamId": null,
+      "fantasyTeam": null,
       "nflTeam": "Phi",
-      "ownership": "rostered",
-      "rosterSlot": "BN",
+      "ownership": "unverified",
+      "rosterSlot": null,
       "injuryStatus": "Q",
       "sampleGames2026": 6,
       "baselineStats": {
@@ -44321,7 +44321,7 @@
       "fantasyTeam": "Locked In Hunter",
       "nflTeam": "NO",
       "ownership": "rostered",
-      "rosterSlot": "RB",
+      "rosterSlot": "BN",
       "injuryStatus": null,
       "sampleGames2026": 6,
       "baselineStats": {
@@ -45174,11 +45174,11 @@
       "yahooId": "40222",
       "name": "DeMario Douglas",
       "position": "WR",
-      "fantasyTeamId": null,
-      "fantasyTeam": "Available in Nebraska Bugeaters",
+      "fantasyTeamId": "1",
+      "fantasyTeam": "4th Qtr cory",
       "nflTeam": "NE",
-      "ownership": "available",
-      "rosterSlot": null,
+      "ownership": "rostered",
+      "rosterSlot": "BN",
       "injuryStatus": null,
       "sampleGames2026": 7,
       "baselineStats": {
@@ -52424,7 +52424,7 @@
       "fantasyTeam": "3rd & Long anton",
       "nflTeam": "Pit",
       "ownership": "rostered",
-      "rosterSlot": "WR",
+      "rosterSlot": "BN",
       "injuryStatus": null,
       "sampleGames2026": 6,
       "baselineStats": {
@@ -60016,12 +60016,12 @@
       "yahooId": "42652",
       "name": "Omar Cooper Jr.",
       "position": "WR",
-      "fantasyTeamId": null,
-      "fantasyTeam": "Available in Nebraska Bugeaters",
+      "fantasyTeamId": "4",
+      "fantasyTeam": "#6 THE Pulverizing Perrin's",
       "nflTeam": "NYJ",
-      "ownership": "available",
-      "rosterSlot": null,
-      "injuryStatus": "IR",
+      "ownership": "rostered",
+      "rosterSlot": "W/R/T",
+      "injuryStatus": null,
       "sampleGames2026": 3,
       "baselineStats": {
         "passAttempts": 0,
@@ -60077,8 +60077,8 @@
           "date": "2026-11-01",
           "factor": 1.0391,
           "activePoints": 8.44,
-          "points": 0,
-          "state": "unavailable_reported",
+          "points": 8.44,
+          "state": "assuming_active",
           "defenseThroughWeek": 7
         },
         {
@@ -73664,7 +73664,7 @@
     "available": 295
   },
   "currentWeekAtSnapshot": 8,
-  "preparedAt": "2026-10-27T19:41:15.550Z",
+  "preparedAt": "2026-10-31T20:38:39.831Z",
   "updateSource": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv",
   "updateNotice": "Offensive baselines and defensive matchup ratings refreshed through Week 7. Snap history retains its original date; K/DEF team context has separately reported feature cutoffs.",
   "defenseThroughWeek": 7,

@@ -4,8 +4,6 @@
   "collectedAt": "2026-10-13T00:30:26.239709+00:00",
   "leagueId": "258793",
   "weeks": [
-    6,
-    7,
     8,
     9,
     10,
@@ -10847,7 +10845,7 @@
         "next": "https://football.fantasysports.yahoo.com/f1/258793/7/team?&week=7&stat1=S&stat2=W",
         "players": [
           {
-            "byeWeek": "–",
+            "byeWeek": "\u2013",
             "id": "40029",
             "name": "Bryce Young",
             "points": 15.71,
@@ -10855,7 +10853,7 @@
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "\u2013",
             "id": "40971",
             "name": "MarShawn Lloyd",
             "points": 10.91,
@@ -10863,7 +10861,7 @@
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "\u2013",
             "id": "33991",
             "name": "Breece Hall",
             "points": 10.5,
@@ -10871,7 +10869,7 @@
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "\u2013",
             "id": "40168",
             "name": "Puka Nacua",
             "points": 19.37,
@@ -10879,7 +10877,7 @@
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "\u2013",
             "id": "40121",
             "name": "Michael Wilson",
             "points": 11.33,
@@ -10887,7 +10885,7 @@
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "\u2013",
             "id": "40878",
             "name": "Brock Bowers",
             "points": 14.35,
@@ -10895,7 +10893,7 @@
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "\u2013",
             "id": "34095",
             "name": "Isaiah Likely",
             "points": 10.6,
@@ -10903,7 +10901,7 @@
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "\u2013",
             "id": "31960",
             "name": "Tony Pollard",
             "points": 10.14,
@@ -10919,7 +10917,7 @@
             "state": "bye"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "\u2013",
             "id": "34054",
             "name": "Brian Robinson",
             "points": 5.53,
@@ -10927,7 +10925,7 @@
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "\u2013",
             "id": "31856",
             "name": "Josh Jacobs",
             "points": 0,
@@ -10943,7 +10941,7 @@
             "state": "bye"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "\u2013",
             "id": "34008",
             "name": "Alec Pierce",
             "points": 0,
@@ -10951,7 +10949,7 @@
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "\u2013",
             "id": "30346",
             "name": "Harrison Butker",
             "points": 8.24,
@@ -10967,7 +10965,7 @@
             "state": "bye"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "\u2013",
             "id": "100012",
             "name": "Chiefs",
             "points": 8.88,
@@ -10975,7 +10973,7 @@
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "\u2013",
             "id": "100020",
             "name": "Jets",
             "points": 5.97,
@@ -10991,7 +10989,7 @@
         "next": "https://football.fantasysports.yahoo.com/f1/258793/7/team?&week=8&stat1=S&stat2=W",
         "players": [
           {
-            "byeWeek": "–",
+            "byeWeek": "\u2013",
             "id": "40029",
             "name": "Bryce Young",
             "points": 17.78,
@@ -10999,7 +10997,7 @@
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "\u2013",
             "id": "40971",
             "name": "MarShawn Lloyd",
             "points": 9.05,
@@ -11007,7 +11005,7 @@
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "\u2013",
             "id": "33991",
             "name": "Breece Hall",
             "points": 13.29,
@@ -11015,7 +11013,7 @@
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "\u2013",
             "id": "40168",
             "name": "Puka Nacua",
             "points": 17.77,
@@ -11023,7 +11021,7 @@
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "\u2013",
             "id": "40121",
             "name": "Michael Wilson",
             "points": 12.49,
@@ -11031,7 +11029,7 @@
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "\u2013",
             "id": "40878",
             "name": "Brock Bowers",
             "points": 12.81,
@@ -11039,7 +11037,7 @@
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "\u2013",
             "id": "34095",
             "name": "Isaiah Likely",
             "points": 9.04,
@@ -11047,7 +11045,7 @@
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "\u2013",
             "id": "31960",
             "name": "Tony Pollard",
             "points": 9.79,
@@ -11055,7 +11053,7 @@
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "\u2013",
             "id": "32671",
             "name": "Joe Burrow",
             "points": 18.7,
@@ -11063,7 +11061,7 @@
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "\u2013",
             "id": "34054",
             "name": "Brian Robinson",
             "points": 5.33,
@@ -11071,7 +11069,7 @@
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "\u2013",
             "id": "31856",
             "name": "Josh Jacobs",
             "points": 1.32,
@@ -11079,7 +11077,7 @@
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "\u2013",
             "id": "40042",
             "name": "Jordan Addison",
             "points": 8.4,
@@ -11087,7 +11085,7 @@
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "\u2013",
             "id": "34008",
             "name": "Alec Pierce",
             "points": 4.29,
@@ -11095,7 +11093,7 @@
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "\u2013",
             "id": "30346",
             "name": "Harrison Butker",
             "points": 8.57,
@@ -11103,7 +11101,7 @@
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "\u2013",
             "id": "33537",
             "name": "Evan McPherson",
             "points": 8.9,
@@ -11111,7 +11109,7 @@
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "\u2013",
             "id": "100012",
             "name": "Chiefs",
             "points": 6.78,
@@ -11119,7 +11117,7 @@
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "\u2013",
             "id": "100020",
             "name": "Jets",
             "points": 7.88,
@@ -11135,1441 +11133,1557 @@
         "next": "https://football.fantasysports.yahoo.com/f1/258793/7/team?&week=9&stat1=S&stat2=W",
         "players": [
           {
-            "byeWeek": "–",
-            "id": "40029",
-            "name": "Bryce Young",
-            "points": 15.78,
+            "byeWeek": "6",
+            "id": "32671",
+            "name": "Joe Burrow",
+            "points": 22.65,
+            "position": "QB",
             "slot": "QB",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "40971",
-            "name": "MarShawn Lloyd",
-            "points": 8.59,
+            "byeWeek": "11",
+            "id": "31856",
+            "name": "Josh Jacobs",
+            "points": 14.98,
+            "position": "RB",
             "slot": "RB",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "33991",
-            "name": "Breece Hall",
-            "points": 13.33,
+            "byeWeek": "9",
+            "id": "31960",
+            "name": "Tony Pollard",
+            "points": 13.7,
+            "position": "RB",
             "slot": "RB",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "11",
             "id": "40168",
             "name": "Puka Nacua",
-            "points": 16.33,
+            "points": 19.25,
+            "position": "WR",
             "slot": "WR",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "14",
             "id": "40121",
             "name": "Michael Wilson",
-            "points": 12.09,
+            "points": 12.33,
+            "position": "WR",
             "slot": "WR",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "13",
             "id": "40878",
             "name": "Brock Bowers",
-            "points": 12.61,
+            "points": 13.05,
+            "position": "TE",
             "slot": "TE",
             "state": "projected"
           },
           {
-            "byeWeek": "Bye",
+            "byeWeek": "13",
+            "id": "33991",
+            "name": "Breece Hall",
+            "points": 12.35,
+            "position": "RB",
+            "slot": "W/R/T",
+            "state": "projected"
+          },
+          {
+            "byeWeek": "6",
+            "id": "40042",
+            "name": "Jordan Addison",
+            "points": 8.42,
+            "position": "WR",
+            "slot": "BN",
+            "state": "projected"
+          },
+          {
+            "byeWeek": "8",
             "id": "34095",
             "name": "Isaiah Likely",
             "points": 0,
-            "slot": "W/R/T",
+            "position": "TE",
+            "slot": "BN",
             "state": "bye"
           },
           {
-            "byeWeek": "–",
-            "id": "31960",
-            "name": "Tony Pollard",
-            "points": 9.88,
+            "byeWeek": "11",
+            "id": "40971",
+            "name": "MarShawn Lloyd",
+            "points": 5.17,
+            "position": "RB",
             "slot": "BN",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "32671",
-            "name": "Joe Burrow",
-            "points": 19.43,
+            "byeWeek": "5",
+            "id": "40029",
+            "name": "Bryce Young",
+            "points": 17.08,
+            "position": "QB",
             "slot": "BN",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "11",
             "id": "34054",
-            "name": "Brian Robinson",
-            "points": 4.78,
+            "name": "Brian Robinson Jr.",
+            "points": 0,
+            "position": "RB",
             "slot": "BN",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "31856",
-            "name": "Josh Jacobs",
-            "points": 3.97,
-            "slot": "BN",
-            "state": "projected"
-          },
-          {
-            "byeWeek": "–",
-            "id": "40042",
-            "name": "Jordan Addison",
-            "points": 7.72,
-            "slot": "IR",
-            "state": "projected"
-          },
-          {
-            "byeWeek": "–",
+            "byeWeek": "13",
             "id": "34008",
             "name": "Alec Pierce",
-            "points": 8.59,
+            "points": 0,
+            "position": "WR",
             "slot": "IR",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "30346",
-            "name": "Harrison Butker",
-            "points": 7.77,
+            "byeWeek": "6",
+            "id": "33537",
+            "name": "Evan McPherson",
+            "points": 9.23,
+            "position": "K",
             "slot": "K",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "33537",
-            "name": "Evan McPherson",
-            "points": 8.19,
-            "slot": "BN",
-            "state": "projected"
-          },
-          {
-            "byeWeek": "–",
-            "id": "100012",
-            "name": "Chiefs",
-            "points": 6.22,
+            "byeWeek": "7",
+            "id": "100028",
+            "name": "Commanders",
+            "points": 8.06,
+            "position": "DEF",
             "slot": "DEF",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "100020",
-            "name": "Jets",
-            "points": 7.14,
+            "byeWeek": "5",
+            "id": "100012",
+            "name": "Chiefs",
+            "points": 6.83,
+            "position": "DEF",
             "slot": "BN",
             "state": "projected"
           }
         ],
-        "url": "https://football.fantasysports.yahoo.com/f1/258793/7/team?&week=8&stat1=S&stat2=W",
         "week": 8,
-        "collectedAt": "2026-10-13T22:03:39.839Z"
+        "url": "https://football.fantasysports.yahoo.com/f1/258793/7",
+        "collectedAt": "2026-10-31T20:33:58.513Z"
       },
       {
         "next": "https://football.fantasysports.yahoo.com/f1/258793/7/team?&week=10&stat1=S&stat2=W",
         "players": [
           {
-            "byeWeek": "–",
-            "id": "40029",
-            "name": "Bryce Young",
-            "points": 14.99,
+            "byeWeek": "6",
+            "id": "32671",
+            "name": "Joe Burrow",
+            "points": 18.95,
+            "position": "QB",
             "slot": "QB",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "40971",
-            "name": "MarShawn Lloyd",
-            "points": 7.15,
+            "byeWeek": "11",
+            "id": "31856",
+            "name": "Josh Jacobs",
+            "points": 12.26,
+            "position": "RB",
             "slot": "RB",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "13",
             "id": "33991",
             "name": "Breece Hall",
-            "points": 11.09,
+            "points": 11.01,
+            "position": "RB",
             "slot": "RB",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "11",
             "id": "40168",
             "name": "Puka Nacua",
-            "points": 17.11,
+            "points": 19.43,
+            "position": "WR",
             "slot": "WR",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "14",
             "id": "40121",
             "name": "Michael Wilson",
-            "points": 9.5,
+            "points": 8.84,
+            "position": "WR",
             "slot": "WR",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "13",
             "id": "40878",
             "name": "Brock Bowers",
-            "points": 12.04,
+            "points": 12.52,
+            "position": "TE",
             "slot": "TE",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "8",
             "id": "34095",
             "name": "Isaiah Likely",
-            "points": 8.17,
+            "points": 10.89,
+            "position": "TE",
             "slot": "W/R/T",
             "state": "projected"
           },
           {
-            "byeWeek": "Bye",
+            "byeWeek": "9",
             "id": "31960",
             "name": "Tony Pollard",
             "points": 0,
+            "position": "RB",
             "slot": "BN",
             "state": "bye"
           },
           {
-            "byeWeek": "–",
-            "id": "32671",
-            "name": "Joe Burrow",
-            "points": 16.55,
-            "slot": "BN",
-            "state": "projected"
-          },
-          {
-            "byeWeek": "–",
-            "id": "34054",
-            "name": "Brian Robinson",
-            "points": 5.91,
-            "slot": "BN",
-            "state": "projected"
-          },
-          {
-            "byeWeek": "–",
-            "id": "31856",
-            "name": "Josh Jacobs",
-            "points": 3.56,
-            "slot": "BN",
-            "state": "projected"
-          },
-          {
-            "byeWeek": "–",
+            "byeWeek": "6",
             "id": "40042",
             "name": "Jordan Addison",
-            "points": 7.48,
-            "slot": "IR",
+            "points": 8.47,
+            "position": "WR",
+            "slot": "BN",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "11",
+            "id": "40971",
+            "name": "MarShawn Lloyd",
+            "points": 4.44,
+            "position": "RB",
+            "slot": "BN",
+            "state": "projected"
+          },
+          {
+            "byeWeek": "5",
+            "id": "40029",
+            "name": "Bryce Young",
+            "points": 16.16,
+            "position": "QB",
+            "slot": "BN",
+            "state": "projected"
+          },
+          {
+            "byeWeek": "11",
+            "id": "34054",
+            "name": "Brian Robinson Jr.",
+            "points": 5.52,
+            "position": "RB",
+            "slot": "BN",
+            "state": "projected"
+          },
+          {
+            "byeWeek": "13",
             "id": "34008",
             "name": "Alec Pierce",
-            "points": 10.58,
+            "points": 5.62,
+            "position": "WR",
             "slot": "IR",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "30346",
-            "name": "Harrison Butker",
-            "points": 8.28,
+            "byeWeek": "6",
+            "id": "33537",
+            "name": "Evan McPherson",
+            "points": 8.84,
+            "position": "K",
             "slot": "K",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "33537",
-            "name": "Evan McPherson",
-            "points": 8.08,
-            "slot": "BN",
-            "state": "projected"
-          },
-          {
-            "byeWeek": "–",
+            "byeWeek": "5",
             "id": "100012",
             "name": "Chiefs",
-            "points": 8.44,
+            "points": 8.8,
+            "position": "DEF",
             "slot": "DEF",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "100020",
-            "name": "Jets",
-            "points": 5.82,
+            "byeWeek": "7",
+            "id": "100028",
+            "name": "Commanders",
+            "points": 4.98,
+            "position": "DEF",
             "slot": "BN",
             "state": "projected"
           }
         ],
-        "url": "https://football.fantasysports.yahoo.com/f1/258793/7/team?&week=9&stat1=S&stat2=W",
         "week": 9,
-        "collectedAt": "2026-10-13T22:04:09.728Z"
+        "url": "https://football.fantasysports.yahoo.com/f1/258793/7/team?&week=9&stat1=S&stat2=W",
+        "collectedAt": "2026-10-31T20:37:15.927Z"
       },
       {
         "next": "https://football.fantasysports.yahoo.com/f1/258793/7/team?&week=11&stat1=S&stat2=W",
         "players": [
           {
-            "byeWeek": "–",
-            "id": "40029",
-            "name": "Bryce Young",
-            "points": 15.95,
+            "byeWeek": "6",
+            "id": "32671",
+            "name": "Joe Burrow",
+            "points": 19.17,
+            "position": "QB",
             "slot": "QB",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "40971",
-            "name": "MarShawn Lloyd",
-            "points": 7.6,
+            "byeWeek": "11",
+            "id": "31856",
+            "name": "Josh Jacobs",
+            "points": 11.98,
+            "position": "RB",
             "slot": "RB",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "13",
             "id": "33991",
             "name": "Breece Hall",
-            "points": 12.77,
+            "points": 12.25,
+            "position": "RB",
             "slot": "RB",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "11",
             "id": "40168",
             "name": "Puka Nacua",
-            "points": 16.89,
+            "points": 19.9,
+            "position": "WR",
             "slot": "WR",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "14",
             "id": "40121",
             "name": "Michael Wilson",
-            "points": 10.42,
+            "points": 10.24,
+            "position": "WR",
             "slot": "WR",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "13",
             "id": "40878",
             "name": "Brock Bowers",
-            "points": 12.48,
+            "points": 12.56,
+            "position": "TE",
             "slot": "TE",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "8",
             "id": "34095",
             "name": "Isaiah Likely",
-            "points": 8.95,
+            "points": 13.08,
+            "position": "TE",
             "slot": "W/R/T",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "9",
             "id": "31960",
             "name": "Tony Pollard",
-            "points": 8.71,
+            "points": 10.31,
+            "position": "RB",
             "slot": "BN",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "32671",
-            "name": "Joe Burrow",
-            "points": 18.93,
-            "slot": "BN",
-            "state": "projected"
-          },
-          {
-            "byeWeek": "–",
-            "id": "34054",
-            "name": "Brian Robinson",
-            "points": 4.88,
-            "slot": "BN",
-            "state": "projected"
-          },
-          {
-            "byeWeek": "–",
-            "id": "31856",
-            "name": "Josh Jacobs",
-            "points": 3.19,
-            "slot": "BN",
-            "state": "projected"
-          },
-          {
-            "byeWeek": "–",
+            "byeWeek": "6",
             "id": "40042",
             "name": "Jordan Addison",
-            "points": 7.33,
-            "slot": "IR",
+            "points": 7.83,
+            "position": "WR",
+            "slot": "BN",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "11",
+            "id": "40971",
+            "name": "MarShawn Lloyd",
+            "points": 4.24,
+            "position": "RB",
+            "slot": "BN",
+            "state": "projected"
+          },
+          {
+            "byeWeek": "5",
+            "id": "40029",
+            "name": "Bryce Young",
+            "points": 18.63,
+            "position": "QB",
+            "slot": "BN",
+            "state": "projected"
+          },
+          {
+            "byeWeek": "11",
+            "id": "34054",
+            "name": "Brian Robinson Jr.",
+            "points": 4.73,
+            "position": "RB",
+            "slot": "BN",
+            "state": "projected"
+          },
+          {
+            "byeWeek": "13",
             "id": "34008",
             "name": "Alec Pierce",
-            "points": 10.59,
+            "points": 5.15,
+            "position": "WR",
             "slot": "IR",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "30346",
-            "name": "Harrison Butker",
-            "points": 8.11,
+            "byeWeek": "6",
+            "id": "33537",
+            "name": "Evan McPherson",
+            "points": 8.33,
+            "position": "K",
             "slot": "K",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "33537",
-            "name": "Evan McPherson",
-            "points": 8.01,
-            "slot": "BN",
-            "state": "projected"
-          },
-          {
-            "byeWeek": "–",
+            "byeWeek": "5",
             "id": "100012",
             "name": "Chiefs",
-            "points": 6.6,
+            "points": 6.35,
+            "position": "DEF",
             "slot": "DEF",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "100020",
-            "name": "Jets",
-            "points": 5.23,
+            "byeWeek": "7",
+            "id": "100028",
+            "name": "Commanders",
+            "points": 8.34,
+            "position": "DEF",
             "slot": "BN",
             "state": "projected"
           }
         ],
-        "url": "https://football.fantasysports.yahoo.com/f1/258793/7/team?&week=10&stat1=S&stat2=W",
         "week": 10,
-        "collectedAt": "2026-10-13T22:04:39.879Z"
+        "url": "https://football.fantasysports.yahoo.com/f1/258793/7/team?&week=10&stat1=S&stat2=W",
+        "collectedAt": "2026-10-31T20:37:35.268Z"
       },
       {
         "next": "https://football.fantasysports.yahoo.com/f1/258793/7/team?&week=12&stat1=S&stat2=W",
         "players": [
           {
-            "byeWeek": "–",
-            "id": "40029",
-            "name": "Bryce Young",
-            "points": 16.23,
+            "byeWeek": "6",
+            "id": "32671",
+            "name": "Joe Burrow",
+            "points": 21.89,
+            "position": "QB",
             "slot": "QB",
             "state": "projected"
           },
           {
-            "byeWeek": "Bye",
-            "id": "40971",
-            "name": "MarShawn Lloyd",
+            "byeWeek": "11",
+            "id": "31856",
+            "name": "Josh Jacobs",
             "points": 0,
+            "position": "RB",
             "slot": "RB",
             "state": "bye"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "13",
             "id": "33991",
             "name": "Breece Hall",
-            "points": 11.65,
+            "points": 11.49,
+            "position": "RB",
             "slot": "RB",
             "state": "projected"
           },
           {
-            "byeWeek": "Bye",
+            "byeWeek": "11",
             "id": "40168",
             "name": "Puka Nacua",
             "points": 0,
+            "position": "WR",
             "slot": "WR",
             "state": "bye"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "14",
             "id": "40121",
             "name": "Michael Wilson",
-            "points": 10.06,
+            "points": 9.64,
+            "position": "WR",
             "slot": "WR",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "13",
             "id": "40878",
             "name": "Brock Bowers",
-            "points": 11.84,
+            "points": 12.21,
+            "position": "TE",
             "slot": "TE",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "8",
             "id": "34095",
             "name": "Isaiah Likely",
-            "points": 8.36,
+            "points": 12.53,
+            "position": "TE",
             "slot": "W/R/T",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "9",
             "id": "31960",
             "name": "Tony Pollard",
-            "points": 9.89,
+            "points": 11.25,
+            "position": "RB",
             "slot": "BN",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "32671",
-            "name": "Joe Burrow",
-            "points": 20.24,
-            "slot": "BN",
-            "state": "projected"
-          },
-          {
-            "byeWeek": "Bye",
-            "id": "34054",
-            "name": "Brian Robinson",
-            "points": 0,
-            "slot": "BN",
-            "state": "bye"
-          },
-          {
-            "byeWeek": "Bye",
-            "id": "31856",
-            "name": "Josh Jacobs",
-            "points": 0,
-            "slot": "BN",
-            "state": "bye"
-          },
-          {
-            "byeWeek": "–",
+            "byeWeek": "6",
             "id": "40042",
             "name": "Jordan Addison",
-            "points": 7.14,
-            "slot": "IR",
+            "points": 7.54,
+            "position": "WR",
+            "slot": "BN",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "11",
+            "id": "40971",
+            "name": "MarShawn Lloyd",
+            "points": 0,
+            "position": "RB",
+            "slot": "BN",
+            "state": "bye"
+          },
+          {
+            "byeWeek": "5",
+            "id": "40029",
+            "name": "Bryce Young",
+            "points": 18.22,
+            "position": "QB",
+            "slot": "BN",
+            "state": "projected"
+          },
+          {
+            "byeWeek": "11",
+            "id": "34054",
+            "name": "Brian Robinson Jr.",
+            "points": 0,
+            "position": "RB",
+            "slot": "BN",
+            "state": "bye"
+          },
+          {
+            "byeWeek": "13",
             "id": "34008",
             "name": "Alec Pierce",
-            "points": 9.62,
+            "points": 8.69,
+            "position": "WR",
             "slot": "IR",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "30346",
-            "name": "Harrison Butker",
-            "points": 8.44,
+            "byeWeek": "6",
+            "id": "33537",
+            "name": "Evan McPherson",
+            "points": 8.23,
+            "position": "K",
             "slot": "K",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "33537",
-            "name": "Evan McPherson",
-            "points": 8,
-            "slot": "BN",
-            "state": "projected"
-          },
-          {
-            "byeWeek": "–",
+            "byeWeek": "5",
             "id": "100012",
             "name": "Chiefs",
-            "points": 7.86,
+            "points": 7.71,
+            "position": "DEF",
             "slot": "DEF",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "100020",
-            "name": "Jets",
-            "points": 6.11,
+            "byeWeek": "7",
+            "id": "100028",
+            "name": "Commanders",
+            "points": 5.5,
+            "position": "DEF",
             "slot": "BN",
             "state": "projected"
           }
         ],
-        "url": "https://football.fantasysports.yahoo.com/f1/258793/7/team?&week=11&stat1=S&stat2=W",
         "week": 11,
-        "collectedAt": "2026-10-13T22:05:11.055Z"
+        "url": "https://football.fantasysports.yahoo.com/f1/258793/7/team?&week=11&stat1=S&stat2=W",
+        "collectedAt": "2026-10-31T20:38:03.273Z"
       },
       {
         "next": "https://football.fantasysports.yahoo.com/f1/258793/7/team?&week=13&stat1=S&stat2=W",
         "players": [
           {
-            "byeWeek": "–",
-            "id": "40029",
-            "name": "Bryce Young",
-            "points": 15.91,
+            "byeWeek": "6",
+            "id": "32671",
+            "name": "Joe Burrow",
+            "points": 21.2,
+            "position": "QB",
             "slot": "QB",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "40971",
-            "name": "MarShawn Lloyd",
-            "points": 7.29,
+            "byeWeek": "11",
+            "id": "31856",
+            "name": "Josh Jacobs",
+            "points": 11.89,
+            "position": "RB",
             "slot": "RB",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "13",
             "id": "33991",
             "name": "Breece Hall",
-            "points": 12.73,
+            "points": 12.15,
+            "position": "RB",
             "slot": "RB",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "11",
             "id": "40168",
             "name": "Puka Nacua",
-            "points": 16.58,
+            "points": 18.68,
+            "position": "WR",
             "slot": "WR",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "14",
             "id": "40121",
             "name": "Michael Wilson",
-            "points": 12.07,
+            "points": 11.54,
+            "position": "WR",
             "slot": "WR",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "13",
             "id": "40878",
             "name": "Brock Bowers",
-            "points": 11.85,
+            "points": 12.03,
+            "position": "TE",
             "slot": "TE",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "8",
             "id": "34095",
             "name": "Isaiah Likely",
-            "points": 8.75,
+            "points": 12.67,
+            "position": "TE",
             "slot": "W/R/T",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "9",
             "id": "31960",
             "name": "Tony Pollard",
-            "points": 8.42,
+            "points": 9.89,
+            "position": "RB",
             "slot": "BN",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "32671",
-            "name": "Joe Burrow",
-            "points": 18.68,
-            "slot": "BN",
-            "state": "projected"
-          },
-          {
-            "byeWeek": "–",
-            "id": "34054",
-            "name": "Brian Robinson",
-            "points": 4.7,
-            "slot": "BN",
-            "state": "projected"
-          },
-          {
-            "byeWeek": "–",
-            "id": "31856",
-            "name": "Josh Jacobs",
-            "points": 3.35,
-            "slot": "BN",
-            "state": "projected"
-          },
-          {
-            "byeWeek": "–",
+            "byeWeek": "6",
             "id": "40042",
             "name": "Jordan Addison",
-            "points": 7.3,
-            "slot": "IR",
+            "points": 8.02,
+            "position": "WR",
+            "slot": "BN",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "11",
+            "id": "40971",
+            "name": "MarShawn Lloyd",
+            "points": 4.27,
+            "position": "RB",
+            "slot": "BN",
+            "state": "projected"
+          },
+          {
+            "byeWeek": "5",
+            "id": "40029",
+            "name": "Bryce Young",
+            "points": 17.01,
+            "position": "QB",
+            "slot": "BN",
+            "state": "projected"
+          },
+          {
+            "byeWeek": "11",
+            "id": "34054",
+            "name": "Brian Robinson Jr.",
+            "points": 4.48,
+            "position": "RB",
+            "slot": "BN",
+            "state": "projected"
+          },
+          {
+            "byeWeek": "13",
             "id": "34008",
             "name": "Alec Pierce",
-            "points": 9.64,
+            "points": 8.61,
+            "position": "WR",
             "slot": "IR",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "30346",
-            "name": "Harrison Butker",
-            "points": 7.82,
+            "byeWeek": "6",
+            "id": "33537",
+            "name": "Evan McPherson",
+            "points": 8.41,
+            "position": "K",
             "slot": "K",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "33537",
-            "name": "Evan McPherson",
-            "points": 8.17,
-            "slot": "BN",
-            "state": "projected"
-          },
-          {
-            "byeWeek": "–",
+            "byeWeek": "5",
             "id": "100012",
             "name": "Chiefs",
-            "points": 6.29,
+            "points": 6.17,
+            "position": "DEF",
             "slot": "DEF",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "100020",
-            "name": "Jets",
+            "byeWeek": "7",
+            "id": "100028",
+            "name": "Commanders",
             "points": 6.33,
+            "position": "DEF",
             "slot": "BN",
             "state": "projected"
           }
         ],
-        "url": "https://football.fantasysports.yahoo.com/f1/258793/7/team?&week=12&stat1=S&stat2=W",
         "week": 12,
-        "collectedAt": "2026-10-13T22:05:39.606Z"
+        "url": "https://football.fantasysports.yahoo.com/f1/258793/7/team?&week=12&stat1=S&stat2=W",
+        "collectedAt": "2026-10-31T20:38:34.022Z"
       },
       {
         "next": "https://football.fantasysports.yahoo.com/f1/258793/7/team?&week=14&stat1=S&stat2=W",
         "players": [
           {
-            "byeWeek": "–",
-            "id": "40029",
-            "name": "Bryce Young",
-            "points": 14.08,
+            "byeWeek": "6",
+            "id": "32671",
+            "name": "Joe Burrow",
+            "points": 17.55,
+            "position": "QB",
             "slot": "QB",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "40971",
-            "name": "MarShawn Lloyd",
-            "points": 8,
+            "byeWeek": "11",
+            "id": "31856",
+            "name": "Josh Jacobs",
+            "points": 13.44,
+            "position": "RB",
             "slot": "RB",
             "state": "projected"
           },
           {
-            "byeWeek": "Bye",
+            "byeWeek": "13",
             "id": "33991",
             "name": "Breece Hall",
             "points": 0,
+            "position": "RB",
             "slot": "RB",
             "state": "bye"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "11",
             "id": "40168",
             "name": "Puka Nacua",
-            "points": 15.67,
+            "points": 17.56,
+            "position": "WR",
             "slot": "WR",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "14",
             "id": "40121",
             "name": "Michael Wilson",
-            "points": 10.62,
+            "points": 10.39,
+            "position": "WR",
             "slot": "WR",
             "state": "projected"
           },
           {
-            "byeWeek": "Bye",
+            "byeWeek": "13",
             "id": "40878",
             "name": "Brock Bowers",
             "points": 0,
+            "position": "TE",
             "slot": "TE",
             "state": "bye"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "8",
             "id": "34095",
             "name": "Isaiah Likely",
-            "points": 8.14,
+            "points": 11.68,
+            "position": "TE",
             "slot": "W/R/T",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "9",
             "id": "31960",
             "name": "Tony Pollard",
-            "points": 9.76,
+            "points": 11.22,
+            "position": "RB",
             "slot": "BN",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "32671",
-            "name": "Joe Burrow",
-            "points": 16.8,
-            "slot": "BN",
-            "state": "projected"
-          },
-          {
-            "byeWeek": "–",
-            "id": "34054",
-            "name": "Brian Robinson",
-            "points": 5.7,
-            "slot": "BN",
-            "state": "projected"
-          },
-          {
-            "byeWeek": "–",
-            "id": "31856",
-            "name": "Josh Jacobs",
-            "points": 3.6,
-            "slot": "BN",
-            "state": "projected"
-          },
-          {
-            "byeWeek": "–",
+            "byeWeek": "6",
             "id": "40042",
             "name": "Jordan Addison",
-            "points": 7.73,
-            "slot": "IR",
+            "points": 8.14,
+            "position": "WR",
+            "slot": "BN",
             "state": "projected"
           },
           {
-            "byeWeek": "Bye",
+            "byeWeek": "11",
+            "id": "40971",
+            "name": "MarShawn Lloyd",
+            "points": 4.86,
+            "position": "RB",
+            "slot": "BN",
+            "state": "projected"
+          },
+          {
+            "byeWeek": "5",
+            "id": "40029",
+            "name": "Bryce Young",
+            "points": 14.93,
+            "position": "QB",
+            "slot": "BN",
+            "state": "projected"
+          },
+          {
+            "byeWeek": "11",
+            "id": "34054",
+            "name": "Brian Robinson Jr.",
+            "points": 5.43,
+            "position": "RB",
+            "slot": "BN",
+            "state": "projected"
+          },
+          {
+            "byeWeek": "13",
             "id": "34008",
             "name": "Alec Pierce",
             "points": 0,
+            "position": "WR",
             "slot": "IR",
             "state": "bye"
           },
           {
-            "byeWeek": "–",
-            "id": "30346",
-            "name": "Harrison Butker",
-            "points": 7.74,
+            "byeWeek": "6",
+            "id": "33537",
+            "name": "Evan McPherson",
+            "points": 8.26,
+            "position": "K",
             "slot": "K",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "33537",
-            "name": "Evan McPherson",
-            "points": 8.03,
-            "slot": "BN",
-            "state": "projected"
-          },
-          {
-            "byeWeek": "–",
+            "byeWeek": "5",
             "id": "100012",
             "name": "Chiefs",
-            "points": 6.35,
+            "points": 5.9,
+            "position": "DEF",
             "slot": "DEF",
             "state": "projected"
           },
           {
-            "byeWeek": "Bye",
-            "id": "100020",
-            "name": "Jets",
-            "points": 0,
+            "byeWeek": "7",
+            "id": "100028",
+            "name": "Commanders",
+            "points": 5.82,
+            "position": "DEF",
             "slot": "BN",
-            "state": "bye"
+            "state": "projected"
           }
         ],
-        "url": "https://football.fantasysports.yahoo.com/f1/258793/7/team?&week=13&stat1=S&stat2=W",
         "week": 13,
-        "collectedAt": "2026-10-13T22:06:09.801Z"
+        "url": "https://football.fantasysports.yahoo.com/f1/258793/7/team?&week=13&stat1=S&stat2=W",
+        "collectedAt": "2026-10-29T19:47:26.569Z"
       },
       {
         "next": "https://football.fantasysports.yahoo.com/f1/258793/7/team?&week=15&stat1=S&stat2=W",
         "players": [
           {
-            "byeWeek": "–",
-            "id": "40029",
-            "name": "Bryce Young",
-            "points": 16.38,
+            "byeWeek": "6",
+            "id": "32671",
+            "name": "Joe Burrow",
+            "points": 18.47,
+            "position": "QB",
             "slot": "QB",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "40971",
-            "name": "MarShawn Lloyd",
-            "points": 8.22,
+            "byeWeek": "11",
+            "id": "31856",
+            "name": "Josh Jacobs",
+            "points": 13.27,
+            "position": "RB",
             "slot": "RB",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "33991",
-            "name": "Breece Hall",
-            "points": 12.27,
+            "byeWeek": "9",
+            "id": "31960",
+            "name": "Tony Pollard",
+            "points": 11.19,
+            "position": "RB",
             "slot": "RB",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "11",
             "id": "40168",
             "name": "Puka Nacua",
-            "points": 15.25,
+            "points": 17.35,
+            "position": "WR",
             "slot": "WR",
             "state": "projected"
           },
           {
-            "byeWeek": "Bye",
-            "id": "40121",
-            "name": "Michael Wilson",
-            "points": 0,
+            "byeWeek": "6",
+            "id": "40042",
+            "name": "Jordan Addison",
+            "points": 7.67,
+            "position": "WR",
             "slot": "WR",
-            "state": "bye"
+            "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "13",
             "id": "40878",
             "name": "Brock Bowers",
-            "points": 12.95,
+            "points": 14.1,
+            "position": "TE",
             "slot": "TE",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "8",
             "id": "34095",
             "name": "Isaiah Likely",
-            "points": 7.63,
+            "points": 11.09,
+            "position": "TE",
             "slot": "W/R/T",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "31960",
-            "name": "Tony Pollard",
-            "points": 9.76,
+            "byeWeek": "14",
+            "id": "40121",
+            "name": "Michael Wilson",
+            "points": 0,
+            "position": "WR",
+            "slot": "BN",
+            "state": "bye"
+          },
+          {
+            "byeWeek": "11",
+            "id": "40971",
+            "name": "MarShawn Lloyd",
+            "points": 3.96,
+            "position": "RB",
             "slot": "BN",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "32671",
-            "name": "Joe Burrow",
-            "points": 17.04,
+            "byeWeek": "5",
+            "id": "40029",
+            "name": "Bryce Young",
+            "points": 19.3,
+            "position": "QB",
             "slot": "BN",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "8",
+            "id": "40108",
+            "name": "Kendre Miller",
+            "points": 3.93,
+            "position": "RB",
+            "slot": "BN",
+            "state": "projected"
+          },
+          {
+            "byeWeek": "11",
             "id": "34054",
-            "name": "Brian Robinson",
-            "points": 5.15,
+            "name": "Brian Robinson Jr.",
+            "points": 4.88,
+            "position": "RB",
             "slot": "BN",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "31856",
-            "name": "Josh Jacobs",
-            "points": 3.67,
-            "slot": "BN",
-            "state": "projected"
-          },
-          {
-            "byeWeek": "–",
-            "id": "40042",
-            "name": "Jordan Addison",
-            "points": 6.85,
-            "slot": "IR",
-            "state": "projected"
-          },
-          {
-            "byeWeek": "–",
+            "byeWeek": "13",
             "id": "34008",
             "name": "Alec Pierce",
-            "points": 8.85,
+            "points": 8.56,
+            "position": "WR",
             "slot": "IR",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "30346",
-            "name": "Harrison Butker",
-            "points": 7.85,
+            "byeWeek": "13",
+            "id": "33991",
+            "name": "Breece Hall",
+            "points": 11.56,
+            "position": "RB",
+            "slot": "IR",
+            "state": "projected"
+          },
+          {
+            "byeWeek": "6",
+            "id": "33537",
+            "name": "Evan McPherson",
+            "points": 8.16,
+            "position": "K",
             "slot": "K",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "33537",
-            "name": "Evan McPherson",
-            "points": 7.92,
-            "slot": "BN",
-            "state": "projected"
-          },
-          {
-            "byeWeek": "–",
+            "byeWeek": "5",
             "id": "100012",
             "name": "Chiefs",
-            "points": 6.68,
+            "points": 6.2,
+            "position": "DEF",
             "slot": "DEF",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "13",
             "id": "100020",
             "name": "Jets",
-            "points": 5.54,
+            "points": 5.48,
+            "position": "DEF",
             "slot": "BN",
             "state": "projected"
           }
         ],
-        "url": "https://football.fantasysports.yahoo.com/f1/258793/7/team?&week=14&stat1=S&stat2=W",
         "week": 14,
-        "collectedAt": "2026-10-13T22:06:39.859Z"
+        "url": "https://football.fantasysports.yahoo.com/f1/258793/7/team?&week=14&stat1=S&stat2=W",
+        "collectedAt": "2026-10-28T01:32:09.436Z"
       },
       {
         "next": "https://football.fantasysports.yahoo.com/f1/258793/7/team?&week=16&stat1=S&stat2=W",
         "players": [
           {
-            "byeWeek": "–",
-            "id": "40029",
-            "name": "Bryce Young",
-            "points": 17.08,
+            "byeWeek": "6",
+            "id": "32671",
+            "name": "Joe Burrow",
+            "points": 18.61,
+            "position": "QB",
             "slot": "QB",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "40971",
-            "name": "MarShawn Lloyd",
-            "points": 8.66,
+            "byeWeek": "11",
+            "id": "31856",
+            "name": "Josh Jacobs",
+            "points": 13.93,
+            "position": "RB",
             "slot": "RB",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "33991",
-            "name": "Breece Hall",
-            "points": 12.67,
-            "slot": "RB",
-            "state": "projected"
-          },
-          {
-            "byeWeek": "–",
+            "byeWeek": "11",
             "id": "40168",
             "name": "Puka Nacua",
-            "points": 17.89,
+            "points": 19.99,
+            "position": "WR",
             "slot": "WR",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "14",
             "id": "40121",
             "name": "Michael Wilson",
-            "points": 11.39,
+            "points": 10.72,
+            "position": "WR",
             "slot": "WR",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "13",
             "id": "40878",
             "name": "Brock Bowers",
-            "points": 12.47,
+            "points": 13.14,
+            "position": "TE",
             "slot": "TE",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "34095",
-            "name": "Isaiah Likely",
-            "points": 7.89,
+            "byeWeek": "9",
+            "id": "31960",
+            "name": "Tony Pollard",
+            "points": 11.67,
+            "position": "RB",
             "slot": "W/R/T",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "31960",
-            "name": "Tony Pollard",
-            "points": 9.95,
-            "slot": "BN",
-            "state": "projected"
-          },
-          {
-            "byeWeek": "–",
-            "id": "32671",
-            "name": "Joe Burrow",
-            "points": 17.53,
-            "slot": "BN",
-            "state": "projected"
-          },
-          {
-            "byeWeek": "–",
-            "id": "34054",
-            "name": "Brian Robinson",
-            "points": 5.38,
-            "slot": "BN",
-            "state": "projected"
-          },
-          {
-            "byeWeek": "–",
-            "id": "31856",
-            "name": "Josh Jacobs",
-            "points": 3.87,
-            "slot": "BN",
-            "state": "projected"
-          },
-          {
-            "byeWeek": "–",
+            "byeWeek": "6",
             "id": "40042",
             "name": "Jordan Addison",
-            "points": 8.08,
-            "slot": "IR",
+            "points": 8.85,
+            "position": "WR",
+            "slot": "BN",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "8",
+            "id": "34095",
+            "name": "Isaiah Likely",
+            "points": 11.43,
+            "position": "TE",
+            "slot": "BN",
+            "state": "projected"
+          },
+          {
+            "byeWeek": "11",
+            "id": "40971",
+            "name": "MarShawn Lloyd",
+            "points": 4.07,
+            "position": "RB",
+            "slot": "BN",
+            "state": "projected"
+          },
+          {
+            "byeWeek": "5",
+            "id": "40029",
+            "name": "Bryce Young",
+            "points": 18.67,
+            "position": "QB",
+            "slot": "BN",
+            "state": "projected"
+          },
+          {
+            "byeWeek": "8",
+            "id": "40108",
+            "name": "Kendre Miller",
+            "points": 3.29,
+            "position": "RB",
+            "slot": "BN",
+            "state": "projected"
+          },
+          {
+            "byeWeek": "11",
+            "id": "34054",
+            "name": "Brian Robinson Jr.",
+            "points": 5.02,
+            "position": "RB",
+            "slot": "BN",
+            "state": "projected"
+          },
+          {
+            "byeWeek": "13",
             "id": "34008",
             "name": "Alec Pierce",
-            "points": 9.7,
+            "points": 9.37,
+            "position": "WR",
             "slot": "IR",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "30346",
-            "name": "Harrison Butker",
-            "points": 8,
+            "byeWeek": "13",
+            "id": "33991",
+            "name": "Breece Hall",
+            "points": 12.27,
+            "position": "RB",
+            "slot": "IR",
+            "state": "projected"
+          },
+          {
+            "byeWeek": "6",
+            "id": "33537",
+            "name": "Evan McPherson",
+            "points": 8.28,
+            "position": "K",
             "slot": "K",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "33537",
-            "name": "Evan McPherson",
-            "points": 7.96,
-            "slot": "BN",
-            "state": "projected"
-          },
-          {
-            "byeWeek": "–",
+            "byeWeek": "5",
             "id": "100012",
             "name": "Chiefs",
-            "points": 7.34,
+            "points": 6.84,
+            "position": "DEF",
             "slot": "DEF",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "13",
             "id": "100020",
             "name": "Jets",
-            "points": 6.81,
+            "points": 6.84,
+            "position": "DEF",
             "slot": "BN",
             "state": "projected"
           }
         ],
-        "url": "https://football.fantasysports.yahoo.com/f1/258793/7/team?&week=15&stat1=S&stat2=W",
         "week": 15,
-        "collectedAt": "2026-10-13T22:07:09.657Z"
+        "url": "https://football.fantasysports.yahoo.com/f1/258793/7/team?&week=15&stat1=S&stat2=W",
+        "collectedAt": "2026-10-28T01:32:52.875Z"
       },
       {
         "next": "https://football.fantasysports.yahoo.com/f1/258793/7/team?&week=17&stat1=S&stat2=W",
         "players": [
           {
-            "byeWeek": "–",
-            "id": "40029",
-            "name": "Bryce Young",
-            "points": 15.69,
+            "byeWeek": "6",
+            "id": "32671",
+            "name": "Joe Burrow",
+            "points": 20.52,
+            "position": "QB",
             "slot": "QB",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "40971",
-            "name": "MarShawn Lloyd",
-            "points": 7.95,
+            "byeWeek": "11",
+            "id": "31856",
+            "name": "Josh Jacobs",
+            "points": 13.36,
+            "position": "RB",
             "slot": "RB",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "33991",
-            "name": "Breece Hall",
-            "points": 11.99,
+            "byeWeek": "9",
+            "id": "31960",
+            "name": "Tony Pollard",
+            "points": 11.42,
+            "position": "RB",
             "slot": "RB",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "11",
             "id": "40168",
             "name": "Puka Nacua",
-            "points": 14.98,
+            "points": 15.55,
+            "position": "WR",
             "slot": "WR",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "14",
             "id": "40121",
             "name": "Michael Wilson",
-            "points": 10.85,
+            "points": 10.79,
+            "position": "WR",
             "slot": "WR",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "13",
             "id": "40878",
             "name": "Brock Bowers",
-            "points": 13.68,
+            "points": 14.65,
+            "position": "TE",
             "slot": "TE",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "8",
             "id": "34095",
             "name": "Isaiah Likely",
-            "points": 8.88,
+            "points": 13.62,
+            "position": "TE",
             "slot": "W/R/T",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "31960",
-            "name": "Tony Pollard",
-            "points": 9.42,
-            "slot": "BN",
-            "state": "projected"
-          },
-          {
-            "byeWeek": "–",
-            "id": "32671",
-            "name": "Joe Burrow",
-            "points": 19.37,
-            "slot": "BN",
-            "state": "projected"
-          },
-          {
-            "byeWeek": "–",
-            "id": "34054",
-            "name": "Brian Robinson",
-            "points": 4.91,
-            "slot": "BN",
-            "state": "projected"
-          },
-          {
-            "byeWeek": "–",
-            "id": "31856",
-            "name": "Josh Jacobs",
-            "points": 3.91,
-            "slot": "BN",
-            "state": "projected"
-          },
-          {
-            "byeWeek": "–",
+            "byeWeek": "6",
             "id": "40042",
             "name": "Jordan Addison",
-            "points": 8.24,
-            "slot": "IR",
+            "points": 8.89,
+            "position": "WR",
+            "slot": "BN",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "11",
+            "id": "40971",
+            "name": "MarShawn Lloyd",
+            "points": 4.11,
+            "position": "RB",
+            "slot": "BN",
+            "state": "projected"
+          },
+          {
+            "byeWeek": "5",
+            "id": "40029",
+            "name": "Bryce Young",
+            "points": 16.21,
+            "position": "QB",
+            "slot": "BN",
+            "state": "projected"
+          },
+          {
+            "byeWeek": "8",
+            "id": "40108",
+            "name": "Kendre Miller",
+            "points": 3.95,
+            "position": "RB",
+            "slot": "BN",
+            "state": "projected"
+          },
+          {
+            "byeWeek": "11",
+            "id": "34054",
+            "name": "Brian Robinson Jr.",
+            "points": 4.73,
+            "position": "RB",
+            "slot": "BN",
+            "state": "projected"
+          },
+          {
+            "byeWeek": "13",
             "id": "34008",
             "name": "Alec Pierce",
-            "points": 10.14,
+            "points": 9.32,
+            "position": "WR",
             "slot": "IR",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "30346",
-            "name": "Harrison Butker",
-            "points": 8.02,
+            "byeWeek": "13",
+            "id": "33991",
+            "name": "Breece Hall",
+            "points": 11.58,
+            "position": "RB",
+            "slot": "IR",
+            "state": "projected"
+          },
+          {
+            "byeWeek": "6",
+            "id": "33537",
+            "name": "Evan McPherson",
+            "points": 8.67,
+            "position": "K",
             "slot": "K",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "33537",
-            "name": "Evan McPherson",
-            "points": 8,
-            "slot": "BN",
-            "state": "projected"
-          },
-          {
-            "byeWeek": "–",
+            "byeWeek": "5",
             "id": "100012",
             "name": "Chiefs",
-            "points": 6.39,
+            "points": 6.36,
+            "position": "DEF",
             "slot": "DEF",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "13",
             "id": "100020",
             "name": "Jets",
-            "points": 6.35,
+            "points": 5.96,
+            "position": "DEF",
             "slot": "BN",
             "state": "projected"
           }
         ],
-        "url": "https://football.fantasysports.yahoo.com/f1/258793/7/team?&week=16&stat1=S&stat2=W",
         "week": 16,
-        "collectedAt": "2026-10-13T22:07:39.655Z"
+        "url": "https://football.fantasysports.yahoo.com/f1/258793/7/team?&week=16&stat1=S&stat2=W",
+        "collectedAt": "2026-10-28T01:33:19.047Z"
       },
       {
-        "next": "https://football.fantasysports.yahoo.com/f1/258793/7/team?&week=17&stat1=S&stat2=W",
+        "next": null,
         "players": [
           {
-            "byeWeek": "–",
-            "id": "40029",
-            "name": "Bryce Young",
-            "points": 14.62,
+            "byeWeek": "6",
+            "id": "32671",
+            "name": "Joe Burrow",
+            "points": 20.14,
+            "position": "QB",
             "slot": "QB",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "40971",
-            "name": "MarShawn Lloyd",
-            "points": 7.65,
+            "byeWeek": "11",
+            "id": "31856",
+            "name": "Josh Jacobs",
+            "points": 12.58,
+            "position": "RB",
             "slot": "RB",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "33991",
-            "name": "Breece Hall",
-            "points": 11.52,
+            "byeWeek": "9",
+            "id": "31960",
+            "name": "Tony Pollard",
+            "points": 10.66,
+            "position": "RB",
             "slot": "RB",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "11",
             "id": "40168",
             "name": "Puka Nacua",
-            "points": 15.94,
+            "points": 17.13,
+            "position": "WR",
             "slot": "WR",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "14",
             "id": "40121",
             "name": "Michael Wilson",
-            "points": 11.15,
+            "points": 11.19,
+            "position": "WR",
             "slot": "WR",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "13",
             "id": "40878",
             "name": "Brock Bowers",
-            "points": 13.49,
+            "points": 14.6,
+            "position": "TE",
             "slot": "TE",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "8",
             "id": "34095",
             "name": "Isaiah Likely",
-            "points": 9.43,
+            "points": 13.83,
+            "position": "TE",
             "slot": "W/R/T",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "31960",
-            "name": "Tony Pollard",
-            "points": 9.33,
-            "slot": "BN",
-            "state": "projected"
-          },
-          {
-            "byeWeek": "–",
-            "id": "32671",
-            "name": "Joe Burrow",
-            "points": 18.42,
-            "slot": "BN",
-            "state": "projected"
-          },
-          {
-            "byeWeek": "–",
-            "id": "34054",
-            "name": "Brian Robinson",
-            "points": 5.55,
-            "slot": "BN",
-            "state": "projected"
-          },
-          {
-            "byeWeek": "–",
-            "id": "31856",
-            "name": "Josh Jacobs",
-            "points": 3.5,
-            "slot": "BN",
-            "state": "projected"
-          },
-          {
-            "byeWeek": "–",
+            "byeWeek": "6",
             "id": "40042",
             "name": "Jordan Addison",
-            "points": 7.35,
-            "slot": "IR",
+            "points": 7.49,
+            "position": "WR",
+            "slot": "BN",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "11",
+            "id": "40971",
+            "name": "MarShawn Lloyd",
+            "points": 3.78,
+            "position": "RB",
+            "slot": "BN",
+            "state": "projected"
+          },
+          {
+            "byeWeek": "5",
+            "id": "40029",
+            "name": "Bryce Young",
+            "points": 15.02,
+            "position": "QB",
+            "slot": "BN",
+            "state": "projected"
+          },
+          {
+            "byeWeek": "8",
+            "id": "40108",
+            "name": "Kendre Miller",
+            "points": 3.45,
+            "position": "RB",
+            "slot": "BN",
+            "state": "projected"
+          },
+          {
+            "byeWeek": "11",
+            "id": "34054",
+            "name": "Brian Robinson Jr.",
+            "points": 5.49,
+            "position": "RB",
+            "slot": "BN",
+            "state": "projected"
+          },
+          {
+            "byeWeek": "13",
             "id": "34008",
             "name": "Alec Pierce",
-            "points": 8.79,
+            "points": 8.03,
+            "position": "WR",
             "slot": "IR",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "30346",
-            "name": "Harrison Butker",
-            "points": 7.8,
+            "byeWeek": "13",
+            "id": "33991",
+            "name": "Breece Hall",
+            "points": 10.72,
+            "position": "RB",
+            "slot": "IR",
+            "state": "projected"
+          },
+          {
+            "byeWeek": "6",
+            "id": "33537",
+            "name": "Evan McPherson",
+            "points": 8.18,
+            "position": "K",
             "slot": "K",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
-            "id": "33537",
-            "name": "Evan McPherson",
-            "points": 7.98,
-            "slot": "BN",
-            "state": "projected"
-          },
-          {
-            "byeWeek": "–",
+            "byeWeek": "5",
             "id": "100012",
             "name": "Chiefs",
-            "points": 6.92,
+            "points": 7.25,
+            "position": "DEF",
             "slot": "DEF",
             "state": "projected"
           },
           {
-            "byeWeek": "–",
+            "byeWeek": "13",
             "id": "100020",
             "name": "Jets",
-            "points": 7.09,
+            "points": 6.89,
+            "position": "DEF",
             "slot": "BN",
             "state": "projected"
           }
         ],
-        "url": "https://football.fantasysports.yahoo.com/f1/258793/7/team?&week=17&stat1=S&stat2=W",
         "week": 17,
-        "collectedAt": "2026-10-13T22:08:09.582Z"
+        "url": "https://football.fantasysports.yahoo.com/f1/258793/7/team?&week=17&stat1=S&stat2=W",
+        "collectedAt": "2026-10-28T01:33:31.836Z"
       }
     ],
     "8": [
@@ -24587,24 +24701,9 @@
       }
     ]
   },
-  "updatedAt": "2026-10-13T22:19:09.886Z",
+  "updatedAt": "2026-10-31T20:41:00Z",
   "collection": {
-    "minimumNavigationIntervalMs": 30000,
-    "concurrency": 1,
-    "retryOnDenial": false,
-    "updatedAt": "2026-10-13T22:19:45.875Z",
-    "state": "paused_by_user",
-    "resumeCheckpoint": {
-      "teamId": "1",
-      "nextWeek": 16
-    },
-    "refreshPendingTeams": [
-      "1",
-      "2",
-      "3",
-      "5",
-      "6",
-      "12"
-    ]
+    "state": "partial_refresh",
+    "note": "Current rosters refreshed Oct 31. Felines weeks 8\u201312 refreshed Oct 31; remaining projections retain their individual collection dates."
   }
 }

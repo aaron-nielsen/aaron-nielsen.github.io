@@ -449,7 +449,7 @@
     },
     {
       "week": 9,
-      "retrievedAt": "2026-10-27T19:41:15.550Z",
+      "retrievedAt": "2026-10-31T20:32:34.737Z",
       "matchups": [
         {
           "matchupId": 1,
@@ -460,8 +460,8 @@
             "teamId": "1",
             "teamName": "Blitzmaster",
             "points": 0,
-            "projectedPoints": 86.35,
-            "winProbability": 0.34,
+            "projectedPoints": 86.66,
+            "winProbability": 0.33,
             "id": "1",
             "name": "Blitzmaster"
           },
@@ -470,8 +470,8 @@
             "teamId": "12",
             "teamName": "Juicy Juke Brody",
             "points": 0,
-            "projectedPoints": 103.21,
-            "winProbability": 0.66,
+            "projectedPoints": 105.03,
+            "winProbability": 0.67,
             "id": "12",
             "name": "Juicy Juke Brody"
           }
@@ -485,8 +485,8 @@
             "teamId": "2",
             "teamName": "Stochastically Bounded Ends",
             "points": 0,
-            "projectedPoints": 96.55,
-            "winProbability": 0.65,
+            "projectedPoints": 95.2,
+            "winProbability": 0.62,
             "id": "2",
             "name": "Stochastically Bounded Ends"
           },
@@ -495,8 +495,8 @@
             "teamId": "14",
             "teamName": "Bench Warmers",
             "points": 0,
-            "projectedPoints": 82.96,
-            "winProbability": 0.35,
+            "projectedPoints": 84.39,
+            "winProbability": 0.38,
             "id": "14",
             "name": "Bench Warmers"
           }
@@ -510,8 +510,8 @@
             "teamId": "3",
             "teamName": "Lone Wolf Stacy",
             "points": 0,
-            "projectedPoints": 94.81,
-            "winProbability": 0.83,
+            "projectedPoints": 86.46,
+            "winProbability": 0.54,
             "id": "3",
             "name": "Lone Wolf Stacy"
           },
@@ -520,8 +520,8 @@
             "teamId": "5",
             "teamName": "I’m confused",
             "points": 0,
-            "projectedPoints": 62.49,
-            "winProbability": 0.17,
+            "projectedPoints": 82.68,
+            "winProbability": 0.46,
             "id": "5",
             "name": "I’m confused"
           }
@@ -535,8 +535,8 @@
             "teamId": "4",
             "teamName": "the football understander",
             "points": 0,
-            "projectedPoints": 115.49,
-            "winProbability": 0.55,
+            "projectedPoints": 97.47,
+            "winProbability": 0.39,
             "id": "4",
             "name": "the football understander"
           },
@@ -545,8 +545,8 @@
             "teamId": "10",
             "teamName": "Walking Drafters",
             "points": 0,
-            "projectedPoints": 109.92,
-            "winProbability": 0.45,
+            "projectedPoints": 110.03,
+            "winProbability": 0.61,
             "id": "10",
             "name": "Walking Drafters"
           }
@@ -560,8 +560,8 @@
             "teamId": "6",
             "teamName": "Hard Count Kai",
             "points": 0,
-            "projectedPoints": 99.31,
-            "winProbability": 0.58,
+            "projectedPoints": 98.94,
+            "winProbability": 0.48,
             "id": "6",
             "name": "Hard Count Kai"
           },
@@ -570,8 +570,8 @@
             "teamId": "13",
             "teamName": "NO PARKING",
             "points": 0,
-            "projectedPoints": 91.49,
-            "winProbability": 0.42,
+            "projectedPoints": 101.36,
+            "winProbability": 0.52,
             "id": "13",
             "name": "NO PARKING"
           }
@@ -585,8 +585,8 @@
             "teamId": "7",
             "teamName": "Ten Feline Overlords",
             "points": 0,
-            "projectedPoints": 101.68,
-            "winProbability": 0.55,
+            "projectedPoints": 111.54,
+            "winProbability": 0.71,
             "id": "7",
             "name": "Ten Feline Overlords"
           },
@@ -595,8 +595,8 @@
             "teamId": "8",
             "teamName": "Playmaker Adam",
             "points": 0,
-            "projectedPoints": 95.7,
-            "winProbability": 0.45,
+            "projectedPoints": 87.61,
+            "winProbability": 0.29,
             "id": "8",
             "name": "Playmaker Adam"
           }
@@ -610,8 +610,8 @@
             "teamId": "9",
             "teamName": "Screen Pass Eva",
             "points": 0,
-            "projectedPoints": 92.07,
-            "winProbability": 0.52,
+            "projectedPoints": 90.64,
+            "winProbability": 0.58,
             "id": "9",
             "name": "Screen Pass Eva"
           },
@@ -620,8 +620,8 @@
             "teamId": "11",
             "teamName": "Stiff Arm Beth",
             "points": 0,
-            "projectedPoints": 90.39,
-            "winProbability": 0.48,
+            "projectedPoints": 83.52,
+            "winProbability": 0.42,
             "id": "11",
             "name": "Stiff Arm Beth"
           }

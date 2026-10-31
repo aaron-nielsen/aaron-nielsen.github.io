@@ -327,7 +327,7 @@
     },
     {
       "week": 9,
-      "retrievedAt": "2026-10-27T19:41:15.550Z",
+      "retrievedAt": "2026-10-31T20:32:34.737Z",
       "matchups": [
         {
           "matchupId": 1,
@@ -338,8 +338,8 @@
             "teamId": "1",
             "teamName": "4th Qtr cory",
             "points": 0,
-            "projectedPoints": 102.86,
-            "winProbability": 0.39,
+            "projectedPoints": 96.63,
+            "winProbability": 0.33,
             "id": "1",
             "name": "4th Qtr cory"
           },
@@ -348,8 +348,8 @@
             "teamId": "10",
             "teamName": "Trenches Brody",
             "points": 0,
-            "projectedPoints": 115.33,
-            "winProbability": 0.61,
+            "projectedPoints": 116.12,
+            "winProbability": 0.67,
             "id": "10",
             "name": "Trenches Brody"
           }
@@ -363,8 +363,8 @@
             "teamId": "2",
             "teamName": "Gridiron Juliean",
             "points": 0,
-            "projectedPoints": 103.49,
-            "winProbability": 0.64,
+            "projectedPoints": 103.93,
+            "winProbability": 0.41,
             "id": "2",
             "name": "Gridiron Juliean"
           },
@@ -373,8 +373,8 @@
             "teamId": "9",
             "teamName": "3rd & Long anton",
             "points": 0,
-            "projectedPoints": 89.29,
-            "winProbability": 0.36,
+            "projectedPoints": 113.68,
+            "winProbability": 0.59,
             "id": "9",
             "name": "3rd & Long anton"
           }
@@ -388,8 +388,8 @@
             "teamId": "3",
             "teamName": "New York Teams",
             "points": 0,
-            "projectedPoints": 89.41,
-            "winProbability": 0.42,
+            "projectedPoints": 92.51,
+            "winProbability": 0.44,
             "id": "3",
             "name": "New York Teams"
           },
@@ -398,8 +398,8 @@
             "teamId": "8",
             "teamName": "Locked In Hunter",
             "points": 0,
-            "projectedPoints": 97.84,
-            "winProbability": 0.58,
+            "projectedPoints": 99.05,
+            "winProbability": 0.56,
             "id": "8",
             "name": "Locked In Hunter"
           }
@@ -413,8 +413,8 @@
             "teamId": "4",
             "teamName": "#6 THE Pulverizing Perrin's",
             "points": 0,
-            "projectedPoints": 115.85,
-            "winProbability": 0.5,
+            "projectedPoints": 102.03,
+            "winProbability": 0.41,
             "id": "4",
             "name": "#6 THE Pulverizing Perrin's"
           },
@@ -423,8 +423,8 @@
             "teamId": "7",
             "teamName": "Friday Night Z",
             "points": 0,
-            "projectedPoints": 115.45,
-            "winProbability": 0.5,
+            "projectedPoints": 112.93,
+            "winProbability": 0.59,
             "id": "7",
             "name": "Friday Night Z"
           }
@@ -438,8 +438,8 @@
             "teamId": "5",
             "teamName": "2-Point Ali",
             "points": 0,
-            "projectedPoints": 95.79,
-            "winProbability": 0.48,
+            "projectedPoints": 97.82,
+            "winProbability": 0.35,
             "id": "5",
             "name": "2-Point Ali"
           },
@@ -448,8 +448,8 @@
             "teamId": "6",
             "teamName": "Nebraska Bugeaters",
             "points": 0,
-            "projectedPoints": 97.54,
-            "winProbability": 0.52,
+            "projectedPoints": 114.61,
+            "winProbability": 0.65,
             "id": "6",
             "name": "Nebraska Bugeaters"
           }

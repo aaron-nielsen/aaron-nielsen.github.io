@@ -2,20 +2,532 @@
   "source": "Yahoo completed transactions, rolling 30-day window",
   "leagueId": "470.l.258793",
   "season": 2026,
-  "retrievedAt": "2026-10-27T19:41:15.550Z",
+  "retrievedAt": "2026-10-31T20:32:34.737Z",
   "coverage": {
     "window": {
       "mode": "recent_30_days_timestamp",
       "weeks": [],
-      "start_timestamp_ms": 1790537919144,
-      "end_timestamp_ms": 1793129919144,
-      "returned_rows": 81
+      "start_timestamp_ms": 1790886737080,
+      "end_timestamp_ms": 1793478737080,
+      "returned_rows": 83
     },
     "limitations": null,
     "warning": null,
     "truncated": false
   },
   "transactions": [
+    {
+      "transaction_id": "470.l.258793.tr.142",
+      "type": "add",
+      "status": "complete",
+      "timestamp": 1793433421000,
+      "date": "2026-10-31",
+      "week": null,
+      "team_ids": [
+        "470.l.258793.t.13"
+      ],
+      "players_added": [
+        {
+          "id": "40835",
+          "name": "Jake Bates",
+          "position": "K",
+          "team": "Det"
+        }
+      ],
+      "players_dropped": [
+        {
+          "id": "41062",
+          "name": "Cam Little",
+          "position": "K",
+          "team": "Jax"
+        }
+      ],
+      "faab_bid": null,
+      "waiver_priority": null,
+      "draft_picks": null
+    },
+    {
+      "transaction_id": "470.l.258793.tr.141",
+      "type": "add",
+      "status": "complete",
+      "timestamp": 1793328879000,
+      "date": "2026-10-30",
+      "week": null,
+      "team_ids": [
+        "470.l.258793.t.3"
+      ],
+      "players_added": [
+        {
+          "id": "42693",
+          "name": "Antonio Williams",
+          "position": "WR",
+          "team": "Was"
+        }
+      ],
+      "players_dropped": [
+        {
+          "id": "33113",
+          "name": "Juwan Johnson",
+          "position": "TE",
+          "team": "NO"
+        }
+      ],
+      "faab_bid": null,
+      "waiver_priority": null,
+      "draft_picks": null
+    },
+    {
+      "transaction_id": "470.l.258793.tr.140",
+      "type": "add",
+      "status": "complete",
+      "timestamp": 1793303923000,
+      "date": "2026-10-29",
+      "week": null,
+      "team_ids": [
+        "470.l.258793.t.4"
+      ],
+      "players_added": [
+        {
+          "id": "28188",
+          "name": "Chris Boswell",
+          "position": "K",
+          "team": "Pit"
+        }
+      ],
+      "players_dropped": [
+        {
+          "id": "31482",
+          "name": "Eddy Pineiro",
+          "position": "K",
+          "team": "SF"
+        }
+      ],
+      "faab_bid": null,
+      "waiver_priority": null,
+      "draft_picks": null
+    },
+    {
+      "transaction_id": "470.l.258793.tr.139",
+      "type": "add",
+      "status": "complete",
+      "timestamp": 1793303907000,
+      "date": "2026-10-29",
+      "week": null,
+      "team_ids": [
+        "470.l.258793.t.4"
+      ],
+      "players_added": [
+        {
+          "id": "41001",
+          "name": "AJ Barner",
+          "position": "TE",
+          "team": "Sea"
+        }
+      ],
+      "players_dropped": [
+        {
+          "id": "40051",
+          "name": "Quentin Johnston",
+          "position": "WR",
+          "team": "LAC"
+        }
+      ],
+      "faab_bid": null,
+      "waiver_priority": null,
+      "draft_picks": null
+    },
+    {
+      "transaction_id": "470.l.258793.tr.138",
+      "type": "add",
+      "status": "complete",
+      "timestamp": 1793303841000,
+      "date": "2026-10-29",
+      "week": null,
+      "team_ids": [
+        "470.l.258793.t.4"
+      ],
+      "players_added": [
+        {
+          "id": "34042",
+          "name": "Malik Willis",
+          "position": "QB",
+          "team": "Mia"
+        }
+      ],
+      "players_dropped": [
+        {
+          "id": "41840",
+          "name": "Tre' Harris",
+          "position": "WR",
+          "team": "LAC"
+        }
+      ],
+      "faab_bid": null,
+      "waiver_priority": null,
+      "draft_picks": null
+    },
+    {
+      "transaction_id": "470.l.258793.tr.137",
+      "type": "add",
+      "status": "complete",
+      "timestamp": 1793303795000,
+      "date": "2026-10-29",
+      "week": null,
+      "team_ids": [
+        "470.l.258793.t.4"
+      ],
+      "players_added": [
+        {
+          "id": "100013",
+          "name": "Raiders",
+          "position": "DEF",
+          "team": "LV"
+        }
+      ],
+      "players_dropped": [
+        {
+          "id": "100025",
+          "name": "49ers",
+          "position": "DEF",
+          "team": "SF"
+        }
+      ],
+      "faab_bid": null,
+      "waiver_priority": null,
+      "draft_picks": null
+    },
+    {
+      "transaction_id": "470.l.258793.tr.136",
+      "type": "add",
+      "status": "complete",
+      "timestamp": 1793287551000,
+      "date": "2026-10-29",
+      "week": null,
+      "team_ids": [
+        "470.l.258793.t.11"
+      ],
+      "players_added": [
+        {
+          "id": "41935",
+          "name": "Jaydon Blue",
+          "position": "RB",
+          "team": "Phi"
+        }
+      ],
+      "players_dropped": [],
+      "faab_bid": null,
+      "waiver_priority": null,
+      "draft_picks": null
+    },
+    {
+      "transaction_id": "470.l.258793.tr.135",
+      "type": "drop",
+      "status": "complete",
+      "timestamp": 1793287380000,
+      "date": "2026-10-29",
+      "week": null,
+      "team_ids": [
+        "470.l.258793.t.11"
+      ],
+      "players_added": [],
+      "players_dropped": [
+        {
+          "id": "31908",
+          "name": "Terry McLaurin",
+          "position": "WR",
+          "team": "Was"
+        }
+      ],
+      "faab_bid": null,
+      "waiver_priority": null,
+      "draft_picks": null
+    },
+    {
+      "transaction_id": "470.l.258793.tr.134",
+      "type": "add",
+      "status": "complete",
+      "timestamp": 1793245092000,
+      "date": "2026-10-29",
+      "week": null,
+      "team_ids": [
+        "470.l.258793.t.7"
+      ],
+      "players_added": [
+        {
+          "id": "100028",
+          "name": "Commanders",
+          "position": "DEF",
+          "team": "Was"
+        }
+      ],
+      "players_dropped": [
+        {
+          "id": "40108",
+          "name": "Kendre Miller",
+          "position": "RB",
+          "team": "NO"
+        }
+      ],
+      "faab_bid": null,
+      "waiver_priority": null,
+      "draft_picks": null
+    },
+    {
+      "transaction_id": "470.l.258793.tr.133",
+      "type": "add",
+      "status": "complete",
+      "timestamp": 1793207347000,
+      "date": "2026-10-28",
+      "week": null,
+      "team_ids": [
+        "470.l.258793.t.9"
+      ],
+      "players_added": [
+        {
+          "id": "32417",
+          "name": "Chase McLaughlin",
+          "position": "K",
+          "team": "TB"
+        }
+      ],
+      "players_dropped": [],
+      "faab_bid": null,
+      "waiver_priority": null,
+      "draft_picks": null
+    },
+    {
+      "transaction_id": "470.l.258793.tr.131",
+      "type": "add",
+      "status": "complete",
+      "timestamp": 1793175774000,
+      "date": "2026-10-28",
+      "week": null,
+      "team_ids": [
+        "470.l.258793.t.3"
+      ],
+      "players_added": [
+        {
+          "id": "26662",
+          "name": "Geno Smith",
+          "position": "QB",
+          "team": "NYJ"
+        }
+      ],
+      "players_dropped": [
+        {
+          "id": "40835",
+          "name": "Jake Bates",
+          "position": "K",
+          "team": "Det"
+        }
+      ],
+      "faab_bid": null,
+      "waiver_priority": null,
+      "draft_picks": null
+    },
+    {
+      "transaction_id": "470.l.258793.tr.130",
+      "type": "add",
+      "status": "complete",
+      "timestamp": 1793175774000,
+      "date": "2026-10-28",
+      "week": null,
+      "team_ids": [
+        "470.l.258793.t.3"
+      ],
+      "players_added": [
+        {
+          "id": "42859",
+          "name": "Seth McGowan",
+          "position": "RB",
+          "team": "Ind"
+        }
+      ],
+      "players_dropped": [
+        {
+          "id": "40162",
+          "name": "Roschon Johnson",
+          "position": "RB",
+          "team": "Chi"
+        }
+      ],
+      "faab_bid": null,
+      "waiver_priority": null,
+      "draft_picks": null
+    },
+    {
+      "transaction_id": "470.l.258793.tr.129",
+      "type": "add",
+      "status": "complete",
+      "timestamp": 1793175774000,
+      "date": "2026-10-28",
+      "week": null,
+      "team_ids": [
+        "470.l.258793.t.3"
+      ],
+      "players_added": [
+        {
+          "id": "100009",
+          "name": "Packers",
+          "position": "DEF",
+          "team": "GB"
+        }
+      ],
+      "players_dropped": [
+        {
+          "id": "100005",
+          "name": "Browns",
+          "position": "DEF",
+          "team": "Cle"
+        }
+      ],
+      "faab_bid": null,
+      "waiver_priority": null,
+      "draft_picks": null
+    },
+    {
+      "transaction_id": "470.l.258793.tr.128",
+      "type": "add",
+      "status": "complete",
+      "timestamp": 1793175774000,
+      "date": "2026-10-28",
+      "week": null,
+      "team_ids": [
+        "470.l.258793.t.1"
+      ],
+      "players_added": [
+        {
+          "id": "25812",
+          "name": "Kirk Cousins",
+          "position": "QB",
+          "team": "LV"
+        }
+      ],
+      "players_dropped": [
+        {
+          "id": "30227",
+          "name": "Samaje Perine",
+          "position": "RB",
+          "team": "Cin"
+        }
+      ],
+      "faab_bid": null,
+      "waiver_priority": null,
+      "draft_picks": null
+    },
+    {
+      "transaction_id": "470.l.258793.tr.127",
+      "type": "add",
+      "status": "complete",
+      "timestamp": 1793175774000,
+      "date": "2026-10-28",
+      "week": null,
+      "team_ids": [
+        "470.l.258793.t.3"
+      ],
+      "players_added": [
+        {
+          "id": "34099",
+          "name": "Chig Okonkwo",
+          "position": "TE",
+          "team": "Was"
+        }
+      ],
+      "players_dropped": [
+        {
+          "id": "41048",
+          "name": "Tyrone Tracy Jr.",
+          "position": "RB",
+          "team": "NYG"
+        }
+      ],
+      "faab_bid": null,
+      "waiver_priority": null,
+      "draft_picks": null
+    },
+    {
+      "transaction_id": "470.l.258793.tr.126",
+      "type": "add",
+      "status": "complete",
+      "timestamp": 1793175774000,
+      "date": "2026-10-28",
+      "week": null,
+      "team_ids": [
+        "470.l.258793.t.5"
+      ],
+      "players_added": [
+        {
+          "id": "100008",
+          "name": "Lions",
+          "position": "DEF",
+          "team": "Det"
+        }
+      ],
+      "players_dropped": [
+        {
+          "id": "100010",
+          "name": "Titans",
+          "position": "DEF",
+          "team": "Ten"
+        }
+      ],
+      "faab_bid": null,
+      "waiver_priority": null,
+      "draft_picks": null
+    },
+    {
+      "transaction_id": "470.l.258793.tr.125",
+      "type": "add",
+      "status": "complete",
+      "timestamp": 1793175774000,
+      "date": "2026-10-28",
+      "week": null,
+      "team_ids": [
+        "470.l.258793.t.13"
+      ],
+      "players_added": [
+        {
+          "id": "41062",
+          "name": "Cam Little",
+          "position": "K",
+          "team": "Jax"
+        }
+      ],
+      "players_dropped": [
+        {
+          "id": "31838",
+          "name": "Daniel Jones",
+          "position": "QB",
+          "team": "Ind"
+        }
+      ],
+      "faab_bid": null,
+      "waiver_priority": null,
+      "draft_picks": null
+    },
+    {
+      "transaction_id": "470.l.258793.tr.124",
+      "type": "drop",
+      "status": "complete",
+      "timestamp": 1793152952000,
+      "date": "2026-10-28",
+      "week": null,
+      "team_ids": [
+        "470.l.258793.t.7"
+      ],
+      "players_added": [],
+      "players_dropped": [
+        {
+          "id": "100020",
+          "name": "Jets",
+          "position": "DEF",
+          "team": "NYJ"
+        }
+      ],
+      "faab_bid": null,
+      "waiver_priority": null,
+      "draft_picks": null
+    },
     {
       "transaction_id": "470.l.258793.tr.123",
       "type": "add",
@@ -1850,423 +2362,6 @@
           "name": "Harrison Butker",
           "position": "K",
           "team": "KC"
-        }
-      ],
-      "faab_bid": null,
-      "waiver_priority": null,
-      "draft_picks": null
-    },
-    {
-      "transaction_id": "470.l.258793.tr.54",
-      "type": "add",
-      "status": "complete",
-      "timestamp": 1790876660000,
-      "date": "2026-10-01",
-      "week": null,
-      "team_ids": [
-        "470.l.258793.t.5"
-      ],
-      "players_added": [
-        {
-          "id": "42638",
-          "name": "Kenyon Sadiq",
-          "position": "TE",
-          "team": "NYJ"
-        }
-      ],
-      "players_dropped": [
-        {
-          "id": "41951",
-          "name": "Oronde Gadsden",
-          "position": "TE",
-          "team": "LAC"
-        }
-      ],
-      "faab_bid": null,
-      "waiver_priority": null,
-      "draft_picks": null
-    },
-    {
-      "transaction_id": "470.l.258793.tr.53",
-      "type": "add",
-      "status": "complete",
-      "timestamp": 1790803862000,
-      "date": "2026-09-30",
-      "week": null,
-      "team_ids": [
-        "470.l.258793.t.7"
-      ],
-      "players_added": [
-        {
-          "id": "100002",
-          "name": "Bills",
-          "position": "DEF",
-          "team": "Buf"
-        }
-      ],
-      "players_dropped": [
-        {
-          "id": "100010",
-          "name": "Titans",
-          "position": "DEF",
-          "team": "Ten"
-        }
-      ],
-      "faab_bid": null,
-      "waiver_priority": null,
-      "draft_picks": null
-    },
-    {
-      "transaction_id": "470.l.258793.tr.52",
-      "type": "drop",
-      "status": "complete",
-      "timestamp": 1790792329000,
-      "date": "2026-09-30",
-      "week": null,
-      "team_ids": [
-        "470.l.258793.t.5"
-      ],
-      "players_added": [],
-      "players_dropped": [
-        {
-          "id": "40118",
-          "name": "De'Von Achane",
-          "position": "RB",
-          "team": "Mia"
-        }
-      ],
-      "faab_bid": null,
-      "waiver_priority": null,
-      "draft_picks": null
-    },
-    {
-      "transaction_id": "470.l.258793.tr.51",
-      "type": "add",
-      "status": "complete",
-      "timestamp": 1790792296000,
-      "date": "2026-09-30",
-      "week": null,
-      "team_ids": [
-        "470.l.258793.t.5"
-      ],
-      "players_added": [
-        {
-          "id": "42697",
-          "name": "Caleb Douglas",
-          "position": "WR",
-          "team": "Mia"
-        }
-      ],
-      "players_dropped": [],
-      "faab_bid": null,
-      "waiver_priority": null,
-      "draft_picks": null
-    },
-    {
-      "transaction_id": "470.l.258793.tr.50",
-      "type": "add",
-      "status": "complete",
-      "timestamp": 1790777904000,
-      "date": "2026-09-30",
-      "week": null,
-      "team_ids": [
-        "470.l.258793.t.5"
-      ],
-      "players_added": [
-        {
-          "id": "41010",
-          "name": "Jaylen Wright",
-          "position": "RB",
-          "team": "Mia"
-        }
-      ],
-      "players_dropped": [],
-      "faab_bid": null,
-      "waiver_priority": null,
-      "draft_picks": null
-    },
-    {
-      "transaction_id": "470.l.258793.tr.49",
-      "type": "add",
-      "status": "complete",
-      "timestamp": 1790769856000,
-      "date": "2026-09-30",
-      "week": null,
-      "team_ids": [
-        "470.l.258793.t.3"
-      ],
-      "players_added": [
-        {
-          "id": "40108",
-          "name": "Kendre Miller",
-          "position": "RB",
-          "team": "NO"
-        }
-      ],
-      "players_dropped": [
-        {
-          "id": "33443",
-          "name": "Pat Freiermuth",
-          "position": "TE",
-          "team": "Pit"
-        }
-      ],
-      "faab_bid": null,
-      "waiver_priority": null,
-      "draft_picks": null
-    },
-    {
-      "transaction_id": "470.l.258793.tr.47",
-      "type": "add",
-      "status": "complete",
-      "timestamp": 1790756144000,
-      "date": "2026-09-30",
-      "week": null,
-      "team_ids": [
-        "470.l.258793.t.5"
-      ],
-      "players_added": [
-        {
-          "id": "100003",
-          "name": "Bears",
-          "position": "DEF",
-          "team": "Chi"
-        }
-      ],
-      "players_dropped": [
-        {
-          "id": "100025",
-          "name": "49ers",
-          "position": "DEF",
-          "team": "SF"
-        }
-      ],
-      "faab_bid": null,
-      "waiver_priority": null,
-      "draft_picks": null
-    },
-    {
-      "transaction_id": "470.l.258793.tr.46",
-      "type": "add",
-      "status": "complete",
-      "timestamp": 1790756144000,
-      "date": "2026-09-30",
-      "week": null,
-      "team_ids": [
-        "470.l.258793.t.6"
-      ],
-      "players_added": [
-        {
-          "id": "41058",
-          "name": "Malik Washington",
-          "position": "WR",
-          "team": "Mia"
-        }
-      ],
-      "players_dropped": [],
-      "faab_bid": null,
-      "waiver_priority": null,
-      "draft_picks": null
-    },
-    {
-      "transaction_id": "470.l.258793.tr.45",
-      "type": "add",
-      "status": "complete",
-      "timestamp": 1790756144000,
-      "date": "2026-09-30",
-      "week": null,
-      "team_ids": [
-        "470.l.258793.t.3"
-      ],
-      "players_added": [
-        {
-          "id": "29631",
-          "name": "Kalif Raymond",
-          "position": "WR",
-          "team": "Chi"
-        }
-      ],
-      "players_dropped": [
-        {
-          "id": "42744",
-          "name": "Mike Washington Jr.",
-          "position": "RB",
-          "team": "LV"
-        }
-      ],
-      "faab_bid": null,
-      "waiver_priority": null,
-      "draft_picks": null
-    },
-    {
-      "transaction_id": "470.l.258793.tr.44",
-      "type": "add",
-      "status": "complete",
-      "timestamp": 1790756144000,
-      "date": "2026-09-30",
-      "week": null,
-      "team_ids": [
-        "470.l.258793.t.5"
-      ],
-      "players_added": [
-        {
-          "id": "40231",
-          "name": "Chris Rodriguez Jr.",
-          "position": "RB",
-          "team": "Jax"
-        }
-      ],
-      "players_dropped": [],
-      "faab_bid": null,
-      "waiver_priority": null,
-      "draft_picks": null
-    },
-    {
-      "transaction_id": "470.l.258793.tr.43",
-      "type": "add",
-      "status": "complete",
-      "timestamp": 1790756144000,
-      "date": "2026-09-30",
-      "week": null,
-      "team_ids": [
-        "470.l.258793.t.6"
-      ],
-      "players_added": [
-        {
-          "id": "40889",
-          "name": "Michael Penix Jr.",
-          "position": "QB",
-          "team": "Atl"
-        }
-      ],
-      "players_dropped": [
-        {
-          "id": "34042",
-          "name": "Malik Willis",
-          "position": "QB",
-          "team": "Mia"
-        }
-      ],
-      "faab_bid": null,
-      "waiver_priority": null,
-      "draft_picks": null
-    },
-    {
-      "transaction_id": "470.l.258793.tr.42",
-      "type": "add",
-      "status": "complete",
-      "timestamp": 1790756144000,
-      "date": "2026-09-30",
-      "week": null,
-      "team_ids": [
-        "470.l.258793.t.7"
-      ],
-      "players_added": [
-        {
-          "id": "40971",
-          "name": "MarShawn Lloyd",
-          "position": "RB",
-          "team": "GB"
-        }
-      ],
-      "players_dropped": [],
-      "faab_bid": null,
-      "waiver_priority": null,
-      "draft_picks": null
-    },
-    {
-      "transaction_id": "470.l.258793.tr.41",
-      "type": "add",
-      "status": "complete",
-      "timestamp": 1790756144000,
-      "date": "2026-09-30",
-      "week": null,
-      "team_ids": [
-        "470.l.258793.t.2"
-      ],
-      "players_added": [
-        {
-          "id": "41969",
-          "name": "Ollie Gordon II",
-          "position": "RB",
-          "team": "Mia"
-        }
-      ],
-      "players_dropped": [
-        {
-          "id": "40954",
-          "name": "Jalen McMillan",
-          "position": "WR",
-          "team": "TB"
-        }
-      ],
-      "faab_bid": null,
-      "waiver_priority": null,
-      "draft_picks": null
-    },
-    {
-      "transaction_id": "470.l.258793.tr.40",
-      "type": "drop",
-      "status": "complete",
-      "timestamp": 1790720376000,
-      "date": "2026-09-29",
-      "week": null,
-      "team_ids": [
-        "470.l.258793.t.7"
-      ],
-      "players_added": [],
-      "players_dropped": [
-        {
-          "id": "41344",
-          "name": "George Holani",
-          "position": "RB",
-          "team": "Sea"
-        }
-      ],
-      "faab_bid": null,
-      "waiver_priority": null,
-      "draft_picks": null
-    },
-    {
-      "transaction_id": "470.l.258793.tr.39",
-      "type": "drop",
-      "status": "complete",
-      "timestamp": 1790562547000,
-      "date": "2026-09-28",
-      "week": null,
-      "team_ids": [
-        "470.l.258793.t.14"
-      ],
-      "players_added": [],
-      "players_dropped": [
-        {
-          "id": "32685",
-          "name": "Jerry Jeudy",
-          "position": "WR",
-          "team": "Cle"
-        }
-      ],
-      "faab_bid": null,
-      "waiver_priority": null,
-      "draft_picks": null
-    },
-    {
-      "transaction_id": "470.l.258793.tr.38",
-      "type": "drop",
-      "status": "complete",
-      "timestamp": 1790562537000,
-      "date": "2026-09-28",
-      "week": null,
-      "team_ids": [
-        "470.l.258793.t.14"
-      ],
-      "players_added": [],
-      "players_dropped": [
-        {
-          "id": "30142",
-          "name": "David Njoku",
-          "position": "TE",
-          "team": "LAC"
         }
       ],
       "faab_bid": null,
