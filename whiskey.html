@@ -388,17 +388,16 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
       var scores=p.ratings.map(function(r){return r.score});
       return Object.assign({},p,{n:scores.length,average:avg(scores),place:p.province||ratedPlace(p)});
     });
-    var all=rows.map(function(r){return r.average});
     var qualified=rows.filter(function(r){return r.n>=3}).map(function(r){return r.average});
     var byStyle={};
     rows.filter(function(r){return r.n>=3}).forEach(function(r){
       (byStyle[r.style]||(byStyle[r.style]=[])).push(r.average);
     });
     rows=rows.map(function(r){
+      var qualifies=r.n>=3;
       return Object.assign({},r,{
-        percentile:pctRank(all,r.average),
-        qPercentile:r.n>=3?pctRank(qualified,r.average):null,
-        sPercentile:r.n>=3?pctRank(byStyle[r.style]||[],r.average):null
+        percentile:qualifies?pctRank(qualified,r.average):null,
+        sPercentile:qualifies?pctRank(byStyle[r.style]||[],r.average):null
       });
     });
   }
@@ -420,7 +419,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
 
   function updateProvinces(){
     var select=document.getElementById("province-filter"),current=select.value;
-    var provinces=Array.from(new Set(currentFilterSource().filter(function(r){return r.region==="Canadian"}).map(function(r){return r.province||"Unknown"}))).sort();
+    var provinces=Array.from(new Set(currentFilterSource().filter(function(r){return r.region==="Canadian"&&r.province}).map(function(r){return r.province}))).sort();
     select.innerHTML='<option value="">All provinces / territories</option>'+provinces.map(function(x){return "<option>"+esc(x)+"</option>"}).join("");
     select.value=provinces.indexOf(current)>=0?current:"";
   }
@@ -513,7 +512,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
 
   function whiskeyTable(source,tab){
     var xs=sorted(sortState[tab],source);
-    var pctKey=tab==="qualified"?"qPercentile":"percentile";
+    var pctKey="percentile";
     var pctLabel="%ile";
     var html='<div class="whiskey-table-wrap"><table class="whiskey-table detail-table"><thead><tr>'+
       th(tab,"name","Whiskey")+th(tab,"region","Region")+th(tab,"style","Style")+th(tab,"substyle","Sub-style")+
@@ -640,12 +639,12 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
     var xs=topExpanded?sortedSource:sortedSource.slice(0,10);
     var html='<div class="whiskey-table-wrap"><table class="whiskey-table"><thead><tr>'+
       '<th class="num">#</th>'+mth("top","name","Whiskey")+mth("top","average","Avg","num")+mth("top","n","n","num")+
-      mth("top","qPercentile","%ile","num")+mth("top","region","Region")+mth("top","style","Style")+mth("top","substyle","Sub-style")+
+      mth("top","percentile","%ile","num")+mth("top","region","Region")+mth("top","style","Style")+mth("top","substyle","Sub-style")+
       '</tr></thead><tbody>';
     xs.forEach(function(r){
       html+='<tr><td class="num">'+rankMap[r.name]+'</td><td><button class="whiskey-name" data-name="'+esc(r.name)+'">'+esc(r.name)+'</button></td>'+
         '<td class="num">'+fmt(r.average)+'</td><td class="num">'+r.n+'</td>'+
-        '<td class="num">'+r.qPercentile+'</td>'+
+        '<td class="num">'+(r.percentile==null?'—':r.percentile)+'</td>'+
         '<td><button class="filter-link region-link" data-region="'+esc(r.region)+'">'+esc(r.region)+'</button></td>'+
         '<td>'+styleCell(r,false)+'</td><td>'+substyleCell(r,false)+'</td></tr>';
     });
@@ -714,9 +713,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
 
     function finalize(node){
       node.whiskeys=node.items.length;
-      var qualified=node.items.filter(function(r){return r.n>=3});
-      node.qualified=qualified.length;
-      node.average=qualified.length?avg(qualified.map(function(r){return r.average})):null;
+      node.average=node.items.length?avg(node.items.map(function(r){return r.average})):null;
       node.childList=Object.keys(node.children).map(function(k){
         return finalize(node.children[k]);
       });
@@ -782,7 +779,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
       return '<th class="style-sortable '+(active?'active-sort ':'')+(cls||'')+'" data-style-sort="'+key+'" data-dir="'+(active?styleTreeSort.dir:'')+'">'+label+'</th>';
     }
     return '<div class="whiskey-table-wrap"><table class="style-tree">'+
-      '<thead><tr>'+sth("name","Style / Sub-style")+sth("whiskeys","Whiskeys","num")+sth("average","Q Avg","num")+'</tr></thead>'+
+      '<thead><tr>'+sth("name","Style / Sub-style")+sth("whiskeys","Whiskeys","num")+sth("average","Avg","num")+'</tr></thead>'+
       '<tbody>'+body.join("")+'</tbody></table></div>';
   }
 
@@ -811,8 +808,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
 
     function addNode(node,depth){
       var items=familyNodeItems(node,source);
-      var qualified=items.filter(function(r){return r.n>=3});
-      var qAverage=qualified.length?avg(qualified.map(function(r){return r.average})):null;
+      var nodeAverage=items.length&&!isUnrated?avg(items.map(function(r){return r.average})):null;
       var indent=depth*20;
       var label;
       if(node.style&&node.substyle){
@@ -827,7 +823,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
           '<td><div class="family-label"><span class="family-indent" style="width:'+indent+'px"></span>'+
           (depth?'<span class="family-connector">↳</span>':'')+label+'</div></td>'+
           '<td class="num">'+items.length+'</td>'+
-          (isUnrated?'':'<td class="num">'+(qAverage==null?'—':fmt(qAverage))+'</td>')+
+          (isUnrated?'':'<td class="num">'+(nodeAverage==null?'—':fmt(nodeAverage))+'</td>')+
         '</tr>'
       );
       (node.children||[]).forEach(function(child){addNode(child,depth+1)});
@@ -835,7 +831,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
 
     addNode(root,0);
     return '<div class="whiskey-table-wrap"><table class="style-tree family-tree">'+
-      '<thead><tr><th>Family / Style</th><th class="num">'+(isUnrated?'Unrated whiskeys':'Whiskeys')+'</th>'+(isUnrated?'':'<th class="num">Q Avg</th>')+'</tr></thead>'+
+      '<thead><tr><th>Family / Style</th><th class="num">'+(isUnrated?'Unrated whiskeys':'Whiskeys')+'</th>'+(isUnrated?'':'<th class="num">Avg</th>')+'</tr></thead>'+
       '<tbody>'+body.join("")+'</tbody></table></div>';
   }
 
@@ -911,14 +907,14 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
     rows.forEach(function(r){
       var d=distilleryName(r);
       if(!d)return;
-      if(!groups[d])groups[d]={name:d,ratings:0,whiskeys:0,qualified:[]};
+      if(!groups[d])groups[d]={name:d,ratings:0,whiskeys:0,averages:[]};
       groups[d].ratings+=r.n;
       groups[d].whiskeys+=1;
-      if(r.n>=3)groups[d].qualified.push(r.average);
+      groups[d].averages.push(r.average);
     });
     return Object.keys(groups).map(function(k){
       var g=groups[k];
-      g.qAverage=g.qualified.length?avg(g.qualified):null;
+      g.average=g.averages.length?avg(g.averages):null;
       return g;
     }).sort(function(a,b){
       return b.ratings-a.ratings||b.whiskeys-a.whiskeys||a.name.localeCompare(b.name);
@@ -928,14 +924,14 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
   function distilleryChart(items){
     var shown=distilleryExpanded?items:items.slice(0,10);
     var max=Math.max.apply(null,shown.map(function(x){return x.ratings}));
-    var head='<div class="distillery-head"><span></span><span></span><span>Whiskeys</span><span>Tastings</span><span>Q Avg</span></div>';
+    var head='<div class="distillery-head"><span></span><span></span><span>Whiskeys</span><span>Tastings</span><span>Avg</span></div>';
     var body=shown.map(function(x){
       var w=max?100*x.ratings/max:0;
       return '<div class="bar-row"><div class="bar-label"><button class="filter-link distillery-link" data-distillery="'+esc(x.name)+'">'+esc(x.name)+'</button></div>'+
         '<div class="bar-track"><div class="bar-fill" style="width:'+w.toFixed(1)+'%;background:'+whiskeyGradient(x.ratings,max)+'"></div></div>'+
         '<div class="dist-num">'+x.whiskeys+'</div>'+
         '<div class="dist-num">'+x.ratings+'</div>'+
-        '<div class="dist-num">'+(x.qAverage==null?'—':fmt(x.qAverage))+'</div></div>';
+        '<div class="dist-num">'+(x.average==null?'—':fmt(x.average))+'</div></div>';
     }).join('');
     var more=items.length>10
       ? '<div class="substyle-more"><button type="button" id="distillery-toggle">'+
@@ -958,21 +954,19 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
       });
       var distilleries=Object.keys(dGroups).map(function(d){
         var ds=dGroups[d];
-        var qualified=ds.filter(function(r){return r.n>=3});
         return {
           name:d,
           items:ds.slice().sort(function(a,b){return b.average-a.average||a.name.localeCompare(b.name)}),
           whiskeys:ds.length,
-          qAverage:qualified.length?avg(qualified.map(function(r){return r.average})):null
+          average:ds.length?avg(ds.map(function(r){return r.average})):null
         };
       }).sort(function(a,b){return b.whiskeys-a.whiskeys||a.name.localeCompare(b.name)});
-      var qItems=items.filter(function(r){return r.n>=3});
       return {
         name:place,
         items:items,
         distilleries:distilleries,
         whiskeys:items.length,
-        qAverage:qItems.length?avg(qItems.map(function(r){return r.average})):null
+        average:items.length?avg(items.map(function(r){return r.average})):null
       };
     }).sort(function(a,b){
       if(region==="Scotch")return 0;
@@ -997,7 +991,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
           (place.whiskeys?'<button class="filter-link place-link" data-place="'+esc(place.name)+'">'+esc(place.name)+'</button>':'<span>'+esc(place.name)+'</span>')+
         '</div></td>'+
         '<td class="num">'+place.whiskeys+'</td>'+
-        '<td class="num">'+(place.qAverage==null?'—':fmt(place.qAverage))+'</td>'+
+        '<td class="num">'+(place.average==null?'—':fmt(place.average))+'</td>'+
       '</tr>');
 
       if(placeOpen){
@@ -1013,7 +1007,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
               '<button class="filter-link distillery-link" data-distillery="'+esc(d.name)+'">'+esc(d.name)+'</button>'+
             '</div></td>'+
             '<td class="num">'+d.whiskeys+'</td>'+
-            '<td class="num">'+(d.qAverage==null?'—':fmt(d.qAverage))+'</td>'+
+            '<td class="num">'+(d.average==null?'—':fmt(d.average))+'</td>'+
           '</tr>');
 
           if(dOpen){
@@ -1033,7 +1027,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
 
     return '<div class="whiskey-table-wrap"><table class="geo-tree">'+
       '<thead><tr><th>'+(region==="Scotch"?'Region / Distillery / Whiskey':'State / Distillery / Whiskey')+
-      '</th><th class="num">Whiskeys</th><th class="num">Q Avg</th></tr></thead>'+
+      '</th><th class="num">Whiskeys</th><th class="num">Avg</th></tr></thead>'+
       '<tbody>'+body.join("")+'</tbody></table></div>';
   }
 
@@ -1157,13 +1151,18 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
 
   function provinceTable(){
     var groups={};
-    rows.filter(function(r){return r.region==="Canadian"}).forEach(function(r){var key=r.province||"Unknown";(groups[key]||(groups[key]=[])).push(r)});
-    return '<div class="whiskey-table-wrap"><table class="whiskey-table"><thead><tr><th>Province / Territory</th><th class="num">Whiskeys</th><th class="num">Tastings</th><th class="num">Avg</th><th class="num">Q Avg</th></tr></thead><tbody>'+Object.keys(groups).sort().map(function(key){
-      var items=groups[key],scores=[],q=items.filter(function(r){return r.n>=3});
-      var label=key==="Unknown"?"Province unconfirmed ("+items.map(function(r){return r.name.replace(" Original Canadian Whisky","")}).join(", ")+")":key;
-      items.forEach(function(r){r.ratings.forEach(function(x){scores.push(x.score)})});
-      return '<tr><td><button class="filter-link province-link" data-province="'+esc(key)+'">'+esc(label)+'</button></td><td class="num">'+items.length+'</td><td class="num">'+scores.length+'</td><td class="num">'+fmt(avg(scores))+'</td><td class="num">'+(q.length?fmt(avg(q.map(function(r){return r.average}))):'—')+'</td></tr>';
-    }).join('')+'</tbody></table></div>';
+    rows.filter(function(r){return r.region==="Canadian"&&r.province}).forEach(function(r){
+      (groups[r.province]||(groups[r.province]=[])).push(r);
+    });
+    var keys=Object.keys(groups).sort();
+    if(!keys.length)return '<div class="chart-body"><p class="view-note">No confirmed province / territory data yet.</p></div>';
+    return '<div class="whiskey-table-wrap"><table class="whiskey-table"><thead><tr><th>Province / Territory</th><th class="num">Whiskeys</th><th class="num">Tastings</th><th class="num">Avg</th></tr></thead><tbody>'+
+      keys.map(function(key){
+        var items=groups[key],ratings=items.reduce(function(a,r){return a+r.n},0);
+        var average=avg(items.map(function(r){return r.average}));
+        return '<tr><td><button class="filter-link province-link" data-province="'+esc(key)+'">'+esc(key)+'</button></td>'+
+          '<td class="num">'+items.length+'</td><td class="num">'+ratings+'</td><td class="num">'+fmt(average)+'</td></tr>';
+      }).join('')+'</tbody></table></div>';
   }
 
   function renderMain(){
@@ -1451,8 +1450,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
     if(!matches.length)return;
 
     var totalRatings=matches.reduce(function(a,r){return a+r.n},0);
-    var qualifiedMatches=matches.filter(function(r){return r.n>=3});
-    var groupQAvg=qualifiedMatches.length?avg(qualifiedMatches.map(function(r){return r.average})):null;
+    var groupAverage=avg(matches.map(function(r){return r.average}));
     var kindLabel={
       province:"Province / Territory",
       region:"Region",
@@ -1494,7 +1492,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
       '<h2>'+heading+'</h2>'+
       '<p class="dialog-summary">'+esc(kindLabel)+' · '+matches.length+' whiskey'+(matches.length===1?'':'s')+
       ' · '+totalRatings+' rating'+(totalRatings===1?'':'s')+
-      ' · '+(groupQAvg==null?'—':fmt(groupQAvg))+' Q Avg</p>'+
+      ' · '+fmt(groupAverage)+' Avg</p>'+
       filterHtml+
       '<div class="dialog-table-wrap"><table class="category-summary-table">'+
       '<thead><tr><th>Whiskey</th>'+(isPlace?'<th>Distillery</th>':'')+
@@ -1564,8 +1562,7 @@ dialog.whiskey-dialog.group-dialog{max-width:880px}
       '<p><strong>ABV:</strong> '+esc(abvLabel(r))+'</p>'+
       (detailBits.length?'<p>'+detailBits.join(' &nbsp; · &nbsp; ')+'</p>':'')+
       '<p><strong>Avg:</strong> '+fmt(r.average)+' / 5.0 &nbsp; <strong>n:</strong> '+r.n+
-      ' &nbsp; <strong>%ile:</strong> '+r.percentile+
-      ' &nbsp; <strong>Qualified %ile:</strong> '+(r.qPercentile==null?"—":r.qPercentile)+
+      ' &nbsp; <strong>%ile:</strong> '+(r.percentile==null?"—":r.percentile)+
       ' &nbsp; <strong>Style %ile:</strong> '+(r.sPercentile==null?"—":r.sPercentile)+'</p>'+
       ratingsTable;
     var dialog=document.getElementById("whiskey-dialog");
