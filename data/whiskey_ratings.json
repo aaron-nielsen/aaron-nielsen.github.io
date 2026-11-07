@@ -241,6 +241,10 @@
         {
           "score": 3.6,
           "date": null
+        },
+        {
+          "score": 3.5,
+          "date": "2026-11-06"
         }
       ],
       "region": "American",
@@ -2342,6 +2346,10 @@
         {
           "score": 3.5,
           "date": "2026-10-23"
+        },
+        {
+          "score": 3.7,
+          "date": "2026-11-06"
         }
       ],
       "owned_bottle_name": "Woodford Reserve Wheat Whiskey"
