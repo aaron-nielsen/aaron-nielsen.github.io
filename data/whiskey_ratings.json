@@ -1464,6 +1464,10 @@
           "score": 4.1,
           "date": "2026-10-01",
           "order": 3
+        },
+        {
+          "score": 4.2,
+          "date": "2026-11-06"
         }
       ],
       "region": "American",
@@ -2267,6 +2271,10 @@
           "score": 3.7,
           "date": "2026-10-10",
           "order": 3
+        },
+        {
+          "score": 3.4,
+          "date": "2026-11-06"
         }
       ],
       "region": "American",
