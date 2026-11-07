@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "updated": "2026-11-06",
-  "notes": "Canonical whiskey rating history and taxonomy. Unknown historical dates are null. Canonical style taxonomy is stored in style_taxonomy; style is the broad whiskey type, substyle is reserved for meaningful nested subtypes, geography is stored in place/subplace, and age/finish/attributes are structured separately. Group counts use every tasted whiskey; group averages and style percentiles use qualified whiskeys with n>=3. ABV is stored for each rated whiskey; batch-, barrel-, vintage-, or market-dependent expressions use a representative/typical ABV to keep the site display compact.",
+  "notes": "Canonical whiskey rating history and taxonomy. Unknown historical dates are null. Canonical style taxonomy is stored in style_taxonomy; style is the broad whiskey type, substyle is reserved for meaningful nested subtypes, geography is stored in place/subplace, and age/finish/attributes are structured separately. Group counts and displayed group averages use every tasted whiskey. Overall and style percentiles are shown only for whiskeys with n>=3. ABV is stored for each rated whiskey; batch-, barrel-, vintage-, or market-dependent expressions use a representative/typical ABV to keep the site display compact.",
   "products": [
     {
       "name": "Aberlour 12 Year Old",
