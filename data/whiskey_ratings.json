@@ -2310,7 +2310,8 @@
         "paid_price_usd": 12.59
       },
       "distillery": "Pendleton",
-      "place": "Canada"
+      "place": "Alberta",
+      "province": "Alberta"
     },
     {
       "name": "Woodford Reserve Wheat Whiskey",
